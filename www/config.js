@@ -1,0 +1,61 @@
+//require配制主要js，并启动路由。
+//定义主要js路径
+
+'use strict';
+
+var paths = {
+  //配置js路径
+  paths: {
+    ionic: 'lib/ionic/js/ionic.bundle',
+    oclazyload: 'lib/oclazyload/dist/ocLazyLoad',
+    jq: 'lib/jquery/dist/jquery',
+    angularResource: 'lib/angular-resource/angular-resource'
+    /* angularSanitize: './lib/angular-sanitize/angular-sanitize'*/
+  },
+  shim: {
+    //注入服务至ionic
+    'oclazyload': ['ionic'],
+    'angularResource': ['ionic']
+    /*    'angularResource': ['ionic'],
+     'angularSanitize': ['ionic']*/
+  }
+};
+require.config(paths);
+
+require([
+    'ionic',
+    'jq',
+    'app'
+  ], function () {
+    testViewport();
+    ionic.Platform.ready(function () {
+      //启动angular模块
+      angular.bootstrap(document, ['freexf']);
+    });
+
+
+  }
+);
+function testViewport() {
+  var mvp = $('meta[name="viewport"]').get(0);
+  var docW = document.documentElement.clientWidth;
+  var devicewidth = 'device-width';
+  var docWhtml = 375 / docW * 0.95;
+  if (docWhtml <= 1.1 && docWhtml >= 1) {
+    $('html').css('font-size', docWhtml + 'px')
+  } else if (docWhtml >= 1.1) {
+    $('html').css('font-size', '1.1px')
+  }
+  var docWviewport, tvp;
+  if (docW <= 320) {
+    docWviewport = (docW / 320)
+    tvp = 'width=' + devicewidth + ',initial-scale=' + docWviewport;
+    mvp.setAttribute('content', tvp);
+  } else if (docW > 414) {
+    docWviewport = (docW / 414)
+    devicewidth = '414'
+    tvp = 'width=' + devicewidth;
+    mvp.setAttribute('content', tvp);
+  }
+  //
+}

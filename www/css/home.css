@@ -1,0 +1,296 @@
+
+ion-content {
+  background-color: #EEE;
+}
+
+.freexf-padding-24 {
+  padding: 10px 12px !important;
+}
+
+.freexf-padding-24 {
+  padding: 10px 12px !important;
+}
+
+.freexf-padding-left-5 {
+  padding-left: 5px !important;
+}
+
+.freexf-margin-bottom-30 {
+  margin-bottom: 30px !important;
+}
+
+.freexf-bar-nav {
+  height: 30px;
+  padding: 0;
+  text-align: center;
+}
+
+.freexf-bar-nav .row {
+  padding: 0;
+}
+
+.freexf-bar-nav .row > a {
+  border-right: 1px solid #D4D4D4;
+}
+
+.freexf-bar-nav .row > a.active {
+  background-color: #D4D4D4;
+}
+
+.bar.freexf-bar-lightgray {
+  border-color: #eeeeee;
+  background-color: #eeeeee;
+  background-image: linear-gradient(0deg, #eeeeee, #eeeeee 50%, transparent 50%);
+  color: #323232;
+}
+
+.button.freexf-button-balanced {
+  background-color: #1ab554;
+  color: #fff;
+}
+
+.button.freexf-button-balanced.activated {
+  background-color: #009235;
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.freexf-checkbox {
+  position: relative;
+  padding-left: 15px;
+  font-size: 13rem;
+}
+
+.freexf-checkbox > .label-checkbox {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  right: 8px;
+  left: 0;
+  z-index: 3;
+  margin-top: -9px;
+}
+
+.freexf-checkbox .label-checkbox input {
+  position: relative;
+  display: block;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+.freexf-checkbox .label-checkbox input:before {
+  display: inline-block;
+  font-family: "Ionicons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  text-rendering: auto;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #969696;
+  font-size: 13rem;
+  content: "\f372";
+}
+
+.freexf-checkbox .label-checkbox input:checked:before {
+  color: #1ab554;
+  content: "\f373";
+}
+
+.freexf-clear:after {
+  display: table;
+  content: '';
+  clear: both;
+}
+
+.freexf-right {
+  float: right;
+}
+
+.freexf-left {
+  float: left;
+}
+
+.freexf-font-13 {
+  font-size: 13rem;
+}
+
+.freexf-logo {
+  padding: 10px 0;
+  height: 100%;
+}
+
+.freexf-hometype {
+  background-color: #fff;
+  text-align: center;
+}
+
+.freexf-hometype > .row:not(:first-child) {
+  margin-top: 5px;
+}
+
+.freexf-hometype a {
+  text-decoration: none;
+  font-size: 12rem;
+  color: #323232;
+}
+
+.freexf-hometype i {
+  display: block;
+  margin: 0 auto;
+  -webkit-background-size: cover;
+  background-size: cover;
+  width: 45px;
+  height: 45px;
+}
+
+.freexf-hometype span {
+  margin-top: 5px;
+  display: inline-block;
+}
+
+.freexf-hometype .yinyu {
+  background-image: url('../img/home/d英语.png');
+}
+
+.freexf-hometype .zhongxiaoxue {
+  background-image: url('../img/home/d中小学.png');
+}
+
+.freexf-hometype .duoyuzhong {
+  background-image: url('../img/home/d多语种.png');
+}
+
+.freexf-hometype .kuaiji {
+  background-image: url('../img/home/d会计.png');
+}
+
+.freexf-hometype .kaoyan {
+  background-image: url('../img/home/d考研.png');
+}
+
+.freexf-hometype .xinqu {
+  background-image: url('../img/home/d兴趣.png');
+}
+
+.freexf-jinpin, .freexf-home-table {
+  background-color: #fff;
+  padding: 15px 12px;
+  margin-top: 5px;
+  font-size: 10rem;
+}
+
+.freexf-jinpin .row, .freexf-jinpin .col {
+  padding: 0;
+  overflow: hidden;
+}
+
+.freexf-title {
+  font-size: 13rem;
+  margin-bottom: 15px;
+  height: 13px;
+  line-height: 13px;
+}
+
+.freexf-title:before {
+  content: '';
+  display: inline-block;
+  vertical-align: text-top;
+  background: #1ab554;
+  width: 3px;
+  height: 100%;
+  border-radius: 5px;
+  margin-right: 6px;
+}
+
+.freexf-jinpin > .row:last-child {
+  height: 80px;
+  margin-top: 10px;
+}
+
+.freexf-jinpin .lcol {
+  display: inline-block;
+  height: 200px;
+}
+
+.freexf-jinpin .rcol {
+  display: inline-block;
+  height: 97px;
+}
+
+.freexf-jinpin .rcol:last-child {
+  margin-top: 5px;
+}
+
+.freexf-jinpin .jinpin-bottom {
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.freexf-jinpin img, .freexf-home-table img {
+  height: 100%;
+  width: 100%;
+  vertical-align: bottom;
+}
+
+.freexf-home-table {
+
+}
+
+.freexf-home-table .freexf-col {
+  float: left;
+  width: 50%;
+}
+
+.freexf-home-table .freexf-col:nth-child(n+3) {
+  margin-top: 15px;
+}
+
+.freexf-home-table .freexf-col:nth-child(even) {
+  padding-left: 5px;
+}
+
+.freexf-home-table .freexf-col > div:first-child {
+  height: 97px;
+  overflow: hidden;
+}
+
+.freexf-home-table .freexf-col > div:first-child + div {
+  margin-top: 7px;
+}
+
+.freexf-home-table .freexf-col .ti {
+  font-size: 10rem;
+  color: #323232;
+  margin-bottom: 5px;
+}
+
+.freexf-home-table .freexf-col .l30 {
+  margin-left: 30px;
+}
+
+.freexf-home-table .freexf-col .xufen {
+  font-size: 14rem;
+  color: #ea4e00;
+  margin-right: 5px;
+}
+
+.freexf-home-table .freexf-col .keshi {
+  color: #323232;
+}
+
+.freexf-home-table .freexf-col em {
+  color: #969696;
+}
+
+.anchor-section-yingyu .yingyu,
+.anchor-section-zhongxiaoxue .zhongxiaoxue,
+.anchor-section-duoyuzhong .duoyuzhong,
+.anchor-section-kuaiji .kuaiji,
+.anchor-section-xinqu .xinqu {
+  background-color: #969696;
+}

@@ -1,0 +1,9 @@
+{
+  "name": "mobile_freexf",
+  "private": "true",
+  "dependencies": {
+    "requirejs": "2.1.x",
+    "oclazyload": "^1.0.9",
+    "angular-resource": "^1.5.5"
+  }
+}

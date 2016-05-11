@@ -1,0 +1,127 @@
+<ion-view view-title="首页" my-scroll>
+  <ion-nav-title>
+    <img class="freexf-logo" src="img/home/elogo.png">
+  </ion-nav-title>
+  <ion-nav-buttons side="right">
+    <button menu-toggle="right" class="button button-clear">搜索</button>
+  </ion-nav-buttons>
+  <div id="anchor-tab" class="bar bar-subheader freexf-bar-nav">
+    <ion-scroll delegate-handle="anchor" direction="x">
+      <div class="row">
+        <a anchor-tab="anchor-section-yingyu" delegate="myDelegate" animate="true" class="col col-33 yingyu">英语</a>
+        <a anchor-tab="anchor-section-zhongxiaoxue" delegate="myDelegate" animate="true" class="col col-33 zhongxiaoxue">中小学</a>
+        <a anchor-tab="anchor-section-duoyuzhong" delegate="myDelegate" animate="true" class="col col-33 duoyuzhong">多语种</a>
+        <a anchor-tab="anchor-section-kuaiji" delegate="myDelegate" animate="true" class="col col-33 kuaiji">会计职业</a>
+        <a anchor-tab="anchor-section-kaoyan" delegate="myDelegate" animate="true" class="col col-33 kaoyan">考研</a>
+      </div>
+    </ion-scroll>
+  </div>
+
+  <ion-content class="has-header" delegate-handle="myDelegate" style="top: 74px;bottom: 50px;">
+    <ion-slide-box on-slide-changed="slideHasChanged($index)">
+      <ion-slide>
+        <img src="img/home/g活动.png" alt=""></ion-slide>
+      <ion-slide>
+        <img src="img/home/g活动.png" alt=""></ion-slide>
+      <ion-slide>
+        <img src="img/home/g活动.png" alt=""></ion-slide>
+    </ion-slide-box>
+    <section class="freexf-hometype">
+      <div class="row row-center">
+        <a href="" class="col col-33">
+          <i class="yinyu"></i>
+          <span>英语</span>
+        </a>
+        <a href="" class="col col-33">
+          <i class="zhongxiaoxue"></i>
+          <span>中小学</span>
+        </a>
+        <a href="" class="col col-33">
+          <i class="duoyuzhong"></i>
+          <span>多语种</span>
+        </a>
+      </div>
+      <div class="row row-center">
+        <a href="" class="col col-33">
+          <i class="kuaiji"></i>
+          <span>会计职业</span>
+        </a>
+        <a href="" class="col col-33">
+          <i class="kaoyan"></i>
+          <span>考研</span>
+        </a>
+        <a href="" class="col col-33">
+          <i class="xinqu"></i>
+          <span>兴趣</span>
+        </a>
+      </div>
+    </section>
+    <section class="freexf-jinpin">
+      <h2 class="freexf-title">精品课程</h2>
+      <div class="row">
+        <div class="col col-50">
+          <a href="" class="lcol">
+            <img src="img/home/f活动.png" alt="">
+          </a>
+        </div>
+
+        <div class="col col-50 freexf-padding-left-5">
+          <a href="" class="rcol">
+            <img src="img/home/g活动.png" alt="">
+          </a>
+          <a href="" class="rcol">
+            <img src="img/home/g活动.png" alt="">
+          </a>
+        </div>
+      </div>
+      <a href="" class="jinpin-bottom">
+        <img src="img/home/g活动.png" alt="">
+      </a>
+    </section>
+    <section id="anchor-section-yingyu" class="freexf-home-table">
+      <h2 class="freexf-title">英语</h2>
+      <div class="clearfix">
+        <div class="freexf-col" ng-repeat="o in obj">
+          <div>
+            <img src="img/home/g活动.png">
+          </div>
+          <div>
+            <p class="ti">软件测评师</p>
+            <span><strong class="xufen">1950</strong><em>学分</em></span>
+            <span class="l30"><em>课时数：</em><strong class="keshi">45</strong></span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="anchor-section-zhongxiaoxue" class="freexf-home-table">
+      <h2 class="freexf-title">中小学</h2>
+      <div class="clearfix">
+        <div class="freexf-col" ng-repeat="o in obj">
+          <div>
+            <img src="img/home/g活动.png">
+          </div>
+          <div>
+            <p class="ti">软件测评师</p>
+            <span><strong class="xufen">1950</strong><em>学分</em></span>
+            <span class="l30"><em>课时数：</em><strong class="keshi">45</strong></span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="anchor-section-duoyuzhong" class="freexf-home-table">
+      <h2 class="freexf-title">多语种</h2>
+      <div class="clearfix">
+        <div class="freexf-col" ng-repeat="o in obj">
+          <div>
+            <img src="img/home/g活动.png">
+          </div>
+          <div>
+            <p class="ti">软件测评师</p>
+            <span><strong class="xufen">1950</strong><em>学分</em></span>
+            <span class="l30"><em>课时数：</em><strong class="keshi">45</strong></span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </ion-content>
+</ion-view>

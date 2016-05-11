@@ -1,0 +1,13 @@
+/* Empty. Add your own CSS if you like */
+
+html {
+  font-size: 1px
+}
+
+.bg-img {
+  background-size: 300px 300px;
+}
+
+.bg-img.demo {
+  background-image: url(../img/publicbg/demo.png)
+}

@@ -1,0 +1,29 @@
+{
+  "name": "mobile_freexf",
+  "version": "1.1.1",
+  "description": "mobile_freexf",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-cache": "^0.4.4",
+    "gulp-changed": "^1.3.0",
+    "gulp-clean": "^0.3.2",
+    "gulp-cli": "^1.2.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^3.2.2",
+    "gulp-css-spriter": "^0.3.3",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-jshint": "^2.0.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-rev": "^7.0.0",
+    "gulp-sourcemaps": "^2.0.0-alpha",
+    "gulp-uglify": "^1.5.3",
+    "gulp-webserver": "^0.9.1",
+    "gulp.spritesmith": "^6.2.1",
+    "imagemin-pngquant": "^4.2.2",
+    "jshint": "^2.9.2",
+    "jshint-stylish": "^2.1.0"
+  }
+}
