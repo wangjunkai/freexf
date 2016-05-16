@@ -1,4 +1,5 @@
-<ion-view view-title="首页" my-scroll>
+<ion-view view-title="首页" scroll-watch-tab>
+
   <ion-nav-title>
     <img class="freexf-logo" src="img/home/elogo.png">
   </ion-nav-title>
@@ -6,18 +7,20 @@
     <button menu-toggle="right" class="button button-clear">搜索</button>
   </ion-nav-buttons>
   <div id="anchor-tab" class="bar bar-subheader freexf-bar-nav">
-    <ion-scroll delegate-handle="anchor" direction="x">
+    <div id="ion-scroll" delegate-handle="anchor" scrollbar-x="false" scrollbar-y="false" direction="x">
       <div class="row">
-        <a anchor-tab="anchor-section-yingyu" delegate="myDelegate" animate="true" class="col col-33 yingyu">英语</a>
-        <a anchor-tab="anchor-section-zhongxiaoxue" delegate="myDelegate" animate="true" class="col col-33 zhongxiaoxue">中小学</a>
-        <a anchor-tab="anchor-section-duoyuzhong" delegate="myDelegate" animate="true" class="col col-33 duoyuzhong">多语种</a>
-        <a anchor-tab="anchor-section-kuaiji" delegate="myDelegate" animate="true" class="col col-33 kuaiji">会计职业</a>
-        <a anchor-tab="anchor-section-kaoyan" delegate="myDelegate" animate="true" class="col col-33 kaoyan">考研</a>
+        <a anchor-tab="anchor-section-yingyu" delegate="myDelegate" animate="true" class="col yingyu">英语</a>
+        <a anchor-tab="anchor-section-zhongxiaoxue" delegate="myDelegate" animate="true"
+           class="col zhongxiaoxue">中小学</a>
+        <a anchor-tab="anchor-section-duoyuzhong" delegate="myDelegate" animate="true" class="col duoyuzhong">多语种</a>
+        <a anchor-tab="anchor-section-kuaiji" delegate="myDelegate" animate="true" class="col kuaiji">会计职业</a>
+        <a anchor-tab="anchor-section-kaoyan" delegate="myDelegate" animate="true" class="col kaoyan">考研</a>
+        <a anchor-tab="anchor-section-xingqu" delegate="myDelegate" animate="true" class="col xingqu">兴趣</a>
       </div>
-    </ion-scroll>
+    </div>
   </div>
 
-  <ion-content class="has-header" delegate-handle="myDelegate" style="top: 74px;bottom: 50px;">
+  <ion-content class="has-header has-footer freexf-bg-gray" delegate-handle="myDelegate">
     <ion-slide-box on-slide-changed="slideHasChanged($index)">
       <ion-slide>
         <img src="img/home/g活动.png" alt=""></ion-slide>
@@ -57,7 +60,7 @@
       </div>
     </section>
     <section class="freexf-jinpin">
-      <h2 class="freexf-title">精品课程</h2>
+      <h2 class="freexf-title">精品课程<a href="#/course" class="icon has-more"></a></h2>
       <div class="row">
         <div class="col col-50">
           <a href="" class="lcol">
@@ -79,7 +82,7 @@
       </a>
     </section>
     <section id="anchor-section-yingyu" class="freexf-home-table">
-      <h2 class="freexf-title">英语</h2>
+      <h2 class="freexf-title">英语<a href="#/course" class="icon has-more"></a></h2>
       <div class="clearfix">
         <div class="freexf-col" ng-repeat="o in obj">
           <div>

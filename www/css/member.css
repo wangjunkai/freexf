@@ -1,0 +1,133 @@
+.already .MyAcc-top .MyAcc-icon{
+	margin-top: -10px;
+	background-position: -174px 0px;
+}
+.already .MyAcc-top p {
+	margin-top:5px;
+}
+.already .MyAcc-top{	
+	width:100%;
+	min-width:320px;
+	background-image: url(/mobile/www/img/user/user-bg.png);
+	height: 200px;
+	background-size: 375px 199px;
+	position: relative;
+}
+.already .MyAcc-title{
+	position:absolute;
+	height: 32.5px;
+	bottom: 0px;
+	width: 100%;
+	background-color:rgba(0,0,0,0.4);
+	box-shadow:none;
+	border-top:none;
+}
+.already .MyAcc-top .name{
+	font-size: 15rem;
+}
+.already .MyAcc-top .number{
+	font-size: 9rem;
+	border: 1px solid #fff;
+	border-radius: 5px;
+	width: 80px;
+    margin: 0 auto;
+}
+.already .MyAcc-top .edit{
+	width:11px;
+	height: 12px;
+	background-position: -26px -58px;
+	display: inline-block;
+    margin-left: 10px;
+}
+.already .MyAcc-content{
+	background-color: #fff;
+    display: table;
+    width:100%;
+    min-width: 320px;
+}
+.MyAcc-content .mynav-group{
+	width:67.4667%;
+	margin: 0 auto;
+	padding-top: 15px;
+	display: table-cell;
+}
+.MyAcc-content .mynav-group .nav{
+	width:33.33%;
+	float: left;
+	text-align: center;
+}
+.mynav-group .nav-bar{
+	width:45px;
+	height: 45px;
+	margin: 0 auto;
+	
+}
+.mynav-group .nav-bar.myCourse{
+	background-position:-50.33px -56.67px;
+}
+.mynav-group .nav-bar.myOrder{
+	background-position:-180px -56.67px;
+}
+.mynav-group .nav-bar.myCollection{
+	background-position:-236px -56.67px;
+}
+.mynav-group .nav p{
+	margin-top:10px;
+	margin-bottom: 12.5px;
+	font-size: 12rem;
+	color:#969696;
+}
+.course-block{
+	clear: both;
+	background: #fff;
+	margin: 15px auto ;
+    padding-left: 12px;
+}
+
+.course-block h2{
+	font-size: 13rem;
+	padding-top: 15px;
+}
+.course-block h2:before{
+	content: '';
+	width:2.5px;
+	height: 13px;
+	border:2.5px solid #1AB554;
+	float: left;
+	border-radius: 2px;
+	margin-right: 7px;
+}
+.course-block .progress .progress-bar{
+	width:100%;
+	line-height: 10px;
+}
+.col-48 .content p{
+	font-size: 8rem;
+	color: #969696;	
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+.col-48 .content p>font,.recommend .col-48 .content p{
+	font-size: 10rem;
+	color:#323232;
+}
+.course-block .progress .progress-bar .full{
+	width:60.8%;
+	margin-top: 0px; 
+}
+
+.course-block .progress{
+	border: none;
+}
+
+.row.course,.row.course .col:first-child{padding-left:0px;}
+.col-48{
+	 -webkit-box-flex: 0;
+    -webkit-flex: 0 0 48%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 48%;
+    -ms-flex: 0 0 48%;
+    flex: 0 0 48%;
+    max-width: 48%;
+}

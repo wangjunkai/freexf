@@ -32,21 +32,14 @@ define([
       maxWidth: 200,
       showDelay: 0
     })
-    .controller('headername', function ($scope, $rootScope) {
-      $rootScope.hname = '学费全免网';
-      $rootScope.$on('$stateChangeSuccess',
-        function (event, toState, toParams, fromState, fromParams) {
-          $rootScope.leftbutton = $('#headerButtonc').attr('lb') == 'true';
-          $rootScope.rightbutton = $('#headerButtonc').attr('rb') == 'true';
-
-        })
-    })
-    .config(function ($stateProvider, $locationProvider,$urlRouterProvider, $ionicConfigProvider) {
+    .config(function ($stateProvider, $locationProvider, $urlRouterProvider, $ionicConfigProvider) {
 
       $locationProvider.html5Mode(false);
+      //修改默认后退键样式
+      $ionicConfigProvider.backButton.text('').previousTitleText(false).icon('freexf-goback');
       $ionicConfigProvider.templates.maxPrefetch(0);
       //修改默认tabs位置 ios默认（top）,andriod默认为（bottom）
-      $ionicConfigProvider.tabs.position('bottom');
+      $ionicConfigProvider.tabs.style('standard').position('bottom');
       //修改title位置 ios默认（center）,andriod默认为（left）
       $ionicConfigProvider.navBar.alignTitle('center');
 
@@ -70,6 +63,129 @@ define([
           resolve: {
             loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
               return $ocLazyLoad.load(['modules/user/register.js']);
+            }]
+          }
+
+        })
+        .state('modifypassword', {
+          url: '/modifypassword',
+          templateUrl: 'modules/user/modifypassword.html',
+          controller: 'modifypassword_ctrl',
+          resolve: {
+            loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+              return $ocLazyLoad.load(['modules/user/modifypassword.js']);
+            }]
+          }
+        })
+        .state('forgetpassword', {
+          url: '/forgetpassword',
+          templateUrl: 'modules/user/forgetpassword.html',
+          controller: 'forgetpassword_ctrl',
+          resolve: {
+            loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+              return $ocLazyLoad.load(['modules/user/forgetpassword.js']);
+            }]
+          }
+        })
+        .state('pay', {
+          url: '/pay',
+          templateUrl: 'modules/pay/pay.html',
+          controller: 'pay_ctrl',
+          resolve: {
+            loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+              return $ocLazyLoad.load(['modules/pay/pay.js']);
+            }]
+          }
+        })
+        .state('paysuccess', {
+          url: '/paysuccess',
+          templateUrl: 'modules/pay/paysuccess.html',
+          controller: 'paysuccess_ctrl',
+          resolve: {
+            loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+              return $ocLazyLoad.load(['modules/pay/paysuccess.js']);
+            }]
+          }
+        })
+        .state('payfail', {
+          url: '/payfail',
+          templateUrl: 'modules/pay/payfail.html',
+          controller: 'payfail_ctrl',
+          resolve: {
+            loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+              return $ocLazyLoad.load(['modules/pay/payfail.js']);
+            }]
+          }
+        })
+        .state('myaccount', {
+          url: '/myaccount',
+          templateUrl: 'modules/user/myaccount.html',
+          controller: 'myaccount_ctrl',
+          resolve: {
+            loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+              return $ocLazyLoad.load(['modules/user/myaccount.js']);
+            }]
+          }
+        })
+
+        .state('myorder', {
+          url: '/myorder',
+          templateUrl: 'modules/user/myorder.html',
+          controller: 'myorder_ctrl',
+          resolve: {
+            loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+              return $ocLazyLoad.load(['modules/user/myorder.js']);
+            }]
+          }
+        })
+        .state('mycourse', {
+          url: '/mycourse',
+          templateUrl: 'modules/user/mycourse.html',
+          controller: 'mycourse_ctrl',
+          resolve: {
+            loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+              return $ocLazyLoad.load(['modules/user/mycourse.js']);
+  				}]
+          }
+        })
+        .state('courseCenter', {
+          url: '/courseCenter',
+          templateUrl: 'modules/course/courseCenter.html',
+          controller: 'courseCenter_ctrl',
+          resolve: {
+            loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+              return $ocLazyLoad.load(['modules/course/courseCenter.js']);
+            }]
+          }
+        })
+
+        .state('courselist', {
+          url: '/courselist',
+          templateUrl: 'modules/course/courselist.html',
+          controller: 'courselist_ctrl',
+          resolve: {
+            loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+              return $ocLazyLoad.load(['modules/course/courselist.js']);
+            }]
+          }
+        })
+				.state('coursePlate', {
+          url: '/coursePlate',
+          templateUrl: 'modules/course/coursePlate.html',
+          controller: 'coursePlate_ctrl',
+          resolve: {
+            loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+              return $ocLazyLoad.load(['modules/course/coursePlate.js']);
+            }]
+          }
+        })
+				.state('courseSearch', {
+          url: '/courseSearch',
+          templateUrl: 'modules/course/courseSearch.html',
+          controller: 'courseSearch_ctrl',
+          resolve: {
+            loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+              return $ocLazyLoad.load(['modules/course/courseSearch.js']);
             }]
           }
         })
@@ -121,28 +237,16 @@ define([
           url: '/member',
           views: {
             'conent': {
-              templateUrl: 'modules/member/member.html',
+              templateUrl: 'modules/student/member.html',
               controller: 'member_ctrl'
             }
           },
           resolve: {
             loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
-              return $ocLazyLoad.load('modules/member/member.js');
+              return $ocLazyLoad.load('modules/student/member.js');
             }]
           }
         })
     });
+   
 });
-
-////路由html，js通用模块
-//var urlJs=function(asurl,jsurl){
-//    if(typeof (jsurl)=='undefined'){
-//        var thouzhui='.'+asurl.split('.')[asurl.split('.').length-1];
-//        var thejsurl=asurl.split(thouzhui)[0];
-//    }else {
-//        var thejsurl=jsurl
-//    }
-//    require([thejsurl])
-//    return asurl;
-//};
-

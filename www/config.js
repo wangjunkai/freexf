@@ -32,8 +32,6 @@ require([
       //启动angular模块
       angular.bootstrap(document, ['freexf']);
     });
-
-
   }
 );
 function testViewport() {
@@ -48,14 +46,26 @@ function testViewport() {
   }
   var docWviewport, tvp;
   if (docW <= 320) {
-    docWviewport = (docW / 320)
+    docWviewport = (docW / 320);
     tvp = 'width=' + devicewidth + ',initial-scale=' + docWviewport;
     mvp.setAttribute('content', tvp);
   } else if (docW > 414) {
-    docWviewport = (docW / 414)
-    devicewidth = '414'
+    docWviewport = (docW / 414);
+    devicewidth = '414';
     tvp = 'width=' + devicewidth;
     mvp.setAttribute('content', tvp);
   }
   //
+}
+function hideTop(win) {
+  var scrollTop = 70;
+  var bodycheck = setInterval(function () {
+    var content = $('ion-content div.scroll');
+    if (content.length > 0) {
+      var newtop = content.position().top;
+      var y = newtop >= scrollTop ? 0 : 70;
+      scrollTop = newtop;
+      win.scrollTo(0, y);
+    }
+  }, 500);
 }

@@ -1,0 +1,25 @@
+<ion-view view-title="多种语言">
+
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="freexf-back-left button-clear button-dark"></button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button menu-toggle="right" class="button button-clear freexf-icon-search">
+    	<i class="icon ion-ios-search"></i>
+    </button>
+  </ion-nav-buttons>
+  <ion-content ng-controller="coursePlate_ctrl">
+  		<div class="freexf-classmodule-header-nav">
+  			<div id="courseNav">韩语</div>
+  			<div id="">综合</div>
+  			<div>最近</div>
+  			<div>学分</div>
+  		</div>
+  			<!--<p><span id="courseNav">韩语</span><span>综合</span><span>最近</span><span>学分</span></p>-->
+  		<!--课程列表-->
+  		<div class="list freexf-classmodule" ui-view="classmodule">
+  		</div>
+  </ion-content>
+
+</ion-view>
+

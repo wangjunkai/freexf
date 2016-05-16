@@ -1,5 +1,144 @@
-<ion-view view-title="我的">
-  <ion-content>
-    <img style="width: 100%;" ng-src="img/m/yanshi/img/wode.jpg" alt="我的">
+<ion-view view-title="我的账户">
+
+  <ion-nav-buttons side="right">
+    <button menu-toggle="right" class="button button-clear search"><i class="icon freexf-search"></i></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header has-footer already">
+    <div class="MyAcc-top">
+      <div class="MyAcc-setting"></div>
+      <div class="MyAcc-icon"></div>
+      <p><span class="name">freexf</span><span class="edit"></span></p>
+      <p class="number">学号<i>160515001</i></p>
+      <div class="MyAcc-title">
+        <span>已获得<i>100</i></span>
+        <span>待获得<i>20</i></span>
+      </div>
+    </div>
+    <div class="MyAcc-content">
+      <div class="mynav-group">
+        <div class="nav">
+          <div class="nav-bar myCourse"></div>
+          <p>我的课程</p>
+        </div>
+        <div class="nav">
+          <div class="nav-bar myOrder"></div>
+          <p>我的订单</p>
+        </div>
+        <div class="nav">
+          <div class="nav-bar myCollection"></div>
+          <p>我的收藏</p>
+        </div>
+      </div>
+    </div>
+    <!--学习进度-->
+    <div class="course-block">
+      <h2>学习进度</h2>
+      <ion-scroll direction='x' scrollbar-x='false'>
+        <div class="row course">
+          <div class="col col-48">
+            <img src="/mobile/www/img/user/order-eg.png" width="100%">
+            <div class="content">
+              <p>上次观看至
+                <font>第六章 突破的关键</font>
+              </p>
+              <div class="progress">
+                <div class="progress-bar">
+                  <div class="full">
+                    <span class="finish done"></span>
+                  </div>
+                  <span>完成度<i>50%</i></span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col col-48">
+            <img src="/mobile/www/img/user/order-eg.png" width="100%">
+            <div class="content">
+              <p>上次观看至
+                <font>第六章 突破的关键</font>
+              </p>
+              <div class="progress">
+                <div class="progress-bar">
+                  <div class="full">
+                    <span class="finish done"></span>
+                  </div>
+                  <span>完成度<i>50%</i></span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col col-48">
+            <img src="/mobile/www/img/user/order-eg.png" width="100%">
+            <div class="content">
+              <p>上次观看至
+                <font>第六章 突破的关键</font>
+              </p>
+              <div class="progress">
+                <div class="progress-bar">
+                  <div class="full">
+                    <span class="finish done"></span>
+                  </div>
+                  <span>完成度<i>50%</i></span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col col-48">
+            <img src="/mobile/www/img/user/order-eg.png" width="100%">
+            <div class="content">
+              <p>上次观看至
+                <font>第六章 突破的关键</font>
+              </p>
+              <div class="progress">
+                <div class="progress-bar">
+                  <div class="full">
+                    <span class="finish done"></span>
+                  </div>
+                  <span>完成度<i>50%</i></span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </ion-scroll>
+    </div>
+    <!--课程推荐-->
+    <div class="course-block recommend">
+      <h2>课程推荐</h2>
+      <ion-scroll direction='x' scrollbar-x='false'>
+        <div class="row course">
+          <div class="col col-48">
+            <img src="/mobile/www/img/user/order-eg.png" width="100%">
+            <div class="content">
+              <p>第六章 突破的关键</p>
+            </div>
+          </div>
+          <div class="col col-48">
+            <img src="/mobile/www/img/user/order-eg.png" width="100%">
+            <div class="content">
+              <p>第六章 突破的关键</p>
+            </div>
+          </div>
+          <div class="col col-48">
+            <img src="/mobile/www/img/user/order-eg.png" width="100%">
+            <div class="content">
+              <p>第六章 突破的关键</p>
+            </div>
+          </div>
+          <div class="col col-48">
+            <img src="/mobile/www/img/user/order-eg.png" width="100%">
+            <div class="content">
+              <p>第六章 突破的关键</p>
+            </div>
+          </div>
+
+        </div>
+      </ion-scroll>
+    </div>
   </ion-content>
 </ion-view>

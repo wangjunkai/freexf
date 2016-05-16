@@ -1,0 +1,38 @@
+<ion-view view-title="搜索">
+
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="freexf-back-left button-clear button-dark"></button>
+  </ion-nav-buttons>
+  <ion-nav-title class="freexf-search">
+  	<div>
+  		<input type="text" placeholder="搜索课程" id="searchVal"/>
+    	<button class="freexf-close" onclick="document.querySelector('#searchVal').value='';"></button>
+  	</div>    
+  </ion-nav-title>
+  <ion-nav-buttons side="right">
+    <button menu-toggle="right" class="button button-clear" style="color:#1AB554;font-size: 15rem;">
+    	搜索
+    </button>
+  </ion-nav-buttons>
+  <ion-content ng-controller="courseSearch_ctrl">
+  		<div class="freexf-nocontent">
+  			<img src="img/course/nocontent.png" />
+  			<p>暂时没有搜索到相关课程</p>
+  		</div>
+  		<div class="freexf-classmodule-header-nav">
+  			<h2>热门搜索</h2>
+  			<ul>
+  				<li><a href="#">英语</a></li>
+  				<li><a href="#">职业会计</a></li>
+  				<li><a href="#">高数</a></li>
+  				<li><a href="#">四年级</a></li>
+  				<li><a href="#">韩语</a></li>
+  			</ul>
+  		</div>
+  		<!--课程列表-->
+  		<div class="list freexf-classmodule">
+  		</div>
+  </ion-content>
+
+</ion-view>
+

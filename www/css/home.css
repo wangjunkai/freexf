@@ -1,5 +1,5 @@
 
-ion-content {
+.freexf-bg-gray {
   background-color: #EEE;
 }
 
@@ -21,8 +21,10 @@ ion-content {
 
 .freexf-bar-nav {
   height: 30px;
+  top: -30px;
   padding: 0;
   text-align: center;
+  transition: top 0.25s ease;
 }
 
 .freexf-bar-nav .row {
@@ -30,7 +32,8 @@ ion-content {
 }
 
 .freexf-bar-nav .row > a {
-  border-right: 1px solid #D4D4D4;
+  border-right: 1px solid #e8e8e8;
+  font-size: 12px;
 }
 
 .freexf-bar-nav .row > a.active {
@@ -198,13 +201,22 @@ ion-content {
 
 .freexf-title:before {
   content: '';
-  display: inline-block;
-  vertical-align: text-top;
-  background: #1ab554;
+  height: 13px;
   width: 3px;
+  background-color: #1AB554;
+  float: left;
+  border-radius: 2px;
+  margin-right: 7px;
+}
+
+.freexf-title > .has-more {
+  background-image: url('../img/home/more.png');
+  background-repeat: no-repeat;
+  float: right;
+  width: 8px;
   height: 100%;
-  border-radius: 5px;
-  margin-right: 6px;
+  background-size: cover;
+  margin-left: 5px;
 }
 
 .freexf-jinpin > .row:last-child {
@@ -292,5 +304,50 @@ ion-content {
 .anchor-section-duoyuzhong .duoyuzhong,
 .anchor-section-kuaiji .kuaiji,
 .anchor-section-xinqu .xinqu {
-  background-color: #969696;
+  color: #1ab554;
+}
+
+ion-tabs.freexf-tabs-color-balanced .tab-item.tab-item-active,
+ion-tabs.freexf-tabs-color-balanced .tab-item.active,
+ion-tabs.freexf-tabs-color-balanced .tab-item.activated {
+  color: #1ab554;
+}
+
+.freexf-icon-home-outline,
+.freexf-icon-home,
+.freexf-icon-xuanke-outline,
+.freexf-icon-xuanke,
+.freexf-icon-user-outline,
+.freexf-icon-user {
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 26px !important;
+  height: 26px !important;
+  padding-bottom: 4px !important;
+  margin-top: 2px !important;
+  box-sizing: content-box;
+}
+
+.freexf-icon-home-outline {
+  background-image: url('../img/home/icon-home-outline.png');
+}
+
+.freexf-icon-home {
+  background-image: url('../img/home/icon-home.png');
+}
+
+.freexf-icon-xuanke-outline {
+  background-image: url('../img/home/icon-xuanke-outline.png');
+}
+
+.freexf-icon-xuanke {
+  background-image: url('../img/home/icon-xuanke.png');
+}
+
+.freexf-icon-user-outline {
+  background-image: url('../img/home/icon-user-outline.png');
+}
+
+.freexf-icon-user {
+  background-image: url('../img/home/icon-user.png');
 }
