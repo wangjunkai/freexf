@@ -8,6 +8,10 @@ angular.module('freexf')
 //  require(['modules/index/index_ctrl'], function (shouye_ctrl) {
 //    $injector.invoke(shouye_ctrl, this, {'$scope': $scope});
 //  });
-
+		
+		$scope.languageclass = false;
+		$scope.languageClassShow=function(){
+			$scope.languageclass=!$scope.languageclass;
+		}
   })
 

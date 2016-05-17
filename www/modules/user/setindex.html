@@ -1,0 +1,37 @@
+<ion-view view-title="设置">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="ion-chevron-left button-clear button-dark"></button>
+  </ion-nav-buttons>
+  <ion-content class="set">
+    <div class="list" ng-show="setindex">
+      <ul class="setlist">
+        <li><a href="#/aboutus">关于学费全免网</a></li>
+        <li><a href="" ng-click="showcontact()">联系我们</a></li>
+        <li><a href="" ng-click="showideafeedback()">意见反馈</a></li>
+        <li><a href="#/commonfaq">常见FAQ</a></li>
+      </ul>
+      <div class="changepassword">修改密码</div>
+      <div class="quit">
+        <button class="button quitbtn button-block">退出登录</button>
+      </div>
+    </div>
+    <div class="freexf-contact">
+      <div class="phonecontent">
+        <div class="phone">400-996-7835</div>
+        <div class="btn">
+          <a class="cancel" href="" ng-click="showcontact()">取消</a>
+          <a class="dial" ng-click="showcontact()" href="tel:0755-10086">拨打</a>
+        </div>
+      </div>
+    </div>
+    <div class="ideafeedback" ng-show="ideafeedback">
+      <form action="" class="setform">
+        <label for="describe">意见描述</label>
+        <textarea type="text" class="describe" id="describe"></textarea>
+        <label for="phonenumber">手机号码</label>
+        <input type="text" class="phonenumber" id="phonenumber">
+        <button class="button button-block" ng-click="hideideafeedback()">提交</button>
+      </form>
+    </div>
+  </ion-content>
+</ion-view>

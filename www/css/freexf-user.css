@@ -16,7 +16,7 @@
 .CodeButton>a{
 	color:#1AB554;
 	font-size:10rem;
-	
+
 }
 .item-input input.inputCode {
 	width:72%;
@@ -24,14 +24,14 @@
 }
 .register .button-balanced{
 	background-color:#1ab554;
-	
+
 }
 .freexf-checkbox .agreement{
 	color:#1ab554;
 }
 .modifypassword .icon.ion-ios-telephone{
 	margin-right: 15px;
-	float: right;	
+	float: right;
 }
 .modifypassword .icon.ion-ios-telephone:before{
 	content: "";
@@ -45,18 +45,18 @@
 }
 .modifypassword .fixNumber{
 	display: inline-block;
-	width:100%;	
+	width:100%;
 }
 .modifypassword .has-input,.modifypassword .fixNumber{
 	color:#aaa;
 }
 .modifypassword .fixNumber{
 	font-weight: normal;
-	font-size:14rem;	
+	font-size:14rem;
 }
 .forgetpassword .input-label,.modifypassword .input-label,.register .input-label{
 	font-size: 14rem;
-	
+
 }
 input::-moz-placeholder, { color:#ddd; }
 input::-webkit-input-placeholder { color:#ddd; }
@@ -109,9 +109,9 @@ input:-moz-placeholder { color:#ddd; }
 	height: 30px;
 	border-top:1px solid #46aa6a;
 	background-color: #127638;
-	-webkit-box-shadow:0 0 1px #17a14b;  
-	-moz-box-shadow:0 0 1px #17a14b;  
-	box-shadow:0 0 1px #17a14b;  
+	-webkit-box-shadow:0 0 1px #17a14b;
+	-moz-box-shadow:0 0 1px #17a14b;
+	box-shadow:0 0 1px #17a14b;
 }
 .MyAcc-title span{
 	display: block;
@@ -126,7 +126,7 @@ input:-moz-placeholder { color:#ddd; }
 }
 
 .myaccount{
-	background-color: #eee;	
+	background-color: #eee;
 }
 .MyAcc-content .TipLogo.fail{
 	margin-left:38.4%;
@@ -146,7 +146,7 @@ input:-moz-placeholder { color:#ddd; }
 	height: 18px;
 	background-position:-13px -20px; ;
 	float: left;
-	
+
 }
 .myorder .OrderMessage{
 	height: 22.5px;
@@ -158,7 +158,7 @@ input:-moz-placeholder { color:#ddd; }
 	text-align: center;
 	float: left;
 	color:#969696;
-	
+
 }
 
 .OrderMessage .state{
@@ -166,13 +166,13 @@ input:-moz-placeholder { color:#ddd; }
 }
 .orderList .OrderDetail{
 	padding:0px 2%;
-	
+
 }
 .order.number:after{
 	content: '';
 	border-right: 1px solid #d3d3d3;
 	height:9px ;
-	margin:6.5px 3px auto 3px; 
+	margin:6.5px 3px auto 3px;
 	float: right;
 	display: block;
 }
@@ -188,7 +188,7 @@ input:-moz-placeholder { color:#ddd; }
 	float: left;
 }
 .courseDetail-words {
-	
+
 	width: 54%;
 	font-size:10rem;
 	margin-left:2.3%;
@@ -201,22 +201,22 @@ input:-moz-placeholder { color:#ddd; }
 	text-overflow:ellipsis;
 	white-space: nowrap;
 }
-.myorder .orderList,.mycourse .orderList{
+.myorder .orderList,.mycourse .orderList,.myCollection .orderList{
 	display: table;
 	width:100%;
 	margin-bottom: 5px;
 	background-color: #fff;
-	-moz-box-shadow:0 1px 1px rgba(0,0,0,0.2); 
-	-webkit-box-shadow:0 1px 1px rgba(0,0,0,0.2); 
-	box-shadow:0 1px 1px rgba(0,0,0,0.2); 
+	-moz-box-shadow:0 1px 1px rgba(0,0,0,0.2);
+	-webkit-box-shadow:0 1px 1px rgba(0,0,0,0.2);
+	box-shadow:0 1px 1px rgba(0,0,0,0.2);
 }
-.myorder .btnGrounp{
+.myorder .btnGrounp,.myCollection .btnGrounp{
 	height: 37.5px;
 	margin:5.5px;
 	float: right;
 }
-.myorder .btnGrounp .button{
-	height: 36px;
+.myorder .btnGrounp .button,.myCollection .btnGrounp .button{
+	height: 26px;
 	width:70px;
 	border:1px solid #969696;
 	border-radius: 0px;
@@ -226,13 +226,9 @@ input:-moz-placeholder { color:#ddd; }
 	color:#969696;
 	min-height: 36px;
 }
-.myorder .btnGrounp .button.button-assertive{
+.myorder .btnGrounp .button.button-assertive,.myCollection .btnGrounp .button.button-assertive{
 	border:1px solid #EA4C00;
 	color: #fff;
-}
-ion-content{
-	background-color: #eee;;
-	
 }
 .courseDetail-words .courseList{
 	color:#969696;
@@ -259,7 +255,7 @@ ion-content{
 	min-height: 44px;
 }
 .mycourse .btnGrounp .button.button-stable{
-	margin-right: 21px;	
+	margin-right: 21px;
 }
 .mycourse .btnGrounp .button-stable:before,.mycourse .btnGrounp .button-assertive:before{
 	content: '';
@@ -278,7 +274,7 @@ ion-content{
 	width:16px;
 	height: 16px;
 	background-position:-1px -39px;
-	
+
 }
 .progress{
 	height: 45px;
@@ -302,7 +298,7 @@ ion-content{
 	float: left;
 }
 .progress-bar .full .finish{
-	
+
 	background-color: #1ab554;
 	position: absolute;
 	z-index:2;
@@ -315,7 +311,7 @@ ion-content{
 	height: 13px;
 	background-position: -1px -57px;
 	position: absolute;
-	
+
 	z-index:3
 }
 .progress-bar .full:before{
@@ -324,7 +320,7 @@ ion-content{
 .progress-bar .full:after{
 	background-position: -5px -57px;
 	right: 0px;
-	
+
 }
 .orderList .image.floor{
 	position: relative;
@@ -339,7 +335,7 @@ ion-content{
 	margin-top: 20%;
 	font-size: 17rem;
 	z-index: 11;
-	
+
 }
 .orderList .image.floor:after{
 	content:'';
@@ -350,9 +346,18 @@ ion-content{
 	height: 100%;
 	width:100%;
 	top:0;
-	
-	
 }
 .courseDetail-list .image img{
 	display: block;
+}
+.myCollection .btnGrounp{
+	float: right;
+	background-color: #fff;
+}
+.btnGrounp .button.button-balanced{
+	font-size: 12rem;
+	border: none;
+	border-color: none;
+	color:#fff;
+	background-color: #1ab554;
 }

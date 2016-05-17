@@ -10,13 +10,20 @@ angular.module('freexf')
 //  });
 		$scope.coursedetail=true;	//课程介绍
 		$scope.courseoutline=false;	//大纲
+		$scope.flowerstate=false;		//小花状态
+		//课程介绍
 		$scope.coursedetailClick=function(){
 			$scope.coursedetail=true;
 			$scope.courseoutline=false;
 		}
+		//课程大纲
 		$scope.courseoutlineClick=function(){
 			$scope.coursedetail=false;
 			$scope.courseoutline=true;
+		}
+		//改变小花状态
+		$scope.flowerState=function(){
+			$scope.flowerstate=!$scope.flowerstate;
 		}
 		$scope.showAgreement=function(){
 			var confirmPopup = $ionicPopup.confirm({
@@ -41,14 +48,13 @@ angular.module('freexf')
 	       	{
 	       		text:"拒绝",
 	       		onTap:function(e){
-	       			console.log('拒绝');
 	       		}
 	       	},
 	       	{
 	       		text:"同意",
 	       		type:'button-balanced',
 	       		onTap:function(e){
-	       			console.log('同意');
+	       			location.href="#/pay";
 	       		}
 	       	}
 	       ]
@@ -134,7 +140,7 @@ angular.module('freexf')
 				}],
 				istest:'freexf-democlass'
 			},{
-				title:'第一章  基础课程',
+				title:'第一章        基础课程',
 				classLists:[{
 						title:'1.1 课程名称课程名称课程名称课程名称课程名称'						
 				},{
@@ -146,7 +152,7 @@ angular.module('freexf')
 				}],
 				istest:'freexf-courseitem'
 			},{
-				title:'第二章  初级课程',
+				title:'第二章         初级课程',
 				classLists:[{
 						title:'1.1 课程名称课程名称课程名称课程名称课程名称'
 				},{

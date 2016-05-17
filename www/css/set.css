@@ -1,0 +1,100 @@
+.ideafeedback p{
+  color: #555;
+  font-size: 12rem;
+  text-align: left;
+}
+.setlist li{
+  border-top:1px solid #eeeeee;
+  background-color: #fff;
+  padding: 16px;
+}
+.set,.freexf-contact,.set .scroll{
+  width:100%;
+  height:100%;
+}
+.set{
+  background-color: #eee;
+}
+.set a{
+  font-size: 14rem;
+  color:#323232;
+}
+.set .changepassword{
+  margin: 5px auto;
+  background-color: #fff;
+  padding: 16px;
+}
+.quit{
+  margin:20px 12px;
+}
+.quitbtn{
+  background-color: #ea4c00;
+  color:#ffffff;
+}
+.freexf-contact{
+  display: none;
+  position: absolute;
+  top:0;
+  background:rgba(0,0,0,0.6);
+}
+.freexf-contact .phonecontent{
+  width:94%;
+  margin:12px;
+  position: absolute;
+  top:30%;
+  background-color: #fff;
+}
+.freexf-contact .phone{
+  font-size: 20rem;
+  line-height: 80px;
+  border-bottom: 1px solid #999;
+  text-align: center;
+}
+.freexf-contact a{
+  width:49%;
+  line-height: 50px;
+  text-align: center;
+  display: inline-block;
+}
+.freexf-contact .cancel{
+  color: #ea4c00;
+  border-right:1px solid #999;
+}
+.freexf-contact .dial{
+  color: #1ab554;
+  height:50px;
+}
+
+/**/
+.ideafeedback{
+  background-color: #fff;
+  padding-top:1px;
+  height:100%;
+}
+.setform{
+  margin:12px;
+}
+.setform label{
+  display: block;
+  margin-top:23px;
+  margin-bottom:15px;
+}
+.setform .describe,.setform .phonenumber{
+  width:100%;
+  border:1px solid #aaa;
+  border-radius: 2px;
+}
+.describe{
+  height:190px;
+  resize:none;
+}
+.setform input[type="text"]{
+  height:46px;
+  margin-bottom:30px;
+}
+.setform button{
+  background-color: #1ab554;
+  color:#ffffff;
+}
+
+

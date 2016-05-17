@@ -3,13 +3,13 @@
 define([
   'ionic',
   'oclazyload',
-  'angularResource'
+  'restAngular'
 ], function (ionic) {
 
   angular.module('freexf', [
       'ionic',
       'oc.lazyLoad',
-      'ngResource'
+      'restangular'
     ])
     .run(['$rootScope', '$ionicLoading', '$anchorScroll', '$timeout', '$location',
       function ($rootScope, $ionicLoading, $anchorScroll, $timeout, $location) {
@@ -23,7 +23,8 @@ define([
         });
       }])
     .constant('ENV', {
-      'api': 'http://www.freexf.com'
+      'base': 'http://www.freexf.com',
+      'api': '/api/v1'
     })
     .constant('$ionicLoadingConfig', {
       template: '<ion-spinner icon="bubbles"></ion-spinner>',
@@ -32,17 +33,20 @@ define([
       maxWidth: 200,
       showDelay: 0
     })
-    .config(function ($stateProvider, $locationProvider, $urlRouterProvider, $ionicConfigProvider) {
+    .config(function ($stateProvider, $locationProvider, $urlRouterProvider, $ionicConfigProvider,RestangularProvider,ENV) {
 
-      $locationProvider.html5Mode(false);
-      //修改默认后退键样式
-      $ionicConfigProvider.backButton.text('').previousTitleText(false).icon('freexf-goback');
+      /*----------------------RestAngular 配置--------------------*/
+      RestangularProvider.setBaseUrl('/');
+      RestangularProvider.setRequestSuffix('.json');
+      /*------------ionic 默认配置--------------------------------*/
       $ionicConfigProvider.templates.maxPrefetch(0);
       //修改默认tabs位置 ios默认（top）,andriod默认为（bottom）
-      $ionicConfigProvider.tabs.style('standard').position('bottom');
+      $ionicConfigProvider.tabs.position('bottom');
       //修改title位置 ios默认（center）,andriod默认为（left）
       $ionicConfigProvider.navBar.alignTitle('center');
 
+      /*-------------ui-router 配置-----------------------------*/
+      $locationProvider.html5Mode(false);
       $urlRouterProvider.otherwise('/home');
 
       $stateProvider
@@ -87,6 +91,29 @@ define([
             }]
           }
         })
+
+        .state('set', {
+          url: '/set',
+          templateUrl: 'modules/user/setindex.html',
+          controller: 'set_ctrl',
+          resolve: {
+            loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+              return $ocLazyLoad.load(['modules/user/set.js']);
+            }]
+          }
+        })
+        .state('aboutus', {
+          url: '/aboutus',
+          templateUrl: 'modules/user/aboutus.html',
+          controller: ''
+
+        })
+        .state('commonfaq', {
+          url: '/commonfaq',
+          templateUrl: 'modules/user/commonfaq.html',
+          controller: ''
+        })
+
         .state('pay', {
           url: '/pay',
           templateUrl: 'modules/pay/pay.html',
@@ -138,16 +165,6 @@ define([
             }]
           }
         })
-        .state('mycourse', {
-          url: '/mycourse',
-          templateUrl: 'modules/user/mycourse.html',
-          controller: 'mycourse_ctrl',
-          resolve: {
-            loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
-              return $ocLazyLoad.load(['modules/user/mycourse.js']);
-  				}]
-          }
-        })
         .state('courseCenter', {
           url: '/courseCenter',
           templateUrl: 'modules/course/courseCenter.html',
@@ -159,19 +176,17 @@ define([
           }
         })
 
-        .state('courselist', {
-          url: '/courselist',
-          templateUrl: 'modules/course/courselist.html',
-          controller: 'courselist_ctrl',
-          resolve: {
-            loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
-              return $ocLazyLoad.load(['modules/course/courselist.js']);
-            }]
-          }
-        })
-				.state('coursePlate', {
+
+        .state('coursePlate', {
           url: '/coursePlate',
-          templateUrl: 'modules/course/coursePlate.html',
+          views: {
+                '': {
+                    templateUrl: 'modules/course/coursePlate.html'
+                },
+                'classmodule@coursePlate': {
+                    templateUrl: 'modules/course/classModule.html'
+                }
+           },
           controller: 'coursePlate_ctrl',
           resolve: {
             loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
@@ -179,7 +194,7 @@ define([
             }]
           }
         })
-				.state('courseSearch', {
+        .state('courseSearch', {
           url: '/courseSearch',
           templateUrl: 'modules/course/courseSearch.html',
           controller: 'courseSearch_ctrl',
@@ -219,34 +234,34 @@ define([
             }]
           }
         })
-        .state('tab.course', {
-          url: '/course',
+        .state('tab.courselist', {
+          url: '/courselist',
           views: {
             'conent': {
-              templateUrl: 'modules/course/course.html',
-              controller: 'course_ctrl'
+              templateUrl: 'modules/course/courselist.html',
+              controller: 'courselist_ctrl'
             }
           },
           resolve: {
             loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
-              return $ocLazyLoad.load('modules/course/course.js');
+              return $ocLazyLoad.load(['modules/course/courselist.js']);
             }]
           }
         })
+
         .state('tab.member', {
           url: '/member',
           views: {
             'conent': {
-              templateUrl: 'modules/student/member.html',
-              controller: 'member_ctrl'
+              templateUrl: 'modules/student/member.html',              controller: 'member_ctrl'
             }
           },
           resolve: {
             loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
-              return $ocLazyLoad.load('modules/student/member.js');
-            }]
+              return $ocLazyLoad.load('modules/student/member.js');            }]
           }
         })
     });
-   
+
 });
+

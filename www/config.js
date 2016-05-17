@@ -9,13 +9,13 @@ var paths = {
     ionic: 'lib/ionic/js/ionic.bundle',
     oclazyload: 'lib/oclazyload/dist/ocLazyLoad',
     jq: 'lib/jquery/dist/jquery',
-    angularResource: 'lib/angular-resource/angular-resource'
+    restAngular: 'lib/restangular/dist/restangular'
     /* angularSanitize: './lib/angular-sanitize/angular-sanitize'*/
   },
   shim: {
     //注入服务至ionic
     'oclazyload': ['ionic'],
-    'angularResource': ['ionic']
+    'restAngular': ['ionic']
     /*    'angularResource': ['ionic'],
      'angularSanitize': ['ionic']*/
   }
@@ -28,6 +28,7 @@ require([
     'app'
   ], function () {
     testViewport();
+    hideTop(windows);
     ionic.Platform.ready(function () {
       //启动angular模块
       angular.bootstrap(document, ['freexf']);
