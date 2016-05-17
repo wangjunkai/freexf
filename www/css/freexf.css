@@ -1,7 +1,4 @@
-html {
-  font-size: 1px
-}
-
+html {font-size: 1px}
 .freexf-goback {
   background-image: url(../img/publicbg/goBack.png);
   background-repeat: no-repeat;
@@ -11,15 +8,12 @@ html {
   width: 18px;
   margin-top: 7px;
 }
-
 .freexf-padding-24 {
   padding: 10px 12px !important;
 }
-
 .bg-img {
   background-size: 300px 300px;
 }
-
 .bg-img.demo {
   background-image: url(../img/publicbg/demo.png)
 }

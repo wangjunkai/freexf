@@ -9,15 +9,14 @@ var paths = {
     ionic: 'lib/ionic/js/ionic.bundle',
     oclazyload: 'lib/oclazyload/dist/ocLazyLoad',
     jq: 'lib/jquery/dist/jquery',
-    restAngular: 'lib/restangular/dist/restangular'
+    lodash: 'lib/lodash/dist/lodash',
+    restAngular: 'lib/restangular/src/restangular'
     /* angularSanitize: './lib/angular-sanitize/angular-sanitize'*/
   },
   shim: {
     //注入服务至ionic
     'oclazyload': ['ionic'],
     'restAngular': ['ionic']
-    /*    'angularResource': ['ionic'],
-     'angularSanitize': ['ionic']*/
   }
 };
 require.config(paths);
@@ -25,10 +24,11 @@ require.config(paths);
 require([
     'ionic',
     'jq',
+    'lodash',
     'app'
   ], function () {
     testViewport();
-    hideTop(windows);
+    hideTop(window);
     ionic.Platform.ready(function () {
       //启动angular模块
       angular.bootstrap(document, ['freexf']);

@@ -5,7 +5,6 @@ define([
   'oclazyload',
   'restAngular'
 ], function (ionic) {
-
   angular.module('freexf', [
       'ionic',
       'oc.lazyLoad',

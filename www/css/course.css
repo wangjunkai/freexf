@@ -50,7 +50,7 @@
 	right: 0;
 	top: -6px;
 	width: 80px;
-	height: 100%;	
+	height: 100%;
 	padding-top: 0px;
 	font-size: 14rem;
 	color: #878787;
@@ -311,7 +311,7 @@ img.freexf-blur{
 	overflow: hidden;
   	text-overflow: ellipsis;
  	white-space: nowrap;
- 	color: #878787; 	
+ 	color: #878787;
 }
 .freexf-courseitem .item>p,
 .freexf-democlass .item>p{
@@ -444,17 +444,18 @@ img.freexf-blur{
 	text-align: center;
 }
 
-/**/
+/*选课中心*/
 .freexf-courselist{
   background-color: #ffffff;
+  padding-top: 12px;
 }
 .freexf-coursecenter .coursecenter-list .ccl-son{
-  padding:2px 12px;
+  padding:7px 12px;
   margin-top: 10px;
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 4px solid #f3fcf6;
 }
 .freexf-coursecenter .coursecenter-list .ccl-son div{
-  color:#000;
+  color:#323232;
   font-size: 14rem;
   position: relative;
 }
@@ -471,10 +472,10 @@ img.freexf-blur{
   float: left;
 }
 .English:after{
-  background-position: -30px 0px;
+  background-position: 0px 0px;
 }
 .zhongxiaoxue:after{
-  background-position: 0px 0px;
+  background-position: -30px 0px;
 }
 .duoyuzhong:after{
   background-position: -60px 0px;
@@ -490,9 +491,9 @@ img.freexf-blur{
 }
 .freexf-coursecenter .ccl-course-son-list>li>a{
   line-height:37px;
-  color:#969696;
-  font-size: 11rem;
-  margin-top:10px;
+  color:#666666;
+  font-size: 12rem;
+  margin-top:7px;
   text-decoration: none;
 }
 .freexf-coursecenter .ccl-course-son-list>li{
@@ -500,7 +501,7 @@ img.freexf-blur{
   width:25%;
 }
 .freexf-coursecenter .ccl-course-son-list{
-  padding: 5px 12px;
+  padding: 0 12px;
   overflow: hidden;
 }
 /*六大板块*/
@@ -519,8 +520,8 @@ img.freexf-blur{
 	height: 30px;
 	display: block;
 	background: url(../img/publicbg/course.png) no-repeat;
-	background-position:-107px -57px ;
-	background-size: 470px auto;
+	background-position:-65px -30px ;
+	background-size: 300px auto;
 	position: absolute;
 	top: 0;
 	right: 8px;
@@ -533,14 +534,14 @@ img.freexf-blur{
 	height: 30px;
 	display: block;
 	background: url(../img/publicbg/course.png) no-repeat;
-	background-position:-155px -57px ;
-	background-size: 470px auto;
+	background-position:-95px -30px  ;
+	background-size: 300px auto;
 	position: absolute;
 	top: 0;
 	right: 8px;
 }
 
-.freexf-courseNav:after{  
+.freexf-courseNav:after{
 	width: 6px;
 	height: 6px;
 	border: 1px solid #969696;
@@ -572,15 +573,15 @@ img.freexf-blur{
 	font-size: 15rem;
 	margin-right: 5px;
 }
-.freexf-classmodule .item-thumbnail-left, 
+.freexf-classmodule .item-thumbnail-left,
 .freexf-classmodule .item-thumbnail-left .item-content{
 	padding-top: 5%;
 	padding-left: 35%;
 	/*min-height: 92.5px;*/
 }
-.freexf-classmodule .item-thumbnail-left > img:first-child, 
-.freexf-classmodule .item-thumbnail-left .item-image, 
-.freexf-classmodule .item-thumbnail-left .item-content > img:first-child, 
+.freexf-classmodule .item-thumbnail-left > img:first-child,
+.freexf-classmodule .item-thumbnail-left .item-image,
+.freexf-classmodule .item-thumbnail-left .item-content > img:first-child,
 .freexf-classmodule .item-thumbnail-left .item-content .item-image{
 	top: 20%;
 	width: 29%;
@@ -588,13 +589,13 @@ img.freexf-blur{
 	max-width: 30%;
 	max-height: none;
 }
-.freexf-classmodule .item.active, 
-.freexf-classmodule .item.activated, 
-.freexf-classmodule .item-complex.active .item-content, 
-.freexf-classmodule .item-complex.activated .item-content, 
-.freexf-classmodule .item .item-content.active, 
+.freexf-classmodule .item.active,
+.freexf-classmodule .item.activated,
+.freexf-classmodule .item-complex.active .item-content,
+.freexf-classmodule .item-complex.activated .item-content,
+.freexf-classmodule .item .item-content.active,
 .freexf-classmodule .item .item-content.activated{
-	background: #fff;	
+	background: #fff;
 }
 .freexf-classmodule-header-nav .freexf-languageclass{position: relative;width: 100%;height: auto;border-top: 1px #eee solid;}
 .freexf-classmodule-header-nav .freexf-languageclass ul li{text-align: left;width: 32%;display: inline-block;}

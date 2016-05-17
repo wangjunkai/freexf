@@ -1,17 +1,17 @@
 .already .MyAcc-top .MyAcc-icon{
 	margin-top: -10px;
-	background-position: -174px 0px;
+	background-position: -50px -102px;
 }
 .already .MyAcc-top p {
 	margin-top:5px;
 }
 .already .MyAcc-top{	
+	background-size: 100% auto;
 	width:100%;
-	min-width:320px;
 	background-image: url(/mobile/www/img/user/user-bg.png);
 	height: 200px;
-	background-size: 375px 199px;
 	position: relative;
+	background-size: cover;
 }
 .already .MyAcc-title{
 	position:absolute;
@@ -33,9 +33,9 @@
     margin: 0 auto;
 }
 .already .MyAcc-top .edit{
-	width:11px;
-	height: 12px;
-	background-position: -26px -58px;
+	width: 15px;
+    height: 15.33px;
+    background-position: -26px -57px;
 	display: inline-block;
     margin-left: 10px;
 }
@@ -46,7 +46,7 @@
     min-width: 320px;
 }
 .MyAcc-content .mynav-group{
-	width:67.4667%;
+	padding:0px 12px;
 	margin: 0 auto;
 	padding-top: 15px;
 	display: table-cell;
@@ -75,17 +75,17 @@
 	margin-top:10px;
 	margin-bottom: 12.5px;
 	font-size: 12rem;
-	color:#969696;
+	color:#323232;
 }
 .course-block{
 	clear: both;
 	background: #fff;
-	margin: 15px auto ;
+	margin: 10px auto ;
     padding-left: 12px;
 }
 
 .course-block h2{
-	font-size: 13rem;
+	font-size: 14rem;
 	padding-top: 15px;
 }
 .course-block h2:before{
@@ -109,19 +109,19 @@
 	white-space: nowrap;
 }
 .col-48 .content p>font,.recommend .col-48 .content p{
-	font-size: 10rem;
+	font-size: 11rem;
 	color:#323232;
 }
 .course-block .progress .progress-bar .full{
-	width:60.8%;
-	margin-top: 0px; 
+	width:58.25%;
+	margin: 0px 2.75% auto 2.5px;
 }
 
 .course-block .progress{
 	border: none;
 }
 
-.row.course,.row.course .col:first-child{padding-left:0px;}
+.row.course,.row.course .col:first-child{padding-left:1px;}
 .col-48{
 	 -webkit-box-flex: 0;
     -webkit-flex: 0 0 48%;
@@ -130,4 +130,20 @@
     -ms-flex: 0 0 48%;
     flex: 0 0 48%;
     max-width: 48%;
+}
+.course-block .progress .progress-bar span{
+	float: right;
+	font-size: 9rem;
+    color: #323232;
+}
+.course-block.study .col.col-48{
+	border: 1px solid #1AB554;
+	margin: 2.5px;
+	padding:0px;
+}
+.course-block.study .col{
+	
+}
+.row.course {
+	margin-bottom: 7.5px;
 }
