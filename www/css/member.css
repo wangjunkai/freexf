@@ -5,10 +5,10 @@
 .already .MyAcc-top p {
 	margin-top:5px;
 }
-.already .MyAcc-top{	
+.already .MyAcc-top{
 	background-size: 100% auto;
 	width:100%;
-	background-image: url(/mobile/www/img/user/user-bg.png);
+	background-image: url(../img/user/user-bg.png);
 	height: 200px;
 	position: relative;
 	background-size: cover;
@@ -60,7 +60,7 @@
 	width:45px;
 	height: 45px;
 	margin: 0 auto;
-	
+
 }
 .mynav-group .nav-bar.myCourse{
 	background-position:-50.33px -56.67px;
@@ -103,7 +103,7 @@
 }
 .col-48 .content p{
 	font-size: 8rem;
-	color: #969696;	
+	color: #969696;
 	overflow: hidden;
 	text-overflow:ellipsis;
 	white-space: nowrap;
@@ -142,7 +142,7 @@
 	padding:0px;
 }
 .course-block.study .col{
-	
+
 }
 .row.course {
 	margin-bottom: 7.5px;

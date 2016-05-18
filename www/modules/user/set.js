@@ -1,21 +1,17 @@
 'use strict';
 
 angular.module('freexf')
-  .controller('set_ctrl',function ($scope, $rootScope, $injector, $ionicLoading, $timeout) {
-    $scope.setindex=true;
-    $scope.ideafeedback=false;
-    $scope.showideafeedback=function(){
-      $scope.ideafeedback=true;
-      $scope.setindex=false;
+  .controller('set_ctrl', function ($scope, $rootScope, $state, $injector, $ionicLoading, $timeout) {
+    $scope.showcontactour=false;
+    $scope.showcontact = function () {
+      $scope.showcontactour=true;
+    };
+    $scope.hidecontact = function () {
+      $scope.showcontactour=false;
+    };
+    $scope.toQuit = function () {
+      $rootScope.user = false;
+      $state.go('myaccount');
     }
-    $scope.hideideafeedback=function(){
-      $scope.setindex=true;
-      $scope.ideafeedback=false;
-    }
-    $scope.showcontact=function() {
-      $(".freexf-contact").css("display")=="block"?$(".freexf-contact").css("display","none"):$(".freexf-contact").css("display","block");
-
-    }
-
-  })
+  });
 

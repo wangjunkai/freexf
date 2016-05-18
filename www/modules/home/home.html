@@ -4,7 +4,9 @@
     <img class="freexf-logo" src="img/home/elogo.png">
   </ion-nav-title>
   <ion-nav-buttons side="right">
-    <button menu-toggle="right" class="button button-clear">搜索</button>
+    <a href="#/courseSearch" menu-toggle="right" class="button button-clear freexf-icon-search">
+      <i class="icon ion-ios-search"></i>
+    </a>
   </ion-nav-buttons>
   <div id="anchor-tab" class="bar bar-subheader freexf-bar-nav">
     <ion-scroll id="ion-scroll" delegate-handle="anchor" direction="x" scrollbar-x="false">
@@ -22,37 +24,37 @@
   <ion-content class="has-header has-footer freexf-bg-gray" delegate-handle="myDelegate">
     <ion-slide-box on-slide-changed="slideHasChanged($index)">
       <ion-slide>
-        <img src="img/home/g活动.png" alt=""></ion-slide>
+        <img src="img/home/banner@3x.png" alt="" style="width: 100%;"></ion-slide>
       <ion-slide>
-        <img src="img/home/g活动.png" alt=""></ion-slide>
+        <img src="img/home/banner@3x.png" alt="" style="width: 100%;"></ion-slide>
       <ion-slide>
-        <img src="img/home/g活动.png" alt=""></ion-slide>
+        <img src="img/home/banner@3x.png" alt="" style="width: 100%;"></ion-slide>
     </ion-slide-box>
     <section class="freexf-hometype">
       <div class="row row-center">
-        <a href="" class="col col-33">
+        <a href="#/coursePlate" class="col col-33">
           <i class="yinyu"></i>
           <span>英语</span>
         </a>
-        <a href="" class="col col-33">
+        <a href="#/coursePlate" class="col col-33">
           <i class="zhongxiaoxue"></i>
           <span>中小学</span>
         </a>
-        <a href="" class="col col-33">
+        <a href="#/coursePlate" class="col col-33">
           <i class="duoyuzhong"></i>
           <span>多语种</span>
         </a>
       </div>
       <div class="row row-center">
-        <a href="" class="col col-33">
+        <a href="#/coursePlate" class="col col-33">
           <i class="kuaiji"></i>
           <span>会计职业</span>
         </a>
-        <a href="" class="col col-33">
+        <a href="#/coursePlate" class="col col-33">
           <i class="kaoyan"></i>
           <span>考研</span>
         </a>
-        <a href="" class="col col-33">
+        <a href="#/coursePlate" class="col col-33">
           <i class="xinqu"></i>
           <span>兴趣</span>
         </a>
@@ -68,16 +70,16 @@
         </div>
 
         <div class="col col-50 freexf-padding-left-5">
-          <a href="" class="rcol">
-            <img src="img/home/g活动.png" alt="">
+          <a href="#/coursedetail" class="rcol">
+            <img src="img/home/kemu@3x.png" alt="">
           </a>
-          <a href="" class="rcol">
-            <img src="img/home/g活动.png" alt="">
+          <a href="#/coursedetail" class="rcol">
+            <img src="img/home/kemu@3x.png" alt="">
           </a>
         </div>
       </div>
       <a href="" class="jinpin-bottom">
-        <img src="img/home/g活动.png" alt="">
+        <img src="img/home/big-huodong.png" alt="">
       </a>
     </section>
     <section id="anchor-section-yingyu" class="freexf-home-table">
@@ -85,7 +87,7 @@
       <div class="clearfix">
         <div class="freexf-col" ng-repeat="o in obj">
           <div>
-            <img src="img/home/g活动.png">
+            <img src="img/home/kemu@3x.png">
           </div>
           <div class="clearfix">
             <p class="ti">软件测评师</p>
@@ -100,7 +102,7 @@
       <div class="clearfix">
         <div class="freexf-col" ng-repeat="o in obj">
           <div>
-            <img src="img/home/g活动.png">
+            <img src="img/home/kemu@3x.png">
           </div>
           <div class="clearfix">
             <p class="ti">软件测评师</p>
@@ -111,11 +113,11 @@
       </div>
     </section>
     <section id="anchor-section-duoyuzhong" class="freexf-home-table">
-      <h2 class="freexf-title">多语种</h2>
+      <h2 class="freexf-title">多语种<a href="#/coursePlate" class="icon has-more"></a></h2>
       <div class="clearfix">
         <div class="freexf-col" ng-repeat="o in obj">
           <div>
-            <img src="img/home/g活动.png">
+            <img src="img/home/kemu@3x.png">
           </div>
           <div class="clearfix">
             <p class="ti">软件测评师</p>

@@ -2,7 +2,10 @@
 
 
 angular.module('freexf')
-  .controller('pay_ctrl', function ($scope, $rootScope, $ionicPopup, $injector, $ionicLoading, $timeout) {
+  .controller('pay_ctrl', function ($scope, $rootScope,$state, $ionicPopup, $injector, $ionicLoading, $timeout) {
+    $scope.toPay = function(){
+      $state.go('paysuccess');
+    };
 //	// Triggered on a button click, or some other target
 // $scope.showPopup = function() {
 // $scope.data = {}
@@ -38,5 +41,5 @@ angular.module('freexf')
 // }, 30000);
 //};
 // //  confirm 对话框
-   
-})
+
+});

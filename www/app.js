@@ -10,20 +10,13 @@ define([
       'oc.lazyLoad',
       'restangular'
     ])
-    .run(['$rootScope', '$ionicLoading', '$anchorScroll', '$timeout', '$location',
-      function ($rootScope, $ionicLoading, $anchorScroll, $timeout, $location) {
-        $rootScope.$on('$stateChangeStart', function () {
-          $ionicLoading.show();
-        });
-        $rootScope.$on('$stateChangeSuccess', function () {
-          $timeout(function () {
-            $ionicLoading.hide();
-          }, 0);
-        });
-      }])
     .constant('ENV', {
       'base': 'http://www.freexf.com',
       'api': '/api/v1'
+    })
+    .constant('AUTH', {
+      ISLOGIN: ['login', 'myaccount'],
+      NOTLOGIN: ['tab.member']
     })
     .constant('$ionicLoadingConfig', {
       template: '<ion-spinner icon="bubbles"></ion-spinner>',
@@ -32,12 +25,35 @@ define([
       maxWidth: 200,
       showDelay: 0
     })
-    .config(function ($stateProvider, $locationProvider, $urlRouterProvider, $ionicConfigProvider,RestangularProvider,ENV) {
+    .run(['$rootScope', '$state', '$ionicLoading', '$anchorScroll', '$timeout', '$location', 'AUTH',
+      function ($rootScope, $state, $ionicLoading, $anchorScroll, $timeout, $location, AUTH) {
+        $rootScope.$on('$stateChangeStart', function (event, next) {
+          if (!$rootScope.user && $.inArray(next.name, AUTH.NOTLOGIN) >= 0) {
+            event.preventDefault();
+            $state.go('myaccount');
+            return;
+          }
+          else if ($rootScope.user && $.inArray(next.name, AUTH.ISLOGIN) >= 0) {
+            event.preventDefault();
+            $state.go('tab.member');
+            return;
+          }
+          $ionicLoading.show();
+        });
+        $rootScope.$on('$stateChangeSuccess', function () {
+          $timeout(function () {
+            $ionicLoading.hide();
+          }, 0);
+        });
+      }])
+    .config(function ($stateProvider, $locationProvider, $urlRouterProvider, $ionicConfigProvider, RestangularProvider, ENV) {
 
       /*----------------------RestAngular 配置--------------------*/
       RestangularProvider.setBaseUrl('/');
       RestangularProvider.setRequestSuffix('.json');
       /*------------ionic 默认配置--------------------------------*/
+      //修改默认后退键样式
+      $ionicConfigProvider.backButton.text('').previousTitleText(false).icon('freexf-goback');
       $ionicConfigProvider.templates.maxPrefetch(0);
       //修改默认tabs位置 ios默认（top）,andriod默认为（bottom）
       $ionicConfigProvider.tabs.position('bottom');
@@ -93,7 +109,7 @@ define([
 
         .state('set', {
           url: '/set',
-          templateUrl: 'modules/user/setindex.html',
+          templateUrl: 'modules/user/set.html',
           controller: 'set_ctrl',
           resolve: {
             loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
@@ -110,6 +126,11 @@ define([
         .state('commonfaq', {
           url: '/commonfaq',
           templateUrl: 'modules/user/commonfaq.html',
+          controller: ''
+        })
+        .state('ideafeedback', {
+          url: '/ideafeedback',
+          templateUrl: 'modules/user/ideafeedback.html',
           controller: ''
         })
 
@@ -164,28 +185,36 @@ define([
             }]
           }
         })
-        .state('courseCenter', {
-          url: '/courseCenter',
-          templateUrl: 'modules/course/courseCenter.html',
-          controller: 'courseCenter_ctrl',
+        .state('mycourse', {
+          url: '/mycourse',
+          templateUrl: 'modules/user/mycourse.html',
+          controller: 'mycourse_ctrl',
           resolve: {
             loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
-              return $ocLazyLoad.load(['modules/course/courseCenter.js']);
+              return $ocLazyLoad.load(['modules/user/mycourse.js']);
             }]
           }
         })
-
-
+        .state('mycollection', {
+          url: '/mycollection',
+          templateUrl: 'modules/user/mycollection.html',
+          controller: 'mycollection_ctrl',
+          resolve: {
+            loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+              return $ocLazyLoad.load(['modules/user/mycollection.js']);
+            }]
+          }
+        })
         .state('coursePlate', {
           url: '/coursePlate',
           views: {
-                '': {
-                    templateUrl: 'modules/course/coursePlate.html'
-                },
-                'classmodule@coursePlate': {
-                    templateUrl: 'modules/course/classModule.html'
-                }
-           },
+            '': {
+              templateUrl: 'modules/course/coursePlate.html'
+            },
+            'classmodule@coursePlate': {
+              templateUrl: 'modules/course/classModule.html'
+            }
+          },
           controller: 'coursePlate_ctrl',
           resolve: {
             loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
@@ -233,17 +262,17 @@ define([
             }]
           }
         })
-        .state('tab.courselist', {
-          url: '/courselist',
+        .state('tab.course', {
+          url: '/course',
           views: {
             'conent': {
-              templateUrl: 'modules/course/courselist.html',
-              controller: 'courselist_ctrl'
+              templateUrl: 'modules/course/course.html',
+              controller: 'course_ctrl'
             }
           },
           resolve: {
             loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
-              return $ocLazyLoad.load(['modules/course/courselist.js']);
+              return $ocLazyLoad.load(['modules/course/course.js']);
             }]
           }
         })
@@ -252,14 +281,17 @@ define([
           url: '/member',
           views: {
             'conent': {
-              templateUrl: 'modules/student/member.html',              controller: 'member_ctrl'
+              templateUrl: 'modules/student/member.html',
+              controller: 'member_ctrl'
             }
           },
           resolve: {
             loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
-              return $ocLazyLoad.load('modules/student/member.js');            }]
+              return $ocLazyLoad.load('modules/student/member.js');
+            }]
           }
         })
+
     });
 
 });
