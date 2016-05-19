@@ -5,7 +5,7 @@
     	<i class="icon ion-ios-consult"></i>咨询
     </button>
   </ion-nav-buttons>
-  <ion-content ng-controller="coursedetail_ctrl">
+  <ion-content ng-controller="coursedetail_ctrl" class="has-footer">
   	<div class="item item-image">
   		<img src="img/course/course_img.jpg" />	 <!--class="freexf-blur" 模糊效果-->
   		<!--背景层已购买-->
@@ -113,8 +113,9 @@
 					</accordion>
 				</ul>
 		</div>
-		<button class="freexf-buy" ng-click="showAgreement()">立即购买</button>
   </ion-content>
-
+	<div class="bar bar-footer freexf-buy">
+    <button class="title freexf-buy" style="width:100%;" ng-click="showAgreement()">立即购买</button>
+  </div>
 </ion-view>
 

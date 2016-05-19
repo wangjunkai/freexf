@@ -105,7 +105,7 @@
 }
 
 .courseDetail-list {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #eee;
   padding: 2.3% 0px;
   display: table;
   width: 100%;
@@ -135,6 +135,10 @@
   color: #969696;
   border-radius: 1px;
   min-height: 36px;
+  float: left;
+}
+.myorder .btnGrounp .button, .myCollection .btnGrounp .button:first-child{
+  margin:0 8px;
 }
 
 .myorder .btnGrounp .button.button-assertive, .myCollection .btnGrounp .button.button-assertive {
@@ -212,8 +216,8 @@ ion-content {
 .progress .progress-bar .full {
   width: 53.25%;
   margin-right: 2.75%;
-  border-radius: 6px;
-  height: 10px;
+  border-radius: 5px;
+  height: 7px;
   background-color: #c9c9c9;
   margin-top: 12.5px;
   position: relative;
@@ -234,8 +238,8 @@ ion-content {
 
 .progress-bar .full:before, .progress-bar .full:after {
   content: '';
-  width: 6px;
-  height: 13px;
+  width: 4px;
+  height: 7px;
   background-position: -1px -57px;
   position: absolute;
 
@@ -247,12 +251,12 @@ ion-content {
 }
 
 .progress-bar .full:after {
-  background-position: -5px -57px;
+  background-position: -4px -57px;
   right: 0px;
 }
 
 .already .progress {
-  height: 20px;
+  height: auto
 }
 
 .orderList .image.floor {
@@ -446,18 +450,17 @@ input:-moz-placeholder {
 
 .myorder .btnGrounp, .myCollection .btnGrounp {
   height: 37.5px;
-  margin: 5.5px;
+  margin: 5.5px 0px;
   float: right;
 }
-
 .progress {
-  height: 36px;
-  border-bottom: 1px solid #ccc;
+  height: 32px;
+  border-bottom: 1px solid #eee;
 }
 
 .progress .progress-bar {
   width: 50%;
-  line-height: 36px;
+  line-height: 32px;
   color: #969696;
   font-size: 9rem;
   float: left;

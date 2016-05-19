@@ -1,8 +1,3 @@
-.ideafeedback p{
-  color: #555;
-  font-size: 12rem;
-  text-align: left;
-}
 .setlist li{
   border-top:1px solid #eeeeee;
   background-color: #fff;
@@ -14,6 +9,10 @@
 }
 .set{
   background-color: #eee;
+}
+.set .list{
+  position: relative;
+  z-index:0;
 }
 .set a{
   font-size: 14rem;
@@ -32,8 +31,8 @@
   color:#ffffff;
 }
 .freexf-contact{
-  display: none;
   position: absolute;
+  z-index:6;
   top:0;
   background:rgba(0,0,0,0.6);
 }
@@ -67,16 +66,20 @@
 
 /**/
 .ideafeedback{
-  background-color: #fff;
   padding-top:1px;
   height:100%;
 }
+.ideafeedback .freexf-padding-24,.ideafeedback .scroll{
+  background-color: #fff;
+}
 .setform{
   margin:12px;
+  height:100%;
 }
 .setform label{
   display: block;
-  margin-top:23px;
+  margin-top:-12px;
+  padding-top:23px;
   margin-bottom:15px;
 }
 .setform .describe,.setform .phonenumber{
@@ -95,6 +98,17 @@
 .setform button{
   background-color: #1ab554;
   color:#ffffff;
+}
+
+/**/
+.aboutus p{
+  color: #555;
+  font-size: 12rem;
+  text-align: left;
+}
+.aboutus .freexf-padding-24{
+  padding-bottom:30px;
+  background-color: #fff;
 }
 
 

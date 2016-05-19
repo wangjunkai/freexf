@@ -107,6 +107,7 @@
 	overflow: hidden;
 	text-overflow:ellipsis;
 	white-space: nowrap;
+	margin: 0 0 5px;
 }
 .col-48 .content p>font,.recommend .col-48 .content p{
 	font-size: 11rem;
@@ -114,14 +115,17 @@
 }
 .course-block .progress .progress-bar .full{
 	width:58.25%;
-	margin: 0px 2.75% auto 2.5px;
+	margin: 2px auto auto 2.5px;
 }
 
 .course-block .progress{
 	border: none;
 }
 
-.row.course,.row.course .col:first-child{padding-left:1px;}
+.row.course,.row.course{
+	padding-left: 0px;
+    margin-left: -5px;
+}
 .col-48{
 	 -webkit-box-flex: 0;
     -webkit-flex: 0 0 48%;
@@ -135,15 +139,18 @@
 	float: right;
 	font-size: 9rem;
     color: #323232;
+    margin-right: 2.5px;
 }
 .course-block.study .col.col-48{
-	border: 1px solid #1AB554;
-	margin: 2.5px;
-	padding:0px;
+	
+	margin-bottom: 5px;
 }
 .course-block.study .col{
-
+    padding: 0px 5px;
 }
-.row.course {
+/*.row.course {
 	margin-bottom: 7.5px;
+}*/
+.recommend .col-48 .content p{
+	margin: 0;
 }

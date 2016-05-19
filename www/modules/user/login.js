@@ -3,7 +3,7 @@
 
 angular.module('freexf')
   .controller('login_ctrl', function ($scope, $rootScope, $state,$injector, $ionicLoading, $timeout) {
-
+    
     $scope.toLogin = function () {
       $rootScope.user = true;
       $state.go('tab.member');

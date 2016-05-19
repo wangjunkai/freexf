@@ -16,7 +16,8 @@ var paths = {
   shim: {
     //注入服务至ionic
     'oclazyload': ['ionic'],
-    'restAngular': ['ionic']
+    'restAngular': ['ionic'],
+    'services': ['ionic', 'app']
   }
 };
 require.config(paths);
@@ -25,7 +26,8 @@ require([
     'ionic',
     'jq',
     'lodash',
-    'app'
+    'app',
+    'services'
   ], function () {
     testViewport();
     hideTop(window);

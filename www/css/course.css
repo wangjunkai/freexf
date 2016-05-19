@@ -25,6 +25,9 @@
   padding: 15px 0 5px 5%;
   background: #fff;
 }
+.freexf-coursedetail .freexf-courseinfo>p{
+	margin-bottom: 15px;
+}
 
 .freexf-coursedetail .freexf-courseinfo h3 {
   font-size: 15rem;
@@ -98,7 +101,7 @@
 
 .freexf-coursedetail .list > .item {
   position: relative;
-  padding: 20px 7%;
+  padding: 15px 7%;
 }
 
 .freexf-coursedetail .list > .item:before {
@@ -246,6 +249,10 @@ img.freexf-blur {
   height: 45px;
   border: none;
   font-size: 17rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
 }
 
 .freexf-courselist {
@@ -323,7 +330,7 @@ img.freexf-blur {
 
 .freexf-play.button:after {
   background: url(../img/publicbg/course.png) no-repeat;
-  background-position: -50px 0px;
+  background-position: -50px 1px;
   background-size: 300px auto;
 }
 
@@ -410,7 +417,7 @@ img.freexf-blur {
   height: 0px;
   position: absolute;
   left: -5px;
-  top: 16px;
+  top: 14px;
   background: #1AB554;
   border-right: 5px solid transparent;
   border-top: 5px solid #1AB554;
@@ -437,7 +444,7 @@ img.freexf-blur {
   border: 1px #ddd solid;
   position: absolute;
   left: -9px;
-  top: 12px;
+  top: 10px;
   z-index: 100;
   background: #fff;
 }
@@ -531,10 +538,14 @@ img.freexf-blur {
 
 /*选课中心*/
 .freexf-courselist{
-  background-color: #ffffff;
-  padding-top: 12px;
+  background-color: #eee;
 }
-
+.coursecenter-list{
+  margin-top: -20px;
+  padding-top: 12px;
+  padding-bottom: 25px;
+  background-color: #fff;
+}
 .freexf-coursecenter .coursecenter-list .ccl-son {
   padding: 7px 12px;
   margin-top: 10px;
@@ -800,7 +811,8 @@ img.freexf-blur {
 
 .freexf-search input {
   width: 100%;
-  margin-top: 5px;
+  height: 30px;
+  margin-top: 7px;
   padding: 0 30px 0 15px;
 }
 
@@ -811,7 +823,7 @@ img.freexf-blur {
   top: 0;
   background: rgba(0, 0, 0, 0) url(../img/publicbg/course.png) no-repeat;
   border: none;
-  background-position: -152px 2px;
+  background-position: -152px 1px;
   background-size: 300px auto;
 }
 

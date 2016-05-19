@@ -4,7 +4,7 @@
     <img class="freexf-logo" src="img/home/elogo.png">
   </ion-nav-title>
   <ion-nav-buttons side="right">
-    <a href="#/courseSearch" menu-toggle="right" class="button button-clear freexf-icon-search">
+    <a href="#/coursesearch" menu-toggle="right" class="button button-clear freexf-icon-search">
       <i class="icon ion-ios-search"></i>
     </a>
   </ion-nav-buttons>
@@ -20,8 +20,8 @@
       </div>
     </ion-scroll>
   </div>
-
   <ion-content class="has-header has-footer freexf-bg-gray" delegate-handle="myDelegate">
+    <div>{{home}}</div>
     <ion-slide-box on-slide-changed="slideHasChanged($index)">
       <ion-slide>
         <img src="img/home/banner@3x.png" alt="" style="width: 100%;"></ion-slide>
@@ -32,29 +32,29 @@
     </ion-slide-box>
     <section class="freexf-hometype">
       <div class="row row-center">
-        <a href="#/coursePlate" class="col col-33">
+        <a href="#/courseplate" class="col col-33">
           <i class="yinyu"></i>
           <span>英语</span>
         </a>
-        <a href="#/coursePlate" class="col col-33">
+        <a href="#/courseplate" class="col col-33">
           <i class="zhongxiaoxue"></i>
           <span>中小学</span>
         </a>
-        <a href="#/coursePlate" class="col col-33">
+        <a href="#/courseplate" class="col col-33">
           <i class="duoyuzhong"></i>
           <span>多语种</span>
         </a>
       </div>
       <div class="row row-center">
-        <a href="#/coursePlate" class="col col-33">
+        <a href="#/courseplate" class="col col-33">
           <i class="kuaiji"></i>
           <span>会计职业</span>
         </a>
-        <a href="#/coursePlate" class="col col-33">
+        <a href="#/courseplate" class="col col-33">
           <i class="kaoyan"></i>
           <span>考研</span>
         </a>
-        <a href="#/coursePlate" class="col col-33">
+        <a href="#/courseplate" class="col col-33">
           <i class="xinqu"></i>
           <span>兴趣</span>
         </a>
