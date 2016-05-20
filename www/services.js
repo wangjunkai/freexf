@@ -10,20 +10,31 @@
       }
     })
     //修改RestAngular配置
-    .factory('freexfRestAngular', function (Restangular, ENV) {
+    .factory('freexfRestAngular', function ($rootScope, $timeout, $ionicLoading, Restangular, ENV) {
       return Restangular.withConfig(function (RestangularConfigurer) {
         RestangularConfigurer.setBaseUrl(ENV._base);
+        //请求拦截器
         RestangularConfigurer.addFullRequestInterceptor(function (elem, option, what, url, title, params) {
-          debugger
-          return elem;
+          ($rootScope.xhr && ($rootScope.xhr++)) || ($rootScope.xhr = 1);
         });
+        //响应拦截器
         RestangularConfigurer.addResponseInterceptor(function (elem, option, what, url, response, deferred) {
-          debugger
-          return elem;
+          ($rootScope.xhr--) - 1 || $ionicLoading.hide();
         });
+        //错误拦截器
         RestangularConfigurer.addErrorInterceptor(function (response, deferred, responseHandler) {
+          $rootScope.xhr--;
+          $timeout(function () {
+            $ionicLoading.show({
+              template: '<ion-spinner icon="bubbles"></ion-spinner><div class="font">请求错误!</div>'
+            });
+            $timeout(function () {
+              $ionicLoading.hide();
+            }, 3000)
+          }, 1000);
           console.warn(response.data.Message + '\n' + response.data.MessageDetail);
-          if (response.status === 404) {}
+          if (response.status === 404) {
+          }
         });
       })
     })

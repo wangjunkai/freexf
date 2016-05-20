@@ -310,6 +310,8 @@
 .freexf-tabs .tabs {
   height: 43px;
   line-height: 43px;
+  padding-top: 0;
+  border-top: 1px solid #ddd !important;
 }
 
 .freexf-tabs .tabs .tab-title {
@@ -320,6 +322,8 @@ ion-tabs.freexf-tabs .tab-item.tab-item-active,
 ion-tabs.freexf-tabs .tab-item.active,
 ion-tabs.freexf-tabs .tab-item.activated {
   color: #1ab554;
+  border: 0;
+  margin-top: 0;
 }
 
 ion-tabs.freexf-tabs .tab-item.tab-item-active .freexf-icon-home,

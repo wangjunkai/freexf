@@ -9,46 +9,55 @@
         'oc.lazyLoad',
         'restangular'
       ])
+      .constant('XHR', 0)
       .constant('AUTH', {
         ISLOGIN: ['login', 'myaccount'],
         NOTLOGIN: ['tab.member']
       })
+      //<ion-spinner icon="bubbles">加载中...</ion-spinner>
+      //<div class="tab-item"><i class="icon ion-gear-a"></i>Settings</div>
       .constant('$ionicLoadingConfig', {
-        template: '<ion-spinner icon="bubbles"></ion-spinner>',
-        animation: 'fade-in',
-        showBackdrop: true,
-        maxWidth: 200,
-        showDelay: 0
+        template: '<ion-spinner icon="bubbles"></ion-spinner><div class="font">加载中...</div>',
+        noBackdrop: false
       })
-      .run(['$rootScope', '$state', '$ionicLoading', '$anchorScroll', '$timeout', '$location', 'AUTH',
-        function ($rootScope, $state, $ionicLoading, $anchorScroll, $timeout, $location, AUTH) {
-          $rootScope.$on('$stateChangeStart', function (event, next) {
-            if (!$rootScope.user && $.inArray(next.name, AUTH.NOTLOGIN) >= 0) {
-              event.preventDefault();
+      .run(['$rootScope', '$state', '$ionicLoading', '$anchorScroll', '$timeout', '$location', 'AUTH', 'XHR',
+        function ($rootScope, $state, $ionicLoading, $anchorScroll, $timeout, $location, AUTH, XHR) {
+          $rootScope.$on('$stateChangeStart', function (ev, to, toParams, from, fromParams) {
+            $ionicLoading.show();
+            if (!$rootScope.user && $.inArray(to.name, AUTH.NOTLOGIN) >= 0) {
+              ev.preventDefault();
               $state.go('myaccount');
               return;
             }
-            else if ($rootScope.user && $.inArray(next.name, AUTH.ISLOGIN) >= 0) {
+            else if ($rootScope.user && $.inArray(to.name, AUTH.ISLOGIN) >= 0) {
               event.preventDefault();
               $state.go('tab.member');
               return;
             }
-            $ionicLoading.show();
           });
+          $rootScope.$on('$viewContentLoading', function (event, viewConfig) {
+          });
+          $rootScope.$on('$stateChangeSuccess', function (ev, to, toParams, from, fromParams) {
 
-          $rootScope.$on('$stateChangeSuccess', function () {
-            $timeout(function () {
-              $ionicLoading.hide();
-            }, 0);
+            // $timeout(function () {
+            //   $ionicLoading.hide();
+            // }, 0);
           });
           $rootScope.$on('$stateChangeError', function () {
             debugger
-          })
-        }])
-      .config(function ($stateProvider, $locationProvider, $urlRouterProvider, $ionicConfigProvider, RestangularProvider) {
+          });
 
-        /*----------------------RestAngular 配置--------------------*/
-        //RestangularProvider.setBaseUrl(ENV.base);
+          $rootScope.$on('$ionicView.beforeEnter', function () {
+          });
+          $rootScope.$on('$ionicView.enter', function () {
+            !!$rootScope.xhr || $ionicLoading.hide();
+          });
+          $rootScope.$on('$ionicView.afterEnter', function () {
+          });
+
+        }])
+      .config(function ($stateProvider, $locationProvider, $urlRouterProvider, $ionicConfigProvider) {
+
         /*------------ionic 默认配置--------------------------------*/
         //修改默认后退键样式
         $ionicConfigProvider.backButton.text('').previousTitleText(false).icon('freexf-goback');

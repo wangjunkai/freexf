@@ -70,10 +70,23 @@
       HomeRepository.getModel({'eliteNum': 2, 'recNum': 4}).then(function (data) {
         $scope.home = data;
       });
+
       $scope.$on('$ionicView.loaded', function () {
-        $timeout(function () {
+/*        $timeout(function () {
           $ionicLoading.hide();
-        }, 0);
+        }, 0);*/
+      });
+      HomeRepository.getModel({'eliteNum': 2, 'recNum': 4}).then(function (data) {
+        $scope.home2 = data;
+      });
+      HomeRepository.getModel({'eliteNum': 2, 'recNum': 4}).then(function (data) {
+        $scope.home4 = data;
+      });
+      HomeRepository.getModel({'eliteNum': 2, 'recNum': 4}).then(function (data) {
+        $scope.home5 = data;
+      });
+      HomeRepository.getModel({'eliteNum': 2, 'recNum': 4}).then(function (data) {
+        $scope.home6 = data;
       });
 //  require(['modules/index/index_ctrl'], function (shouye_ctrl) {
 //    $injector.invoke(shouye_ctrl, this, {'$scope': $scope});
