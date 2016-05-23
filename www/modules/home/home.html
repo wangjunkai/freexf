@@ -12,7 +12,8 @@
     <ion-scroll id="ion-scroll" delegate-handle="anchor" direction="x" scrollbar-x="false">
       <div class="row">
         <a anchor-tab="anchor-section-yingyu" delegate="myDelegate" animate="true" class="col yingyu">英语</a>
-        <a anchor-tab="anchor-section-zhongxiaoxue" delegate="myDelegate" animate="true" class="col zhongxiaoxue">中小学</a>
+        <a anchor-tab="anchor-section-zhongxiaoxue" delegate="myDelegate" animate="true"
+           class="col zhongxiaoxue">中小学</a>
         <a anchor-tab="anchor-section-duoyuzhong" delegate="myDelegate" animate="true" class="col duoyuzhong">多语种</a>
         <a anchor-tab="anchor-section-kuaiji" delegate="myDelegate" animate="true" class="col kuaiji">会计职业</a>
         <a anchor-tab="anchor-section-kaoyan" delegate="myDelegate" animate="true" class="col kaoyan">考研</a>
@@ -59,6 +60,7 @@
         </a>
       </div>
     </section>
+    <!--精品课程-->
     <section class="freexf-jinpin">
       <h2 class="freexf-title">精品课程<a href="#/course" class="icon has-more"></a></h2>
       <div class="row">
@@ -69,11 +71,8 @@
         </div>
 
         <div class="col col-50 freexf-padding-left-5">
-          <a href="#/coursedetail" class="rcol">
-            <img src="img/home/kemu@3x.png" alt="">
-          </a>
-          <a href="#/coursedetail" class="rcol">
-            <img src="img/home/kemu@3x.png" alt="">
+          <a ng-repeat="jp in home.l_EliteCrouseList" href="#/coursedetail" class="rcol">
+            <img ng-src="{{jp.coverurl | decodeUri}}" alt="{{jp.productName}}">
           </a>
         </div>
       </div>
@@ -81,50 +80,58 @@
         <img src="img/home/big-huodong.png" alt="">
       </a>
     </section>
+    <!--英语-->
     <section id="anchor-section-yingyu" class="freexf-home-table">
       <h2 class="freexf-title">英语<a href="#/course" class="icon has-more"></a></h2>
       <div class="clearfix">
-        <div class="freexf-col" ng-repeat="o in obj">
-          <div>
-            <img src="img/home/kemu@3x.png">
-          </div>
-          <div class="clearfix">
-            <p class="ti">软件测评师</p>
-            <span class="freexf-left"><strong class="xufen">1950</strong><em>学分</em></span>
-            <span class="r10 freexf-right"><em>课时数：</em><strong class="keshi">45</strong></span>
-          </div>
-        </div>
+        <div class="freexf-col" ng-include="'homeTable.html'" ng-repeat="l in home.l_englishList"></div>
       </div>
     </section>
+    <!--中小学-->
     <section id="anchor-section-zhongxiaoxue" class="freexf-home-table">
       <h2 class="freexf-title">中小学</h2>
       <div class="clearfix">
-        <div class="freexf-col" ng-repeat="o in obj">
-          <div>
-            <img src="img/home/kemu@3x.png">
-          </div>
-          <div class="clearfix">
-            <p class="ti">软件测评师</p>
-            <span class="freexf-left"><strong class="xufen">1950</strong><em>学分</em></span>
-            <span class="r10 freexf-right"><em>课时数：</em><strong class="keshi">45</strong></span>
-          </div>
-        </div>
+        <div class="freexf-col" ng-include="'homeTable.html'" ng-repeat="l in home.l_k12List"></div>
       </div>
     </section>
+    <!--多语种-->
     <section id="anchor-section-duoyuzhong" class="freexf-home-table">
       <h2 class="freexf-title">多语种<a href="#/coursePlate" class="icon has-more"></a></h2>
       <div class="clearfix">
-        <div class="freexf-col" ng-repeat="o in obj">
-          <div>
-            <img src="img/home/kemu@3x.png">
-          </div>
-          <div class="clearfix">
-            <p class="ti">软件测评师</p>
-            <span class="freexf-left"><strong class="xufen">1950</strong><em>学分</em></span>
-            <span class="r10 freexf-right"><em>课时数：</em><strong class="keshi">45</strong></span>
-          </div>
-        </div>
+        <div class="freexf-col" ng-include="'homeTable.html'" ng-repeat="l in home.l_multilingualList"></div>
+      </div>
+    </section>
+    <!--会计职业-->
+    <section id="anchor-section-kuaiji" class="freexf-home-table">
+      <h2 class="freexf-title">会计职业<a href="#/coursePlate" class="icon has-more"></a></h2>
+      <div class="clearfix">
+        <div class="freexf-col" ng-include="'homeTable.html'" ng-repeat="l in home.l_accountingList"></div>
+      </div>
+    </section>
+    <!--考研-->
+    <section id="anchor-section-kaoyan" class="freexf-home-table">
+      <h2 class="freexf-title">考研<a href="#/coursePlate" class="icon has-more"></a></h2>
+      <div class="clearfix">
+        <div class="freexf-col" ng-include="'homeTable.html'" ng-repeat="l in home.l_postgraduateList"></div>
+      </div>
+    </section>
+    <!--兴趣-->
+    <section id="anchor-section-xingqu" class="freexf-home-table">
+      <h2 class="freexf-title">兴趣<a href="#/coursePlate" class="icon has-more"></a></h2>
+      <div class="clearfix">
+        <div class="freexf-col" ng-include="'homeTable.html'" ng-repeat="l in home.l_interestList"></div>
       </div>
     </section>
   </ion-content>
 </ion-view>
+
+<script type="text/ng-template" id="homeTable.html">
+  <div>
+    <img ng-src="{{l.coverurl}}" alt="{{l.productName}}">
+  </div>
+  <div class="clearfix">
+    <p class="ti">{{l.cover}}</p>
+    <span class="freexf-left"><strong class="xufen">{{l.price}}</strong><em>学分</em></span>
+    <span class="r10 freexf-right"><em>课时数：</em><strong class="keshi">{{l.hour}}</strong></span>
+  </div>
+</script>

@@ -10,7 +10,8 @@ var paths = {
     oclazyload: 'lib/oclazyload/dist/ocLazyLoad',
     jq: 'lib/jquery/dist/jquery',
     lodash: 'lib/lodash/dist/lodash',
-    restAngular: 'lib/restangular/src/restangular'
+    restAngular: 'lib/restangular/src/restangular',
+    /*qrcode: 'lib/qrcode/jquery.qrcode.min'*/
     /* angularSanitize: './lib/angular-sanitize/angular-sanitize'*/
   },
   shim: {
@@ -28,6 +29,7 @@ require([
     'lodash',
     'app',
     'services'
+    /*    'qrcode'*/
   ], function () {
     testViewport();
     hideTop(window);

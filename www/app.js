@@ -20,6 +20,9 @@
         template: '<ion-spinner icon="bubbles"></ion-spinner><div class="font">加载中...</div>',
         noBackdrop: false
       })
+      .filter('decodeUri', function ($window) {
+        return $window.decodeURIComponent;
+      })
       .run(['$rootScope', '$state', '$ionicLoading', '$anchorScroll', '$timeout', '$location', 'AUTH', 'XHR',
         function ($rootScope, $state, $ionicLoading, $anchorScroll, $timeout, $location, AUTH, XHR) {
           $rootScope.$on('$stateChangeStart', function (ev, to, toParams, from, fromParams) {
@@ -56,7 +59,7 @@
           });
 
         }])
-      .config(function ($stateProvider, $locationProvider, $urlRouterProvider, $ionicConfigProvider) {
+      .config(function ($provide, $stateProvider, $locationProvider, $urlRouterProvider, $ionicConfigProvider) {
 
         /*------------ionic 默认配置--------------------------------*/
         //修改默认后退键样式
@@ -241,7 +244,31 @@
           })
           .state('coursedetail', {
             url: '/coursedetail',
-            templateUrl: 'modules/course/coursedetail.html',
+            views: {
+              '': {
+                templateUrl: 'modules/course/coursedetail.html'
+              },
+              'toptabs@coursedetail': {
+                templateUrl: 'modules/course/toptabs.html'
+              },
+              'main@coursedetail': {
+                templateUrl: 'modules/course/coursedetailmodule.html'
+              }
+            },
+            controller: 'coursedetail_ctrl',
+            resolve: {
+              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load(['modules/course/coursedetail.js']);
+              }]
+            }
+          })
+          .state('coursedetail.courseoutline', {
+            url: '/courseoutline',
+            views: {
+              'main@coursedetail': {
+                templateUrl: 'modules/course/coursedetailoutline.html'
+              }
+            },
             controller: 'coursedetail_ctrl',
             resolve: {
               loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {

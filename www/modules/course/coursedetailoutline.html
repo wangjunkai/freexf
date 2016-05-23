@@ -1,0 +1,14 @@
+
+<!--课程大纲-->
+<div class="freexf-courseoutline ">
+	<!--课程大纲-->
+	<ul class="list freexf-courselist" ng-controller='SomeController'>
+		<accordion>
+			<expander class="expander" ng-repeat="expander in expanders" expander-title="expander.title" expander-istest="expander.istest">
+					<course class="course" ng-repeat="class in expander.classLists" class-title="class.title" >
+					</course>
+			</expander>
+		</accordion>
+	</ul>
+</div>
+

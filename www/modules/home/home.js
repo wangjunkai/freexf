@@ -59,42 +59,27 @@
         })
       }
     }])
-    .factory('home', function (Restangular) {
-      return Restangular.service('student');
-    })
-    .controller('home_ctrl', function ($scope, $timeout, $ionicLoading, HomeRepository) {
 
-      $scope.obj = [
-        {}, {}, {}, {}
-      ];
-      HomeRepository.getModel({'eliteNum': 2, 'recNum': 4}).then(function (data) {
-        $scope.home = data;
-      });
+    .controller('home_ctrl', function ($scope, $timeout, $ionicLoading, $exceptionHandler, ENV, HomeRepository) {
+
+      var Home = HomeRepository(ENV._api.__GetIndexGather);
+      var Home2 = HomeRepository(ENV._api.__GetIndexGather2);
 
       $scope.$on('$ionicView.loaded', function () {
-/*        $timeout(function () {
-          $ionicLoading.hide();
-        }, 0);*/
       });
-      HomeRepository.getModel({'eliteNum': 2, 'recNum': 4}).then(function (data) {
-        $scope.home2 = data;
+      Home.all(Home.route).withHttpConfig({timeout: 1}).customGET().then(function (res) {
+        $scope.home = res.response.data[0];
       });
-      HomeRepository.getModel({'eliteNum': 2, 'recNum': 4}).then(function (data) {
-        $scope.home4 = data;
-      });
-      HomeRepository.getModel({'eliteNum': 2, 'recNum': 4}).then(function (data) {
-        $scope.home5 = data;
-      });
-      HomeRepository.getModel({'eliteNum': 2, 'recNum': 4}).then(function (data) {
-        $scope.home6 = data;
-      });
-//  require(['modules/index/index_ctrl'], function (shouye_ctrl) {
-//    $injector.invoke(shouye_ctrl, this, {'$scope': $scope});
-//  });
+
+/*      Home2.getModel().then(function (res) {
+      });*/
     })
     .controller('index_ctrl2', function ($scope, $rootScope, $injector, $ionicLoading, $timeout, Home) {
       //$scope.home = Home.home.query({id:'1'});
       //$scope.username = (new Home.user()).getName();
+      //  require(['modules/index/index_ctrl'], function (shouye_ctrl) {
+      //    $injector.invoke(shouye_ctrl, this, {'$scope': $scope});
+      //  });
     })
     .controller('index_daohang_ctrl', function ($scope) {
 

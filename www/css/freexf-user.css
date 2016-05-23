@@ -408,12 +408,14 @@ input:-moz-placeholder {
   margin-top: -20px;
 }
 
-.MyAcc-top p {
+.MyAcc-top p,.MyAcc-top .UpdateName{
   text-align: center;
   margin-top: 15px;
   margin-bottom: 0;
 }
-
+.MyAcc-top .UpdateName{
+	position: relative;
+}
 .MyAcc-top .MyAcc-setting, .MyAcc-top .MyAcc-icon, .button-clear.search .freexf-search:before,
 .mycourse .btnGrounp .button-stable:before, .mycourse .btnGrounp .button-assertive:before,
 .progress-bar .full:before, .progress-bar .full:after, .already .MyAcc-top .edit,

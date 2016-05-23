@@ -256,7 +256,7 @@ img.freexf-blur {
 }
 
 .freexf-courselist {
-  padding: 20px 0;
+  /*padding: 20px 0;*/
   background: #fff;
 }
 
@@ -299,28 +299,6 @@ img.freexf-blur {
   line-height: 35px;
   color: #323232;
 }
-
-/*.freexf-play.button {
-	width: 22px;
-	height: 22px;
-	border-radius: 50%;
-	border: 1px green solid;
-	color: green;
-	min-width:22px;
-	min-height: 22px;
-	top: 18.5px;
-	right: 22px;
-}
-.freexf-test .freexf-play.button{
-	border: 1px #ddd solid;
-	color: #ddd;
-}
-.freexf-play.button i{
-	position: absolute;
-	top: -2px;
-	left: 8.5px;
-	font-size: 11rem;
-}*/
 .freexf-play.button {
   background: rgba(0, 0, 0, 0);
   min-width: 30px;
@@ -374,11 +352,6 @@ img.freexf-blur {
   top: 0px;
   left: 0px;
 }
-
-/*.freexf-courseitem li.item:first-of-type,
-.freexf-democlass li.item:first-of-type{
-	margin-top: 10px;
-}*/
 .freexf-courseitem .item p,
 .freexf-democlass .item p {
   overflow: hidden;
@@ -488,22 +461,10 @@ img.freexf-blur {
   top: 2px;
   left: 2px;
 }
-
-/*.ion-ios-consult{
-	display: inline-block;
-	width: 30px;
-  	height: 30px;
+.freexf-courseoutline{
+	background: #fff;
+	padding: 20px 0;
 }
-.ion-ios-consult:before{
-	display: inline-block;
-	width: 100%;
-	height: 100%;
-    speak: none;
-	content: "";
-	background:url(../img/publicbg/course.png) no-repeat;
-	background-position: 0 0;
-	background-size: 10% auto;
-}*/
 /*购买协议*/
 .freexf-agreement.active .popup {
   width: 80%;
@@ -541,9 +502,7 @@ img.freexf-blur {
   background-color: #eee;
 }
 .coursecenter-list{
-  margin-top: -20px;
-  padding-top: 12px;
-  padding-bottom: 25px;
+  padding: 13px 0 25px 0;
   background-color: #fff;
 }
 .freexf-coursecenter .coursecenter-list .ccl-son {

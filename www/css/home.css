@@ -232,6 +232,7 @@
 .freexf-jinpin .rcol {
   display: inline-block;
   height: 97px;
+  width: 100%;
 }
 
 .freexf-jinpin .rcol:last-child {
@@ -279,6 +280,12 @@
   font-size: 10rem;
   color: #323232;
   margin-bottom: 5px;
+  word-wrap: normal;
+  word-break: keep-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  overflow-wrap: normal;
+  white-space:nowrap;
 }
 
 .freexf-home-table .freexf-col .r10 {

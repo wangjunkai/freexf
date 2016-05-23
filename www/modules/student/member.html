@@ -4,11 +4,68 @@
     <a href="#/courseSearch" menu-toggle="right" class="button button-clear freexf-icon-search"><i class="icon ion-ios-search"></i></a>
 	</ion-nav-buttons>
 	<ion-content class="already has-header has-footer">
-
 		<div class="MyAcc-top">
 			<a href="#/set"><div class="MyAcc-setting"></div></a>
-			<div class="MyAcc-icon"></div>
-			<p><span class="name">freexf</span><span class="edit"></span></p>
+			<div class="MyAcc-icon"  ng-model="ImgBoxShow" ng-click="ChangeUserImg()"></div>
+			<div class="UpdateName">
+				<input class="name" value="freexf" id="UpadateUserName" ng-readonly="readonly" ng-blur="blur()"/> 
+				<span class="edit" ng-click="ChangeName()" ng-model="readonly"></span>
+			</div>
+			<!--更换图片框-->
+			<div class="changeImg" ng-show="ImgBoxShow">
+				<div class="modal-backdrop-bg new"></div>
+				<div class="userImgBox">
+					<div class="row userImg">
+						<div class="col col-33 on">
+							<img src="img/user/women.png" width="100%">
+							<label class="radio">
+								<!--onkeydown="if(event.keyCode==13) return false;"-->
+					        	<input  value="女" name="sex" id="sex2" checked="checked" type="radio">
+					        	<i></i>
+					        </label>
+						</div>
+						<div class="col col-33">
+							<img src="img/user/man.png" width="100%">
+							<label class="radio">
+					        	<input  value="女" name="sex" id="sex2" checked="checked" type="radio">
+					        	<i></i> 
+					        </label>
+						</div>
+						<div class="col col-33">
+							<img src="img/user/null.png" width="100%">
+							<label class="radio">
+					        	<input  value="女" name="sex" id="sex2" checked="checked" type="radio">
+					        	<i></i> 
+					        </label>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="share" ng-click="modal.show()" ng->
+				<div class="row1 first">
+					<span>邀</span>
+					<span>好</span>
+				</div>
+				<div class="row1">
+					<span>请</span>
+					<span>友</span>
+				</div>
+				<em></em>
+			</div>
+			<script id="showLink" type="text/ng-template">
+			  <div class="modal-backdrop-bg new"></div>
+			  <ion-modal-view class="newModal">
+			    <ion-content>
+			      <input type="text" value="www.baidu.com"/>
+			      <p>复制框内链接，粘贴给好友，或截取下列二维码</p>
+			      <div id="code" align="center">
+					 <canvas width="20%" height="20%">
+				  	 </canvas>
+				  </div>
+			    </ion-content>
+			  </ion-modal-view>
+			</script>
 			<!--<p class="number">学号<i>160515001</i></p>-->
 			<div class="MyAcc-title">
 				<span>已获得<font>100</font></span>
@@ -147,6 +204,6 @@
 				</div>
 			</ion-scroll>
 		</div>
-
+		
 	</ion-content>
 </ion-view>
