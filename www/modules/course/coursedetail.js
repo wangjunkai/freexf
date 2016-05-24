@@ -25,7 +25,10 @@ angular.module('freexf')
 		$scope.flowerState=function(){
 			$scope.flowerstate=!$scope.flowerstate;
 		}
-		$scope.showAgreement=function(){
+		
+  })
+.controller('buyAway_Ctrl', function ($scope, $rootScope, $injector, $ionicLoading,$ionicPopup, $timeout) {
+  	$scope.showAgreement=function(){
 			var confirmPopup = $ionicPopup.confirm({
 	       title: '购买协议',
 	       cssClass :'freexf-agreement',

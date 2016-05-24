@@ -26,14 +26,21 @@
   	</div>
   	<div class="tabs-striped  tabs-color-balanced freexf-course">
   		<!--tab选项卡-->
-			<div class="tabs freexf-course-tabs"  ui-view="toptabs"></div>
+			<div class="tabs freexf-course-tabs">
+				<a class="tab-item" ng-class="{active:coursedetail}" href="#/coursedetail" ng-click="coursedetailClick()">
+			   课程介绍
+			 </a>
+			 <a class="tab-item" ng-class="{active:courseoutline}" href="#/coursedetail/courseoutline" ng-click="courseoutlineClick()">
+			   课程大纲
+			 </a>				
+			</div>
 			<!--end-->
 		</div>
 		<!--课程介绍以及大纲-->
 		<div ui-view="main"></div>
 		<!--end-->
   </ion-content>
-	<div class="bar bar-footer freexf-buy">
+	<div class="bar bar-footer freexf-buy" ng-controller="buyAway_Ctrl">
     <button class="title freexf-buy" style="width:100%;" ng-click="showAgreement()">立即购买</button>
   </div>
 </ion-view>

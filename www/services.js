@@ -4,11 +4,11 @@
   angular.module('freexf')
     //配置api路径
     .constant('ENV', {
-      '_timeout': 10000,
+      '_timeout': 5000,
       '_base': '/MFreeXFapi/student',
       '_api': {
-        __GetIndexGather: 'GetIndexGather',
-        __GetIndexGather2: 'GetIndexGather2'
+          __GetIndexGather: 'GetIndexGather',
+          __courselistpage: 'courselistpage'
       }
     })
     //修改RestAngular配置
@@ -18,7 +18,7 @@
         RestangularConfigurer.setDefaultHttpFields({timeout: ENV._timeout});
         //请求拦截器
         RestangularConfigurer.addFullRequestInterceptor(function (elem, option, what, url, title, params) {
-          ($rootScope.xhr && ($rootScope.xhr++)) || ($rootScope.xhr = 1);
+            ($rootScope.xhr && ($rootScope.xhr++)) || ($rootScope.xhr = 1);
 
           return elem;
         });
@@ -121,5 +121,17 @@
       return function (api) {
         return new authRepository(api);
       }
+    })
+    //课程列表
+    .factory('CourseList', function (ENV, freexfRestAngular, baseRestAngular) {
+        function CourseList(api) {
+            baseRestAngular.call(this, freexfRestAngular, api ? api : ENV._api.__courselistpage)
+        }
+
+        baseRestAngular.extend(CourseList);
+        return function (api) {
+            return new CourseList(api);
+        }
     });
+
 })();

@@ -110,7 +110,7 @@
   height: 12px;
   position: absolute;
   left: 0;
-  top: 23px;
+  top: 18px;
   background: #1ab554;
   z-index: 999;
 }
@@ -121,7 +121,7 @@
   height: 8px;
   position: absolute;
   left: 8px;
-  top: 25px;
+  top: 20px;
   background: #1ab554;
   z-index: 999;
   transform: rotate(45deg);
@@ -466,16 +466,23 @@ img.freexf-blur {
 	padding: 20px 0;
 }
 /*购买协议*/
+.freexf-agreement.active{
+	background: rgba(0,0,0,.25);
+}
 .freexf-agreement.active .popup {
   width: 80%;
+  background-color: rgba(255, 255, 255, 1);
 }
 
 .freexf-agreement.active .popup .popup-head {
   background: #1AB554;
+  line-height: 40px;
+  padding: 0;
 }
 
 .freexf-agreement.active .popup .popup-head h3 {
   color: #fff;
+  line-height: 40px;
 }
 
 .freexf-agreement.active .popup .popup-buttons {
@@ -485,6 +492,7 @@ img.freexf-blur {
 
 .freexf-agreement.active .popup .popup-buttons .button {
   min-height: 30px;
+  margin-right: 0;
 }
 
 .freexf-agreement .freexf-agreement {
@@ -587,9 +595,9 @@ img.freexf-blur {
   display: inline-block;
   height: 30px;
   line-height: 30px;
-  font-size: 13rem;
+  font-size: 12rem;
   color: #969696;
-  width: 45px;
+  width: 35px;
 }
 
 .freexf-classmodule-header-nav div:nth-child(1) {
@@ -599,12 +607,12 @@ img.freexf-blur {
 
 .freexf-classmodule-header-nav div:nth-child(2) {
   position: absolute;
-  right: 120px;
+  right: 145px;
 }
 
 .freexf-classmodule-header-nav div:nth-child(3) {
   position: absolute;
-  right: 60px;
+  right: 75px;
 }
 
 .freexf-classmodule-header-nav div:nth-child(4) {
@@ -624,7 +632,7 @@ img.freexf-blur {
   background-size: 300px auto;
   position: absolute;
   top: 0;
-  right: 8px;
+  right: 0px;
 }
 
 .freexf-classmodule-header-nav div:nth-child(2):after,
@@ -639,7 +647,7 @@ img.freexf-blur {
   background-size: 300px auto;
   position: absolute;
   top: 0;
-  right: 8px;
+  right: 0px;
 }
 
 .freexf-courseNav:after {
@@ -650,7 +658,7 @@ img.freexf-blur {
   display: block;
   position: absolute;
   top: 11px;
-  right: 5px;
+  right: 0px;
   border-width: 0 0 1.5px 1.5px;
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
@@ -673,6 +681,9 @@ img.freexf-blur {
   color: #969696;
   font-size: 12rem;
 }
+.freexf-classmodule .item p:last-of-type{
+	margin-top: 4px;
+}
 
 .freexf-classmodule .item p span {
   color: #EA4C00;
@@ -683,7 +694,7 @@ img.freexf-blur {
 .freexf-classmodule .item-thumbnail-left,
 .freexf-classmodule .item-thumbnail-left .item-content {
   padding-top: 5%;
-  padding-left: 35%;
+  padding-left: 34%;
   /*min-height: 92.5px;*/
 }
 
@@ -716,7 +727,7 @@ img.freexf-blur {
 
 .freexf-classmodule-header-nav .freexf-languageclass ul li {
   text-align: left;
-  width: 32%;
+  width: 32.7%;
   display: inline-block;
 }
 

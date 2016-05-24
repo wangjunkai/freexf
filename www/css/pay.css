@@ -2,7 +2,7 @@
 	text-decoration: none;
 }
 .pay .OrderMessage{
-	border-bottom: 10px solid #eee;
+	border-bottom: 5px solid #eee;
 	padding:10px;
 	color:#323232;
 	font-size: 10rem;
@@ -70,10 +70,26 @@
 	float:left;
 }
 .PayState-group p{
-	text-align: center;
-	margin-top: 20px;
+	text-align: center;	
 	color:#969696;
+	font-size: 12rem;
+	margin-top: 20px;
 }
+.PayState-group .tip{
+	margin: 0px;	
+}
+.PayState-group .tip:last-child{
+	margin-bottom: 10px;
+}
+.pay.address .button.button-block{
+	margin-top: 57px;
+}
+.BookAddress{
+	margin-top:5px;
+	border-top:5px solid #eee;
+	padding-top:18px;
+}
+.BookAddress p{padding: 6px 0 5px 16px;}
 .paycontent .TipLogo,.MyAcc-content .TipLogo{
 	width:87px;
 	height:133px;
@@ -87,7 +103,7 @@
 	display: table;
     margin: auto;
     width: 100%;
-
+    background-color: #fff;
 }
 .pay .ContactUs{
 	text-align: center;

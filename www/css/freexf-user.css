@@ -383,20 +383,15 @@ ion-content {
 
 }
 
-input::-moz-placeholder {
+input::-moz-placeholder,textarea::-moz-placeholder {
   color: #ddd;
 }
 
-input::-webkit-input-placeholder {
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{
   color: #ddd;
 }
 
-input:-ms-input-placeholder {
-  color: #ddd;
-}
-
-/* ie */
-input:-moz-placeholder {
+input:-ms-input-placeholder,textarea::-ms-input-placeholder {
   color: #ddd;
 }
 

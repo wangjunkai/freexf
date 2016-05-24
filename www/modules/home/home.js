@@ -61,28 +61,19 @@
     }])
 
     .controller('home_ctrl', function ($scope, $timeout, $ionicLoading, $exceptionHandler, ENV, HomeRepository) {
-
       var Home = HomeRepository(ENV._api.__GetIndexGather);
-      var Home2 = HomeRepository(ENV._api.__GetIndexGather2);
-
-      $scope.$on('$ionicView.loaded', function () {
-      });
-      Home.all(Home.route).withHttpConfig({timeout: 1}).customGET().then(function (res) {
+      $scope.$on('$ionicView.loaded', function () {});
+      $scope.getTime = function(){
+        return new Date().getTime();
+      };
+      Home.getModel({'eliteNum': 3, 'recNum': 4}).then(function (res) {
         $scope.home = res.response.data[0];
       });
-
-/*      Home2.getModel().then(function (res) {
-      });*/
     })
-    .controller('index_ctrl2', function ($scope, $rootScope, $injector, $ionicLoading, $timeout, Home) {
-      //$scope.home = Home.home.query({id:'1'});
-      //$scope.username = (new Home.user()).getName();
+    .controller('index_daohang_ctrl', function ($scope) {
       //  require(['modules/index/index_ctrl'], function (shouye_ctrl) {
       //    $injector.invoke(shouye_ctrl, this, {'$scope': $scope});
       //  });
-    })
-    .controller('index_daohang_ctrl', function ($scope) {
-
     });
 
 })();

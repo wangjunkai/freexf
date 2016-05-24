@@ -1,4 +1,4 @@
-<ion-view view-title="我的账户">
+<ion-view view-title="我的账户" ng-controller='member_ctrl'>
 
 	<ion-nav-buttons side="right">
     <a href="#/courseSearch" menu-toggle="right" class="button button-clear freexf-icon-search"><i class="icon ion-ios-search"></i></a>
@@ -6,13 +6,13 @@
 	<ion-content class="already has-header has-footer">
 		<div class="MyAcc-top">
 			<a href="#/set"><div class="MyAcc-setting"></div></a>
-			<div class="MyAcc-icon"  ng-model="ImgBoxShow" ng-click="ChangeUserImg()"></div>
+			<div class="MyAcc-icon"  ng-model="ImgBoxShow" ng-click="ChangeUserImg()" ng-style="userImage" ></div>
 			<div class="UpdateName">
-				<input class="name" value="freexf" id="UpadateUserName" ng-readonly="readonly" ng-blur="blur()"/> 
+				<input class="name" value="freexf" id="UpadateUserName" ng-readonly="readonly" ng-blur="blur()"/>
 				<span class="edit" ng-click="ChangeName()" ng-model="readonly"></span>
 			</div>
 			<!--更换图片框-->
-			<div class="changeImg" ng-show="ImgBoxShow">
+			<div class="changeImg" ng-show="ImgBoxShow" >
 				<div class="modal-backdrop-bg new"></div>
 				<div class="userImgBox">
 					<div class="row userImg">
@@ -20,29 +20,29 @@
 							<img src="img/user/women.png" width="100%">
 							<label class="radio">
 								<!--onkeydown="if(event.keyCode==13) return false;"-->
-					        	<input  value="女" name="sex" id="sex2" checked="checked" type="radio">
+					        	<input  value="女" name="sex" id="sex2" checked="checked" type="radio" ng-click="women()">
 					        	<i></i>
 					        </label>
 						</div>
 						<div class="col col-33">
 							<img src="img/user/man.png" width="100%">
 							<label class="radio">
-					        	<input  value="女" name="sex" id="sex2" checked="checked" type="radio">
-					        	<i></i> 
+					        	<input  value="男" name="sex" id="sex1" checked="checked" type="radio" ng-click="man()">
+					        	<i></i>
 					        </label>
 						</div>
 						<div class="col col-33">
 							<img src="img/user/null.png" width="100%">
 							<label class="radio">
-					        	<input  value="女" name="sex" id="sex2" checked="checked" type="radio">
-					        	<i></i> 
+					        	<input  value="保密" name="sex" id="sex0" checked="checked" type="radio" ng-click="nobody()">
+					        	<i></i>
 					        </label>
 						</div>
 					</div>
 				</div>
 			</div>
-			
-			<div class="share" ng-click="modal.show()" ng->
+
+			<div class="share" ng-click="openModal()" >
 				<div class="row1 first">
 					<span>邀</span>
 					<span>好</span>
@@ -54,15 +54,12 @@
 				<em></em>
 			</div>
 			<script id="showLink" type="text/ng-template">
-			  <div class="modal-backdrop-bg new"></div>
+			  <div class="modal-backdrop-bg new"  ></div>
 			  <ion-modal-view class="newModal">
 			    <ion-content>
-			      <input type="text" value="www.baidu.com"/>
-			      <p>复制框内链接，粘贴给好友，或截取下列二维码</p>
-			      <div id="code" align="center">
-					 <canvas width="20%" height="20%">
-				  	 </canvas>
-				  </div>
+			      <input type="text" value="www.baidu.com" class="showBox"/>
+			      <p ng-click="closeModal()">复制框内链接，粘贴给好友，或截取下列二维码</p>
+			      <div id="code" align="center"> </div>
 			    </ion-content>
 			  </ion-modal-view>
 			</script>
@@ -204,6 +201,6 @@
 				</div>
 			</ion-scroll>
 		</div>
-		
+
 	</ion-content>
 </ion-view>

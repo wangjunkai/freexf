@@ -1,4 +1,4 @@
-//define(["qrcode"], function(qrcode) {
+
 angular.module('freexf',['ionic'])
   .controller('member_ctrl', function ($scope, $rootScope, $injector,$ionicPopup, $ionicLoading,$ionicModal, $timeout) {
 				$scope.readonly = true;
@@ -9,48 +9,64 @@ angular.module('freexf',['ionic'])
 			   };
 			//失去焦点事件
 				$scope.blur=function(){
-					$scope.readonly = true;					
+					$scope.readonly = true;
 				};
+
 				//修改头像
 			  $scope.ChangeUserImg=function(){
 			  	$scope.ImgBoxShow=!$scope.ImgBoxShow;
+			  }
+			  //女生头像
+			  $scope.women=function(){
+			  	 $scope.userImage = {
+			  	 	 "background-position" : "-52px -191px",
+			  	 }
+			  }
+			  //男生头像
+			  $scope.man=function(){
+			  	 $scope.userImage = {
+			  	 	 "background-position" : "-217px -102px",
+			  	 }
+			  }
+			  //小鹿头像
+			  $scope.nobody=function(){
+			  	 $scope.userImage = {
+			  	 	 "background-position" : "-52px -104px;",
+			  	 }
 			  }
 				//邀请
 				 $ionicModal.fromTemplateUrl('showLink', {
 			    scope: $scope
 			  }).then(function(modal) {
 			    $scope.modal = modal;
-			    
+
 			  });
-			  
-				//邀请弹框
-//				 $scope.showPopup = function() {
-//				   $scope.data = {}
-//				   // 自定义弹窗
-//				   var myPopup = $ionicPopup.show({
-//				     template: '<div class="showBox" id="ShareLinkAddress" ng-model="shareSelLink" >'
-//				    +'http://www.freexf.com/home/register?p=15312085169&d=04832de76f834045b51264a0e32a38bc'
-//				    +'</div>'
-//				    +'<p class="words">'
-//				    +'复制框内链接，粘贴给好友，或截取下列二维码'
-//				    +'</p>'
-//				    +'<div id="code" align="center">'
-//				    +'<canvas width="20%" height="20%">'
-//				    +'</canvas>'
-//				    +'</div>',
-//				     cssClass :'ShareLink',
-//				     scope: $scope,
-//				   });
-//				   myPopup.then(function(res) {
-//				     console.log('Tapped!', res);
-//				   });
-//				   $timeout(function() {
-//				      myPopup.close(); // 5秒后关闭弹窗
-//				   }, 50000);
-//				  
-//				   	
-//				  };
-   			//二维码
-   		
-  		
+        $scope.openModal = function() {
+          $scope.modal.show()
+          window.yqmurl='www.ssss'
+          yaoqingimg(window.yqmurl);
+        }
+        //$scope.closeModal = function() {
+        //  alert(2);
+        //  $scope.modal.hide();
+        //};
+        //$scope.$on('$destroy', function() {
+        //  alert(4);
+        //  $scope.modal.remove();
+        //});
+        //$scope.$on('modal.hide', function() {
+        //  alert(3)
+        //});
+
   })
+  var yaoqingimg=function(yqmurl){
+    if(	!$("#code").hasClass('on')){
+      $("#code").addClass("on");
+      $("#code").qrcode({
+        width: 75, //宽度
+        height: 75, //高度
+        text:yqmurl,
+      });
+    }
+
+  }

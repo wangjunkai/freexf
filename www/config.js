@@ -8,17 +8,20 @@ var paths = {
   paths: {
     ionic: 'lib/ionic/js/ionic.bundle',
     oclazyload: 'lib/oclazyload/dist/ocLazyLoad',
+    imglazyload: 'lib/ionic-image-lazy-load/ionic-image-lazy-load',
     jq: 'lib/jquery/dist/jquery',
     lodash: 'lib/lodash/dist/lodash',
     restAngular: 'lib/restangular/src/restangular',
-    /*qrcode: 'lib/qrcode/jquery.qrcode.min'*/
+    qrcode: 'lib/qrcode/jquery.qrcode.min'
     /* angularSanitize: './lib/angular-sanitize/angular-sanitize'*/
   },
   shim: {
     //注入服务至ionic
     'oclazyload': ['ionic'],
+    'imglazyload': ['ionic'],
     'restAngular': ['ionic'],
-    'services': ['ionic', 'app']
+    'services': ['ionic', 'app'],
+    'qrcode': ['ionic']
   }
 };
 require.config(paths);
@@ -27,6 +30,7 @@ require([
     'ionic',
     'jq',
     'lodash',
+    'qrcode',
     'app',
     'services'
     /*    'qrcode'*/
