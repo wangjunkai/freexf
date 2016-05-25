@@ -5,7 +5,7 @@
     	<i class="icon ion-ios-search"></i>
     </a>
   </ion-nav-buttons>
-  <ion-content ng-controller="courseplate_ctrl">
+  <ion-content>
   		<div class="freexf-classmodule-header-nav">
   			<div class="freexf-courseNav" ng-class="{active:languageclass}" ng-click="languageClassShow()">韩语</div>
   			<div class="active">综合</div>
@@ -13,7 +13,7 @@
   			<div>学分</div>
   			<div class="freexf-languageclass" ng-show="languageclass">
   				<ul>
-  					<li><a href="#">全部</a></li>
+  					<li  ng-repeat="i in courseList.l_multilingualList"><a href="#">全部</a></li>
   					<li><a href="#">日语</a></li>
   					<li class="active"><a href="#">韩语</a></li>
   					<li><a href="#">俄语</a></li>

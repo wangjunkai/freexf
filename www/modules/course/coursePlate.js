@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 
 
 angular.module('freexf')
@@ -15,19 +15,17 @@ angular.module('freexf')
 		}
 
 		var CourseList = CourseList(ENV._api.__courselistpage);
-		$scope.obj = [
-          {}, {}, {}, {}
-		];
 
 		$scope.$on('$ionicView.loaded', function () {
 		    /*        $timeout(function () {
              $ionicLoading.hide();
              }, 0);*/
 		});
-		CourseList.getModel({ "category": "multilingual", "label": "all", "orderBy": "none", "pageIndex": '5' }).then(function (res) {
-            debugger
-		    //$scope.home = res.response.data[0];
-		    console.log(res);
+      
+		CourseList.getModel({ "category": "多语种","lingual":"", "label": "", "orderBy": "xuefen", "order": "desc", "pageIndex": '0', "pageMax": '2' }).then(function (res) {
+		    $scope.courseList = res.response.data;
+            
+		    //console.log(res);
 		});
   })
 

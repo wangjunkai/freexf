@@ -55,10 +55,7 @@
           $rootScope.$on('$viewContentLoading', function (event, viewConfig) {
           });
           $rootScope.$on('$stateChangeSuccess', function (ev, to, toParams, from, fromParams) {
-
-            // $timeout(function () {
-            //   $ionicLoading.hide();
-            // }, 0);
+          	!!$rootScope.xhr || $ionicLoading.hide();
           });
           $rootScope.$on('$stateChangeError', function () {
             debugger

@@ -7,18 +7,26 @@
       '_timeout': 5000,
       '_base': '/MFreeXFapi/student',
       '_api': {
-          __GetIndexGather: 'GetIndexGather',
-          __courselistpage: 'courselistpage'
+        __GetIndexGather: 'GetIndexGather',
+        __courselistpage: 'courselistpage'
       }
     })
     //修改RestAngular配置
     .factory('freexfRestAngular', function ($rootScope, $timeout, $ionicLoading, Restangular, ENV) {
-      return Restangular.withConfig(function (RestangularConfigurer) {
+      return Restangular.withConfig(function (RestangularConfigurer, RestangularProvider) {
         RestangularConfigurer.setBaseUrl(ENV._base);
         RestangularConfigurer.setDefaultHttpFields({timeout: ENV._timeout});
+
+        RestangularConfigurer.setRestangularFields({
+          id: '_id.$oid'
+        });
+        RestangularConfigurer.addElementTransformer('authors', false, function (element) {
+          element.fetchedAt = new Date();
+          return element;
+        });
         //请求拦截器
         RestangularConfigurer.addFullRequestInterceptor(function (elem, option, what, url, title, params) {
-            ($rootScope.xhr && ($rootScope.xhr++)) || ($rootScope.xhr = 1);
+          ($rootScope.xhr && ($rootScope.xhr++)) || ($rootScope.xhr = 1);
 
           return elem;
         });
@@ -63,8 +71,11 @@
     })
     //添加模块基类
     .factory('baseRestAngular', function (freexfRestAngular) {
-      function baseRestAngular(restangular, route) {
-        this.restangular = restangular;
+      function baseRestAngular(restangular, route, base) {
+        var newRestAngular = base ? restangular.withConfig(function (Configurer) {
+          Configurer.setBaseUrl(base);
+        }) : restangular;
+        this.restangular = newRestAngular;
         this.route = route;
       }
 
@@ -112,26 +123,27 @@
       }
     })
     //账户认证
-    .factory('authRepository', function (ENV, freexfRestAngular, baseRestAngular) {
-      function authRepository() {
-        baseRestAngular.call(this, freexfRestAngular, api ? api : ENV._api.__GetIndexGather)
+    .factory('AuthRepository', function (ENV, freexfRestAngular, baseRestAngular) {
+
+      function AuthRepository(api, base) {
+        baseRestAngular.call(this, freexfRestAngular, api ? api : ENV._api.__GetIndexGather, base)
       }
 
-      baseRestAngular.extend(authRepository);
-      return function (api) {
-        return new authRepository(api);
+      baseRestAngular.extend(AuthRepository);
+      return function (api, base) {
+        return new AuthRepository(api, base);
       }
     })
     //课程列表
     .factory('CourseList', function (ENV, freexfRestAngular, baseRestAngular) {
-        function CourseList(api) {
-            baseRestAngular.call(this, freexfRestAngular, api ? api : ENV._api.__courselistpage)
-        }
+      function CourseList(api) {
+        baseRestAngular.call(this, freexfRestAngular, api ? api : ENV._api.__courselistpage)
+      }
 
-        baseRestAngular.extend(CourseList);
-        return function (api) {
-            return new CourseList(api);
-        }
+      baseRestAngular.extend(CourseList);
+      return function (api) {
+        return new CourseList(api);
+      }
     });
 
 })();

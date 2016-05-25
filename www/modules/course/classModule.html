@@ -1,20 +1,12 @@
 <!--课程列表-->
 <!--<div class="list freexf-classmodule">-->
-  <a class="item item-thumbnail-left" href="#/coursedetail">
+  <a class="item item-thumbnail-left" href="#/coursedetail" ng-repeat="item in courseList">
     	<img src="img/course/class-module.png">
     <div>
-      <h2>2015年中级会计师讲座</h2>
-      <p>讲师：林晓晓&nbsp;&nbsp;课时数：510&nbsp;&nbsp; 有效期：180</p>
-      <p><span>1050</span>学分</p>
+      <h2>{{item["课程名称"]}}</h2>
+      <p>讲师：{{item["教师"]}}&nbsp;&nbsp;课时数：{{item["课时数"]}}&nbsp;&nbsp; 有效期：{{item["有效期"]}}</p>
+      <p><span>{{item["价格"]}}</span>学分</p>
     </div>
-  </a>
-  <a class="item item-thumbnail-left" href="#/coursedetail">
-    	<img src="img/course/class-module.png">
-    <div>
-      <h2>2015年中级会计师讲座</h2>
-      <p>讲师：林晓晓&nbsp;&nbsp;课时数：510&nbsp;&nbsp; 有效期：180</p>
-      <p><span>1050</span>学分</p>
-    </div>
-  </a>
+  </a>  
 <!--</div>-->
 

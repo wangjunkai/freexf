@@ -63,8 +63,8 @@ angular.module('freexf',['ionic'])
     if(	!$("#code").hasClass('on')){
       $("#code").addClass("on");
       $("#code").qrcode({
-        width: 75, //宽度
-        height: 75, //高度
+        width: 125, //宽度
+        height: 125, //高度
         text:yqmurl,
       });
     }

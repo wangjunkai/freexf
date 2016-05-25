@@ -25,10 +25,7 @@ angular.module('freexf')
 		$scope.flowerState=function(){
 			$scope.flowerstate=!$scope.flowerstate;
 		}
-		
-  })
-.controller('buyAway_Ctrl', function ($scope, $rootScope, $injector, $ionicLoading,$ionicPopup, $timeout) {
-  	$scope.showAgreement=function(){
+		$scope.showAgreement=function(){
 			var confirmPopup = $ionicPopup.confirm({
 	       title: '购买协议',
 	       cssClass :'freexf-agreement',
@@ -64,7 +61,8 @@ angular.module('freexf')
 	     });
 	     
 		}
-  })
+		
+ })
   .directive('accordion',function(){
 			return{
 				restrict:'AE',
