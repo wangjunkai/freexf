@@ -46,17 +46,7 @@ angular.module('freexf',['ionic'])
           window.yqmurl='www.ssss'
           yaoqingimg(window.yqmurl);
         }
-        //$scope.closeModal = function() {
-        //  alert(2);
-        //  $scope.modal.hide();
-        //};
-        //$scope.$on('$destroy', function() {
-        //  alert(4);
-        //  $scope.modal.remove();
-        //});
-        //$scope.$on('modal.hide', function() {
-        //  alert(3)
-        //});
+        
 
   })
   var yaoqingimg=function(yqmurl){

@@ -3,10 +3,10 @@
   <ion-content class="ideafeedback">
       <div action="" class="setform">
         <label for="describe">意见描述</label>
-        <textarea type="text" class="describe" id="describe"></textarea>
+        <textarea type="text" class="describe" id="describe" ng-model="idea.as_content"></textarea>
         <label for="phonenumber">手机号码</label>
-        <input type="text" class="phonenumber" id="phonenumber">
-        <button class="button button-block">提交</button>
+        <input type="text" class="phonenumber" id="phonenumber" ng-model="idea.as_mobile">
+        <button class="button button-block" ng-click="submitidea()">提交</button>
       </div>
   </ion-content>
 </ion-view>

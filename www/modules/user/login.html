@@ -7,15 +7,15 @@
     <div class="list">
       <label class="item item-input item-floating-label">
         <span class="input-label">输入账号</span>
-        <input type="text" placeholder="输入账号">
+        <input type="text" placeholder="输入账号" ng-model="login.phone">
       </label>
       <label class="item item-input item-floating-label">
         <span class="input-label">输入密码</span>
-        <input type="password" placeholder="输入密码">
+        <input type="password" placeholder="输入密码" ng-model="login.password">
       </label>
     </div>
     <div class="freexf-padding-24">
-      <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-click="toLogin()">
+      <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-click="toLogin($event)">
         登录
       </button>
       <div class="freexf-clear">

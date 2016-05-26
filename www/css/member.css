@@ -193,16 +193,16 @@
     right: -21px;
 	bottom: 30px;
 }
-.share .row1 {	
+.share .row1 {
 	position: absolute;
 	z-index: 11;
 	font-size: 10rem;
-	top:20px; 
+	top:20px;
 	display: block;
-    left: 9px; 
+    left: 9px;
 }
 .share .row1.first{
-	top:5px;  
+	top:5px;
 }
 .share em {
 	position: absolute;
@@ -230,11 +230,11 @@
 	top: 0;
 	left: 0;
 	z-index: 3;
-	opacity: 0;
 	background-color: rgba(255,255,255,0.5);
 	-webkit-animation: halo 1.2s 0.2s infinite ease-out;
 	-moz-animation: halo 1.2s 0.2s infinite ease-out;
 	animation: halo 1.2s 0.2s infinite ease-out;
+  box-shadow: inset 0 0 10px transparent;
 }
 
 @-webkit-keyframes halo {
@@ -293,15 +293,12 @@
 
 @keyframes halo {
 	0% {
-		opacity: 0.2;
+    background-color: rgba(255,255,255,0.5);
 		-webkit-transform: scale(0.9);
 	}
-	50% {
-		opacity: 0.4;
-	}
 	100% {
-		opacity: 0.5;
-		-webkit-transform: scale(1.3);
+    background-color: rgba(255,255,255,0);
+		-webkit-transform: scale(1.5);
 	}
 }
 
@@ -319,7 +316,7 @@
 .popup-body .words{
 	text-align: center;
 	margin:15px auto 25px;
-	
+
 }
 .ShareLink .popup-container{
 	background:rgba(0,0,0,0.6);
@@ -335,11 +332,11 @@
 }
 .userImgBox:before{
 	content:'' ;
-	width: 0; 
-	height: 0; 
-	border-left: 15px solid transparent; 
-	border-right: 15px solid transparent; 
-	border-bottom: 25px solid #fff; 
+	width: 0;
+	height: 0;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-bottom: 25px solid #fff;
 	float: left;
 	margin-left: 46%;
 	margin-top:-15px;
@@ -412,7 +409,7 @@
     left: 2%;
     min-height: 240px;
     width: 96%;
-    
+
 }
 .newModal{
 	min-height: 240px!important;

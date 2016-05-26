@@ -131,7 +131,7 @@
   </div>
   <div class="clearfix">
     <p class="ti">{{l.cover}}</p>
-    <span class="freexf-left"><strong class="xufen">{{l.price}}</strong><em>学分</em></span>
+    <span class="freexf-left"><strong class="xufen">{{l.price| xufeng}}</strong><em ng-show="{{l.price| xufengshow}}">学分</em></span>
     <span class="r10 freexf-right"><em>课时数：</em><strong class="keshi">{{l.hour}}</strong></span>
   </div>
 </script>

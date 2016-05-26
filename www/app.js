@@ -21,9 +21,44 @@
         template: '<ion-spinner icon="bubbles"></ion-spinner><div class="font">加载中...</div>',
         noBackdrop: false
       })
+
       //decodeUri filter
       .filter('decodeUri', function ($window) {
         return $window.decodeURIComponent;
+      })
+      //loading,
+      .factory('$Loading', function ($injector) {
+        var $ionicLoading = $injector.get('$ionicLoading');
+        var $timeout = $injector.get('$timeout');
+        var tpl = '<div class="{{class}}"></div><div class="font">{{text}}</div>';
+        var _rep = function (str, data) {
+          return str.replace(/{{(\w*)}}/g, function ($1, $2) {
+            return data[$2] ? data[$2] : $1;
+          })
+        };
+        var interceptor = true;//默认不阻止http拦截
+        return {
+          //obj参数{显示的class，和文本信息},i(是否阻止http拦截)
+          show: function (obj, i, time) {
+            typeof i == 'boolean' ? interceptor = i : null;
+            $ionicLoading.show({
+              template: _rep(tpl, obj)
+            });
+            if (time) {
+              debugger
+              this.hide(time);
+            }
+          },
+          _hide: function (i, time) {
+            typeof i == 'boolean' ? interceptor = i : null;
+            interceptor && $timeout(function () {
+              $ionicLoading.hide()
+            }, time ? time : 0);
+          },
+          hide: function (time) {
+            this._hide(true, time);
+          }
+        }
       })
       //全局错误捕捉
       .factory('$exceptionHandler', function ($injector) {
@@ -37,8 +72,8 @@
         };
       })
       //全局路由配置
-      .run(['$rootScope', '$state', '$ionicLoading', '$anchorScroll', '$timeout', '$location', 'AUTH', 'XHR',
-        function ($rootScope, $state, $ionicLoading, $anchorScroll, $timeout, $location, AUTH, XHR) {
+      .run(['$rootScope', '$state', '$ionicLoading', '$Loading', '$anchorScroll', '$timeout', '$location', 'AUTH', 'XHR',
+        function ($rootScope, $state, $ionicLoading, $Loading, $anchorScroll, $timeout, $location, AUTH, XHR) {
           $rootScope.$on('$stateChangeStart', function (ev, to, toParams, from, fromParams) {
             $ionicLoading.show();
             if (!$rootScope.user && $.inArray(to.name, AUTH.NOTLOGIN) >= 0) {
@@ -55,7 +90,8 @@
           $rootScope.$on('$viewContentLoading', function (event, viewConfig) {
           });
           $rootScope.$on('$stateChangeSuccess', function (ev, to, toParams, from, fromParams) {
-          	!!$rootScope.xhr || $ionicLoading.hide();
+            debugger
+            !!$rootScope.xhr || $Loading.hide();
           });
           $rootScope.$on('$stateChangeError', function () {
             debugger
@@ -64,7 +100,8 @@
           $rootScope.$on('$ionicView.beforeEnter', function () {
           });
           $rootScope.$on('$ionicView.enter', function () {
-            !!$rootScope.xhr || $ionicLoading.hide();
+            debugger
+            !!$rootScope.xhr || $Loading.hide();
           });
           $rootScope.$on('$ionicView.afterEnter', function () {
           });
@@ -141,7 +178,12 @@
           .state('aboutus', {
             url: '/aboutus',
             templateUrl: 'modules/user/aboutus.html',
-            controller: ''
+            controller: 'aboutus_ctrl',
+            resolve: {
+              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load(['modules/user/aboutus.js']);
+              }]
+            }
 
           })
           .state('commonfaq', {
@@ -152,7 +194,12 @@
           .state('ideafeedback', {
             url: '/ideafeedback',
             templateUrl: 'modules/user/ideafeedback.html',
-            controller: ''
+            controller: 'ideafeedback_ctrl',
+            resolve: {
+              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load(['modules/user/ideafeedback.js']);
+              }]
+            }
           })
 
           .state('pay', {
@@ -239,16 +286,16 @@
           .state('courseplate', {
             url: '/courseplate',
             views: {
-                '': {
-                    controller: 'courseplate_ctrl',
+              '': {
+                controller: 'courseplate_ctrl',
                 templateUrl: 'modules/course/courseplate.html'
               },
-                'classmodule@courseplate': {
-                    controller: 'courseplate_ctrl',
+              'classmodule@courseplate': {
+                //controller: 'courseplate_ctrl',
                 templateUrl: 'modules/course/classmodule.html'
               }
             },
-            
+
             resolve: {
               loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load(['modules/course/courseplate.js']);
@@ -257,8 +304,16 @@
           })
           .state('coursesearch', {
             url: '/coursesearch',
-            templateUrl: 'modules/course/coursesearch.html',
-            controller: 'coursesearch_ctrl',
+            views: {
+              '': {
+                templateUrl: 'modules/course/coursesearch.html',
+                controller: 'coursesearch_ctrl'
+              },
+              'classmodule@coursesearch': {
+                //controller: 'coursesearch_ctrl',
+                templateUrl: 'modules/course/classmodule.html'
+              }
+            },
             resolve: {
               loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load(['modules/course/coursesearch.js']);
@@ -266,32 +321,9 @@
             }
           })
           .state('coursedetail', {
-            url: '/coursedetail',
-            views: {
-                '': {
-                    controller: 'coursedetail_ctrl',
-                templateUrl: 'modules/course/coursedetail.html'
-              },
-                'main@coursedetail': {
-                    controller: 'coursedetail_ctrl',
-                templateUrl: 'modules/course/coursedetailmodule.html'
-              }
-            },            
-            resolve: {
-              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
-                return $ocLazyLoad.load(['modules/course/coursedetail.js']);
-              }]
-            }
-          })
-          .state('coursedetail.courseoutline', {
-            url: '/courseoutline',
-            views: {
-                'main@coursedetail': {
-                    controller: 'coursedetail_ctrl',
-                templateUrl: 'modules/course/coursedetailoutline.html'
-              }
-            },
-            
+            url: '/coursedetail/:courseId',
+            templateUrl: 'modules/course/coursedetail.html',
+            controller: 'coursedetail_ctrl',
             resolve: {
               loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load(['modules/course/coursedetail.js']);

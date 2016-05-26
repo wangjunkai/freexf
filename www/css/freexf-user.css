@@ -124,6 +124,7 @@
   margin-left: 2.3%;
   float: left;
 }
+
 .myorder .btnGrounp .button, .myCollection .btnGrounp .button {
   height: 26px;
   width: 70px;
@@ -137,8 +138,9 @@
   min-height: 36px;
   float: left;
 }
-.myorder .btnGrounp .button, .myCollection .btnGrounp .button:first-child{
-  margin:0 8px;
+
+.myorder .btnGrounp .button, .myCollection .btnGrounp .button:first-child {
+  margin: 0 8px;
 }
 
 .myorder .btnGrounp .button.button-assertive, .myCollection .btnGrounp .button.button-assertive {
@@ -213,6 +215,7 @@ ion-content {
   background-position: -1px -39px;
 
 }
+
 .progress .progress-bar .full {
   width: 53.25%;
   margin-right: 2.75%;
@@ -223,10 +226,12 @@ ion-content {
   position: relative;
   float: left;
 }
-.progress .progress-bar span{
-	
-	display: block;
+
+.progress .progress-bar span {
+
+  display: block;
 }
+
 .progress-bar .full .finish {
 
   background-color: #1ab554;
@@ -328,6 +333,12 @@ ion-content {
   font-size: 11rem;
 }
 
+.small-idcode-button[disabled] {
+  opacity: .4;
+  cursor: default !important;
+  pointer-events: none;
+}
+
 .CodeButton > a {
   color: #1AB554;
   font-size: 10rem;
@@ -383,15 +394,15 @@ ion-content {
 
 }
 
-input::-moz-placeholder,textarea::-moz-placeholder {
+input::-moz-placeholder, textarea::-moz-placeholder {
   color: #ddd;
 }
 
-input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   color: #ddd;
 }
 
-input:-ms-input-placeholder,textarea::-ms-input-placeholder {
+input:-ms-input-placeholder, textarea::-ms-input-placeholder {
   color: #ddd;
 }
 
@@ -403,14 +414,16 @@ input:-ms-input-placeholder,textarea::-ms-input-placeholder {
   margin-top: -20px;
 }
 
-.MyAcc-top p,.MyAcc-top .UpdateName{
+.MyAcc-top p, .MyAcc-top .UpdateName {
   text-align: center;
   margin-top: 15px;
   margin-bottom: 0;
 }
-.MyAcc-top .UpdateName{
-	position: relative;
+
+.MyAcc-top .UpdateName {
+  position: relative;
 }
+
 .MyAcc-top .MyAcc-setting, .MyAcc-top .MyAcc-icon, .button-clear.search .freexf-search:before,
 .mycourse .btnGrounp .button-stable:before, .mycourse .btnGrounp .button-assertive:before,
 .progress-bar .full:before, .progress-bar .full:after, .already .MyAcc-top .edit,
@@ -450,6 +463,7 @@ input:-ms-input-placeholder,textarea::-ms-input-placeholder {
   margin: 5.5px 0px;
   float: right;
 }
+
 .progress {
   height: 32px;
   border-bottom: 1px solid #eee;

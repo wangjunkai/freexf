@@ -1,12 +1,10 @@
 <!--课程列表-->
-<!--<div class="list freexf-classmodule">-->
-  <a class="item item-thumbnail-left" href="#/coursedetail" ng-repeat="item in courseList">
-    	<img src="img/course/class-module.png">
+  <div class="item item-thumbnail-left" ng-repeat="item in courseList | searchFor:searchString" ng-click="toCourseDate(item.ProductId)">  <!--'199f21a24fbc4227aeafe277c960bf18'-->
+    <img src="img/course/class-module.png" image-lazy-src="item.image" alt="item.ProductName" />
     <div>
-      <h2>{{item["课程名称"]}}</h2>
-      <p>讲师：{{item["教师"]}}&nbsp;&nbsp;课时数：{{item["课时数"]}}&nbsp;&nbsp; 有效期：{{item["有效期"]}}</p>
-      <p><span>{{item["价格"]}}</span>学分</p>
+        <h2>{{item.ProductName}}</h2>
+        <p>讲师：{{item.teachername}}&nbsp;&nbsp;课时数：{{item.hour}}&nbsp;&nbsp; 有效期：{{item.validity}}</p>
+        <p><span>{{item.price}}</span>学分</p>
     </div>
-  </a>  
-<!--</div>-->
+  </div>  
 

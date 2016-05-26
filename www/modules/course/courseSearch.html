@@ -1,18 +1,18 @@
-<ion-view view-title="搜索">
+<ion-view view-title="搜索" >
 
   <ion-nav-title class="freexf-search">
   	<div>
-  		<input type="text" placeholder="搜索课程" id="searchVal"/>
-    	<button class="freexf-close" onclick="document.querySelector('#searchVal').value='';"></button>
-  	</div>    
+  		<input type="text" placeholder="搜索课程" id="searchVal" ng-model="$parent.searchString"/>
+    	<button class="freexf-close" onclick="document.querySelector('#searchVal').value='';" ng-click="ClearAll()"></button>
+  	</div>
   </ion-nav-title>
   <ion-nav-buttons side="right">
-    <button menu-toggle="right" class="button button-clear" style="color:#1AB554;font-size: 15rem;">
+    <button menu-toggle="right" class="button button-clear" style="color:#1AB554;font-size: 15rem;"  ng-click="SearchResult()">
     	搜索
     </button>
   </ion-nav-buttons>
-  <ion-content>
-  		<div class="freexf-nocontent">
+  <ion-content >
+  		<div class="freexf-nocontent" ng-show="SearchNull">
   			<img src="img/course/nocontent.png" />
   			<p>暂时没有搜索到相关课程</p>
   		</div>
@@ -27,7 +27,8 @@
   			</ul>
   		</div>
   		<!--课程列表-->
-  		<div class="list freexf-classmodule">
+  		<div class="list freexf-classmodule" ui-view="classmodule" ng-model="CourseListShow">
+
   		</div>
   </ion-content>
 

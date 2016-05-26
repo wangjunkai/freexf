@@ -6,46 +6,45 @@
     </a>
   </ion-nav-buttons>
   <ion-content class="register">
-    <div class="list">
-      <div class="item item-input item-floating-label">
-        <span class="input-label">输入手机号</span>
-        <input type="text" placeholder="输入手机号" name="phone" ng-model="user.phone">
-      </div>
-      <div class="item item-input item-floating-label">
-        <span class="input-label">输入验证码</span>
-        <input type="text" placeholder="输入验证码" class="inputCode" name="code" ng-model="user.code">
-        <div class="codeBox">
-          <div class="CodeImg">
-            <img src="{{CodeImg.img}}" alt="验证码图片"/>
-          </div>
-          <div class="CodeButton">
-            <a ng-click="CodeImg.getNew()">看不清楚？换一张</a>
+    <form name="registerForm" novalidate>
+      <div class="list">
+        <div class="item item-input item-floating-label">
+          <span class="input-label">输入手机号</span>
+          <input type="text" placeholder="输入手机号" name="phone" ng-model="user.phone" required>
+        </div>
+        <div class="item item-input item-floating-label">
+          <span class="input-label">输入验证码</span>
+          <input type="text" placeholder="输入验证码" class="inputCode" name="code" ng-model="user.code" required>
+          <div class="codeBox">
+            <div class="CodeImg">
+              <img style="width: 100%;" src="{{CodeImg.img}}" alt="验证码图片"/>
+            </div>
+            <div class="CodeButton">
+              <a ng-click="CodeImg.getNew()">看不清楚？换一张</a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="item item-input item-floating-label">
-        <span class="input-label">输入短信验证码</span>
-        <input type="text" placeholder="输入短信验证码" class="inputCode" name="phonecode" ng-model="user.phonecode">
-        <button class="small-idcode-button" ng-click="PhoneCode()" type="button">获取验证码</button>
+        <div class="item item-input item-floating-label">
+          <span class="input-label">输入短信验证码</span>
+          <input type="text" placeholder="输入短信验证码" class="inputCode" name="phonecode" ng-model="user.phonecode" required>
+          <button class="small-idcode-button" ng-click="PhoneCode($event)" ng-disabled="registerForm.phone.$invalid || registerForm.code.$invalid">获取验证码</button>
+        </div>
+        <div class="item item-input item-floating-label">
+          <span class="input-label">输入密码</span>
+          <input type="password" placeholder="输入密码" name="password" ng-model="user.password" required>
+        </div>
+        <div class="item item-input item-floating-label">
+          <span class="input-label">确认密码</span>
+          <input type="password" placeholder="确认密码" name="confirmPassword" ng-model="user.confirmPassword" required>
+        </div>
       </div>
-      <div class="item item-input item-floating-label">
-        <span class="input-label">输入密码</span>
-        <input type="password" placeholder="输入密码" name="password" ng-model="user.password">
+      <div class="freexf-padding-24">
+        <button type="button" class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-disabled="registerForm.$invalid" ng-click="register($event)">
+          马上注册
+        </button>
       </div>
-      <div class="item item-input item-floating-label">
-        <span class="input-label">确认密码</span>
-        <input type="password" placeholder="确认密码" name="confirmPassword" ng-model="user.confirmPassword">
-      </div>
-      <!--<button class="button button-block button-balanced">
-              马上注册
-          </button>-->
-    </div>
-    <div class="freexf-padding-24">
-      <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-click="register($event)">
-        马上注册
-      </button>
-    </div>
+    </form>
   </ion-content>
 
 </ion-view>

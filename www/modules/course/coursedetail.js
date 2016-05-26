@@ -2,12 +2,28 @@
 
 
 angular.module('freexf')
-  .controller('coursedetail_ctrl', function ($scope, $rootScope, $injector, $ionicLoading,$ionicPopup, $timeout) {
+  .controller('coursedetail_ctrl', function ($scope, $rootScope, $injector, $ionicLoading, $ionicPopup, $timeout, $state, $stateParams, ENV, CourseDateRepository) {
     //$scope.home = Home.home.query({id:'1'});
     //$scope.username = (new Home.user()).getName();
 //  require(['modules/index/index_ctrl'], function (shouye_ctrl) {
 //    $injector.invoke(shouye_ctrl, this, {'$scope': $scope});
-//  });
+      //  });
+
+      $scope.courseId = $stateParams.courseId;
+      //课程信息
+      var CourseDate = CourseDateRepository(ENV._api.__coursedate);
+
+      $scope.$on('$ionicView.loaded', function () {
+      });
+
+      CourseDate.getModel({ "courseId": $scope.courseId }).then(function (res) {
+          //console.log(res)
+          $scope.courseDate = res.response.data;
+
+          //console.log(res);
+      });
+      //课程信息end
+
 		$scope.coursedetail=true;	//课程介绍
 		$scope.courseoutline=false;	//大纲
 		$scope.flowerstate=false;		//小花状态
@@ -61,6 +77,38 @@ angular.module('freexf')
 	     });
 	     
 		}
+      //$scope.courseDate.courseOutlineItem
+		$scope.expanders = [{
+		    title: '试听课程',
+		    classLists: [{
+		        title: '1.1 课程名称课程名称课程名称课程名称课程名称'
+		    }],
+		    istest: 'freexf-democlass'
+		}, {
+		    title: '第一章        基础课程',
+		    classLists: [{
+		        title: '1.1 课程名称课程名称课程名称课程名称课程名称'
+		    }, {
+		        title: '1.2 课程名称'
+		    }, {
+		        title: '1.4 课程名称课程名称课程名称课程名称课程名称课程名称'
+		    }, {
+		        title: '1.5 课程名称1.6 课程名称'
+		    }],
+		    istest: 'freexf-courseitem'
+		}, {
+		    title: '第二章         初级课程',
+		    classLists: [{
+		        title: '1.1 课程名称课程名称课程名称课程名称课程名称'
+		    }, {
+		        title: '1.2 课程名称1.3 课程名称'
+		    }, {
+		        title: '1.4 课程名称课程名称课程名称课程名称课程名称课程名称'
+		    }, {
+		        title: '1.5 课程名称1.6 课程名称'
+		    }],
+		    istest: 'freexf-courseitem'
+		}]
 		
  })
   .directive('accordion',function(){

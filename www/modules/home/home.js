@@ -66,7 +66,8 @@
       $scope.getTime = function(){
         return new Date().getTime();
       };
-      Home.getModel({'eliteNum': 3, 'recNum': 4}).then(function (res) {
+        //{'eliteNum': 3, 'recNum': 4}
+      Home.getModel().then(function (res) {
         $scope.home = res.response.data[0];
       });
     })
@@ -74,6 +75,26 @@
       //  require(['modules/index/index_ctrl'], function (shouye_ctrl) {
       //    $injector.invoke(shouye_ctrl, this, {'$scope': $scope});
       //  });
-    });
+    })
+      .filter('xufeng', function(){
+          return function (item,num) {
+              if(item==0){
+                  return '免费';
+              }else{
+                  return item;
+              }
+              
+          }
+      })
+    .filter('xufengshow', function () {
+        return function (item) {
+            if (item == 0) {
+                return 'false';
+            } else {
+                return 'true';
+            }
+
+        }
+    })
 
 })();
