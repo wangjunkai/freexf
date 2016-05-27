@@ -1,10 +1,11 @@
+
 <ion-view view-title="搜索" >
 
   <ion-nav-title class="freexf-search">
   	<div>
   		<input type="text" placeholder="搜索课程" id="searchVal" ng-model="$parent.searchString"/>
     	<button class="freexf-close" onclick="document.querySelector('#searchVal').value='';" ng-click="ClearAll()"></button>
-  	</div>
+  	</div>    
   </ion-nav-title>
   <ion-nav-buttons side="right">
     <button menu-toggle="right" class="button button-clear" style="color:#1AB554;font-size: 15rem;"  ng-click="SearchResult()">
@@ -12,10 +13,7 @@
     </button>
   </ion-nav-buttons>
   <ion-content >
-  		<div class="freexf-nocontent" ng-show="SearchNull">
-  			<img src="img/course/nocontent.png" />
-  			<p>暂时没有搜索到相关课程</p>
-  		</div>
+  		
   		<div class="freexf-classmodule-header-nav">
   			<h2>热门搜索</h2>
   			<ul>
@@ -27,10 +25,19 @@
   			</ul>
   		</div>
   		<!--课程列表-->
-  		<div class="list freexf-classmodule" ui-view="classmodule" ng-model="CourseListShow">
+      <div class="freexf-nocontent" ng-show="SearchNull">
+          <img src="img/course/nocontent.png" />
+          <p>暂时没有搜索到相关课程</p>
+      </div>
+      <section >
+          <!--<ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>-->
+          <div class="list freexf-classmodule" ui-view="classmodule" ng-model="CourseListShow">
 
-  		</div>
+          </div>
+          
+      </section>
+      <ion-infinite-scroll ng-if="uppageshow" on-infinite="doRefresh()" distance="1%"> </ion-infinite-scroll>
+      <div ng-hide="uppageshow">{{bottomtext}}</div>
   </ion-content>
 
 </ion-view>
-

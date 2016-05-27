@@ -9,18 +9,15 @@ angular.module('freexf')
 //    $injector.invoke(shouye_ctrl, this, {'$scope': $scope});
       //  });
 
+
       $scope.courseId = $stateParams.courseId;
       //课程信息
       var CourseDate = CourseDateRepository(ENV._api.__coursedate);
-
       $scope.$on('$ionicView.loaded', function () {
       });
-
       CourseDate.getModel({ "courseId": $scope.courseId }).then(function (res) {
-          //console.log(res)
           $scope.courseDate = res.response.data;
-
-          //console.log(res);
+          $scope.outlineList = res.response.data.l_RetValueall;
       });
       //课程信息end
 
@@ -37,10 +34,12 @@ angular.module('freexf')
 			$scope.coursedetail=false;
 			$scope.courseoutline=true;
 		}
-		//改变小花状态
+		//改变小花状态(献花)
 		$scope.flowerState=function(){
-			$scope.flowerstate=!$scope.flowerstate;
+		    $scope.flowerstate = !$scope.flowerstate;
+		    ($scope.flowerstate) ? $scope.courseDate.flowers++ : $scope.courseDate.flowers--;
 		}
+        //购买协议
 		$scope.showAgreement=function(){
 			var confirmPopup = $ionicPopup.confirm({
 	       title: '购买协议',
@@ -77,141 +76,13 @@ angular.module('freexf')
 	     });
 	     
 		}
-      //$scope.courseDate.courseOutlineItem
-		$scope.expanders = [{
-		    title: '试听课程',
-		    classLists: [{
-		        title: '1.1 课程名称课程名称课程名称课程名称课程名称'
-		    }],
-		    istest: 'freexf-democlass'
-		}, {
-		    title: '第一章        基础课程',
-		    classLists: [{
-		        title: '1.1 课程名称课程名称课程名称课程名称课程名称'
-		    }, {
-		        title: '1.2 课程名称'
-		    }, {
-		        title: '1.4 课程名称课程名称课程名称课程名称课程名称课程名称'
-		    }, {
-		        title: '1.5 课程名称1.6 课程名称'
-		    }],
-		    istest: 'freexf-courseitem'
-		}, {
-		    title: '第二章         初级课程',
-		    classLists: [{
-		        title: '1.1 课程名称课程名称课程名称课程名称课程名称'
-		    }, {
-		        title: '1.2 课程名称1.3 课程名称'
-		    }, {
-		        title: '1.4 课程名称课程名称课程名称课程名称课程名称课程名称'
-		    }, {
-		        title: '1.5 课程名称1.6 课程名称'
-		    }],
-		    istest: 'freexf-courseitem'
-		}]
 		
- })
-  .directive('accordion',function(){
-			return{
-				restrict:'AE',
-				replace:true,
-				transclude:true,
-				template:'<div ng-transclude></div>',
-				//通过controller暴露指令给外部使用
-				controller:function(){
-					var expanders=[];
-					this.gotOpened=function(selectedExpander){
-						angular.forEach(expanders,function(expander){
-							if(selectedExpander!=expander){
-								expander.showMe=false;
-							}
-						});
-					}
-					this.addExpander=function(expander){
-						expanders.push(expander);
-					}
-				}
-			}
-		})
-  .directive('expander',function(){
-			return{
-				restrict:'EA',
-				replace:true,
-				transclude:true,
-				//require依赖外部的accordion
-				require:'^?accordion',
-				scope:{
-					title:'=expanderTitle',
-					istest:'=expanderIstest'
-				},
-				template:'<li class="item">'		//--class="freexf-test"未购买课程
-						+'<div class="freexf-course-title">'
-						+'<p>{{title}}</p>'		//ng-click="toggle()"	
-						+'</div>'
-						+'<div>'
-						+'<ul class="list {{istest}}" ng-show="showMe" ng-transclude>'	/*freexf-democlass 试听课程*/
-						+'</ul>'
-						+'</div>',
-				//在这里就可以使用accordionController 内暴露出来的方法，就可以实现与外部的指令进行交互
-				link:function(scope,element,attrs,accordionController){
-					scope.showMe=true;	//显示false 隐藏
-					accordionController.addExpander(scope);
-					scope.toggle=function toggle(){
-						scope.showMe=!scope.showMe;
-						accordionController.gotOpened(scope);
-					}
-				}
-			}
-		})
-  .directive('course',function(){
-			return{
-				restrict:'EA',
-				replace:true,
-				transclude:true,
-				//require依赖外部的accordion
-				require:'^?accordion',
-				scope:{
-					title:'=classTitle'
-				},
-				template:'<li class="item item-button-right endclass">'		// class： endclass 已学完课程  intheclass 没学完课程  默认未学习
-								+'<p>{{title}}</p>'
-								+'<button class="button freexf-play ">'
-								+'<i class="icon freexf-play-outline"></i>'
-								+'</button>'
-								+'</li>'
-			}
-		})
-  .controller('SomeController',function($scope){
-			$scope.expanders=[{
-				title:'试听课程',
-				classLists:[{
-						title:'1.1 课程名称课程名称课程名称课程名称课程名称'
-				}],
-				istest:'freexf-democlass'
-			},{
-				title:'第一章        基础课程',
-				classLists:[{
-						title:'1.1 课程名称课程名称课程名称课程名称课程名称'						
-				},{
-						title:'1.2 课程名称'
-				},{
-						title:'1.4 课程名称课程名称课程名称课程名称课程名称课程名称'
-				},{					
-						title:'1.5 课程名称1.6 课程名称'
-				}],
-				istest:'freexf-courseitem'
-			},{
-				title:'第二章         初级课程',
-				classLists:[{
-						title:'1.1 课程名称课程名称课程名称课程名称课程名称'
-				},{
-						title:'1.2 课程名称1.3 课程名称'
-				},{
-						title:'1.4 课程名称课程名称课程名称课程名称课程名称课程名称'
-				},{					
-						title:'1.5 课程名称1.6 课程名称'
-				}],
-				istest:'freexf-courseitem'
-			}]
-		})
-
+  })
+//.filter('filterChapter', function () {
+//    return function (input) {
+//        // input是我们传入的字符串
+//        if (input) {
+//            return input[0].toUpperCase() + input.slice(1);
+//        }
+//    }
+//})

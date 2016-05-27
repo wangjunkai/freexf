@@ -7,19 +7,19 @@
       '_timeout': 5000,
       '_base': '/MFreeXFapi/student',
       '_api': {
-          __GetIndexGather: 'GetIndexGather',
-          __courselistpage: 'courselistpage',   //课程列表
-          __mycourse: 'mycourse',
-          __coursedate: 'courseData',    //课程详情
-          __GetCategory: 'GetCategory',
-          __searchcourse: 'searchcourse',//搜索课程
-          __recommendcourse: 'recommendcourse',//推荐课程（暂无页面）
-          __feedback: "feedback", //意见反馈
-          __aboutus: 'aboutus' //关于我们
+        __GetIndexGather: 'GetIndexGather',
+        __courselistpage: 'courselistpage',   //课程列表
+        __mycourse: 'mycourse',
+        __coursedate: 'courseData',    //课程详情
+        __GetCategory: 'GetCategory',     //一二级分类
+        __searchcourse: 'searchcourse',//搜索课程
+        __recommendcourse: 'recommendcourse',//推荐课程（暂无页面）
+        __feedback: "feedback", //意见反馈
+        __aboutus: 'aboutus' //关于我们
       }
     })
     //修改RestAngular配置
-    .factory('freexfRestAngular', function ($rootScope, $timeout, $ionicLoading,$Loading, Restangular, ENV) {
+    .factory('freexfRestAngular', function ($rootScope, $timeout, $Loading, Restangular, ENV) {
       return Restangular.withConfig(function (RestangularConfigurer) {
         RestangularConfigurer.setBaseUrl(ENV._base);
         RestangularConfigurer.setDefaultHttpFields({timeout: ENV._timeout});
@@ -31,7 +31,7 @@
         });
         //响应拦截器
         RestangularConfigurer.addResponseInterceptor(function (elem, option, what, url, response, deferred) {
-          ($rootScope.xhr--) - 1 || $Loading._hide();
+          ($rootScope.xhr--) - 1 || $Loading.hide();
 
           return {'response': response};
         });
@@ -41,22 +41,14 @@
           var timeoutTpl = '<ion-spinner icon="bubbles"></ion-spinner><div class="font">数据请求超时,请重试!</div>',
             errorTpl = '<ion-spinner icon="bubbles"></ion-spinner><div class="font">请求错误,请重试!</div>';
           var msg = '';
-          var ionicLoadingFunction = function (tpl, hide) {
-            $timeout(function () {
-              $ionicLoading.show({template: tpl});
-              !!hide && $timeout(function () {
-                $ionicLoading.hide();
-              }, 5000)
-            }, 1000);
-          };
           switch (response.status) {
             case 0:
             case 502:
-              ionicLoadingFunction(timeoutTpl, true);
+              $Loading.show({template: timeoutTpl},5000);
               msg = '加载超时..';
               break;
             case 404:
-              ionicLoadingFunction(errorTpl, true);
+              $Loading.show({template: errorTpl},5000);
               break;
             default:
               break;
@@ -124,7 +116,7 @@
     //账户认证
     .factory('AuthRepository', function (ENV, freexfRestAngular, baseRestAngular) {
       function AuthRepository(api, base) {
-        baseRestAngular.call(this, freexfRestAngular, api ? api : ENV._api.__GetIndexGather,base)
+        baseRestAngular.call(this, freexfRestAngular, api ? api : ENV._api.__GetIndexGather, base)
       }
 
       baseRestAngular.extend(AuthRepository);
@@ -217,11 +209,11 @@
         baseRestAngular.call(this, freexfRestAngular, api ? api : ENV._api.__feedback)
       }
 
-    baseRestAngular.extend(feedBack);
-    return function (api) {
-      return new feedBack(api);
-    }
-  })
+      baseRestAngular.extend(feedBack);
+      return function (api) {
+        return new feedBack(api);
+      }
+    })
     //关于我们
     .factory('aboutUs', function (ENV, freexfRestAngular, baseRestAngular) {
       function aboutUs(api) {

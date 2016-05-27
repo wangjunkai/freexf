@@ -2,27 +2,36 @@
 
 
 angular.module('freexf')
-  .controller('courseplate_ctrl', function ($scope, $rootScope, $injector, $ionicLoading, $timeout, $state, ENV, CourseListRepository, GetCategoryRepository) {
-    //$scope.home = Home.home.query({id:'1'});
-    //$scope.username = (new Home.user()).getName();
-//  require(['modules/index/index_ctrl'], function (shouye_ctrl) {
-//    $injector.invoke(shouye_ctrl, this, {'$scope': $scope});
-//  });
+  .controller('courseplate_ctrl', function ($scope, $rootScope, $injector, $ionicLoading, $timeout, $state, $stateParams, ENV, CourseListRepository, GetCategoryRepository) {
 		
-        $scope.languageclass = false;   //二级分类
+        $scope.Category1 = $stateParams.Category1;  //一级分类
+        $scope.Category2 = $stateParams.Category2;  //二级分类
+        $scope.languageclass = false;   //分类收缩状态
 		$scope.languageClassShow=function(){
 			$scope.languageclass=!$scope.languageclass;
 		}
         //获取课程列表
 		var CourseList = CourseListRepository(ENV._api.__courselistpage);
-		CourseList.getModel({ "category": "多语种","lingual":"", "label": "", "orderBy": "xuefen", "order": "desc", "pageIndex": '0', "pageMax": '2' }).then(function (res) {
+		CourseList.getModel({ "category": $scope.Category1, "lingual": "", "label": "", "orderBy": "xuefen", "order": "desc", "pageIndex": '0', "pageMax": '2' }).then(function (res) {
 		    $scope.courseList = res.response.data;
 		});
         //获取一二级分类菜单
 		var GetCategory = GetCategoryRepository(ENV._api.__GetCategory);
 		GetCategory.getModel().then(function (res) {
-            $scope.categorys = skipEmptyElementForArray(res.response.data['l_Category2'][2]);
+		    $scope.Category1List = res.response.data[0]['ls_Category'];
+		    getIdx($scope.Category1List);		
+		    $scope.categorys = res.response.data[0]['ls_lingualList'][$scope.Category1Idx];   //二级分类菜单
 		});
+        //已知一级分类获取一级分类的下标
+		function getIdx(arry) {
+		    $scope.Category1Idx = null;
+		    for (var i = 0; i < arry.length; i++) {
+		        if (arry[i] == $scope.Category1) {
+		            $scope.Category1Idx = i;
+		            return;
+		        }
+		    }
+		}
         //选择排序方式        
 		$scope.courseSort = function ($event) {
 		    var child = document.querySelectorAll('.freexf-coursesort>div div');

@@ -1,25 +1,11 @@
 'use strict';
+
 angular.module('freexf')
-  .controller('aboutus_ctrl', function ($scope, $timeout, $ionicLoading, $exceptionHandler, ENV, feedBack) {
-    var FeedBack = feedBack(ENV._api.__aboutus);
-
-    function ideafeedbackModel() {
-      this.idea = {
-        as_mobile: '',
-        as_feedtype: '',
-        as_content: ''
-      };
-      return this.idea;
-    }
-
-    $scope.idea = new ideafeedbackModel();
+  .controller('aboutus_ctrl', function ($scope, $timeout, $ionicLoading, $exceptionHandler, ENV, aboutUs) {
+    var AboutUs = aboutUs(ENV._api.__aboutus);
     $scope.$on('$ionicView.loaded', function () {
     });
-    $scope.submitidea = function () {
-      var idea = $scope.idea;
-      FeedBack.create(idea).then(function (res) {
-        $scope.idea = new ideafeedbackModel();
-        console.log(res.response.data);
+      AboutUs.getModel({"as_文章ID":"d75589041cb24c048251de37fc1f44f2"}).then(function (res) {
+        $scope.aboutus=res.response.data[0];
       })
-    };
   });

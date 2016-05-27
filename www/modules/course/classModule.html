@@ -1,6 +1,6 @@
 <!--课程列表-->
-  <div class="item item-thumbnail-left" ng-repeat="item in courseList | searchFor:searchString" ng-click="toCourseDate(item.ProductId)">  <!--'199f21a24fbc4227aeafe277c960bf18'-->
-    <img src="img/course/class-module.png" image-lazy-src="item.image" alt="item.ProductName" />
+  <div class="item item-thumbnail-left" ng-repeat="item in courseList" ng-click="toCourseDate(item.ProductId)">  <!--'199f21a24fbc4227aeafe277c960bf18'-->
+    <img src="img/course/class-module.png" image-lazy-src="{{item.image}}" alt="{{item.ProductName}}" />
     <div>
         <h2>{{item.ProductName}}</h2>
         <p>讲师：{{item.teachername}}&nbsp;&nbsp;课时数：{{item.hour}}&nbsp;&nbsp; 有效期：{{item.validity}}</p>

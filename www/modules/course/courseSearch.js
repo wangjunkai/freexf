@@ -1,53 +1,73 @@
+
 'use strict';
 
-angular.module('freexf')
-    .filter('searchFor', function () {
-
-        // All filters must return a function. The first parameter
-        // is the data that is to be filtered, and the second is an
-        // argument that may be passed with a colon (searchFor:searchString)
-
-        return function (arr, searchString) {
-
-            if (!searchString) {
-                return arr;
+angular.module('freexf', ['ionic'])
+    .run(function ($ionicPlatform) {
+        $ionicPlatform.ready(function () {
+            // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+            // for form inputs)
+            if (window.cordova && window.cordova.plugins.Keyboard) {
+                cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
             }
-            var result = [];
-            searchString = searchString.toLowerCase();
-
-            // Using the forEach helper method to loop through the array
-            angular.forEach(arr, function (item) {
-
-                if (item.ProductName.toLowerCase().indexOf(searchString) !== -1) {
-                    result.push(item);
-                }
-
-            });
-
-            return result;
-        };
-
+            if (window.StatusBar) {
+                StatusBar.styleDefault();
+            }
+        });
     })
-  .controller('coursesearch_ctrl', function ($scope, $rootScope, $injector, $ionicLoading, $timeout, ENV, SearchCourse) {
-      $scope.SearchNull = false;
-      $scope.ClearAll = function () {
-          $scope.searchString = null;
-      };
-      //û�����ؿγ�ʱС¹ͷ�����
-      //if ($scope.CourseListShow == null) {
-      //    $scope.SearchNull = true;
-      //} else {
-      //    $scope.SearchNull = false;
-      //}
-      var searchCourse = SearchCourse(ENV._api.__searchcourse);
+     .controller('coursesearch_ctrl', function ($scope, $rootScope, $http, $location, $injector, $ionicLoading, $timeout, ENV, SearchCourse, $ionicScrollDelegate) {
+         var count = 0;
+         var pageMax = 10;
+         $scope.SearchNull = false;
+         $scope.searchString = '';
+         $scope.uppageshow = false;
+         $scope.bottomtext='点击搜索框,搜索内容'
+         //清空input值
+         $scope.ClearAll = function () {
+             $scope.searchString = '';
+         }
+         //点击搜索按钮事件
+         $scope.SearchResult = function () {
+             searchCourse.getModel({ "seekKey": $scope.searchString, "orderBy": "xuefen", "order": "desc", "pageIndex": count, "pageMax": pageMax }).then(function (res) {
+                 if (res == null || res.response == null || res.response.data == null || res.response.data.length < 1) {
+                     //小鹿的出现
+                     $scope.SearchNull = true;
+                     $scope.courseList = '';
+                     
+                 } else {
+                     $ionicScrollDelegate.scrollTop();
+                     count = 0;
+                     $scope.courseList = '';
+                     $scope.SearchNull = false;
+                     //$scope.courseList = res.response.data;
+                     $scope.uppageshow = true;
+                 };
+             });
+         }
+         //上拉刷新
+         $scope.doRefresh = function () {
+            //注意改为自己本站的地址，不然会有跨域问题
+             $http.get('http://localhost:18048/MFreeXFapi/student/searchcourse?order=desc&orderBy=xuefen&pageIndex=' + count + '&pageMax=' + pageMax + '&seekKey=' + $scope.searchString)
+                    .success(function (newitems) {
+                        $scope.courseList = newitems;
+                        //$scope.$broadcast('scroll.infiniteScrollComplete');
+                        if (newitems.length < count * pageMax && count > 0) {
+                            $scope.uppageshow = false;
+                            $scope.bottomtext = '没有更多!'
+                        }
+                            
+                    })
+                    .finally(function () {
+                        $scope.$broadcast('scroll.infiniteScrollComplete');
+                        //$scope.$broadcast('scroll.refreshcomplete');
+                    });
+             count += 1;
+             
+        };
+         var searchCourse = SearchCourse(ENV._api.__searchcourse);
 
-      $scope.$on('$ionicView.loaded', function () {
+         $scope.$on('$ionicView.loaded', function () {
 
-      });
-      searchCourse.getModel({ "seekKey": "", "orderBy": "xuefen", "order": "desc", "pageIndex": '0', "pageMax": '2' }).then(function (res) {
-          $scope.courseList = res.response.data;
-
-      });
-
-  });
+         });
+     })
+ 
 

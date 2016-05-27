@@ -1,35 +1,38 @@
 <ion-view view-title="登录">
 
   <ion-nav-buttons side="right">
-    <a href="#/register"><button menu-toggle="right" class="button button-clear">注册</button></a>
+    <a href="#/register">
+      <button menu-toggle="right" class="button button-clear">注册</button>
+    </a>
   </ion-nav-buttons>
   <ion-content>
-    <div class="list">
-      <label class="item item-input item-floating-label">
-        <span class="input-label">输入账号</span>
-        <input type="text" placeholder="输入账号" ng-model="login.phone">
-      </label>
-      <label class="item item-input item-floating-label">
-        <span class="input-label">输入密码</span>
-        <input type="password" placeholder="输入密码" ng-model="login.password">
-      </label>
-    </div>
-    <div class="freexf-padding-24">
-      <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-click="toLogin($event)">
-        登录
-      </button>
-      <div class="freexf-clear">
-        <div class="freexf-checkbox freexf-left">
-          <label class="label-checkbox">
-            <input type="checkbox">
-          </label>
-          记住密码
-        </div>
-        <div class="bg-img " style="background-position: -10px -10px;width: 30px;height: 30px;float: right;"></div>
-        <a class="freexf-font-13 freexf-right" href="#/forgetpassword">忘记密码</a>
+    <form name="loginForm" novalidate>
+      <div class="list">
+        <label class="item item-input item-floating-label">
+          <span class="input-label">输入账号</span>
+          <input type="text" placeholder="输入账号" ng-model="login.phone" required>
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">输入密码</span>
+          <input type="password" placeholder="输入密码" ng-model="login.password" required>
+        </label>
       </div>
-
-    </div>
+      <div class="freexf-padding-24">
+        <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-disabled="loginForm.$invalid" ng-click="toLogin($event)">
+          登录
+        </button>
+        <div class="freexf-clear">
+          <div class="freexf-checkbox freexf-left">
+            <label class="label-checkbox">
+              <input type="checkbox" ng-model="login.rememberPw">
+            </label>
+            记住密码
+          </div>
+          <div class="bg-img " style="background-position: -10px -10px;width: 30px;height: 30px;float: right;"></div>
+          <a class="freexf-font-13 freexf-right" href="#/forgetpassword">忘记密码</a>
+        </div>
+      </div>
+    </form>
   </ion-content>
 
 </ion-view>

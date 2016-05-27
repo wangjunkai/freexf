@@ -6,21 +6,16 @@ angular.module('freexf')
     function ideafeedbackModel() {
       this.idea = {
         as_mobile: '',
-        as_feedtype: '111',
+        as_feedtype: '意见反馈',
         as_content: ''
       };
       return this.idea;
     }
-
     $scope.idea = new ideafeedbackModel();
-    $scope.$on('$ionicView.loaded', function () {
-    });
+    $scope.$on('$ionicView.loaded', function () {});
     $scope.submitidea = function () {
       var idea = $scope.idea;
-      console.log(idea);
-      FeedBack.create(idea).then(function (res) {
-      //FeedBack.all("feedback?as_mobile=''&as_feedtype=''&as_content=''").post(idea).then(function (res) {
-        $scope.idea = new ideafeedbackModel();
+      FeedBack.getModel(idea).then(function (res) {
         console.log(res.response.data);
       })
     };

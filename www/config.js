@@ -9,9 +9,10 @@ var paths = {
     ionic: 'lib/ionic/js/ionic.bundle',
     oclazyload: 'lib/oclazyload/dist/ocLazyLoad',
     imglazyload: 'lib/ionic-image-lazy-load/ionic-image-lazy-load',
+    restAngular: 'lib/restangular/src/restangular',
+    localStorage:'lib/angular-local-storage/dist/angular-local-storage',
     jq: 'lib/jquery/dist/jquery',
     lodash: 'lib/lodash/dist/lodash',
-    restAngular: 'lib/restangular/src/restangular',
     qrcode: 'lib/qrcode/jquery.qrcode.min'
     /* angularSanitize: './lib/angular-sanitize/angular-sanitize'*/
   },
@@ -20,6 +21,7 @@ var paths = {
     'oclazyload': ['ionic'],
     'imglazyload': ['ionic'],
     'restAngular': ['ionic'],
+    'localStorage': ['ionic'],
     'services': ['ionic', 'app'],
     'qrcode': ['ionic']
   }

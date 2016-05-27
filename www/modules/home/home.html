@@ -24,15 +24,15 @@
   <ion-content lazy-scroll class="has-header has-footer freexf-bg-gray" delegate-handle="myDelegate">
     <ion-slide-box on-slide-changed="slideHasChanged($index)">
       <ion-slide>
-        <img image-lazy-src="img/home/banner@3x.png" src="img/home/kemu@3x.png" style="width: 100%;"></ion-slide>
+        <img image-lazy-src="img/home/banner@3x.png" src="img/home/kemu@3x.png" style="width: 100%;height: 132px;"></ion-slide>
       <ion-slide>
-        <img image-lazy-src="img/home/banner@3x.png" src="img/home/kemu@3x.png" style="width: 100%;"></ion-slide>
+        <img image-lazy-src="img/home/banner@3x.png" src="img/home/kemu@3x.png" style="width: 100%;height: 132px;"></ion-slide>
       <ion-slide>
-        <img image-lazy-src="img/home/banner@3x.png" src="img/home/kemu@3x.png" style="width: 100%;"></ion-slide>
+        <img image-lazy-src="img/home/banner@3x.png" src="img/home/kemu@3x.png" style="width: 100%;height: 132px;"></ion-slide>
     </ion-slide-box>
     <section class="freexf-hometype">
       <div class="row row-center">
-        <a href="#/courseplate" class="col col-33">
+        <a href="#/courseplate/英语" class="col col-33">
           <i class="yinyu"></i>
           <span>英语</span>
         </a>
@@ -82,14 +82,14 @@
     </section>
     <!--英语-->
     <section id="anchor-section-yingyu" class="freexf-home-table">
-      <h2 class="freexf-title">英语<a href="#/course" class="icon has-more"></a></h2>
+      <h2 class="freexf-title">英语<a href="#/course/" class="icon has-more"></a></h2>
       <div class="clearfix">
         <div class="freexf-col" ng-include="'homeTable.html'" ng-repeat="l in home.l_englishList"></div>
       </div>
     </section>
     <!--中小学-->
     <section id="anchor-section-zhongxiaoxue" class="freexf-home-table">
-      <h2 class="freexf-title">中小学</h2>
+      <h2 class="freexf-title">中小学<a href="#/coursePlate" class="icon has-more"></a></h2>
       <div class="clearfix">
         <div class="freexf-col" ng-include="'homeTable.html'" ng-repeat="l in home.l_k12List"></div>
       </div>

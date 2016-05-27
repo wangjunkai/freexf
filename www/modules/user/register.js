@@ -2,7 +2,7 @@
 
 
 angular.module('freexf')
-  .controller('register_ctrl', function ($scope, $rootScope, $injector, $ionicLoading, $interval, $timeout, $Loading, AuthRepository) {
+  .controller('register_ctrl', function ($scope, $rootScope, $state, $injector, $interval, $timeout, $Loading, AuthRepository) {
     var REGISTER = AuthRepository('AjaxRegister.aspx', '/ajax');
     var PHONE_CODE = AuthRepository('sendphonecode.aspx', '/ajax');
 
@@ -26,8 +26,11 @@ angular.module('freexf')
       var user = $scope.user;
       REGISTER.getModel(user).then(function (req) {
         var data = req.response.data;
-        $Loading.show({class: 'ion-alert-circled', text: data.message}, false, 1500);
+        $Loading.show({class: 'ion-alert-circled', text: data.message}, 1500);
         $event.target.disabled = false;
+        if (data.success) {
+          $state.go('login');
+        }
       })
     };
 
@@ -52,10 +55,10 @@ angular.module('freexf')
       var parameter = {type: 'sms', mobile: $scope.user.phone, codeyz: $scope.user.code};
       PHONE_CODE.getModel(parameter).then(function (req) {
         var data = req.response.data;
-        var msg = {success: '发送成功,请注意查收!', yzmfalse: '验证码错误!'};
+        var msg = {success: '发送成功,请注意查收!', yzmfalse: '验证码错误!', fail: '该手机号已存在!'};
+        $Loading.show({class: 'ion-alert-circled', text: msg[data]}, 2000);
         console.log(data);
-        $Loading.show({class: 'ion-alert-circled', text: msg[data]}, false);
-        var time = 30;
+        var time = 5;
         var stoptime = $interval(function () {
           if (time == 0) {
             $interval.cancel(stoptime), $event.target.disabled = false, $event.target.innerText = '获取验证码'
@@ -65,5 +68,5 @@ angular.module('freexf')
           }
         }, 1000);
       })
-    }
+    };
   });

@@ -3,16 +3,29 @@
     'ionic',
     'oclazyload',
     'imglazyload',
-    'restAngular'
+    'restAngular',
+    'localStorage'
   ], function (ionic) {
     angular.module('freexf', [
         'ionic',
         'oc.lazyLoad',
         'ionicLazyLoad',
-        'restangular'
+        'restangular',
+        'LocalStorageModule'
       ])
       .constant('XHR', 0)
       .constant('AUTH', {
+        FREEXFUSER: {
+          name: 'freexfUser',
+          data: {
+            Sign: null,
+            rowId: null,
+            rememberPw: '',
+            password: '',
+            phone: '',
+            userLg: false
+          }
+        },
         ISLOGIN: ['login', 'myaccount'],
         NOTLOGIN: ['tab.member']
       })
@@ -36,53 +49,53 @@
             return data[$2] ? data[$2] : $1;
           })
         };
-        var interceptor = true;//默认不阻止http拦截
+        var timeout = 1500;
         return {
-          //obj参数{显示的class，和文本信息},i(是否阻止http拦截)
-          show: function (obj, i, time) {
-            typeof i == 'boolean' ? interceptor = i : null;
-            $ionicLoading.show({
-              template: _rep(tpl, obj)
-            });
-            if (time) {
-              debugger
-              this.hide(time);
+          //time过期时间，不写默认1500，false不过期
+          show: function (obj, time) {
+            if (angular.isObject(obj)) {
+              obj['template'] ? $ionicLoading.show(obj) : $ionicLoading.show({template: _rep(tpl, obj)});
             }
-          },
-          _hide: function (i, time) {
-            typeof i == 'boolean' ? interceptor = i : null;
-            interceptor && $timeout(function () {
-              $ionicLoading.hide()
-            }, time ? time : 0);
+            else {
+              $ionicLoading.show();
+            }
+            typeof time !== 'boolean' && this.hide(time ? time : timeout);
           },
           hide: function (time) {
-            this._hide(true, time);
+            time ? $timeout(function () {
+              $ionicLoading.hide()
+            }, time) : $ionicLoading.hide();
           }
         }
       })
       //全局错误捕捉
       .factory('$exceptionHandler', function ($injector) {
         return function (exception, cause) {
-          var $ionicLoading = $injector.get('$ionicLoading');
-          $ionicLoading.show({
+            var $Loading = $injector.get('$Loading');
+          $Loading.show({
             template: '<div class="ion-alert-circled" style="font-size: 20px;"></div><div class="font">页面崩溃了,请刷新页面重试!</div>'
           });
           exception.message += ' (caused by "' + cause + '")';
           throw exception;
-        };
+        }
       })
       //全局路由配置
-      .run(['$rootScope', '$state', '$ionicLoading', '$Loading', '$anchorScroll', '$timeout', '$location', 'AUTH', 'XHR',
-        function ($rootScope, $state, $ionicLoading, $Loading, $anchorScroll, $timeout, $location, AUTH, XHR) {
+      .run(['$rootScope', '$state', '$Loading', '$anchorScroll', '$timeout', '$location', 'localStorageService', 'AUTH', 'XHR',
+        function ($rootScope, $state, $Loading, $anchorScroll, $timeout, $location, localStorageService, AUTH, XHR) {
+          //用户本地信息
+          var local = localStorageService.get(AUTH.FREEXFUSER.name);
+          AUTH.FREEXFUSER.data = local ? local : AUTH.FREEXFUSER.data;
           $rootScope.$on('$stateChangeStart', function (ev, to, toParams, from, fromParams) {
-            $ionicLoading.show();
-            if (!$rootScope.user && $.inArray(to.name, AUTH.NOTLOGIN) >= 0) {
+            $Loading.show();
+            if (!AUTH.FREEXFUSER.data.userLg && $.inArray(to.name, AUTH.NOTLOGIN) >= 0) {
               ev.preventDefault();
+              $Loading.hide();
               $state.go('myaccount');
               return;
             }
-            else if ($rootScope.user && $.inArray(to.name, AUTH.ISLOGIN) >= 0) {
-              event.preventDefault();
+            else if (AUTH.FREEXFUSER.data.userLg && $.inArray(to.name, AUTH.ISLOGIN) >= 0) {
+              ev.preventDefault();
+              $Loading.hide();
               $state.go('tab.member');
               return;
             }
@@ -90,21 +103,14 @@
           $rootScope.$on('$viewContentLoading', function (event, viewConfig) {
           });
           $rootScope.$on('$stateChangeSuccess', function (ev, to, toParams, from, fromParams) {
-            debugger
             !!$rootScope.xhr || $Loading.hide();
           });
           $rootScope.$on('$stateChangeError', function () {
             debugger
           });
-
-          $rootScope.$on('$ionicView.beforeEnter', function () {
-          });
-          $rootScope.$on('$ionicView.enter', function () {
-            debugger
-            !!$rootScope.xhr || $Loading.hide();
-          });
-          $rootScope.$on('$ionicView.afterEnter', function () {
-          });
+          $rootScope.$on('$ionicView.beforeEnter', function () {});
+          $rootScope.$on('$ionicView.enter', function () {});
+          $rootScope.$on('$ionicView.afterEnter', function () {});
 
         }])
       .config(function ($provide, $stateProvider, $locationProvider, $urlRouterProvider, $ionicConfigProvider) {
@@ -284,7 +290,7 @@
             }
           })
           .state('courseplate', {
-            url: '/courseplate',
+              url: '/courseplate/:Category1&:Category2',
             views: {
               '': {
                 controller: 'courseplate_ctrl',
