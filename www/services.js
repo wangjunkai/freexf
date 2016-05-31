@@ -9,13 +9,17 @@
       '_api': {
         __GetIndexGather: 'GetIndexGather',
         __courselistpage: 'courselistpage',   //课程列表
-        __mycourse: 'mycourse',
+        __mycourse: 'GetMyCourses',
         __coursedate: 'courseData',    //课程详情
         __GetCategory: 'GetCategory',     //一二级分类
         __searchcourse: 'searchcourse',//搜索课程
         __recommendcourse: 'recommendcourse',//推荐课程（暂无页面）
         __feedback: "feedback", //意见反馈
-        __aboutus: 'aboutus' //关于我们
+        __aboutus: 'aboutus', //关于我们
+        __myfavorite: 'myfavorite',  //我的收藏课程
+        __addfavorite: 'addfavorite',    //收藏
+        __delfavorite: 'delfavorite',    //取消收藏
+        __getuserinformation: 'getuserinformation' //获取个人信息
       }
     })
     //修改RestAngular配置
@@ -44,11 +48,11 @@
           switch (response.status) {
             case 0:
             case 502:
-              $Loading.show({template: timeoutTpl},5000);
+              $Loading.show({template: timeoutTpl});
               msg = '加载超时..';
               break;
             case 404:
-              $Loading.show({template: errorTpl},5000);
+              $Loading.show({template: errorTpl});
               break;
             default:
               break;
@@ -136,14 +140,14 @@
       }
     })
     //我的课程
-    .factory('myCourse', function (ENV, freexfRestAngular, baseRestAngular) {
-      function myCourse(api) {
+    .factory('MyCourseRepository', function (ENV, freexfRestAngular, baseRestAngular) {
+        function MyCourseRepository(api) {
         baseRestAngular.call(this, freexfRestAngular, api ? api : ENV._api.__mycourse)
       }
 
-      baseRestAngular.extend(myCourse);
+        baseRestAngular.extend(MyCourseRepository);
       return function (api) {
-        return new myCourse(api);
+          return new MyCourseRepository(api);
       }
     })
     //推荐课程
@@ -223,6 +227,50 @@
       baseRestAngular.extend(aboutUs);
       return function (api) {
         return new aboutUs(api);
+      }
+    })
+    //收藏课程
+    .factory('AddMyFavoriteRepository', function (ENV, freexfRestAngular, baseRestAngular) {
+        function AddMyFavoriteRepository(api) {
+            baseRestAngular.call(this, freexfRestAngular, api ? api : ENV._api.__addfavorite)
+        }
+
+        baseRestAngular.extend(AddMyFavoriteRepository);
+        return function (api) {
+            return new AddMyFavoriteRepository(api);
+        }
+    })
+      //取消收藏
+    .factory('DelMyFavoriteRepository', function (ENV, freexfRestAngular, baseRestAngular) {
+        function DelMyFavoriteRepository(api) {
+            baseRestAngular.call(this, freexfRestAngular, api ? api : ENV._api.__delfavorite)
+        }
+
+        baseRestAngular.extend(DelMyFavoriteRepository);
+        return function (api) {
+            return new DelMyFavoriteRepository(api);
+        }
+    })
+    //我的收藏课程
+    .factory('GetMyFavoriteRepository', function (ENV, freexfRestAngular, baseRestAngular) {
+        function GetMyFavoriteRepository(api) {
+            baseRestAngular.call(this, freexfRestAngular, api ? api : ENV._api.__myfavorite)
+        }
+
+        baseRestAngular.extend(GetMyFavoriteRepository);
+        return function (api) {
+            return new GetMyFavoriteRepository(api);
+        }
+    })
+    //获取个人信息
+    .factory('getuserinf', function (ENV, freexfRestAngular, baseRestAngular) {
+      function getuserinf(api) {
+        baseRestAngular.call(this, freexfRestAngular, api ? api : ENV._api.__getuserinformation)
+      }
+
+      baseRestAngular.extend(getuserinf);
+      return function (api) {
+        return new getuserinf(api);
       }
     });
 

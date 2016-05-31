@@ -2,26 +2,26 @@
 
 angular.module('freexf')
   .controller('course_ctrl', function ($scope, $rootScope, $injector, $ionicLoading, $timeout, $state, ENV, GetCategoryRepository) {
-      //»ñÈ¡Ò»¶þ¼¶·ÖÀà²Ëµ¥
+      //ï¿½ï¿½È¡Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½
       var GetCategory = GetCategoryRepository(ENV._api.__GetCategory);
       GetCategory.getModel().then(function (res) {
-          $scope.Category1 = res.response.data[0]['ls_Category'];    //Ò»¼¶·ÖÀà
-          $scope.Category2 = res.response.data[0]['ls_lingualList'];    //¶þ¼¶·ÖÀà
+          $scope.Category1 = res.response.data[0]['ls_Category'];    //Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+          $scope.Category2 = res.response.data[0]['ls_lingualList'];    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
       });
-      //µã»÷Ìø×ªÖÁ¿Î³ÌÁÐ±íÒ³²¢´«µÝ²ÎÊý
+      //ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½Î³ï¿½ï¿½Ð±ï¿½Ò³ï¿½ï¿½ï¿½ï¿½ï¿½Ý²ï¿½ï¿½ï¿½
       $scope.goCourseList = function (category1, category2) {
           $state.go('courseplate', { Category1: category1, Category2: category2 });
       };
       /** 
       * <pre> 
       * @param arr 
-      * @returns {Array} Èç¹ûarrÖÐµÄÔªËØ´æÔÚ¿Õ×Ö·û´®''£¬ÔòÈ¥µô¸Ã¿Õ×Ö·û´® 
+      * @returns {Array} ï¿½ï¿½ï¿½arrï¿½Ðµï¿½Ôªï¿½Ø´ï¿½ï¿½Ú¿ï¿½ï¿½Ö·ï¿½ï¿½ï¿½''ï¿½ï¿½ï¿½ï¿½È¥ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ 
       * </pre> 
       */
       function skipEmptyElementForArray(arr) {
           var a = [];
           $.each(arr, function (i, v) {
-              var data = $.trim(v);//$.trim()º¯ÊýÀ´×ÔjQuery  
+              var data = $.trim(v);//$.trim()ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½jQuery  
               if ('' != data) {
                   a.push(data);
               }

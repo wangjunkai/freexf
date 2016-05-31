@@ -165,7 +165,7 @@
   height: 100%;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, .7);
+  background: rgba(0, 0, 0, .6);
   z-index: 8;
 }
 
@@ -226,7 +226,7 @@ img.freexf-blur {
 .freexf-collectcourse {
   font-size: 13rem;
   position: absolute;
-  padding: 8px 20px 8px 5px;
+  padding: 8px 18px 8px 0px;
   right: 12px;
   bottom: 10px;
   color: #fff;
@@ -459,7 +459,29 @@ img.freexf-blur {
   background-size: 300px auto;
   position: relative;
   top: 2px;
-  left: 2px;
+  left: 7px;
+}
+.freexf-collect.active:before {
+  display: inline-block;
+  content: "";
+  width: 16px;
+  height: 15px;
+  background: url(../img/publicbg/course.png) no-repeat;
+  background-position: -35px -67px;
+  background-size: 300px auto;
+  position: relative;
+  top: 2px;
+  left: 8px;
+}
+.freexf-collect:after {
+    content:"收藏";
+    position:relative;
+    left:-2px;
+}
+.freexf-collect.active:after {
+    content:"已收藏";
+    position:relative;
+    left:-6px;
 }
 .freexf-courseoutline{
 	background: #fff;
@@ -508,6 +530,7 @@ img.freexf-blur {
 /*选课中心*/
 .freexf-courselist{
   background-color: #eee;
+  padding:0;
 }
 .coursecenter-list{
   padding: 13px 0 25px 0;

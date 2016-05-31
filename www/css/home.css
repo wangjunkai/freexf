@@ -145,10 +145,6 @@
 .freexf-hometype i {
   display: block;
   margin: 0 auto;
-  -webkit-background-size: cover;
-  background-size: cover;
-  width: 45px;
-  height: 45px;
 }
 
 .freexf-hometype span {
@@ -156,28 +152,41 @@
   display: inline-block;
 }
 
+.freexf-hometype .yinyu,
+.freexf-hometype .zhongxiaoxue,
+.freexf-hometype .kuaiji,
+.freexf-hometype .kaoyan,
+.freexf-hometype .xinqu,
+.freexf-hometype .duoyuzhong {
+  background-image: url('../img/publicbg/home.png');
+  background-repeat: no-repeat;
+  background-size: 739px auto;
+  width: 45px;
+  height: 45px;
+}
+
 .freexf-hometype .yinyu {
-  background-image: url('../img/home/d英语.png');
+  background-position: -638px 0;
 }
 
 .freexf-hometype .zhongxiaoxue {
-  background-image: url('../img/home/d中小学.png');
+  background-position: -694px 0;
 }
 
 .freexf-hometype .duoyuzhong {
-  background-image: url('../img/home/d多语种.png');
+  background-position: -20px 0;
 }
 
 .freexf-hometype .kuaiji {
-  background-image: url('../img/home/d会计.png');
+  background-position: -216px 0;
 }
 
 .freexf-hometype .kaoyan {
-  background-image: url('../img/home/d考研.png');
+  background-position: -159px 0;
 }
 
 .freexf-hometype .xinqu {
-  background-image: url('../img/home/d兴趣.png');
+  background-position: -498px 0;
 }
 
 .freexf-jinpin, .freexf-home-table {
@@ -208,14 +217,14 @@
   border-radius: 2px;
   margin-right: 7px;
 }
-
 .freexf-title > .has-more {
-  background-image: url('../img/home/more.png');
+  background-image: url('../img/publicbg/home.png');
   background-repeat: no-repeat;
+  background-position: -262px 0;
+  background-size: 493px auto;
   float: right;
   width: 8px;
   height: 100%;
-  background-size: cover;
   margin-left: 5px;
 }
 
@@ -245,7 +254,7 @@
 }
 
 .freexf-jinpin img, .freexf-home-table img {
-  height: 100%;
+  height:100%;
   width: 100%;
   vertical-align: bottom;
 }
@@ -263,13 +272,15 @@
   margin-top: 15px;
 }
 
-.freexf-home-table .freexf-col:nth-child(even) {
-  padding-left: 5px;
+.freexf-home-table .freexf-col:nth-child(odd) {
+  padding-right:2.5px;
+}
+.freexf-home-table .freexf-col:nth-child(even){
+  padding-left:2.5px;
 }
 
 .freexf-home-table .freexf-col > div:first-child {
-  height: 97px;
-  overflow: hidden;
+  min-height: 97px;
 }
 
 .freexf-home-table .freexf-col > div:first-child + div {
@@ -285,7 +296,7 @@
   text-overflow: ellipsis;
   overflow: hidden;
   overflow-wrap: normal;
-  white-space:nowrap;
+  white-space: nowrap;
 }
 
 .freexf-home-table .freexf-col .r10 {
@@ -335,20 +346,35 @@ ion-tabs.freexf-tabs .tab-item.activated {
 
 ion-tabs.freexf-tabs .tab-item.tab-item-active .freexf-icon-home,
 ion-tabs.freexf-tabs .tab-item.active .freexf-icon-home,
+ion-tabs.freexf-tabs .tab-item.activated .freexf-icon-home,
+ion-tabs.freexf-tabs .tab-item.tab-item-active .freexf-icon-xuanke,
+ion-tabs.freexf-tabs .tab-item.active .freexf-icon-xuanke,
+ion-tabs.freexf-tabs .tab-item.activated .freexf-icon-xuanke,
+ion-tabs.freexf-tabs .tab-item.tab-item-active .freexf-icon-user,
+ion-tabs.freexf-tabs .tab-item.active .freexf-icon-user,
+ion-tabs.freexf-tabs .tab-item.activated .freexf-icon-user{
+  background-image: url('../img/publicbg/home.png');
+  background-size: 493px auto;
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+}
+ion-tabs.freexf-tabs .tab-item.tab-item-active .freexf-icon-home,
+ion-tabs.freexf-tabs .tab-item.active .freexf-icon-home,
 ion-tabs.freexf-tabs .tab-item.activated .freexf-icon-home {
-  background-image: url('../img/home/icon-home-outline.png');
+  background-position: -78px 0;
 }
 
 ion-tabs.freexf-tabs .tab-item.tab-item-active .freexf-icon-xuanke,
 ion-tabs.freexf-tabs .tab-item.active .freexf-icon-xuanke,
 ion-tabs.freexf-tabs .tab-item.activated .freexf-icon-xuanke {
-  background-image: url('../img/home/icon-xuanke-outline.png');
+  background-position: -596px 0;
 }
 
 ion-tabs.freexf-tabs .tab-item.tab-item-active .freexf-icon-user,
 ion-tabs.freexf-tabs .tab-item.active .freexf-icon-user,
 ion-tabs.freexf-tabs .tab-item.activated .freexf-icon-user {
-  background-image: url('../img/home/icon-user-outline.png');
+  background-position: -457px 0;
 }
 
 .freexf-icon-home-outline,
@@ -357,8 +383,9 @@ ion-tabs.freexf-tabs .tab-item.activated .freexf-icon-user {
 .freexf-icon-xuanke,
 .freexf-icon-user-outline,
 .freexf-icon-user {
+  background-image: url('../img/publicbg/home.png');
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 493px auto;
   width: 20px !important;
   height: 20px !important;
   padding-bottom: 4px !important;
@@ -367,25 +394,42 @@ ion-tabs.freexf-tabs .tab-item.activated .freexf-icon-user {
 }
 
 .freexf-icon-home-outline {
-  background-image: url('../img/home/icon-home-outline.png');
+  background-position: -51px 0;
 }
 
 .freexf-icon-home {
-  background-image: url('../img/home/icon-home.png');
+  background-position: -78px 0;
 }
 
 .freexf-icon-xuanke-outline {
-  background-image: url('../img/home/icon-xuanke-outline.png');
+  background-position: -370px 0;
 }
 
 .freexf-icon-xuanke {
-  background-image: url('../img/home/icon-xuanke.png');
+  background-position: -397px 0;
 }
 
 .freexf-icon-user-outline {
-  background-image: url('../img/home/icon-user-outline.png');
+  background-position: -277px 0;
 }
 
 .freexf-icon-user {
-  background-image: url('../img/home/icon-user.png');
+  background-position: -304px 0;
+}
+
+/*图片轮播状态样式*/
+
+.freexf-slide .slider-pager{
+    bottom:15px;
+}
+.freexf-slide .slider-pager .slider-pager-page{
+    width:5px;
+}
+
+.freexf-slide .slider-pager .ion-record:before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  background-color: #fff;
+  border-radius: 5px;
 }

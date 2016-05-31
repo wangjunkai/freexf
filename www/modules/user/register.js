@@ -12,12 +12,24 @@ angular.module('freexf')
         code: '',
         phonecode: '',
         password: '',
-        confirmPassword: ''
+        confirmPassword: '',
+        labelphone: '输入手机号',
+        labelcode: '输入验证码',
+        labelphonecode: '输入短信验证码',
+        labelpassword: '输入密码(8-30位)',
+        labelconfirmPassword: '确认密码'
       };
       return this.user;
     }
 
     $scope.user = new registerModel();
+    $scope.passwordAccord = function () {
+        if ($scope.user.password != $scope.user.confirmPassword) {
+            $scope.user.labelconfirmPassword='两次密码不一致'
+        } else {
+            $scope.user.labelconfirmPassword = '密码一致'
+        }
+    }
     //注册
     $scope.register = function ($event) {
       $scope.authLoad = true;

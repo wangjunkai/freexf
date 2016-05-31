@@ -60,7 +60,7 @@
       }
     }])
 
-    .controller('home_ctrl', function ($scope, $timeout, $ionicLoading, $exceptionHandler, ENV, HomeRepository) {
+    .controller('home_ctrl', function ($scope, $timeout, $ionicLoading, $exceptionHandler, $state, ENV, HomeRepository) {
       var Home = HomeRepository(ENV._api.__GetIndexGather);
       $scope.$on('$ionicView.loaded', function () {});
       $scope.getTime = function(){
@@ -70,31 +70,16 @@
       Home.getModel().then(function (res) {
         $scope.home = res.response.data[0];
       });
+
+      $scope.goCourseList = function (category1){
+          $state.go('courseplate', { Category1: category1});
+      }
+
     })
     .controller('index_daohang_ctrl', function ($scope) {
       //  require(['modules/index/index_ctrl'], function (shouye_ctrl) {
       //    $injector.invoke(shouye_ctrl, this, {'$scope': $scope});
       //  });
-    })
-      .filter('xufeng', function(){
-          return function (item,num) {
-              if(item==0){
-                  return '免费';
-              }else{
-                  return item;
-              }
-              
-          }
-      })
-    .filter('xufengshow', function () {
-        return function (item) {
-            if (item == 0) {
-                return 'false';
-            } else {
-                return 'true';
-            }
-
-        }
     })
 
 })();

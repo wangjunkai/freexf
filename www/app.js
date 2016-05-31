@@ -29,7 +29,7 @@
         ISLOGIN: ['login', 'myaccount'],
         NOTLOGIN: ['tab.member']
       })
-      //ionic loading 全局配置
+      //ionic loading 全局配置服务
       .constant('$ionicLoadingConfig', {
         template: '<ion-spinner icon="bubbles"></ion-spinner><div class="font">加载中...</div>',
         noBackdrop: false
@@ -39,7 +39,48 @@
       .filter('decodeUri', function ($window) {
         return $window.decodeURIComponent;
       })
-      //loading,
+      .filter('xufen', function () {
+        return function (item, num) {
+          if (item == 0) {
+            return '免费';
+          } else {
+            return item;
+          }
+        }
+      })
+      .filter('xufenshow', function () {
+        return function (item) {
+          if (item == 0) {
+            return 'false';
+          } else {
+            return 'true';
+          }
+        }
+      })
+      //默认后退按钮当没有历史记录的时候跳转到首页 指令
+      .directive('defaultNavBackButton', ['$rootScope', '$ionicHistory', '$ionicConfig', '$state', '$injector',
+        function ($rootScope, $ionicHistory, $ionicConfig, $state, $injector) {
+          return {
+            link: function (scope, element, attrs) {
+              var back = function () {
+                return !!$ionicHistory.backView();
+              };
+              scope.goBack = function () {
+                if (back()) {
+                  $ionicHistory.goBack();
+                } else {
+                  $state.go('tab.home');
+                }
+              };
+              scope.$on('$ionicView.beforeEnter', function () {
+                var b = element.find('i')[0];
+                b.className = b.className.replace(b.className.match(/freexf-\w+/), back() ? 'freexf-goback' : 'freexf-gohomeback');
+                element.removeClass('hide');
+              });
+            }
+          }
+        }])
+      //loading服务
       .factory('$Loading', function ($injector) {
         var $ionicLoading = $injector.get('$ionicLoading');
         var $timeout = $injector.get('$timeout');
@@ -68,10 +109,10 @@
           }
         }
       })
-      //全局错误捕捉
+      //全局错误捕捉服务
       .factory('$exceptionHandler', function ($injector) {
         return function (exception, cause) {
-            var $Loading = $injector.get('$Loading');
+          var $Loading = $injector.get('$Loading');
           $Loading.show({
             template: '<div class="ion-alert-circled" style="font-size: 20px;"></div><div class="font">页面崩溃了,请刷新页面重试!</div>'
           });
@@ -80,8 +121,8 @@
         }
       })
       //全局路由配置
-      .run(['$rootScope', '$state', '$Loading', '$anchorScroll', '$timeout', '$location', 'localStorageService', 'AUTH', 'XHR',
-        function ($rootScope, $state, $Loading, $anchorScroll, $timeout, $location, localStorageService, AUTH, XHR) {
+      .run(['$rootScope', '$state', '$Loading', '$timeout', 'localStorageService', 'AUTH', 'XHR',
+        function ($rootScope, $state, $Loading, $timeout, localStorageService, AUTH, XHR) {
           //用户本地信息
           var local = localStorageService.get(AUTH.FREEXFUSER.name);
           AUTH.FREEXFUSER.data = local ? local : AUTH.FREEXFUSER.data;
@@ -106,12 +147,16 @@
             !!$rootScope.xhr || $Loading.hide();
           });
           $rootScope.$on('$stateChangeError', function () {
-            debugger
+            ev.preventDefault();
+            $Loading.hide();
+            $state.go('tab.home');
           });
-          $rootScope.$on('$ionicView.beforeEnter', function () {});
-          $rootScope.$on('$ionicView.enter', function () {});
-          $rootScope.$on('$ionicView.afterEnter', function () {});
-
+          $rootScope.$on('$ionicView.beforeEnter', function () {
+          });
+          $rootScope.$on('$ionicView.enter', function () {
+          });
+          $rootScope.$on('$ionicView.afterEnter', function () {
+          });
         }])
       .config(function ($provide, $stateProvider, $locationProvider, $urlRouterProvider, $ionicConfigProvider) {
 
@@ -290,7 +335,7 @@
             }
           })
           .state('courseplate', {
-              url: '/courseplate/:Category1&:Category2',
+            url: '/courseplate/:Category1&:Category2',
             views: {
               '': {
                 controller: 'courseplate_ctrl',
@@ -354,6 +399,11 @@
               loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load(['modules/home/home.js']);
               }]
+            },
+            onEnter: function ($ionicTabsDelegate, $timeout) {
+              $timeout(function () {
+                $ionicTabsDelegate.select(0)
+              }, 0);
             }
           })
           .state('tab.course', {
@@ -368,6 +418,11 @@
               loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load(['modules/course/course.js']);
               }]
+            },
+            onEnter: function ($ionicTabsDelegate, $timeout) {
+              $timeout(function () {
+                $ionicTabsDelegate.select(1)
+              }, 0);
             }
           })
 
@@ -383,6 +438,11 @@
               loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load('modules/student/member.js');
               }]
+            },
+            onEnter: function ($ionicTabsDelegate, $timeout) {
+              $timeout(function () {
+                $ionicTabsDelegate.select(2)
+              }, 0);
             }
           })
 

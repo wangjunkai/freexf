@@ -3,6 +3,7 @@
   "version": "1.1.1",
   "description": "mobile_freexf",
   "devDependencies": {
+    "gm": "^1.22.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-cache": "^0.4.4",
@@ -12,6 +13,8 @@
     "gulp-concat": "^2.6.0",
     "gulp-connect": "^3.2.2",
     "gulp-css-spriter": "^0.3.3",
+    "gulp-gm": "0.0.8",
+    "gulp-image-resize": "^0.8.0",
     "gulp-imagemin": "^2.4.0",
     "gulp-jshint": "^2.0.0",
     "gulp-livereload": "^3.8.1",

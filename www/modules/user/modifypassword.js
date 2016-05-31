@@ -2,7 +2,7 @@
 
 
 angular.module('freexf')
-  .controller('modifypassword_ctrl',function ($scope, $rootScope, $injector, $ionicLoading,$interval, $timeout, $Loading, AuthRepository,AUTH) {
+  .controller('modifypassword_ctrl',function ($scope, $rootScope, $injector, $ionicLoading, $interval, $timeout, $Loading, $state, AUTH, AuthRepository) {
     var MODIFY = AuthRepository('AjaxForgetPassword.aspx', '/ajax');
     var PHONE_CODE = AuthRepository('sendphonecode.aspx', '/ajax');
     $scope.phone=AUTH.FREEXFUSER.data.phone;
@@ -12,12 +12,24 @@ angular.module('freexf')
         code: '',
         phonecode: '',
         password: '',
-        confirmPassword: ''
+        confirmPassword: '',
+        labelphone: '输入手机号',
+        labelcode: '输入验证码',
+        labelphonecode: '输入短信验证码',
+        labelpassword: '输入密码(8-30位)',
+        labelconfirmPassword: '确认密码'
       };
       return this.modify;
     }
     $scope.modify = new modifypasswordModel();
     $scope.modify.phone=$scope.phone;
+    $scope.passwordAccord = function () {
+      if ($scope.modify.password != $scope.modify.confirmPassword) {
+        $scope.modify.labelconfirmPassword='两次密码不一致'
+      } else {
+        $scope.modify.labelconfirmPassword = '密码一致'
+      }
+    }
     //修改密码
     $scope.modifypassword = function ($event) {
       $scope.authLoad = true;
@@ -27,8 +39,13 @@ angular.module('freexf')
       var modify=$scope.modify;
       MODIFY.getModel(modify).then(function(req){
         var data = req.response.data;
-        $Loading.show({class: 'ion-alert-circled', text: data.message}, false, 1500);
+        $Loading.show({class: 'ion-alert-circled', text: data.message}, 1500);
         $event.target.disabled = false;
+        if(data.success){
+          $timeout(function(){
+            $state.go('set');
+          },1000)
+        }
       })
     };
 

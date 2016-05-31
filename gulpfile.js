@@ -10,7 +10,12 @@ var uglify = require('gulp-uglify');
 //css压缩
 var minify = require('gulp-minify-css');
 //css雪碧图
+var imageResize = require('gulp-image-resize');
 var sprite = require('gulp.spritesmith');
+var gm = require('gulp-gm');
+var parallel = require("concurrent-transform");
+var os = require("os");
+
 //图片压缩&&深度压缩
 var imagemin = require('gulp-imagemin'),
   pngquant = require('imagemin-pngquant');
@@ -88,14 +93,14 @@ gulp.task('minify', function () {
 });
 //图片压缩
 gulp.task('imagemin', function () {
-  return gulp.src(paths.img)
-    .pipe(changed(paths.dist_img))
+  return gulp.src('www/img/home/*.png')
+    //.pipe(changed(paths.dist_img))
     .pipe(imagemin({
       progressive: true,
       svgoPlugins: [{removeViewBox: false}],
       use: [pngquant()]
     }))
-    .pipe(gulp.dest(paths.dist_img));
+    .pipe(gulp.dest('www/img/home'));
 });
 //网页自动刷新
 gulp.task('livereload', function () {
@@ -126,17 +131,25 @@ gulp.task('prefixer', function () {
     .pipe(gulp.dest('./dist'));
 });
 //css雪碧图
+/*gulp.task('sprite-resize', function () {
+  return gulp.src('www/img/home/icon-yinyu.png')
+    .pipe(parallel(
+      imageResize({width: '50%', height: '50%'}),
+      os.cpus().length
+    ))
+    .pipe(gulp.dest('www/img/home/dest'))
+});*/
 gulp.task('sprite', function () {
-  return gulp.src(paths.img_sprite)
+  return gulp.src('www/img/home/icon-*.png')
     .pipe(sprite({
       imgName: 'sprite.png',
       cssName: 'sprite.css',
-      padding: 10,
+      padding: 23,
       /*top-down	,left-right ,diagonal ,alt-diagonal ,binary-tree*/
-      algorithm: 'top-down',
+      algorithm: 'left-right',
       algorithmOpts: {sort: false}
     }))
-    .pipe(gulp.dest(paths.dist))
+    .pipe(gulp.dest('www/img/home/dest'))
 });
 // 监听任务
 gulp.task('watch', function () {

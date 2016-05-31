@@ -11,6 +11,8 @@ angular.module('freexf')
     };
     $scope.toQuit = function () {
       AUTH.FREEXFUSER.data.userLg = false;
+      AUTH.FREEXFUSER.data.Sign = null;
+      AUTH.FREEXFUSER.data.rowId = null;
       $scope.freexfUser = AUTH.FREEXFUSER.data;
       $state.go('myaccount');
     };

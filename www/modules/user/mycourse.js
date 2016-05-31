@@ -2,17 +2,14 @@
 
 
 angular.module('freexf')
-  .controller('mycourse_ctrl', function ($scope, $rootScope, $injector, $ionicLoading, $timeout, ENV, myCourse) {
-
-      var myCourse = myCourse(ENV._api.__mycourse);
-
+  .controller('mycourse_ctrl', function ($scope, $rootScope, $injector, $ionicLoading, $timeout, AUTH, ENV, MyCourseRepository) {
+      $scope.userData = AUTH.FREEXFUSER.data;
+      var myCourse = MyCourseRepository(ENV._api.__mycourse);
       $scope.$on('$ionicView.loaded', function () {
           
       });
-
-      myCourse.getModel({ "studentId": "58000058", "Sign": "123", "pageIndex": "1", "pageMax": "10" }).then(function (res) {
+      myCourse.getModel({ "studentId": $scope.userData.rowId, "Sign": $scope.userData.Sign, "pageIndex": "0", "pageMax": "10" }).then(function (res) {
           $scope.mycourselist = res.response.data;
-
       });
      
 

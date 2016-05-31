@@ -1,12 +1,14 @@
 <ion-view view-title="设置">
 
   <ion-content class="ideafeedback">
+    <form name="ideaForm" novalidate>
       <div action="" class="setform">
         <label for="describe">意见描述</label>
-        <textarea type="text" class="describe" id="describe" ng-model="idea.as_content"></textarea>
+        <textarea type="text" class="describe" id="describe" ng-model="idea.as_content" required></textarea>
         <label for="phonenumber">手机号码</label>
-        <input type="text" class="phonenumber" id="phonenumber" ng-model="idea.as_mobile">
-        <button class="button button-block" ng-click="submitidea()">提交</button>
+        <input type="text" class="phonenumber" id="phonenumber" ng-model="idea.as_mobile" required>
+        <button class="button button-block" ng-click="submitidea()" ng-disabled="ideaForm.$invalid">提交</button>
       </div>
+    </form>
   </ion-content>
 </ion-view>

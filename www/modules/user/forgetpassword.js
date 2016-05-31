@@ -2,7 +2,7 @@
 
 
 angular.module('freexf')
-  .controller('forgetpassword_ctrl',function ($scope, $rootScope, $injector, $ionicLoading,$interval,  $timeout, $Loading, AuthRepository) {
+  .controller('forgetpassword_ctrl',function ($scope, $rootScope, $injector, $ionicLoading, $interval, $state,  $timeout, $Loading, AuthRepository) {
     var FORGET = AuthRepository('AjaxForgetPassword.aspx', '/ajax');
     var PHONE_CODE = AuthRepository('sendphonecode.aspx', '/ajax');
     function forgetpasswordModel() {
@@ -11,11 +11,23 @@ angular.module('freexf')
         code: '',
         phonecode: '',
         password: '',
-        confirmPassword: ''
+        confirmPassword: '',
+        labelphone: '输入手机号',
+        labelcode: '输入验证码',
+        labelphonecode: '输入短信验证码',
+        labelpassword: '输入密码(8-30位)',
+        labelconfirmPassword: '确认密码'
       };
       return this.forget;
     }
     $scope.forget = new forgetpasswordModel();
+    $scope.passwordAccord = function () {
+      if ($scope.forget.password != $scope.forget.confirmPassword) {
+        $scope.forget.labelconfirmPassword='两次密码不一致'
+      } else {
+        $scope.forget.labelconfirmPassword = '密码一致'
+      }
+    }
     //忘记密码
     $scope.forgetpassword = function ($event) {
       $scope.authLoad = true;
@@ -24,8 +36,13 @@ angular.module('freexf')
       var forget=$scope.forget;
       FORGET.getModel(forget).then(function(req){
         var data = req.response.data;
-        $Loading.show({class: 'ion-alert-circled', text: data.message}, false, 1500);
+        $Loading.show({class: 'ion-alert-circled', text: data.message}, 1500);
         $event.target.disabled = false;
+        if(data.success){
+          $timeout(function(){
+            $state.go('login');
+          },1000)
+        }
       })
     };
 
@@ -47,7 +64,6 @@ angular.module('freexf')
     $scope.PhoneCode = function ($event) {
       $scope.PhoneCodeLoad = true;
       $event.target.disabled = true;
-      console.log($scope.forget.phone);
       var parameter = {type: 'forgetpwdsms', mobile: $scope.forget.phone, codeyz: $scope.forget.code};
       PHONE_CODE.getModel(parameter).then(function (req) {
         var data = req.response.data;

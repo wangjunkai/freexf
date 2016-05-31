@@ -7,7 +7,7 @@
   </ion-nav-buttons>
   <ion-content>
   		<div class="freexf-classmodule-header-nav">
-  			<div class="freexf-courseNav" ng-class="{active:languageclass}" ng-click="languageClassShow()">全部</div>
+  			<div class="freexf-courseNav" ng-class="{active:languageclass}" ng-click="languageClassShow()">{{lingual}}</div>
             <div class="freexf-coursesort">
                 <div>
                     <div class="active" ng-click="courseSort($event)">综合</div>
@@ -28,13 +28,4 @@
   </ion-content>
 
 </ion-view>
-<script type="text/javascript">
-    //$('.freexf-coursesort').click(function () {
-    //    $('.freexf-coursesort').removeClass('active');
-    //    $(this).addClass('active');
-    //})
-    //$('.freexf-languageclass li').click(function () {
-    //    $(this).addClass('active').siblings().removeClass('active');
-    //});
-</script>
 

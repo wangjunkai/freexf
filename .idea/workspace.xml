@@ -2,32 +2,157 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f0fedb80-9d46-42ab-87d2-719866b04b28" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/home/icon-more.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/publicbg/home.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/css/freexf-user.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/css/public.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/2shouye.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/2手机注册.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/2登录.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/4综合排序-选课中心.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/5课程介绍.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/5课程大纲.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/6收藏.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/a.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/home/a查看更多.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/home/b搜索.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/home/c我的.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/home/c我的2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/home/c选课中心.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/home/c选课中心2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/home/c首页.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/home/c首页2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/home/more.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/k8/多语种-导航.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/k8/多语种-选课中心.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/lALOGI3ig3jNAWg_360_120.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/lALOGIr4flDM8A_240_80.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/Email邮箱注册页面.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/UNlogin未登录.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/badalei/accountant会计选课中心.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/badalei/accountant会计金融-导航.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/badalei/civilServants公务员导航.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/badalei/civilServants公务员选课中心.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/badalei/english英语导航.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/badalei/english英语选课中心.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/badalei/interest兴趣导航.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/badalei/interest兴趣选课中心.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/badalei/kaoyan考研导航.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/badalei/kaoyan考研选课中心.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/badalei/plurilingual多语种-选课中心.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/badalei/plurilingual多语种导航.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/badalei/profession 职业选课中心.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/badalei/zhiyedaohang.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/badalei/zhongXX中小学导航.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/badalei/zhongXX中小学选课中心.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/loginIndex.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/login已登录.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/phone手机注册页面.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/styles/css/bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/styles/css/index.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/styles/js/bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/styles/js/jquery1.11.0.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/1shouye.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/2shouye.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/2手机注册.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/2登录.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/2邮箱注册.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/3-未登录.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/3-登录.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/4综合排序-选课中心.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/5课程介绍.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/5课程大纲.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/6收藏.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/k8/zhiyedaohang.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/k8/中小学-导航.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/k8/中小学-选课中心.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/k8/会计金融-导航.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/k8/会计金融-选课中心.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/k8/公务员-导航.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/k8/公务员-选课中心.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/k8/兴趣-导航.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/k8/兴趣-选课中心.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/k8/多语种-导航.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/k8/多语种-选课中心.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/k8/考研-导航.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/k8/考研-选课中心.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/k8/职业-选课中心.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/k8/英语-导航.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/k8/英语-选课中心.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/user/个人中心.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/user/修改密码-输入新密码.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/user/修改密码.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/user/修改手机-输入新手机号.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/user/修改手机.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/user/修改昵称.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/user/我的课程-未开通.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/user/我的课程.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/user/我的账户.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/user/未收藏.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/wode.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/xuankezhongxin.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/个人中心/modifyName修改昵称.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/个人中心/modifyPassword修改密码.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/个人中心/modifyPassword修改密码详情页面.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/个人中心/modifyPnumber修改手机-输入手机号.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/个人中心/modifyphone修改手机.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/个人中心/myaccount我的账户.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/个人中心/mycollection.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/个人中心/mycourse.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/个人中心/personCenterIndex.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/课程/collection收藏.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/课程/courseCenter选课中心.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/课程/course课程介绍.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/课程/course课程详情.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/wode.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/xuankezhongxin.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/modules/course/coursedetailmodule.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/modules/course/coursedetailoutline.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/img/home/big-huodong.png" afterPath="$PROJECT_DIR$/www/img/home/big-huodong.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/img/publicbg/course.png" afterPath="$PROJECT_DIR$/www/img/publicbg/course.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower.json" afterPath="$PROJECT_DIR$/bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app.js" afterPath="$PROJECT_DIR$/www/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/config.js" afterPath="$PROJECT_DIR$/www/config.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/course.css" afterPath="$PROJECT_DIR$/www/css/course.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/member.css" afterPath="$PROJECT_DIR$/www/css/member.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/course/course.html" afterPath="$PROJECT_DIR$/www/modules/course/course.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/freexf.css" afterPath="$PROJECT_DIR$/www/css/freexf.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/home.css" afterPath="$PROJECT_DIR$/www/css/home.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/set.css" afterPath="$PROJECT_DIR$/www/css/set.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/user.css" afterPath="$PROJECT_DIR$/www/css/user.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/index.html" afterPath="$PROJECT_DIR$/www/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/course/classModule.html" afterPath="$PROJECT_DIR$/www/modules/course/classModule.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/course/course.js" afterPath="$PROJECT_DIR$/www/modules/course/course.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/course/courseSearch.js" afterPath="$PROJECT_DIR$/www/modules/course/courseSearch.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/course/coursedetail.html" afterPath="$PROJECT_DIR$/www/modules/course/coursedetail.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/course/coursedetail.js" afterPath="$PROJECT_DIR$/www/modules/course/coursedetail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/course/coursedetailmodule.html" afterPath="$PROJECT_DIR$/www/modules/course/coursedetailmodule.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/course/courseplate.html" afterPath="$PROJECT_DIR$/www/modules/course/courseplate.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/home/home.html" afterPath="$PROJECT_DIR$/www/modules/home/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/aboutus.html" afterPath="$PROJECT_DIR$/www/modules/user/aboutus.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/home/home.js" afterPath="$PROJECT_DIR$/www/modules/home/home.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/student/member.html" afterPath="$PROJECT_DIR$/www/modules/student/member.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/student/member.js" afterPath="$PROJECT_DIR$/www/modules/student/member.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/aboutus.js" afterPath="$PROJECT_DIR$/www/modules/user/aboutus.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/forgetpassword.html" afterPath="$PROJECT_DIR$/www/modules/user/forgetpassword.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/forgetpassword.js" afterPath="$PROJECT_DIR$/www/modules/user/forgetpassword.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/ideafeedback.html" afterPath="$PROJECT_DIR$/www/modules/user/ideafeedback.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/ideafeedback.js" afterPath="$PROJECT_DIR$/www/modules/user/ideafeedback.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/login.html" afterPath="$PROJECT_DIR$/www/modules/user/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/login.js" afterPath="$PROJECT_DIR$/www/modules/user/login.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/modifypassword.html" afterPath="$PROJECT_DIR$/www/modules/user/modifypassword.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/modifypassword.js" afterPath="$PROJECT_DIR$/www/modules/user/modifypassword.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/myaccount.js" afterPath="$PROJECT_DIR$/www/modules/user/myaccount.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/mycourse.js" afterPath="$PROJECT_DIR$/www/modules/user/mycourse.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/register.html" afterPath="$PROJECT_DIR$/www/modules/user/register.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/register.js" afterPath="$PROJECT_DIR$/www/modules/user/register.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/set.js" afterPath="$PROJECT_DIR$/www/modules/user/set.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/services.js" afterPath="$PROJECT_DIR$/www/services.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/www/img/home/d中小学.png" afterPath="$PROJECT_DIR$/www/img/home/icon-zhongxiaocue.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/www/img/home/d会计.png" afterPath="$PROJECT_DIR$/www/img/home/icon-kuaiji.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/www/img/home/d兴趣.png" afterPath="$PROJECT_DIR$/www/img/home/icon-xinqu.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/www/img/home/d多语种.png" afterPath="$PROJECT_DIR$/www/img/home/icon-duoyuzhong.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/www/img/home/d考研.png" afterPath="$PROJECT_DIR$/www/img/home/icon-kaoyan.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/www/img/home/d英语.png" afterPath="$PROJECT_DIR$/www/img/home/icon-yinyu.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/www/img/home/elogo.png" afterPath="$PROJECT_DIR$/www/img/home/icon-logo.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/www/img/home/f活动.png" afterPath="$PROJECT_DIR$/www/img/home/huodong-0.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/www/img/publicbg/goBack.png" afterPath="$PROJECT_DIR$/www/img/home/icon-back.png" />
     </list>
     <ignored path="mobile_freexf.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,110 +173,81 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="664">
-              <caret line="66" column="44" selection-start-line="66" selection-start-column="44" selection-end-line="66" selection-end-column="44" />
-              <folding>
-                <marker date="1464342512449" expanded="true" signature="2321:2337" placeholder="..." />
-                <marker date="1464342512449" expanded="true" signature="12136:12147" placeholder="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/modules/user/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="20" column="148" selection-start-line="20" selection-start-column="148" selection-end-line="20" selection-end-column="148" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="myaccount.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/modules/user/myaccount.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="4" column="29" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="29" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="services.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/services.js">
+      <file leaf-file-name="ideafeedback.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/modules/user/ideafeedback.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="39" column="27" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
-              <folding>
-                <marker date="1464341712392" expanded="true" signature="7876:7881" placeholder="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/modules/home/home.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="42" column="51" selection-start-line="42" selection-start-column="51" selection-end-line="42" selection-end-column="51" />
-              <folding>
-                <element signature="n#style#0;n#img#0;n#ion-slide#0;n#ion-slide-box#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#ion-slide#1;n#ion-slide-box#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#ion-slide#2;n#ion-slide-box#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="register.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/modules/user/register.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="693">
-              <caret line="42" column="140" selection-start-line="42" selection-start-column="105" selection-end-line="42" selection-end-column="140" />
+            <state relative-caret-position="399">
+              <caret line="19" column="69" selection-start-line="19" selection-start-column="65" selection-end-line="19" selection-end-column="69" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="set.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/modules/user/set.js">
+      <file leaf-file-name="forgetpassword.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/modules/user/forgetpassword.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/config.js">
+      <file leaf-file-name="aboutus.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/modules/user/aboutus.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-126">
-              <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+            <state relative-caret-position="210">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/www/modules/user/register.js">
+      <file leaf-file-name="member.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/modules/student/member.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="31" column="29" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
+            <state relative-caret-position="-727">
+              <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/modules/user/login.js">
+      <file leaf-file-name="pay.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/modules/pay/pay.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/modules/home/home.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-651">
+              <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="coursedetail.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/www/modules/course/coursedetail.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="420">
-              <caret line="26" column="44" selection-start-line="26" selection-start-column="44" selection-end-line="26" selection-end-column="44" />
+              <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -172,26 +268,17 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/www/modules/member/member.js" />
-        <option value="$PROJECT_DIR$/www/modules/index/index.js" />
-        <option value="$PROJECT_DIR$/www/modules/template/tabs.html" />
-        <option value="$PROJECT_DIR$/www/lib/ionic/js/ionic.js" />
-        <option value="$PROJECT_DIR$/www/modules/course/course.html" />
-        <option value="$PROJECT_DIR$/www/modules/member/member.html" />
-        <option value="$PROJECT_DIR$/www/lib/ionic/js/ionic.bundle.js" />
         <option value="$PROJECT_DIR$/bower.json" />
         <option value="$PROJECT_DIR$/www/modules/user/forgetpassword.html" />
         <option value="$PROJECT_DIR$/www/modules/user/modifypassword.html" />
         <option value="$PROJECT_DIR$/www/modules/pay/payfail.html" />
         <option value="$PROJECT_DIR$/www/modules/pay/paysuccess.html" />
-        <option value="$PROJECT_DIR$/www/modules/course/coursedetail.html" />
         <option value="$PROJECT_DIR$/www/modules/course/courslist.html" />
         <option value="$PROJECT_DIR$/www/modules/user/myaccount.html" />
         <option value="$PROJECT_DIR$/www/modules/user/mycollection.js" />
         <option value="$PROJECT_DIR$/www/modules/pay/pay.html" />
         <option value="$PROJECT_DIR$/www/modules/pay/pay.js" />
         <option value="$PROJECT_DIR$/www/modules/course/courselist.js" />
-        <option value="$PROJECT_DIR$/www/modules/pubilc/tabs.html" />
         <option value="$PROJECT_DIR$/www/modules/user/mycourse.html" />
         <option value="$PROJECT_DIR$/www/modules/user/myorder.html" />
         <option value="$PROJECT_DIR$/www/modules/user/mycollection.html" />
@@ -200,29 +287,38 @@
         <option value="$PROJECT_DIR$/www/modules/user/set.html" />
         <option value="$PROJECT_DIR$/www/css/course.css" />
         <option value="$PROJECT_DIR$/www/js/services.js" />
-        <option value="$PROJECT_DIR$/www/index.html" />
-        <option value="$PROJECT_DIR$/www/css/freexf.css" />
-        <option value="$PROJECT_DIR$/www/css/home.css" />
         <option value="$PROJECT_DIR$/www/lib/imglazyload/imglazyload.js" />
         <option value="$PROJECT_DIR$/www/lib/imglazyload/imgLazyLoad.js" />
         <option value="$PROJECT_DIR$/www/lib/ionic-image-lazy-load/ionic-image-lazy-load.js" />
-        <option value="$PROJECT_DIR$/www/modules/home/home.js" />
         <option value="$PROJECT_DIR$/www/css/member.css" />
         <option value="$PROJECT_DIR$/www/modules/user/aboutus.js" />
         <option value="$PROJECT_DIR$/www/modules/user/ideafeedback.js" />
         <option value="$PROJECT_DIR$/www/modules/course/coursesearch.html" />
-        <option value="$PROJECT_DIR$/www/modules/course/coursesearch.js" />
         <option value="$PROJECT_DIR$/www/css/freexf-user.css" />
         <option value="$PROJECT_DIR$/www/modules/user/register.html" />
         <option value="$PROJECT_DIR$/www/config.js" />
         <option value="$PROJECT_DIR$/www/modules/user/myaccount.js" />
-        <option value="$PROJECT_DIR$/www/modules/user/set.js" />
         <option value="$PROJECT_DIR$/www/modules/user/login.html" />
         <option value="$PROJECT_DIR$/www/modules/user/login.js" />
         <option value="$PROJECT_DIR$/www/modules/user/register.js" />
-        <option value="$PROJECT_DIR$/www/modules/home/home.html" />
+        <option value="$PROJECT_DIR$/www/modules/pubilc/tabs.html" />
+        <option value="$PROJECT_DIR$/www/modules/user/set.js" />
         <option value="$PROJECT_DIR$/www/services.js" />
+        <option value="$PROJECT_DIR$/www/modules/course/coursedetail.html" />
+        <option value="$PROJECT_DIR$/www/modules/course/coursesearch.js" />
+        <option value="$PROJECT_DIR$/www/modules/home/home.js" />
+        <option value="$PROJECT_DIR$/www/modules/course/courseplate.js" />
+        <option value="$PROJECT_DIR$/www/modules/course/coursedetail.js" />
         <option value="$PROJECT_DIR$/www/app.js" />
+        <option value="$PROJECT_DIR$/www/css/public.css" />
+        <option value="$PROJECT_DIR$/www/css/user.css" />
+        <option value="$PROJECT_DIR$/www/index.html" />
+        <option value="$PROJECT_DIR$/gulpfile.js" />
+        <option value="$PROJECT_DIR$/www/img/home/dest/sprite.css" />
+        <option value="$PROJECT_DIR$/www/css/freexf.css" />
+        <option value="$PROJECT_DIR$/www/css/home.css" />
+        <option value="$PROJECT_DIR$/www/modules/home/home.html" />
+        <option value="$PROJECT_DIR$/www/modules/course/course.js" />
       </list>
     </option>
   </component>
@@ -262,6 +358,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -326,7 +423,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
+              <option name="myItemId" value="img" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -348,147 +445,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="student" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="home" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="course" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="angular-local-storage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="angular-local-storage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dist" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="angular-local-storage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="demo" />
+              <option name="myItemId" value="img" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -513,11 +470,10 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="F:/xiangmu/compass" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="settings.editor.selected.configurable" value="project.propDebugger" />
@@ -526,11 +482,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\FreeXFDevelop\website\m\mobile\www\img\publicbg" />
       <recent name="F:\FreeXFDevelop\website\m\mobile\www\img\home" />
       <recent name="F:\FreeXFDevelop\website\m\mobile\www\modules\user\img" />
       <recent name="F:\FreeXFDevelop\website\m\mobile\www\modules\user" />
       <recent name="F:\FreeXFDevelop\website\m\mobile\www\img" />
-      <recent name="F:\xiangmu\mobile_freexf\www\modules\index" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\FreeXFDevelop\website\m\mobile\www" />
@@ -630,12 +586,15 @@
       <workItem from="1464052008587" duration="23250000" />
       <workItem from="1464138460888" duration="21016000" />
       <workItem from="1464225582906" duration="27773000" />
-      <workItem from="1464310963891" duration="26900000" />
+      <workItem from="1464310963891" duration="26942000" />
+      <workItem from="1464571072532" duration="23527000" />
+      <workItem from="1464657084168" duration="1827000" />
+      <workItem from="1464658939070" duration="20814000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="408334000" />
+    <option name="totallyTimeSpent" value="454544000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -644,6 +603,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25208333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946146" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284055" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -656,7 +616,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284055" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -673,61 +632,143 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/www/modules/course/course.js">
+    <entry file="file://$PROJECT_DIR$/www/img/home/icon-logo.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/img/home/banner@3x.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/css/public.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        <state relative-caret-position="903">
+          <caret line="43" column="1" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/course/course.html">
+    <entry file="file://$PROJECT_DIR$/www/css/freexf-user.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-396">
-          <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
+        <state relative-caret-position="210">
+          <caret line="10" column="20" selection-start-line="0" selection-start-column="0" selection-end-line="485" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/user/mycourse.html">
+    <entry file="file://$PROJECT_DIR$/www/css/member.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+        <state relative-caret-position="210">
+          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/user/myorder.html">
+    <entry file="file://$PROJECT_DIR$/www/img/home/icon-home.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/img/publicbg/goHomeBack.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/img/publicbg/goBack.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/img/publicbg/demo.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/css/pay.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="226">
-          <caret line="20" column="48" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
+          <caret line="18" column="47" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/student/member.html.mine" />
-    <entry file="file://$PROJECT_DIR$/www/modules/user/set.html.mine" />
-    <entry file="file://$PROJECT_DIR$/www/modules/user/set.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/user/setindex.html" />
     <entry file="file://$PROJECT_DIR$/www/css/course.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="776" column="0" selection-start-line="776" selection-start-column="0" selection-end-line="777" selection-end-column="0" />
+        <state relative-caret-position="-1623">
+          <caret line="767" column="1" selection-start-line="767" selection-start-column="1" selection-end-line="767" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/user/forgetpassword.html">
+    <entry file="file://$PROJECT_DIR$/www/img/home/icon-xuanke-outline.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/img/home/icon-zhongxiaocue.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/img/home/d英语.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/img/home/icon-yinyu.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/css/set.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+        <state relative-caret-position="189">
+          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+          <folding>
+            <marker date="1464679243819" expanded="true" signature="11:71" placeholder="{...}" />
+            <marker date="1464679243819" expanded="true" signature="840:890" placeholder="{...}" />
+          </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/img/home/a查看更多.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/img/home/icon-more.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/img/home/more.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/img/home/kemu@3x.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/img/publicbg/course.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/img/home/big-huodong.png">
@@ -735,260 +776,89 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/user/mycollection.html">
+    <entry file="file://$PROJECT_DIR$/www/img/home/huodong-0.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/img/home/dest/sprite.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        <state relative-caret-position="278">
+          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ionic.project">
+    <entry file="file://$PROJECT_DIR$/www/css/user.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="357">
+          <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/index_services.js" />
+    <entry file="file://$PROJECT_DIR$/www/css/video.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/www/css/freexf.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+        <state relative-caret-position="294">
+          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/pubilc/tabs.html">
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/lib/restangular/src/restangular.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10143">
-          <caret line="532" column="24" selection-start-line="532" selection-start-column="24" selection-end-line="532" selection-end-column="24" />
+        <state relative-caret-position="391">
+          <caret line="144" column="28" selection-start-line="144" selection-start-column="28" selection-end-line="144" selection-end-column="28" />
           <folding>
-            <element signature="e#4835#6238#0" expanded="false" />
-            <element signature="e#23410#47420#0" expanded="false" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/css/student.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/css/home.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="282" column="20" selection-start-line="282" selection-start-column="20" selection-end-line="282" selection-end-column="20" />
+        <state relative-caret-position="173">
+          <caret line="272" column="1" selection-start-line="272" selection-start-column="1" selection-end-line="272" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/lib/oclazyload/dist/ocLazyLoad.js">
+    <entry file="file://$PROJECT_DIR$/www/services.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27153">
-          <caret line="1293" column="0" selection-start-line="1293" selection-start-column="0" selection-end-line="1294" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/home/index2.html" />
-    <entry file="file://$PROJECT_DIR$/www/modules/home/index_ctrl.js" />
-    <entry file="file://$PROJECT_DIR$/www/modules/home/index_daohang.html" />
-    <entry file="file://$PROJECT_DIR$/www/lib/restangular/dist/restangular.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/lib/oclazyload/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/lib/imglazyload/imgLazyLoad.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="391" column="52" selection-start-line="391" selection-start-column="52" selection-end-line="391" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/html5/web-forms.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="582" column="12" selection-start-line="582" selection-start-column="6" selection-end-line="582" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/lib/ionic-image-lazy-load/ionic-image-lazy-load.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1323">
-          <caret line="63" column="35" selection-start-line="63" selection-start-column="35" selection-end-line="63" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="19" column="37" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/home/home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="66" column="36" selection-start-line="66" selection-start-column="36" selection-end-line="66" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/user/aboutus.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/course/coursesearch.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="22" column="39" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/course/coursesearch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="45" column="9" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/css/member.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4536">
-          <caret line="216" column="14" selection-start-line="216" selection-start-column="14" selection-end-line="216" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/course/courseplate.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/user/ideafeedback.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/user/ideafeedback.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/css/freexf-user.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6972">
-          <caret line="332" column="19" selection-start-line="332" selection-start-column="19" selection-end-line="332" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/lib/angular-local-storage/demo/demo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-945">
-          <caret line="15" column="59" selection-start-line="15" selection-start-column="59" selection-end-line="15" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/student/member.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/student/member.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/user/set.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/lib/angular-local-storage/demo/demo-app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="32" column="51" selection-start-line="32" selection-start-column="3" selection-end-line="32" selection-end-column="51" />
+        <state relative-caret-position="-4612">
+          <caret line="21" column="59" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/modules/user/register.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="42" column="140" selection-start-line="42" selection-start-column="105" selection-end-line="42" selection-end-column="140" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-126">
-          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/user/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="26" column="44" selection-start-line="26" selection-start-column="44" selection-end-line="26" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/user/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="20" column="148" selection-start-line="20" selection-start-column="148" selection-end-line="20" selection-end-column="148" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/user/myaccount.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="29" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="29" />
+        <state relative-caret-position="759">
+          <caret line="44" column="42" selection-start-line="44" selection-start-column="42" selection-end-line="44" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/modules/home/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="42" column="51" selection-start-line="42" selection-start-column="51" selection-end-line="42" selection-end-column="51" />
+        <state relative-caret-position="273">
+          <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
           <folding>
             <element signature="n#style#0;n#img#0;n#ion-slide#0;n#ion-slide-box#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#ion-slide#1;n#ion-slide-box#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
@@ -997,31 +867,138 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/services.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="39" column="27" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
-          <folding>
-            <marker date="1464341712392" expanded="true" signature="7876:7881" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="664">
-          <caret line="66" column="44" selection-start-line="66" selection-start-column="44" selection-end-line="66" selection-end-column="44" />
+        <state relative-caret-position="315">
+          <caret line="97" column="24" selection-start-line="97" selection-start-column="24" selection-end-line="97" selection-end-column="24" />
           <folding>
-            <marker date="1464342512449" expanded="true" signature="2321:2337" placeholder="..." />
-            <marker date="1464342512449" expanded="true" signature="12136:12147" placeholder="{...}" />
+            <marker date="1464657717785" expanded="true" signature="3695:3711" placeholder="..." />
+            <marker date="1464657717785" expanded="true" signature="13560:13571" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/modules/user/register.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="31" column="29" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
+        <state relative-caret-position="1310">
+          <caret line="71" column="26" selection-start-line="71" selection-start-column="26" selection-end-line="71" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/modules/user/modifypassword.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-349">
+          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/modules/user/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/modules/user/set.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/modules/user/myorder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/modules/user/mycourse.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/modules/user/myaccount.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/modules/user/ideafeedback.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="19" column="69" selection-start-line="19" selection-start-column="65" selection-end-line="19" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/modules/user/forgetpassword.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/modules/user/aboutus.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/modules/student/member.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-727">
+          <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/modules/pay/pay.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/modules/home/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-651">
+          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/img/home/dest/sprite.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/modules/course/course.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/modules/course/coursedetail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
           <folding />
         </state>
       </provider>

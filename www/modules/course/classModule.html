@@ -4,7 +4,7 @@
     <div>
         <h2>{{item.ProductName}}</h2>
         <p>讲师：{{item.teachername}}&nbsp;&nbsp;课时数：{{item.hour}}&nbsp;&nbsp; 有效期：{{item.validity}}</p>
-        <p><span>{{item.price}}</span>学分</p>
+        <p><span>{{item.price|xufen}}</span><em ng-show="{{item.price| xufenshow}}">学分</em></p>
     </div>
   </div>  
 

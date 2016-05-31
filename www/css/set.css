@@ -1,7 +1,6 @@
 .setlist li{
   border-top:1px solid #eeeeee;
   background-color: #fff;
-  padding: 16px;
 }
 .set,.freexf-contact,.set .scroll{
   width:100%;
@@ -17,11 +16,12 @@
 .set a{
   font-size: 14rem;
   color:#323232;
+  display: block;
+  padding:16px;
 }
 .set .changepassword{
   margin: 5px auto;
   background-color: #fff;
-  padding: 16px;
 }
 .quit{
   margin:20px 12px;
@@ -51,7 +51,6 @@
 }
 .freexf-contact a{
   width:49%;
-  line-height: 50px;
   text-align: center;
   display: inline-block;
 }
