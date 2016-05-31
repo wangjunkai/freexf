@@ -2,157 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f0fedb80-9d46-42ab-87d2-719866b04b28" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/home/icon-more.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/publicbg/home.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/css/freexf-user.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/css/public.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/2shouye.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/2手机注册.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/2登录.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/4综合排序-选课中心.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/5课程介绍.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/5课程大纲.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/6收藏.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/a.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/home/a查看更多.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/home/b搜索.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/home/c我的.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/home/c我的2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/home/c选课中心.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/home/c选课中心2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/home/c首页.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/home/c首页2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/home/more.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/k8/多语种-导航.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/k8/多语种-选课中心.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/lALOGI3ig3jNAWg_360_120.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/lALOGIr4flDM8A_240_80.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/Email邮箱注册页面.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/UNlogin未登录.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/badalei/accountant会计选课中心.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/badalei/accountant会计金融-导航.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/badalei/civilServants公务员导航.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/badalei/civilServants公务员选课中心.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/badalei/english英语导航.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/badalei/english英语选课中心.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/badalei/interest兴趣导航.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/badalei/interest兴趣选课中心.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/badalei/kaoyan考研导航.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/badalei/kaoyan考研选课中心.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/badalei/plurilingual多语种-选课中心.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/badalei/plurilingual多语种导航.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/badalei/profession 职业选课中心.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/badalei/zhiyedaohang.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/badalei/zhongXX中小学导航.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/badalei/zhongXX中小学选课中心.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/loginIndex.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/login已登录.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/phone手机注册页面.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/styles/css/bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/styles/css/index.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/styles/js/bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/styles/js/jquery1.11.0.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/1shouye.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/2shouye.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/2手机注册.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/2登录.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/2邮箱注册.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/3-未登录.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/3-登录.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/4综合排序-选课中心.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/5课程介绍.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/5课程大纲.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/6收藏.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/k8/zhiyedaohang.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/k8/中小学-导航.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/k8/中小学-选课中心.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/k8/会计金融-导航.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/k8/会计金融-选课中心.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/k8/公务员-导航.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/k8/公务员-选课中心.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/k8/兴趣-导航.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/k8/兴趣-选课中心.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/k8/多语种-导航.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/k8/多语种-选课中心.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/k8/考研-导航.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/k8/考研-选课中心.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/k8/职业-选课中心.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/k8/英语-导航.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/k8/英语-选课中心.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/user/个人中心.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/user/修改密码-输入新密码.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/user/修改密码.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/user/修改手机-输入新手机号.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/user/修改手机.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/user/修改昵称.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/user/我的课程-未开通.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/user/我的课程.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/user/我的账户.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/user/未收藏.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/wode.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/yanshi/img/xuankezhongxin.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/个人中心/modifyName修改昵称.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/个人中心/modifyPassword修改密码.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/个人中心/modifyPassword修改密码详情页面.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/个人中心/modifyPnumber修改手机-输入手机号.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/个人中心/modifyphone修改手机.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/个人中心/myaccount我的账户.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/个人中心/mycollection.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/个人中心/mycourse.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/个人中心/personCenterIndex.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/课程/collection收藏.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/课程/courseCenter选课中心.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/课程/course课程介绍.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/m/课程/course课程详情.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/wode.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/xuankezhongxin.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/modules/course/coursedetailmodule.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/modules/course/coursedetailoutline.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/img/home/big-huodong.png" afterPath="$PROJECT_DIR$/www/img/home/big-huodong.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/img/publicbg/course.png" afterPath="$PROJECT_DIR$/www/img/publicbg/course.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app.js" afterPath="$PROJECT_DIR$/www/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/course.css" afterPath="$PROJECT_DIR$/www/css/course.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/freexf.css" afterPath="$PROJECT_DIR$/www/css/freexf.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/home.css" afterPath="$PROJECT_DIR$/www/css/home.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/set.css" afterPath="$PROJECT_DIR$/www/css/set.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/user.css" afterPath="$PROJECT_DIR$/www/css/user.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/index.html" afterPath="$PROJECT_DIR$/www/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/course/classModule.html" afterPath="$PROJECT_DIR$/www/modules/course/classModule.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/course/course.js" afterPath="$PROJECT_DIR$/www/modules/course/course.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/course/courseSearch.js" afterPath="$PROJECT_DIR$/www/modules/course/courseSearch.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/course/coursedetail.html" afterPath="$PROJECT_DIR$/www/modules/course/coursedetail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/course/coursedetail.js" afterPath="$PROJECT_DIR$/www/modules/course/coursedetail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/course/courseplate.html" afterPath="$PROJECT_DIR$/www/modules/course/courseplate.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/home/home.html" afterPath="$PROJECT_DIR$/www/modules/home/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/home/home.js" afterPath="$PROJECT_DIR$/www/modules/home/home.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/student/member.html" afterPath="$PROJECT_DIR$/www/modules/student/member.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/student/member.js" afterPath="$PROJECT_DIR$/www/modules/student/member.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/aboutus.js" afterPath="$PROJECT_DIR$/www/modules/user/aboutus.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/forgetpassword.html" afterPath="$PROJECT_DIR$/www/modules/user/forgetpassword.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/forgetpassword.js" afterPath="$PROJECT_DIR$/www/modules/user/forgetpassword.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/ideafeedback.html" afterPath="$PROJECT_DIR$/www/modules/user/ideafeedback.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/ideafeedback.js" afterPath="$PROJECT_DIR$/www/modules/user/ideafeedback.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/modifypassword.html" afterPath="$PROJECT_DIR$/www/modules/user/modifypassword.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/modifypassword.js" afterPath="$PROJECT_DIR$/www/modules/user/modifypassword.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/mycourse.js" afterPath="$PROJECT_DIR$/www/modules/user/mycourse.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/register.html" afterPath="$PROJECT_DIR$/www/modules/user/register.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/register.js" afterPath="$PROJECT_DIR$/www/modules/user/register.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/set.js" afterPath="$PROJECT_DIR$/www/modules/user/set.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/services.js" afterPath="$PROJECT_DIR$/www/services.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/www/img/home/d中小学.png" afterPath="$PROJECT_DIR$/www/img/home/icon-zhongxiaocue.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/www/img/home/d会计.png" afterPath="$PROJECT_DIR$/www/img/home/icon-kuaiji.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/www/img/home/d兴趣.png" afterPath="$PROJECT_DIR$/www/img/home/icon-xinqu.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/www/img/home/d多语种.png" afterPath="$PROJECT_DIR$/www/img/home/icon-duoyuzhong.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/www/img/home/d考研.png" afterPath="$PROJECT_DIR$/www/img/home/icon-kaoyan.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/www/img/home/d英语.png" afterPath="$PROJECT_DIR$/www/img/home/icon-yinyu.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/www/img/home/elogo.png" afterPath="$PROJECT_DIR$/www/img/home/icon-logo.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/www/img/home/f活动.png" afterPath="$PROJECT_DIR$/www/img/home/huodong-0.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/www/img/publicbg/goBack.png" afterPath="$PROJECT_DIR$/www/img/home/icon-back.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="mobile_freexf.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -173,16 +23,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="myaccount.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/modules/user/myaccount.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ideafeedback.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/modules/user/ideafeedback.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -243,12 +83,47 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="coursedetail.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="coursedetail.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/modules/course/coursedetail.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
+            <state relative-caret-position="336">
+              <caret line="19" column="67" selection-start-line="19" selection-start-column="67" selection-end-line="19" selection-end-column="67" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="273">
+              <caret line="13" column="10" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-580">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-819">
+              <caret line="105" column="41" selection-start-line="105" selection-start-column="41" selection-end-line="105" selection-end-column="41" />
+              <folding>
+                <marker date="1464657717785" expanded="true" signature="3695:3711" placeholder="..." />
+                <marker date="1464657717785" expanded="true" signature="13560:13571" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -268,7 +143,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/bower.json" />
         <option value="$PROJECT_DIR$/www/modules/user/forgetpassword.html" />
         <option value="$PROJECT_DIR$/www/modules/user/modifypassword.html" />
         <option value="$PROJECT_DIR$/www/modules/pay/payfail.html" />
@@ -319,6 +193,7 @@
         <option value="$PROJECT_DIR$/www/css/home.css" />
         <option value="$PROJECT_DIR$/www/modules/home/home.html" />
         <option value="$PROJECT_DIR$/www/modules/course/course.js" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -388,82 +263,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -589,12 +388,12 @@
       <workItem from="1464310963891" duration="26942000" />
       <workItem from="1464571072532" duration="23527000" />
       <workItem from="1464657084168" duration="1827000" />
-      <workItem from="1464658939070" duration="20814000" />
+      <workItem from="1464658939070" duration="21974000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="454544000" />
+    <option name="totallyTimeSpent" value="455704000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -637,16 +436,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/www/img/home/icon-logo.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/img/home/banner@3x.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/css/public.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="903">
@@ -867,17 +656,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="97" column="24" selection-start-line="97" selection-start-column="24" selection-end-line="97" selection-end-column="24" />
-          <folding>
-            <marker date="1464657717785" expanded="true" signature="3695:3711" placeholder="..." />
-            <marker date="1464657717785" expanded="true" signature="13560:13571" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/modules/user/register.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1310">
@@ -997,8 +775,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/modules/course/coursedetail.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
+        <state relative-caret-position="336">
+          <caret line="19" column="67" selection-start-line="19" selection-start-column="67" selection-end-line="19" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-819">
+          <caret line="105" column="41" selection-start-line="105" selection-start-column="41" selection-end-line="105" selection-end-column="41" />
+          <folding>
+            <marker date="1464657717785" expanded="true" signature="3695:3711" placeholder="..." />
+            <marker date="1464657717785" expanded="true" signature="13560:13571" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-580">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="13" column="10" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
           <folding />
         </state>
       </provider>
