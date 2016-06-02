@@ -8,6 +8,10 @@ angular.module('freexf',['ionic'])
     $scope.$on('$ionicView.loaded', function () {});
     GetUserinf.getModel(user).then(function (res) {
       $scope.myuser=res.response.data[0];
+      if($scope.myuser&&!$scope.myuser.nickname==''){
+        $scope.iscode=true;
+
+      }
       if($scope.myuser.sex=='男'){
         $scope.man();
       }else if($scope.myuser.sex=='女'){
@@ -35,7 +39,7 @@ angular.module('freexf',['ionic'])
     //女生头像
     $scope.women=function(){
       $scope.userImage = {
-        "background-position" : "-52px -191px"
+        "background-position" : "-52px -190px"
       };
     };
     //男生头像

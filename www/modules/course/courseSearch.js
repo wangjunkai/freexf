@@ -36,8 +36,7 @@ angular.module('freexf', ['ionic'])
                  };
              });
          }
-         //上拉刷新
-         //分页
+         //下拉分页
          $scope.doRefresh = function () {
              //注意改为自己本站的地址，不然会有跨域问题
              count += 1;

@@ -3,7 +3,7 @@
 	  <ion-nav-buttons side="right">
 	    <button menu-toggle="right" class="button button-clear"></button>
 	  </ion-nav-buttons>
-	<ion-content class="myCollection">
+	<ion-content lazy-scroll class="myCollection">
 	    <div class="content  ionic-pseudo">
 
 	      <div class="list">
@@ -36,12 +36,12 @@
 						<div class="courseDetail-list">
 							<!--此处添加floor，即添加过期浮层-->
 							<div class="image" >
-								<img src="img/user/order-eg.png" width="100%">
+								<img src="img/user/order-eg.png" image-lazy-src="{{f.cover}}"  width="100%">
 							</div>
 							 <div class="courseDetail-words">
 					        	<h2>{{f.ClassName}}</h2>
-					        	<div class="courseList">
-					        		<p class="name">●&nbsp;讲师<i>{{f.teachername}}</i></p>
+					        	<div class="courseList" ng-init="teachername=f.teachername==null?false:true">
+					        		<p class="name" ng-show="teachername">●&nbsp;讲师<i>{{f.teachername}}</i></p>
 					        		<span class="time">●&nbsp;课程有效期<i>{{f.validity}}天</i></span>
 					        		<span class="count">●&nbsp;<i>{{f.classhours}}</i>课时</span>
 					        		<p class="xf"><font>{{f.price}}</font>学分</p>
@@ -58,7 +58,8 @@
 
 			</ul>
 
-
+            <ion-infinite-scroll ng-if="uppageshow" on-infinite="doRefresh()" distance="1%"> </ion-infinite-scroll>
+            <div ng-hide="uppageshow" style="text-align:center;">{{bottomtext}}</div>
 	      </div>
 
 	</ion-content>

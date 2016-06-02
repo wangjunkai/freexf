@@ -12,8 +12,7 @@
     <ion-scroll id="ion-scroll" delegate-handle="anchor" direction="x" scrollbar-x="false">
       <div class="row">
         <a anchor-tab="anchor-section-yingyu" delegate="myDelegate" animate="true" class="col yingyu">英语</a>
-        <a anchor-tab="anchor-section-zhongxiaoxue" delegate="myDelegate" animate="true"
-           class="col zhongxiaoxue">中小学</a>
+        <a anchor-tab="anchor-section-zhongxiaoxue" delegate="myDelegate" animate="true" class="col zhongxiaoxue">中小学</a>
         <a anchor-tab="anchor-section-duoyuzhong" delegate="myDelegate" animate="true" class="col duoyuzhong">多语种</a>
         <a anchor-tab="anchor-section-kuaiji" delegate="myDelegate" animate="true" class="col kuaiji">会计职业</a>
         <a anchor-tab="anchor-section-kaoyan" delegate="myDelegate" animate="true" class="col kaoyan">考研</a>
@@ -21,17 +20,17 @@
       </div>
     </ion-scroll>
   </div>
-  <ion-content lazy-scroll class="has-header has-footer freexf-bg-gray" delegate-handle="myDelegate">
+  <ion-content lazy-scroll class="has-header has-footer freexf-bg-gray freexf-content" delegate-handle="myDelegate">
 
     <ion-slide-box on-slide-changed="slideHasChanged($index)" class="freexf-slide">
       <ion-slide>
-        <img image-lazy-src="img/home/banner@3x.png" src="img/home/kemu@3x.png" style="width: 100%;height: 100%;">
+        <img image-lazy-src="img/home/banner@3x.png" src="img/home/kemu@3x.png">
       </ion-slide>
       <ion-slide>
-        <img image-lazy-src="img/home/banner@3x.png" src="img/home/kemu@3x.png" style="width: 100%;height: 100%;">
+        <img image-lazy-src="img/home/banner@3x.png" src="img/home/kemu@3x.png">
       </ion-slide>
       <ion-slide>
-        <img image-lazy-src="img/home/banner@3x.png" src="img/home/kemu@3x.png" style="width: 100%;height: 100%;">
+        <img image-lazy-src="img/home/banner@3x.png" src="img/home/kemu@3x.png" >
       </ion-slide>
     </ion-slide-box>
     <section class="freexf-hometype">
@@ -134,11 +133,11 @@
       </div>
     </section>
   </ion-content>
+
 </ion-view>
 
 <script type="text/ng-template" id="homeTable.html">
   <div>
-
     <a href="#/coursedetail/{{l.productID}}">
       <img image-lazy-src="img/home/kemu@3x.png" src="img/home/kemu@3x.png" alt="{{l.productName}}">
     </a>

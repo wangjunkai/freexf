@@ -114,48 +114,69 @@
         return function (exception, cause) {
           var $Loading = $injector.get('$Loading');
           $Loading.show({
-            template: '<div class="ion-alert-circled" style="font-size: 20px;"></div><div class="font">页面崩溃了,请刷新页面重试!</div>'
-          });
+
           exception.message += ' (caused by "' + cause + '")';
           throw exception;
         }
       })
       //全局路由配置
-      .run(['$rootScope', '$state', '$Loading', '$timeout', 'localStorageService', 'AUTH', 'XHR',
-        function ($rootScope, $state, $Loading, $timeout, localStorageService, AUTH, XHR) {
+
+      .run(['$rootScope', '$state', '$Loading', '$compile', '$timeout', 'localStorageService', 'AUTH', 'XHR',
+        function ($rootScope, $state, $Loading, $compile, $timeout, localStorageService, AUTH, XHR) {
           //用户本地信息
           var local = localStorageService.get(AUTH.FREEXFUSER.name);
           AUTH.FREEXFUSER.data = local ? local : AUTH.FREEXFUSER.data;
           $rootScope.$on('$stateChangeStart', function (ev, to, toParams, from, fromParams) {
-            $Loading.show();
+
             if (!AUTH.FREEXFUSER.data.userLg && $.inArray(to.name, AUTH.NOTLOGIN) >= 0) {
               ev.preventDefault();
-              $Loading.hide();
               $state.go('myaccount');
               return;
             }
             else if (AUTH.FREEXFUSER.data.userLg && $.inArray(to.name, AUTH.ISLOGIN) >= 0) {
               ev.preventDefault();
-              $Loading.hide();
               $state.go('tab.member');
               return;
             }
           });
           $rootScope.$on('$viewContentLoading', function (event, viewConfig) {
+
           });
           $rootScope.$on('$stateChangeSuccess', function (ev, to, toParams, from, fromParams) {
             !!$rootScope.xhr || $Loading.hide();
           });
           $rootScope.$on('$stateChangeError', function () {
             ev.preventDefault();
-            $Loading.hide();
             $state.go('tab.home');
           });
-          $rootScope.$on('$ionicView.beforeEnter', function () {
+
+          //根据作用域id取得当前作用域dom
+          var _con = function (fn, vf, load) {
+            vf.isLoading = load;
+            $('ion-content').each(function (e, dom) {
+              vf && vf.$id == angular.element($(dom).closest('ion-view')).scope().$id && fn(e, dom);
+            });
+          };
+          $rootScope.$on('$ionicView.beforeEnter', function (event, viewConfig) {
+            _con.call(this, function (e, dom) {
+              $(dom).siblings('#content-loading').length > 0 || $(dom).after(
+                $compile('<div id="content-loading" ng-show="isLoading" scroll="false">' +
+                  '<div class="font content-loading">加载中...</div>' +
+                  '</div>')(event.targetScope)
+              );
+              $(dom).removeAttr('style');
+            }, event.targetScope, true);
           });
-          $rootScope.$on('$ionicView.enter', function () {
+
+          $rootScope.$on('$ionicView.enter', function (event, viewConfig) {
           });
-          $rootScope.$on('$ionicView.afterEnter', function () {
+
+          $rootScope.$on('$ionicView.afterEnter', function (event, viewConfig) {
+            $timeout(function () {
+              _con.call(this, function (e, dom) {
+                $(dom).css({'opacity': 1, 'margin-top': 0});
+              }, event.targetScope, false);
+            }, 0);
           });
         }])
       .config(function ($provide, $stateProvider, $locationProvider, $urlRouterProvider, $ionicConfigProvider) {
@@ -163,7 +184,11 @@
         /*------------ionic 默认配置--------------------------------*/
         //修改默认后退键样式
         $ionicConfigProvider.backButton.text('').previousTitleText(false).icon('freexf-goback');
-        $ionicConfigProvider.templates.maxPrefetch(0);
+
+        $ionicConfigProvider.views.transition('android');
+        $ionicConfigProvider.templates.maxPrefetch(20);
+        $ionicConfigProvider.views.forwardCache(true);
+        $ionicConfigProvider.views.maxCache(10);
         //修改默认tabs位置 ios默认（top）,andriod默认为（bottom）
         $ionicConfigProvider.tabs.position('bottom');
         //修改title位置 ios默认（center）,andriod默认为（left）
@@ -375,6 +400,7 @@
             url: '/coursedetail/:courseId',
             templateUrl: 'modules/course/coursedetail.html',
             controller: 'coursedetail_ctrl',
+            cache:false,
             resolve: {
               loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load(['modules/course/coursedetail.js']);

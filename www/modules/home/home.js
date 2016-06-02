@@ -60,19 +60,21 @@
       }
     }])
 
-    .controller('home_ctrl', function ($scope, $timeout, $ionicLoading, $exceptionHandler, $state, ENV, HomeRepository) {
+    .controller('home_ctrl', function ($scope, $timeout, $ionicLoading, $exceptionHandler, $state, AUTH, ENV, HomeRepository) {
       var Home = HomeRepository(ENV._api.__GetIndexGather);
-      $scope.$on('$ionicView.loaded', function () {});
-      $scope.getTime = function(){
+      $scope.$on('$ionicView.loaded', function () {
+      });
+      $scope.au = AUTH;
+      $scope.getTime = function () {
         return new Date().getTime();
       };
-        //{'eliteNum': 3, 'recNum': 4}
+      //{'eliteNum': 3, 'recNum': 4}
       Home.getModel().then(function (res) {
         $scope.home = res.response.data[0];
       });
 
-      $scope.goCourseList = function (category1){
-          $state.go('courseplate', { Category1: category1});
+      $scope.goCourseList = function (category1) {
+        $state.go('courseplate', {Category1: category1});
       }
 
     })

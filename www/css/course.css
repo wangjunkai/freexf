@@ -312,7 +312,7 @@ img.freexf-blur {
   background-size: 300px auto;
 }
 
-.freexf-play.button.freexf-test-play:after {
+.freexf-play.button.testplay:after {
   background: url(../img/publicbg/course.png) no-repeat;
   background-position: -86px 0px;
   background-size: 300px auto;
@@ -462,15 +462,7 @@ img.freexf-blur {
   left: 7px;
 }
 .freexf-collect.active:before {
-  display: inline-block;
-  content: "";
-  width: 16px;
-  height: 15px;
-  background: url(../img/publicbg/course.png) no-repeat;
   background-position: -35px -67px;
-  background-size: 300px auto;
-  position: relative;
-  top: 2px;
   left: 8px;
 }
 .freexf-collect:after {

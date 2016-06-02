@@ -1,23 +1,50 @@
-angular.module('freexf')
-  .controller('mycollection_ctrl', function ($scope, $rootScope, $injector, $ionicLoading, $timeout, $state, $stateParams, AUTH, ENV, GetMyFavoriteRepository, DelMyFavoriteRepository) {
-      $scope.userData = AUTH.FREEXFUSER.data;
-      console.log($scope.userData);
-      //我的收藏
+锘縜ngular.module('freexf', ['ionic'])
+  .controller('mycollection_ctrl', function ($scope, $rootScope, $injector, $ionicLoading, $timeout, $state, $stateParams,$ionicScrollDelegate, AUTH, ENV, GetMyFavoriteRepository, DelMyFavoriteRepository) {
       var getMyFavorite = GetMyFavoriteRepository(ENV._api.__myfavorite);
-      getMyFavorite.getModel({ "studentId": $scope.userData.rowId, "Sign": $scope.userData.Sign, "pageIndex": "0", "pageMax": "5" }).then(function (res) {
-          $scope.myfavorite = res.response.data;
-      });
+      var DelFavorite = DelMyFavoriteRepository(ENV._api.__delfavorite);
+      var count = 0;
+      var pageMax = 5;
+      $scope.uppageshow = false;
+      $scope.userData = AUTH.FREEXFUSER.data;
+      var params = {
+          studentId: $scope.userData.userLg ? $scope.userData.rowId : '',
+          Sign: $scope.userData.userLg ? $scope.userData.Sign : '',
+          pageIndex: count,
+          pageMax:pageMax
+      }
+      getMyfavorite();      
+     
       $scope.delfavorite = function (courseId) {
-          //取消收藏
-          var DelFavorite = DelMyFavoriteRepository(ENV._api.__delfavorite);
-          DelFavorite.create({ "studentId": $scope.userData.rowId, "Sign": $scope.userData.Sign, "ProductId": courseId }).then(function (res) {
+          //鍙栨秷鏀惰棌          
+          DelFavorite.postModel({ "studentId": $scope.userData.rowId, "Sign": $scope.userData.Sign, "ProductId": courseId }).then(function (res) {
               if (res.response.data == true) {
-                  console.log("DelFavorite");
+                  getMyfavorite();
               }
           })
       }
+      //涓婃媺鍒锋柊
+      //鍒嗛〉
+      $scope.doRefresh = function () {          
+          count += 1;
+          getMyFavorite.getModel({'studentId':params.studentId,'Sign':params.Sign,'pageIndex':count,'pageMax':params.pageMax}).then(function (res) {
+              $scope.myfavorite = res.response.data;
+              if ($scope.myfavorite.length < count * pageMax && count > 0) {
+                  $scope.uppageshow = false;
+                  $scope.bottomtext = '娌℃湁鏇村!'
+              }
+              $scope.$broadcast('scroll.infiniteScrollComplete');
+          });
+      };
       $scope.goStudy = function (courseId) {
           $state.go('coursedetail', { courseId: courseId });
+      }
+      //鎴戠殑鏀惰棌 
+      function getMyfavorite() {
+          getMyFavorite.getModel(params).then(function (res) {    
+              $scope.uppageshow = true;
+              $scope.myfavorite = res.response.data;
+              console.log($scope.myfavorite.length);
+          });
       }
 
   });

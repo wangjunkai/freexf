@@ -1,6 +1,18 @@
-html {font-size: 1px}
+html {
+  font-size: 1px
+}
 
-.freexf-goback,.freexf-gohomeback{
+.md-scroll-mask {
+  position: initial;
+}
+
+.fade-in-out.ng-enter, .fade-in-out .ng-enter {
+  -webkit-animation: slideInUp 0.3s;
+  -moz-animation: slideInUp 0.3s;
+  animation: slideInUp 0.3s;
+}
+
+.freexf-goback, .freexf-gohomeback {
   background-image: url('../img/publicbg/home.png');
   background-repeat: no-repeat;
   background-size: 430px auto;
@@ -10,29 +22,37 @@ html {font-size: 1px}
   margin-top: 7px;
   margin-left: 10px;
 }
+
 .freexf-goback {
   background-size: 739px auto;
   background-position: 0 0;
 }
+
 .freexf-gohomeback {
   background-position: -68px 0;
 }
-.backdrop{
-  background-color: rgba(255, 255, 255,0) !important;
+
+.backdrop {
+  background-color: rgba(255, 255, 255, 0) !important;
 }
-.loading .spinner{
+
+.loading .spinner {
   stroke: #C5C5C5;
   fill: #C5C5C5;
 }
-.loading .font{
+
+.loading .font {
   font-size: 12px;
 }
+
 .freexf-padding-24 {
   padding: 10px 12px !important;
 }
+
 .bg-img {
   background-size: 300px 300px;
 }
+
 .bg-img.demo {
   background-image: url(../img/publicbg/demo.png)
 }
@@ -44,3 +64,16 @@ html {font-size: 1px}
 .freexf-margin-bottom-30 {
   margin-bottom: 30px !important;
 }
+
+.content-loading {
+  position: absolute;
+  margin: 50%;
+  width: 60px;
+  left: -20px;
+}
+ion-content:first-of-type{
+  opacity: 0;
+  margin-top: -10px;
+  transition: all .3s ease-in-out;
+}
+

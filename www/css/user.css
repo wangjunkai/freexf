@@ -96,6 +96,11 @@
 .OrderMessage .state {
   color: #EA4C00;
   float: right;
+  border:0px;
+  display:inline-block;
+  width: 50px;
+  font-size:9rem;
+  text-align:right;
 }
 
 .orderList .OrderDetail {
@@ -147,7 +152,7 @@
   float: left;
 }
 
-.myorder .btnGrounp .button, .myCollection .btnGrounp .button:first-child {
+.myorder .btnGrounp .button:first-child, .myCollection .btnGrounp .button:first-child {
   margin: 0 8px;
 }
 
@@ -225,7 +230,7 @@ ion-content {
 }
 
 .progress .progress-bar .full {
-  width: 53.25%;
+  width: 52.25%;
   margin-right: 2.75%;
   border-radius: 5px;
   height: 7px;
@@ -233,6 +238,7 @@ ion-content {
   margin-top: 12.5px;
   position: relative;
   float: left;
+  overflow:hidden;
 }
 
 .progress .progress-bar span {
@@ -277,7 +283,7 @@ ion-content {
 }
 
 .orderList .image.floor:before {
-  content: '课程已失效';
+  content: '课程已失�?;
   margin: auto;
   color: #fff;
   position: absolute;

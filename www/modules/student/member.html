@@ -4,13 +4,15 @@
   <ion-nav-buttons side="right">
     <a href="#/coursesearch" menu-toggle="right" class="button button-clear freexf-icon-search"><i class="icon ion-ios-search"></i></a>
   </ion-nav-buttons>
+
   <ion-content class="already has-header has-footer">
     <div class="MyAcc-top">
       <a href="#/set"><div class="MyAcc-setting"></div></a>
       <div class="MyAcc-icon"  ng-model="ImgBoxShow" ng-click="ChangeUserImg()" ng-style="userImage" ></div>
       <div class="UpdateName">
-        <input class="name" value="freexf" ng-model="myuser.nickname" id="UpadateUserName" ng-readonly="readonly" ng-blur="blur()"/>
+        <input class="name" value="freexf" placeholder="您还没有昵称哟！" ng-model="myuser.nickname" id="UpadateUserName" ng-readonly="readonly" ng-blur="blur()"/>
         <span class="edit" ng-click="ChangeName()" ng-model="readonly"></span>
+        <!--<p ng-show="iscode"><span style="border: 1px solid #eeeeee; border-radius: 5px; font-size: 9rem; padding: 0px 7px;">学号<font>{{myuser.code}}</font></span></p>-->
       </div>
       <!--更换图片框-->
       <div class="changeImg" ng-show="ImgBoxShow" >
@@ -67,7 +69,7 @@
       <!--<p class="number">学号<i>160515001</i></p>-->
       <div class="MyAcc-title">
         <span>已获得<font>{{myuser.money}}</font></span>
-        <span>待获得<font>{{myuser.nomenoy}}</font></span>
+        <span>待获得<font>{{myuser.nomoney}}</font></span>
       </div>
     </div>
     <div class="MyAcc-content">

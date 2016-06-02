@@ -49,11 +49,11 @@ function testViewport() {
   var mvp = $('meta[name="viewport"]').get(0);
   var docW = document.documentElement.clientWidth;
   var devicewidth = 'device-width';
-  var docWhtml = 375 / docW * 0.95;
-  if (docWhtml <= 1.1 && docWhtml >= 1) {
+  var docWhtml = docW * 1 / 375;
+  if (docWhtml <= 1 && docWhtml >= 0.85) {
     $('html').css('font-size', docWhtml + 'px')
-  } else if (docWhtml >= 1.1) {
-    $('html').css('font-size', '1.1px')
+  } else if (docWhtml <= 0.85) {
+    $('html').css('font-size', '0.9px')
   }
   var docWviewport, tvp;
   if (docW <= 320) {

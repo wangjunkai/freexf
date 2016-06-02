@@ -2,83 +2,92 @@
 
 
 angular.module('freexf')
-  .controller('coursedetail_ctrl', function ($scope, $rootScope, $injector, $ionicLoading, $ionicPopup, $timeout, $state, $stateParams, AUTH, ENV, CourseDateRepository, AddMyFavoriteRepository, DelMyFavoriteRepository) {
+
+  .controller('coursedetail_ctrl', function ($scope, $rootScope, $injector, $ionicLoading, $ionicPopup, $timeout, $state, $stateParams, AUTH, ENV, CourseDateRepository, AddMyFavoriteRepository, DelMyFavoriteRepository,AddOrderFun) {
+      var CourseDate = CourseDateRepository(ENV._api.__coursedate);
+      var AddFavorite = AddMyFavoriteRepository(ENV._api.__addfavorite);
+      var DelFavorite = DelMyFavoriteRepository(ENV._api.__delfavorite);
       $scope.courseId = $stateParams.courseId;
-      $scope.userData = AUTH.FREEXFUSER.data;     
+
+      $scope.userData = AUTH.FREEXFUSER.data;
       $scope.buy = true;
       $('#viewContent').addClass('has-footer');
-      console.log($scope.userData);
+
       $scope.coursedetail = true;	//课程介绍
       $scope.courseoutline = false;	//大纲
       $scope.flowerstate = false;		//献花
-      $scope.coursecollect = false;   //收藏状态   
-      if ($scope.userData.rowId == null && $scope.userData.Sign==null) {
-          //课程信息
-          var CourseDate = CourseDateRepository(ENV._api.__coursedate);
-          CourseDate.getModel({ "courseId": $scope.courseId, "studentId": "", "sign": "" }).then(function (res) {
-              $scope.courseDate = res.response.data;
-              $scope.outlineList = res.response.data.l_RetValueall;
-          });
-          $scope.showAgreement = function () {
-              location.href = "#/login";
-          }
-          $scope.collectState = function () {
-              location.href = "#/login";
-          }
-      } else {          
-          //课程信息
-          var CourseDate = CourseDateRepository(ENV._api.__coursedate);
-          CourseDate.getModel({ "courseId": $scope.courseId, "studentId": $scope.userData.rowId, "sign": $scope.userData.Sign }).then(function (res) {
-              $scope.courseDate = res.response.data;
-              $scope.outlineList = res.response.data.l_RetValueall;
-              //$scope.courseDate.isPermissionCrouse = true;    //已购买
-              if ($scope.courseDate.isPermissionCrouse == true) {  
-                  $scope.buy = false;
-                  $('#viewContent').removeClass('has-footer');
-              }
-          });
-          $scope.showAgreement = PurchaseAgreement;
-          $scope.collectState = Favorite;
+
+      $scope.coursecollect = false;   //收藏状态
+      var params = {
+          courseId: $scope.courseId,
+          studentId: $scope.userData.userLg ? $scope.userData.rowId : '',
+          Sign: $scope.userData.userLg ? $scope.userData.Sign : '',
+
       }
-	  //收藏取消收藏    
+
+
+      CourseDate.getModel(params).then(function (res) {
+          $scope.courseDate = res.response.data;
+          $scope.outlineList = res.response.data.l_RetValueall;
+          $scope.coursecollect = $scope.courseDate.favorite;
+          //$scope.courseDate.isPermissionCrouse = true;    //已购买
+          if ($scope.courseDate.isPermissionCrouse == true) {
+              $scope.buy = false;
+              $('#viewContent').removeClass('has-footer');
+          }
+      });
+      $scope.showAgreement = function () {
+          if ($scope.userData.userLg) {
+              PurchaseAgreement();
+          }
+          else {
+              location.href = "#/login";
+          }
+
+      }
+      $scope.collectState = function () {
+          if ($scope.userData.userLg) {
+              Favorite();
+          } else {
+              location.href = "#/login";
+          }
+
+      }
+
+      //课程介绍
+      $scope.coursedetailClick = function () {
+          $scope.coursedetail = true;
+          $scope.courseoutline = false;
+      }
+      //课程大纲
+      $scope.courseoutlineClick = function () {
+          $scope.coursedetail = false;
+          $scope.courseoutline = true;
+      }
+      //献花/取消献花
+      $scope.flowerState = function () {
+          $scope.flowerstate = !$scope.flowerstate;
+          ($scope.flowerstate) ? $scope.courseDate.flowers++ : $scope.courseDate.flowers--;
+      }
+      //收藏取消收藏    
       function Favorite() {
-		    //debugger
-		    if ($scope.coursecollect==false) {  //收藏
-		        console.log();
-                
-		        var AddFavorite = AddMyFavoriteRepository(ENV._api.__addfavorite);
-		        AddFavorite.create({ "studentid": $scope.userData.rowId, "Sign": $scope.userData.Sign, "ProductId": $scope.courseId }).then(function (res) {
-		            //debugger
-		            if (res.response.data == true) {
-		                $scope.coursecollect = true;
-		            }
-		        });
-		    } else {
-		        //取消收藏
-		        var DelFavorite = DelMyFavoriteRepository(ENV._api.__delfavorite);
-		        DelFavorite.create({ "studentId": $scope.userData.rowId, "Sign": $scope.userData.Sign, "ProductId": $scope.courseId }).then(function (res) {
-		            if (res.response.data == true) {
-		                $scope.coursecollect = false;
-		            }
-		        })
-		    }
-		}
-		//课程介绍
-		$scope.coursedetailClick=function(){
-			$scope.coursedetail=true;
-			$scope.courseoutline=false;
-		}
-		//课程大纲
-		$scope.courseoutlineClick=function(){
-			$scope.coursedetail=false;
-			$scope.courseoutline=true;
-		}
-		//献花/取消献花
-		$scope.flowerState=function(){
-		    $scope.flowerstate = !$scope.flowerstate;
-		    ($scope.flowerstate) ? $scope.courseDate.flowers++ : $scope.courseDate.flowers--;
-		}
-        //购买协议		
+
+          if ($scope.coursecollect == false) {  //收藏                
+              AddFavorite.postModel({ "studentid": $scope.userData.rowId, "Sign": $scope.userData.Sign, "ProductId": $scope.courseId }).then(function (res) {
+                  if (res.response.data == true) {
+                      $scope.coursecollect = true;
+                  }
+              });
+          } else {
+              //取消收藏
+              DelFavorite.postModel({ "studentId": $scope.userData.rowId, "Sign": $scope.userData.Sign, "ProductId": $scope.courseId }).then(function (res) {
+                  if (res.response.data == true) {
+                      $scope.coursecollect = false;
+                  }
+              })
+          }
+      }
+        //购买协议
         function PurchaseAgreement () {
 		   var confirmPopup = $ionicPopup.confirm({
 	       title: '购买协议',
@@ -108,7 +117,23 @@ angular.module('freexf')
 	       		text:"同意",
 	       		type:'button-balanced',
 	       		onTap:function(e){
-	       			location.href="#/pay";
+
+              var AddOrder = AddOrderFun(ENV._api.__AddOrder);
+              AddOrder.create({ "ProductId": $scope.courseId, "studentId": $scope.userData.rowId, "Sign": $scope.userData.Sign  }).then(function (res) {
+                location.href="#/pay";
+                $rootScope.payohref = res.response.data[0];
+                $rootScope.payoname = res.response.data[1];
+                $rootScope.payomoney = res.response.data[2];
+                //$scope.courseDate = res.response.data;
+                //$scope.outlineList = res.response.data.l_RetValueall;
+                //$scope.courseDate.isPermissionCrouse = true;    //已购买
+                if ($scope.courseDate.isPermissionCrouse == true) {
+
+                  //$scope.buy = false;
+                  //$('#viewContent').removeClass('has-footer');
+                }
+              });
+
 	       		}
 	       	}
 	       ]

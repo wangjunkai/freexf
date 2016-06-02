@@ -3,6 +3,12 @@
   background-color: #EEE;
 }
 
+.freexf-slide img {
+  width: 100%;
+  height: 100%;
+  max-height: 132px;
+}
+
 .freexf-padding-24 {
   padding: 10px 12px !important;
 }
@@ -38,6 +44,18 @@
 
 .freexf-bar-nav .row > a.active {
   background-color: #D4D4D4;
+}
+
+.freexf-bar-nav .freexf-row span:first-child {
+  border: 0;
+}
+
+.freexf-bar-nav .freexf-row a:last-child {
+  display: inline-block;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  border: 0;
 }
 
 .bar.freexf-bar-lightgray {
@@ -217,6 +235,7 @@
   border-radius: 2px;
   margin-right: 7px;
 }
+
 .freexf-title > .has-more {
   background-image: url('../img/publicbg/home.png');
   background-repeat: no-repeat;
@@ -254,7 +273,7 @@
 }
 
 .freexf-jinpin img, .freexf-home-table img {
-  height:100%;
+  height: 100%;
   width: 100%;
   vertical-align: bottom;
 }
@@ -273,10 +292,11 @@
 }
 
 .freexf-home-table .freexf-col:nth-child(odd) {
-  padding-right:2.5px;
+  padding-right: 2.5px;
 }
-.freexf-home-table .freexf-col:nth-child(even){
-  padding-left:2.5px;
+
+.freexf-home-table .freexf-col:nth-child(even) {
+  padding-left: 2.5px;
 }
 
 .freexf-home-table .freexf-col > div:first-child {
@@ -352,29 +372,30 @@ ion-tabs.freexf-tabs .tab-item.active .freexf-icon-xuanke,
 ion-tabs.freexf-tabs .tab-item.activated .freexf-icon-xuanke,
 ion-tabs.freexf-tabs .tab-item.tab-item-active .freexf-icon-user,
 ion-tabs.freexf-tabs .tab-item.active .freexf-icon-user,
-ion-tabs.freexf-tabs .tab-item.activated .freexf-icon-user{
+ion-tabs.freexf-tabs .tab-item.activated .freexf-icon-user {
   background-image: url('../img/publicbg/home.png');
   background-size: 493px auto;
   background-repeat: no-repeat;
   width: 30px;
   height: 30px;
 }
+
 ion-tabs.freexf-tabs .tab-item.tab-item-active .freexf-icon-home,
 ion-tabs.freexf-tabs .tab-item.active .freexf-icon-home,
 ion-tabs.freexf-tabs .tab-item.activated .freexf-icon-home {
-  background-position: -78px 0;
+  background-position: -51px 0;
 }
 
 ion-tabs.freexf-tabs .tab-item.tab-item-active .freexf-icon-xuanke,
 ion-tabs.freexf-tabs .tab-item.active .freexf-icon-xuanke,
 ion-tabs.freexf-tabs .tab-item.activated .freexf-icon-xuanke {
-  background-position: -596px 0;
+  background-position: -370px 0;
 }
 
 ion-tabs.freexf-tabs .tab-item.tab-item-active .freexf-icon-user,
 ion-tabs.freexf-tabs .tab-item.active .freexf-icon-user,
 ion-tabs.freexf-tabs .tab-item.activated .freexf-icon-user {
-  background-position: -457px 0;
+  background-position: -277px 0;
 }
 
 .freexf-icon-home-outline,
@@ -419,11 +440,12 @@ ion-tabs.freexf-tabs .tab-item.activated .freexf-icon-user {
 
 /*图片轮播状态样式*/
 
-.freexf-slide .slider-pager{
-    bottom:15px;
+.freexf-slide .slider-pager {
+  bottom: 15px;
 }
-.freexf-slide .slider-pager .slider-pager-page{
-    width:5px;
+
+.freexf-slide .slider-pager .slider-pager-page {
+  width: 5px;
 }
 
 .freexf-slide .slider-pager .ion-record:before {

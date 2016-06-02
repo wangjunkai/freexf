@@ -5,16 +5,16 @@
     	<i class="icon ion-ios-consult"></i>咨询
     </button>
   </ion-nav-buttons>
-  <ion-content id="viewContent">     <!--  class="has-footer" -->
+  <ion-content lazy-scroll id="viewContent">     <!--  class="has-footer" -->
   	<div class="item item-image">
-  		<img src="img/course/course_img.jpg" class="freexf-blur" alt="{{courseDate.courseName}}"/>	 <!--class="freexf-blur" 模糊效果  <!--image-lazy-src="{{courseDate.cover}}"-->-->
+  		<img src="img/course/course_img.jpg" class="freexf-blur" image-lazy-src="{{courseDate.cover}}" alt="{{courseDate.courseName}}"/>	 <!--class="freexf-blur" 模糊效果  <!--image-lazy-src="{{courseDate.cover}}"-->-->
   		<!--背景层已购买-->
-  		<div class="freexf-Backdrop" ng-show="true">
+  		<div class="freexf-Backdrop" ng-show="courseDate.isPermissionCrouse">
   			<p>您还没有学习该课程</p>
   			<button class="button">开始学习</button>
   		</div>
   		<!--未购买-->
-  		<div class="freexf-startplay" ng-show="false">
+  		<div class="freexf-startplay" ng-hide="courseDate.isPermissionCrouse">
   			<button class="button">
   				<i class="icon ion-ios-play"></i>
   			</button>
@@ -121,11 +121,10 @@
             <p>{{o[0].chapter}}</p>
         </div>
         <div>
-            <ul class="list freexf-courseitem freexf-democlass">            <!--/*freexf-democlass 试听课程  freexf-courseitem 课程列表 */-->
-                <li class="item item-button-right" ng-repeat="l in o">              <!--// class： endclass 已学完课程  intheclass 没学完课程  默认未学习-->
+            <ul class="list freexf-courseitem">            <!--/*freexf-democlass 试听课程  freexf-courseitem 课程列表 */-->
+                <li class="item item-button-right" ng-class="{endclass:l.isNoSee}" ng-repeat="l in o">              <!--// class： endclass 已学完课程  intheclass 没学完课程  默认未学习-->
                     <p>{{l.minChapter}}</p>
-
-                    <button class="button freexf-play freexf-test-play">                    <!--// freexf-test-play 禁止播放-->
+                    <button class="button freexf-play" ng-class="{testplay:!courseDate.isPermissionCrouse}">                    <!--// testplay 禁止播放-->
                         <i class="icon freexf-play-outline"></i>
                     </button>
                 </li>

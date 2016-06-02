@@ -5,7 +5,7 @@
     	<i class="icon ion-ios-search"></i>
     </a>
   </ion-nav-buttons>
-  <ion-content>
+  <ion-content lazy-scroll>
   		<div class="freexf-classmodule-header-nav">
   			<div class="freexf-courseNav" ng-class="{active:languageclass}" ng-click="languageClassShow()">{{lingual}}</div>
             <div class="freexf-coursesort">
@@ -23,9 +23,14 @@
   			</div>
   		</div>
   		<!--课程列表-->
-  		<div class="list freexf-classmodule" ui-view="classmodule">
-  		</div>
-  </ion-content>
+        <section>
+          <!--<ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>-->
+          <div class="list freexf-classmodule" ui-view="classmodule">
+          </div>
+        </section>
+        <ion-infinite-scroll ng-if="uppageshow" on-infinite="doRefresh()" distance="1%"> </ion-infinite-scroll>
+        <div ng-hide="uppageshow">{{bottomtext}}</div>
+</ion-content>
 
 </ion-view>
 
