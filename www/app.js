@@ -63,7 +63,9 @@
           return {
             link: function (scope, element, attrs) {
               var back = function () {
-                return !!$ionicHistory.backView();
+                //如果后退是设置页或者login，返回home
+                var _str = ['login'];
+                return !!($ionicHistory.backView() && $.inArray($ionicHistory.backView().stateName, _str) < 0);
               };
               scope.goBack = function () {
                 if (back()) {
@@ -114,7 +116,8 @@
         return function (exception, cause) {
           var $Loading = $injector.get('$Loading');
           $Loading.show({
-
+            template: '<div class="ion-alert-circled" style="font-size: 20px;"></div><div class="font">页面崩溃了,请刷新页面重试!</div>'
+          });
           exception.message += ' (caused by "' + cause + '")';
           throw exception;
         }
@@ -176,7 +179,7 @@
               _con.call(this, function (e, dom) {
                 $(dom).css({'opacity': 1, 'margin-top': 0});
               }, event.targetScope, false);
-            }, 0);
+            }, viewConfig.direction == 'none' ? 200 : 0);
           });
         }])
       .config(function ($provide, $stateProvider, $locationProvider, $urlRouterProvider, $ionicConfigProvider) {
@@ -186,6 +189,7 @@
         $ionicConfigProvider.backButton.text('').previousTitleText(false).icon('freexf-goback');
 
         $ionicConfigProvider.views.transition('android');
+        //预下载模板的数量
         $ionicConfigProvider.templates.maxPrefetch(20);
         $ionicConfigProvider.views.forwardCache(true);
         $ionicConfigProvider.views.maxCache(10);
@@ -400,7 +404,7 @@
             url: '/coursedetail/:courseId',
             templateUrl: 'modules/course/coursedetail.html',
             controller: 'coursedetail_ctrl',
-            cache:false,
+            cache: false,
             resolve: {
               loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load(['modules/course/coursedetail.js']);

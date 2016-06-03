@@ -273,7 +273,6 @@
 }
 
 .freexf-jinpin img, .freexf-home-table img {
-  height: 100%;
   width: 100%;
   vertical-align: bottom;
 }
@@ -301,6 +300,8 @@
 
 .freexf-home-table .freexf-col > div:first-child {
   min-height: 97px;
+  max-height: 130px;
+  overflow: hidden;
 }
 
 .freexf-home-table .freexf-col > div:first-child + div {

@@ -10,7 +10,7 @@ var paths = {
     oclazyload: 'lib/oclazyload/dist/ocLazyLoad',
     imglazyload: 'lib/ionic-image-lazy-load/ionic-image-lazy-load',
     restAngular: 'lib/restangular/src/restangular',
-    localStorage:'lib/angular-local-storage/dist/angular-local-storage',
+    localStorage: 'lib/angular-local-storage/dist/angular-local-storage',
     jq: 'lib/jquery/dist/jquery',
     lodash: 'lib/lodash/dist/lodash',
     qrcode: 'lib/qrcode/jquery.qrcode.min'
@@ -38,7 +38,7 @@ require([
     /*    'qrcode'*/
   ], function () {
     testViewport();
-    hideTop(window);
+    //totop(window);
     ionic.Platform.ready(function () {
       //启动angular模块
       angular.bootstrap(document, ['freexf']);
@@ -80,3 +80,30 @@ function hideTop(win) {
     }
   }, 500);
 }
+function totop(win) {
+  var doc = win.document;
+
+  // If there's a hash, or addEventListener is undefined, stop here
+  if (win.addEventListener) {
+    //scroll to 1
+    window.scrollTo(0, 1);
+    var scrollTop = 1,
+      getScrollTop = function () {
+        return win.pageYOffset || doc.compatMode === "CSS1Compat" && doc.documentElement.scrollTop || doc.body.scrollTop || 0;
+      },
+    //reset to 0 on bodyready, if needed
+      bodycheck = setInterval(function () {
+        if (doc.body) {
+          clearInterval(bodycheck);
+          scrollTop = getScrollTop();
+          win.scrollTo(0, scrollTop === 1 ? 0 : 1);
+        }
+      }, 15);
+    win.addEventListener("load", function () {
+      setTimeout(function () {
+        //reset to hide addr bar at onload
+        win.scrollTo(0, scrollTop === 1 ? 0 : 1);
+      }, 0);
+    });
+  }
+};
