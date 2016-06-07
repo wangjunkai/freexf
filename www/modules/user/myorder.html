@@ -1,99 +1,50 @@
+
 <ion-view view-title="我的订单">
 
-  <ion-nav-buttons side="right">
-    <button menu-toggle="right" class="button button-clear"></button>
-  </ion-nav-buttons>
-  <ion-content  lazy-scroll class="myorder">
-      <div style="text-align:center" ng-show="haveNull">你还没有订单哦~</div>
-    <div class="content  ionic-pseudo" >
-      <div class="list">
-          
-            <ul>
-                <li class="orderList" ng-repeat="item in orderlist">
-                    <div class="OrderDetail">
-                        <div class="OrderMessage">
-                            <div class="order number">订单号:<span>{{item.OrderId}}</span></div>
-                            <div class="order time">下单时间:<span>{{item.SetOrderTime}}</span></div>
-                            <input class="state" ng-value="myVar" readonly="readonly" />
-                        </div>
-                        <div class="courseDetail-list">
-                            <div class="image">
-                                <img src="img/user/order-eg.png" width="100%" image-lazy-src="{{item.image}}" alt="{{item.ProductName}}">
+    <ion-nav-buttons side="right">
+        <button menu-toggle="right" class="button button-clear"></button>
+    </ion-nav-buttons>
+    <ion-content lazy-scroll class="myorder">
+        <div style="text-align:center" ng-show="haveNull">你还没有订单哦~</div>
+        <div class="content  ionic-pseudo">
+            <div class="list">
+                <ul>
+                    <li class="orderList" ng-repeat="item in orderlist">
+                        <div class="OrderDetail">
+                            <div class="OrderMessage">
+                                <div class="order number">订单号:<span>{{item.OrderId}}</span></div>
+                                <div class="order time">下单时间:<span>{{item.SetOrderTime}}</span></div>
+                                <input class="state" ng-value="item.myVar" readonly="readonly" />
                             </div>
-                            <div class="courseDetail-words">
-                                <h2>{{item.ProductName}}</h2>
-                                <div class="courseList">
-                                    <p class="name">●&nbsp;讲师<font>&nbsp;{{item.teachername}}</font></p>
-                                    <span class="time">●&nbsp;课程有效期<font>30天</font></span>
-                                    <span class="count">●&nbsp;<font>{{item.hour}}</font>课时</span>
-                                    <p class="xf"><font>{{item.price}}</font>学分</p>
+                            <div class="courseDetail-list">
+                                <div class="image">
+                                    <img src="img/user/order-eg.png" width="100%" image-lazy-src="{{item.image}}" alt="{{item.ProductName}}">
+                                </div>
+                                <div class="courseDetail-words">
+                                    <h2>{{item.ProductName}}</h2>
+                                    <div class="courseList">
+                                        <p class="name">●&nbsp;讲师<font>&nbsp;{{item.teachername}}</font></p>
+                                        <span class="time">●&nbsp;课程有效期<font>{{item.deadline}}天</font></span>
+                                        <span class="count">●&nbsp;<font>{{item.hour}}</font>课时</span>
+                                        <p class="xf"><font>{{item.price}}</font>学分</p>
+                                    </div>
                                 </div>
                             </div>
+                            <div class="btnGrounp" ng-show="item.payOrder">
+                                <button class="button button-stable"  ng-click="delOrderList(item.OrderId)"> 取消订单</button>
+                                <button class="button button-assertive">付款</button>
+
+                            </div>
+                            <div class="btnGrounp" ng-show="item.study">
+                                <button class="button button-stable"  ng-click="goOrderDetail(item.OrderId)"> 订单详情</button>
+                                <button class="button button-balanced" ng-click="goStudy(item.ProductId)">立即学习</button>
+                            </div>
                         </div>
-                        <div class="btnGrounp">
-                            <button class="button button-stable"ng-ngModel="delList" ng-click="delOrderList(item.OrderId)"> 取消</button>
-                            <button class="button button-assertive">付款</button>
-                        </div>
-                    </div>
-                </li>
-                <!--<li class="orderList">
-            <div class="OrderDetail">
-            <div class="OrderMessage">
-                <div class="order number">订单号:<span>2016050300006</span></div>
-                <div class="order time">下单时间:<span>2016-05-03 13:50:00</span></div>
-                <span class="state">等待付款</span>
+                    </li>
+                </ul>
+                <ion-infinite-scroll ng-if="uppageshow" on-infinite="doRefresh()" distance="1%"> </ion-infinite-scroll>
+                <div ng-hide="uppageshow">{{bottomtext}}</div>
             </div>
-            <div class="courseDetail-list">
-                <div class="image">
-                <img src="img/user/order-eg.png" width="100%">
-                </div>
-                <div class="courseDetail-words">
-                <h2>中考辅导知识精讲（语文）</h2>
-                <div class="courseList">
-                    <p class="name">●&nbsp;讲师<font>kevin</font></p>
-                    <span class="time">●&nbsp;课程有效期<font>30天</font></span>
-                    <span class="count">●&nbsp;<font>102</font>课时</span>
-                    <p class="xf"><font>1580</font>学分</p>
-                </div>
-                </div>
-            </div>
-            <div class="btnGrounp">
-                <button class="button button-stable"> 取消订单</button>
-                <button class="button button-assertive">付款</button>
-            </div>
-            </div>
-        </li>
-        <li class="orderList">
-            <div class="OrderDetail">
-            <div class="OrderMessage">
-                <div class="order number">订单号:<span>2016050300006</span></div>
-                <div class="order time">下单时间:<span>2016-05-03 13:50:00</span></div>
-                <span class="state">交易成功</span>
-            </div>
-            <div class="courseDetail-list">
-                <div class="image">
-                <img src="img/user/order-eg.png" width="100%">
-                </div>
-                <div class="courseDetail-words">
-                <h2>中考辅导知识精讲（语文）</h2>
-                <div class="courseList">
-                    <p class="name">●&nbsp;讲师<font>kevin</font></p>
-                    <span class="time">●&nbsp;课程有效期<font>30天</font></span>
-                    <span class="count">●&nbsp;<font>102</font>课时</span>
-                    <p class="xf"><font>1580</font>学分</p>
-                </div>
-                </div>
-            </div>
-            <div class="btnGrounp">
-                <button class="button button-balanced">立即学习</button>
-            </div>
-            </div>
-        </li>-->
-            </ul>
-              
-            <ion-infinite-scroll ng-if="uppageshow" on-infinite="doRefresh()" distance="1%"> </ion-infinite-scroll>
-            <div ng-hide="uppageshow">{{bottomtext}}</div>
-</div>
-    </div>
-  </ion-content>
+        </div>
+    </ion-content>
 </ion-view>

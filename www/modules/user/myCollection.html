@@ -51,7 +51,7 @@
 
 					    <div class="btnGrounp">
 							<button class="button button-stable" ng-click="delfavorite(f.ClassID)"> 取消收藏</button>
-							<button class="button button-balanced" ng-click="goStudy(f.ClassID)">立即学习</button>
+							<button class="button button-balanced" ng-click="goStudy(f.ClassID)" ng-init="buy=f.IsBoughtCrouse=='False'?false:true" ng-class="{buy:!buy}">{{f.IsBoughtCrouse|IsBought}}</button>
 						</div>
 					</div>
 		        </li>

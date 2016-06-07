@@ -51,3 +51,12 @@ angular.module('freexf', ['ionic'])
         return item.substring(0, 10);
     }
 })
+.filter('expired', function () {
+    return function (item) {
+        if (item == 0) {
+            return 0;
+        } else {
+            return item;
+        }        
+    }
+})

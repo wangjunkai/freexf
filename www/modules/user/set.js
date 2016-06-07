@@ -14,7 +14,7 @@ angular.module('freexf')
       AUTH.FREEXFUSER.data.Sign = null;
       AUTH.FREEXFUSER.data.rowId = null;
       $scope.freexfUser = AUTH.FREEXFUSER.data;
-      $state.go('myaccount');
+      $state.go('tab.myaccount');
     };
 
     $scope.$watch('freexfUser', function (value) {

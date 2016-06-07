@@ -1,4 +1,4 @@
-.freexf-checkbox > .label-checkbox{
+﻿.freexf-checkbox > .label-checkbox{
 	font-size: 13rem;
 }
 .bg-img.user{
@@ -94,13 +94,17 @@
 }
 
 .OrderMessage .state {
+  background-color: #fff!important;
   color: #EA4C00;
   float: right;
+  text-align:center;
   border:0px;
   display:inline-block;
   width: 50px;
+  line-height:25px;
+  height:23px;
   font-size:9rem;
-  text-align:right;
+  /*text-align:right;*/
 }
 
 .orderList .OrderDetail {
@@ -283,7 +287,7 @@ ion-content {
 }
 
 .orderList .image.floor:before {
-  content: '课程已失�?;
+  content: '璇剧▼宸插け鏁?;
   margin: auto;
   color: #fff;
   position: absolute;
@@ -296,7 +300,7 @@ ion-content {
 }
 
 .orderList .image.floor:after {
-  content: '';
+  content: '课程已失效';
   background-color: rgba(0, 0, 0, 0.6);
   clear: both;
   position: absolute;
@@ -304,6 +308,10 @@ ion-content {
   height: 100%;
   width: 100%;
   top: 0;
+  color:#fff;
+  text-align:center;
+  padding-top:20%;
+  font-size:17rem;
 }
 
 .courseDetail-list .image img {
@@ -322,7 +330,9 @@ ion-content {
   color: #fff;
   background-color: #1ab554;
 }
-
+.btnGrounp .button.button-balanced.buy {
+  background-color: #EA4C00!important;
+}
 .MyAcc-title span:first-child:after {
   content: '';
   height: 20px;

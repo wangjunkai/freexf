@@ -12,10 +12,12 @@
         },
         controller: function ($scope, $element, $attrs) {
           var shouldAnimate = $scope.animate;
+          var isa = !ionic.Platform.isAndroid();
           $scope.scrollTo = function () {
             $location.hash($scope.target);
             var handle = $ionicScrollDelegate.$getByHandle($scope.delegate);
-            handle.anchorScroll(shouldAnimate);
+            handle.anchorScroll(isa);
+            handle.scrollBy(0, -22, isa);
           };
           $element.bind("click", function (e) {
             e.preventDefault();

@@ -11,7 +11,7 @@
 					<div class="OrderDetail" ng-init="isExpired=(m.DaysRemaining==0)?true:false">
 						<div class="courseDetail-list" ng-click="goStudy(m.ProductId);">
 							<div class="image" ng-class="{floor:isExpired}">
-								<img src="img/user/order-eg.png" image-lazy-src="{{m.cover}}" width="100%" alt="">
+								<img src="img/user/order-eg.png" image-lazy-src="{{m.cover}}" width="100%" alt="{{m.ClassName}}">
 							</div>
 							 <div class="courseDetail-words">
 					        	<h2>{{m.ClassName}}</h2>
@@ -30,7 +30,7 @@
 								<span>完成度<i>{{m.Percent}}%</i></span>
 							</div>
 							<div class="progress-bar">
-								<div class="full" ng-hide="isExpired">
+								<div class="full">
 									<span style="width:{{(m.DaysRemaining/m.validity)*100}}%;" class="finish days"></span>
 								</div>
 								<span>剩余天数<i>{{m.DaysRemaining}}天</i></span>

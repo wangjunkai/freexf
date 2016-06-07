@@ -2,7 +2,7 @@
 
 
 angular.module('freexf')
-  .controller('login_ctrl', function ($scope, $rootScope, $state, $injector, $ionicLoading, $Loading, $timeout, AUTH, localStorageService, AuthRepository) {
+  .controller('login_ctrl', function ($scope, $rootScope, $state, $injector, $ionicLoading, $Loading, $timeout,$ionicHistory, AUTH, localStorageService, AuthRepository) {
     var LOGIN = AuthRepository('AjaxLogin.aspx', '/ajax');
     function loginModel() {
       this.login = {
@@ -31,9 +31,9 @@ angular.module('freexf')
             phone: $scope.login.phone,
             userLg: true
           };
-          $timeout(function(){
-            $state.go('tab.member');
-          },1)
+          $timeout(function () {
+              $ionicHistory.goBack()
+          },10)
         }
       })
     };

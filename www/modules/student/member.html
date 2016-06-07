@@ -1,9 +1,21 @@
 
 <ion-view view-title="我的账户" ng-controller='member_ctrl'>
 
-  <ion-nav-buttons side="right">
-    <a href="#/coursesearch" menu-toggle="right" class="button button-clear freexf-icon-search"><i class="icon ion-ios-search"></i></a>
-  </ion-nav-buttons>
+  <ion-nav-bar class="freexf-bar-lightgray">
+    <ion-nav-buttons side="left">
+      <a href="#/coursesearch" class="button button-clear freexf-icon-search">
+        <i class="icon ion-ios-search"></i>
+      </a>
+    </ion-nav-buttons>
+    <ion-nav-title>
+      <img class="freexf-logo" src="img/home/icon-logo.png">
+    </ion-nav-title>
+    <ion-nav-buttons side="right">
+      <button class="button button-clear freexf-consult">
+        <i class="icon ion-ios-consult"></i>咨询
+      </button>
+    </ion-nav-buttons>
+  </ion-nav-bar>
 
   <ion-content class="already has-header has-footer">
     <div class="MyAcc-top">

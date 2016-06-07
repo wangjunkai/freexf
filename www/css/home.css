@@ -1,3 +1,14 @@
+div, span, em, strong, p, h1, h2, h3 {
+  line-height: 1;
+}
+
+#ion-scroll {
+  margin-top: 0;
+}
+
+.freexf-font-15 {
+  font-size: 15rem;
+}
 
 .freexf-bg-gray {
   background-color: #EEE;
@@ -26,7 +37,7 @@
 }
 
 .freexf-bar-nav {
-  height: 30px;
+  height: 22px;
   top: -30px;
   padding: 0;
   text-align: center;
@@ -60,9 +71,14 @@
 
 .bar.freexf-bar-lightgray {
   border-color: #eeeeee;
-  background-color: #eeeeee;
-  background-image: linear-gradient(0deg, #eeeeee, #eeeeee 50%, transparent 50%);
+  background-color: #eeeeee !important;
+  background-image: linear-gradient(0deg, #eeeeee, #eeeeee 50%, transparent 50%) !important;
   color: #323232;
+}
+
+.bar.freexf-bar-write {
+  background-color: #fff !important;
+  background-image: linear-gradient(0deg, #fff, #fff 50%, transparent 50%) !important;
 }
 
 .button.freexf-button-balanced {
@@ -220,10 +236,10 @@
 }
 
 .freexf-title {
-  font-size: 13rem;
+  font-size: 12rem;
   margin-bottom: 15px;
-  height: 13px;
-  line-height: 13px;
+  height: 12px;
+  line-height: 12px;
 }
 
 .freexf-title:before {
@@ -299,19 +315,18 @@
 }
 
 .freexf-home-table .freexf-col > div:first-child {
-  min-height: 97px;
+  min-height: 93px;
   max-height: 130px;
   overflow: hidden;
 }
 
 .freexf-home-table .freexf-col > div:first-child + div {
-  margin-top: 7px;
 }
 
 .freexf-home-table .freexf-col .ti {
-  font-size: 10rem;
+  font-size: 12rem;
   color: #323232;
-  margin-bottom: 5px;
+  margin: 8px 0;
   word-wrap: normal;
   word-break: keep-all;
   text-overflow: ellipsis;
@@ -325,16 +340,26 @@
 }
 
 .freexf-home-table .freexf-col .xufen {
-  font-size: 14rem;
+  font-size: 15rem;
   color: #ea4e00;
   margin-right: 5px;
 }
 
 .freexf-home-table .freexf-col .keshi {
   color: #323232;
+  font-size: 11rem;
 }
 
 .freexf-home-table .freexf-col em {
+  color: #969696;
+  font-size: 11rem;
+}
+
+.anchor-section-yingyu a,
+.anchor-section-zhongxiaoxue a,
+.anchor-section-duoyuzhong a,
+.anchor-section-kuaiji a,
+.anchor-section-xinqu a {
   color: #969696;
 }
 
@@ -347,14 +372,19 @@
 }
 
 .freexf-tabs .tabs {
-  height: 43px;
-  line-height: 43px;
+  height: 44px;
+  line-height: 44px;
   padding-top: 0;
+}
+
+.platform-android .freexf-tabs .tabs {
   border-top: 1px solid #ddd !important;
 }
 
 .freexf-tabs .tabs .tab-title {
   font-size: 8rem;
+  display: block;
+  margin: 5px auto;
 }
 
 ion-tabs.freexf-tabs .tab-item.tab-item-active,
@@ -374,9 +404,8 @@ ion-tabs.freexf-tabs .tab-item.activated .freexf-icon-xuanke,
 ion-tabs.freexf-tabs .tab-item.tab-item-active .freexf-icon-user,
 ion-tabs.freexf-tabs .tab-item.active .freexf-icon-user,
 ion-tabs.freexf-tabs .tab-item.activated .freexf-icon-user {
-  background-image: url('../img/publicbg/home.png');
-  background-size: 493px auto;
   background-repeat: no-repeat;
+  background-size: cover;
   width: 30px;
   height: 30px;
 }
@@ -384,19 +413,19 @@ ion-tabs.freexf-tabs .tab-item.activated .freexf-icon-user {
 ion-tabs.freexf-tabs .tab-item.tab-item-active .freexf-icon-home,
 ion-tabs.freexf-tabs .tab-item.active .freexf-icon-home,
 ion-tabs.freexf-tabs .tab-item.activated .freexf-icon-home {
-  background-position: -51px 0;
+  background-image: url('../img/home/icon-home@3x.png');
 }
 
 ion-tabs.freexf-tabs .tab-item.tab-item-active .freexf-icon-xuanke,
 ion-tabs.freexf-tabs .tab-item.active .freexf-icon-xuanke,
 ion-tabs.freexf-tabs .tab-item.activated .freexf-icon-xuanke {
-  background-position: -370px 0;
+  background-image: url('../img/home/icon-xuanke@3x.png');
 }
 
 ion-tabs.freexf-tabs .tab-item.tab-item-active .freexf-icon-user,
 ion-tabs.freexf-tabs .tab-item.active .freexf-icon-user,
 ion-tabs.freexf-tabs .tab-item.activated .freexf-icon-user {
-  background-position: -277px 0;
+  background-image: url('../img/home/icon-user@3x.png');
 }
 
 .freexf-icon-home-outline,
@@ -405,38 +434,36 @@ ion-tabs.freexf-tabs .tab-item.activated .freexf-icon-user {
 .freexf-icon-xuanke,
 .freexf-icon-user-outline,
 .freexf-icon-user {
-  background-image: url('../img/publicbg/home.png');
   background-repeat: no-repeat;
-  background-size: 493px auto;
-  width: 20px !important;
-  height: 20px !important;
-  padding-bottom: 4px !important;
-  margin-top: 4px !important;
+  background-size: cover;
+  width: 17px !important;
+  height: 17px !important;
   box-sizing: content-box;
+  margin: 6px auto 5px auto !important;
 }
 
 .freexf-icon-home-outline {
-  background-position: -51px 0;
+  background-image: url('../img/home/icon-home-outline@3x.png');
 }
 
 .freexf-icon-home {
-  background-position: -78px 0;
+  background-image: url('../img/home/icon-home@3x.png');
 }
 
 .freexf-icon-xuanke-outline {
-  background-position: -370px 0;
+  background-image: url('../img/home/icon-xuanke-outline@3x.png');
 }
 
 .freexf-icon-xuanke {
-  background-position: -397px 0;
+  background-image: url('../img/home/icon-xuanke@3x.png');
 }
 
 .freexf-icon-user-outline {
-  background-position: -277px 0;
+  background-image: url('../img/home/icon-user-outline@3x.png');
 }
 
 .freexf-icon-user {
-  background-position: -304px 0;
+  background-image: url('../img/home/icon-user@3x.png');
 }
 
 /*图片轮播状态样式*/

@@ -47,4 +47,13 @@
           });
       }
 
-  });
+  })
+.filter('IsBought', function () {
+    return function (item) {
+        if (item=="False") {
+            return "立即购买";
+        } else if(item=="True") {
+            return "立即学习";
+        }
+    }
+})

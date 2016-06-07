@@ -22,7 +22,8 @@
               __getuserinformation: 'getuserinformation', //获取个人信息
               __orderList: 'orderList',//我的订单
               __delorder:'delorder',//取消订单
-              __AddOrder: 'AddOrder'//添加订单
+              __AddOrder: 'AddOrder',//添加订单
+              __orderpay:'orderpay'//支付地址
           }
       })
       //修改RestAngular配置
@@ -287,7 +288,16 @@
               return new DelOrder(api);
           }
       })
-   
+       //取消订单
+          .factory('PayAddress', function (ENV, freexfRestAngular, baseRestAngular) {
+              function PayAddress(api) {
+                  baseRestAngular.call(this, freexfRestAngular, api ? api : ENV._api.__orderpay)
+              }
+              baseRestAngular.extend(PayAddress);
+              return function (api) {
+                  return new PayAddress(api);
+              }
+          })
 
     //课程信息
     .factory('AddOrderFun', function (ENV, freexfRestAngular, baseRestAngular) {

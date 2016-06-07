@@ -26,7 +26,7 @@
             userLg: false
           }
         },
-        ISLOGIN: ['login', 'myaccount'],
+        ISLOGIN: ['login', 'tab.myaccount'],
         NOTLOGIN: ['tab.member']
       })
       //ionic loading 全局配置服务
@@ -51,9 +51,9 @@
       .filter('xufenshow', function () {
         return function (item) {
           if (item == 0) {
-            return 'false';
+            return false;
           } else {
-            return 'true';
+            return true;
           }
         }
       })
@@ -123,17 +123,17 @@
         }
       })
       //全局路由配置
-
-      .run(['$rootScope', '$state', '$Loading', '$compile', '$timeout', 'localStorageService', 'AUTH', 'XHR',
-        function ($rootScope, $state, $Loading, $compile, $timeout, localStorageService, AUTH, XHR) {
+      .run(['$rootScope', '$state', '$Loading', '$compile', '$timeout', '$anchorScroll', 'localStorageService', 'AUTH', 'XHR',
+        function ($rootScope, $state, $Loading, $compile, $timeout, $anchorScroll, localStorageService, AUTH, XHR) {
           //用户本地信息
           var local = localStorageService.get(AUTH.FREEXFUSER.name);
           AUTH.FREEXFUSER.data = local ? local : AUTH.FREEXFUSER.data;
+
           $rootScope.$on('$stateChangeStart', function (ev, to, toParams, from, fromParams) {
 
             if (!AUTH.FREEXFUSER.data.userLg && $.inArray(to.name, AUTH.NOTLOGIN) >= 0) {
               ev.preventDefault();
-              $state.go('myaccount');
+              $state.go('tab.myaccount');
               return;
             }
             else if (AUTH.FREEXFUSER.data.userLg && $.inArray(to.name, AUTH.ISLOGIN) >= 0) {
@@ -190,7 +190,7 @@
 
         $ionicConfigProvider.views.transition('android');
         //预下载模板的数量
-        $ionicConfigProvider.templates.maxPrefetch(20);
+        $ionicConfigProvider.templates.maxPrefetch(0);
         $ionicConfigProvider.views.forwardCache(true);
         $ionicConfigProvider.views.maxCache(10);
         //修改默认tabs位置 ios默认（top）,andriod默认为（bottom）
@@ -322,16 +322,7 @@
               }]
             }
           })
-          .state('myaccount', {
-            url: '/myaccount',
-            templateUrl: 'modules/user/myaccount.html',
-            controller: 'myaccount_ctrl',
-            resolve: {
-              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
-                return $ocLazyLoad.load(['modules/user/myaccount.js']);
-              }]
-            }
-          })
+
 
           .state('myorder', {
             url: '/myorder',
@@ -475,7 +466,25 @@
               }, 0);
             }
           })
-
+          .state('tab.myaccount', {
+            url: '/myaccount',
+            views: {
+              'conent': {
+                templateUrl: 'modules/user/myaccount.html',
+                controller: 'myaccount_ctrl',
+              }
+            },
+            resolve: {
+              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load(['modules/user/myaccount.js']);
+              }]
+            },
+            onEnter: function ($ionicTabsDelegate, $timeout) {
+              $timeout(function () {
+                $ionicTabsDelegate.select(2)
+              }, 0);
+            }
+          })
       });
 
   });
