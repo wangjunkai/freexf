@@ -1,10 +1,15 @@
 <ion-view view-title="注册">
-
-  <ion-nav-buttons side="right">
-    <a href="#/login">
-      <button menu-toggle="right" class="button button-clear">登录</button>
-    </a>
-  </ion-nav-buttons>
+  <ion-header-bar class="freexf-bar lightgray">
+    <div class="bar-left">
+      <button class="button-clear freexf-back freexf-left" default-nav-back-button ng-click="goBack()">
+        <i class="icon freexf-goback"></i>
+      </button>
+    </div>
+    <div class="title">注册</div>
+    <div class="bar-right">
+      <a href="#/login" class="button-clear login">登陆</a>
+    </div>
+  </ion-header-bar>
   <ion-content class="register">
     <form name="registerForm" novalidate="novalidate">
       <div class="list">

@@ -5,6 +5,8 @@ angular.module('freexf', ['ionic'])
   .controller('courseplate_ctrl', function ($scope, $rootScope, $injector, $ionicLoading, $timeout, $state, $stateParams, $http, $ionicScrollDelegate, ENV, CourseListRepository, GetCategoryRepository) {
         var count = 0;
         var pageMax = 5;
+        var order = "desc";
+        var orderBy = "zonghe";
         $scope.uppageshow = false;
         $scope.bottomtext = ''
         $scope.Category1 = $stateParams.Category1;  //一级分类
@@ -40,26 +42,32 @@ angular.module('freexf', ['ionic'])
 		        }
 		    }
 		};
-        //选择排序方式
+      //选择排序方式
+		var countNum = 0;   //学分
 		$scope.courseSort = function ($event) {
 		    var child = document.querySelectorAll('.freexf-coursesort>div div');
-		    var sortText = $event.target.innerHTML;
+		    var sortText = $event.target.innerHTML;	    
 		    for (var i = 0; i < child.length; i++) {
 		        child[i].className = "";
 		    }
 		    $event.target.className = "active";
-		    switch (sortText) {
-		        case "综合":
-		            sortText = 'zonghe';
-		            break;
-		        case "最近":
-		            sortText = 'zuijin';
-		            break;
-		        case "学分":
-		            sortText = 'xuefen';
-		            break;
-		    }
-		    CourseList.getModel({ "category": $scope.Category1, "lingual": $scope.Category2, "label": "", "orderBy": sortText, "order": "desc", "pageIndex": count, "pageMax": pageMax }).then(function (res) {
+		    if(sortText=="综合"){
+		        orderBy = 'zonghe';
+		        order = "desc";
+		    } else if (sortText == "最近") {
+		        orderBy = 'zuijin';
+		        order = "desc";
+		    } else if (sortText == "学分" && countNum == 0) {
+		        orderBy = 'xuefen';
+		        order = "desc";
+		        countNum = 1;	       
+		    } else if (sortText == "学分" && countNum == 1) {
+		        orderBy = 'xuefen';
+		        order = 'asc';
+		        countNum = 0;
+		        $event.target.className = $event.target.className + " activeasc";
+		    }		    
+		    CourseList.getModel({ "category": $scope.Category1, "lingual": $scope.Category2, "label": "", "orderBy": orderBy, "order": order, "pageIndex": count, "pageMax": pageMax }).then(function (res) {
 		        if (res == null || res.response == null || res.response.data == null || res.response.data.length < 1) {
 		            //没有结果
 		        } else {
@@ -84,7 +92,7 @@ angular.module('freexf', ['ionic'])
 		    $scope.lingual = thisText;
 		    (thisText == "全部") ? thisText = "" : thisText;
 		    $scope.Category2 = thisText;
-		    CourseList.getModel({ "category": $scope.Category1, "lingual": $scope.Category2, "label": "", "orderBy": "zonghe", "order": "desc", "pageIndex": count, "pageMax": pageMax }).then(function (res) {
+		    CourseList.getModel({ "category": $scope.Category1, "lingual": $scope.Category2, "label": "", "orderBy": orderBy, "order": order, "pageIndex": count, "pageMax": pageMax }).then(function (res) {
 		        if (res == null || res.response == null || res.response.data == null || res.response.data.length < 1) {
 		            //没有结果
 		        } else {
@@ -101,21 +109,14 @@ angular.module('freexf', ['ionic'])
 		$scope.doRefresh = function () {
 		    //注意改为自己本站的地址，不然会有跨域问题
 		    count += 1;
-		    $http.get('http://localhost:18048/MFreeXFapi/student/courselistpage?order=desc&orderBy=zonghe&pageIndex=' + count + '&pageMax=' + pageMax + '&category=' + $scope.Category1 + '&lingual' + $scope.Category2 + '&label=')
-                   .success(function (newitems) {
-                       //列表
-                       $scope.courseList = newitems;
-                       //$scope.$broadcast('scroll.infiniteScrollComplete');
-                       if (newitems.length < count * pageMax && count > 0) {
-                           $scope.uppageshow = false;
-                           $scope.bottomtext = '没有更多!'
-                       }
-
-                   })
-                   .finally(function () {
-                       $scope.$broadcast('scroll.infiniteScrollComplete');
-                   });
-
+		    CourseList.getModel({ "category": $scope.Category1, "lingual": $scope.Category2, "label": "", "orderBy": orderBy, "order": order, "pageIndex": count, "pageMax": pageMax }).then(function (res) {
+		        $scope.courseList = res.response.data;
+		        if ($scope.courseList.length < count * pageMax && count > 0) {
+		            $scope.uppageshow = false;
+		            $scope.bottomtext = '没有更多!'
+		        }
+		        $scope.$broadcast('scroll.infiniteScrollComplete');
+		    });
 		};
         //传递：courseId 课程ID
 		$scope.toCourseDate = function (courseId) {

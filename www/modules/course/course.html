@@ -1,19 +1,12 @@
 <ion-view view-title="选课中心">
-  <ion-nav-bar class="freexf-bar-lightgray">
-    <ion-nav-buttons side="left">
-      <a href="#/coursesearch" class="button button-clear freexf-icon-search">
-        <i class="icon ion-ios-search"></i>
-      </a>
-    </ion-nav-buttons>
-    <ion-nav-title>
-      <img class="freexf-logo" src="img/home/icon-logo.png">
-    </ion-nav-title>
-    <ion-nav-buttons side="right">
-      <button class="button button-clear freexf-consult">
-        <i class="icon ion-ios-consult"></i>咨询
-      </button>
-    </ion-nav-buttons>
-  </ion-nav-bar>
+
+  <ion-header-bar class="freexf-bar lightgray">
+    <div class="title">选课中心</div>
+    <div class="bar-right">
+      <a href="#/coursesearch" class="button-clear freexf-icon-search"></a>
+    </div>
+  </ion-header-bar>
+
   <ion-content class="freexf-courselist has-footer">
     <div class="freexf-coursecenter">
       <ul class="coursecenter-list">
@@ -42,16 +35,16 @@
             <li ng-repeat="d in Category2[3]" ng-click="goCourseList(Category1[3],d)">{{d}}</li>
         </ul>
         <li class="ccl-son">
-          <div class="kaoyan" ng-click="goCourseList(Category1[4])">{{Category1[4]}}</div>
+          <div class="kaoyan" ng-click="goCourseList(Category1[5])">{{Category1[5]}}</div>
         </li>
         <ul class="ccl-course-son-list">
-            <li ng-repeat="e in Category2[4]" ng-click="goCourseList(Category1[4],e)">{{e}}</li>
+            <li ng-repeat="e in Category2[5]" ng-click="goCourseList(Category1[5],e)">{{e}}</li>
         </ul>
         <li class="ccl-son">
-          <div class="xingqu" ng-click="goCourseList(Category1[5])">{{Category1[5]}}</div>
+          <div class="xingqu" ng-click="goCourseList(Category1[6])">{{Category1[6]}}</div>
         </li>
         <ul class="ccl-course-son-list">
-            <li ng-repeat="f in Category2[5]" ng-click="goCourseList(Category1[5],f)">{{f}}</li>
+            <li ng-repeat="f in Category2[6]" ng-click="goCourseList(Category1[6],f)">{{f}}</li>
         </ul>
       </ul>
       </ul>

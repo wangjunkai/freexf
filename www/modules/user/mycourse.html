@@ -1,8 +1,13 @@
 <ion-view view-title="我的课程">
 
-	  <ion-nav-buttons side="right">
-	    <button menu-toggle="right" class="button button-clear"></button>
-	  </ion-nav-buttons>
+  <ion-header-bar default-header-bar class="freexf-bar lightgray">
+    <div class="bar-left">
+      <button class="button-clear freexf-back freexf-left" default-nav-back-button ng-click="goBack()">
+        <i class="icon freexf-goback"></i>
+      </button>
+    </div>
+    <div class="title">我的课程</div>
+  </ion-header-bar>
 	<ion-content lazy-scroll class="mycourse">
 	    <div class="content  ionic-pseudo">
 	      <div class="list">
@@ -30,8 +35,8 @@
 								<span>完成度<i>{{m.Percent}}%</i></span>
 							</div>
 							<div class="progress-bar">
-								<div class="full">
-									<span style="width:{{(m.DaysRemaining/m.validity)*100}}%;" class="finish days"></span>
+								<div class="full" ng-init="validity=m.validity=='0'?1:m.validity">
+									<span style="width:{{(m.DaysRemaining/validity)*100}}%;" class="finish days"></span>
 								</div>
 								<span>剩余天数<i>{{m.DaysRemaining}}天</i></span>
 							</div>
@@ -42,43 +47,6 @@
 						</div>
 					</div>
 		        </li>
-				<!--<li class="orderList">
-					<div class="OrderDetail">
-						<div class="courseDetail-list">
-							<div class="image floor" >
-								<img src="img/user/order-eg.png" width="100%" alt="">
-							</div>
-							 <div class="courseDetail-words">
-					        	<h2>中考辅导知识精讲（语文）</h2>
-					        	<div class="courseList">
-					        		<p class="name">●&nbsp;讲师<i>kevin</i></p>
-					        		<span class="time">●&nbsp;课程有效期<i>30天</i></span>
-					        		<span class="count">●&nbsp;<i>102</i>课时</span>
-					        		<p class="xf">●<span>2016.05.15</span>-<span>2016.06.15</span></p>
-					        	</div>
-					   		 </div>
-						</div>
-						<div class="progress">
-							<div class="progress-bar">
-								<div class="full">
-									<span class="finish done"></span>
-								</div>
-								<span>完成度<i>50%</i></span>
-							</div>
-							<div class="progress-bar">
-								<div class="full">
-									<span class="finish days"></span>
-								</div>
-								<span>剩余天数<i>91天</i></span>
-							</div>
-						</div>
-					    <div class="btnGrounp">
-							<button class="button button-stable"> 笔记</button>
-							<button class="button button-assertive">答疑</button>
-						</div>
-					</div>
-		        </li>-->
-
 			</ul>
 
             <ion-infinite-scroll ng-if="uppageshow" on-infinite="doRefresh()" distance="1%"> </ion-infinite-scroll>

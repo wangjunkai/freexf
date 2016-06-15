@@ -29,7 +29,7 @@ angular.module('freexf')
         } else {
             $scope.user.labelconfirmPassword = '密码一致'
         }
-    }
+    };
     //注册
     $scope.register = function ($event) {
       $scope.authLoad = true;

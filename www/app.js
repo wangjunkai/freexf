@@ -57,29 +57,40 @@
           }
         }
       })
+      //初始化计算bar center 宽度
+      .directive('defaultHeaderBar', ['$rootScope', '$ionicHistory', '$ionicConfig', '$state', '$injector',
+        function ($rootScope, $ionicHistory, $ionicConfig, $state, $injector) {
+          return function (scope, element, attrs) {
+            //angular 包装的jquery有问题
+            var $element = $(element[0]);
+            scope.$on('$ionicView.loaded', function () {
+              var a = $element.find('.bar-left'), b = $element.find('.bar-center'), c = $element.find('.bar-right');
+              b.css('width', $element.width() - a.width() - c.width());
+            });
+          }
+        }])
       //默认后退按钮当没有历史记录的时候跳转到首页 指令
       .directive('defaultNavBackButton', ['$rootScope', '$ionicHistory', '$ionicConfig', '$state', '$injector',
         function ($rootScope, $ionicHistory, $ionicConfig, $state, $injector) {
-          return {
-            link: function (scope, element, attrs) {
-              var back = function () {
-                //如果后退是设置页或者login，返回home
-                var _str = ['login'];
-                return !!($ionicHistory.backView() && $.inArray($ionicHistory.backView().stateName, _str) < 0);
-              };
-              scope.goBack = function () {
-                if (back()) {
-                  $ionicHistory.goBack();
-                } else {
-                  $state.go('tab.home');
-                }
-              };
-              scope.$on('$ionicView.beforeEnter', function () {
-                var b = element.find('i')[0];
-                b.className = b.className.replace(b.className.match(/freexf-\w+/), back() ? 'freexf-goback' : 'freexf-gohomeback');
-                element.removeClass('hide');
-              });
-            }
+          return function (scope, element, attrs) {
+            var $element = $(element[0]);
+            var back = function () {
+              //如果后退是设置页或者login，返回home
+              var _str = ['login','payaddress','payfail'];
+              return !!($ionicHistory.backView() && $.inArray($ionicHistory.backView().stateName, _str) < 0);
+            };
+            scope.goBack = function () {
+              if (back()) {
+                $ionicHistory.goBack();
+              } else {
+                $state.go('tab.home');
+              }
+            };
+            scope.$on('$ionicView.loaded', function () {
+              var a = back(), b = $element.find('i')[0];
+              b.className = b.className.replace(b.className.match(/freexf-\w+/), back() ? 'freexf-goback' : 'freexf-gohomeback');
+              $element.css('width', $(b).width()).removeClass('hide');
+            });
           }
         }])
       //loading服务
@@ -177,7 +188,7 @@
           $rootScope.$on('$ionicView.afterEnter', function (event, viewConfig) {
             $timeout(function () {
               _con.call(this, function (e, dom) {
-                $(dom).css({'opacity': 1, 'margin-top': 0});
+                $(dom).css({'opacity': 1, 'margin-top': -1});
               }, event.targetScope, false);
             }, viewConfig.direction == 'none' ? 200 : 0);
           });
@@ -286,6 +297,7 @@
             url: '/pay',
             templateUrl: 'modules/pay/pay.html',
             controller: 'pay_ctrl',
+            cache: false,
             resolve: {
               loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load(['modules/pay/pay.js']);
@@ -293,7 +305,7 @@
             }
           })
           .state('payaddress', {
-            url: '/payaddress',
+            url: '/payaddress/:OrderId',
             templateUrl: 'modules/pay/payaddress.html',
             controller: 'payaddress_ctrl',
             resolve: {
@@ -328,6 +340,7 @@
             url: '/myorder',
             templateUrl: 'modules/user/myorder.html',
             controller: 'myorder_ctrl',
+            cache: false,
             resolve: {
               loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load(['modules/user/myorder.js']);
@@ -338,6 +351,7 @@
             url: '/mycourse',
             templateUrl: 'modules/user/mycourse.html',
             controller: 'mycourse_ctrl',
+            cache: false,
             resolve: {
               loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load(['modules/user/mycourse.js']);

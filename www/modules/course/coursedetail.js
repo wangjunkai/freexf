@@ -3,13 +3,17 @@
 
 angular.module('freexf')
 
-  .controller('coursedetail_ctrl', function ($scope, $rootScope, $injector, $ionicLoading, $ionicPopup, $timeout, $state, $stateParams, AUTH, ENV, CourseDateRepository, AddMyFavoriteRepository, DelMyFavoriteRepository) {
+  .controller('coursedetail_ctrl', function ($scope, $rootScope, $injector, $ionicLoading, $ionicPopup, $timeout, $state, $stateParams, AUTH, ENV, CourseDateRepository, AddMyFavoriteRepository, DelMyFavoriteRepository, IsFlowerClass, AddFlower, RemoveFlower) {
       var CourseDate = CourseDateRepository(ENV._api.__coursedate);
       var AddFavorite = AddMyFavoriteRepository(ENV._api.__addfavorite);
       var DelFavorite = DelMyFavoriteRepository(ENV._api.__delfavorite);
+      var isFlower = IsFlowerClass(ENV._api.__IsFlowerClass);
+      var addFlower = AddFlower(ENV._api.__addflower);
+      var removeFlower = RemoveFlower(ENV._api.__removeflower);
       $scope.courseId = $stateParams.courseId;
       $scope.userData = AUTH.FREEXFUSER.data;
-      $scope.buy = true;
+      $scope.isLogin = $scope.userData.userLg ? true : false;
+      $scope.buy = false;
       $('#viewContent').addClass('has-footer');
       $scope.coursedetail = true;	//课程介绍
       $scope.courseoutline = false;	//大纲
@@ -22,18 +26,26 @@ angular.module('freexf')
           studentId: $scope.userData.userLg ? $scope.userData.rowId : '',
           Sign: $scope.userData.userLg ? $scope.userData.Sign : ''
       };
+      var paramsflower = {
+          courseId: $scope.courseId,
+          studentid: $scope.userData.userLg ? $scope.userData.rowId : '',
+          Sign: $scope.userData.userLg ? $scope.userData.Sign : ''
+      };
+      isFlower.postModel(paramsflower).then(function (res) {
+          $scope.flowerstate = res.response.data.struts;
+      });
       CourseDate.getModel(params).then(function (res) {
           $scope.courseDate = res.response.data;
           var outline = res.response.data.l_RetValueall;
           $scope.coursecollect = $scope.courseDate.favorite;
           //$scope.courseDate.isPermissionCrouse = true;    //已购买
           if ($scope.courseDate.isPermissionCrouse == true) {
-              $scope.buy = false;
+              $scope.buy = true;
               $('#viewContent').removeClass('has-footer');
               for (var i = 0; i < outline.length; i++) {
                   for (var j = 0; j < outline[i].length; j++) {
-                      if (outline[i][j].isNoFree == true) {                          
-                          outline[i][j].isNoFree = false;   //将除试听课程改为不是试听
+                      if (outline[i][j].isNoFree == true) {
+                          outline[i][j].isNoFree = false;   //除试听其他课程改为不是试听
                       }
                   }
               }
@@ -53,8 +65,7 @@ angular.module('freexf')
               }
               var len = outline.unshift(arr);
               $scope.outlineList = outline;
-              console.log($scope.outlineList);
-          }
+          };
 
           $scope.a=$scope.courseDate.courseIntroduce;
           $scope.b = $scope.courseDate.teachingGoal;
@@ -85,6 +96,14 @@ angular.module('freexf')
           }
 
       };
+      $scope.flowerStateClick = function () {
+          if ($scope.userData.userLg) {
+              Flower();
+          } else {
+              location.href = "#/login";
+          }
+      };
+      
       //课程介绍
       $scope.coursedetailClick = function () {
           $scope.coursedetail = true;
@@ -95,27 +114,43 @@ angular.module('freexf')
           $scope.coursedetail = false;
           $scope.courseoutline = true;
       };
-      //献花/取消献花
-      $scope.flowerState = function () {
-          $scope.flowerstate = !$scope.flowerstate;
-          ($scope.flowerstate) ? $scope.courseDate.flowers++ : $scope.courseDate.flowers--;
-      };
       //收藏取消收藏    
       function Favorite() {
           if ($scope.coursecollect == false) {  //收藏                
               AddFavorite.postModel({ "studentid": $scope.userData.rowId, "Sign": $scope.userData.Sign, "ProductId": $scope.courseId }).then(function (res) {
-                  if (res.response.data == true) {
+                  if (res.response.data.struts == true) {
                       $scope.coursecollect = true;
                   }
               });
           } else {
               //取消收藏
               DelFavorite.postModel({ "studentId": $scope.userData.rowId, "Sign": $scope.userData.Sign, "ProductId": $scope.courseId }).then(function (res) {
-                  if (res.response.data == true) {
+                  if (res.response.data.struts == true) {
                       $scope.coursecollect = false;
                   }
               })
           }
+      };
+      //献花取消献花    
+      function Flower() {
+          isFlower.postModel(paramsflower).then(function (res) {
+              if (res.response.data.struts == false) {
+                  addFlower.postModel(paramsflower).then(function (res) {
+                      if (res.response.data.struts == true) {
+                          $scope.flowerstate = true;
+                          $scope.courseDate.flowers++;
+                      }
+                  });
+              } else {
+                  //取消献花
+                  removeFlower.postModel(paramsflower).then(function (res) {
+                      if (res.response.data.struts == true) {
+                          $scope.flowerstate = false;
+                          $scope.courseDate.flowers--;
+                      }
+                  });
+              }
+          });          
       };
       //购买协议
       function PurchaseAgreement() {
@@ -158,11 +193,12 @@ angular.module('freexf')
       $scope.coursedVideoPlay = function (videourl) {
           if (!$scope.userData.userLg) {
               location.href = "#/login";
-          }else{
+          } else {
               var playset = document.getElementById('videoplay');
               var playsetmp4 = document.getElementById('vpmp4');
 
               playsetmp4.src = videourl;
+              //playset.play()
               playset.load();
               $scope.videShow = true;
           }         

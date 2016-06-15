@@ -1,26 +1,21 @@
-<ion-view scroll-watch-tab>
-  <ion-nav-bar class="freexf-bar-write">
-    <ion-nav-buttons side="left">
-      <a href="#/coursesearch" class="button button-clear freexf-icon-search">
-        <i class="icon ion-ios-search"></i>
-      </a>
-    </ion-nav-buttons>
-    <ion-nav-title>
+<ion-view scroll-watch-tab class="home-view">
+  <ion-header-bar class="freexf-bar write">
+    <div class="bar-left">
+      <a href="#/coursesearch" class="button-clear freexf-icon-search"></a>
+    </div>
+    <div class="title bar-center">
       <img class="freexf-logo" src="img/home/icon-logo.png">
-    </ion-nav-title>
-    <ion-nav-buttons side="right">
-      <button class="button button-clear freexf-consult">
-        <i class="icon ion-ios-consult"></i>咨询
-      </button>
-    </ion-nav-buttons>
-  </ion-nav-bar>
+    </div>
+    <div class="bar-right">
+      <button class="button-clear freexf-consult"><span>咨询</span></button>
+    </div>
+  </ion-header-bar>
 
   <div id="anchor-tab" class="bar bar-subheader freexf-bar-nav">
     <ion-scroll id="ion-scroll" delegate-handle="anchor" direction="x" scrollbar-x="false">
       <div class="row">
         <a anchor-tab="anchor-section-yingyu" delegate="myDelegate" animate="true" class="col yingyu">英语</a>
-        <a anchor-tab="anchor-section-zhongxiaoxue" delegate="myDelegate" animate="true"
-           class="col zhongxiaoxue">中小学</a>
+        <a anchor-tab="anchor-section-zhongxiaoxue" delegate="myDelegate" animate="true" class="col zhongxiaoxue">中小学</a>
         <a anchor-tab="anchor-section-duoyuzhong" delegate="myDelegate" animate="true" class="col duoyuzhong">多语种</a>
         <a anchor-tab="anchor-section-kuaiji" delegate="myDelegate" animate="true" class="col kuaiji">会计职业</a>
         <a anchor-tab="anchor-section-kaoyan" delegate="myDelegate" animate="true" class="col kaoyan">考研</a>
@@ -32,13 +27,13 @@
 
     <ion-slide-box on-slide-changed="slideHasChanged($index)" class="freexf-slide">
       <ion-slide>
-        <img image-lazy-src="img/home/banner@3x.png" src="img/home/kemu@3x.png">
+        <img image-lazy-src="img/home/banner@3x.png">
       </ion-slide>
       <ion-slide>
-        <img image-lazy-src="img/home/banner@3x.png" src="img/home/kemu@3x.png">
+        <img image-lazy-src="img/home/banner@3x.png">
       </ion-slide>
       <ion-slide>
-        <img image-lazy-src="img/home/banner@3x.png" src="img/home/kemu@3x.png">
+        <img image-lazy-src="img/home/banner@3x.png">
       </ion-slide>
     </ion-slide-box>
     <section class="freexf-hometype">
@@ -72,19 +67,18 @@
       </div>
     </section>
     <!--精品课程-->
-    <section class="freexf-jinpin">
-      <h2 class="freexf-title">精品课程<a href="#/course" class="icon has-more"></a></h2>
-      <div class="row">
-        <div class="col col-50">
+    <section class="freexf-jinpin freexf-home-table">
+      <h2 class="freexf-title"><i class="title"></i><span>精品课程</span></h2>
+      <div class="clearfix">
+        <div class="freexf-col">
           <a href="" class="lcol">
-            <img image-lazy-src="img/home/huodong-0.png" src="img/home/kemu@3x.png" alt="">
+            <img image-lazy-src="img/home/huodong-0.png" alt="">
           </a>
         </div>
 
-        <div class="col col-50 freexf-padding-left-5">
-
+        <div class="freexf-col">
           <a ng-repeat="jp in home.l_EliteCrouseList" href="#/coursedetail/{{jp.productID}}" class="rcol">
-            <img image-lazy-src="{{jp.coverurl | decodeUri}}" src="img/home/kemu@3x.png" alt="{{jp.productName}}">
+            <img image-lazy-src="{{jp.coverurl | decodeUri}}" alt="{{jp.productName}}">
           </a>
         </div>
       </div>
@@ -94,48 +88,42 @@
     </section>
     <!--英语-->
     <section id="anchor-section-yingyu" class="freexf-home-table">
-
-      <h2 class="freexf-title">英语<a href="#/courseplate/英语&" class="icon has-more"></a></h2>
+      <h2 class="freexf-title"><i class="title"></i><span>英语</span><a href="#/courseplate/英语&" class="icon has-more"></a></h2>
       <div class="clearfix">
         <div class="freexf-col" ng-include="'homeTable.html'" ng-repeat="l in home.l_englishList"></div>
       </div>
     </section>
     <!--中小学-->
     <section id="anchor-section-zhongxiaoxue" class="freexf-home-table">
-
-      <h2 class="freexf-title">中小学<a href="#/courseplate/中小学&" class="icon has-more"></a></h2>
+      <h2 class="freexf-title"><i class="title"></i><span>中小学</span><a href="#/courseplate/中小学&" class="icon has-more"></a></h2>
       <div class="clearfix">
         <div class="freexf-col" ng-include="'homeTable.html'" ng-repeat="l in home.l_k12List"></div>
       </div>
     </section>
     <!--多语种-->
     <section id="anchor-section-duoyuzhong" class="freexf-home-table">
-
-      <h2 class="freexf-title">多语种<a href="#/courseplate/多语种&" class="icon has-more"></a></h2>
+      <h2 class="freexf-title"><i class="title"></i><span>多语种</span><a href="#/courseplate/多语种&" class="icon has-more"></a></h2>
       <div class="clearfix">
         <div class="freexf-col" ng-include="'homeTable.html'" ng-repeat="l in home.l_multilingualList"></div>
       </div>
     </section>
     <!--会计职业-->
     <section id="anchor-section-kuaiji" class="freexf-home-table">
-
-      <h2 class="freexf-title">会计职业<a href="#/courseplate/会计职业&" class="icon has-more"></a></h2>
+      <h2 class="freexf-title"><i class="title"></i><span>会计职业</span><a href="#/courseplate/会计职业&" class="icon has-more"></a></h2>
       <div class="clearfix">
         <div class="freexf-col" ng-include="'homeTable.html'" ng-repeat="l in home.l_accountingList"></div>
       </div>
     </section>
     <!--考研-->
     <section id="anchor-section-kaoyan" class="freexf-home-table">
-
-      <h2 class="freexf-title">考研<a href="#/courseplate/考研&" class="icon has-more"></a></h2>
+      <h2 class="freexf-title"><i class="title"></i><span>考研</span><a href="#/courseplate/考研&" class="icon has-more"></a></h2>
       <div class="clearfix">
         <div class="freexf-col" ng-include="'homeTable.html'" ng-repeat="l in home.l_postgraduateList"></div>
       </div>
     </section>
     <!--兴趣-->
     <section id="anchor-section-xingqu" class="freexf-home-table">
-
-      <h2 class="freexf-title">兴趣<a href="#/courseplate/兴趣&" class="icon has-more"></a></h2>
+      <h2 class="freexf-title"><i class="title"></i><span>兴趣</span><a href="#/courseplate/兴趣&" class="icon has-more"></a></h2>
       <div class="clearfix">
         <div class="freexf-col" ng-include="'homeTable.html'" ng-repeat="l in home.l_interestList"></div>
       </div>
@@ -147,7 +135,7 @@
 <script type="text/ng-template" id="homeTable.html">
   <div>
     <a href="#/coursedetail/{{l.productID}}">
-      <img image-lazy-src="{{l.coverurl}}" src="img/home/kemu@3x.png" alt="{{l.productName}}">
+      <img image-lazy-src="{{l.coverurl}}" alt="{{l.productName}}">
     </a>
   </div>
   <p class="ti">{{l.cover}}</p>

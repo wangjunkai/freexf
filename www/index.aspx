@@ -25,22 +25,20 @@
 </head>
 <body>
 <!--	头部模块加载-->
-<!--加载ionic tab-->
-<ion-nav-view>
-  <!--<ion-nav-bar class="freexf-bar-lightgray">-->
-    <!--<ion-nav-back-button default-nav-back-button ng-click="goBack()" class="button-clear">-->
-    <!--</ion-nav-back-button>-->
-  <!--</ion-nav-bar>-->
-</ion-nav-view>
+<!--
+<ion-nav-bar class="tabs-icon-top tabs-color-active-positive" ></ion-nav-bar>
+-->
+  <ion-nav-bar class="freexf-bar-lightgray">
+    <ion-nav-back-button default-nav-back-button ng-click="goBack()" class="button-clear">
+    </ion-nav-back-button>
+  </ion-nav-bar>
+  <!--加载ionic tab-->
+  <ion-nav-view></ion-nav-view>
 
 <!--require按需加载js控件-->
 <script data-main="config.js" src="lib/requirejs/require.js"></script>
-
 <script type="text/javascript" charset="utf-8" src="http://lead.soperson.com/20001079/10055583.js"></script>
 
-<style>
-    #doyoo_panel{display:none}
-</style>
 </body>
 
 </html>

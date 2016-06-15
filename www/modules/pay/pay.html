@@ -1,32 +1,41 @@
 <ion-view view-title="支付中心">
+  <ion-header-bar default-header-bar class="freexf-bar lightgray">
+    <div class="bar-left">
+      <button class="button-clear freexf-back freexf-left" default-nav-back-button ng-click="goBack()">
+        <i class="icon freexf-goback"></i>
+      </button>
+    </div>
+    <div class="title bar-center">支付中心</div>
+  </ion-header-bar>
 
-	  <ion-nav-buttons side="right">
-	    <button menu-toggle="right" class="button button-clear"></button>
-	  </ion-nav-buttons>
-
-	  <ion-content class="pay">
-	  	<div class="paycontent">
-	  		<div class="OrderMessage on">
-		  		<div class="title">{{payoname}}</div>
-		  		<div>你应付金额：<span class="money">¥<i>{{payomoney}}</i></span></div>
-		  	</div>
-		  	<!--<div class="OrderMessage">
-		  		<div>订单编号：<span>2016050300006</span></div>
-		  		<div>下单时间：<span>2016-05-03  13:50:00</span></div>
-		  	</div>-->
-		  	<div class="PayState">
-		  		<div class="PayState-group">
-		  			<span class="PayIcon"></span>
-		  			<span class="PaySuccess"></span>
-		  		</div>
-		  	</div>
-	  	</div>
-	  	<div class="freexf-padding-24">
-		      <a href="/pay/Alipay/default.aspx?OrderId={{payohref}}">
-        <button class="button button-block freexf-button-balanced freexf-margin-bottom-30">确认支付 </button>
-          </a>
-        <!--<button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-click="toPay()">确认支付 </button>-->
-		  </div>
+  <ion-content class="pay">
+    <div class="paycontent">
+      <div class="OrderMessage on">
+        <div class="title">{{payoname}}</div>
+        <div>你应付金额：<span class="money">¥<i>{{payomoney}}</i></span></div>
+      </div>
+      <div class="OrderMessage">
+                <div>订单编号：<span>{{orderId}}</span></div>
+                <div>下单时间：<span>{{SetOrderTime}}</span></div>
+            </div>
+      <div class="PayState" ng-hide="mianfeiShow">
+        <div class="PayState-group">
+          <span class="PayIcon"></span>
+          <span class="PaySuccess"></span>
+        </div>
+      </div>
+    </div>
+    <div class="freexf-padding-24">
+      <div ng-show="mianfeiShow">免费课程,在3秒后自动跳转,或点击以下按钮</div>
+      <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-click="goOrderDetail()"
+              ng-show="mianfeiShow">完成支付
+      </button>
+      <a href="/pay/Alipay/default.aspx?OrderId={{payohref}}">
+        <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-hide="mianfeiShow">确认支付
+        </button>
+      </a>
+      <!--<button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-click="toPay()">确认支付 </button>-->
+    </div>
 
 
 </ion-view>

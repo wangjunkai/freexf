@@ -33,7 +33,7 @@ angular.module('freexf')
           };
           $timeout(function () {
               $ionicHistory.goBack()
-          },10)
+          }, 10)
         }
       })
     };

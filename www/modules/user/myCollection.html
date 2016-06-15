@@ -1,36 +1,17 @@
 <ion-view view-title="我的收藏">
-
-	  <ion-nav-buttons side="right">
-	    <button menu-toggle="right" class="button button-clear"></button>
-	  </ion-nav-buttons>
+  <ion-header-bar default-header-bar class="freexf-bar lightgray">
+    <div class="bar-left">
+      <button class="button-clear freexf-back freexf-left" default-nav-back-button ng-click="goBack()">
+        <i class="icon freexf-goback"></i>
+      </button>
+    </div>
+    <div class="title">我的收藏</div>
+  </ion-header-bar>
 	<ion-content lazy-scroll class="myCollection">
 	    <div class="content  ionic-pseudo">
 
 	      <div class="list">
 			<ul>
-				<!--<li class="orderList">
-					<div class="OrderDetail">
-						<div class="courseDetail-list">
-							<div class="image">
-								<img src="img/user/order-eg.png" width="100%">
-							</div>
-							 <div class="courseDetail-words">
-					        	<h2>中考辅导知识精讲（语文）</h2>
-					        	<div class="courseList">
-					        		<p class="name">●&nbsp;讲师<i>kevin</i></p>
-					        		<span class="time">●&nbsp;课程有效期<i>30天</i></span>
-					        		<span class="count">●&nbsp;<i>102</i>课时</span>
-					        		<p class="xf"><font>1580</font>学分</p>
-					        	</div>
-					   		 </div>
-						</div>
-
-					    <div class="btnGrounp">
-							<button class="button button-stable"> 取消收藏</button>
-							<button class="button button-assertive">立即购买</button>
-						</div>
-					</div>
-		        </li>-->
 				<li class="orderList" ng-repeat="f in myfavorite">
 					<div class="OrderDetail">
 						<div class="courseDetail-list">
@@ -44,7 +25,7 @@
 					        		<p class="name" ng-show="teachername">●&nbsp;讲师<i>{{f.teachername}}</i></p>
 					        		<span class="time">●&nbsp;课程有效期<i>{{f.validity}}天</i></span>
 					        		<span class="count">●&nbsp;<i>{{f.classhours}}</i>课时</span>
-					        		<p class="xf"><font>{{f.price}}</font>学分</p>
+					        		<p class="xf"><font>{{f.price|xufen}}</font><span ng-show="{{f.price| xufenshow}}">学分</span></p>
 					        	</div>
 					   		 </div>
 						</div>

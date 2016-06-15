@@ -1,84 +1,77 @@
-
 <ion-view view-title="我的账户" ng-controller='member_ctrl'>
 
-  <ion-nav-bar class="freexf-bar-lightgray">
-    <ion-nav-buttons side="left">
-      <a href="#/coursesearch" class="button button-clear freexf-icon-search">
-        <i class="icon ion-ios-search"></i>
-      </a>
-    </ion-nav-buttons>
-    <ion-nav-title>
-      <img class="freexf-logo" src="img/home/icon-logo.png">
-    </ion-nav-title>
-    <ion-nav-buttons side="right">
-      <button class="button button-clear freexf-consult">
-        <i class="icon ion-ios-consult"></i>咨询
-      </button>
-    </ion-nav-buttons>
-  </ion-nav-bar>
+  <ion-header-bar class="freexf-bar lightgray">
+    <div class="title">我的账户</div>
+    <div class="bar-right">
+      <a href="#/coursesearch" class="button-clear freexf-icon-search"></a>
+    </div>
+  </ion-header-bar>
 
-  <ion-content class="already has-header has-footer">
+  <ion-content lazy-scroll class="already has-header has-footer">
     <div class="MyAcc-top">
-      <a href="#/set"><div class="MyAcc-setting"></div></a>
-      <div class="MyAcc-icon"  ng-model="ImgBoxShow" ng-click="ChangeUserImg()" ng-style="userImage" ></div>
+      <a href="#/set">
+        <div class="MyAcc-setting"></div>
+      </a>
+      <div class="MyAcc-icon" ng-model="ImgBoxShow" ng-click="ChangeUserImg()" ng-style="userImage"></div>
       <div class="UpdateName">
-        <input class="name" value="freexf" placeholder="您还没有昵称哟！" ng-model="myuser.nickname" id="UpadateUserName" ng-readonly="readonly" ng-blur="blur()"/>
-        <span class="edit" ng-click="ChangeName()" ng-model="readonly"></span>
-        <!--<p ng-show="iscode"><span style="border: 1px solid #eeeeee; border-radius: 5px; font-size: 9rem; padding: 0px 7px;">学号<font>{{myuser.code}}</font></span></p>-->
+        <div class="Length">
+          <input class="name" type="text" placeholder="您还没有昵称哟!" ng-model="myuser.nickname" id="updateUserName" ng-blur="changeName(true)" />
+          <span class="edit" ng-click="changeName(false)"></span>
+        </div>
       </div>
       <!--更换图片框-->
-      <div class="changeImg" ng-show="ImgBoxShow" >
-        <div class="modal-backdrop-bg new"></div>
+      <div class="changeImg" ng-show="ImgBoxShow">
+        <div class="modal-backdrop-bg new" ng-click="cancelPopup()" ng-show="canPopup"></div>
         <div class="userImgBox">
           <div class="row userImg">
-            <div class="col col-33 on">
+            <div class="col col-33 on" ng-click="women()">
               <img src="img/user/women.png" width="100%">
               <label class="radio">
                 <!--onkeydown="if(event.keyCode==13) return false;"-->
-                <input  value="女" name="sex" id="sex2" checked="checked" type="radio" ng-click="women()">
+                <input value="女" name="sex" id="sex2" checked="checked" type="radio" ng-checked="checkWomen"/>
                 <i></i>
               </label>
             </div>
-            <div class="col col-33">
+            <div class="col col-33" ng-click="man()">
               <img src="img/user/man.png" width="100%">
               <label class="radio">
-                <input  value="男" name="sex" id="sex1" checked="checked" type="radio" ng-click="man()">
+                <input value="男" name="sex" id="sex1" type="radio" ng-checked="checkMan"/>
                 <i></i>
               </label>
             </div>
-            <div class="col col-33">
+            <div class="col col-33" ng-click="nobody()">
               <img src="img/user/null.png" width="100%">
               <label class="radio">
-                <input  value="保密" name="sex" id="sex0" checked="checked" type="radio" ng-click="nobody()">
+                <input value="保密" name="sex" id="sex0" type="radio" ng-checked="checkNobody"/>
                 <i></i>
               </label>
             </div>
           </div>
         </div>
       </div>
-
-      <div class="share" ng-click="openModal()" >
+      <div class="share" ng-click="openModal()">
         <div class="row1 first">
           <span>邀</span>
-          <span>好</span>
+          <!--<span>好</span>-->
         </div>
         <div class="row1">
           <span>请</span>
-          <span>友</span>
+          <!--<span>友</span>-->
         </div>
         <em></em>
       </div>
       <script id="showLink" type="text/ng-template">
-        <div class="modal-backdrop-bg new"  ></div>
+        <div class="modal-backdrop-bg sharebox"></div>
         <ion-modal-view class="newModal">
-          <ion-content>
-            <input type="text" value="www.baidu.com" class="showBox"/>
+          <div class="modalShow">
+            <input type="text" ng-value="shareUrl" class="showBox"/>
             <p ng-click="closeModal()">复制框内链接，粘贴给好友，或截取下列二维码</p>
-            <div id="code" align="center"> </div>
-          </ion-content>
+            <div id="code" align="center"></div>
+          </div>
         </ion-modal-view>
       </script>
-      <!--<p class="number">学号<i>160515001</i></p>-->
+
+
       <div class="MyAcc-title">
         <span>已获得<font>{{myuser.money}}</font></span>
         <span>待获得<font>{{myuser.nomoney}}</font></span>
@@ -111,69 +104,18 @@
       <h2>学习进度</h2>
       <ion-scroll direction='x' scrollbar-x='false'>
         <div class="row course">
-          <div class="col col-48">
-            <img src="img/user/order-eg.png" width="100%">
+          <div class="col col-48" ng-repeat="m in MyCourse" ng-click="goStudy(m.ProductId)">
+            <img src="img/user/order-eg.png" image-lazy-src="{{m.cover}}" width="100%" alt="{{m.ClassName}}">
             <div class="content">
               <p>上次观看至
-                <font>第六章 突破的关键</font>
+                <font>{{m.ClassName}}</font>
               </p>
               <div class="progress">
                 <div class="progress-bar">
                   <div class="full">
-                    <span class="finish done"></span>
+                    <span class="finish done" style="width:{{m.Percent}}%"></span>
                   </div>
-                  <span>完成度<i>50%</i></span>
-                </div>
-
-              </div>
-            </div>
-          </div>
-          <div class="col col-48">
-            <img src="img/user/order-eg.png" width="100%">
-            <div class="content">
-              <p>上次观看至
-                <font>第六章 突破的关键</font>
-              </p>
-              <div class="progress">
-                <div class="progress-bar">
-                  <div class="full">
-                    <span class="finish done"></span>
-                  </div>
-                  <span>完成度<i>50%</i></span>
-                </div>
-
-              </div>
-            </div>
-          </div>
-          <div class="col col-48">
-            <img src="img/user/order-eg.png" width="100%">
-            <div class="content">
-              <p>上次观看至
-                <font>第六章 突破的关键</font>
-              </p>
-              <div class="progress">
-                <div class="progress-bar">
-                  <div class="full">
-                    <span class="finish done"></span>
-                  </div>
-                  <span>完成度<i>50%</i></span>
-                </div>
-
-              </div>
-            </div>
-          </div>
-          <div class="col col-48">
-            <img src="img/user/order-eg.png" width="100%">
-            <div class="content">
-              <p>上次观看至
-                <font>第六章 突破的关键</font>
-              </p>
-              <div class="progress">
-                <div class="progress-bar">
-                  <div class="full">
-                    <span class="finish done"></span>
-                  </div>
-                  <span>完成度<i>50%</i></span>
+                  <span>完成度<i>{{m.Percent}}%</i></span>
                 </div>
 
               </div>
@@ -188,28 +130,10 @@
       <h2>课程推荐</h2>
       <ion-scroll direction='x' scrollbar-x='false'>
         <div class="row course">
-          <div class="col col-48">
-            <img src="img/user/order-eg.png" width="100%">
+          <div class="col col-48" ng-repeat="r in recommendlist" ng-click="goStudy(r[0].productID)">
+            <img src="img/user/order-eg.png" image-lazy-src="{{r[0].coverurl}}" width="100%" alt="{{m.cover}}">
             <div class="content">
-              <p>第六章 突破的关键</p>
-            </div>
-          </div>
-          <div class="col col-48">
-            <img src="img/user/order-eg.png" width="100%">
-            <div class="content">
-              <p>第六章 突破的关键</p>
-            </div>
-          </div>
-          <div class="col col-48">
-            <img src="img/user/order-eg.png" width="100%">
-            <div class="content">
-              <p>第六章 突破的关键</p>
-            </div>
-          </div>
-          <div class="col col-48">
-            <img src="img/user/order-eg.png" width="100%">
-            <div class="content">
-              <p>第六章 突破的关键</p>
+              <p>{{r[0].productName}}</p>
             </div>
           </div>
 

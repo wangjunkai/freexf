@@ -1,10 +1,7 @@
 ﻿.freexf-checkbox > .label-checkbox{
 	font-size: 13rem;
 }
-.bg-img.user{
-	background-image: ....user/png;
-	background-size: 400px 400px;
-}
+
 .text-true-ionc{color:#1AB554;float:right;margin-top:-25px;margin-right:10px}
 
 .MyAcc-main {
@@ -39,7 +36,7 @@
 .MyAcc-title span {
   display: block;
   width: 50%;
-  font-size: 9rem;
+  font-size: 12rem;
   float: left;
   text-align: center;
   color: rgba(255, 255, 255, 0.4);
@@ -48,7 +45,7 @@
 
 .MyAcc-title span > font {
   margin-left: 10px;
-  font-size: 12rem;
+  font-size: 14rem;
   color: rgba(255, 255, 255, 1);
 }
 
@@ -163,11 +160,6 @@
 .myorder .btnGrounp .button.button-assertive, .myCollection .btnGrounp .button.button-assertive {
   border: 1px solid #EA4C00;
   color: #fff;
-}
-
-ion-content {
-  background-color: #eee;;
-
 }
 
 .courseDetail-words .courseList {
@@ -287,7 +279,7 @@ ion-content {
 }
 
 .orderList .image.floor:before {
-  content: '璇剧▼宸插け鏁?;
+  content:'';
   margin: auto;
   color: #fff;
   position: absolute;
@@ -336,7 +328,7 @@ ion-content {
 .MyAcc-title span:first-child:after {
   content: '';
   height: 20px;
-  border-right: 1px solid #fff;
+  border-right: 1px solid rgba(255, 255, 255, 0.4);
   margin-top: 6px;
   float: right;
 }

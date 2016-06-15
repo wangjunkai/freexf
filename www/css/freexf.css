@@ -5,31 +5,13 @@ html {
 .md-scroll-mask {
   position: initial;
 }
-
+input,textarea {    
+  -webkit-appearance:none!important;
+}
 .fade-in-out.ng-enter, .fade-in-out .ng-enter {
   -webkit-animation: slideInUp 0.3s;
   -moz-animation: slideInUp 0.3s;
   animation: slideInUp 0.3s;
-}
-
-.freexf-goback, .freexf-gohomeback {
-  background-image: url('../img/publicbg/home.png');
-  background-repeat: no-repeat;
-  background-size: 430px auto;
-  display: inline-block;
-  height: 18px;
-  width: 18px;
-  margin-top: 7px;
-  margin-left: 10px;
-}
-
-.freexf-goback {
-  background-size: 739px auto;
-  background-position: 0 0;
-}
-
-.freexf-gohomeback {
-  background-position: -68px 0;
 }
 
 .backdrop {
@@ -71,9 +53,219 @@ html {
   width: 60px;
   left: -20px;
 }
-ion-content:first-of-type{
+
+
+ion-content:first-of-type {
   opacity: 0;
   margin-top: -10px;
   transition: all .3s ease-in-out;
 }
 
+/*top barÑùÊ½*/
+.bar.freexf-bar {
+  z-index: 10;
+  padding: 5px 0;
+  line-height: 34px;
+  display: block;
+}
+
+
+/*bar ±³¾°É«*/
+.bar.freexf-bar.lightgray {
+  border-color: #eeeeee !important;
+  background-color: #eeeeee !important;
+  background-image: linear-gradient(0deg, #eeeeee, #eeeeee 50%, transparent 50%);
+  color: #323232;
+}
+
+.bar.freexf-bar.write {
+  border-color: #fff !important;
+  background-color: #fff !important;
+  background-image: linear-gradient(0deg, #fff, #fff 50%, transparent 50%);
+}
+
+
+.bar.freexf-bar .bar-left,
+.bar.freexf-bar .bar-right {
+  position: relative;
+  height: 100%;
+  cursor: pointer;
+  font-size: 0;
+}
+
+
+.bar.freexf-bar .bar-left {
+  float: left;
+}
+
+
+.bar.freexf-bar .bar-right {
+  float: right;
+}
+
+
+.bar.freexf-bar .bar-center {
+
+}
+
+.bar .button-clear.freexf-consult,
+.bar .button-clear.freexf-icon-search,
+.bar .button-clear.freexf-back,
+.bar .button-clear.freexf-search,
+.bar .freexf-search,
+.bar .button-clear.freexf-search-span,
+.bar .button-clear.freexf-close {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  font-size: 13rem;
+  box-sizing: content-box;
+  display: inline-block;
+  height: 100%;
+  position: relative;
+}
+
+/*×óÓÒ¼ä¾à*/
+.bar .bar-left > .button-clear {
+  padding: 0 12px !important;
+}
+
+.bar .bar-right > .button-clear {
+  padding: 0 12px !important;
+}
+
+/*×ÉÑ¯*/
+.bar .freexf-consult {
+  line-height: 1;
+  background-color: inherit;
+  color: #37d1f5;
+  text-align: center;
+  font-size: 12px;
+}
+
+.bar .freexf-consult:before {
+  content: "";
+  height: 16px;
+  width: 17px;
+  background: url(../img/home/icon-zixun@3x.png) no-repeat;
+  background-size: contain;
+  display: block;
+
+  margin: 0 auto;
+}
+
+
+/*ËÑË÷°´Å¥*/
+.bar .freexf-icon-search {
+  width: 20px;
+
+}
+
+.bar .freexf-icon-search:after {
+  width: 20px;
+  height: 20px;
+  display: block;
+  content: "";
+  background: url(../img/publicbg/course.png) no-repeat;
+
+  background-position: -5px -35px;
+  background-size: 300px auto;
+  top: 50%;
+  margin-top: -10px;
+  position: absolute;
+
+}
+
+.bar .freexf-icon-search .ion-ios-search:before {
+  content: "";
+  width: 25px;
+  height: 25px;
+}
+
+
+/*ËÑË÷¿ò*/
+.bar .freexf-search {
+  box-sizing: border-box;
+}
+
+
+.bar .freexf-search input {
+  width: 100%;
+
+  padding: 0 30px 0 10px;
+  border-radius: 2px;
+  border: 1px #ddd solid;
+  -webkit-appearance:none;
+  font-size: 12px;
+}
+
+
+.bar .freexf-search .freexf-close {
+  border: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 10px;
+  padding: 0 10px;
+}
+
+.bar .freexf-search .freexf-close:before {
+  content: '';
+  display: table;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  margin-top: -5px;
+  background: rgba(0, 0, 0, 0) url(../img/publicbg/course.png) no-repeat;
+  background-position: -160px -10px;
+  background-size: 300px auto;
+}
+
+/*·µ»Ø*/
+.bar .freexf-back .freexf-goback,
+.bar .freexf-back .freexf-gohomeback {
+  background-image: url('../img/publicbg/home.png');
+  background-repeat: no-repeat;
+
+  height: 18px;
+
+  position: absolute;
+  top: 50%;
+  left: 12px;
+
+  margin-top: -9px;
+}
+
+
+.bar .freexf-back .freexf-goback {
+  background-size: 739px auto;
+  background-position: 0 0;
+  width: 10px;
+}
+
+
+.bar .freexf-back .freexf-gohomeback {
+  background-size: 430px auto;
+  background-position: -68px 0;
+  width: 18px;
+}
+
+
+/*µÇÂ½×¢²á*/
+.bar .button-clear.register,
+.bar .button-clear.login {
+  font-size: 13rem;
+  color: #323232;
+  height: 100%;
+  line-height: 34px;
+  display: inline-block;
+}
+
+::-webkit-scrollbar {
+  width: 0
+}
+
+*::-webkit-scrollbar {
+  width: 0
+}

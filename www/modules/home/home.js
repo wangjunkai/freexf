@@ -62,7 +62,7 @@
       }
     }])
 
-    .controller('home_ctrl', function ($scope, $timeout, $ionicLoading, $exceptionHandler, $state, AUTH, ENV, HomeRepository) {
+    .controller('home_ctrl', function ($scope, $timeout, $ionicLoading, $exceptionHandler, $state, $ionicSlideBoxDelegate, AUTH, ENV, HomeRepository) {
       var Home = HomeRepository(ENV._api.__GetIndexGather);
       $scope.$on('$ionicView.loaded', function () {
       });
@@ -73,6 +73,7 @@
       //{'eliteNum': 3, 'recNum': 4}
       Home.getModel().then(function (res) {
         $scope.home = res.response.data[0];
+        $ionicSlideBoxDelegate.update();
       });
 
       $scope.goCourseList = function (category1) {
