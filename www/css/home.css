@@ -101,9 +101,6 @@
   padding: 10px 12px !important;
 }
 
-.freexf-padding-24 {
-  padding: 10px 12px !important;
-}
 
 .freexf-padding-left-5 {
   padding-left: 5px !important;
@@ -199,12 +196,21 @@
   font-size: 13rem;
   content: "\f372";
 }
-
+.freexf-agreement{
+  font-size: 13px;
+  color: #1ab554;
+}
 .freexf-checkbox .label-checkbox input:checked:before {
   color: #1ab554;
   content: "\f373";
 }
-
+.freexf-bottom-register{
+  font-size:13rem;
+  color: #1ab554;
+  text-align: center;
+  margin-top: 80px;
+  display: block;
+}
 .freexf-clear:after {
   display: table;
   content: '';
@@ -464,6 +470,7 @@
   color: #ea4e00;
   margin-right: 5px;
   font-weight: inherit;
+
 }
 
 .freexf-home-table .freexf-col .keshi {
@@ -621,4 +628,5 @@ ion-tabs.freexf-tabs .tab-item.activated .freexf-icon-user {
   background-color: #fff;
   border-radius: 5px;
 }
+
 

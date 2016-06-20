@@ -7,9 +7,6 @@
       </button>
     </div>
     <div class="title bar-center">登录</div>
-    <div class="bar-right">
-      <a href="#/register" class="button-clear register">注册</a>
-    </div>
   </ion-header-bar>
 
   <ion-content>
@@ -25,7 +22,7 @@
         </label>
       </div>
       <div class="freexf-padding-24">
-        <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-disabled="loginForm.$invalid" ng-click="toLogin($event)">
+        <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-click="toLogin($event)">
           登录
         </button>
         <div class="freexf-clear">
@@ -39,6 +36,9 @@
           <a class="freexf-font-13 freexf-right" href="#/forgetpassword">忘记密码</a>
         </div>
       </div>
+      <a href="#/register" class="freexf-bottom-register">
+       还没有账号?点击注册!
+      </a>
     </form>
   </ion-content>
 

@@ -17,13 +17,13 @@ angular.module('freexf')
       //定义符合页面的orderlist
       var orderlistInfo = function (data) {
           var list = [];
-          for (var i = 0; i < data.length; i++) {
-
+          for (var i = 0; i < data.length; i++) {              
               var isShow = true;
               if (data[i].IsCanceled == true) {
                   //不显示
                   isShow = false;
               }
+              
 
               //定义默认值
               var item = {
@@ -42,8 +42,10 @@ angular.module('freexf')
                   "study": true,
                   "payOrder": true,
                   "IsCancel": isShow,
-                  "goredetail" : true
+                  "goredetail": true
+                  
               };
+             
 
               //判断是否支付
               if (data[i].ispay == 0) {
@@ -75,6 +77,7 @@ angular.module('freexf')
       var orderlistitem = OrderList(ENV._api.__orderList);
       orderlistitem.getModel({ "studentId": $scope.userData.rowId, "Sign": $scope.userData.Sign,  "pageIndex": count, "pageMax": pageMax }).then(function (res) {
           var data = res.response.data;
+          
           //是否有订单
           if (res == null || res.response == null || res.response.data == null || res.response.data.length < 1) {
               //没有订单，提示一句话
@@ -83,6 +86,7 @@ angular.module('freexf')
           } else {
               $ionicScrollDelegate.scrollTop();
               //分页初始化
+              
               count = 0;
               $scope.haveNull = false;
               $scope.orderlist = orderlistInfo(data);
@@ -103,8 +107,8 @@ angular.module('freexf')
           })
       };
       //去学习
-      $scope.goStudy = function (ProductId) {          
-          $state.go('coursedetail', { courseId: ProductId });
+      $scope.goStudy = function (ProductId,state) {          
+          $state.go('coursedetail', { courseId: ProductId,state:state });
       }
       //过期，去详情
       $scope.goredetail = function (ProductId) {
@@ -127,9 +131,15 @@ angular.module('freexf')
           DelOrderList.postModel({ "Sign": $scope.userData.Sign, "OrderId": OrderId, "studentId": $scope.userData.rowId }).then(function (res) {
             var data = res.response.data;
             $scope.orderlist = orderlistInfo(data);
+            debugger
+            if ($scope.userData.Sign == "" && OrderId == "" && $scope.userData.rowId == "") {
+                debugger
+                $scope.orderlist.splice($scope.orderlist.indexOf(item), 1);
+            }
             //取消
             $scope.orderlist.splice($scope.orderlist.indexOf(item), 1);
-              //取消后订单再刷新下页面
+            
+            //取消后订单再刷新下页面
             orderlistitem.getModel({ "studentId": $scope.userData.rowId, "Sign": $scope.userData.Sign, "pageIndex": count, "pageMax": pageMax }).then(function (res) {
                 var data = res.response.data;
                 $scope.orderlist = orderlistInfo(data);

@@ -1,7 +1,7 @@
 'use strict';
 
 
-angular.module('freexf')
+angular.module('freexf', ['ionic'])
 
   .controller('coursedetail_ctrl', function ($scope, $rootScope, $injector, $ionicLoading, $ionicPopup, $timeout, $state, $stateParams, AUTH, ENV, CourseDateRepository, AddMyFavoriteRepository, DelMyFavoriteRepository, IsFlowerClass, AddFlower, RemoveFlower) {
       var CourseDate = CourseDateRepository(ENV._api.__coursedate);
@@ -9,14 +9,14 @@ angular.module('freexf')
       var DelFavorite = DelMyFavoriteRepository(ENV._api.__delfavorite);
       var isFlower = IsFlowerClass(ENV._api.__IsFlowerClass);
       var addFlower = AddFlower(ENV._api.__addflower);
-      var removeFlower = RemoveFlower(ENV._api.__removeflower);
+      var removeFlower = RemoveFlower(ENV._api.__removeflower);     
       $scope.courseId = $stateParams.courseId;
       $scope.userData = AUTH.FREEXFUSER.data;
       $scope.isLogin = $scope.userData.userLg ? true : false;
       $scope.buy = false;
       $('#viewContent').addClass('has-footer');
-      $scope.coursedetail = true;	//课程介绍
-      $scope.courseoutline = false;	//大纲
+      $scope.coursedetail = $stateParams.state == '1' ? false : true;	//课程介绍
+      $scope.courseoutline =$stateParams.state=='1'?true:false;	//大纲
       $scope.flowerstate = false;		//献花
       $scope.coursecollect = false;   //收藏状态
       $scope.isStyle;
@@ -31,13 +31,12 @@ angular.module('freexf')
           studentid: $scope.userData.userLg ? $scope.userData.rowId : '',
           Sign: $scope.userData.userLg ? $scope.userData.Sign : ''
       };
-      isFlower.postModel(paramsflower).then(function (res) {
-          $scope.flowerstate = res.response.data.struts;
-      });
       CourseDate.getModel(params).then(function (res) {
           $scope.courseDate = res.response.data;
           var outline = res.response.data.l_RetValueall;
           $scope.coursecollect = $scope.courseDate.favorite;
+          $scope.flowerstate = $scope.courseDate.isCourseFlowers;
+          var arr = [];
           //$scope.courseDate.isPermissionCrouse = true;    //已购买
           if ($scope.courseDate.isPermissionCrouse == true) {
               $scope.buy = true;
@@ -50,33 +49,33 @@ angular.module('freexf')
                   }
               }
               $scope.outlineList = outline;
-          } else {
-              var arr = [];
+          } else {             
               for (var i = 0; i < outline.length; i++) {
                   for (var j = 0; j < outline[i].length; j++) {
-                      if (outline[i][j].isNoFree == true) {
+                      if (outline[i][j].isNoFree == true) {                          
                           arr.push(JSON.parse(JSON.stringify(outline[i][j])));
                           outline[i][j].isNoFree = false;   //将除试听以外的章节内容改为不是试听课程
+                          outline[i][j].videoUrl = null;
                           for (var e = 0; e < arr.length; e++) {
                               arr[e].chapter = "试听课程";
                           }
+                          var len = outline.unshift(arr);
                       }
                   }
-              }
-              var len = outline.unshift(arr);
+              }              
               $scope.outlineList = outline;
-          };
+          };         
 
           $scope.a=$scope.courseDate.courseIntroduce;
           $scope.b = $scope.courseDate.teachingGoal;
           $scope.c = $scope.courseDate.materialIntroduce;
           $scope.d = $scope.courseDate.courseStrength;
           $scope.e = $scope.courseDate.teacherIntroduce;
-          $scope.a == "" || $scope.a == null ? $scope.isCourseShow = false : $scope.isCourseShow = true;
-          $scope.b == "" || $scope.b == null ? $scope.isObjectivesShow = false : $scope.isObjectivesShow = true;
-          $scope.c == "" || $scope.c == null ? $scope.isIntroductionShow = false : $scope.isIntroductionShow = true;
-          $scope.d == "" || $scope.d == null ? $scope.isAdvantageShow = false : $scope.isAdvantageShow = true;
-          $scope.e == "" || $scope.e == null ? $scope.isProfileShow = false : $scope.isProfileShow = true;
+          $scope.a == "" || $scope.a == null || $scope.a == "&nbsp;" ? $scope.isCourseShow = false : $scope.isCourseShow = true;
+          $scope.b == "" || $scope.b == null || $scope.b == "&nbsp;" ? $scope.isObjectivesShow = false : $scope.isObjectivesShow = true;
+          $scope.c == "" || $scope.c == null || $scope.c == "&nbsp;" ? $scope.isIntroductionShow = false : $scope.isIntroductionShow = true;
+          $scope.d == "" || $scope.d == null || $scope.d == "&nbsp;" ? $scope.isAdvantageShow = false : $scope.isAdvantageShow = true;
+          $scope.e == "" || $scope.e == null || $scope.e == "&nbsp;" ? $scope.isProfileShow = false : $scope.isProfileShow = true;
 
 
       });
@@ -117,14 +116,14 @@ angular.module('freexf')
       //收藏取消收藏    
       function Favorite() {
           if ($scope.coursecollect == false) {  //收藏                
-              AddFavorite.postModel({ "studentid": $scope.userData.rowId, "Sign": $scope.userData.Sign, "ProductId": $scope.courseId }).then(function (res) {
+              AddFavorite.postModel(paramsflower).then(function (res) {
                   if (res.response.data.struts == true) {
                       $scope.coursecollect = true;
                   }
               });
           } else {
               //取消收藏
-              DelFavorite.postModel({ "studentId": $scope.userData.rowId, "Sign": $scope.userData.Sign, "ProductId": $scope.courseId }).then(function (res) {
+              DelFavorite.postModel(params).then(function (res) {
                   if (res.response.data.struts == true) {
                       $scope.coursecollect = false;
                   }
@@ -133,8 +132,7 @@ angular.module('freexf')
       };
       //献花取消献花    
       function Flower() {
-          isFlower.postModel(paramsflower).then(function (res) {
-              if (res.response.data.struts == false) {
+              if ($scope.flowerstate == false) {
                   addFlower.postModel(paramsflower).then(function (res) {
                       if (res.response.data.struts == true) {
                           $scope.flowerstate = true;
@@ -149,8 +147,7 @@ angular.module('freexf')
                           $scope.courseDate.flowers--;
                       }
                   });
-              }
-          });          
+              };          
       };
       //购买协议
       function PurchaseAgreement() {
@@ -193,7 +190,9 @@ angular.module('freexf')
       $scope.coursedVideoPlay = function (videourl) {
           if (!$scope.userData.userLg) {
               location.href = "#/login";
-          } else {
+          } else if (videourl == '') {              
+              PurchaseAgreement();
+          }else {
               var playset = document.getElementById('videoplay');
               var playsetmp4 = document.getElementById('vpmp4');
 

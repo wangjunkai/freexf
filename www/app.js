@@ -13,6 +13,11 @@
         'restangular',
         'LocalStorageModule'
       ])
+      .constant('MSGICON', {
+        success: 'ion-checkmark-round',
+        fail: 'ion-alert-circled',
+        load: 'ion-load-a'
+      })
       .constant('XHR', 0)
       .constant('AUTH', {
         FREEXFUSER: {
@@ -44,7 +49,7 @@
           if (item == 0) {
             return '免费';
           } else {
-            return item;
+            return num ? item.substr(0, num) : item;
           }
         }
       })
@@ -69,6 +74,18 @@
             });
           }
         }])
+      //初始化计算大纲课程介绍的高度
+      .directive('couresScroll', ['$rootScope', '$ionicHistory', '$ionicConfig', '$state', '$injector','$timeout',
+        function ($rootScope, $ionicHistory, $ionicConfig, $state, $injector,$timeout) {
+            return function (scope, element, attrs) {
+                //angular 包装的jquery有问题
+                var $element = $(element[0]);
+                scope.$on('$ionicView.loaded', function () {
+                    var a = $element.find('#headerCourse'), b = $element.find('.grid_height'), c = $element.find('.freexf-course');
+                    b.css('height', $element.find('#viewContent').height() - a.height() - c.height() - 44);                    
+                });
+            }
+        }])
       //默认后退按钮当没有历史记录的时候跳转到首页 指令
       .directive('defaultNavBackButton', ['$rootScope', '$ionicHistory', '$ionicConfig', '$state', '$injector',
         function ($rootScope, $ionicHistory, $ionicConfig, $state, $injector) {
@@ -76,7 +93,7 @@
             var $element = $(element[0]);
             var back = function () {
               //如果后退是设置页或者login，返回home
-              var _str = ['login','payaddress','payfail'];
+              var _str = ['payaddress', 'payfail'];
               return !!($ionicHistory.backView() && $.inArray($ionicHistory.backView().stateName, _str) < 0);
             };
             scope.goBack = function () {
@@ -228,6 +245,7 @@
             url: '/register',
             templateUrl: 'modules/user/register.html',
             controller: 'register_ctrl',
+            cache: false,
             resolve: {
               loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load(['modules/user/register.js']);
@@ -239,6 +257,7 @@
             url: '/modifypassword',
             templateUrl: 'modules/user/modifypassword.html',
             controller: 'modifypassword_ctrl',
+            cache: false,
             resolve: {
               loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load(['modules/user/modifypassword.js']);
@@ -249,6 +268,7 @@
             url: '/forgetpassword',
             templateUrl: 'modules/user/forgetpassword.html',
             controller: 'forgetpassword_ctrl',
+            cache: false,
             resolve: {
               loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load(['modules/user/forgetpassword.js']);
@@ -286,6 +306,7 @@
             url: '/ideafeedback',
             templateUrl: 'modules/user/ideafeedback.html',
             controller: 'ideafeedback_ctrl',
+            cache: false,
             resolve: {
               loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load(['modules/user/ideafeedback.js']);
@@ -406,7 +427,7 @@
             }
           })
           .state('coursedetail', {
-            url: '/coursedetail/:courseId',
+              url: '/coursedetail/:courseId&:state',
             templateUrl: 'modules/course/coursedetail.html',
             controller: 'coursedetail_ctrl',
             cache: false,

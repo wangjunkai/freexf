@@ -1,8 +1,13 @@
-﻿.freexf-checkbox > .label-checkbox{
-	font-size: 13rem;
+﻿.freexf-checkbox > .label-checkbox {
+  font-size: 13rem;
 }
 
-.text-true-ionc{color:#1AB554;float:right;margin-top:-25px;margin-right:10px}
+.text-true-ionc {
+  color: #1AB554;
+  float: right;
+  margin-top: -25px;
+  margin-right: 10px
+}
 
 .MyAcc-main {
   display: table;
@@ -91,16 +96,16 @@
 }
 
 .OrderMessage .state {
-  background-color: #fff!important;
+  background-color: #fff !important;
   color: #EA4C00;
   float: right;
-  text-align:center;
-  border:0px;
-  display:inline-block;
+  text-align: center;
+  border: 0px;
+  display: inline-block;
   width: 50px;
-  line-height:25px;
-  height:23px;
-  font-size:9rem;
+  line-height: 25px;
+  height: 23px;
+  font-size: 9rem;
   /*text-align:right;*/
 }
 
@@ -135,8 +140,9 @@
 
   width: 54%;
   font-size: 10rem;
-  margin-left: 2.3%;
-  float: left;
+  margin-left: 2%;
+  position: absolute;
+  left: 42%;
 }
 
 .myorder .btnGrounp .button, .myCollection .btnGrounp .button {
@@ -172,6 +178,10 @@
 
 .courseDetail-words .courseList .name {
   margin-bottom: 0px;
+}
+
+.courseDetail-words .courseList .name i {
+  margin-left: 2.5px;
 }
 
 .courseDetail-words .courseList span {
@@ -234,7 +244,7 @@
   margin-top: 12.5px;
   position: relative;
   float: left;
-  overflow:hidden;
+  overflow: hidden;
 }
 
 .progress .progress-bar span {
@@ -279,7 +289,7 @@
 }
 
 .orderList .image.floor:before {
-  content:'';
+  content: '';
   margin: auto;
   color: #fff;
   position: absolute;
@@ -300,10 +310,10 @@
   height: 100%;
   width: 100%;
   top: 0;
-  color:#fff;
-  text-align:center;
-  padding-top:20%;
-  font-size:17rem;
+  color: #fff;
+  text-align: center;
+  padding-top: 20%;
+  font-size: 17rem;
 }
 
 .courseDetail-list .image img {
@@ -322,9 +332,11 @@
   color: #fff;
   background-color: #1ab554;
 }
+
 .btnGrounp .button.button-balanced.buy {
-  background-color: #EA4C00!important;
+  background-color: #EA4C00 !important;
 }
+
 .MyAcc-title span:first-child:after {
   content: '';
   height: 20px;
@@ -365,14 +377,17 @@
   width: 72%;
   float: left;
 }
-.input-left-box{
+
+.input-left-box {
   width: 72%;
   float: left;
 }
+
 .item-input .input-left-box input.inputCode {
   width: 100%;
   float: left;
 }
+
 .register .button-balanced {
   background-color: #1ab554;
 
@@ -425,8 +440,18 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   color: #ddd;
 }
 
-input:-ms-input-placeholder, textarea::-ms-input-placeholder {
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   color: #ddd;
+}
+/*填写地址里字的颜色*/
+input.hasPlace::-webkit-input-placeholder,textarea.hasPlace::-webkit-input-placeholder{
+   color: #323232;
+}
+input.hasPlace::-moz-placeholder,textarea.hasPlace::-moz-placeholder{
+     color: #323232;
+}
+input.hasPlace:-ms-input-placeholder,textarea.hasPlace:-ms-input-placeholder {
+    color: #323232;
 }
 
 .forgetpassword .input-label.has-input, .modifypassword .input-label.has-input, .register .input-label.has-input {
@@ -469,6 +494,7 @@ input:-ms-input-placeholder, textarea::-ms-input-placeholder {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  width: initial;
 }
 
 .myorder .orderList, .mycourse .orderList, .myCollection .orderList {
@@ -498,4 +524,27 @@ input:-ms-input-placeholder, textarea::-ms-input-placeholder {
   color: #969696;
   font-size: 9rem;
   float: left;
+}
+
+.freexf-buttons {
+  position: relative;
+  padding: 10px 12px;
+}
+.freexf-buttons:after{
+  display: block;
+  clear: both;
+  content: '';
+}
+.freexf-buttons a {
+  width: 48%;
+  height: 47px;
+  line-height: 47px;
+}
+
+.freexf-buttons a:first-child {
+  float: left;
+}
+
+.freexf-buttons a:last-child {
+  float: right;
 }

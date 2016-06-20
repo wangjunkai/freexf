@@ -1,4 +1,4 @@
-<ion-view view-title="我的课程">
+<ion-view>
 
   <ion-header-bar default-header-bar class="freexf-bar lightgray">
     <div class="bar-left">
@@ -14,14 +14,14 @@
 			<ul>
 				<li class="orderList" ng-repeat="m in mycourselist">
 					<div class="OrderDetail" ng-init="isExpired=(m.DaysRemaining==0)?true:false">
-						<div class="courseDetail-list" ng-click="goStudy(m.ProductId);">
+						<div class="courseDetail-list" ng-click="goStudy(m.ProductId,'1');">
 							<div class="image" ng-class="{floor:isExpired}">
 								<img src="img/user/order-eg.png" image-lazy-src="{{m.cover}}" width="100%" alt="{{m.ClassName}}">
 							</div>
 							 <div class="courseDetail-words">
 					        	<h2>{{m.ClassName}}</h2>
-					        	<div class="courseList" ng-init="teachername=m.teachername==null?false:true">
-					        		<p class="name" ng-show="teachername">●&nbsp;讲师<i>{{m.teachername}}</i></p>
+					        	<div class="courseList">
+					        		<p class="name" ng-show="m.teachername">●&nbsp;讲师<i>{{m.teachername}}</i></p>
 					        		<span class="count">●&nbsp;<i>{{m.ClassHours}}</i>课时</span>
 					        		<p class="xf">●<span>{{m.SetOrderTime|dateshow}}</span>-<span>&nbsp;{{m.Deadline|dateshow}}</span></p>
 					        	</div>

@@ -1,6 +1,42 @@
 /* Empty. Add your own CSS if you like */
 /**{font-family: "微软雅黑";}*/
 /*.bg-img.course{background: url(../img/publicbg/course.png) no-repeat;}*/
+@media screen and (max-width: 321px) {
+  .freexf-classmodule .item-thumbnail-left > img:first-child,
+  .freexf-classmodule .item-thumbnail-left .item-image,
+  .freexf-classmodule .item-thumbnail-left .item-content > img:first-child,
+  .freexf-classmodule .item-thumbnail-left .item-content .item-image {
+    min-height: 52px;
+  }
+}
+
+@media screen and (width: 375px) {
+  .freexf-classmodule .item-thumbnail-left > img:first-child,
+  .freexf-classmodule .item-thumbnail-left .item-image,
+  .freexf-classmodule .item-thumbnail-left .item-content > img:first-child,
+  .freexf-classmodule .item-thumbnail-left .item-content .item-image {
+    min-height: 61px;
+  }
+}
+
+@media screen and (min-width: 400px) {
+  .freexf-classmodule .item-thumbnail-left > img:first-child,
+  .freexf-classmodule .item-thumbnail-left .item-image,
+  .freexf-classmodule .item-thumbnail-left .item-content > img:first-child,
+  .freexf-classmodule .item-thumbnail-left .item-content .item-image {
+    min-height: 67px;
+  }
+}
+
+@media screen and (min-width: 321px) and (max-width: 374px) {
+  .freexf-classmodule .item-thumbnail-left > img:first-child,
+  .freexf-classmodule .item-thumbnail-left .item-image,
+  .freexf-classmodule .item-thumbnail-left .item-content > img:first-child,
+  .freexf-classmodule .item-thumbnail-left .item-content .item-image {
+    min-height: 59px;
+  }
+}
+
 .freexf-course-tabs.tabs {
   position: relative;
 }
@@ -25,13 +61,16 @@
   padding: 15px 0 5px 23px;
   background: #fff;
 }
-.freexf-coursedetail .freexf-courseinfo>p{
-	margin-bottom: 10px;
+
+.freexf-coursedetail .freexf-courseinfo > p {
+  margin-bottom: 10px;
 }
 
 .freexf-coursedetail .freexf-courseinfo h3 {
   font-size: 15rem;
   margin-bottom: 10px;
+  margin-right: 23px;
+  text-align: justify;
 }
 
 .freexf-coursedetail .freexf-courseinfo h1 {
@@ -49,12 +88,20 @@
 .freexf-coursedetail .freexf-courseinfo i {
   display: inline-block;
   color: #323232;
+
+  width:65%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  vertical-align: bottom;
 }
 
 .freexf-coursedetail .freexf-courseinfo .freexf-credit {
   font-size: 19rem;
   color: #EA4E00;
   padding-right: 5px;
+  width: auto;
 }
 
 .freexf-creditbox {
@@ -63,9 +110,9 @@
 
 .freexf-creditbox p:last-of-type {
   position: absolute;
-  right: 0;
+  right: 23px;
   top: -6px;
-  width: 80px;
+  min-width: 40px;
   height: 100%;
   padding-top: 0px;
   font-size: 14rem;
@@ -81,18 +128,11 @@
   background-position: -119px -2px;
   background-size: 300px auto;
   position: relative;
-  top: 5px;
+  top: 1px;
 }
 
 .freexf-creditbox p.active i.icon {
-  display: inline-block;
-  width: 27px;
-  height: 25px;
-  background: url(../img/publicbg/course.png) no-repeat;
   background-position: -119px -32px;
-  background-size: 300px auto;
-  position: relative;
-  top: 5px;
 }
 
 .freexf-coursedetail .list {
@@ -131,6 +171,14 @@
 .freexf-coursedetail .list .item,
 .freexf-courselist .item {
   border: none;
+}
+
+.freexf-coursedetail .list .item img {
+  left: 0;
+}
+
+.freexf-coursedetail .list .item .item-thumbnail-left {
+  padding-left: 96px;
 }
 
 .freexf-coursedetail .list .item h2 {
@@ -299,6 +347,7 @@ img.freexf-blur {
   line-height: 35px;
   color: #323232;
 }
+
 .freexf-play.button {
   background: rgba(0, 0, 0, 0);
   min-width: 30px;
@@ -306,11 +355,13 @@ img.freexf-blur {
   right: 22px;
   opacity: 1;
 }
-.freexfdemoclass .freexf-play.button{
-    right:22px!important;
+
+.freexfdemoclass .freexf-play.button {
+  right: 22px !important;
 }
-.freexf-play.button.testplay.button{
-    right:17px!important;
+
+.freexf-play.button.testplay.button {
+  right: 17px !important;
 }
 
 .freexf-play.button:after {
@@ -323,17 +374,21 @@ img.freexf-blur {
   background-position: -86px 0px;
 }
 
-.freexfcourseitem .item{
+
+.freexfcourseitem .item {
   margin-left: 40px;
   position: relative;
   overflow: visible;
 }
+
 .freexfcourseitem .item:first-of-type {
   padding-top: 20px;
   padding-bottom: 20px;
 }
-.freexfcourseitem .item:first-of-type p{
-    margin-bottom:0;
+
+
+.freexfcourseitem .item:first-of-type p {
+  margin-bottom: 0;
 }
 
 .freexfcourseitem .item:first-of-type .button:after {
@@ -359,9 +414,12 @@ img.freexf-blur {
   top: 0px;
   left: 0px;
 }
+
 .freexfdemoclass.item:after {
-  border-left:none!important;
+
+  border-left: none !important;
 }
+
 .freexfcourseitem .item p,
 .freexfdemoclass .item p {
   overflow: hidden;
@@ -415,8 +473,9 @@ img.freexf-blur {
 }
 
 .freexfdemoclass.item {
-  border-left: none!important;
-  margin-left: 20px!important;
+
+  border-left: none !important;
+  margin-left: 20px !important;
 }
 
 .freexfcourseitem .item:before {
@@ -432,9 +491,12 @@ img.freexf-blur {
   z-index: 100;
   background: #fff;
 }
+
 .freexfdemoclass.item:before {
-    border:none!important;
+
+  border: none !important;
 }
+
 .freexfcourseitem .item.endclass:before {
   border: 1px #1AB554 solid;
 }
@@ -446,7 +508,6 @@ img.freexf-blur {
 .freexfcourseitem .item:last-of-type:after {
   height: 23px;
 }
-
 
 
 .freexf-collect:before {
@@ -461,28 +522,39 @@ img.freexf-blur {
   top: 2px;
   left: 7px;
 }
+
 .freexf-collect.active:before {
   background-position: -35px -67px;
   left: 8px;
 }
+
 .freexf-collect:after {
-    content:"收藏";
-    position:relative;
-    left:-2px;
+
+  content: "收藏";
+  position: relative;
+  left: -2px;
 }
+
 .freexf-collect.active:after {
-    content:"已收藏";
-    position:relative;
-    left:-6px;
+
+  content: "已收藏";
+  position: relative;
+  left: -6px;
 }
-.freexf-courseoutline{
-	background: #fff;
-	padding: 20px 0;
+
+
+.freexf-courseoutline {
+  background: #fff;
+  padding: 20px 0;
 }
+
 /*购买协议*/
-.freexf-agreement.active{
-	background: rgba(0,0,0,.25);
+
+.freexf-agreement.active {
+  background: rgba(0, 0, 0, .25);
+    z-index:9999999;
 }
+
 .freexf-agreement.active .popup {
   width: 80%;
   background-color: rgba(255, 255, 255, 1);
@@ -520,14 +592,18 @@ img.freexf-blur {
 }
 
 /*选课中心*/
-.freexf-courselist{
+
+.freexf-courselist {
   background-color: #eee;
-  padding:0;
+
+  padding: 0;
 }
-.coursecenter-list{
+
+.coursecenter-list {
   padding: 13px 0 25px 0;
   background-color: #fff;
 }
+
 .freexf-coursecenter .coursecenter-list .ccl-son {
   padding: 7px 12px;
   margin-top: 10px;
@@ -604,6 +680,7 @@ img.freexf-blur {
 .freexf-classmodule-header-nav .freexf-courseNav {
   padding-right: 5%;
 }
+
 .freexf-classmodule-header-nav .freexf-courseNav.active {
   color: #969696;
 }
@@ -614,7 +691,8 @@ img.freexf-blur {
   position: relative;
 }
 
-.freexf-classmodule-header-nav>div {
+
+.freexf-classmodule-header-nav > div {
   display: inline-block;
   height: 30px;
   line-height: 30px;
@@ -622,29 +700,36 @@ img.freexf-blur {
   color: #969696;
 }
 
-.freexf-classmodule-header-nav .freexf-coursesort{
+
+.freexf-classmodule-header-nav .freexf-coursesort {
   position: absolute;
   right: 5px;
   width:51%;
   text-align:center;
 }
-.freexf-coursesort>div{
-    position:relative;
+
+.freexf-coursesort > div {
+  position: relative;
 }
-.freexf-coursesort>div div {
+
+.freexf-coursesort > div div {
   display: inline-block;
   height: 30px;
   line-height: 30px;
   font-size: 12rem;
   color: #969696;
   width: 35px;
-  position:relative;
-  margin-left:15%;
+
+  position: relative;
+  margin-left: 15%;
 }
-.freexf-coursesort>div div:first-of-type{
-    margin-left:0;
+
+
+.freexf-coursesort > div div:first-of-type {
+  margin-left: 0;
 }
-.freexf-classmodule-header-nav>div:nth-child(1) {
+
+.freexf-classmodule-header-nav > div:nth-child(1) {
   position: relative;
   left: 10px;
 }
@@ -664,9 +749,10 @@ img.freexf-blur {
   right: 5px;
 }*/
 
-.freexf-coursesort>div div:nth-child(1).active:after,
-.freexf-coursesort>div div:nth-child(2).active:after,
-.freexf-coursesort>div div:nth-child(3).active:after {
+
+.freexf-coursesort > div div:nth-child(1).active:after,
+.freexf-coursesort > div div:nth-child(2).active:after,
+.freexf-coursesort > div div:nth-child(3).active:after {
   content: "";
   width: 15px;
   height: 30px;
@@ -678,12 +764,21 @@ img.freexf-blur {
   top: 0;
   right: -5px;
 }
-.freexf-coursesort>div div:nth-child(3).activeasc:after{
-    background-position: -65px -60px!important;
+
+.freexf-coursesort > div div:nth-child(3).active:after {
+
+  background-position: -65px -60px !important;
 }
-.freexf-coursesort>div div:nth-child(1):after,
-.freexf-coursesort>div div:nth-child(2):after,
-.freexf-coursesort>div div:nth-child(3):after {
+
+
+.freexf-coursesort > div div:nth-child(3).activeasc:after {
+  background-position: -65px -30px !important;
+}
+
+
+.freexf-coursesort > div div:nth-child(1):after,
+.freexf-coursesort > div div:nth-child(2):after,
+.freexf-coursesort > div div:nth-child(3):after {
   content: "";
   width: 15px;
   height: 30px;
@@ -727,8 +822,10 @@ img.freexf-blur {
   color: #969696;
   font-size: 12rem;
 }
-.freexf-classmodule .item p:last-of-type{
-	margin-top: 4px;
+
+
+.freexf-classmodule .item p:last-of-type {
+  margin-top: 4px;
 }
 
 .freexf-classmodule .item p span {
@@ -753,6 +850,8 @@ img.freexf-blur {
   height: auto;
   max-width: 30%;
   max-height: none;
+  background-color: #d2d2d2;
+  font-size: 10rem;
 }
 
 .freexf-classmodule .item.active,
@@ -780,7 +879,8 @@ img.freexf-blur {
   float: left;
 }
 
-.freexf-classmodule-header-nav .freexf-languageclass ul li a{
+
+.freexf-classmodule-header-nav .freexf-languageclass ul li a {
   line-height: 35px;
   text-align: left;
   display: inline-block;
@@ -790,7 +890,8 @@ img.freexf-blur {
 }
 
 .freexf-classmodule-header-nav div.active,
-.freexf-classmodule-header-nav .freexf-languageclass ul li.active{
+
+.freexf-classmodule-header-nav .freexf-languageclass ul li.active {
   color: #1AB455;
 }
 
@@ -842,7 +943,9 @@ img.freexf-blur {
   padding: 0 15px;
   color: #878787;
 }
-
+.freexf-scroll-courseoutline {
+    height:398px;
+}
 
 
 

@@ -47,7 +47,7 @@ require([
   }
 );
 function doyoofun() {
-    $('body').on('click', '.button.button-clear.freexf-consult', function () {
+    $('body').on('click', '.button-clear.freexf-consult', function () {
         doyoo.util.openChat('g=10058658'); return false;
     })
 }

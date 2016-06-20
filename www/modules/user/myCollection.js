@@ -35,8 +35,8 @@
               $scope.$broadcast('scroll.infiniteScrollComplete');
           });
       };
-      $scope.goStudy = function (courseId) {
-          $state.go('coursedetail', { courseId: courseId });
+      $scope.goStudy = function (courseId,state) {
+          $state.go('coursedetail', { courseId: courseId,state:state });
       };
       //我的收藏 
       function getMyfavorite() {

@@ -6,53 +6,70 @@
       </button>
     </div>
     <div class="title">注册</div>
-    <div class="bar-right">
-      <a href="#/login" class="button-clear login">登陆</a>
-    </div>
+
   </ion-header-bar>
   <ion-content class="register">
     <form name="registerForm" novalidate="novalidate">
       <div class="list">
         <div class="item item-input item-floating-label">
-          <span class="input-label " >{{user.labelphone}}</span>
-          <input type="text" placeholder="{{user.labelphone}}" name="phone" ng-model="user.phone" ng-pattern="/^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57]|99[0-9])[0-9]{8}$/" required>
-          <span class="ion-checkmark text-true-ionc {{registerForm.phone.$invalid}}" ng-hide="registerForm.phone.$invalid"></span>
+          <span class="input-label ">{{user.labelphone}}</span>
+          <input type="text" placeholder="{{user.labelphone}}" name="phone" ng-model="user.phone"
+                 ng-pattern="/^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57]|99[0-9])[0-9]{8}$/" required>
+          <span class="ion-checkmark text-true-ionc {{registerForm.phone.$invalid}}"
+                ng-hide="registerForm.phone.$invalid"></span>
         </div>
         <div class="item item-input item-floating-label">
           <span class="input-label">{{user.labelcode}}</span>
-            <div class="input-left-box">
-                <input type="text" placeholder="{{user.labelcode}}" class="inputCode" name="code" ng-model="user.code" required>
+          <div class="input-left-box">
+            <input type="text" placeholder="{{user.labelcode}}" class="inputCode" name="code" ng-model="user.code"
+                   required>
+          </div>
+          <div class="codeBox">
+            <div class="CodeImg">
+              <img style="width: 100%;" src="{{CodeImg.img}}" alt="验证码图片"/>
             </div>
-                 <div class="codeBox">
-                    <div class="CodeImg">
-                        <img style="width: 100%;" src="{{CodeImg.img}}" alt="验证码图片" />
-                    </div>
-                    <div class="CodeButton">
-                        <a ng-click="CodeImg.getNew()">看不清楚？换一张</a>
-                    </div>
-                </div>
+            <div class="CodeButton">
+              <a ng-click="CodeImg.getNew()">看不清楚？换一张</a>
             </div>
+          </div>
+        </div>
 
         <div class="item item-input item-floating-label">
-            <span class="input-label">{{user.labelphonecode}}</span>
-            <div class="input-left-box">
-                <input type="text" placeholder="{{user.labelphonecode}}" class="inputCode" name="phonecode" ng-model="user.phonecode" required>
-            </div>
-          <button class="small-idcode-button" ng-click="PhoneCode($event)" ng-disabled="registerForm.phone.$invalid || registerForm.code.$invalid">获取验证码</button>
+          <span class="input-label">{{user.labelphonecode}}</span>
+          <div class="input-left-box">
+            <input type="text" placeholder="{{user.labelphonecode}}" class="inputCode" name="phonecode"
+                   ng-model="user.phonecode" required>
+          </div>
+          <button class="small-idcode-button" ng-click="PhoneCode($event)"
+                  ng-disabled="registerForm.phone.$invalid || registerForm.code.$invalid">获取验证码
+          </button>
         </div>
         <div class="item item-input item-floating-label">
           <span class="input-label">{{user.labelpassword}}</span>
-          <input type="password" placeholder="{{user.labelpassword}}" name="password" ng-model="user.password"  ng-pattern="/^.{8,30}$/" required>
+          <input type="password" placeholder="{{user.labelpassword}}" name="password" ng-model="user.password"
+                 ng-pattern="/^.{8,30}$/" required>
           <span class="ion-checkmark text-true-ionc" ng-hide="registerForm.password.$invalid"></span>
         </div>
         <div class="item item-input item-floating-label">
           <span class="input-label {{registerForm.confirmPassword.$invalid || user.password!=user.confirmPassword}}">{{user.labelconfirmPassword}}</span>
-          <input type="password" placeholder="{{user.labelconfirmPassword}}" name="confirmPassword" ng-model="user.confirmPassword" ng-change="passwordAccord()"  ng-pattern="/^.{8,30}$/" required>
-          <span class="ion-checkmark text-true-ionc" ng-hide="registerForm.confirmPassword.$invalid || user.password!=user.confirmPassword"></span>
+          <input type="password" placeholder="{{user.labelconfirmPassword}}" name="confirmPassword"
+                 ng-model="user.confirmPassword" ng-change="passwordAccord()" ng-pattern="/^.{8,30}$/" required>
+          <span class="ion-checkmark text-true-ionc"
+                ng-hide="registerForm.confirmPassword.$invalid || user.password!=user.confirmPassword"></span>
         </div>
       </div>
+      <div class="freexf-padding-24 clearfix">
+        <div class="freexf-checkbox freexf-left">
+          <label class="label-checkbox">
+            <input type="checkbox" ng-model="user.agreement">
+          </label>
+          我已阅读并同意
+        </div>
+        <a class="freexf-agreement"  href="">《用户协议》</a>
+      </div>
       <div class="freexf-padding-24">
-        <button type="button" class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-disabled="registerForm.$invalid || user.password!=user.confirmPassword" ng-click="register($event)">
+        <button type="button" class="button button-block freexf-button-balanced freexf-margin-bottom-30"
+                ng-click="register($event)">
           马上注册
         </button>
       </div>

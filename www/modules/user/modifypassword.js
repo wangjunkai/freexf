@@ -2,7 +2,7 @@
 
 
 angular.module('freexf')
-  .controller('modifypassword_ctrl',function ($scope, $rootScope, $injector, $ionicLoading, $interval, $timeout, $Loading, $state, AUTH, AuthRepository) {
+  .controller('modifypassword_ctrl',function ($scope, $rootScope, $injector, $ionicLoading, $interval, $timeout, $Loading, $state, AUTH,MSGICON, AuthRepository) {
     var MODIFY = AuthRepository('AjaxChangePassword.aspx', '/ajax');
     var PHONE_CODE = AuthRepository('sendphonecode.aspx', '/ajax');
     $scope.phone=AUTH.FREEXFUSER.data.phone;
@@ -29,17 +29,17 @@ angular.module('freexf')
       } else {
         $scope.modify.labelconfirmPassword = '密码一致'
       }
-    }
+    };
     //修改密码
     $scope.modifypassword = function ($event) {
       $scope.authLoad = true;
       $event.target.disabled = true;
-      $Loading.show({class: 'ion-alert-circled', text: '修改中...'}, false);
+      $Loading.show({class: MSGICON.load, text: '修改中...'}, false);
 
       var modify=$scope.modify;
       MODIFY.getModel(modify).then(function(req){
         var data = req.response.data;
-        $Loading.show({class: 'ion-alert-circled', text: data.message}, 1500);
+        $Loading.show({class: data.success ? MSGICON.success : MSGICON.fail, text: data.message}, 1500);
         $event.target.disabled = false;
         if(data.success){
           $timeout(function(){
@@ -62,17 +62,19 @@ angular.module('freexf')
         }
       }
     }();
-
     //手机验证码
     $scope.PhoneCode = function ($event) {
       $scope.PhoneCodeLoad = true;
       $event.target.disabled = true;
-      console.log($scope.modify.phone);
+      var msg = {
+        success: {text: '发送成功,请注意查收!', class: MSGICON.success},
+        yzmfalse: {text: '验证码错误!', class: MSGICON.fail},
+        fail: {text: '该手机号已存在!', class: MSGICON.success}
+      };
       var parameter = {type: 'forgetpwdsms', mobile: $scope.modify.phone, codeyz: $scope.modify.code};
       PHONE_CODE.getModel(parameter).then(function (req) {
         var data = req.response.data;
-        var msg = {success: '发送成功,请注意查收!', yzmfalse: '验证码错误!'};
-        console.log(data);
+        $Loading.show(msg[data], 2000);
         var time = 30;
         var stoptime = $interval(function () {
           if (time == 0) {

@@ -1,34 +1,41 @@
 <ion-view view-title="我的账户">
 
   <ion-header-bar class="freexf-bar lightgray">
-    <div class="title bar-center">我的账户</div>
+    <div class="title">我的账户</div>
     <div class="bar-right">
       <a href="#/coursesearch" class="button-clear freexf-icon-search"></a>
     </div>
-    <div class="title">我的账户</div>
   </ion-header-bar>
 
-	<ion-content class="myaccount">
-	   	<div class="MyAcc-main">
-	   		<div class="MyAcc-top">
-	   			<div class="MyAcc-setting"></div>
-	   			<div class="MyAcc-icon"></div>
-	   			<p>用户未登录</p>
-	   			<div class="MyAcc-title">
-	   				<span>已获得<font>0</font></span>
-	   				<span>待获得<font>0</font></span>
-	   			</div>
-	   		</div>
-	   		<div class="MyAcc-content">
-	   			<div class="TipLogo fail"></div>
-	  			<p>无法记录和同步学习进度，建议登陆后在学习~</p>
-	   		</div>
-	   		<div class="freexf-padding-24">
-	   			<a href="#/login">
-		      <button class="button button-block freexf-button-balanced freexf-margin-bottom-30">
-		       	立即登录
-		      </button></a>
-		    </div>
-	   	</div>
-	</ion-content>
- </ion-view>
+  <ion-content class="has-footer myaccount">
+    <div class="MyAcc-main">
+      <div class="MyAcc-top">
+        <div class="MyAcc-setting"></div>
+        <div class="MyAcc-icon"></div>
+        <p>用户未登录</p>
+        <div class="MyAcc-title">
+          <span>已获得<font>0</font></span>
+          <span>待获得<font>0</font></span>
+        </div>
+      </div>
+      <div class="MyAcc-content clearfix">
+        <div class="TipLogo fail"></div>
+        <p>无法记录和同步学习进度，建议登录后再学习~</p>
+      </div>
+      <div class="freexf-padding-24">
+        <a href="#/login">
+          <button class="button button-block freexf-button-balanced freexf-margin-bottom-30">
+            立即登录
+          </button></a>
+      </div>
+<!--      <div class="freexf-buttons">
+        <a class="button freexf-button-balanced" href="#/login">
+          立即登录
+        </a>
+        <a class="button freexf-button-balanced" href="#/register">
+          立即注册
+        </a>
+      </div>-->
+    </div>
+  </ion-content>
+</ion-view>

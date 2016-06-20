@@ -118,6 +118,10 @@
 .TipLogo.fail{
 	background-position: -89px -1px;
 }
+.input-label.hasInput{
+    opacity: 1;
+    top: 0;
+}
 
 
 

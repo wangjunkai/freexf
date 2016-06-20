@@ -1,4 +1,4 @@
-<ion-view view-title="课程详情">
+<ion-view coures-scroll view-title="课程详情">
 
 
   <ion-header-bar class="freexf-bar lightgray">
@@ -14,9 +14,9 @@
   </ion-header-bar>
 
 
-  <ion-content lazy-scroll id="viewContent">     <!--  class="has-footer" -->
+  <ion-content id="viewContent">     <!--  class="has-footer" -->
 
-    <div class="item item-image" style="min-height:200px;">
+    <div class="item item-image" style="min-height:200px;" id="headerCourse">
       <img src="img/course/course_img.jpg" ng-hide="videShow" image-lazy-src="{{courseDate.cover}}"  alt="{{courseDate.courseName}}"/>
       <!--class="freexf-blur" 模糊效果 -->
       <!--背景层已购买-->
@@ -39,95 +39,99 @@
           <source id="vpmp4" src="" type='video/mp4'>
         </video>
       </div>
-    </div>
-    <div class="tabs-striped  tabs-color-balanced freexf-course">
-      <!--tab选项卡-->
-      <div class="tabs freexf-course-tabs">
-        <a class="tab-item" ng-class="{active:coursedetail}" href="javascript:void(0);" ng-click="coursedetailClick()">
-          课程介绍
-        </a>
-        <a class="tab-item" ng-class="{active:courseoutline}" href="javascript:void(0);"
-           ng-click="courseoutlineClick()">
-          课程大纲
-        </a>
-      </div>
-      <!--end-->
-    </div>
-    <!--课程介绍以及大纲-->
-    <!--<div ui-view="main"></div>-->
-      <div class="freexf-coursedetail" ng-show="coursedetail">
-          <div class="freexf-courseinfo">
-              <h3>{{courseDate.courseName}}</h3>
-              <p>
-                  <span>讲师<i>：{{courseDate.teacher}}</i></span>
-                  <span>课时数<i>：{{courseDate.classHours}}</i></span>
-                  <span>有效期<i>：{{courseDate.period}}天</i></span>
-              </p>
-              <div class="freexf-creditbox">
-                  <p>
-                      <i class="assertive freexf-credit">{{courseDate.price|xufen}}</i><span>
-                          <em ng-show="courseDate.price | xufenshow">学分</em>
-                      </span>
-                  </p>
-                  <p ng-class="{active:flowerstate}" ng-click="flowerStateClick()"><i class="icon"></i>{{courseDate.flowers}}</p>
+    </div>      
+          <div class="tabs-striped  tabs-color-balanced freexf-course">
+              <!--tab选项卡-->
+              <div class="tabs freexf-course-tabs">
+                  <a class="tab-item" ng-class="{active:coursedetail}" href="javascript:void(0);" ng-click="coursedetailClick()">
+                      课程介绍
+                  </a>
+                  <a class="tab-item" ng-class="{active:courseoutline}" href="javascript:void(0);"
+                     ng-click="courseoutlineClick()">
+                      课程大纲
+                  </a>
               </div>
+              <!--end-->
           </div>
-          <ul class="list">
-              <li class="item" ng-show="isCourseShow">
-                  <h2>课程介绍<span>Course Introduction</span></h2>
-                  <div class="kechengjianjie" id="kechengjianjie">
+          <!--课程介绍以及大纲-->
+      <ion-scroll direction='y' scrollbar-y='false'  class="grid_height" ng-show="coursedetail">
+          <div class="freexf-coursedetail">
+              <div class="freexf-courseinfo">
+                  <h3>{{courseDate.courseName}}</h3>
+                  <p>
+                      <span ng-show="courseDate.teacher">讲师<i>：{{courseDate.teacher}}</i></span>
+                      <span>课时数<i>：{{courseDate.classHours}}</i></span>
+                      <span>有效期<i>：{{courseDate.period}}天</i></span>
+                  </p>
+                  <div class="freexf-creditbox">
                       <p>
-                          {{a}}
+                          <i class="assertive freexf-credit">{{courseDate.price|xufen}}</i><span>
+                              <em ng-show="courseDate.price | xufenshow">学分</em>
+                          </span>
                       </p>
+                      <p ng-class="{active:flowerstate}" ng-click="flowerStateClick()"><i class="icon"></i>{{courseDate.flowers}}</p>
                   </div>
-              </li>
-              <li class="item" ng-show="isObjectivesShow">
-                  <h2>教学目标<span>Instructional Objectives</span></h2>
-                  <div class="jiaoxuemubiao" id="jiaoxuemubiao">
-
-                      <p>
-                          {{b}}
-                      </p>
-                  </div>
-              </li>
-              <li class="item" ng-show="isIntroductionShow">
-                  <h2>教学介绍<span>Textbook Introduction</span></h2>
-                  <div class="jiaoxuejianjie" id="jiaoxuejianjie">
-                      <p>
-                          {{c}}
-                      </p>
-                  </div>
-              </li>
-              <li class="item" ng-show="isAdvantageShow">
-                  <h2>课程优势<span>Course Advantage</span></h2>
-                  <div class="kechengyoushi" id="kechengyoushi">
-
-                      <p>
-                          {{d}}
-                      </p>
-                  </div>
-              </li>
-              <li class="item" ng-show="isProfileShow">
-                  <h2>教师简介<span>Teacher Profile</span></h2>
-                  <div class="item item-thumbnail-left">
-
-                      <img src="img/course/lecturer_img.png" image-lazy-src="{{courseDate.teacherPath}}" />
-                      <div class="jiaoshijianjie" id="jiaoshijianjie">
+              </div>
+              <ul class="list">
+                  <li class="item" ng-show="isCourseShow">
+                      <h2>课程介绍<span>Course Introduction</span></h2>
+                      <div class="kechengjianjie" id="kechengjianjie">
                           <p>
-                              {{e}}
+                              {{a}}
                           </p>
                       </div>
-                  </div>
-              </li>
-          </ul>
-      </div>
-      <!--课程大纲-->
-      <div class="freexf-courseoutline " ng-show="courseoutline">
-          <!--课程大纲-->
-          <ul class="list freexf-courselist" ng-include="'courseoutline.html'"></ul>
-      </div>
-      <!--end-->
-  </ion-content>
+                  </li>
+                  <li class="item" ng-show="isObjectivesShow">
+                      <h2>教学目标<span>Instructional Objectives</span></h2>
+                      <div class="jiaoxuemubiao" id="jiaoxuemubiao">
+
+                          <p>
+                              {{b}}
+                          </p>
+                      </div>
+                  </li>
+                  <li class="item" ng-show="isIntroductionShow">
+                      <h2>教材介绍<span>Textbook Introduction</span></h2>
+                      <div class="jiaoxuejianjie" id="jiaoxuejianjie">
+                          <p>
+                              {{c}}
+                          </p>
+                      </div>
+                  </li>
+                  <li class="item" ng-show="isAdvantageShow">
+                      <h2>课程优势<span>Course Advantage</span></h2>
+                      <div class="kechengyoushi" id="kechengyoushi">
+
+                          <p>
+                              {{d}}
+                          </p>
+                      </div>
+                  </li>
+                  <li class="item" ng-show="isProfileShow">
+                      <h2>教师简介<span>Teacher Profile</span></h2>
+                      <div class="item item-thumbnail-left">
+
+                          <img src="img/course/lecturer_img.png" image-lazy-src="{{courseDate.teacherPath}}" />
+                          <div class="jiaoshijianjie" id="jiaoshijianjie">
+                              <p>
+                                  {{e}}
+                              </p>
+                          </div>
+                      </div>
+                  </li>
+              </ul>
+          </div>
+      </ion-scroll>
+          <ion-scroll direction='y' scrollbar-y='false' class="grid_height" ng-show="courseoutline">
+              <!--课程大纲-->
+              <div class="freexf-courseoutline ">
+                  <!--课程大纲-->
+                  <ul class="list freexf-courselist" ng-include="'courseoutline.html'"></ul>
+              </div>
+              <!--end-->
+          </ion-scroll>
+
+</ion-content>
 
   <div class="bar bar-footer freexf-buy" ng-hide="buy">
     <button class="title freexf-buy" style="width:100%;margin:0;" ng-click="showAgreement()">立即购买</button>
@@ -144,8 +148,8 @@
       <ul class="list freexfcourseitem">            <!--/*freexfdemoclass 试听课程  freexfcourseitem 课程列表*/-->
         <li class="item item-button-right" ng-init="demo=!buy;end=l.isNoSee&&buy" ng-class="{endclass:end,freexfdemoclass:demo}" ng-repeat="l in o">
           <!--// class： endclass 已学完课程  intheclass 没学完课程  默认未学习-->
-          <p>{{l.minChapter}}</p>
-          <button class="button freexf-play" ng-click="coursedVideoPlay('{{l.videoUrl}}')" ng-init="play=!courseDate.isPermissionCrouse&&!l.isNoFree?true:false" ng-disabled="play" ng-class="{testplay:play}">                    <!--// testplay 禁止播放-->
+          <p  ng-click="coursedVideoPlay('{{l.videoUrl}}')">{{l.minChapter}}</p>
+          <button class="button freexf-play" ng-click="coursedVideoPlay('{{l.videoUrl}}')" ng-init="play=!courseDate.isPermissionCrouse&&!l.isNoFree?true:false" ng-class="{testplay:play}">                    <!--// testplay 禁止播放-->
             <!--<i class="icon freexf-play-outline"></i>-->
           </button>
         </li>
