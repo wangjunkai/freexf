@@ -13,7 +13,6 @@ angular.module('freexf')
         phonecode: '',
         password: '',
         confirmPassword: '',
-        agreement: true,
         labelphone: '输入手机号',
         labelcode: '输入验证码',
         labelphonecode: '输入短信验证码',
@@ -35,19 +34,19 @@ angular.module('freexf')
     $scope.register = function ($event) {
       $scope.authLoad = true;
       var user = angular.extend({}, $scope.user);
-      if (!user.agreement) {
-        $Loading.show({text: '请阅读用户协议!', class: MSGICON.fail});
-      }
-      else{
-        $Loading.show({text: '注册中...', class: MSGICON.load}, false);
-        REGISTER.getModel(user).then(function (req) {
-          var data = req.response.data;
-          $Loading.show({class: data.success ? MSGICON.success : MSGICON.fail, text: data.message}, 1500);
-          if (data.success) {
-            $state.go('login');
-          }
-        })
-      }
+      /*      if (!user.agreement) {
+       $Loading.show({text: '请阅读用户协议!', class: MSGICON.fail});
+       }
+       else{*/
+      $Loading.show({text: '注册中...', class: MSGICON.load}, false);
+      REGISTER.getModel(user).then(function (req) {
+        var data = req.response.data;
+        $Loading.show({class: data.success ? MSGICON.success : MSGICON.fail, text: data.message}, 1500);
+        if (data.success) {
+          $state.go('login');
+        }
+      });
+      /*}*/
     };
 
     //图片验证码

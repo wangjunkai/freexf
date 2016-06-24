@@ -1,14 +1,19 @@
 <ion-view view-title="支付地址">
 
-  <ion-content class="pay address ">
-    <!--<div class="paycontent" ng-show="payOn">
-      <div class="PayState-group">
-        <div class="payOn success">支付成功</div>
-        <p>完成交易,3秒后跳转到我的课程页面哦~</p>
-        <div class="TipLogo"></div>
+  <ion-content class="pay address " >
+      <div class="paycontent" ng-show="payOn">
+          <div class="PayState-group">
+              <div class="payOn success">支付成功</div>
+              <p>完成交易,3秒后跳转至"我的课程"</p>
+              <div class="TipLogo"></div>
+              <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" type="submit"
+                      ng-click="goToMycourse()">
+                  点击跳转
+              </button>
+          </div>
       </div>
-    </div>-->
-    <div class="paycontent">
+    
+    <div class="paycontent" ng-show="payAddress" >
       <div class="PayState-group">
         <div class="payOn success">支付成功</div>
         <p class="tip">本课程有教材可领，</p>

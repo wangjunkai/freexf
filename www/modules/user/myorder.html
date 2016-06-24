@@ -26,7 +26,7 @@
                                     <img src="img/user/order-eg.png" width="100%" image-lazy-src="{{item.image}}" alt="{{item.ProductName}}">
                                 </div>
                                 <div class="courseDetail-words">
-                                <h2>{{item.ProductName}}</h2>                                
+                                <h2>{{item.ProductName}}</h2>
                                 <div class="courseList">
                                     <p class="name" ng-show="item.teachername">●&nbsp;讲师<i>{{item.teachername}}</i></p>
                                     <span class="time">●&nbsp;课程有效期<i>{{item.deadline}}天</i></span>
@@ -35,16 +35,17 @@
                                 </div>
                               </div>
                             </div>
+                            <div ng-click="goOrderDetail(item.orderRowid)">订单详情</div>
                             <div class="btnGrounp" ng-show="item.payOrder">
-                                <button class="button button-stable"  ng-click="delOrderList(item.OrderId)"> 取消订单</button>
+                                <button class="button button-stable"  ng-click="delOrderList(item.orderRowid)"> 取消订单</button>
                                 <button class="button button-assertive" ng-click="gopay(item.ProductId)">付款</button>
 
                             </div>
                             <div class="btnGrounp" ng-show="item.study" >
-                                <button class="button button-stable"  ng-click="goOrderDetail(item.OrderId)" ng-show="item.isDelivery"> 收货地址</button>
+                                <button class="button button-stable"  ng-click="goOrderDetail(item.orderRowid)" ng-show="item.isDelivery"> 收货地址</button>
                                 <button class="button button-balanced" ng-click="goStudy(item.ProductId,'1')">立即学习</button>
                             </div>
-                            <div class="btnGrounp" ng-show="item.redetail"> 
+                            <div class="btnGrounp" ng-show="item.redetail">
                                 <button class="button button-balanced" ng-click="goredetail(item.ProductId)">重新购买</button>
                             </div>
 
@@ -52,7 +53,7 @@
                     </li>
                 </ul>
                 <ion-infinite-scroll ng-if="uppageshow" on-infinite="doRefresh()" distance="1%"> </ion-infinite-scroll>
-                <div ng-hide="uppageshow">{{bottomtext}}</div>
+                <div ng-hide="uppageshow" class="freexf-nullmsg">{{bottomtext}}</div>
             </div>
         </div>
     </ion-content>

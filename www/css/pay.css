@@ -21,10 +21,10 @@
 	background-size: 300px 300px;
 	float:left;
 }
-.pay .PayIcon{	
+.pay .PayIcon{
 	width: 120px;
 	height: 40px;
-	background-position: -1px -452px;	
+	background-position: -1px -452px;
 }
 .pay .PaySuccess,.payOn:before{
 	width:25px;
@@ -56,7 +56,7 @@
 	font-weight: 600;
 	margin-top:57.5px;
 	margin-left: 10px;
-	
+
 }
 .payOn.fail:before{
 	background-position: -27px -435px;
@@ -70,13 +70,13 @@
 	float:left;
 }
 .PayState-group p{
-	text-align: center;	
+	text-align: center;
 	color:#969696;
 	font-size: 12rem;
 	margin-top: 20px;
 }
 .PayState-group .tip{
-	margin: 0px;	
+	margin: 0px;
 }
 .PayState-group .tip:last-child{
 	margin-bottom: 10px;
@@ -96,7 +96,7 @@
 	background-position: -1px -1px;
 	margin-left:35px;
 	margin-top:42px;
-	
+
 }
 .paycontent{
 	clear: both;

@@ -12,32 +12,66 @@
   <meta content="telephone=no" name="format-detection">
 
   <title></title>
-  <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-  <link href="css/freexf.css" rel="stylesheet">
-  <link href="css/course.css" rel="stylesheet">
-  <link href="css/home.css" rel="stylesheet">
-  <link href="css/member.css" rel="stylesheet">
-  <link href="css/pay.css" rel="stylesheet">
-  <link href="css/student.css" rel="stylesheet">
-  <link href="css/user.css" rel="stylesheet">
-  <link href="css/video.css" rel="stylesheet">
-  <link href="css/set.css" rel="stylesheet">
+  <style type="text/css">
+    ng-cloak {
+      display: none;
+    }
+
+    #doyoo_panel {
+      display: none
+    }
+  </style>
+  <link href="lib/ionic/css/ionic.min.css" rel="stylesheet">
+  <script type="text/javascript">
+    window.hostType = 1;
+    (function () {
+      var headEl = document.getElementsByTagName('head')[0], sync = true;
+      var css = {
+        0: ['css/freexf.css', 'css/course.css', 'css/home.css', 'css/pay.css',
+          'css/student.css', 'css/user.css', 'css/video.css', 'css/set.css', 'css/member.css'],
+        1: ['css/freexf-concat-8c62337402.min.css']
+      };
+      var js = {
+        0: [],
+        1: ['http://lead.soperson.com/20001079/10055583.js']
+      };
+      for (var i = 0, j = css[window.hostType]; i < j.length; i++) {
+        addTag('link', {rel: 'stylesheet', href: j[i] + '?v=' + (new Date()).getTime(), type: 'text/css'});
+      }
+      for (var q = 0, w = js[window.hostType]; q < w.length; q++) {
+        addTag('script', {src: w[q]}, sync);
+      }
+
+      function addTag(name, attributes, sync) {
+        var el = document.createElement(name),
+          attrName;
+
+        for (attrName in attributes) {
+          el.setAttribute(attrName, attributes[attrName]);
+        }
+        sync ? document.write(outerHTML(el)) : headEl.appendChild(el);
+      }
+
+      function outerHTML(node) {
+        // if IE, Chrome take the internal method otherwise build one
+        return node.outerHTML || (function (n) {
+            var div = document.createElement('div'), h;
+            div.appendChild(n);
+            h = div.innerHTML;
+            div = null;
+            return h;
+          })(node);
+      }
+    })();
+  </script>
+
 </head>
 <body>
-<!--	头部模块加载-->
-<!--
-<ion-nav-bar class="tabs-icon-top tabs-color-active-positive" ></ion-nav-bar>
--->
-  <ion-nav-bar class="freexf-bar-lightgray">
-    <ion-nav-back-button default-nav-back-button ng-click="goBack()" class="button-clear">
-    </ion-nav-back-button>
-  </ion-nav-bar>
-  <!--加载ionic tab-->
-  <ion-nav-view></ion-nav-view>
 
+<ion-nav-view>
+</ion-nav-view>
 <!--require按需加载js控件-->
 <script data-main="config.js" src="lib/requirejs/require.js"></script>
-<script type="text/javascript" charset="utf-8" src="http://lead.soperson.com/20001079/10055583.js"></script>
 
 </body>
 

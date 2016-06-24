@@ -44,10 +44,10 @@ var paths = {
   img_sprite: 'img/sprite/*.png',
   img: 'img/*',
   js: 'js/*.js',
-  css: 'css/*.css',
+  css: 'www/css/*.css',
   dist: 'dist',
   dist_js: 'dist/js',
-  dist_css: 'dist/css',
+  dist_css: 'www/css/dist/*.min.css',
   dist_img: 'dist/img',
   dist_maps: ''
 };
@@ -79,7 +79,7 @@ gulp.task('uglify', function () {
 //css压缩
 gulp.task('minify', function () {
   return gulp.src(paths.css)
-    .pipe(changed(paths.dist_css))
+    .pipe(changed('www/css/dist'))
     .pipe(sourcemaps.init())
     .pipe(autoprefixer({
       browsers: ['> 1%'],
@@ -89,7 +89,7 @@ gulp.task('minify', function () {
     .pipe(rev())
     .pipe(minify())
     .pipe(sourcemaps.write(paths.dist_maps))
-    .pipe(gulp.dest(paths.dist_css))
+    .pipe(gulp.dest('www/css/dist'))
 });
 //图片压缩
 gulp.task('imagemin', function () {
@@ -109,13 +109,15 @@ gulp.task('livereload', function () {
 });
 //合并文件
 gulp.task('concat', function () {
-  return gulp.src(paths.dist_js)
-    .pipe(concat('libs.js'))
-    .pipe(gulp.dest(paths.dist))
+  return gulp.src(paths.dist_css)
+    .pipe(concat('freexf-concat.css'))
+    .pipe(rename({suffix: '.min'}))
+    .pipe(rev())
+    .pipe(gulp.dest('www/css'))
 });
 //清理文件
 gulp.task('clean', function () {
-  return gulp.src([paths.dist_maps, paths.dist], {
+  return gulp.src([paths.dist_css], {
       read: false
     })
     .pipe(clean())

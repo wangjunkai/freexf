@@ -89,7 +89,7 @@
   display: inline-block;
   color: #323232;
 
-  width:65%;
+  width: 65%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -231,23 +231,14 @@
 .freexf-startplay button {
   width: 75px;
   height: 75px;
-  border-radius: 50%;
-  border: 2px #DDDDDD solid;
-  background: rgba(0, 0, 0, 0.1);
-  color: #ddd;
-  /*font-size: 24px;*/
   margin-top: 18%;
+  background: url(../img/publicbg/course.png) no-repeat;
+  background-position: -218px -9px;
+  background-size: 300px auto;
 }
 
-.freexf-startplay button i {
-  position: relative;
-  left: 5px;
-}
-
-.freexf-startplay .button .icon:before,
-.freexf-startplay .button .icon-left:before,
-.freexf-startplay .button .icon-right:before {
-  font-size: 60px;
+.freexf-startplay .button.activated {
+  background-color: rgba(0, 0, 0, 0);
 }
 
 img.freexf-blur {
@@ -262,13 +253,11 @@ img.freexf-blur {
 }
 
 .freexf-Backdrop button {
-  width: 35%;
-  height: 22%;
+  width: 30%;
+  height: 20%;
   font-size: 15.6rem;
-  font-weight: bold;
-  background: rgba(0, 0, 0, 0);
-  color: #1ab554;
-  border: 2px #1ab554 solid;
+  background: #1ab554;
+  color: #fff;
   margin-top: 4%;
 }
 
@@ -299,7 +288,7 @@ img.freexf-blur {
   border: none;
   font-size: 17rem;
   position: fixed;
-  bottom: 0;
+  bottom: 44px;
   left: 0;
   z-index: 999;
 }
@@ -374,7 +363,6 @@ img.freexf-blur {
   background-position: -86px 0px;
 }
 
-
 .freexfcourseitem .item {
   margin-left: 40px;
   position: relative;
@@ -385,7 +373,6 @@ img.freexf-blur {
   padding-top: 20px;
   padding-bottom: 20px;
 }
-
 
 .freexfcourseitem .item:first-of-type p {
   margin-bottom: 0;
@@ -509,7 +496,6 @@ img.freexf-blur {
   height: 23px;
 }
 
-
 .freexf-collect:before {
   display: inline-block;
   content: "";
@@ -542,7 +528,6 @@ img.freexf-blur {
   left: -6px;
 }
 
-
 .freexf-courseoutline {
   background: #fff;
   padding: 20px 0;
@@ -551,8 +536,9 @@ img.freexf-blur {
 /*购买协议*/
 
 .freexf-agreement.active {
+  position: fixed !important;
   background: rgba(0, 0, 0, .25);
-    z-index:9999999;
+  z-index: 9999999;
 }
 
 .freexf-agreement.active .popup {
@@ -585,6 +571,10 @@ img.freexf-blur {
   padding: 0 2%;
   max-height: 300px;
   overflow-y: scroll;
+}
+
+.freexf-agreement p {
+  color: #323232;
 }
 
 .freexf-agreement .freexf-agreement h5 {
@@ -691,7 +681,6 @@ img.freexf-blur {
   position: relative;
 }
 
-
 .freexf-classmodule-header-nav > div {
   display: inline-block;
   height: 30px;
@@ -700,12 +689,11 @@ img.freexf-blur {
   color: #969696;
 }
 
-
 .freexf-classmodule-header-nav .freexf-coursesort {
   position: absolute;
   right: 5px;
-  width:51%;
-  text-align:center;
+  width: 51%;
+  text-align: center;
 }
 
 .freexf-coursesort > div {
@@ -723,7 +711,6 @@ img.freexf-blur {
   position: relative;
   margin-left: 15%;
 }
-
 
 .freexf-coursesort > div div:first-of-type {
   margin-left: 0;
@@ -749,7 +736,6 @@ img.freexf-blur {
   right: 5px;
 }*/
 
-
 .freexf-coursesort > div div:nth-child(1).active:after,
 .freexf-coursesort > div div:nth-child(2).active:after,
 .freexf-coursesort > div div:nth-child(3).active:after {
@@ -770,11 +756,9 @@ img.freexf-blur {
   background-position: -65px -60px !important;
 }
 
-
 .freexf-coursesort > div div:nth-child(3).activeasc:after {
   background-position: -65px -30px !important;
 }
-
 
 .freexf-coursesort > div div:nth-child(1):after,
 .freexf-coursesort > div div:nth-child(2):after,
@@ -823,7 +807,6 @@ img.freexf-blur {
   font-size: 12rem;
 }
 
-
 .freexf-classmodule .item p:last-of-type {
   margin-top: 4px;
 }
@@ -850,7 +833,7 @@ img.freexf-blur {
   height: auto;
   max-width: 30%;
   max-height: none;
-  background-color: #d2d2d2;
+  background: url("../img/publicbg/null_bg320_180.png") no-repeat left top/cover;
   font-size: 10rem;
 }
 
@@ -879,7 +862,6 @@ img.freexf-blur {
   float: left;
 }
 
-
 .freexf-classmodule-header-nav .freexf-languageclass ul li a {
   line-height: 35px;
   text-align: left;
@@ -890,7 +872,6 @@ img.freexf-blur {
 }
 
 .freexf-classmodule-header-nav div.active,
-
 .freexf-classmodule-header-nav .freexf-languageclass ul li.active {
   color: #1AB455;
 }
@@ -943,9 +924,16 @@ img.freexf-blur {
   padding: 0 15px;
   color: #878787;
 }
+
 .freexf-scroll-courseoutline {
-    height:398px;
+  height: 398px;
 }
 
+.hasfooter {
+  bottom: 44px;
+}
 
+.freexf-classmodule {
+  margin-bottom: 0;
+}
 

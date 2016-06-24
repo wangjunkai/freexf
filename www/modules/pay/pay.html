@@ -19,16 +19,15 @@
                 <div>下单时间：<span>{{SetOrderTime}}</span></div>
             </div>
       <div class="PayState" ng-hide="mianfeiShow">
-        <div class="PayState-group">
+        <div class="PayState-group" ng-hide="payhide">
           <span class="PayIcon"></span>
           <span class="PaySuccess"></span>
         </div>
       </div>
     </div>
-    <div class="freexf-padding-24">
+    <div ng-hide="payhide">
       <div ng-show="mianfeiShow">免费课程,在3秒后自动跳转,或点击以下按钮</div>
-      <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-click="goOrderDetail()"
-              ng-show="mianfeiShow">完成支付
+      <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-click="goOrderDetail()" ng-show="mianfeiShow">完成支付
       </button>
       <a href="/pay/Alipay/default.aspx?OrderId={{payohref}}">
         <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-hide="mianfeiShow">确认支付

@@ -23,7 +23,8 @@ angular.module('freexf')
         if (res.response.data) {
           $timeout(function () {
             $state.go('set');
-
+            $scope.idea.as_content = '';
+            $scope.idea.as_mobile = '';
           }, 1000)
 
 

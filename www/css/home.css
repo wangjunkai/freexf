@@ -94,13 +94,12 @@
 
 .freexf-slide img {
   width: 100%;
-  background-color: #dcdcdc;
+  background: url("../img/publicbg/null_bg1125_396.png") no-repeat left top/cover;
 }
 
 .freexf-padding-24 {
   padding: 10px 12px !important;
 }
-
 
 .freexf-padding-left-5 {
   padding-left: 5px !important;
@@ -196,21 +195,25 @@
   font-size: 13rem;
   content: "\f372";
 }
-.freexf-agreement{
+
+.freexf-agreement {
   font-size: 13px;
   color: #1ab554;
 }
+
 .freexf-checkbox .label-checkbox input:checked:before {
   color: #1ab554;
   content: "\f373";
 }
-.freexf-bottom-register{
-  font-size:13rem;
+
+.freexf-bottom-register {
+  font-size: 13rem;
   color: #1ab554;
   text-align: center;
   margin-top: 80px;
   display: block;
 }
+
 .freexf-clear:after {
   display: table;
   content: '';
@@ -325,6 +328,7 @@
 
 .freexf-jinpin .jinpin-bottom img {
   min-height: inherit;
+  background: url("../img/publicbg/null_bg1053_243.png") no-repeat left top/cover;
 }
 
 .freexf-title {
@@ -398,6 +402,10 @@
   width: 100%;
 }
 
+.freexf-jinpin .lcol img {
+  background: url("../img/publicbg/null_bg346_398.png") no-repeat left top/cover;
+}
+
 .freexf-jinpin .rcol {
   float: left;
   width: 100%;
@@ -415,7 +423,7 @@
 .freexf-jinpin img, .freexf-home-table img {
   width: 100%;
   vertical-align: bottom;
-  background-color: #d2d2d2;
+  background: url("../img/publicbg/null_bg320_180.png") no-repeat left top/cover;
 }
 
 .freexf-home-table {
@@ -614,7 +622,7 @@ ion-tabs.freexf-tabs .tab-item.activated .freexf-icon-user {
 }
 
 .freexf-slide .slider-pager {
-  bottom: 15px;
+  bottom: 0;
 }
 
 .freexf-slide .slider-pager .slider-pager-page {

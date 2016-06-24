@@ -5,6 +5,9 @@ angular.module('freexf')
       var payAddress = PayAddress(ENV._api.__orderpay);
       $scope.OrderId = $stateParams.OrderId;
       $scope.userData = AUTH.FREEXFUSER.data;
+      //切换是否有教材地址的成功提示内容
+      $scope.payAddress = false;
+      $scope.payOn = false;
       function addressModel() {
           this.address = {
               DeliveryAddress: '',
@@ -18,6 +21,16 @@ angular.module('freexf')
       //获取对应订单的列表
       payAddress.getModel({ "Sign": $scope.userData.Sign, "OrderId": $scope.OrderId, "studentId": $scope.userData.rowId }).then(function (res) {          
           $scope.payAddress = res.response.data[0] || new addressModel();
+          if ($scope.payAddress.IsDelivery == true) {
+              $scope.payAddress = true;
+              $scope.payOn = false;
+          } else {
+              $scope.payOn = true;
+              $scope.payAddress = false;
+          }
+          $timeout(function () {
+              location.href = "#/mycourse";
+          }, 3000)
           
       });
       //填写地址
@@ -34,6 +47,8 @@ angular.module('freexf')
               }
           });
       }
-      
+      $scope.goToMycourse = function () {
+          location.href = "#/mycourse";
+      }
   });
 

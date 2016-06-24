@@ -1,6 +1,4 @@
 <ion-view coures-scroll view-title="课程详情">
-
-
   <ion-header-bar class="freexf-bar lightgray">
     <div class="bar-left">
       <button class="button-clear freexf-back freexf-left" default-nav-back-button ng-click="goBack()">
@@ -12,22 +10,18 @@
       <button class="button-clear freexf-consult"><span>咨询</span></button>
     </div>
   </ion-header-bar>
-
-
-  <ion-content id="viewContent">     <!--  class="has-footer" -->
-
+  <ion-content lazy-scroll id="viewContent" ng-class="{hasfooter:!buy}" class="has-footer">     <!--  class="has-footer" -->
     <div class="item item-image" style="min-height:200px;" id="headerCourse">
       <img src="img/course/course_img.jpg" ng-hide="videShow" image-lazy-src="{{courseDate.cover}}"  alt="{{courseDate.courseName}}"/>
       <!--class="freexf-blur" 模糊效果 -->
       <!--背景层已购买-->
-      <div class="freexf-Backdrop" ng-show="courseDate.isPermissionCrouse" ng-hide="videShow">
+      <div class="freexf-Backdrop" ng-show="isbuy">
         <p>您还没有学习该课程</p>
         <button class="button" ng-click="coursedVideoPlay(outlineList[0][0].videoUrl)">开始学习</button>
       </div>
       <!--未购买-->
-      <div class="freexf-startplay" ng-hide="courseDate.isPermissionCrouse||videShow">
+      <div class="freexf-startplay" ng-show="nobuy">
         <button class="button" ng-click="coursedVideoPlay(outlineList[0][0].videoUrl)">
-          <i class="icon ion-ios-play"></i>
         </button>
       </div>
       <!--收藏-->
@@ -35,7 +29,7 @@
         <i class="icon ion-ios-collect"></i>
       </button>
       <div class="video-box" ng-show="videShow">
-        <video id="videoplay" style="width: 100%;" controls="controls" autoplay>
+        <video id="videoplay" style="width:100%;position:relative;z-index:10;" controls="controls" autoplay>
           <source id="vpmp4" src="" type='video/mp4'>
         </video>
       </div>
@@ -76,34 +70,28 @@
                   <li class="item" ng-show="isCourseShow">
                       <h2>课程介绍<span>Course Introduction</span></h2>
                       <div class="kechengjianjie" id="kechengjianjie">
-                          <p>
-                              {{a}}
+                          <p ng-bind-html="a">
                           </p>
                       </div>
                   </li>
                   <li class="item" ng-show="isObjectivesShow">
                       <h2>教学目标<span>Instructional Objectives</span></h2>
                       <div class="jiaoxuemubiao" id="jiaoxuemubiao">
-
-                          <p>
-                              {{b}}
+                          <p ng-bind-html="b">
                           </p>
                       </div>
                   </li>
                   <li class="item" ng-show="isIntroductionShow">
                       <h2>教材介绍<span>Textbook Introduction</span></h2>
                       <div class="jiaoxuejianjie" id="jiaoxuejianjie">
-                          <p>
-                              {{c}}
+                          <p ng-bind-html="c">
                           </p>
                       </div>
                   </li>
                   <li class="item" ng-show="isAdvantageShow">
                       <h2>课程优势<span>Course Advantage</span></h2>
                       <div class="kechengyoushi" id="kechengyoushi">
-
-                          <p>
-                              {{d}}
+                          <p ng-bind-html="d">
                           </p>
                       </div>
                   </li>
@@ -111,10 +99,9 @@
                       <h2>教师简介<span>Teacher Profile</span></h2>
                       <div class="item item-thumbnail-left">
 
-                          <img src="img/course/lecturer_img.png" image-lazy-src="{{courseDate.teacherPath}}" />
+                          <img src="{{courseDate.teacherPath}}" />
                           <div class="jiaoshijianjie" id="jiaoshijianjie">
-                              <p>
-                                  {{e}}
+                              <p ng-bind-html="e">
                               </p>
                           </div>
                       </div>

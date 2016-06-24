@@ -4,7 +4,7 @@
   angular.module('freexf')
     //配置api路径
     .constant('ENV', {
-      '_timeout': 5000,
+      '_timeout': 15000,
       '_base': '/MFreeXFapi/student',
       '_api': {
         __GetIndexGather: 'GetIndexGather',
@@ -16,6 +16,7 @@
         __recommendcourse: 'recommendcourse',//推荐课程（暂无页面）
         __feedback: "feedback", //意见反馈
         __aboutus: 'aboutus', //关于我们
+        __faq:'MobileFaq',
         __myfavorite: 'myfavorite',  //我的收藏课程
         __addfavorite: 'addfavorite',    //收藏
         __delfavorite: 'delfavorite',    //取消收藏
@@ -27,7 +28,6 @@
         __addorderaddress: 'addorderaddress',//提交地址
         __myAccountCrouse: 'myAccountCrouse',  //账户中心
         __UpdateNewValue: 'UpdateNewValue',//修改个人信息
-        __IsFlowerClass: 'IsFlowerClass',
         __addflower: 'addflower',
         __removeflower: 'removeflower'
       }
@@ -225,6 +225,16 @@
         return new feedBack(api);
       }
     })
+       .factory('MobileFaq', function (ENV, freexfRestAngular, baseRestAngular) {
+           function MobileFaq(api) {
+               baseRestAngular.call(this, freexfRestAngular, api ? api : ENV._api.__faq)
+           }
+
+           baseRestAngular.extend(MobileFaq);
+           return function (api) {
+               return new MobileFaq(api);
+           }
+       })
     //关于我们
     .factory('aboutUs', function (ENV, freexfRestAngular, baseRestAngular) {
       function aboutUs(api) {
@@ -355,17 +365,6 @@
       baseRestAngular.extend(MyAccountCrouseRepository);
       return function (api) {
         return new MyAccountCrouseRepository(api);
-      }
-    })
-    //判断是否献花
-    .factory('IsFlowerClass', function (ENV, freexfRestAngular, baseRestAngular) {
-      function IsFlowerClass(api) {
-        baseRestAngular.call(this, freexfRestAngular, api ? api : ENV._api.__IsFlowerClass)
-      }
-
-      baseRestAngular.extend(IsFlowerClass);
-      return function (api) {
-        return new IsFlowerClass(api);
       }
     })
     //献花

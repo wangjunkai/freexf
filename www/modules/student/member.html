@@ -15,7 +15,8 @@
       <div class="MyAcc-icon" ng-model="ImgBoxShow" ng-click="ChangeUserImg()" ng-style="userImage"></div>
       <div class="UpdateName">
         <div class="Length">
-          <input class="name" type="text" placeholder="您还没有昵称哟!" ng-model="myuser.nickname" id="updateUserName" ng-blur="changeName(true)" />
+          <input class="name" type="text" placeholder="您还没有昵称哟!" ng-model="myuser.nickname" id="updateUserName"
+                 ng-blur="changeName(true)"/>
           <span class="edit" ng-click="changeName(false)"></span>
         </div>
       </div>
@@ -49,17 +50,15 @@
           </div>
         </div>
       </div>
-      <div class="share" ng-click="openModal()">
+      <!--<div class="share" ng-click="openModal()">
         <div class="row1 first">
           <span>邀</span>
-          <!--<span>好</span>-->
         </div>
         <div class="row1">
           <span>请</span>
-          <!--<span>友</span>-->
         </div>
         <em></em>
-      </div>
+      </div>-->
       <script id="showLink" type="text/ng-template">
         <div class="modal-backdrop-bg sharebox"></div>
         <ion-modal-view class="newModal">
@@ -104,8 +103,11 @@
       <h2>学习进度</h2>
       <ion-scroll direction='x' scrollbar-x='false'>
         <div class="row course">
+          <div class="col col-48" ng-show="!MyCourse||MyCourse.length<=0">
+            您目前没有学习的课程
+          </div>
           <div class="col col-48" ng-repeat="m in MyCourse" ng-click="goStudy(m.ProductId,'1')">
-            <img src="img/user/order-eg.png" image-lazy-src="{{m.cover}}" width="100%" alt="{{m.ClassName}}">
+            <img image-lazy-src="{{m.cover}}" width="100%" alt="{{m.ClassName}}">
             <div class="content">
               <p>上次观看至
                 <font>{{m.ClassName}}</font>
@@ -117,7 +119,6 @@
                   </div>
                   <span>完成度<i>{{m.Percent}}%</i></span>
                 </div>
-
               </div>
             </div>
           </div>
@@ -130,10 +131,13 @@
       <h2>课程推荐</h2>
       <ion-scroll direction='x' scrollbar-x='false'>
         <div class="row course">
-          <div class="col col-48" ng-repeat="r in recommendlist" ng-click="goStudy(r[0].productID)">
-            <img src="img/user/order-eg.png" image-lazy-src="{{r[0].coverurl}}" width="100%" alt="{{m.cover}}">
+          <div class="col col-48" ng-show="!recommendlist||recommendlist.length<=0">
+            您目前没有推荐的课程
+          </div>
+          <div class="col col-48" ng-repeat="r in recommendlist" ng-click="goStudy(r.productID)">
+            <img image-lazy-src="{{r.coverurl}}" width="100%" alt="{{r.cover}}">
             <div class="content">
-              <p>{{r[0].productName}}</p>
+              <p>{{r.productName}}</p>
             </div>
           </div>
 

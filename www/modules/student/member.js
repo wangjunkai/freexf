@@ -12,9 +12,10 @@ angular.module('freexf', ['ionic'])
         sex: '',
         name: '',
         mobile: ''
-      }
+      };
       return this.my;
-    };
+    }
+
     $scope.myuser = new myuserModel();
     $scope.userImformation = new myuserModel();
 
@@ -51,7 +52,7 @@ angular.module('freexf', ['ionic'])
 
     getMyAccount.getModel({'Sign': user.sign, 'studentId': user.rowid}).then(function (res) {
       $scope.recommendlist = res.response.data.ls_recommendlist;
-      $scope.MyCourse = res.response.data.ls_MyCourse;
+      $scope.MyCourse = res.response.data.ls_MyCourses;
       autoInput();
     });
     //修改名称input自适应宽度
@@ -64,7 +65,7 @@ angular.module('freexf', ['ionic'])
         $(name.val().split('')).each(function (index, value) {
           l = l + parseFloat((/[\u4E00-\u9FA5]/.test(value) ? a / 1 : a / 2).toFixed(1))
         });
-        name.val()? name.width(l):name.removeAttr('style');
+        name.val() ? name.width(l) : name.removeAttr('style');
       };
       name.on('input', function () {
         loginInput();
@@ -111,7 +112,6 @@ angular.module('freexf', ['ionic'])
           $scope.ImgBoxShow = false;
           $scope.canPopup = false;
         }
-        ;
       });
     };
     //男生头像
@@ -129,7 +129,6 @@ angular.module('freexf', ['ionic'])
           $scope.ImgBoxShow = false;
           $scope.canPopup = false;
         }
-        ;
       });
     };
     //小鹿头像
@@ -142,15 +141,14 @@ angular.module('freexf', ['ionic'])
       };
       UpdataValue.postModel({'freexfPara': $scope.userImformation.sex, 'NewValue': ""}).then(function (res) {
         //隐藏图片框
-        if (ls_return = "success") {
-          $scope.ImgBoxShow = false;
-          $scope.canPopup = false;
-        }
-        ;
+        //if (ls_return = "success") {
+        $scope.ImgBoxShow = false;
+        $scope.canPopup = false;
+        //}
       });
     };
-    $scope.goStudy = function (courseId,state) {
-      $state.go('coursedetail', {courseId: courseId,state:state});
+    $scope.goStudy = function (courseId, state) {
+      $state.go('coursedetail', {courseId: courseId, state: state});
     };
 
     //邀请
@@ -160,24 +158,25 @@ angular.module('freexf', ['ionic'])
       $scope.modal = modal;
     });
     $scope.openModal = function () {
-      $scope.modal.show()
-      window.yqmurl = myUrl
+      $scope.modal.show();
+      window.yqmurl = myUrl;
       yaoqingimg(window.yqmurl);
       if (myUrl == "") {
-          $scope.shareUrl = "http://www.freexf.com/";
-          window.yqmurl = "http://www.freexf.com/";
+        $scope.shareUrl = "http://www.freexf.com/";
+        window.yqmurl = "http://www.freexf.com/";
       }
     };
     function yaoqingimg(yqmurl) {
-      if (!$("#code").hasClass('on')) {
-        $("#code").addClass("on");
-        $("#code").qrcode({
+      var code = $("#code");
+      if (!code.hasClass('on')) {
+        code.addClass("on");
+        code.qrcode({
           width: 125, //宽度
           height: 125, //高度
-          text: yqmurl,
+          text: yqmurl
         });
       }
     }
-  })
+  });
 
 

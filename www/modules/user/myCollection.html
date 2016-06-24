@@ -7,41 +7,42 @@
     </div>
     <div class="title">我的收藏</div>
   </ion-header-bar>
-	<ion-content lazy-scroll class="myCollection">
-	    <div class="content  ionic-pseudo">
+  <ion-content lazy-scroll class="myCollection">
+    <div class="content  ionic-pseudo">
 
-	      <div class="list">
-			<ul>
-				<li class="orderList" ng-repeat="f in myfavorite">
-					<div class="OrderDetail">
-						<div class="courseDetail-list">
-							<!--此处添加floor，即添加过期浮层-->
-							<div class="image" >
-								<img src="img/user/order-eg.png" image-lazy-src="{{f.cover}}"  width="100%">
-							</div>
-							 <div class="courseDetail-words">
-					        	<h2>{{f.ClassName}}</h2>
-					        	<div class="courseList">
-					        		<p class="name" ng-show="f.teachername">●&nbsp;讲师<i>{{f.teachername}}</i></p>
-					        		<span class="time">●&nbsp;课程有效期<i>{{f.validity}}天</i></span>
-					        		<span class="count">●&nbsp;<i>{{f.classhours}}</i>课时</span>
-					        		<p class="xf"><font>{{f.price|xufen}}</font><span ng-show="{{f.price| xufenshow}}">学分</span></p>
-					        	</div>
-					   		 </div>
-						</div>
+      <div class="list">
+        <ul>
+          <li class="orderList" ng-repeat="f in myfavorite">
+            <div class="OrderDetail">
+              <div class="courseDetail-list" ng-click="goStudy(f.ClassID,'1')">
+                <!--此处添加floor，即添加过期浮层-->
+                <div class="image">
+                  <img src="img/user/order-eg.png" image-lazy-src="{{f.cover}}" width="100%">
+                </div>
+                <div class="courseDetail-words">
+                  <h2>{{f.ClassName}}</h2>
+                  <div class="courseList">
+                    <p class="name" ng-show="f.teachername">●&nbsp;讲师<i>{{f.teachername}}</i></p>
+                    <span class="time">●&nbsp;课程有效期<i>{{f.validity}}天</i></span>
+                    <span class="count">●&nbsp;<i>{{f.classhours}}</i>课时</span>
+                    <p class="xf"><font>{{f.price|xufen}}</font><span ng-show="{{f.price| xufenshow}}">学分</span></p>
+                  </div>
+                </div>
+              </div>
 
-					    <div class="btnGrounp">
-							<button class="button button-stable" ng-click="delfavorite(f.ClassID)"> 取消收藏</button>
-							<button class="button button-balanced" ng-click="goStudy(f.ClassID,'1')" ng-init="buy=f.IsBoughtCrouse=='False'?false:true" ng-class="{buy:!buy}">{{f.IsBoughtCrouse|IsBought}}</button>
-						</div>
-					</div>
-		        </li>
+              <div class="btnGrounp">
+                <button class="button button-stable" ng-click="delfavorite(f.ClassID)"> 取消收藏</button>
+                <button class="button button-balanced" ng-click="goStudy(f.ClassID,'1')" ng-init="buy=f.IsBoughtCrouse=='False'?false:true" ng-class="{buy:!buy}">
+                  {{f.IsBoughtCrouse|IsBought}}
+                </button>
+              </div>
+            </div>
+          </li>
 
-			</ul>
+        </ul>
+        <ion-infinite-scroll ng-if="uppageshow" on-infinite="doRefresh()" distance="1%"></ion-infinite-scroll>
+        <div ng-hide="uppageshow" class="freexf-nullmsg">{{bottomtext}}</div>
+      </div>
 
-            <ion-infinite-scroll ng-if="uppageshow" on-infinite="doRefresh()" distance="1%"> </ion-infinite-scroll>
-            <div ng-hide="uppageshow" style="text-align:center;">{{bottomtext}}</div>
-	      </div>
-
-	</ion-content>
+  </ion-content>
 </ion-view>

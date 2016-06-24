@@ -1,111 +1,139 @@
-.setlist li{
-  border-top:1px solid #eeeeee;
+.setlist li {
+  border-top: 1px solid #eeeeee;
   background-color: #fff;
 }
-.set,.freexf-contact,.set .scroll{
-  width:100%;
-  height:100%;
+
+.set, .freexf-contact, .set .scroll {
+  width: 100%;
+  height: 100%;
 }
-.set{
+
+.set {
   background-color: #eee;
 }
-.set .list{
+
+.set .list {
   position: relative;
-  z-index:0;
+  z-index: 0;
 }
-.set a{
+
+.set a {
   font-size: 14rem;
-  color:#323232;
+  color: #323232;
   display: block;
-  padding:16px;
+  padding: 16px;
 }
-.set .changepassword{
+
+.set .changepassword {
   margin: 5px auto;
   background-color: #fff;
 }
-.quit{
-  margin:20px 12px;
+
+.quit {
+  margin: 20px 12px;
 }
-.quitbtn,.quitbtn:hover{
+
+.quitbtn, .quitbtn:hover {
   background-color: #ea4c00;
-  color:#ffffff;
+  color: #ffffff;
 }
-.freexf-contact{
+
+.freexf-contact {
   position: absolute;
-  z-index:6;
-  top:0;
-  background:rgba(0,0,0,0.6);
+  z-index: 6;
+  top: 0;
+  background: rgba(0, 0, 0, 0.6);
 }
-.freexf-contact .phonecontent{
-  width:94%;
-  margin:12px;
+
+.freexf-contact .phonecontent {
+  width: 94%;
+  margin: 12px;
   position: absolute;
-  top:30%;
+  top: 30%;
   background-color: #fff;
 }
-.freexf-contact .phone{
+
+.freexf-contact .phone {
   font-size: 20rem;
   line-height: 80px;
   border-bottom: 1px solid #999;
   text-align: center;
 }
-.freexf-contact a{
-  width:49%;
+
+.freexf-contact a {
+  width: 49%;
   text-align: center;
   display: inline-block;
 }
-.freexf-contact .cancel{
+
+.freexf-contact .cancel {
   color: #ea4c00;
-  border-right:1px solid #999;
+  border-right: 1px solid #999;
 }
-.freexf-contact .dial{
+
+.freexf-contact .dial {
   color: #1ab554;
-  height:50px;
+  height: 50px;
 }
 
 /**/
-.ideafeedback{
-  padding-top:1px;
-  height:100%;
+.ideafeedback {
+  padding-top: 1px;
+  height: 100%;
 }
-.ideafeedback .freexf-padding-24,.ideafeedback .scroll{
+
+.ideafeedback .freexf-padding-24, .ideafeedback .scroll {
   background-color: #fff;
 }
-.setform{
-  margin:12px;
-  height:100%;
+
+.setform {
+  margin: 12px;
+  height: 100%;
 }
-.setform label{
+
+.setform label {
   display: block;
-  margin:-12px 0 15px 0;
-  padding-top:23px;
+  margin: -12px 0 15px 0;
+  padding-top: 23px;
 }
-.setform .describe,.setform .phonenumber{
-  width:100%;
-  border:1px solid #aaa;
+
+.setform .describe, .setform .phonenumber {
+  width: 100%;
+  border: 1px solid #aaa;
   border-radius: 2px;
 }
-.describe{
-  resize:none;
+
+.describe {
+  resize: none;
 }
-.setform input[type="text"]{
-  height:46px;
-  margin-bottom:30px;
+
+.setform input[type="text"] {
+  height: 46px;
+  margin-bottom: 30px;
 }
-.setform button{
+
+.setform button {
   background-color: #1ab554;
-  color:#ffffff;
+  color: #ffffff;
 }
 
 /**/
-.aboutus p{
+.aboutus p {
   color: #555;
   font-size: 12rem;
   text-align: left;
 }
-.aboutus .freexf-padding-24{
-  padding-bottom:30px;
+
+.aboutus .freexf-padding-24 {
+  padding-bottom: 30px;
   background-color: #fff;
 }
 
+.logout-set {
+  background-color: #dcdcdc;
+  pointer-events: none;
+}
 
+.logout-set > a {
+  color: #a7a7a7;
+}

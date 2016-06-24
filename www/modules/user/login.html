@@ -10,11 +10,12 @@
   </ion-header-bar>
 
   <ion-content>
-    <form name="loginForm" novalidate>
+    <form name="loginForm">
       <div class="list">
         <label class="item item-input item-floating-label">
           <span class="input-label">输入账号</span>
-          <input type="text" placeholder="输入账号" ng-model="login.phone" required>
+          <input type="text" placeholder="输入账号" ng-model="login.phone" fx-validate="require:phone;format:phone;">
+
         </label>
         <label class="item item-input item-floating-label">
           <span class="input-label">输入密码</span>

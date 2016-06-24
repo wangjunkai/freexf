@@ -131,6 +131,10 @@
   clear: both;
 }
 
+.courseDetail-list .image img, .progress .progress-bar span {
+  display: block
+}
+
 .courseDetail-list .image {
   width: 40%;
   float: left;
@@ -316,8 +320,8 @@
   font-size: 17rem;
 }
 
-.courseDetail-list .image img {
-  display: block;
+.MyAcc-top .UpdateName, .freexf-buttons {
+  position: relative
 }
 
 .myCollection .btnGrounp {
@@ -445,13 +449,13 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 /*填写地址里字的颜色*/
 input.hasPlace::-webkit-input-placeholder,textarea.hasPlace::-webkit-input-placeholder{
-   color: #323232;
+  color: #323232;
 }
 input.hasPlace::-moz-placeholder,textarea.hasPlace::-moz-placeholder{
-     color: #323232;
+  color: #323232;
 }
 input.hasPlace:-ms-input-placeholder,textarea.hasPlace:-ms-input-placeholder {
-    color: #323232;
+  color: #323232;
 }
 
 .forgetpassword .input-label.has-input, .modifypassword .input-label.has-input, .register .input-label.has-input {

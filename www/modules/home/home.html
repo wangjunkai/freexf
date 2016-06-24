@@ -1,4 +1,4 @@
-<ion-view scroll-watch-tab class="home-view">
+<ion-view view-title="首页" scroll-watch-tab class="home-view">
   <ion-header-bar class="freexf-bar write">
     <div class="bar-left">
       <a href="#/coursesearch" class="button-clear freexf-icon-search"></a>
@@ -19,8 +19,10 @@
            class="col zhongxiaoxue">中小学</a>
         <a anchor-tab="anchor-section-duoyuzhong" delegate="myDelegate" animate="true" class="col duoyuzhong">多语种</a>
         <a anchor-tab="anchor-section-kuaiji" delegate="myDelegate" animate="true" class="col kuaiji">会计职业</a>
-        <a anchor-tab="anchor-section-kaoyan" delegate="myDelegate" animate="true" class="col kaoyan">考研</a>
-        <a anchor-tab="anchor-section-xingqu" delegate="myDelegate" animate="true" class="col xingqu">兴趣</a>
+        <a anchor-tab="anchor-section-kaoyan" delegate="myDelegate" animate="true" class="col kaoyan"
+           ng-if="false">考研</a>
+        <a anchor-tab="anchor-section-xingqu" delegate="myDelegate" animate="true" class="col xingqu"
+           ng-if="false">兴趣</a>
       </div>
     </ion-scroll>
   </div>
@@ -28,13 +30,13 @@
 
     <ion-slide-box on-slide-changed="slideHasChanged($index)" class="freexf-slide">
       <ion-slide>
-        <img image-lazy-src="img/home/banner@3x.png">
+        <img image-lazy-src="img/home/banner-2@3x.jpg">
       </ion-slide>
       <ion-slide>
-        <img image-lazy-src="img/home/banner@3x.png">
+        <img image-lazy-src="img/home/banner-2@3x.jpg">
       </ion-slide>
       <ion-slide>
-        <img image-lazy-src="img/home/banner@3x.png">
+        <img image-lazy-src="img/home/banner-2@3x.jpg">
       </ion-slide>
     </ion-slide-box>
     <section class="freexf-hometype">
@@ -79,12 +81,12 @@
 
         <div class="freexf-col">
           <a ng-repeat="jp in home.l_EliteCrouseList" href="#/coursedetail/{{jp.productID}}&" class="rcol">
-            <img image-lazy-src="{{jp.coverurl | decodeUri}}" alt="{{jp.productName}}">
+            <img image-lazy-src="{{jp.coverurl | decodeUri}}">
           </a>
         </div>
       </div>
       <a href="" class="jinpin-bottom">
-        <img image-lazy-src="img/home/big-huodong.png" alt="">
+        <img image-lazy-src="img/home/big-huodong.png">
       </a>
     </section>
     <!--英语-->
@@ -120,7 +122,7 @@
       </div>
     </section>
     <!--考研-->
-    <section id="anchor-section-kaoyan" class="freexf-home-table">
+    <section id="anchor-section-kaoyan" class="freexf-home-table" ng-if="false">
       <h2 class="freexf-title"><i class="title"></i><span>考研</span><a href="#/courseplate/考研&"
                                                                       class="icon has-more"></a></h2>
       <div class="clearfix">
@@ -128,7 +130,7 @@
       </div>
     </section>
     <!--兴趣-->
-    <section id="anchor-section-xingqu" class="freexf-home-table">
+    <section id="anchor-section-xingqu" class="freexf-home-table" ng-if="false">
       <h2 class="freexf-title"><i class="title"></i><span>兴趣</span><a href="#/courseplate/兴趣&"
                                                                       class="icon has-more"></a></h2>
       <div class="clearfix">
@@ -142,7 +144,7 @@
 <script type="text/ng-template" id="homeTable.html">
   <div>
     <a href="#/coursedetail/{{l.productID}}&">
-      <img image-lazy-src="{{l.coverurl}}" alt="{{l.productName}}">
+      <img image-lazy-src="{{l.coverurl}}">
     </a>
   </div>
   <p class="ti">{{l.cover}}</p>

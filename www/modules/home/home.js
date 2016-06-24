@@ -72,7 +72,7 @@
       };
       //{'eliteNum': 3, 'recNum': 4}
       Home.getModel().then(function (res) {
-        $scope.home = res.response.data[0];
+        $scope.home = res.response.data;
         $ionicSlideBoxDelegate.update();
       });
 

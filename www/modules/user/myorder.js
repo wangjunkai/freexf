@@ -4,7 +4,7 @@
 angular.module('freexf')
   .controller('myorder_ctrl', function ($scope, $rootScope, $http, $injector,  $state, $ionicLoading, $timeout, AUTH, ENV, OrderList, DelOrder, $ionicScrollDelegate, DelMyFavoriteRepository) {
       var count = 0;
-      var pageMax = 5;      
+      var pageMax = 5;
       $scope.haveNull = false;
       $scope.uppageshow = false;
       $scope.study = false;
@@ -17,13 +17,13 @@ angular.module('freexf')
       //定义符合页面的orderlist
       var orderlistInfo = function (data) {
           var list = [];
-          for (var i = 0; i < data.length; i++) {              
+          for (var i = 0; i < data.length; i++) {
               var isShow = true;
               if (data[i].IsCanceled == true) {
                   //不显示
                   isShow = false;
               }
-              
+
 
               //定义默认值
               var item = {
@@ -36,16 +36,16 @@ angular.module('freexf')
                   "hour": data[i].hour,
                   "price": data[i].price,
                   "ProductId": data[i].ProductId,
-
-                  //后加自定义属性 ，并给其默认值                		
+                  "orderRowid":data[i].orderRowid,
+                  //后加自定义属性 ，并给其默认值
                   "myVar": "",
                   "study": true,
                   "payOrder": true,
                   "IsCancel": isShow,
                   "goredetail": true
-                  
+
               };
-             
+
 
               //判断是否支付
               if (data[i].ispay == 0) {
@@ -56,7 +56,7 @@ angular.module('freexf')
               }
               else if (data[i].ispay == 1) {
                   if (data[i].IsCanceled.toLowerCase() == "true") {
-                      
+
                       //过期 逻辑
                       item.myVar = "交易过期";
                       item.redetail = true;
@@ -64,7 +64,7 @@ angular.module('freexf')
                       item.payOrder = false;
                   }
                   else {
-                      //播放逻辑				
+                      //播放逻辑
                       item.myVar = "交易成功";
                       item.study = true;
                       item.payOrder = false;
@@ -77,7 +77,7 @@ angular.module('freexf')
       var orderlistitem = OrderList(ENV._api.__orderList);
       orderlistitem.getModel({ "studentId": $scope.userData.rowId, "Sign": $scope.userData.Sign,  "pageIndex": count, "pageMax": pageMax }).then(function (res) {
           var data = res.response.data;
-          
+
           //是否有订单
           if (res == null || res.response == null || res.response.data == null || res.response.data.length < 1) {
               //没有订单，提示一句话
@@ -86,7 +86,7 @@ angular.module('freexf')
           } else {
               $ionicScrollDelegate.scrollTop();
               //分页初始化
-              
+
               count = 0;
               $scope.haveNull = false;
               $scope.orderlist = orderlistInfo(data);
@@ -107,23 +107,24 @@ angular.module('freexf')
           })
       };
       //去学习
-      $scope.goStudy = function (ProductId,state) {          
-          $state.go('coursedetail', { courseId: ProductId,state:state });
-      }
+      $scope.goStudy = function (ProductId,state) {
+          $state.go('coursedetail', { courseId: ProductId, state: state });
+
+      };
       //过期，去详情
       $scope.goredetail = function (ProductId) {
           $state.go('coursedetail', { courseId: ProductId });
-      }
+      };
       //查看订单详情
       $scope.goOrderDetail = function (OrderId) {
           $state.go('payaddress', { OrderId: OrderId });
-      }
-      //支付
+      };
+      //去支付
       $scope.gopay = function (ProductId) {
-          $rootScope.paycourseId = $scope.ProductId;
+          $rootScope.paycourseId = ProductId;
           location.href = "#/pay";
-      }
-        
+      };
+
       //删除订单
       var item;
       var DelOrderList = DelOrder(ENV._api.__delorder);
@@ -131,14 +132,12 @@ angular.module('freexf')
           DelOrderList.postModel({ "Sign": $scope.userData.Sign, "OrderId": OrderId, "studentId": $scope.userData.rowId }).then(function (res) {
             var data = res.response.data;
             $scope.orderlist = orderlistInfo(data);
-            debugger
             if ($scope.userData.Sign == "" && OrderId == "" && $scope.userData.rowId == "") {
-                debugger
                 $scope.orderlist.splice($scope.orderlist.indexOf(item), 1);
             }
             //取消
             $scope.orderlist.splice($scope.orderlist.indexOf(item), 1);
-            
+
             //取消后订单再刷新下页面
             orderlistitem.getModel({ "studentId": $scope.userData.rowId, "Sign": $scope.userData.Sign, "pageIndex": count, "pageMax": pageMax }).then(function (res) {
                 var data = res.response.data;
@@ -152,7 +151,7 @@ angular.module('freexf')
                 var data = res.response.data;
                 $scope.orderlist = orderlistInfo(data);
             });
-      });  
+      });
      };
-      
-  })
+
+  });

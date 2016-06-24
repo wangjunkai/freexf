@@ -13,7 +13,7 @@
         <label for="describe">意见描述</label>
         <textarea type="text" class="describe" id="describe" ng-model="idea.as_content" rows="10" required  ></textarea>
         <label for="phonenumber">手机号码</label>
-        <input type="text" class="phonenumber" id="phonenumber" ng-model="idea.as_mobile" required ng-pattern="/^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57]|99[0-9])[0-9]{8}$/"/>
+          <input id="phonenumber"class="phonenumber"  name="private_phone" placeholder="请输入正确的手机号码" ng-model="idea.as_mobile" ng-pattern="/^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57]|99[0-9])[0-9]{8}$/" required="required" type="text" />
         <button class="button button-block" ng-click="submitidea()" ng-disabled="ideaForm.$invalid">提交</button>
       </div>
     </form>

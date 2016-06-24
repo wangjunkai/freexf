@@ -2,7 +2,7 @@
 
 
 angular.module('freexf')
-  .controller('login_ctrl', function ($scope, $rootScope, $state, $injector, $ionicLoading, $Loading, $timeout, $ionicHistory, AUTH,MSGICON, localStorageService, AuthRepository) {
+  .controller('login_ctrl', function ($scope, $rootScope, $state, $injector, $ionicLoading, $Loading, $timeout, $ionicHistory, AUTH, MSGICON, localStorageService, AuthRepository) {
     var LOGIN = AuthRepository('AjaxLogin.aspx', '/ajax');
 
     function loginModel() {
@@ -24,7 +24,10 @@ angular.module('freexf')
       $Loading.show({class: MSGICON.load, text: '登录中...'}, false);
       LOGIN.getModel(login).then(function (req) {
         var data = req.response.data;
-        $Loading.show({class: data.success ? MSGICON.success : MSGICON.fail, text: data.success ? '登录成功!' : '登录失败!'}, 1500);
+        $Loading.show({
+          class: data.success ? MSGICON.success : MSGICON.fail,
+          text: data.success ? '登录成功!' : '登录失败!'
+        }, 1500);
         if (data.success) {
           $scope.freexfUser = {
             Sign: req.response.data['Sign'],
@@ -35,7 +38,7 @@ angular.module('freexf')
             userLg: true
           };
           $timeout(function () {
-            $ionicHistory.goBack()
+            $ionicHistory.backView() ? $ionicHistory.goBack() : $state.go('tab.home');
           }, 10)
         }
       })

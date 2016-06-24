@@ -71,7 +71,7 @@ angular.module('freexf')
         yzmfalse: {text: '验证码错误!', class: MSGICON.fail},
         fail: {text: '该手机号已存在!', class: MSGICON.success}
       };
-      var parameter = {type: 'sms', mobile: $scope.user.phone, codeyz: $scope.user.code};
+      var parameter = {type: 'sms', mobile: $scope.forget.phone, codeyz: $scope.forget.code};
       PHONE_CODE.getModel(parameter).then(function (req) {
         var data = req.response.data;
         $Loading.show(msg[data], 2000);

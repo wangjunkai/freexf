@@ -6,21 +6,23 @@
 var paths = {
   //配置js路径
   paths: {
-    ionic: 'lib/ionic/js/ionic.bundle',//webapp前端框架
-    oclazyload: 'lib/oclazyload/dist/ocLazyLoad',//按需加载
+    ionic: 'lib/ionic/js/ionic.bundle.min',//webapp前端框架
+    oclazyload: 'lib/oclazyload/dist/ocLazyLoad.min',//按需加载
     imglazyload: 'lib/ionic-image-lazy-load/ionic-image-lazy-load',//图片懒加载
-    restAngular: 'lib/restangular/src/restangular',//ajax
-    localStorage: 'lib/angular-local-storage/dist/angular-local-storage',//
-    jq: 'lib/jquery/dist/jquery',
-    lodash: 'lib/lodash/dist/lodash',//
-    qrcode: 'lib/qrcode/jquery.qrcode.min'//二维码
-    /* angularSanitize: './lib/angular-sanitize/angular-sanitize'*/
+    restAngular: 'lib/restangular/dist/restangular.min',//ajax
+    angularSanitize: 'lib/ionic/js/angular/angular-sanitize.min',
+    localStorage: 'lib/angular-local-storage/dist/angular-local-storage.min',//
+    jq: 'lib/jquery/dist/jquery.min',
+    lodash: 'lib/lodash/dist/lodash.min',//
+    qrcode: 'lib/qrcode/jquery.qrcode.min'
+
   },
   shim: {
     //注入服务至ionic
     'oclazyload': ['ionic'],
     'imglazyload': ['ionic'],
     'restAngular': ['ionic'],
+    'angularSanitize': ['ionic'],
     'localStorage': ['ionic'],
     'services': ['ionic', 'app'],
     'qrcode': ['ionic']
@@ -35,10 +37,9 @@ require([
     'qrcode',
     'app',
     'services'
-    /*    'qrcode'*/
   ], function () {
-      testViewport();
-      doyoofun()
+    testViewport();
+    doyoofun();
     //totop(window);
     ionic.Platform.ready(function () {
       //启动angular模块
@@ -47,9 +48,10 @@ require([
   }
 );
 function doyoofun() {
-    $('body').on('click', '.button-clear.freexf-consult', function () {
-        doyoo.util.openChat('g=10058658'); return false;
-    })
+  $('body').on('click', '.button-clear.freexf-consult', function () {
+    doyoo.util.openChat('g=10058658');
+    return false;
+  })
 }
 function testViewport() {
   var mvp = $('meta[name="viewport"]').get(0);
@@ -112,4 +114,4 @@ function totop(win) {
       }, 0);
     });
   }
-};
+}

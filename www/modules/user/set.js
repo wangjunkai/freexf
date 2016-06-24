@@ -1,8 +1,10 @@
 'use strict';
 
 angular.module('freexf')
-  .controller('set_ctrl', function ($scope, $rootScope, $state, $injector, $ionicLoading, $timeout, localStorageService ,AUTH) {
+  .controller('set_ctrl', function ($scope, $rootScope, $state, $injector, $ionicLoading, $timeout, localStorageService, AUTH) {
     $scope.showcontactour = false;
+    $scope.log = AUTH.FREEXFUSER.data.userLg;
+
     $scope.showcontact = function () {
       $scope.showcontactour = true;
     };

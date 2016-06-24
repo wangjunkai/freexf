@@ -1,4 +1,4 @@
-<ion-view scroll-watch-tab>
+<ion-view view-title="搜索课程" scroll-watch-tab>
   <ion-header-bar default-header-bar class="freexf-bar lightgray">
     <div class="bar-left">
       <button class="button-clear freexf-back freexf-left" default-nav-back-button ng-click="goBack()">
@@ -10,13 +10,13 @@
       <button class="button-clear freexf-close" ng-click="ClearAll()"></button>
     </div>
     <div class="bar-right">
-      <button class="button-clear freexf-search-span" ng-click="SearchResult();"><span>搜索</span></button>
+      <button class="button-clear freexf-search-span" ng-click="getResult();"><span>搜索</span></button>
     </div>
   </ion-header-bar>
 
-  <ion-content lazy-scroll>
+  <ion-content class="has-footer" lazy-scroll>
 
-    <div class="freexf-classmodule-header-nav">
+    <div class="freexf-classmodule-header-nav" ng-show="!isSearch">
       <h2>热门搜索</h2>
       <ul>
         <li><a href="javascript:void(0);" ng-click="getResult('英语')">英语</a></li>
@@ -26,20 +26,18 @@
         <li><a href="javascript:void(0);" ng-click="getResult('韩语')">韩语</a></li>
       </ul>
     </div>
-    <!--课程列表-->
-    <div class="freexf-nocontent" ng-show="SearchNull">
+
+    <div class="freexf-nocontent" ng-show="courseList&&courseList.length<=0">
       <img src="img/course/nocontent.png"/>
-      <p>暂时没有搜索到相关课程</p>
+      <p>没有搜索到相关课程</p>
     </div>
-    <section>
-      <!--<ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>-->
-      <div class="list freexf-classmodule" ui-view="classmodule" ng-model="CourseListShow">
-
-      </div>
-
+    <!--课程列表-->
+    <section ng-show="courseList&&courseList.length>0">
+      <div class="list freexf-classmodule" ui-view="classmodule"></div>
+      <div class="freexf-nullmsg" ng-show="!uppageshow">没有更多!</div>
     </section>
-    <ion-infinite-scroll ng-if="uppageshow" on-infinite="doRefresh()" distance="1%"></ion-infinite-scroll>
-    <div ng-hide="uppageshow">{{bottomtext}}</div>
+    <ion-infinite-scroll ng-if="uppageshow" on-infinite="doRefresh()" immediate-check="false" distance="1%"></ion-infinite-scroll>
+
   </ion-content>
 
 </ion-view>

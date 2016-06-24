@@ -6,7 +6,6 @@
       </button>
     </div>
     <div class="title">注册</div>
-
   </ion-header-bar>
   <ion-content class="register">
     <form name="registerForm" novalidate="novalidate">
@@ -58,7 +57,7 @@
                 ng-hide="registerForm.confirmPassword.$invalid || user.password!=user.confirmPassword"></span>
         </div>
       </div>
-      <div class="freexf-padding-24 clearfix">
+<!--      <div class="freexf-padding-24 clearfix">
         <div class="freexf-checkbox freexf-left">
           <label class="label-checkbox">
             <input type="checkbox" ng-model="user.agreement">
@@ -66,7 +65,7 @@
           我已阅读并同意
         </div>
         <a class="freexf-agreement"  href="">《用户协议》</a>
-      </div>
+      </div>-->
       <div class="freexf-padding-24">
         <button type="button" class="button button-block freexf-button-balanced freexf-margin-bottom-30"
                 ng-click="register($event)">

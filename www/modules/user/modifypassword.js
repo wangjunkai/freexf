@@ -4,7 +4,7 @@
 angular.module('freexf')
   .controller('modifypassword_ctrl',function ($scope, $rootScope, $injector, $ionicLoading, $interval, $timeout, $Loading, $state, AUTH,MSGICON, AuthRepository) {
     var MODIFY = AuthRepository('AjaxChangePassword.aspx', '/ajax');
-    var PHONE_CODE = AuthRepository('sendphonecode.aspx', '/ajax');
+    var PHONE_CODE = AuthRepository('sendcode.aspx', '/ajax');
     $scope.phone=AUTH.FREEXFUSER.data.phone;
     function modifypasswordModel() {
       this.modify = {

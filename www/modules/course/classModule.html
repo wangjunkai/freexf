@@ -1,7 +1,7 @@
 <!--课程列表-->
   <div class="item item-thumbnail-left" ng-repeat="item in courseList" ng-click="toCourseDate(item.ProductId)">  <!--'199f21a24fbc4227aeafe277c960bf18'-->
 
-    <img image-lazy-src="{{item.image}}" />
+    <img image-lazy-src="{{item.image}}"/>
     <div>
         <h2>{{item.ProductName}}</h2>
 
@@ -9,6 +9,5 @@
 
         <p><span>{{item.price|xufen}}</span><em ng-show="item.price| xufenshow">学分</em></p>
     </div>
-
   </div>
 
