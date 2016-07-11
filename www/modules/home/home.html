@@ -30,13 +30,24 @@
 
     <ion-slide-box on-slide-changed="slideHasChanged($index)" class="freexf-slide">
       <ion-slide>
-        <img image-lazy-src="img/home/banner-2@3x.jpg">
+        <a href="">
+          <img image-lazy-src="img/home/banner-1.jpg">
+        </a>
       </ion-slide>
       <ion-slide>
-        <img image-lazy-src="img/home/banner-2@3x.jpg">
+        <a href="#/summer">
+          <img image-lazy-src="img/home/banner-3.jpg">
+        </a>
       </ion-slide>
       <ion-slide>
-        <img image-lazy-src="img/home/banner-2@3x.jpg">
+        <a href="#/abroad">
+          <img image-lazy-src="img/home/banner-2.jpg">
+        </a>
+      </ion-slide>
+      <ion-slide>
+        <a href="#/textbook">
+          <img image-lazy-src="img/home/banner-4.jpg">
+        </a>
       </ion-slide>
     </ion-slide-box>
     <section class="freexf-hometype">
@@ -74,33 +85,38 @@
       <h2 class="freexf-title"><i class="title"></i><span>精品课程</span></h2>
       <div class="clearfix">
         <div class="freexf-col">
-          <a href="" class="lcol">
-            <img image-lazy-src="img/home/huodong-0.png" alt="">
+          <a href="#/coursedetail/{{home.l_EliteCrouseList[0].productID}}&" class="lcol">
+            <img image-lazy-src="{{home.l_EliteCrouseList[0].coverurl}}" alt="">
           </a>
         </div>
 
         <div class="freexf-col">
-          <a ng-repeat="jp in home.l_EliteCrouseList" href="#/coursedetail/{{jp.productID}}&" class="rcol">
-            <img image-lazy-src="{{jp.coverurl | decodeUri}}">
+          <a ng-repeat="(key,value) in home.l_EliteCrouseList" ng-if="key!=0" href="#/coursedetail/{{value.productID}}&" class="rcol">
+            <img image-lazy-src="{{value.coverurl}}" alt="">
           </a>
         </div>
       </div>
-      <a href="" class="jinpin-bottom">
-        <img image-lazy-src="img/home/big-huodong.png">
+      <a href="#coupon" class="jinpin-bottom">
+        <img image-lazy-src="img/home/big-huodong-b.jpg">
       </a>
     </section>
     <!--英语-->
     <section id="anchor-section-yingyu" class="freexf-home-table">
-      <h2 class="freexf-title"><i class="title"></i><span>英语</span><a href="#/courseplate/英语&"
-                                                                      class="icon has-more"></a></h2>
+      <h2 class="freexf-title">
+        <i class="title"></i><span>英语</span>
+        <a href="#/courseplate/英语&" class="icon has-more"></a>
+      </h2>
       <div class="clearfix">
         <div class="freexf-col" ng-include="'homeTable.html'" ng-repeat="l in home.l_englishList"></div>
       </div>
     </section>
     <!--中小学-->
     <section id="anchor-section-zhongxiaoxue" class="freexf-home-table">
-      <h2 class="freexf-title"><i class="title"></i><span>中小学</span><a href="#/courseplate/中小学&"
-                                                                       class="icon has-more"></a></h2>
+      <h2 class="freexf-title">
+        <i class="title"></i>
+        <span>中小学</span>
+        <a href="#/courseplate/中小学&" class="icon has-more"></a>
+      </h2>
       <div class="clearfix">
         <div class="freexf-col" ng-include="'homeTable.html'" ng-repeat="l in home.l_k12List"></div>
       </div>
@@ -147,7 +163,7 @@
       <img image-lazy-src="{{l.coverurl}}">
     </a>
   </div>
-  <p class="ti">{{l.cover}}</p>
+  <p class="ti">{{l.productName}}</p>
   <div class="clearfix freexf-font-15">
     <span class="freexf-left"><strong class="xufen">{{l.price | xufen:6}}</strong><em
       ng-show="l.price | xufenshow">学分</em></span>

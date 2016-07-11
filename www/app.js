@@ -72,28 +72,7 @@
             var $element = $(element[0]);
             scope.$on('$ionicView.loaded', function () {
               var a = $element.find('.bar-left'), b = $element.find('.bar-center'), c = $element.find('.bar-right');
-              b.css('width', $element.width() - a.width() - c.width());
-            });
-          }
-        }])
-      //初始化计算大纲课程介绍的高度
-      .directive('couresScroll', ['$rootScope', '$ionicHistory', '$ionicConfig', '$state', '$injector', '$timeout',
-        function ($rootScope, $ionicHistory, $ionicConfig, $state, $injector, $timeout) {
-          return function (scope, element, attrs) {
-            //angular 包装的jquery有问题
-            var $element = $(element[0]);
-            scope.$on('$ionicView.loaded', function () {
-              var box = $element.find('#viewContent');
-              var a = $element.find('#headerCourse'), b = $element.find('.grid_height'), c = $element.find('.freexf-course'), p = $element.find('#videoplay'), v = $element.find('.video-box');
-              a.find('img').load(function () {
-                if (box.hasClass('hasfooter')) {
-                  b.css('height', $element.height() - a.height() - c.height() - 132);
-                } else {
-                  b.css('height', $element.height() - a.height() - c.height() - 88);
-                }
-                p.css('height', a.find('img').height());
-                v.css('height', a.find('img').height());
-              });
+              b.css('width', $element.width() - a.width() - c.width() - 2);
             });
           }
         }])
@@ -103,16 +82,13 @@
           return function (scope, element, attrs) {
             var $element = $(element[0]);
             var back = function () {
-              //如果后退是设置页或者login，返回home
-              var _str = ['payaddress', 'payfail'];
-              return !!($ionicHistory.backView() && $.inArray($ionicHistory.backView().stateName, _str) < 0);
+              //符合条件，返回home
+              var _backView = ['payaddress', 'payfail'];//后退页面
+              var _currentView = ['textbook', 'summer', 'coupon', 'abroad'];//当前页面
+              return !!($ionicHistory.backView() && $.inArray($ionicHistory.backView().stateName, _backView) < 0 && $.inArray($ionicHistory.currentView().stateName, _currentView) < 0);
             };
             scope.goBack = function () {
-              if (back()) {
-                $ionicHistory.goBack();
-              } else {
-                $state.go('tab.home');
-              }
+              back() ? $ionicHistory.goBack() : $state.go('tab.home');
             };
             scope.$on('$ionicView.loaded', function () {
               var a = back(), b = $element.find('i')[0];
@@ -121,51 +97,76 @@
             });
           }
         }])
-      //form 表单验证
+      //form 表单验证指令
       .directive('fxValidate', ['$rootScope',
         function ($rootScope) {
           var reg = {
-            null: /^[^(?:)]$/,
-            phone: /^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57]|99[0-9])[0-9]{8}$/
+            null: /\S/gi,
+            phone: /^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57]|99[0-9])[0-9]{8}$/gi,
+            password8_30: /^.{8,30}$/gi
           };
           var formatObj = {
             require: {
               null: [reg.null, '不能为空'],
               phone: [reg.null, '请填写手机号'],
-              password: [reg.null, '请填写密码']
+              password: [reg.null, '请填写密码'],
+              confirmPassword: [reg.null, '请填写确认密码'],
+              imgCode: [reg.null, '请填写图片验证码'],
+              phoneCode: [reg.null, '请填写手机验证码']
             },
             format: {
-              phone: [reg.phone, '手机号格式错误']
+              phone: [reg.phone, '手机号格式错误'],
+              password8_30: [reg.password8_30, '密码范围(8-30位)']
             }
           };
-          return function (scope, element, attrs) {
-
-            var $element = $(element[0]), msgAry = {};
-            var fn = function (formatType, formatMsg) {
-              var msg = formatObj[formatType][formatMsg];
+          return {
+            //设置指令优先顺序
+            priority: -1,
+            require: '^?ngModel',
+            link: function (scope, element, attrs, ctrl) {
+              var $element = $(element[0]), msgAry = {}, formatType, formatMsg;
               var temp = function (o) {
-                return '<span class="freexf-validate-msg" style="font-size:12px;color:red">' + o + '</span>';
+                return '<p class="freexf-validate-msg" style="font-size:12px;color:red;">' + o + '</p>';
               };
-              if (!(new RegExp(msg[0], 'ig')).test($element.val())) {
-                msgAry[formatType + '.' + formatMsg] = temp(msg[1]);
-              } else {
-                delete msgAry[formatType + '.' + formatMsg];
-              }
-              $element.nextAll('.freexf-validate-msg').remove();
-              for (var m = 0, n = Object.getOwnPropertyNames(msgAry); m < n.length; m++) {
-                m == n.length - 1 && $element.after(msgAry[n[m]]);
-              }
-            };
-            var outMsg = function () {
+              //输出提示信息
+              var fn = function () {
+                //设置form validate
+                ctrl.$setValidity('_isOk', true);
+                $element.nextAll('.freexf-validate-msg').remove();
+                for (var m in msgAry) {
+                  if (!(new RegExp(msgAry[m]['type'][0])).test($element.val())) {
+                    $element.after(msgAry[m]['temp']);
+                    ctrl.$setValidity('_isOk', false);
+                  }
+                }
+                //如果有多条提示信息，按照 fx-validate 中所设置的优先级来提示，最多提示一条
+                $element.nextAll('.freexf-validate-msg').length > 1 && $element.nextAll('.freexf-validate-msg:not(:last-child)').remove();
+              };
+              //添加提示信息到对象 截取字符串规则 【fx-validate="require（type什么类型的正则）:phone（提示信息）;format:phone;"】
               for (var i = 0, j = attrs.fxValidate.split(';'); i < j.length; i++) {
                 var data = j[i], fIndex = data.indexOf(':'), lIndex = data.lastIndexOf(':');
                 if (fIndex > 0) {
-                  var formatType = data.substring(0, fIndex), formatMsg = lIndex == data.length ? 'null' : data.substring(fIndex + 1, data.length);
-                  fn(formatType, formatMsg);
+                  formatType = data.substring(0, fIndex), formatMsg = lIndex == data.length ? 'null' : data.substring(fIndex + 1, data.length);
+                  var msg = msgAry[formatType + '.' + formatMsg] = {};
+                  msg['type'] = formatObj[formatType][formatMsg];
+                  msg['temp'] = temp(formatObj[formatType][formatMsg][1]);
                 }
               }
-            };
-            $element.on('input', outMsg);
+
+              //绑定事件 ，设定规则,如果为 submit() 更改点击行为，主动验证form表单中的数据,submit(‘a’[表单的name],‘b’,‘c’),参数为空全部验证
+              if (Object.getOwnPropertyNames(msgAry).length <= 0) {
+                var newArgs = (new Function('$', "var submit = function () { return $.makeArray(arguments) }; return " + attrs.fxValidate))($);
+                var names = newArgs.length > 0 ? $.map(newArgs, function (val, i) {
+                  return '[name=' + val + ']'
+                }).join(',') : '[fx-validate]';
+                $element.on('click', function () {
+                  $($element.closest('form').find(names)).trigger('input');
+                });
+              }
+              else {
+                $element.on('input', fn.bind(this));
+              }
+            }
           }
         }])
       //loading服务
@@ -291,13 +292,9 @@
         $stateProvider
           .state('login', {
             url: '/login',
-            parent: 'tab',
-            views: {
-              'conent': {
-                templateUrl: 'modules/user/login.html',
-                controller: 'login_ctrl'
-              }
-            },
+            templateUrl: 'modules/user/login.html',
+            controller: 'login_ctrl',
+            cache: false,
             resolve: {
               loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load(['modules/user/login.js']);
@@ -306,30 +303,19 @@
           })
           .state('register', {
             url: '/register',
-            parent: 'tab',
-            views: {
-              'conent': {
-                templateUrl: 'modules/user/register.html',
-                controller: 'register_ctrl'
-              }
-            },
+            templateUrl: 'modules/user/register.html',
+            controller: 'register_ctrl',
             cache: false,
             resolve: {
               loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load(['modules/user/register.js']);
               }]
             }
-
           })
           .state('modifypassword', {
             url: '/modifypassword',
-            parent: 'tab',
-            views: {
-              'conent': {
-                templateUrl: 'modules/user/modifypassword.html',
-                controller: 'modifypassword_ctrl'
-              }
-            },
+            templateUrl: 'modules/user/modifypassword.html',
+            controller: 'modifypassword_ctrl',
             cache: false,
             resolve: {
               loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
@@ -339,13 +325,8 @@
           })
           .state('forgetpassword', {
             url: '/forgetpassword',
-            parent: 'tab',
-            views: {
-              'conent': {
-                templateUrl: 'modules/user/forgetpassword.html',
-                controller: 'forgetpassword_ctrl'
-              }
-            },
+            templateUrl: 'modules/user/forgetpassword.html',
+            controller: 'forgetpassword_ctrl',
             cache: false,
             resolve: {
               loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
@@ -355,13 +336,8 @@
           })
           .state('set', {
             url: '/set',
-            parent: 'tab',
-            views: {
-              'conent': {
-                templateUrl: 'modules/user/set.html',
-                controller: 'set_ctrl'
-              }
-            },
+            templateUrl: 'modules/user/set.html',
+            controller: 'set_ctrl',
             cache: false,
             resolve: {
               loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
@@ -371,13 +347,8 @@
           })
           .state('aboutus', {
             url: '/aboutus',
-            parent: 'tab',
-            views: {
-              'conent': {
-                templateUrl: 'modules/user/aboutus.html',
-                controller: 'aboutus_ctrl'
-              }
-            },
+            templateUrl: 'modules/user/aboutus.html',
+            controller: 'aboutus_ctrl',
             resolve: {
               loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load(['modules/user/aboutus.js']);
@@ -386,13 +357,8 @@
           })
           .state('commonfaq', {
             url: '/commonfaq',
-            parent: 'tab',
-            views: {
-              'conent': {
-                templateUrl: 'modules/user/commonfaq.html',
-                controller: 'faq_ctrl'
-              }
-            },
+            templateUrl: 'modules/user/commonfaq.html',
+            controller: 'faq_ctrl',
             resolve: {
               loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load(['modules/user/faq.js']);
@@ -401,13 +367,8 @@
           })
           .state('ideafeedback', {
             url: '/ideafeedback',
-            parent: 'tab',
-            views: {
-              'conent': {
-                templateUrl: 'modules/user/ideafeedback.html',
-                controller: 'ideafeedback_ctrl'
-              }
-            },
+            templateUrl: 'modules/user/ideafeedback.html',
+            controller: 'ideafeedback_ctrl',
             cache: false,
             resolve: {
               loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
@@ -418,13 +379,8 @@
 
           .state('pay', {
             url: '/pay',
-            parent: 'tab',
-            views: {
-              'conent': {
-                templateUrl: 'modules/pay/pay.html',
-                controller: 'pay_ctrl'
-              }
-            },
+            templateUrl: 'modules/pay/pay.html',
+            controller: 'pay_ctrl',
             cache: false,
             resolve: {
               loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
@@ -434,13 +390,8 @@
           })
           .state('payaddress', {
             url: '/payaddress/:OrderId',
-            parent: 'tab',
-            views: {
-              'conent': {
-                templateUrl: 'modules/pay/payaddress.html',
-                controller: 'payaddress_ctrl'
-              }
-            },
+            templateUrl: 'modules/pay/payaddress.html',
+            controller: 'payaddress_ctrl',
             resolve: {
               loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load(['modules/pay/payaddress.js']);
@@ -449,13 +400,8 @@
           })
           .state('paysuccess', {
             url: '/paysuccess',
-            parent: 'tab',
-            views: {
-              'conent': {
-                templateUrl: 'modules/pay/paysuccess.html',
-                controller: 'paysuccess_ctrl'
-              }
-            },
+            templateUrl: 'modules/pay/paysuccess.html',
+            controller: 'paysuccess_ctrl',
             resolve: {
               loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load(['modules/pay/paysuccess.js']);
@@ -464,13 +410,8 @@
           })
           .state('payfail', {
             url: '/payfail',
-            parent: 'tab',
-            views: {
-              'conent': {
-                templateUrl: 'modules/pay/payfail.html',
-                controller: 'payfail_ctrl'
-              }
-            },
+            templateUrl: 'modules/pay/payfail.html',
+            controller: 'payfail_ctrl',
             resolve: {
               loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load(['modules/pay/payfail.js']);
@@ -479,13 +420,8 @@
           })
           .state('myorder', {
             url: '/myorder',
-            parent: 'tab',
-            views: {
-              'conent': {
-                templateUrl: 'modules/user/myorder.html',
-                controller: 'myorder_ctrl'
-              }
-            },
+            templateUrl: 'modules/user/myorder.html',
+            controller: 'myorder_ctrl',
             cache: false,
             resolve: {
               loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
@@ -495,13 +431,8 @@
           })
           .state('mycourse', {
             url: '/mycourse',
-            parent: 'tab',
-            views: {
-              'conent': {
-                templateUrl: 'modules/user/mycourse.html',
-                controller: 'mycourse_ctrl'
-              }
-            },
+            templateUrl: 'modules/user/mycourse.html',
+            controller: 'mycourse_ctrl',
             cache: false,
             resolve: {
               loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
@@ -511,13 +442,8 @@
           })
           .state('mycollection', {
             url: '/mycollection',
-            parent: 'tab',
-            views: {
-              'conent': {
-                templateUrl: 'modules/user/mycollection.html',
-                controller: 'mycollection_ctrl'
-              }
-            },
+            templateUrl: 'modules/user/mycollection.html',
+            controller: 'mycollection_ctrl',
             cache: false,
             resolve: {
               loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
@@ -527,9 +453,8 @@
           })
           .state('courseplate', {
             url: '/courseplate/:Category1&:Category2',
-            parent: 'tab',
             views: {
-              'conent': {
+              '': {
                 controller: 'courseplate_ctrl',
                 templateUrl: 'modules/course/courseplate.html'
               },
@@ -538,7 +463,6 @@
                 templateUrl: 'modules/course/classmodule.html'
               }
             },
-
             resolve: {
               loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load(['modules/course/courseplate.js']);
@@ -547,9 +471,8 @@
           })
           .state('coursesearch', {
             url: '/coursesearch',
-            parent: 'tab',
             views: {
-              'conent': {
+              '': {
                 templateUrl: 'modules/course/coursesearch.html',
                 controller: 'coursesearch_ctrl'
               },
@@ -564,19 +487,65 @@
               }]
             }
           })
+          .state('abroad', {
+            url: '/abroad',
+            templateUrl: 'activities/201606/abroad.html',
+            controller: 'abroad_ctrl',
+            resolve: {
+              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load(['activities/201606/abroad.js']);
+              }]
+            }
+          })
+          .state('textbook', {
+            url: '/textbook',
+            templateUrl: 'activities/201606/textbook.html',
+            controller: 'textbook_ctrl',
+            resolve: {
+              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load(['activities/201606/textbook.js']);
+              }]
+            }
+          })
+          .state('coupon', {
+            url: '/coupon',
+            templateUrl: 'activities/201606/coupon.html',
+            controller: 'coupon_ctrl',
+            resolve: {
+              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load(['activities/201606/coupon.js']);
+              }]
+            }
+          })
+          .state('summer', {
+            url: '/summer',
+            templateUrl: 'activities/201606/summer.html',
+            controller: 'summer_ctrl',
+            resolve: {
+              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load(['activities/201606/summer.js']);
+              }]
+            }
+          })
           .state('coursedetail', {
             url: '/coursedetail/:courseId&:state',
-            parent: 'tab',
-            views: {
-              'conent': {
-                templateUrl: 'modules/course/coursedetail.html',
-                controller: 'coursedetail_ctrl'
-              }
-            },
+            templateUrl: 'modules/course/coursedetail.html',
+            controller: 'coursedetail_ctrl',
             cache: false,
             resolve: {
               loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load(['modules/course/coursedetail.js']);
+              }]
+            }
+          })
+          .state('coursegroup', {
+            url: '/coursegroup/:courseId&:state',
+            templateUrl: 'modules/course/coursegroup.html',
+            controller: 'coursegroup_ctrl',
+            cache: false,
+            resolve: {
+              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load(['modules/course/coursegroup.js']);
               }]
             }
           });
@@ -594,6 +563,7 @@
                 controller: 'home_ctrl'
               }
             },
+            cache: false,
             resolve: {
               loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load(['modules/home/home.js']);
@@ -624,7 +594,6 @@
               }, 0);
             }
           })
-
           .state('tab.member', {
             url: '/member',
             cache: false,

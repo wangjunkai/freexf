@@ -10,7 +10,15 @@
   <meta name="screen-orientation" content="portrait">
   <meta name="x5-orientation" content="portrait">
   <meta content="telephone=no" name="format-detection">
-
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?a80a61243445fb2bc4cd94612c8e857e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
   <title></title>
   <style type="text/css">
     ng-cloak {
@@ -28,11 +36,11 @@
       var headEl = document.getElementsByTagName('head')[0], sync = true;
       var css = {
         0: ['css/freexf.css', 'css/course.css', 'css/home.css', 'css/pay.css',
-          'css/student.css', 'css/user.css', 'css/video.css', 'css/set.css', 'css/member.css'],
+          'css/student.css', 'css/user.css', 'css/video.css', 'css/set.css', 'css/member.css', 'activities/css/activities-public.css'],
         1: ['css/freexf-concat-8c62337402.min.css']
       };
       var js = {
-        0: [],
+        0: ['http://lead.soperson.com/20001079/10055583.js'],
         1: ['http://lead.soperson.com/20001079/10055583.js']
       };
       for (var i = 0, j = css[window.hostType]; i < j.length; i++) {
@@ -64,7 +72,6 @@
       }
     })();
   </script>
-
 </head>
 <body>
 

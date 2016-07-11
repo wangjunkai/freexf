@@ -19,11 +19,12 @@
         </label>
         <label class="item item-input item-floating-label">
           <span class="input-label">输入密码</span>
-          <input type="password" placeholder="输入密码" ng-model="login.password" required>
+          <input type="password" placeholder="输入密码" ng-model="login.password" fx-validate="require:password;">
         </label>
       </div>
       <div class="freexf-padding-24">
-        <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-click="toLogin($event)">
+        <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" fx-validate="submit()"
+                ng-click="toLogin($event,loginForm)">
           登录
         </button>
         <div class="freexf-clear">
@@ -38,7 +39,7 @@
         </div>
       </div>
       <a href="#/register" class="freexf-bottom-register">
-       还没有账号?点击注册!
+        还没有账号?点击注册!
       </a>
     </form>
   </ion-content>

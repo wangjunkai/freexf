@@ -66,6 +66,7 @@
       var Home = HomeRepository(ENV._api.__GetIndexGather);
       $scope.$on('$ionicView.loaded', function () {
       });
+
       $scope.au = AUTH;
       $scope.getTime = function () {
         return new Date().getTime();

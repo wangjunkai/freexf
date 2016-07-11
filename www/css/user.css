@@ -182,6 +182,10 @@
 
 .courseDetail-words .courseList .name {
   margin-bottom: 0px;
+      width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .courseDetail-words .courseList .name i {
@@ -350,11 +354,8 @@
 }
 
 .codeBox, .small-idcode-button {
-  height: 100%;
   width: 25%;
-  margin-right: 2%;
-  margin-top: -3px;
-  float: right;
+  float: left;
 }
 
 .small-idcode-button {
@@ -377,18 +378,8 @@
 
 }
 
-.item-input input.inputCode {
-  width: 72%;
-  float: left;
-}
-
 .input-left-box {
   width: 72%;
-  float: left;
-}
-
-.item-input .input-left-box input.inputCode {
-  width: 100%;
   float: left;
 }
 
@@ -463,7 +454,8 @@ input.hasPlace:-ms-input-placeholder,textarea.hasPlace:-ms-input-placeholder {
 }
 
 .codeBox {
-  margin-top: -20px;
+  margin-top: -10px;
+  text-align: center;
 }
 
 .MyAcc-top p, .MyAcc-top .UpdateName {

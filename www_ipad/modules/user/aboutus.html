@@ -1,0 +1,14 @@
+<ion-view view-title="关于我们">
+  <ion-header-bar default-header-bar class="freexf-bar lightgray">
+    <div class="bar-left">
+      <button class="button-clear freexf-back freexf-left" default-nav-back-button ng-click="goBack()">
+        <i class="icon freexf-goback"></i>
+      </button>
+    </div>
+    <div class="title" ng-bind-html="getAboutus('ArticleTitle')"></div>
+  </ion-header-bar>
+  <ion-content class="aboutus">
+    <div class="freexf-padding-24" ng-bind-html="getAboutus('ArticleContent')">
+    </div>
+  </ion-content>
+</ion-view>

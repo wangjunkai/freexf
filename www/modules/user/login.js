@@ -2,7 +2,7 @@
 
 
 angular.module('freexf')
-  .controller('login_ctrl', function ($scope, $rootScope, $state, $injector, $ionicLoading, $Loading, $timeout, $ionicHistory, AUTH, MSGICON, localStorageService, AuthRepository) {
+  .controller('login_ctrl', function ($scope, $rootScope, $Loading, $timeout,$state ,$ionicHistory, AUTH, MSGICON, localStorageService, AuthRepository) {
     var LOGIN = AuthRepository('AjaxLogin.aspx', '/ajax');
 
     function loginModel() {
@@ -18,7 +18,8 @@ angular.module('freexf')
 
 
     //登录
-    $scope.toLogin = function ($event) {
+    $scope.toLogin = function ($event, $form) {
+      if ($form.$invalid)return false;
       var login = angular.extend({}, $scope.login);
       delete login.rememberPw;
       $Loading.show({class: MSGICON.load, text: '登录中...'}, false);
@@ -26,7 +27,7 @@ angular.module('freexf')
         var data = req.response.data;
         $Loading.show({
           class: data.success ? MSGICON.success : MSGICON.fail,
-          text: data.success ? '登录成功!' : '登录失败!'
+          text: data.success ? '登录成功!' : data.message
         }, 1500);
         if (data.success) {
           $scope.freexfUser = {

@@ -1,0 +1,35 @@
+<ion-view view-title="我的账户" class="">
+  <ion-pane>
+    <ion-side-menus>
+      <!-- Left menu -->
+      <ion-side-menu side="left">
+      </ion-side-menu>
+      <ion-side-menu-content drag-content="false" class="freexf-content-table">
+        <ion-pane class="freexf-account-pane">
+          <div class="MyAcc-top">
+            <div class="MyAcc-icon"></div>
+            <button class="to-login" ng-click="openModal()">立即登录</button>
+            <p class="hr"></p>
+            <a class="account-set" ng-click="showMenu()">
+              <div class="MyAcc-setting"></div>
+              <span class="span-set">设置</span>
+            </a>
+          </div>
+        </ion-pane>
+        <ion-content class="freexf-account">
+          <div class="MyAcc-content clearfix">
+            <div class="TipLogo fail"></div>
+            <p>无法记录和同步学习进度，建议登录后再学习~</p>
+          </div>
+          <div class="freexf-padding-24">
+            <a href="#/login">
+              <button class="button button-block freexf-button-balanced freexf-margin-bottom-30">
+                立即登录
+              </button>
+            </a>
+          </div>
+        </ion-content>
+      </ion-side-menu-content>
+    </ion-side-menus>
+  </ion-pane>
+</ion-view>

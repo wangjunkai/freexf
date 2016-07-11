@@ -1,0 +1,97 @@
+﻿<ion-view coures-scroll view-title="暑期衔接班">
+    <ion-header-bar class="freexf-bar">
+        <div class="bar-left">
+            <a href="#home" class="button-clear freexf-back freexf-left">
+                <i class="icon freexf-gohomeback"></i>
+            </a>
+        </div>
+        <div class="title">暑期衔接班</div>
+        <div class="bar-right">
+            <button class="button-clear freexf-consult"><span>咨询</span></button>
+        </div>
+    </ion-header-bar>
+
+    <ion-footer-bar class="footer-bar-contact">
+        <div class="title">
+            <img class="footer-bar-contact-content-phone" image-lazy-src="activities/img/abroad/contact@3x.png" />
+            <span class="footer-bar-contact-content-phonenumber">400-803-6611</span>
+        </div>
+    </ion-footer-bar>
+
+    <ion-content lazy-scroll class="has-header freexf-bg-gray">
+       <div class="coupon-banner">
+           <img image-lazy-src="activities/img/summer/logo@3x.png"/>
+       </div>
+        <!--学费全免网为你推荐-->
+        <section class="freexf-abroad-recommend">
+            <div class="freexf-summer-recommend-title"><i class="title"></i><span><img image-lazy-src="activities/img/summer/free-tuijian@3x.png" /></span></div>
+        </section>
+
+        <section id="anchor-section-yingyu" class="freexf-home-table">
+            <h2 class="freexf-summer-title">
+                <i class="title"></i><span>套餐课程</span>
+            </h2>
+            <div class="clearfix">
+                <div class="freexf-col" ng-include="'summer.html'" ng-repeat="l in summer[0]"></div>
+            </div>
+        </section>
+
+        <section id="anchor-section-yingyu" class="freexf-home-table">
+            <h2 class="freexf-summer-title">
+                <i class="title"></i><span>语文</span>
+            </h2>
+            <div class="clearfix">
+                <div class="freexf-col" ng-include="'summer.html'" ng-repeat="l in summer[1]"></div>
+            </div>
+        </section>
+
+        <section id="anchor-section-yingyu" class="freexf-home-table">
+            <h2 class="freexf-summer-title">
+                <i class="title"></i><span>数学</span>
+            </h2>
+            <div class="clearfix">
+                <div class="freexf-col" ng-include="'summer.html'" ng-repeat="l in summer[2]"></div>
+            </div>
+        </section>
+
+        <section id="anchor-section-yingyu" class="freexf-home-table">
+            <h2 class="freexf-summer-title">
+                <i class="title"></i><span>英语</span>
+            </h2>
+            <div class="clearfix">
+                <div class="freexf-col" ng-include="'summer.html'" ng-repeat="l in summer[3]"></div>
+            </div>
+        </section>
+
+        <section id="anchor-section-yingyu" class="freexf-home-table">
+            <h2 class="freexf-summer-title">
+                <i class="title"></i><span>地史理化</span>
+            </h2>
+            <div class="clearfix">
+                <div class="freexf-col" ng-include="'summer.html'" ng-repeat="l in summer[4]"></div>
+            </div>
+        </section>
+
+        <div class="summer-course-tips">
+            <img image-lazy-src="activities/img/summer/person@3x.png"/>
+        </div>
+
+        <!--<div class="summer-course-zixun">
+            <img image-lazy-src="activities/img/summer/phone@3x.png" /><span>400-803-6611</span>
+        </div>-->
+    </ion-content>
+</ion-view>
+<script type="text/ng-template" id="summer.html">
+    <div>
+        <a href="#/coursedetail/{{l.productID}}&">
+            <img image-lazy-src="{{l.coverurl}}">
+        </a>
+    </div>
+    <p class="ti">{{l.productName}}</p>
+    <div class="clearfix freexf-font-15">
+        <span class="freexf-left">
+            <strong class="xufen">{{l.price | xufen:6}}</strong><em ng-show="l.price | xufenshow">学分</em>
+        </span>
+        <span class="r10 freexf-right"><em>课时数：</em><strong class="keshi">{{l.hour | xufen:4}}</strong></span>
+    </div>
+</script>
