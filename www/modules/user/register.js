@@ -2,7 +2,7 @@
 
 
 angular.module('freexf')
-  .controller('register_ctrl', function ($scope, $rootScope, $state, $injector, $interval, $timeout, $Loading, MSGICON, AuthRepository) {
+  .controller('register_ctrl', function ($scope, $rootScope, $state, $injector, $interval, $timeout, $Loading, MSGICON, AuthRepository, ENV, UpdateAPES, localStorageService, $ionicPopup) {
     var REGISTER = AuthRepository('AjaxRegister.aspx', '/ajax');
     var PHONE_CODE = AuthRepository('sendphonecode.aspx', '/ajax');
 
@@ -17,7 +17,8 @@ angular.module('freexf')
         labelcode: '输入验证码',
         labelphonecode: '输入短信验证码',
         labelpassword: '输入密码(8-30位)',
-        labelconfirmPassword: '确认密码'
+        labelconfirmPassword: '确认密码',
+        SourceType:'H5'
       };
       return this.user;
     }
@@ -30,6 +31,7 @@ angular.module('freexf')
         $scope.user.labelconfirmPassword = '密码一致'
       }
     };
+    
     //注册
     $scope.register = function ($event,$form) {
       if ($form.$invalid)return false;
@@ -44,6 +46,11 @@ angular.module('freexf')
         var data = req.response.data;
         $Loading.show({class: data.success ? MSGICON.success : MSGICON.fail, text: data.message}, 1500);
         if (data.success) {
+            if (typeof (localStorageService.get('URLshortID')) != 'undefined' && localStorageService.get('APES2') != '1') {
+                var GetUpdateAPES = UpdateAPES(ENV._api.__UpdateAPES);
+                GetUpdateAPES.getModel({ 'apesType': '2', 'URLTrafficID': localStorageService.get('URLshortID') }).then(function (res) { });
+                localStorageService.set('APES2', '1');
+            };
           $state.go('login');
         }
       });
@@ -79,7 +86,7 @@ angular.module('freexf')
         var data = req.response.data;
         $Loading.show(msg[data], 2000);
         console.log(data);
-        var time = 5;
+        var time = 60;
         var stoptime = $interval(function () {
           if (time == 0) {
             $interval.cancel(stoptime), $event.target.disabled = false, $event.target.innerText = '获取验证码'
@@ -89,5 +96,30 @@ angular.module('freexf')
           }
         }, 1000);
       })
-    };
+    }
+
+      //注册之前的提示
+      // 触发一个按钮点击，或一些其他目标   
+    $rootScope.showloginclues = function () {
+        var confirmPopup = $ionicPopup.show({
+            cssClass: 'freexf-login-clues',
+            template: '<div class="freexf-login-clues-content">'
+                     + '<div class="login-clues-content-message"><img image-lazy-src="img/user/login-clues-3x.png" />'
+                     + '<a class="cancel" ng-click ="showregister()"><div class="login-clues-button"></div></a>'
+                     + '</div></div>',
+        });
+        $rootScope.showregister = function () {
+            confirmPopup.close();
+        }
+
+        var screenheight = $(window).height();
+        //var headerbarheight = $("ion-header-bar").height();
+        //var footerbarheight = $("ion-tab").height();
+        var allowheight = screenheight - (87);
+        //alert(allowheight);
+        $(".popup-body").css("height", allowheight);
+    }
+
+    $rootScope.showloginclues();
+
   });

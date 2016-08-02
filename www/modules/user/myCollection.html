@@ -17,7 +17,7 @@
               <div class="courseDetail-list" ng-click="goStudy(f.ClassID,'1')">
                 <!--此处添加floor，即添加过期浮层-->
                 <div class="image">
-                  <img src="{{f.cover}}" image-lazy-src="{{f.cover}}" width="100%">
+                  <img ng-src="{{f.cover}}" image-lazy-src="{{f.cover}}" width="100%">
                 </div>
                 <div class="courseDetail-words">
                   <h2>{{f.ClassName}}</h2>
@@ -31,9 +31,9 @@
               </div>
 
               <div class="btnGrounp">
-                <button class="button button-stable" ng-click="delfavorite(f.ClassID)"> 取消收藏</button>
-                <button class="button button-balanced" ng-click="goStudy(f.ClassID,'1')" ng-init="buy=f.IsBoughtCrouse=='False'?false:true" ng-class="{buy:!buy}">
-                  {{f.IsBoughtCrouse|IsBought}}
+                <button class="button button-stable" ng-click="delfavorite(f.ClassID)" id="isCanceFavorite"> 取消收藏</button>
+                <button class="button button-balanced" ng-click="goStudy(f.ClassID,'1')" ng-init="buy=f.IsBoughtCrouse=='False'?false:true" ng-class="{buy:!buy}" id="isGoStudyFavorite">
+                  {{f.IsBoughtCrouse|IsBought:f.status}}
                 </button>
               </div>
             </div>
@@ -43,6 +43,6 @@
         <ion-infinite-scroll ng-if="uppageshow" on-infinite="doRefresh()" distance="1%"></ion-infinite-scroll>
         <div ng-hide="uppageshow" class="freexf-nullmsg">{{bottomtext}}</div>
       </div>
-
+</div>
   </ion-content>
 </ion-view>

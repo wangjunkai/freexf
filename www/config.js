@@ -6,15 +6,16 @@
 var paths = {
   //配置js路径
   paths: {
-    ionic: 'lib/ionic/js/ionic.bundle.min',//webapp前端框架
-    oclazyload: 'lib/oclazyload/dist/ocLazyLoad.min',//按需加载
+    ionic: 'lib/ionic/js/ionic.bundle',//webapp前端框架
+    oclazyload: 'lib/oclazyload/dist/ocLazyLoad',//按需加载
     imglazyload: 'lib/ionic-image-lazy-load/ionic-image-lazy-load',//图片懒加载
     restAngular: 'lib/restangular/dist/restangular.min',//ajax
     angularSanitize: 'lib/ionic/js/angular/angular-sanitize.min',
     localStorage: 'lib/angular-local-storage/dist/angular-local-storage.min',//
     jq: 'lib/jquery/dist/jquery.min',
     lodash: 'lib/lodash/dist/lodash.min',//
-    qrcode: 'lib/qrcode/jquery.qrcode.min'
+    qrcode: 'lib/qrcode/jquery.qrcode.min',
+    base64: 'js/base64'
 
   },
   shim: {
@@ -25,7 +26,8 @@ var paths = {
     'angularSanitize': ['ionic'],
     'localStorage': ['ionic'],
     'services': ['ionic', 'app'],
-    'qrcode': ['ionic']
+    'qrcode': ['ionic'],
+    'base64':['ionic']
   }
 };
 require.config(paths);
@@ -36,7 +38,8 @@ require([
     'lodash',
     'qrcode',
     'app',
-    'services'
+    'services',
+    'base64'
   ], function () {
     testViewport();
     doyoofun();
@@ -48,10 +51,26 @@ require([
   }
 );
 function doyoofun() {
-  $('body').on('click', '.button-clear.freexf-consult', function () {
+    $('body').on('click', '.button-clear.freexf-consult,.onlineConsultJs', function () {
     doyoo.util.openChat('g=10058658');
     return false;
   })
+}
+function getCookieValue(name) {
+    var name = escape(name);
+    //读cookie属性，这将返回文档的所有cookie  
+    var allcookies = document.cookie;
+    //查找名为name的cookie的开始位置  
+    name += "=";
+    var pos = allcookies.indexOf(name);
+    //如果找到了具有该名字的cookie，那么提取并使用它的值  
+    if (pos != -1) { //如果pos值为-1则说明搜索"version="失败  
+        var start = pos + name.length; //cookie值开始的位置  
+        var end = allcookies.indexOf(";", start); //从cookie值开始的位置起搜索第一个";"的位置,即cookie值结尾的位置  
+        if (end == -1) end = allcookies.length; //如果end值为-1说明cookie列表里只有一个cookie  
+        var value = allcookies.substring(start, end); //提取cookie的值  
+        return unescape(value); //对它解码        
+    } else return ""; //搜索失败，返回空字符串  
 }
 function testViewport() {
   var mvp = $('meta[name="viewport"]').get(0);

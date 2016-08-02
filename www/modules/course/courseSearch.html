@@ -19,11 +19,7 @@
     <div class="freexf-classmodule-header-nav" ng-show="!isSearch">
       <h2>热门搜索</h2>
       <ul>
-        <li><a href="javascript:void(0);" ng-click="getResult('英语')">英语</a></li>
-        <li><a href="javascript:void(0);" ng-click="getResult('职业会计')">职业会计</a></li>
-        <li><a href="javascript:void(0);" ng-click="getResult('高数')">高数</a></li>
-        <li><a href="javascript:void(0);" ng-click="getResult('四年级')">四年级</a></li>
-        <li><a href="javascript:void(0);" ng-click="getResult('韩语')">韩语</a></li>
+          <li ng-repeat="h in hotList"><a href="javascript:void(0);" ng-click="getResult(h)">{{h}}</a></li>
       </ul>
     </div>
 

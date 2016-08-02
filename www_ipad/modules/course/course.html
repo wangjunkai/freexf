@@ -2,52 +2,69 @@
 
   <ion-header-bar class="freexf-bar lightgray">
     <div class="title">选课中心</div>
-    <div class="bar-right">
-      <a href="#/coursesearch" class="button-clear freexf-icon-search"></a>
+    <div class="bar-right ipad">
+      <a fx-search class="button-clear freexf-icon-search"></a>
     </div>
   </ion-header-bar>
 
-  <ion-content class="freexf-courselist has-footer">
+  <ion-content class="freexf-courselist">
     <div class="freexf-coursecenter">
-      <ul class="coursecenter-list">
-        <li class="ccl-son">
-          <div class="English" ng-click="goCourseList(Category1[0])">{{Category1[0]}}</div>
-        </li>
-        <ul class="ccl-course-son-list">
-          <li  ng-repeat="a in Category2[0]" ng-click="goCourseList(Category1[0],a)">{{a}}</li>
-        </ul>
-        <li class="ccl-son">
-          <div class="zhongxiaoxue" ng-click="goCourseList(Category1[1])">{{Category1[1]}}</div>
-        </li>
-        <ul class="ccl-course-son-list">
-          <li ng-repeat="b in Category2[1]" ng-click="goCourseList(Category1[1],b)">{{b}}</li>
-        </ul>
-        <li class="ccl-son">
-          <div class="duoyuzhong" ng-click="goCourseList(Category1[2])">{{Category1[2]}}</div>
-        </li>
-        <ul class="ccl-course-son-list">
-            <li ng-repeat="c in Category2[2]" ng-click="goCourseList(Category1[2],c)">{{c}}</li>
-        </ul>
-        <li class="ccl-son">
-          <div class="kuaijizhiye" ng-click="goCourseList(Category1[3])">{{Category1[3]}}</div>
-        </li>
-        <ul class="ccl-course-son-list">
-            <li ng-repeat="d in Category2[3]" ng-click="goCourseList(Category1[3],d)">{{d}}</li>
-        </ul>
-        <li class="ccl-son">
-          <div class="kaoyan" ng-click="goCourseList(Category1[5])">{{Category1[5]}}</div>
-        </li>
-        <ul class="ccl-course-son-list">
-            <li ng-repeat="e in Category2[5]" ng-click="goCourseList(Category1[5],e)">{{e}}</li>
-        </ul>
-        <li class="ccl-son">
-          <div class="xingqu" ng-click="goCourseList(Category1[6])">{{Category1[6]}}</div>
-        </li>
-        <ul class="ccl-course-son-list">
-            <li ng-repeat="f in Category2[6]" ng-click="goCourseList(Category1[6],f)">{{f}}</li>
-        </ul>
-      </ul>
-      </ul>
+        <div class="coursecenter-list ipad clearfix">
+            <!-- 英语 -->
+            <div class="ipadCourseList">
+                <div class="ccl-son">
+                    <div class="English" ng-click="goCourseList(Category1[0])">{{Category1[0]}}</div>
+                </div>
+                <ul class="ccl-course-son-list">
+                    <li ng-repeat="a in Category2[0]" ng-click="goCourseList(Category1[0],a)">{{a}}</li>
+                </ul>
+            </div>
+            <!-- 中小学 -->
+            <div class="ipadCourseList">
+                <div class="ccl-son">
+                    <div class="zhongxiaoxue" ng-click="goCourseList(Category1[1])">{{Category1[1]}}</div>
+                </div>
+                <ul class="ccl-course-son-list">
+                    <li ng-repeat="b in Category2[1]" ng-click="goCourseList(Category1[1],b)">{{b}}</li>
+                </ul>
+            </div>
+            <!-- 多语种 -->
+            <div class="ipadCourseList">
+                <div class="ccl-son">
+                    <div class="duoyuzhong" ng-click="goCourseList(Category1[2])">{{Category1[2]}}</div>
+                </div>
+                <ul class="ccl-course-son-list">
+                    <li ng-repeat="c in Category2[2]" ng-click="goCourseList(Category1[2],c)">{{c}}</li>
+                </ul>
+            </div>
+            <!-- 会计职业 -->
+            <div class="ipadCourseList">
+                <div class="ccl-son">
+                    <div class="kuaijizhiye" ng-click="goCourseList(Category1[3])">{{Category1[3]}}</div>
+                </div>
+                <ul class="ccl-course-son-list">
+                    <li ng-repeat="d in Category2[3]" ng-click="goCourseList(Category1[3],d)">{{d}}</li>
+                </ul>
+            </div>
+            <!-- 考研 -->
+            <div class="ipadCourseList">
+                <div class="ccl-son">
+                    <div class="kaoyan" ng-click="goCourseList(Category1[5])">{{Category1[5]}}</div>
+                </div>
+                <ul class="ccl-course-son-list">
+                    <li ng-repeat="e in Category2[5]" ng-click="goCourseList(Category1[5],e)">{{e}}</li>
+                </ul>
+            </div>
+            <!-- 兴趣 -->
+            <div class="ipadCourseList">
+                <div class="ccl-son">
+                    <div class="xingqu" ng-click="goCourseList(Category1[6])">{{Category1[6]}}</div>
+                </div>
+                <ul class="ccl-course-son-list">
+                    <li ng-click="goCourseList(Category1[6])">全部</li>
+                </ul>
+            </div>
+         </div>
     </div>
   </ion-content>
 </ion-view>

@@ -788,8 +788,10 @@
                     $scope.$watch(function () {
                         return model($scope) || $attr.ocLazyLoad; // it can be a module name (string), an object, an array, or a scope reference to any of this
                     }, function (moduleName) {
+                        
                         if (angular.isDefined(moduleName)) {
                             $ocLazyLoad.load(moduleName).then(function () {
+                                
                                 // Attach element contents to DOM and then compile them.
                                 // This prevents an issue where IE invalidates saved element objects (HTMLCollections)
                                 // of the compiled contents when attaching to the parent DOM.
@@ -1081,7 +1083,8 @@
                     errText;
 
                 // clean copy
-                var module = angular.copy(originalModule);
+                //window.versionsNum
+                var module = angular.copy(originalModule)+ window.versionsNum;;
                 var params = angular.copy(originalParams);
 
                 // If module is an array, break it down

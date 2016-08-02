@@ -2,7 +2,7 @@
 
 
 angular.module('freexf')
-  .controller('login_ctrl', function ($scope, $rootScope, $Loading, $timeout,$state ,$ionicHistory, AUTH, MSGICON, localStorageService, AuthRepository) {
+  .controller('login_ctrl', function ($scope, $rootScope, $Loading, $timeout, $state, $ionicHistory, AUTH, MSGICON, localStorageService, AuthRepository) {
     var LOGIN = AuthRepository('AjaxLogin.aspx', '/ajax');
 
     function loginModel() {
@@ -19,11 +19,13 @@ angular.module('freexf')
 
     //登录
     $scope.toLogin = function ($event, $form) {
-      if ($form.$invalid)return false;
+      if ($form.$invalid) return false;
       var login = angular.extend({}, $scope.login);
       delete login.rememberPw;
+      var loginSign = '{"phone":"' + $scope.login.phone + '","password":"' + $scope.login.password + '"}';
+      loginSign = Base64.encode(loginSign);
       $Loading.show({class: MSGICON.load, text: '登录中...'}, false);
-      LOGIN.getModel(login).then(function (req) {
+      AUTH.toLogin(loginSign).then(function(req){
         var data = req.response.data;
         $Loading.show({
           class: data.success ? MSGICON.success : MSGICON.fail,
@@ -49,6 +51,10 @@ angular.module('freexf')
       localStorageService.set(AUTH.FREEXFUSER.name, value);
       AUTH.FREEXFUSER.data = value ? value : AUTH.FREEXFUSER.data;
     });
-
   });
+
+
+
+
+
 

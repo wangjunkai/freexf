@@ -1,60 +1,60 @@
+<ion-view view-title="我的订单" class="freexf-ef">
+  <ion-content lazy-scroll class="myorder">
+    <div class="content freexf-account-list">
+      <div style="text-align:center" ng-show="haveNull">你还没有订单哦~</div>
+      <div class="list">
+        <ul>
+          <li class="orderList" ng-repeat="item in orderlist" ng-show="item.IsCancel">
+            <div class="OrderDetail clearfix">
+              <div class="OrderMessage">
+                <div class="order number">订单号:<span>{{item.OrderId}}</span></div>
+                <div class="order time">下单时间:<span>{{item.SetOrderTime}}</span></div>
+                <input class="state" ng-value="item.myVar" readonly="readonly"/>
+              </div>
+              <div class="courseDetail-list" ng-click="openModal('coursedetail',{ProductId:item.ProductId})">
+                <div class="image">
+                  <img src="img/publicbg/null_bg320_180.png" width="100%" image-lazy-src="{{item.image}}">
+                </div>
+                <div class="courseDetail-words">
+                  <h2>{{item.ProductName}}</h2>
+                  <div class="courseList">
+                    <p class="name" ng-show="item.teachername">●&nbsp;讲师<i>{{item.teachername}}</i></p>
+                    <span class="time">●&nbsp;课程有效期<i>{{item.deadline}}天</i></span>
+                    <span class="count">●&nbsp;<i>{{item.hour}}</i>课时</span>
+                    <p class="xf"><font>{{item.price|xufen}}</font><span ng-show="item.price| xufenshow">学分</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!--<div ng-click="goOrderDetail(item.orderRowid)" ng-show="">订单详情</div>-->
+              <div class="btnGrounp" ng-show="item.payOrder">
+                <button class="button button-stable" ng-click="delOrderList(item.orderRowid)" id="isCancelOrder"> 取消订单
+                </button>
+                <button class="button button-assertive"
+                        ng-click="openModal('payagreement',{paycourseId: item.ProductId})" id="isPayOrder">付款
+                </button>
 
-<ion-view view-title="我的订单">
+              </div>
+              <div class="btnGrounp" ng-show="item.study">
+                <button class="button button-stable" ng-click="goOrderDetail(item.orderRowid)"
+                        ng-show="item.isDelivery">收货地址
+                </button>
+                <button class="button button-balanced"
+                        ng-click="openModal('coursedetail',{ProductId:item.ProductId,state:'1'})">立即学习
+                </button>
+              </div>
+              <div class="btnGrounp" ng-show="item.redetail">
+                <button class="button button-balanced" ng-click="openModal('coursedetail',{ProductId:item.ProductId})">
+                  订单详情
+                </button>
+              </div>
 
-  <ion-header-bar default-header-bar class="freexf-bar lightgray">
-    <div class="bar-left">
-      <button class="button-clear freexf-back freexf-left" default-nav-back-button ng-click="goBack()">
-        <i class="icon freexf-goback"></i>
-      </button>
-    </div>
-    <div class="title">我的订单</div>
-  </ion-header-bar>
-    <ion-content lazy-scroll class="myorder">
-        <div style="text-align:center" ng-show="haveNull">你还没有订单哦~</div>
-        <div class="content  ionic-pseudo">
-            <div class="list">
-                <ul>
-                    <li class="orderList" ng-repeat="item in orderlist" ng-show="item.IsCancel">
-                        <div class="OrderDetail">
-                            <div class="OrderMessage">
-                                <div class="order number">订单号:<span>{{item.OrderId}}</span></div>
-                                <div class="order time">下单时间:<span>{{item.SetOrderTime}}</span></div>
-                                <input class="state" ng-value="item.myVar" readonly="readonly" />
-                            </div>
-                            <div class="courseDetail-list">
-                                <div class="image">
-                                    <img src="{{item.image}}" width="100%" image-lazy-src="{{item.image}}" alt="{{item.ProductName}}">
-                                </div>
-                                <div class="courseDetail-words">
-                                <h2>{{item.ProductName}}</h2>
-                                <div class="courseList">
-                                    <p class="name" ng-show="item.teachername">●&nbsp;讲师<i>{{item.teachername}}</i></p>
-                                    <span class="time">●&nbsp;课程有效期<i>{{item.deadline}}天</i></span>
-                                    <span class="count">●&nbsp;<i>{{item.hour}}</i>课时</span>
-                                    <p class="xf"><font>{{item.price|xufen}}</font><span ng-show="{{item.price| xufenshow}}">学分</span></p>
-                                </div>
-                              </div>
-                            </div>
-                            <!--<div ng-click="goOrderDetail(item.orderRowid)" ng-show="">订单详情</div>-->
-                            <div class="btnGrounp" ng-show="item.payOrder">
-                                <button class="button button-stable"  ng-click="delOrderList(item.orderRowid)"> 取消订单</button>
-                                <button class="button button-assertive" ng-click="gopay(item.ProductId)">付款</button>
-
-                            </div>
-                            <div class="btnGrounp" ng-show="item.study" >
-                                <button class="button button-stable"  ng-click="goOrderDetail(item.orderRowid)" ng-show="item.isDelivery"> 收货地址</button>
-                                <button class="button button-balanced" ng-click="goStudy(item.ProductId,'1')">立即学习</button>
-                            </div>
-                            <div class="btnGrounp" ng-show="item.redetail">
-                                <button class="button button-balanced" ng-click="goredetail(item.ProductId)">订单详情</button>
-                            </div>
-
-                        </div>
-                    </li>
-                </ul>
-                <ion-infinite-scroll ng-if="uppageshow" on-infinite="doRefresh()" distance="1%"> </ion-infinite-scroll>
-                <div ng-hide="uppageshow" class="freexf-nullmsg">{{bottomtext}}</div>
             </div>
-        </div>
-    </ion-content>
+          </li>
+        </ul>
+        <ion-infinite-scroll ng-if="uppageshow" on-infinite="doRefresh()" distance="1%"></ion-infinite-scroll>
+        <div ng-hide="uppageshow" class="freexf-nullmsg">{{bottomtext}}</div>
+      </div>
+    </div>
+  </ion-content>
 </ion-view>

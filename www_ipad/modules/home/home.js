@@ -62,12 +62,12 @@
       }
     }])
 
-    .controller('home_ctrl', function ($scope, $timeout, $ionicLoading, $exceptionHandler, $state, $ionicSlideBoxDelegate, $ionicModal, AUTH, ENV, HomeRepository) {
+    .controller('home_ctrl', function ($scope, $timeout, $ionicLoading, $exceptionHandler, $state, $ionicSlideBoxDelegate, $freexfUser, $frModal, ENV, HomeRepository) {
       var Home = HomeRepository(ENV._api.__GetIndexGather);
       $scope.$on('$ionicView.loaded', function () {
       });
 
-      $scope.au = AUTH;
+      $scope.au = $freexfUser.auth();
       $scope.getTime = function () {
         return new Date().getTime();
       };
@@ -80,22 +80,17 @@
       $scope.goCourseList = function (category1) {
         $state.go('courseplate', {Category1: category1});
       };
-      //var a = require(['modules/course/coursedetail']);
-      $ionicModal.fromTemplateUrl('modules/course/course.html', function (modal) {
-        debugger
-        $scope.modal = modal;
-      }, {
-        scope: $scope,
-        animation: 'slide-in-up'
-      });
-      $scope.openModal = function () {
-        $scope.modal.show();
-      };
-    })
-    .controller('index_daohang_ctrl', function ($scope) {
-      //  require(['modules/index/index_ctrl'], function (shouye_ctrl) {
-      //    $injector.invoke(shouye_ctrl, this, {'$scope': $scope});
-      //  });
-    })
 
+      //传递：courseId 课程ID
+      var modal_ary = {
+        coursedetail: {
+          scope: $scope,
+          ctrlUrl: 'modules/course/coursedetail',
+          tempUrl: 'modules/course/coursedetail.html'
+        }
+      };
+      $scope.openModal = function (name, data, back) {
+        $frModal.openModal($scope, name, modal_ary, data, back);
+      };
+    });
 })();

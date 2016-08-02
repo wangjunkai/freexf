@@ -1,6 +1,9 @@
 .setlist li {
-  border-top: 1px solid #eeeeee;
   background-color: #fff;
+}
+
+.setlist li:not(:first-child) {
+  margin-top: 5px;
 }
 
 .set, .freexf-contact, .set .scroll {
@@ -17,20 +20,26 @@
   z-index: 0;
 }
 
-.set a {
+.set .setlist li {
   font-size: 14rem;
   color: #323232;
   display: block;
-  padding: 16px;
+  padding: 0 20px;
+  height: 50px;
+  line-height: 50px;
 }
 
 .set .changepassword {
-  margin: 5px auto;
+  margin-top: 5px;
   background-color: #fff;
 }
 
-.quit {
-  margin: 20px 12px;
+.set .quit {
+  margin-top: 21px;
+  font-size: 17rem;
+  color: #EA4C00;
+  width: 100%;
+  border: 0;
 }
 
 .quitbtn, .quitbtn:hover {
@@ -129,11 +138,15 @@
   background-color: #fff;
 }
 
-.logout-set {
+.setlist li.logout {
   background-color: #dcdcdc;
   pointer-events: none;
-}
-
-.logout-set > a {
   color: #a7a7a7;
+}
+.contact {
+  color: #323232;
+  font-size: 15rem;
+}
+.c1ab{
+  color: #1ab554 !important;
 }

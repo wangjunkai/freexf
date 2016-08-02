@@ -15,7 +15,6 @@
 }
 
 .MyAcc-top {
-  height: 160px;
   background-color: #1ab655;
   color: #fff;
   padding-top: 40px;
@@ -36,6 +35,7 @@
   -webkit-box-shadow: 0 0 1px #17a14b;
   -moz-box-shadow: 0 0 1px #17a14b;
   box-shadow: 0 0 1px #17a14b;
+  margin-top: 35px;
 }
 
 .MyAcc-title span {
@@ -132,7 +132,7 @@
 }
 
 .courseDetail-list .image img, .progress .progress-bar span {
-  display: block
+  display: block;
 }
 
 .courseDetail-list .image {
@@ -323,11 +323,33 @@
   padding-top: 20%;
   font-size: 17rem;
 }
+.orderList .image.soldout {
+  position: relative;
+}
+.orderList .image.floor.soldout:after{
+  content: '课程已下架'!important;  
+}
+.orderList .image.soldout:after {
+  content: '课程已下架'!important;
+  background-color: rgba(0, 0, 0, 0.6);
+  clear: both;
+  position: absolute;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  color: #fff;
+  text-align: center;
+  padding-top: 20%;
+  font-size: 17rem;
+}
 
 .MyAcc-top .UpdateName, .freexf-buttons {
   position: relative
 }
-
+.MyAcc-top a{
+  color:#fff
+}
 .myCollection .btnGrounp {
   float: right;
   background-color: #fff;
@@ -543,4 +565,67 @@ input.hasPlace:-ms-input-placeholder,textarea.hasPlace:-ms-input-placeholder {
 
 .freexf-buttons a:last-child {
   float: right;
+}
+.button.button-balanced.istatus{
+    background:none;
+    color:#969696;
+    border:1px solid #969696
+}
+
+
+.freexf-login-clues{
+    width:100%;
+    background-image:url(../img/user/login-clues-bg-3x.jpg);
+    background-repeat:no-repeat;
+    background-size: 100%;
+}
+
+.freexf-login-clues.active .popup{
+    background-color:transparent;
+    width: auto !important;
+}
+
+.freexf-login-clues.active .popup .popup-head{
+    display:none;
+}
+
+.freexf-login-clues.active .popup .popup-body{
+    padding:0 !important
+}
+
+.freexf-login-clues-content{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+.login-clues-content-message {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.login-clues-content-message img{
+    position:relative;
+    height:100%;
+    max-width: 100%;
+}
+
+/*.login-clues-content-message a{
+    position:absolute;
+    width:100%;
+    height:12%;
+    left:0;
+    bottom:-5px;
+}*/
+
+.login-clues-button {
+    position: absolute;
+    background-image:url(../img/user/login-clues-button-3x.png);
+    background-repeat:no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 12%;
+    left: 0;
+    bottom: -5px;
 }

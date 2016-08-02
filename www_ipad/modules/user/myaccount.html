@@ -1,34 +1,78 @@
-<ion-view view-title="我的账户" class="">
+<ion-view view-title="我的账户">
   <ion-pane>
     <ion-side-menus>
       <!-- Left menu -->
       <ion-side-menu side="left">
+        <ng-include src="'modules/user/set.html'" ng-controller="set_ctrl" include-replace></ng-include>
       </ion-side-menu>
-      <ion-side-menu-content drag-content="false" class="freexf-content-table">
+      <ion-side-menu-content drag-content="false" class="freexf-content-table myaccount">
         <ion-pane class="freexf-account-pane">
-          <div class="MyAcc-top">
-            <div class="MyAcc-icon"></div>
-            <button class="to-login" ng-click="openModal()">立即登录</button>
-            <p class="hr"></p>
-            <a class="account-set" ng-click="showMenu()">
-              <div class="MyAcc-setting"></div>
-              <span class="span-set">设置</span>
-            </a>
+          <div class="MyAcc-top" ng-include="auth.userLg?'loginTitle.html':'noLoginTitle.html'">
           </div>
+          <p class="hr"></p>
+          <div class="freexf-account-tabs" account-tab>
+
+          </div>
+          <a class="account-set" ng-click="showMenu($event)">
+            <span class="span-set">设置</span>
+          </a>
         </ion-pane>
-        <ion-content class="freexf-account">
-          <div class="MyAcc-content clearfix">
-            <div class="TipLogo fail"></div>
-            <p>无法记录和同步学习进度，建议登录后再学习~</p>
+        <ion-nav-view class="freexf-account" name="account">
+
+        </ion-nav-view>
+        <script type="text/ng-template" id="loginTitle.html">
+
+          <div class="MyAcc-icon" ng-model="ImgBoxShow" ng-click="ChangeUserImg()" ng-style="userImage"></div>
+          <div class="UpdateName">
+            <div class="Length">
+              <input class="name" type="text" placeholder="您还没有昵称哟!" ng-model="myuser.nickname" id="updateUserName"
+                     ng-blur="changeName(true)" autocomplete="off"/>
+              <span class="edit" ng-click="changeName(false)"></span>
+
+            </div>
+
           </div>
-          <div class="freexf-padding-24">
-            <a href="#/login">
-              <button class="button button-block freexf-button-balanced freexf-margin-bottom-30">
-                立即登录
-              </button>
-            </a>
+          <!--更换图片框-->
+          <div class="changeImg" ng-show="ImgBoxShow">
+            <div class="modal-backdrop-bg new" ng-click="cancelPopup()" ng-show="canPopup"></div>
+            <div class="userImgBox">
+              <div class="row userImg">
+                <div class="col col-33 on" ng-click="women()">
+                  <img src="img/user/women.png" width="100%">
+                  <label class="radio">
+                    <!--onkeydown="if(event.keyCode==13) return false;"-->
+                    <input value="女" name="sex" id="sex2" checked="checked" type="radio" ng-checked="checkWomen"/>
+                    <i></i>
+                  </label>
+                </div>
+                <div class="col col-33" ng-click="man()">
+                  <img src="img/user/man.png" width="100%">
+                  <label class="radio">
+                    <input value="男" name="sex" id="sex1" type="radio" ng-checked="checkMan"/>
+                    <i></i>
+                  </label>
+                </div>
+                <div class="col col-33" ng-click="nobody()">
+                  <img src="img/user/null.png" width="100%">
+                  <label class="radio">
+                    <input value="保密" name="sex" id="sex0" type="radio" ng-checked="checkNobody"/>
+                    <i></i>
+                  </label>
+                </div>
+              </div>
+            </div>
+
           </div>
-        </ion-content>
+          <div class="MyAcc-title">
+            <span>已获得<font>{{myuser.money}}</font></span>
+            <span>待获得<font>{{myuser.nomoney}}</font></span>
+          </div>
+
+        </script>
+        <script type="text/ng-template" id="noLoginTitle.html">
+          <div class="MyAcc-icon"></div>
+          <button class="to-login" ng-click="openModal('login')" id="isLogin">立即登录</button>
+        </script>
       </ion-side-menu-content>
     </ion-side-menus>
   </ion-pane>

@@ -21102,7 +21102,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
 
           // skip the check for directives with async modules, we'll check the derived sync
           // directive when the template arrives
-          if (!directive.templateUrl) {
+            if (!directive.templateUrl) {
             if (isObject(directiveValue)) {
               // This directive is trying to add an isolated scope.
               // Check that there is no scope of any kind already
@@ -21220,6 +21220,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
         }
 
         if (directive.templateUrl) {
+            
           hasTemplate = true;
           assertNoDuplicate('template', templateDirective, directive, $compileNode);
           templateDirective = directive;
@@ -46699,7 +46700,9 @@ function $TemplateFactory(  $http,   $templateCache,   $injector) {
    * @return {string|object}  The template html as a string, or a promise for
    * that string,or `null` if no template is configured.
    */
-  this.fromConfig = function (config, params, locals) {
+    this.fromConfig = function (config, params, locals) {
+        //window.versionsNum版本
+        config.templateUrl = config.templateUrl + window.versionsNum;
     return (
       isDefined(config.template) ? this.fromString(config.template, params) :
       isDefined(config.templateUrl) ? this.fromUrl(config.templateUrl, params) :
@@ -52589,7 +52592,8 @@ function($ionicLoadingConfig, $ionicBody, $ionicTemplateLoader, $ionicBackdrop, 
         appendTo: $ionicBody.get()
       })
       .then(function(self) {
-        self.show = function(options) {
+          self.show = function (options) {
+          
           var templatePromise = options.templateUrl ?
             $ionicTemplateLoader.load(options.templateUrl) :
             //options.content: deprecated

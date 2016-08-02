@@ -17,25 +17,14 @@
     ]);
 
     app.constant('MSGICON', {
-        success: 'ion-checkmark-round',
-        fail: 'ion-alert-circled',
-        load: 'ion-load-a'
-      })
+      success: 'ion-checkmark-round',
+      fail: 'ion-alert-circled',
+      load: 'ion-load-a'
+    })
       .constant('XHR', 0)
       .constant('AUTH', {
-        FREEXFUSER: {
-          name: 'freexfUser',
-          data: {
-            Sign: null,
-            rowId: null,
-            rememberPw: '',
-            password: '',
-            phone: '',
-            userLg: false
-          }
-        },
-        ISLOGIN: ['login', 'tab.myaccount'],
-        NOTLOGIN: ['tab.member']
+        ISLOGIN: ['login', 'myaccount'],
+        NOTLOGIN: ['mycourse', 'myorder', 'mycollection']
       })
       //ionic loading 全局配置服务
       .constant('$ionicLoadingConfig', {
@@ -65,125 +54,162 @@
           }
         }
       })
-      .directive('includeReplace', function () {
-        return {
-          require: 'ngInclude',
-          restrict: 'A',
-          link: function (scope, el) {
-            el.replaceWith(el.children());
+      .filter('teacherPath', function () {
+        return function (item, num) {
+          if (item == '') {
+            return 'img/course/teacher_img.png';
+          } else {
+            return item;
+          }
+        }
+      })
+      .filter('studyEnd', function () {
+        return function (item, endClassList, buy) {
+          if (buy) {
+            return endClassList.indexOf(item) > -1;
+          } else {
+            return false;
+          }
+
+        }
+      })
+      .filter('cutCharptName', function () {
+        return function (item) {
+          var pattern = /(.*).mp4$/g;
+          return pattern.test(item) ? "上次学到：" + RegExp.$1 : "您还没有学习该课程";
+        }
+      })
+      .filter('cutSummer', function () {
+        return function (item) {
+          return item.indexOf(" freexfpree=") > -1 ? item.split(" freexfpree=")[0] : item;
+        }
+      })
+      //user tabs
+      .service('$userTabs', function ($rootScope) {
+        var self = this;
+        var tabs = [
+          {index: 0, name: '我的课程', state: 'mycourse'},
+          {index: 1, name: '我的订单', state: 'myorder'},
+          {index: 2, name: '我的收藏', state: 'mycollection'},
+          {index: 3, name: '课程推荐', state: 'myrecommend'}
+        ];
+        var active = 'mycourse';
+        $rootScope.$on('$stateChangeStart', function (ev, state) {
+          state.parent == 'myaccount' && self.toBroadCast(state.name);
+        });
+        this.toBroadCast = function (state) {
+          for (var i = 0; i < tabs.length; i++) {
+            if (state == tabs[i].state) {
+              active = state;
+              $rootScope.$broadcast('userTabs:active', {index: tabs[i].index, state: active});
+              break;
+            }
           }
         };
+        this.getActive = function () {
+          return active;
+        };
+        this.tabs = function () {
+          return tabs;
+        };
       })
-      //初始化计算bar center 宽度
-      .directive('defaultHeaderBar', ['$rootScope', '$ionicHistory', '$ionicConfig', '$state', '$injector',
-        function ($rootScope, $ionicHistory, $ionicConfig, $state, $injector) {
-          return function (scope, element, attrs) {
-            //angular 包装的jquery有问题
-            var $element = $(element[0]);
-            scope.$on('$ionicView.loaded', function () {
-              var a = $element.find('.bar-left'), b = $element.find('.bar-center'), c = $element.find('.bar-right');
-              b.css('width', $element.width() - a.width() - c.width() - 2);
-            });
-          }
-        }])
-      //默认后退按钮当没有历史记录的时候跳转到首页 指令
-      .directive('defaultNavBackButton', ['$rootScope', '$ionicHistory', '$ionicConfig', '$state', '$injector',
-        function ($rootScope, $ionicHistory, $ionicConfig, $state, $injector) {
-          return function (scope, element, attrs) {
-            var $element = $(element[0]);
-            var back = function () {
-              //符合条件，返回home
-              var _backView = ['payaddress', 'payfail'];//后退页面
-              var _currentView = ['textbook', 'summer', 'coupon', 'abroad'];//当前页面
-              return !!($ionicHistory.backView() && $.inArray($ionicHistory.backView().stateName, _backView) < 0 && $.inArray($ionicHistory.currentView().stateName, _currentView) < 0);
-            };
-            scope.goBack = function () {
-              back() ? $ionicHistory.goBack() : $state.go('tab.home');
-            };
-            scope.$on('$ionicView.loaded', function () {
-              var a = back(), b = $element.find('i')[0];
-              b.className = b.className.replace(b.className.match(/freexf-\w+/), back() ? 'freexf-goback' : 'freexf-gohomeback');
-              $element.css('width', $(b).width()).removeClass('hide');
-            });
-          }
-        }])
-      //form 表单验证指令
-      .directive('fxValidate', ['$rootScope',
-        function ($rootScope) {
-          var reg = {
-            null: /\S/gi,
-            phone: /^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57]|99[0-9])[0-9]{8}$/gi,
-            password8_30: /^.{8,30}$/gi
+      //用户信息服务
+      .service('$freexfUser', function ($rootScope, $state, $userTabs, localStorageService, $ionicSideMenuDelegate) {
+        var self = this;
+        var auth = {
+          Sign: null,
+          rowId: null,
+          rememberPw: '',
+          password: '',
+          phone: '',
+          userLg: false
+        };
+        var name = 'freexfUser';
+        this.setUser = function (data) {
+          auth = $.extend({}, auth, data);
+          $rootScope.$broadcast('auth:update', auth);
+        };
+        this.toQuit = function () {
+          var freexfUser = {
+            Sign: null,
+            rowId: null,
+            userLg: false
           };
-          var formatObj = {
-            require: {
-              null: [reg.null, '不能为空'],
-              phone: [reg.null, '请填写手机号'],
-              password: [reg.null, '请填写密码'],
-              confirmPassword: [reg.null, '请填写确认密码'],
-              imgCode: [reg.null, '请填写图片验证码'],
-              phoneCode: [reg.null, '请填写手机验证码']
-            },
-            format: {
-              phone: [reg.phone, '手机号格式错误'],
-              password8_30: [reg.password8_30, '密码范围(8-30位)']
-            }
-          };
-          return {
-            //设置指令优先顺序
-            priority: -1,
-            require: '^?ngModel',
-            link: function (scope, element, attrs, ctrl) {
-              var $element = $(element[0]), msgAry = {}, formatType, formatMsg;
-              var temp = function (o) {
-                return '<p class="freexf-validate-msg" style="font-size:12px;color:red;">' + o + '</p>';
-              };
-              //输出提示信息
-              var fn = function () {
-                //设置form validate
-                ctrl.$setValidity('_isOk', true);
-                $element.nextAll('.freexf-validate-msg').remove();
-                for (var m in msgAry) {
-                  if (!(new RegExp(msgAry[m]['type'][0])).test($element.val())) {
-                    $element.after(msgAry[m]['temp']);
-                    ctrl.$setValidity('_isOk', false);
-                  }
-                }
-                //如果有多条提示信息，按照 fx-validate 中所设置的优先级来提示，最多提示一条
-                $element.nextAll('.freexf-validate-msg').length > 1 && $element.nextAll('.freexf-validate-msg:not(:last-child)').remove();
-              };
-              //添加提示信息到对象 截取字符串规则 【fx-validate="require（type什么类型的正则）:phone（提示信息）;format:phone;"】
-              for (var i = 0, j = attrs.fxValidate.split(';'); i < j.length; i++) {
-                var data = j[i], fIndex = data.indexOf(':'), lIndex = data.lastIndexOf(':');
-                if (fIndex > 0) {
-                  formatType = data.substring(0, fIndex), formatMsg = lIndex == data.length ? 'null' : data.substring(fIndex + 1, data.length);
-                  var msg = msgAry[formatType + '.' + formatMsg] = {};
-                  msg['type'] = formatObj[formatType][formatMsg];
-                  msg['temp'] = temp(formatObj[formatType][formatMsg][1]);
-                }
-              }
-
-              //绑定事件 ，设定规则,如果为 submit() 更改点击行为，主动验证form表单中的数据,submit(‘a’[表单的name],‘b’,‘c’),参数为空全部验证
-              if (Object.getOwnPropertyNames(msgAry).length <= 0) {
-                var newArgs = (new Function('$', "var submit = function () { return $.makeArray(arguments) }; return " + attrs.fxValidate))($);
-                var names = newArgs.length > 0 ? $.map(newArgs, function (val, i) {
-                  return '[name=' + val + ']'
-                }).join(',') : '[fx-validate]';
-                $element.on('click', function () {
-                  $($element.closest('form').find(names)).trigger('input');
-                });
-              }
-              else {
-                $element.on('input', fn.bind(this));
-              }
-            }
-          }
-        }])
+          $state.go('myaccount');
+          $userTabs.toBroadCast('mycourse');
+          self.setUser(freexfUser);
+          localStorageService.set(self.name(), self.auth());
+          $ionicSideMenuDelegate.toggleLeft(false);
+        };
+        this.auth = function () {
+          return auth;
+        };
+        this.name = function () {
+          return name;
+        };
+      })
       //modal服务
-      .factory('$frModal', function ($rootScope, $ionicModal,$compile, $q) {
+      .factory('$frModal', function ($rootScope, $interval, $ionicModal, $compile, $q) {
+        //用来存取每个modal的值
+        var frModals = function () {
+          var modals = [];
+          this.currentModal = {};
+          this.backModal = {};
+          this.addmodals = function (modal) {
+            modals.push(modal);
+          };
+          this.getmodals = function () {
+            return modals;
+          };
+        };
+        var root_frModals = new frModals();
+
         function frModal(options) {
           var self = this;
           var opt = options || {};
+          var _frModals = new frModals();
+          //后退按钮
+          var modalGoBack = function () {
+            var self = this;
+            self.hide();
+            _frModals.backModal.modal ? _frModals.backModal.modal._show(false, 'back') : root_frModals = new frModals();
+          };
+          //显示modal,记录每个modal和当前modal的历史modal  //hideback参数表示是否隐藏上一个modal
+          var modalShow = function (hideback, e) {
+            var self = this;
+            if (self.scope.$$destroyed) {
+              return;
+            }
+            if (hideback) {
+              $(self.$el[0]).find('.modal-backdrop-bg').css('opacity', 0);
+              self.show();
+              return;
+            }
+            _frModals.backModal = e === 'back' ? _frModals.backModal : $.extend({}, root_frModals.currentModal);
+            _frModals.currentModal = {
+              id: self.scope.$id,
+              modal: self
+            };
+            _frModals.addmodals(self);
+            root_frModals.currentModal = $.extend({}, _frModals.currentModal);
+            _frModals.backModal.modal && _frModals.backModal.modal.hide();
+            _frModals.currentModal.modal.show();
+          };
+
+          var modalHide = function (e) {
+            var self = this;
+            self.hide();
+            _frModals = new frModals();
+            root_frModals = new frModals();
+          };
+          var modalRemove = function () {
+            var self = this;
+            _frModals = new frModals();
+            root_frModals = new frModals();
+            $rootScope['h5playtimeend'] && ($interval.cancel($rootScope['h5playtimeend']));
+            self.remove();
+          };
+          //获取模板ctrl
           var getTemplate = function () {
             var tempDeferred = $q.defer();
             if (!opt.ctrlUrl) {
@@ -198,25 +224,59 @@
           var getModal = function () {
             var modalDeferred = $q.defer();
             getTemplate().then(function (ctrlObj) {
-              app.controllerProvider.register(ctrlObj.ctrl, ctrlObj.fn);
+              //app.controllerProvider.register(ctrlObj.ctrl, ctrlObj.fn);
               if (!opt.tempUrl) {
                 modalDeferred.reject("templateUrl not null!");
               } else {
+                //获取templ
+                if (opt.data) {
+                  var s = opt.scope || $rootScope;
+                  s['$data'] = opt.data;
+                }
                 $ionicModal.fromTemplateUrl(opt.tempUrl, {
-                  scope: opt.scope || $rootScope,
-                  animation: opt.animation || 'slide-in-up'
+                  scope: opt.scope || $rootScope,//设置scope，如果不提供为root,否则继承父级
+                  animation: opt.animation || 'slide-in-up',
+                  backdropClickToClose: !!opt.backdropClickToClose,
+                  focusFirstInput: true
                 }).then(function (modal) {
-                  $compile($(modal.modalEl).attr("ng-controller",ctrlObj.ctrl)[0]);
+                  //绑定controller
+                  //$compile($(modal.modalEl).attr("ng-controller", ctrlObj.ctrl))(modal.scope);
+                  modal.scope['$modal'] = modal;
+                  modal['_show'] = modalShow.bind(modal);
+                  modal['_hide'] = modalHide.bind(modal);
+                  modal['_back'] = modalGoBack.bind(modal);
+                  modal['_remove'] = modalRemove.bind(modal);
                   modalDeferred.resolve(modal);
                 });
               }
             });
             return modalDeferred.promise;
           };
+          //返回promise对象
           return getModal();
         }
-        return function(options){
-          return new frModal(options);
+
+        //打开modal
+        //scope当前作用域，modalname要打开modal 的name，modalary modal的数组，data需要传递的数据，back若为true不隐藏当前modal
+        function openModal(scope, modalname, modalary, data, back) {
+          modalary[modalname]['data'] = data;
+          var smodal = scope[modalname + '_modal'];
+          //判断是否是显示状态，当前modal作用域是否已经移除了
+          if (smodal && !smodal._isShown && !smodal.scope.$$destroyed) {
+            scope[modalname + '_modal']._show(back);
+          } else {
+            (new frModal(modalary[modalname])).then(function (modal) {
+              (scope[modalname + '_modal'] = modal) && modal._show(back);
+            });
+          }
+        }
+
+        return {
+          'modal': function (options) {
+            return new frModal(options);
+          },
+          'modalary': new frModals(),
+          'openModal': openModal
         }
       })
       //loading服务
@@ -260,21 +320,21 @@
         }
       })
       //全局路由配置
-      .run(['$rootScope', '$state', '$Loading', '$compile', '$timeout', '$anchorScroll', 'localStorageService', 'AUTH', 'XHR',
-        function ($rootScope, $state, $Loading, $compile, $timeout, $anchorScroll, localStorageService, AUTH, XHR) {
+      .run(['$rootScope', '$state', '$Loading', '$compile', '$timeout', '$anchorScroll', 'localStorageService', 'AUTH', '$freexfUser',
+        function ($rootScope, $state, $Loading, $compile, $timeout, $anchorScroll, localStorageService, AUTH, $freexfUser) {
           //用户本地信息
-          var local = localStorageService.get(AUTH.FREEXFUSER.name);
-          AUTH.FREEXFUSER.data = local ? local : AUTH.FREEXFUSER.data;
+          var local = localStorageService.get($freexfUser.name());
+          $freexfUser.setUser(local ? local : $freexfUser.auth());
 
           $rootScope.$on('$stateChangeStart', function (ev, to, toParams, from, fromParams) {
-            if (!AUTH.FREEXFUSER.data.userLg && $.inArray(to.name, AUTH.NOTLOGIN) >= 0) {
+            if (!$freexfUser.auth().userLg && $.inArray(to.name, AUTH.NOTLOGIN) >= 0) {
               ev.preventDefault();
-              $state.go('tab.myaccount');
+              $state.go('myaccount');
             }
-            else if (AUTH.FREEXFUSER.data.userLg && $.inArray(to.name, AUTH.ISLOGIN) >= 0) {
-              ev.preventDefault();
-              $state.go('tab.member');
-            }
+            /*else if (AUTH.FREEXFUSER.data.userLg && $.inArray(to.name, AUTH.ISLOGIN) >= 0) {
+             ev.preventDefault();
+             $state.go('member');
+             }*/
           });
           $rootScope.$on('$viewContentLoading', function (event, viewConfig) {
 
@@ -284,21 +344,22 @@
           });
           $rootScope.$on('$stateChangeError', function () {
             ev.preventDefault();
-            $state.go('tab.home');
+            $state.go('home');
           });
-
           //根据作用域id取得当前作用域dom
           var _con = function (fn, vf, load) {
             vf.isLoading = load;
             $('ion-content').each(function (e, dom) {
-              var view = angular.element($(dom).closest('ion-view'));
-              vf && view.length > 0 && vf.$id == view.scope().$id && fn(e, dom);
+              if ($(dom).closest('modal').length <= 0) {
+                var view = angular.element($(dom).closest('ion-view'));
+                vf && view.length > 0 && vf.$id == view.scope().$id && fn(e, dom);
+              }
             });
           };
           $rootScope.$on('$ionicView.beforeEnter', function (event, viewConfig) {
             _con.call(this, function (e, dom) {
               $(dom).siblings('#content-loading').length > 0 || $(dom).after(
-                $compile('<div id="content-loading" ng-show="isLoading" scroll="false">' +
+                $compile('<div id="content-loading" class="freexf-pane-loading" ng-show="isLoading" scroll="false">' +
                   '<div class="font content-loading">加载中...</div>' +
                   '</div>')(event.targetScope)
               );
@@ -312,12 +373,12 @@
           $rootScope.$on('$ionicView.afterEnter', function (event, viewConfig) {
             $timeout(function () {
               _con.call(this, function (e, dom) {
-                $(dom).css({'opacity': 1, 'margin-top': -1});
+                $(dom).css({'opacity': 1, 'transform': 'translate3d(0px, -1px, 0px)'});
               }, event.targetScope, false);
             }, viewConfig.direction == 'none' ? 200 : 0);
           });
         }])
-      .config(function ($provide, $stateProvider, $controllerProvider, $locationProvider, $urlRouterProvider, $ionicConfigProvider) {
+      .config(function ($provide, $stateProvider, $controllerProvider, $filterProvider, $locationProvider, $urlRouterProvider, $ionicConfigProvider, $urlMatcherFactoryProvider) {
 
         /*------------ionic 默认配置--------------------------------*/
         //修改默认后退键样式
@@ -332,46 +393,11 @@
         //修改title位置 ios默认（center）,andriod默认为（left）
         $ionicConfigProvider.navBar.alignTitle('center');
 
-        app.controllerProvider = $controllerProvider;
-
+        app.controller = $controllerProvider.register;
         /*-------------ui-router 配置-----------------------------*/
         $locationProvider.html5Mode(false);
         $urlRouterProvider.otherwise('/home');
-
         $stateProvider
-          .state('login', {
-            url: '/login',
-            templateUrl: 'modules/user/login.html',
-            controller: 'login_ctrl',
-            cache: false,
-            resolve: {
-              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
-                return $ocLazyLoad.load(['modules/user/login.js']);
-              }]
-            }
-          })
-          .state('register', {
-            url: '/register',
-            templateUrl: 'modules/user/register.html',
-            controller: 'register_ctrl',
-            cache: false,
-            resolve: {
-              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
-                return $ocLazyLoad.load(['modules/user/register.js']);
-              }]
-            }
-          })
-          .state('modifypassword', {
-            url: '/modifypassword',
-            templateUrl: 'modules/user/modifypassword.html',
-            controller: 'modifypassword_ctrl',
-            cache: false,
-            resolve: {
-              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
-                return $ocLazyLoad.load(['modules/user/modifypassword.js']);
-              }]
-            }
-          })
           .state('forgetpassword', {
             url: '/forgetpassword',
             templateUrl: 'modules/user/forgetpassword.html',
@@ -380,48 +406,6 @@
             resolve: {
               loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load(['modules/user/forgetpassword.js']);
-              }]
-            }
-          })
-          .state('set', {
-            url: '/set',
-            templateUrl: 'modules/user/set.html',
-            controller: 'set_ctrl',
-            cache: false,
-            resolve: {
-              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
-                return $ocLazyLoad.load(['modules/user/set.js']);
-              }]
-            }
-          })
-          .state('aboutus', {
-            url: '/aboutus',
-            templateUrl: 'modules/user/aboutus.html',
-            controller: 'aboutus_ctrl',
-            resolve: {
-              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
-                return $ocLazyLoad.load(['modules/user/aboutus.js']);
-              }]
-            }
-          })
-          .state('commonfaq', {
-            url: '/commonfaq',
-            templateUrl: 'modules/user/commonfaq.html',
-            controller: 'faq_ctrl',
-            resolve: {
-              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
-                return $ocLazyLoad.load(['modules/user/faq.js']);
-              }]
-            }
-          })
-          .state('ideafeedback', {
-            url: '/ideafeedback',
-            templateUrl: 'modules/user/ideafeedback.html',
-            controller: 'ideafeedback_ctrl',
-            cache: false,
-            resolve: {
-              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
-                return $ocLazyLoad.load(['modules/user/ideafeedback.js']);
               }]
             }
           })
@@ -467,39 +451,6 @@
               }]
             }
           })
-          .state('myorder', {
-            url: '/myorder',
-            templateUrl: 'modules/user/myorder.html',
-            controller: 'myorder_ctrl',
-            cache: false,
-            resolve: {
-              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
-                return $ocLazyLoad.load(['modules/user/myorder.js']);
-              }]
-            }
-          })
-          .state('mycourse', {
-            url: '/mycourse',
-            templateUrl: 'modules/user/mycourse.html',
-            controller: 'mycourse_ctrl',
-            cache: false,
-            resolve: {
-              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
-                return $ocLazyLoad.load(['modules/user/mycourse.js']);
-              }]
-            }
-          })
-          .state('mycollection', {
-            url: '/mycollection',
-            templateUrl: 'modules/user/mycollection.html',
-            controller: 'mycollection_ctrl',
-            cache: false,
-            resolve: {
-              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
-                return $ocLazyLoad.load(['modules/user/mycollection.js']);
-              }]
-            }
-          })
           .state('courseplate', {
             url: '/courseplate/:Category1&:Category2',
             views: {
@@ -518,21 +469,21 @@
               }]
             }
           })
-          .state('coursesearch', {
-            url: '/coursesearch',
+          .state('searchresult', {
+            url: '/searchresult?q',
             views: {
               '': {
-                templateUrl: 'modules/course/coursesearch.html',
-                controller: 'coursesearch_ctrl'
+                templateUrl: 'modules/course/searchresult.html',
+                controller: 'searchresult_ctrl'
               },
-              'classmodule@coursesearch': {
+              'classmodule@searchresult': {
                 //controller: 'coursesearch_ctrl',
                 templateUrl: 'modules/course/classmodule.html'
               }
             },
             resolve: {
               loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
-                return $ocLazyLoad.load(['modules/course/coursesearch.js']);
+                return $ocLazyLoad.load(['modules/course/searchresult.js']);
               }]
             }
           })
@@ -576,20 +527,6 @@
               }]
             }
           })
-          /*          .state('coursedetail', {
-           url: '/coursedetail/:courseId&:state',
-           templateUrl: 'modules/course/coursedetail.html',
-           controller: 'coursedetail_ctrl',
-           data:{
-           isModal:true
-           },
-           cache: false,
-           resolve: {
-           loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
-           return $ocLazyLoad.load(['modules/course/coursedetail.js']);
-           }]
-           }
-           })*/
           .state('coursegroup', {
             url: '/coursegroup/:courseId&:state',
             templateUrl: 'modules/course/coursegroup.html',
@@ -607,8 +544,9 @@
             abstract: true,
             templateUrl: 'modules/pubilc/tabs.html'
           })
-          .state('tab.home', {
+          .state('home', {
             url: '/home',
+            parent: 'tab',
             views: {
               'conent': {
                 templateUrl: 'modules/home/home.html',
@@ -626,8 +564,9 @@
               }, 0);
             }
           })
-          .state('tab.course', {
+          .state('course', {
             url: '/course',
+            parent: 'tab',
             views: {
               'conent': {
                 templateUrl: 'modules/course/course.html',
@@ -645,28 +584,9 @@
               }, 0);
             }
           })
-          .state('tab.member', {
-            url: '/member',
-            cache: false,
-            views: {
-              'conent': {
-                templateUrl: 'modules/student/member.html',
-                controller: 'member_ctrl'
-              }
-            },
-            resolve: {
-              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
-                return $ocLazyLoad.load('modules/student/member.js');
-              }]
-            },
-            onEnter: function ($ionicTabsDelegate, $timeout) {
-              $timeout(function () {
-                $ionicTabsDelegate.select(2)
-              }, 0);
-            }
-          })
-          .state('tab.myaccount', {
+          .state('myaccount', {
             url: '/myaccount',
+            parent: 'tab',
             views: {
               'conent': {
                 templateUrl: 'modules/user/myaccount.html',
@@ -675,7 +595,7 @@
             },
             resolve: {
               loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
-                return $ocLazyLoad.load(['modules/user/myaccount.js']);
+                return $ocLazyLoad.load(['modules/user/myaccount.js', 'modules/user/set.js']);
               }]
             },
             onEnter: function ($ionicTabsDelegate, $timeout) {
@@ -687,6 +607,66 @@
               $timeout(function () {
                 $ionicSideMenuDelegate.toggleLeft(false);
               })
+            }
+          })
+          .state('myorder', {
+            url: '/myorder',
+            parent: 'myaccount',
+            views: {
+              'account': {
+                controller: 'myorder_ctrl',
+                templateUrl: 'modules/user/myorder.html'
+              }
+            },
+            resolve: {
+              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load(['modules/user/myorder.js']);
+              }]
+            }
+          })
+          .state('mycourse', {
+            url: '/mycourse',
+            parent: 'myaccount',
+            views: {
+              'account': {
+                controller: 'mycourse_ctrl',
+                templateUrl: 'modules/user/mycourse.html'
+              }
+            },
+            resolve: {
+              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load(['modules/user/mycourse.js']);
+              }]
+            }
+          })
+          .state('mycollection', {
+            url: '/mycollection',
+            parent: 'myaccount',
+            views: {
+              'account': {
+                controller: 'mycollection_ctrl',
+                templateUrl: 'modules/user/mycollection.html'
+              }
+            },
+            resolve: {
+              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load(['modules/user/mycollection.js']);
+              }]
+            }
+          })
+          .state('myrecommend', {
+            url: '/myrecommend',
+            parent: 'myaccount',
+            views: {
+              'account': {
+                controller: 'myrecommend_ctrl',
+                templateUrl: 'modules/user/myrecommend.html'
+              }
+            },
+            resolve: {
+              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load(['modules/user/myrecommend.js']);
+              }]
             }
           })
       });

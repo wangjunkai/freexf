@@ -1,59 +1,76 @@
-<ion-view scroll-course-tab view-title="课程详情">
+<ion-modal-view ng-controller="coursedetail_ctrl" scroll-course-tab>
   <ion-header-bar class="freexf-bar lightgray">
     <div class="bar-left">
-      <button class="button-clear freexf-back freexf-left" default-nav-back-button ng-click="goBack()">
+      <button class="button-clear freexf-back freexf-left" ng-click="$modal._remove()">
         <i class="icon freexf-goback"></i>
       </button>
     </div>
-    <div class="title">课程详情</div>
+    <div class="title bar-center">课程详情</div>
     <div class="bar-right">
-      <button class="button-clear freexf-consult"><span>咨询</span></button>
+        <!--<button class="button-clear freexf-consult"><span>咨询</span></button>-->
+        <button class="button-clear freexf-info-consult onlineConsultJs" style="padding:0 12px 0 0!important;"></button>
+        <button class="button-clear freexf-collect" ng-class="{active:coursecollect}" ng-click="collectState()" style="padding:0 18px 0 0!important;"></button>
     </div>
   </ion-header-bar>
-  <div id="tabs" class="tabs-striped  tabs-color-balanced freexf-course"
-       style="position:absolute;top:-5px;left:0;width:100%;">
+  <div id="tabs" class="tabs-striped  tabs-color-balanced freexf-course" style="position:absolute;top:-5px;left:0;width:100%;">
     <!--tab选项卡-->
     <div class="tabs freexf-course-tabs">
-      <a class="tab-item" ng-class="{active:coursedetail}" href="javascript:void(0);" ng-click="coursedetailClick()">
+      <a class="tab-item" ng-class="{active:coursedetail}" href="javascript:void(0);" ng-click="coursedetailClick()" id="isCourseDetail">
         课程介绍
       </a>
-      <a class="tab-item" ng-class="{active:courseoutline}" href="javascript:void(0);"
-         ng-click="courseoutlineClick()">
+      <a class="tab-item" ng-class="{active:courseoutline}" href="javascript:void(0);" ng-click="courseoutlineClick()" id="isCourseOutLine">
         课程大纲
       </a>
     </div>
     <!--end-->
   </div>
-
   <ion-content lazy-scroll id="viewContent" ng-class="{hasfooter:!buy}">
-    <div class="item item-image" style="min-height:200px;" id="headerCourse">
-      <img src="{{courseDate.cover}}" ng-hide="videShow" image-lazy-src="{{courseDate.cover}}"
-           alt="{{courseDate.courseName}}"/>
-      <!--背景层已购买-->
-      <div class="freexf-Backdrop" ng-show="isbuy">
-        <p>您还没有学习该课程</p>
-        <button class="button" ng-click="coursedVideoPlay(outlineList[0][0].videoUrl)">开始学习</button>
+      <div class="item item-image" id="headerCourse">
+          <div class="freexf-video">
+              <img ng-src="{{courseDate.cover}}" ng-hide="videShow" image-lazy-src="{{courseDate.cover}}"
+                   alt="{{courseDate.courseName}}" />   <!--class="freexf-blur" 模糊效果 -->
+              <!--背景层已购买-->
+              <div class="freexf-Backdrop" ng-show="isbuy">
+                  <p>{{courseDate.lastCharptName|cutCharptName}}</p>
+                  <button class="button" ng-click="coursedVideoPlay(lastCharptId)">开始学习</button>
+              </div>
+              <!--未购买-->
+              <div class="freexf-startplay" ng-show="nobuy">
+                  <button class="button" ng-click="coursedVideoPlay(outlineFreeList[0].PartNameList[0][0],1)"></button>
+              </div>
+              <div class="video-box" id="videobox" ng-show="videShow">
+              </div>
+          </div>
+          <div class="freexf-courseinfo">
+              <h3>{{courseDate.courseName}}</h3>
+              <p>
+                  <span ng-show="teacher" style="width:95%;">
+                      讲师<i style="width:85%;">
+                          ：<em class="freexf-teachername"
+                               ng-repeat="t in courseDate.teacher">{{t}}</em>
+                      </i>
+                  </span>
+              </p>
+              <p>
+                  <span>课时数<i>：{{courseDate.classHours}}</i></span>
+                  <span>有效期<i>：{{courseDate.period}}天</i></span>
+              </p>
+              <div class="freexf-creditbox">
+                  <p>
+                      <i class="assertive freexf-credit">{{courseDate.price|xufen}}</i><span>
+                          <em ng-show="courseDate.price | xufenshow">学分</em>
+                      </span>
+                  </p>
+                  <p ng-class="{active:flowerstate}" ng-click="flowerStateClick()">
+                      <i class="icon"></i>{{courseDate.flowers}}
+                  </p>
+              </div>
+          </div>
       </div>
-      <!--未购买-->
-      <div class="freexf-startplay" ng-show="nobuy">
-        <button class="button" ng-click="coursedVideoPlay(outlineList[0][0].videoUrl)">
-        </button>
-      </div>
-      <!--收藏-->
-      <button class="freexf-collectcourse freexf-collect" ng-hide="videShow" ng-class="{active:coursecollect}"
-              ng-click="collectState()">
-        <i class="icon ion-ios-collect"></i>
-      </button>
-      <div class="video-box" ng-show="videShow">
-        <video id="videoplay" style="width:100%;position:relative;z-index:10;" controls="controls" autoplay>
-          <source id="vpmp4" src="" type='video/mp4'>
-        </video>
-      </div>
-    </div>
     <div class="tabs-striped  tabs-color-balanced freexf-course">
       <!--tab选项卡-->
       <div class="tabs freexf-course-tabs">
-        <a class="tab-item" ng-class="{active:coursedetail}" href="javascript:void(0);" ng-click="coursedetailClick()">
+        <a class="tab-item" ng-class="{active:coursedetail}" href="javascript:void(0);" ng-click="coursedetailClick()" id="isCourseDetailClick">
           课程介绍
         </a>
         <a class="tab-item" ng-class="{active:courseoutline}" href="javascript:void(0);"
@@ -66,28 +83,54 @@
     <!--课程介绍以及大纲-->
     <div id="coursedetail">
       <div class="freexf-coursedetail" ng-show="coursedetail">
-        <div class="freexf-courseinfo">
-          <h3>{{courseDate.courseName}}</h3>
-          <p>
-            <span ng-show="teacher" style="width:95%;">
-              讲师
-              <i style="width:85%;">：<em class="freexf-teachername" ng-repeat="t in courseDate.teacher">{{t}}</em></i>
-            </span>
-          </p>
-          <p>
-            <!--<span ng-show="courseDate.teacher">讲师<i>：{{courseDate.teacher[0]}}</i></span>-->
-            <span>课时数<i>：{{courseDate.classHours}}</i></span>
-            <span>有效期<i>：{{courseDate.period}}天</i></span>
-          </p>
-          <div class="freexf-creditbox">
-            <p>
-              <i class="assertive freexf-credit">{{courseDate.price|xufen}}</i>
-              <span><em ng-show="courseDate.price | xufenshow">学分</em></span>
-            </p>
-            <p ng-class="{active:flowerstate}" ng-click="flowerStateClick()"><i class="icon"></i>{{courseDate.flowers}}
-            </p>
+        <div ng-show="showGroupCourse">
+          <div class="freexf-course-group" ng-show="groupCourse">
+            <p id="isProductName">{{courseDate.CrouseBigList[0].ProductName}}</p>
+            <ion-scroll direction='x' scrollbar-x='false'>
+              <div class="row coursegroup">
+
+                <div class="col col-34" ng-click="changeDetail(courseDate.CrouseBigList[0].ProductId)">
+                  <img ng-src="{{courseDate.CrouseBigList[0].image}}" />
+                  <div>
+                    <p class="freexf-coursename" id="isProductName1" >{{courseDate.CrouseBigList[0].ProductName}}</p>
+                  </div>
+                </div>
+
+                <div class="col col-34" ng-repeat="gp in courseDate.CrousePartList[0]" ng-click="changeDetail(gp.ProductId)">
+                  <img ng-src="{{gp.image}}" id="isImage"/>
+                  <div>
+                    <p class="freexf-coursename" id="isProductName2">{{gp.ProductName}}</p>
+                  </div>
+                </div>
+              </div>
+            </ion-scroll>
+          </div>
+          <div class="freexf-course-group" ng-repeat="(index,cg) in courseDate.CrouseBigList" ng-hide="groupCourse">
+            <p>{{cg.ProductName}}</p>
+            <ion-scroll direction='x' scrollbar-x='false'>
+              <div class="row coursegroup">
+
+                <div class="col col-34" ng-click="changeDetail(cg.ProductId)">
+                  <img ng-src="{{cg.image}}"/>
+                  <div>
+                    <p class="freexf-coursename">{{cg.ProductName}}</p>
+                  </div>
+                </div>
+
+                <div class="col col-34" ng-repeat="gp in courseDate.CrousePartList[index]"
+
+                     ng-click="changeDetail(gp.ProductId)">
+                  <img ng-src="{{gp.image}}"/>
+                  <div>
+                    <p class="freexf-coursename">{{gp.ProductName}}</p>
+                  </div>
+                </div>
+              </div>
+            </ion-scroll>
           </div>
         </div>
+        <p style="text-align:center;font-size:12rem;" ng-show="more" ng-click="moreGroupCourse();">{{moreTxt}}</p>
+
         <ul class="list">
           <li class="item" ng-show="isCourseShow">
             <h2>课程介绍<span>Course Introduction</span></h2>
@@ -120,9 +163,9 @@
           <li class="item" ng-show="isProfileShow">
             <h2>教师简介<span>Teacher Profile</span></h2>
             <div class="item item-thumbnail-left" ng-repeat="(index,tp) in courseDate.teacherPath">
-              <img src="{{tp | teacherPath}}"/>
+              <img ng-src="{{tp | teacherPath}}"/>
               <div class="jiaoshijianjie" id="jiaoshijianjie">
-                <p ng-bind="courseDate.teacherIntroduce[index]">
+                <p ng-bind-html="courseDate.teacherIntroduce[index]">
                 </p>
               </div>
             </div>
@@ -130,38 +173,118 @@
         </ul>
       </div>
       <div class="freexf-courseoutline" ng-show="courseoutline">
-        <ul class="list freexf-courselist" ng-include="'courseoutline.html'"></ul>
+        <ul class="list freexf-courselist" ng-include="htmlId"></ul>
       </div>
       <!--end-->
     </div>
   </ion-content>
 
-  <div class="bar bar-footer freexf-buy" ng-hide="buy">
-    <button class="title freexf-buy" style="width:100%;margin:0;" ng-click="showAgreement()">立即购买</button>
-  </div>
-  <script type="text/ng-template" id="courseoutline.html">
+  <!--<div class="bar bar-footer row" style="padding:0;">-->
+    <!--<div class="col col-30" style="padding:0;padding-left:23px;line-height:44px;font-size: 19rem;">
+      <i class="assertive freexf-credit">{{courseDate.price|xufen}}</i>
+          <span>
+              <em style="font-size:12rem;color:#878787;" ng-show="courseDate.price | xufenshow">学分</em>
+          </span>
+    </div>
+    <div class="col col-21 freexf-consultdiv onlineConsultJs">
+      <i class="freexf-onlineconsult"></i>
+      <p>在线咨询</p>
+    </div>
+    <div class="col col-21 freexf-consultdiv" ng-click="showPopup()">
+      <i class="freexf-phoneconsult"></i>
+      <p>电话咨询</p>
+    </div>-->
+    <div class="bar bar-footer freexf-buy" ng-hide="buy">
+        <button class="freexf-buy" style="width:100%;margin:0;height:100%;font-size:15rem;" ng-disabled="IsOpenCrouse=='尚未开课'" ng-click="showAgreement()">
+            {{IsOpenCrouse}}
+        </button>
+    </div>
 
-    <li class="item freexf-test" ng-repeat="o in outlineList track by $index">
-      <div class="freexf-course-title">
-        <p>{{o[0].chapter}}</p>
-      </div>
-      <div>
-        <ul class="list freexfcourseitem">            <!--/*freexfdemoclass 试听课程  freexfcourseitem 课程列表*/-->
-          <li class="item item-button-right" ng-init="demo=!buy;end=l.isNoSee&&buy"
-              ng-class="{endclass:end,freexfdemoclass:demo}" ng-repeat="l in o track by $index">
-            <!--// class： endclass 已学完课程  intheclass 没学完课程  默认未学习-->
-            <p ng-click="coursedVideoPlay('{{l.videoUrl}}')">{{l.minChapter}}</p>
-            <button class="button freexf-play" ng-click="coursedVideoPlay('{{l.videoUrl}}')"
-                    ng-init="play=!courseDate.isPermissionCrouse&&!l.isNoFree?true:false" ng-class="{testplay:play}">
-              <!--// testplay 禁止播放-->
-              <!--<i class="icon freexf-play-outline"></i>-->
-            </button>
-          </li>
-        </ul>
-      </div>
-    </li>
-  </script>
-</ion-view>
+  <!--</div>-->
+    <script type="text/ng-template" id="coursegroup.html">
 
+        <li class="item freexf-test testClass" style="border-bottom:10px #fff solid;" ng-hide="isPayed" ng-if="outlineFreeList[0].PartNameList.length>0">
+            <!----class="freexf-test"未购买课程-->
+            <div class="freexf-course-title">
+                <p>试听课程</p>
+            </div>
+            <div>
+                <ul class="list freexfcourseitem">
+                    <!--/*freexfdemoclass 试听课程  freexfcourseitem 课程列表*/-->
+                    <li ng-repeat="l in outlineFreeList track by $index" class="coursechapterli" ng-if="l.PartNameList.length>0">
+                        <div class="freexf-course-title" style="background:#fff;">
+                            <p>{{l.ProductName}}</p>
+                        </div>
+                        <ul class="list">
+                            <li class="item item-button-right freexfdemoclass" ng-repeat="i in l.PartNameList track by $index">
+                                <p ng-click="coursedVideoPlay('{{i[0]}}',1)">{{i[1]}}</p>
+                                <button class="button freexf-play" ng-click="coursedVideoPlay('{{i[0]}}',1)">
+                                    <!--// testplay 禁止播放-->
+                                </button>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <!-- 组合课 -->
+        <li class="item freexf-test" ng-repeat="o in courseList track by $index" style="border-bottom:10px #fff solid;" ng-if="o.OutlineList.length>0">
+            <!----class="freexf-test"未购买课程-->
+            <div class="freexf-course-title courseTitle course-group-title" ng-click="toggle($event)">
+                <p>{{o.ProductName}}</p>
+            </div>
+            <div>
+                <ul class="list freexfcourseitem" style="display:none;">
+                    <!--/*freexfdemoclass 试听课程  freexfcourseitem 课程列表*/-->
+                    <li ng-repeat="l in o.OutlineList track by $index" class="coursechapterli">
+                        <div class="freexf-course-title coursechapter course-group-title" style="background:#fff;" ng-click="chapterToggle($event)">
+                            <p>{{l.chapterName}}</p>
+                        </div>
+                        <ul class="list chapter" style="display:none;">
+                            <li class="item item-button-right" ng-repeat="i in l.CharpterList track by $index" ng-class="{freexfdemoclass:!buy,endclass:{{i.uuRowId|studyEnd:endClassList:buy}},intheclass:fn(i.uuRowId,nowVideoPlayId,buy)}" ng-click="coursedVideoPlay('{{i.uuRowId}}')">
+                                <p>{{i.minChapter}}</p>
+                                <button class="button freexf-play" ng-init="play=!courseDate.isPermissionCrouse&&!i.isNoFree?true:false" ng-disabled="play" ng-class="{testplay:play}">
+                                    <!--// testplay 禁止播放-->
+                                </button>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </script>
+    <script type="text/ng-template" id="courseoutline.html">
+        <li class="item freexf-test testClass" style="border-bottom:10px #fff solid;" ng-hide="{{isPayed}}" ng-if="outlineFreeList[0].PartNameList.length>0">
+            <div class="freexf-course-title">
+                <p>试听课程</p>
+            </div>
+            <div>
+                <ul class="list freexfcourseitem">
+                    <li class="item item-button-right freexfdemoclass" ng-repeat="i in outlineFreeList[0].PartNameList track by $index" ng-if="outlineFreeList[0].PartNameList.length>0">
+                        <p ng-click="coursedVideoPlay('{{i[0]}}',1)">{{i[1]}}</p>
+                        <button class="button freexf-play" ng-click="coursedVideoPlay('{{i[0]}}',1)"></button>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <!-- 非组合课 -->
+        <li class="item freexf-test" ng-repeat="o in courseList[0].OutlineList track by $index" ng-if="courseList[0].OutlineList.length>0" style="border-bottom:10px #fff solid;">
+            <div class="freexf-course-title courseTitle course-group-title" ng-click="toggle($event)">
+                <p>{{o.chapterName}}</p>
+            </div>
+            <div>
+                <ul class="list freexfcourseitem" style="display:none;">
+                    <!--/*freexfdemoclass 试听课程  freexfcourseitem 课程列表*/-->
+                    <li class="item item-button-right" ng-repeat="i in o.CharpterList track by $index " ng-class="{freexfdemoclass:!buy,endclass:{{i.uuRowId|studyEnd:endClassList:buy}},intheclass:fn(i.uuRowId,nowVideoPlayId,buy)}" ng-click="coursedVideoPlay('{{i.uuRowId}}')">
+                        <p>{{i.minChapter}}</p>
+                        <button class="button freexf-play" ng-init="play=!courseDate.isPermissionCrouse&&!i.isNoFree?true:false" ng-disabled="play" ng-class="{testplay:play}">
+                            <!--// testplay 禁止播放-->
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </script>
+</ion-modal-view>
 
 

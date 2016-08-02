@@ -14,10 +14,10 @@
               <div class="MyAcc-setting"></div>
           </a>
         <div class="MyAcc-icon"></div>
-        <p>用户未登录</p>
+        <p><a href="#/login">登录</a> <span style="padding:0px 20px">/</span> <a href="#register">注册</a></p>
         <div class="MyAcc-title">
-          <span>已获得<font>0</font></span>
-          <span>待获得<font>0</font></span>
+            <span>已获得<font id="isMoney">{{myuser.money}}</font></span>
+            <span>待获得<font id="isNoMoney">{{myuser.nomoney}}</font></span>
         </div>
       </div>
       <div class="MyAcc-content clearfix">
@@ -26,7 +26,7 @@
       </div>
       <div class="freexf-padding-24">
         <a href="#/login">
-          <button class="button button-block freexf-button-balanced freexf-margin-bottom-30">
+          <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" id="isLogin">
             立即登录
           </button></a>
       </div>

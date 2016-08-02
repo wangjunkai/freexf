@@ -36,7 +36,6 @@
     min-height: 59px;
   }
 }
-
 .freexf-course-tabs.tabs {
   position: relative;
 }
@@ -113,7 +112,7 @@
   right: 23px;
   top: -6px;
   min-width: 40px;
-  height: 100%;
+  height: 130%;
   padding-top: 0px;
   font-size: 14rem;
   color: #878787;
@@ -248,8 +247,9 @@ img.freexf-blur {
 
 .freexf-Backdrop p {
   color: #fff;
-  font-size: 17.6rem;
-  margin-top: 15%;
+  font-size: 14rem;
+  margin: 15% auto 0;
+  width: 75%;
 }
 
 .freexf-Backdrop button {
@@ -283,13 +283,9 @@ img.freexf-blur {
 .freexf-buy {
   background: #1AB554;
   color: #fff;
-  width: 100%;
-  height: 45px;
+  font-size:17rem!important;
   border: none;
   font-size: 17rem;
-  position: fixed;
-  left: 0;
-  z-index: 999;
 }
 
 .freexf-courselist {
@@ -367,6 +363,9 @@ img.freexf-blur {
   position: relative;
   overflow: visible;
 }
+.freexfcourseitem .item.activated{
+    background-color:rgba(0,0,0,0);
+}    
 
 .freexfcourseitem .item:first-of-type {
   padding-top: 20px;
@@ -496,35 +495,24 @@ img.freexf-blur {
 }
 
 .freexf-collect:before {
+
+  width: 20px;
+  height: 20px;
   display: inline-block;
   content: "";
-  width: 16px;
-  height: 15px;
   background: url(../img/publicbg/course.png) no-repeat;
-  background-position: -35px -7px;
+  background-position: -4px -64px;
   background-size: 300px auto;
+  top: 50%;
+  margin-top: -10px;
   position: relative;
-  top: 2px;
-  left: 7px;
 }
 
 .freexf-collect.active:before {
-  background-position: -35px -67px;
-  left: 8px;
+  background-position: -35px -64px;
 }
-
-.freexf-collect:after {
-
-  content: "收藏";
-  position: relative;
-  left: -2px;
-}
-
-.freexf-collect.active:after {
-
-  content: "已收藏";
-  position: relative;
-  left: -6px;
+.freexf-collect.active{
+    opacity:1;
 }
 
 .freexf-courseoutline {
@@ -928,7 +916,7 @@ img.freexf-blur {
     left:23px;
     width:100%;
     line-height:40px;
-    font-size: 15rem;
+    font-size: 14rem;
     color: #323232;
 }
 .freexf-course-group .coursegroup img{
@@ -938,6 +926,8 @@ img.freexf-blur {
 .freexf-course-group .coursegroup p{
     text-align:center;
     margin:0;
+    padding: 0 10%;
+    font-size: 13rem;
 }
 .course-group-title:before{
     content:'';
@@ -986,19 +976,122 @@ img.freexf-blur {
 .coursegroup>div{
     position:relative;
 }
+/*.col-25{
+    width:33%!important;
+    max-width: 40%!important;
+}*/
 .coursegroup>div:after{
-    content:'+';
+    content:'';
+    width:36px;
+    height:36px;
+    background: url(../img/publicbg/course.png) no-repeat;
+    background-position: -87px -87px;
+    background-size: 300px auto;
     position:absolute;
-    right: -1rem;
-    top: 2rem;
-    font-size: 45rem;
-    font-weight: 100;
+    right: -18px;
+    top: 21%;
 }
 .coursegroup>div:first-of-type:after{
-    content:'=';    
+    background-position: -57px -87px;    
 }
 .coursegroup>div:last-of-type:after{
-    content:'';
+    background-image:none;
+}
+.freexf-coursename{
+    width:100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: bottom;
+}
+.testClass .course-group-title:before{
+    background-image:none;
+}
+.freexf-contact .popup{
+    width:94%;
+}
+.freexf-contact .popup .popup-head,
+.freexf-contact .popup .popup-buttons{
+    padding:0;
+}
+.freexf-contact .popup .popup-head{
+    border-bottom:1px solid #999;
+}
+.freexf-contact .popup .popup-title{
+    line-height:80px;
+    background:#fff;
+    font-size: 20rem;
+    font-weight:400;
+}
+.freexf-contact .popup .popup-buttons{    
+    max-height:50px;
+    min-height:50px;
+    height:50px;
+    background: #999;
+}
+.freexf-contact .popup .popup-buttons button{
+   max-height: 50px;
+   height:50px;
+   margin-right: 1px;
+   font-size: 14rem;
+}
+.freexf-contact .button.button-positive{
+    background:#fff;    
+    color:#1ab554;
+}
+.freexf-consultdiv{
+    position:relative;
+    padding:0;
+    text-align:center;
+    border-left: 1px #ddd solid;
+}
+.freexf-consultdiv>p{
+    width:100%;
+    color:#969696;
+    font-size: 10rem;
+    position:absolute;
+    bottom:0;
+    margin:0;
+}
+.freexf-onlineconsult{
+    display:inline-block;
+    min-width:30px;
+    height:30px;
+    background: url(../img/publicbg/course.png) no-repeat;
+    background-position: -29px -119px;
+    background-size: 300px auto;
+}
+.freexf-phoneconsult{
+    display:inline-block;
+    min-width:30px;
+    height:30px;
+    background: url(../img/publicbg/course.png) no-repeat;
+    background-position: 2px -119px;
+    background-size: 300px auto;
+
 }
 
-
+.new .teaName {
+    width: 37%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    float: left;
+}
+.new .course-count{
+    /*width: 63%;*/
+    color: #969696 !important;
+    font-size: 12rem !important;
+    margin-right: 0px !important;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    float: right;
+    
+}
+.course-count.countNew{
+    width:100%;
+   
+}

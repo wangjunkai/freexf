@@ -5,7 +5,7 @@ angular.module('freexf')
     var Faq = MobileFaq(ENV._api.__faq);
     $scope.$on('$ionicView.loaded', function () {
     });
-    Faq.getModel().then(function (res) {
+      Faq.getModel({ 'as_UUROWID': 'VHP<1%>EX;^3}/;MY8@){-' }).then(function (res) {
       $scope.aboutus = $sce.trustAsHtml(res.response.data.replace(/\r\n/ig, '<br>'));
     })
   });

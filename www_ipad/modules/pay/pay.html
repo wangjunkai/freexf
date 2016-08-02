@@ -1,7 +1,7 @@
-<ion-view view-title="支付中心">
+<ion-modal-view ng-controller="pay_ctrl" view-title="支付中心">
   <ion-header-bar default-header-bar class="freexf-bar lightgray">
     <div class="bar-left">
-      <button class="button-clear freexf-back freexf-left" default-nav-back-button ng-click="goBack()">
+      <button class="button-clear freexf-back freexf-left" ng-click="$modal._back()">
         <i class="icon freexf-goback"></i>
       </button>
     </div>
@@ -11,13 +11,13 @@
   <ion-content class="pay">
     <div class="paycontent">
       <div class="OrderMessage on">
-        <div class="title">{{payoname}}</div>
-        <div>你应付金额：<span class="money">¥<i>{{payomoney}}</i></span></div>
+        <div class="title" id="isPayName">{{payoname}}</div>
+        <div>你应付金额：<span class="money" id="isPayMoney">¥<i>{{payomoney}}</i></span></div>
       </div>
       <div class="OrderMessage">
-                <div>订单编号：<span>{{orderId}}</span></div>
-                <div>下单时间：<span>{{SetOrderTime}}</span></div>
-            </div>
+        <div>订单编号：<span id="isOrderId">{{orderId}}</span></div>
+        <div>下单时间：<span id="isSetOrderTime">{{SetOrderTime}}</span></div>
+      </div>
       <div class="PayState" ng-hide="mianfeiShow">
         <div class="PayState-group" ng-hide="payhide">
           <span class="PayIcon"></span>
@@ -27,18 +27,25 @@
     </div>
     <div ng-hide="payhide">
       <div ng-show="mianfeiShow">免费课程,在3秒后自动跳转,或点击以下按钮</div>
-      <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-click="goOrderDetail()" ng-show="mianfeiShow">完成支付
+      <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-click="goOrderDetail()"
+              ng-show="mianfeiShow" id="isPayFinish">完成支付
       </button>
+
       <!--正常手机支付-->
-      <a href="/pay/Alipay/default.aspx?OrderId={{payohref}}" ng-hide="ThisWX">
-        <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-hide="mianfeiShow">确认支付</button>
+      <a href="/pay/Alipay/default.aspx?OrderId={{payohref}}" class="zcpay" ng-hide="ThisWX"
+         ng-click="RealTimeUpdate('.zcpay')">
+        <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-hide="mianfeiShow"
+                id="IsPaySurePhone">确认支付
+        </button>
       </a>
-        <!--微信支付-->
-        <a href="/mobile/www/modules/pay/payweixin.html?payid{{payohref}}endpayid" ng-show="ThisWX">
-            <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-hide="mianfeiShow">确认支付</button>
-        </a>
-      <!--<button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-click="toPay()">确认支付 </button>-->
+      <!--微信支付-->
+      <a href="/mobile/www/modules/pay/payweixin.html?payid{{payohref}}endpayid" class="wxpay" ng-show="ThisWX"
+         ng-click="RealTimeUpdate('.wxpay')">
+        <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-hide="mianfeiShow"
+                id="IsPaySureWeixin">确认支付
+        </button>
+      </a>
     </div>
 
-
-</ion-view>
+  </ion-content>
+</ion-modal-view>

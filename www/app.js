@@ -8,43 +8,29 @@
     'localStorage'
   ], function (ionic) {
     angular.module('freexf', [
-        'ionic',
-        'oc.lazyLoad',
-        'ngSanitize',
-        'ionicLazyLoad',
-        'restangular',
-        'LocalStorageModule'
-      ])
+      'ionic',
+      'oc.lazyLoad',
+      'ngSanitize',
+      'ionicLazyLoad',
+      'restangular',
+      'LocalStorageModule'
+    ])
       .constant('MSGICON', {
         success: 'ion-checkmark-round',
         fail: 'ion-alert-circled',
         load: 'ion-load-a'
       })
       .constant('XHR', 0)
-      .constant('AUTH', {
-        FREEXFUSER: {
-          name: 'freexfUser',
-          data: {
-            Sign: null,
-            rowId: null,
-            rememberPw: '',
-            password: '',
-            phone: '',
-            userLg: false
-          }
-        },
-        ISLOGIN: ['login', 'tab.myaccount'],
-        NOTLOGIN: ['tab.member']
-      })
       //ionic loading 全局配置服务
       .constant('$ionicLoadingConfig', {
         template: '<ion-spinner icon="bubbles"></ion-spinner><div class="font">加载中...</div>',
         noBackdrop: false
       })
-
       //decodeUri filter
       .filter('decodeUri', function ($window) {
-        return $window.decodeURIComponent;
+        return function (item) {
+          return
+        }
       })
       .filter('xufen', function () {
         return function (item, num) {
@@ -102,7 +88,7 @@
         function ($rootScope) {
           var reg = {
             null: /\S/gi,
-            phone: /^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57]|99[0-9])[0-9]{8}$/gi,
+            phone: /^(1[0-9][0-9]|99[0-9])[0-9]{8}$/gi,
             password8_30: /^.{8,30}$/gi
           };
           var formatObj = {
@@ -110,6 +96,8 @@
               null: [reg.null, '不能为空'],
               phone: [reg.null, '请填写手机号'],
               password: [reg.null, '请填写密码'],
+              name: [reg.null, '请填写姓名'],
+              address: [reg.null, '请填写收货地址'],
               confirmPassword: [reg.null, '请填写确认密码'],
               imgCode: [reg.null, '请填写图片验证码'],
               phoneCode: [reg.null, '请填写手机验证码']
@@ -169,6 +157,32 @@
             }
           }
         }])
+      .service('AUTH', function ($injector,$q) {
+        var self = this;
+        this.FREEXFUSER = {
+          name: 'freexfUser',
+          data: {
+            Sign: null,
+            rowId: null,
+            rememberPw: '',
+            password: '',
+            phone: '',
+            userLg: false
+          }
+        };
+        this.ISLOGIN = ['login', 'tab.myaccount'];
+        this.NOTLOGIN = ['tab.member'];
+        this.toLogin = function (login) {
+          var defer = $q.defer();
+          var LOGIN = $injector.get('AuthRepository').call(null, 'AjaxLogin.aspx', '/ajax');
+          var loginSign = '{"phone":"' + self.FREEXFUSER.data.phone + '","password":"' + self.FREEXFUSER.data.password + '"}';
+          login = login ? login : Base64.encode(loginSign);
+          LOGIN.getModel({"sign": login}).then(function (req) {
+            defer.resolve(req);
+          });
+          return defer.promise;
+        }
+      })
       //loading服务
       .factory('$Loading', function ($injector) {
         var $ionicLoading = $injector.get('$ionicLoading');
@@ -203,15 +217,74 @@
         return function (exception, cause) {
           var $Loading = $injector.get('$Loading');
           $Loading.show({
-            template: '<div class="ion-alert-circled" style="font-size: 20px;"></div><div class="font">页面崩溃了,请刷新页面重试!</div>'
+            template: '<div class="ion-alert-circled" style="font-size: 20px;"></div><div class="font">数据载入错误,请刷新页面重试!</div>'
           });
           exception.message += ' (caused by "' + cause + '")';
           throw exception;
         }
       })
       //全局路由配置
-      .run(['$rootScope', '$state', '$Loading', '$compile', '$timeout', '$anchorScroll', 'localStorageService', 'AUTH', 'XHR',
-        function ($rootScope, $state, $Loading, $compile, $timeout, $anchorScroll, localStorageService, AUTH, XHR) {
+      .run(['$rootScope', '$state', '$Loading', '$compile', '$timeout', '$interval', '$anchorScroll', 'localStorageService', 'AUTH', 'XHR', 'ENV', 'UpdateAPES',
+        function ($rootScope, $state, $Loading, $compile, $timeout, $interval, $anchorScroll, localStorageService, AUTH, XHR, ENV, UpdateAPES) {
+          //PC端自动跳转
+          //var PCVideo = function () {
+          //    if (navigator.userAgent.match(/(iPhone|iPod|iPad|webOS|Android|ios)/i)) {
+          //        return 'mb';
+          //    } else {
+          //        return 'pc';
+          //    }
+          //}
+          ////url对应
+          //var PCurlarr = ['/home/index.aspx', '/courses/english/index',
+          //'/courses/k12/index', '/courses/multilingual/index', '/courses/accounting/index', '/courses/postgraduate/index', '/courses/interest/index', '/student/index',
+          //'/student/MyCourses?type=IsStudy', '/student/MyChoice-all-all-all-all-all-zonghe-desc', '/student/MyOrder', '/student/MyFavorite',
+          //'/student/SafeSetting.aspx']
+
+          //var mobileurlIDarr = ['/home', '/courseplate/%E8%8B%B1%E8%AF%AD&',
+          //    '/courseplate/%E4%B8%AD%E5%B0%8F%E5%AD%A6&', '/courseplate/%E5%A4%9A%E8%AF%AD%E7%A7%8D&', '/courseplate/%E4%BC%9A%E8%AE%A1%E8%81%8C%E4%B8%9A&', '/courseplate/%E8%80%83%E7%A0%94&', '/courseplate/%E5%85%B4%E8%B6%A3&', '/member',
+          //    '/mycourse', '/course', '/myorder', '/mycollection',
+          //    '/modifypassword']
+
+          //var PCchangeurl = function (PCurl) {
+          //    if (PCVideo() == 'pc') {
+          //        window.location.href = "http://" + "www.freexf.com" + PCurl;
+          //    }
+          //}
+          ////初始化url变量
+          //var nowurl = window.location.href;
+          //var mobileurlID = nowurl.split('#')[1];
+
+          //if (nowurl.indexOf('/coursedetail/') > -1) {
+          //    var courseurlID = nowurl.slice(nowurl.lastIndexOf('/') + 1, nowurl.lastIndexOf('&'));
+          //    var courseurl = "/courses/detail/index-" + courseurlID
+          //    PCchangeurl(courseurl);
+          //} else {
+          //    for (var i = 0; i < mobileurlIDarr.length; i++) {
+          //        if (mobileurlID == mobileurlIDarr[i]) {
+          //            PCchangeurl(PCurlarr[i]);
+          //        }
+          //    }
+          //}
+
+          //APES配置
+          if (localStorageService.get('APES0') == null) {
+            localStorageService.set('APES0', '0');
+          }
+          if (localStorageService.get('APES1') == null) {
+            localStorageService.set('APES1', '0');
+          }
+          if (localStorageService.get('APES2') == null) {
+            localStorageService.set('APES2', '0');
+          }
+          if (localStorageService.get('APES3') == null) {
+            localStorageService.set('APES3', '0');
+          }
+          if (localStorageService.get('APES4') == null) {
+            localStorageService.set('APES4', '0');
+          }
+          if (localStorageService.get('APES5') == null) {
+            localStorageService.set('APES5', '0');
+          }
           //用户本地信息
           var local = localStorageService.get(AUTH.FREEXFUSER.name);
           AUTH.FREEXFUSER.data = local ? local : AUTH.FREEXFUSER.data;
@@ -228,12 +301,77 @@
               $state.go('tab.member');
               return;
             }
+            ;
+
           });
           $rootScope.$on('$viewContentLoading', function (event, viewConfig) {
 
           });
-          $rootScope.$on('$stateChangeSuccess', function (ev, to, toParams, from, fromParams) {
+          $rootScope.$on('$stateChangeSuccess', function (ev, to, toParams, from, fromParams, rootScope) {
+            $interval.cancel($rootScope.h5playtimeend);
             !!$rootScope.xhr || $Loading.hide();
+            if (typeof (getCookieValue('Apes_Traffic_ID')) != 'undefined') {
+              var URLshortID = getCookieValue('Apes_Traffic_ID');
+              if (URLshortID != localStorageService.get('URLshortID')) {
+                localStorageService.set('URLshortID', URLshortID);
+                localStorageService.set('APES0', '0');
+                localStorageService.set('APES1', '0');
+                localStorageService.set('APES2', '0');
+                localStorageService.set('APES3', '0');
+                localStorageService.set('APES4', '0');
+                localStorageService.set('APES5', '0');
+              }
+            }
+            if (typeof (localStorageService.get('URLshortID')) != 'undefined' && localStorageService.get('APES0') != '1') {
+              var GetUpdateAPES = UpdateAPES(ENV._api.__UpdateAPES);
+              GetUpdateAPES.getModel({
+                'apesType': '0',
+                'URLTrafficID': localStorageService.get('URLshortID')
+              }).then(function (res) {
+              });
+              localStorageService.set('APES0', '1');
+            }
+            ;
+
+            //判断有无iframe id控制 有：干掉它
+            //添加iframe，url:?html=window.location.href.split('#')[1]
+
+
+            setTimeout(function () {
+              if ($('iframe').length) {
+                console.log('dalete');
+                $('#childFrame').remove();
+              }
+
+              var url = window.location.href.split('#')[1];
+              var childFrame = "<div id='childFrame'><iframe src='./seohtml.html?html=" + url + "'></iframe></div>"
+              console.log('iframe');
+              var template = angular.element(childFrame);
+              iframeElement = $compile(template)($rootScope);
+              angular.element(document.body).append(iframeElement);
+            }, 100)
+
+            //$rootScope.baidutj = function () {
+            //    $rootScope.nowurl = window.location.href.split('#')[1];
+            //    $rootScope.nowurl0 = window.location.href.split('#')[0];
+            //    if ($rootScope.nowurl0.indexOf('?') > 1) {
+            //        $rootScope.nowurl0 = $rootScope.nowurl0.split('?')[0]
+            //    }
+            //    $rootScope.pushUrl = $rootScope.nowurl0 + "?v=" + $rootScope.nowurl.substr(1) + "#" + $rootScope.nowurl;
+            //    return $rootScope.pushUrl;
+            //}
+
+            //setTimeout(function () {
+            //    console.log($rootScope.baidutj());
+            //    window.history.pushState({}, 0, $rootScope.baidutj());
+            //    var _hmt = _hmt || [];
+            //    (function () {
+            //        var hm = document.createElement("script");
+            //        hm.src = "//hm.baidu.com/hm.js?a80a61243445fb2bc4cd94612c8e857e";
+            //        var s = document.getElementsByTagName("script")[0];
+            //        s.parentNode.insertBefore(hm, s);
+            //    })();
+            //}, 2000);
           });
           $rootScope.$on('$stateChangeError', function () {
             ev.preventDefault();
@@ -418,6 +556,17 @@
               }]
             }
           })
+          .state('paywx', {
+            url: '/paywx/:OrderId',
+            templateUrl: 'modules/pay/payweixin.html',
+            controller: 'payweixin_ctrl',
+            cache: false,
+            resolve: {
+              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load(['modules/pay/payweixin.js']);
+              }]
+            }
+          })
           .state('myorder', {
             url: '/myorder',
             templateUrl: 'modules/user/myorder.html',
@@ -487,6 +636,7 @@
               }]
             }
           })
+
           .state('abroad', {
             url: '/abroad',
             templateUrl: 'activities/201606/abroad.html',
@@ -527,6 +677,7 @@
               }]
             }
           })
+
           .state('coursedetail', {
             url: '/coursedetail/:courseId&:state',
             templateUrl: 'modules/course/coursedetail.html',

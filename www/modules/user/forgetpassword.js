@@ -73,12 +73,12 @@ angular.module('freexf')
         yzmfalse: {text: '验证码错误!', class: MSGICON.fail},
         fail: {text: '该手机号已存在!', class: MSGICON.success}
       };
-      var parameter = {type: 'sms', mobile: $scope.forget.phone, codeyz: $scope.forget.code};
+      var parameter = {type: 'forgetpwdsms', mobile: $scope.forget.phone, codeyz: $scope.forget.code};
       PHONE_CODE.getModel(parameter).then(function (req) {
         var data = req.response.data;
         $Loading.show(msg[data], 2000);
         console.log(data);
-        var time = 5;
+        var time = 30;
         var stoptime = $interval(function () {
           if (time == 0) {
             $interval.cancel(stoptime), $event.target.disabled = false, $event.target.innerText = '获取验证码'

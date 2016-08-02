@@ -1,35 +1,20 @@
-<ion-view view-title="设置">
-
-  <ion-header-bar default-header-bar class="freexf-bar lightgray">
-    <div class="bar-left">
-      <button class="button-clear freexf-back freexf-left" default-nav-back-button ng-click="goBack()">
-        <i class="icon freexf-goback"></i>
-      </button>
-    </div>
+<ion-pane class="set">
+  <ion-header-bar class="freexf-bar lightgray">
     <div class="title">设置</div>
   </ion-header-bar>
-  <ion-content class="set">
-    <div class="list">
-      <ul class="setlist">
-        <li><a href="#/aboutus">关于学费全免网</a></li>
-        <li><a href="" ng-click="showcontact()">联系我们</a></li>
-        <li><a href="#/ideafeedback">意见反馈</a></li>
-        <li><a href="#/commonfaq">常见问题</a></li>
-      </ul>
-      <div class="changepassword" ng-class="{false:'logout-set'}[log]"><a href="#/modifypassword" id="changePassword">修改密码</a>
-      </div>
-      <div class="quit" ng-if="log">
-        <button ng-click="toQuit()" class="button quitbtn button-block">退出登录</button>
+  <div class="list has-header">
+    <ul class="setlist" sets-router></ul>
+    <div ng-click="toQuit()" ng-if="log" class="button quit">退出登录</div>
+  </div>
+  <div class="freexf-contact" ng-show="showcontactour">
+    <div class="phonecontent">
+      <div class="phone">400-803-6611</div>
+      <div class="btn">
+        <a class="cancel" href="" ng-click="hidecontact()">取消</a>
+        <a class="dial" ng-click="hidecontact()" href="tel:400-803-6611">拨打</a>
       </div>
     </div>
-    <div class="freexf-contact" ng-show="showcontactour">
-      <div class="phonecontent">
-        <div class="phone">400-803-6611</div>
-        <div class="btn">
-          <a class="cancel" href="" ng-click="hidecontact()">取消</a>
-          <a class="dial" ng-click="hidecontact()" href="tel:400-803-6611">拨打</a>
-        </div>
-      </div>
-    </div>
-  </ion-content>
-</ion-view>
+  </div>
+</ion-pane>
+
+

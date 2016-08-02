@@ -1,0 +1,24 @@
+<ion-view view-title="课程推荐" class="freexf-ef">
+  <ion-content lazy-scroll class="myrecommend">
+
+    <section class="freexf-home-table">
+      <div class="col-50 myrecommend-col freexf-col" ng-repeat="l in recommendlist" ng-click="openModal('coursedetail',{ProductId: l.productID})">
+        <div>
+          <img src="img/publicbg/null_bg320_180.png" image-lazy-src="{{l.coverurl}}">
+        </div>
+        <p class="ti">{{l.productName}}</p>
+        <div class="clearfix freexf-font-15">
+        <span class="freexf-left">
+          <strong class="xufen">{{l.price | xufen:6}}</strong>
+          <em ng-show="l.price | xufenshow">学分</em>
+        </span>
+          <span class="r10 freexf-right">
+          <em>课时数：</em>
+          <strong class="keshi">{{l.hour | xufen:4}}</strong>
+        </span>
+        </div>
+      </div>
+      <div class="freexf-nullmsg hide" ng-show="(!recommendlist||recommendlist.length<=0)">您目前没有推荐的课程</div>
+    </section>
+  </ion-content>
+</ion-view>

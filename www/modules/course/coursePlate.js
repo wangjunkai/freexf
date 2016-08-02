@@ -2,7 +2,7 @@
 
 
 angular.module('freexf', ['ionic'])
-  .controller('courseplate_ctrl', function ($scope, $rootScope, $injector, $ionicLoading, $timeout, $state, $stateParams, $http, $ionicScrollDelegate, ENV, CourseListRepository, GetCategoryRepository) {
+  .controller('courseplate_ctrl', function ($scope, $rootScope, $injector, $ionicLoading, $timeout, $state, $stateParams, $http, $ionicScrollDelegate, ENV, CourseListRepository, NewGetCategoryRepository) {
     var count = 0;
     var pageMax = 6;
     var order = "desc";
@@ -13,10 +13,14 @@ angular.module('freexf', ['ionic'])
     $scope.Category1 = $stateParams.Category1;  //一级分类
     $scope.Category2 = $stateParams.Category2;  //二级分类
     ($scope.Category2 == "") ? $scope.lingual = "全部" : $scope.lingual = $scope.Category2;
-    $scope.languageclass = false;   //分类收缩状态
-    $scope.languageClassShow = function () {
-      $scope.languageclass = !$scope.languageclass;
-    };
+    var isLanguageClass = $scope.Category1 == "中小学" ? true : false
+    $scope.languageClass = false;  //中小学课程分类
+    $scope.languageClassList = [];
+    $scope.gradeclass = false;   //分类收缩状态
+    $scope.gradeClassShow = function () {
+        $scope.gradeclass = !$scope.gradeclass;
+        isLanguageClass ? $scope.languageClass = !$scope.languageClass : false;
+    };    
     //获取课程列表
     var CourseList = CourseListRepository(ENV._api.__courselistpage);
     CourseList.getModel({
@@ -35,16 +39,21 @@ angular.module('freexf', ['ionic'])
       $scope.uppageshow = true;
     });
     //获取一二级分类菜单
-    var GetCategory = GetCategoryRepository(ENV._api.__GetCategory);
+    //var GetCategory = GetCategoryRepository(ENV._api.__GetCategory);
+    var GetCategory = NewGetCategoryRepository(ENV._api.__GetCategory_v01);
     GetCategory.getModel().then(function (res) {
       $scope.Category1List = res.response.data[0]['ls_Category'];
       getIdx($scope.Category1List);
       $scope.categorys = res.response.data[0]['ls_lingualList'][$scope.Category1Idx];   //二级分类菜单
+      if ($scope.Category1Idx==1) {
+          $scope.languageClassList = res.response.data[0]['ls_lingualList'][6];
+      }
+
     });
     //已知一级分类获取一级分类的下标
     function getIdx(arry) {
       $scope.Category1Idx = null;
-      for (var i = 0; i < arry.length; i++) {
+      for (var i = 0; i < 6; i++) {
         if (arry[i] == $scope.Category1) {
           $scope.Category1Idx = i;
           return;
@@ -101,14 +110,21 @@ angular.module('freexf', ['ionic'])
     };
     //选择课程分类
     $scope.category = function ($event) {
-        $scope.languageclass = false;
+        $scope.gradeclass = false;
+        $scope.languageClass = false;
+        var thisText = null;
         count = 0;
-      var childLi = document.querySelectorAll('.freexf-languageclass li');
-      var thisText = $event.target.innerHTML;
-      for (var i = 0; i < childLi.length; i++) {
-        childLi[i].className = "";
-      }
-      $event.target.className = "active";
+        var childLi = document.querySelectorAll('.freexf-languageclass li');
+        if ($event.target.innerHTML.indexOf("暑期衔接班") > -1) {
+            thisText = "全部";
+            $state.go('summer');
+        } else {
+            thisText = $event.target.innerHTML;
+            for (var i = 0; i < childLi.length; i++) {
+                childLi[i].className = "";
+            }
+            $event.target.className = "active";
+        }      
       $scope.lingual = thisText;
       (thisText == "全部") ? thisText = "" : thisText;
       $scope.Category2 = thisText;
@@ -160,4 +176,9 @@ angular.module('freexf', ['ionic'])
     $scope.toCourseDate = function (courseId) {
       $state.go('coursedetail', {courseId: courseId});
     };
-  });
+  })
+.filter('cutSummer', function () {
+    return function (item) {
+        return item.indexOf(" freexfpree=") > -1 ? item.split(" freexfpree=")[0] : item;
+    }
+});

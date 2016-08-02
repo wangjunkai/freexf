@@ -32,20 +32,20 @@
         <div class="item item-input item-floating-label">
           <span class="input-label">{{user.labelphonecode}}</span>
           <div class="input-left-box">
-            <input type="text" placeholder="{{user.labelphonecode}}" class="inputCode" name="phonecode"
+            <input type="text" placeholder="{{user.labelphonecode}}" id="isPhoneCode" class="inputCode" name="phonecode"
                    ng-model="user.phonecode" fx-validate="require:phoneCode">
           </div>
-          <button class="small-idcode-button" ng-click="PhoneCode($event,registerForm)" fx-validate="submit('phone','code')">获取验证码
+          <button class="small-idcode-button" ng-click="PhoneCode($event,registerForm)" id="isPhoneCodeReply"  fx-validate="submit('phone','code')">获取验证码
           </button>
         </div>
         <div class="item item-input item-floating-label">
           <span class="input-label">{{user.labelpassword}}</span>
-          <input type="password" placeholder="{{user.labelpassword}}" name="password" ng-model="user.password"
+          <input type="password" placeholder="{{user.labelpassword}}" name="password" ng-model="user.password"id="isPasswordInput"
                  fx-validate="require:password;format:password8_30">
         </div>
         <div class="item item-input item-floating-label">
           <span class="input-label {{registerForm.confirmPassword.$invalid || user.password!=user.confirmPassword}}">{{user.labelconfirmPassword}}</span>
-          <input type="password" placeholder="{{user.labelconfirmPassword}}" name="confirmPassword"
+          <input type="password" placeholder="{{user.labelconfirmPassword}}" name="confirmPassword" id="isPasswordSure"
                  ng-model="user.confirmPassword" ng-change="passwordAccord()" fx-validate="require:confirmPassword;format:password8_30">
         </div>
       </div>

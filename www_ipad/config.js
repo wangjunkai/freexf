@@ -6,7 +6,7 @@
 var paths = {
   //配置js路径
   paths: {
-    ionic: 'lib/ionic/js/ionic.bundle.min',//webapp前端框架
+    ionic: 'lib/ionic/js/ionic.bundle',//webapp前端框架
     oclazyload: 'lib/oclazyload/dist/ocLazyLoad.min',//按需加载
     imglazyload: 'lib/ionic-image-lazy-load/ionic-image-lazy-load',//图片懒加载
     restAngular: 'lib/restangular/dist/restangular.min',//ajax
@@ -14,7 +14,8 @@ var paths = {
     localStorage: 'lib/angular-local-storage/dist/angular-local-storage.min',//
     jq: 'lib/jquery/dist/jquery.min',
     lodash: 'lib/lodash/dist/lodash.min',//
-    qrcode: 'lib/qrcode/jquery.qrcode.min'
+    qrcode: 'lib/qrcode/jquery.qrcode.min',
+    base64: 'js/base64'
 
   },
   shim: {
@@ -24,8 +25,10 @@ var paths = {
     'restAngular': ['ionic'],
     'angularSanitize': ['ionic'],
     'localStorage': ['ionic'],
-    'services': ['ionic', 'app'],
-    'qrcode': ['ionic']
+    'directive': ['ionic', 'app'],
+    'services': ['ionic', 'app', 'directive'],
+    'qrcode': ['ionic'],
+    'base64': ['ionic']
   }
 };
 require.config(paths);
@@ -36,9 +39,10 @@ require([
     'lodash',
     'qrcode',
     'app',
-    'services'
+    'directive',
+    'services',
+    'base64'
   ], function () {
-    testViewport();
     doyoofun();
     //totop(window);
     ionic.Platform.ready(function () {

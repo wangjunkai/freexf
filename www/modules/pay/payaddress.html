@@ -1,4 +1,11 @@
 <ion-view view-title="支付地址">
+    <ion-header-bar class="freexf-bar lightgray">
+        <div class="bar-left">
+            <button class="button-clear freexf-back freexf-left" default-nav-back-button ng-click="goBack()">
+                <i class="icon freexf-goback"></i>
+            </button>
+        </div>
+    </ion-header-bar>
 
   <ion-content class="pay address " >
       <div class="paycontent" ng-show="payOn">
@@ -6,14 +13,14 @@
               <div class="payOn success">支付成功</div>
               <p>完成交易,3秒后跳转至"我的课程"</p>
               <div class="TipLogo"></div>
-              <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" type="submit"
+              <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" type="submit" id="isGoToMycourse"
                       ng-click="goToMycourse()">
                   点击跳转
               </button>
           </div>
       </div>
     
-    <div class="paycontent" ng-show="payAddress" >
+    <div class="paycontent" ng-show="ispayAddress" >
       <div class="PayState-group">
         <div class="payOn success">支付成功</div>
         <p class="tip">本课程有教材可领，</p>
@@ -21,26 +28,30 @@
       </div>
       <div class="BookAddress" >
         <p>教材地址：</p>
-        <div class="list">
-          <label class="item item-input item-floating-label">
-            <span class="input-label hasInput">姓名</span>
-            <input type="text"  class="hasPlace"  ng-model="payAddress.DeliveryUser"/>
-          </label>
-          <label class="item item-input item-floating-label">
-            <span class="input-label hasInput">手机号</span>
-            <input type="tel"  class="hasPlace" ng-model="payAddress.DeliveryPhone"
-                   ng-pattern="/^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57]|99[0-9])[0-9]{8}$/"/>
-          </label>
-          <label class="item item-input item-floating-label">
-            <span class="input-label hasInput">详细地址:</span>
-            <textarea  class="hasPlace" ng-model="payAddress.DeliveryAddress" rows="3"></textarea>
-          </label>
-        </div>
-        <div class="freexf-padding-24" >
-          <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" type="submit"
-                  ng-click="submit($event)">提交
-          </button>
-        </div>
+          <form name="address">
+              <div class="list">
+                  <label class="item item-input item-floating-label">
+                      <span class="input-label hasInput">姓名</span>
+                      <input type="text" class="hasPlace" ng-model="payAddress.DeliveryUser" fx-validate="require:name"  id="isPayName"/>
+                  </label>
+                  <label class="item item-input item-floating-label">
+                      <span class="input-label hasInput">手机号</span>
+                      <input type="tel" class="hasPlace" ng-model="payAddress.DeliveryPhone" fx-validate="require:phone;format:phone;" id="isPayNumeber"
+                              />
+                  </label>
+                  <label class="item item-input item-floating-label">
+                      <span class="input-label hasInput">详细地址:</span>
+                      <textarea class="hasPlace" ng-model="payAddress.DeliveryAddress" rows="3" fx-validate="require:address" id="isPayAddress" ></textarea>
+                  </label>
+              </div>
+              <div class="freexf-padding-24">
+                  <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" type="submit" fx-validate="submit()" id="isSubmit"
+                          ng-click="submit($event,address)">
+                      提交
+                  </button>
+              </div>
+          </form>
+        
       </div>
 
     </div>

@@ -2,37 +2,86 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/www/modules/user/myaccount.html" line="36" />
+    <bookmark url="file://$PROJECT_DIR$/www_ipad/app.js" line="602" />
+    <bookmark url="file://$PROJECT_DIR$/www_ipad/modules/user/myaccount.html" line="0" />
+    <bookmark url="file://$PROJECT_DIR$/www_ipad/app.js" line="612" />
+    <bookmark url="file://$PROJECT_DIR$/www_ipad/css/home.css" line="410" />
+    <bookmark url="file://$PROJECT_DIR$/www_ipad/modules/home/home.js" description="&#10;      //传递：courseId 课程ID&#10;      var modal_ary = {&#10;..." line="82" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0fedb80-9d46-42ab-87d2-719866b04b28" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/img/publicbg/account.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/img/user/icon-account-sprite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/img/user/icon-dingdan@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/img/user/icon-in-dingdan@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/img/user/icon-in-kecheng@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/img/user/icon-in-shezhi@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/img/user/icon-in-shoucang@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/img/user/icon-in-tuijian@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/img/user/icon-kecheng@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/img/user/icon-shezhi@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/img/user/icon-shoucang@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/img/user/icon-tuijian@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/directive.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/modules/course/searchresult.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/modules/course/searchresult.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/modules/pay/payagreement.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/modules/pay/payagreement.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/modules/user/contact.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/modules/user/contact.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/modules/user/myrecommend.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/modules/user/myrecommend.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/img/coupon/banner@3x.png" afterPath="$PROJECT_DIR$/www/activities/img/coupon/banner@3x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/img/home/banner-1.jpg" afterPath="$PROJECT_DIR$/www/img/home/banner-1.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/img/home/banner-2@3x.jpg" afterPath="$PROJECT_DIR$/www/img/home/banner-2@3x.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/img/home/banner-3@3x.png" afterPath="$PROJECT_DIR$/www/img/home/banner-3@3x.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/img/publicbg/course.png" afterPath="$PROJECT_DIR$/www/img/publicbg/course.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/img/publicbg/course.png" afterPath="$PROJECT_DIR$/www_ipad/img/publicbg/course.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/.idea/workspace.xml" afterPath="$PROJECT_DIR$/www/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/css/activities-public.css" afterPath="$PROJECT_DIR$/www/activities/css/activities-public.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app.js" afterPath="$PROJECT_DIR$/www/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/config.js" afterPath="$PROJECT_DIR$/www/config.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/course.css" afterPath="$PROJECT_DIR$/www/css/course.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/freexf.css" afterPath="$PROJECT_DIR$/www/css/freexf.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/member.css" afterPath="$PROJECT_DIR$/www/css/member.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/pay.css" afterPath="$PROJECT_DIR$/www/css/pay.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/user.css" afterPath="$PROJECT_DIR$/www/css/user.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/index.aspx" afterPath="$PROJECT_DIR$/www/index.aspx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/index.html" afterPath="$PROJECT_DIR$/www/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/js/ionic.bundle.js" afterPath="$PROJECT_DIR$/www/lib/ionic/js/ionic.bundle.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/oclazyload/dist/ocLazyLoad.js" afterPath="$PROJECT_DIR$/www/lib/oclazyload/dist/ocLazyLoad.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/requirejs/require.js" afterPath="$PROJECT_DIR$/www/lib/requirejs/require.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/course/classModule.html" afterPath="$PROJECT_DIR$/www/modules/course/classModule.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/course/course.html" afterPath="$PROJECT_DIR$/www/modules/course/course.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/course/course.js" afterPath="$PROJECT_DIR$/www/modules/course/course.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/course/coursePlate.js" afterPath="$PROJECT_DIR$/www/modules/course/coursePlate.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/course/courseSearch.html" afterPath="$PROJECT_DIR$/www/modules/course/courseSearch.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/course/courseSearch.js" afterPath="$PROJECT_DIR$/www/modules/course/courseSearch.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/course/coursedetail.html" afterPath="$PROJECT_DIR$/www/modules/course/coursedetail.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/course/coursedetail.js" afterPath="$PROJECT_DIR$/www/modules/course/coursedetail.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/course/courseplate.html" afterPath="$PROJECT_DIR$/www/modules/course/courseplate.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/home/home.html" afterPath="$PROJECT_DIR$/www/modules/home/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/home/home.js" afterPath="$PROJECT_DIR$/www/modules/home/home.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/pay/pay.html" afterPath="$PROJECT_DIR$/www/modules/pay/pay.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/pay/pay.js" afterPath="$PROJECT_DIR$/www/modules/pay/pay.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/pay/payaddress.html" afterPath="$PROJECT_DIR$/www/modules/pay/payaddress.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/pay/payaddress.js" afterPath="$PROJECT_DIR$/www/modules/pay/payaddress.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/pay/payweixin.html" afterPath="$PROJECT_DIR$/www/modules/pay/payweixin.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/pay/payweixin.js" afterPath="$PROJECT_DIR$/www/modules/pay/payweixin.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/student/member.html" afterPath="$PROJECT_DIR$/www/modules/student/member.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/student/member.js" afterPath="$PROJECT_DIR$/www/modules/student/member.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/aboutus.html" afterPath="$PROJECT_DIR$/www/modules/user/aboutus.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/commonfaq.html" afterPath="$PROJECT_DIR$/www/modules/user/commonfaq.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/faq.js" afterPath="$PROJECT_DIR$/www/modules/user/faq.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/forgetpassword.html" afterPath="$PROJECT_DIR$/www/modules/user/forgetpassword.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/forgetpassword.js" afterPath="$PROJECT_DIR$/www/modules/user/forgetpassword.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/ideafeedback.html" afterPath="$PROJECT_DIR$/www/modules/user/ideafeedback.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/login.html" afterPath="$PROJECT_DIR$/www/modules/user/login.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/login.js" afterPath="$PROJECT_DIR$/www/modules/user/login.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/modifypassword.html" afterPath="$PROJECT_DIR$/www/modules/user/modifypassword.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/modifypassword.js" afterPath="$PROJECT_DIR$/www/modules/user/modifypassword.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/myCollection.html" afterPath="$PROJECT_DIR$/www/modules/user/myCollection.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/myCollection.js" afterPath="$PROJECT_DIR$/www/modules/user/myCollection.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/myaccount.html" afterPath="$PROJECT_DIR$/www/modules/user/myaccount.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/myaccount.js" afterPath="$PROJECT_DIR$/www/modules/user/myaccount.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/mycourse.html" afterPath="$PROJECT_DIR$/www/modules/user/mycourse.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/mycourse.js" afterPath="$PROJECT_DIR$/www/modules/user/mycourse.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/myorder.html" afterPath="$PROJECT_DIR$/www/modules/user/myorder.html" />
@@ -41,6 +90,65 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/register.js" afterPath="$PROJECT_DIR$/www/modules/user/register.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/set.html" afterPath="$PROJECT_DIR$/www/modules/user/set.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/services.js" afterPath="$PROJECT_DIR$/www/services.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/.idea/workspace.xml" afterPath="$PROJECT_DIR$/www_ipad/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/app.js" afterPath="$PROJECT_DIR$/www_ipad/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/config.js" afterPath="$PROJECT_DIR$/www_ipad/config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/css/course.css" afterPath="$PROJECT_DIR$/www_ipad/css/course.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/css/freexf.css" afterPath="$PROJECT_DIR$/www_ipad/css/freexf.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/css/home.css" afterPath="$PROJECT_DIR$/www_ipad/css/home.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/css/member.css" afterPath="$PROJECT_DIR$/www_ipad/css/member.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/css/pay.css" afterPath="$PROJECT_DIR$/www_ipad/css/pay.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/css/set.css" afterPath="$PROJECT_DIR$/www_ipad/css/set.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/css/user.css" afterPath="$PROJECT_DIR$/www_ipad/css/user.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/index.html" afterPath="$PROJECT_DIR$/www_ipad/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/lib/ionic/js/angular/angular-sanitize.min.js" afterPath="$PROJECT_DIR$/www_ipad/lib/ionic/js/angular/angular-sanitize.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/course/classmodule.html" afterPath="$PROJECT_DIR$/www_ipad/modules/course/classmodule.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/course/course.html" afterPath="$PROJECT_DIR$/www_ipad/modules/course/course.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/course/coursedetail.html" afterPath="$PROJECT_DIR$/www_ipad/modules/course/coursedetail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/course/coursedetail.js" afterPath="$PROJECT_DIR$/www_ipad/modules/course/coursedetail.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/course/courseplate.html" afterPath="$PROJECT_DIR$/www_ipad/modules/course/courseplate.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/course/courseplate.js" afterPath="$PROJECT_DIR$/www_ipad/modules/course/courseplate.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/course/coursesearch.html" afterPath="$PROJECT_DIR$/www_ipad/modules/course/coursesearch.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/course/coursesearch.js" afterPath="$PROJECT_DIR$/www_ipad/modules/course/coursesearch.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/home/home.html" afterPath="$PROJECT_DIR$/www_ipad/modules/home/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/home/home.js" afterPath="$PROJECT_DIR$/www_ipad/modules/home/home.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/pay/pay.html" afterPath="$PROJECT_DIR$/www_ipad/modules/pay/pay.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/pay/pay.js" afterPath="$PROJECT_DIR$/www_ipad/modules/pay/pay.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/pay/payaddress.html" afterPath="$PROJECT_DIR$/www_ipad/modules/pay/payaddress.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/pay/payaddress.js" afterPath="$PROJECT_DIR$/www_ipad/modules/pay/payaddress.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/pay/payfail.html" afterPath="$PROJECT_DIR$/www_ipad/modules/pay/payfail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/pay/payfail.js" afterPath="$PROJECT_DIR$/www_ipad/modules/pay/payfail.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/pay/paysuccess.html" afterPath="$PROJECT_DIR$/www_ipad/modules/pay/paysuccess.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/pay/paysuccess.js" afterPath="$PROJECT_DIR$/www_ipad/modules/pay/paysuccess.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/pay/payweixin.html" afterPath="$PROJECT_DIR$/www_ipad/modules/pay/payweixin.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/pubilc/lefttabs.html" afterPath="$PROJECT_DIR$/www_ipad/modules/pubilc/lefttabs.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/student/member.html" afterPath="$PROJECT_DIR$/www_ipad/modules/student/member.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/student/member.js" afterPath="$PROJECT_DIR$/www_ipad/modules/student/member.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/user/aboutus.html" afterPath="$PROJECT_DIR$/www_ipad/modules/user/aboutus.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/user/aboutus.js" afterPath="$PROJECT_DIR$/www_ipad/modules/user/aboutus.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/user/commonfaq.html" afterPath="$PROJECT_DIR$/www_ipad/modules/user/commonfaq.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/user/faq.js" afterPath="$PROJECT_DIR$/www_ipad/modules/user/faq.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/user/forgetpassword.html" afterPath="$PROJECT_DIR$/www_ipad/modules/user/forgetpassword.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/user/forgetpassword.js" afterPath="$PROJECT_DIR$/www_ipad/modules/user/forgetpassword.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/user/ideafeedback.html" afterPath="$PROJECT_DIR$/www_ipad/modules/user/ideafeedback.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/user/ideafeedback.js" afterPath="$PROJECT_DIR$/www_ipad/modules/user/ideafeedback.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/user/login.html" afterPath="$PROJECT_DIR$/www_ipad/modules/user/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/user/login.js" afterPath="$PROJECT_DIR$/www_ipad/modules/user/login.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/user/modifypassword.html" afterPath="$PROJECT_DIR$/www_ipad/modules/user/modifypassword.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/user/modifypassword.js" afterPath="$PROJECT_DIR$/www_ipad/modules/user/modifypassword.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/user/myaccount.html" afterPath="$PROJECT_DIR$/www_ipad/modules/user/myaccount.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/user/myaccount.js" afterPath="$PROJECT_DIR$/www_ipad/modules/user/myaccount.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/user/mycollection.html" afterPath="$PROJECT_DIR$/www_ipad/modules/user/mycollection.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/user/mycollection.js" afterPath="$PROJECT_DIR$/www_ipad/modules/user/mycollection.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/user/mycourse.html" afterPath="$PROJECT_DIR$/www_ipad/modules/user/mycourse.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/user/mycourse.js" afterPath="$PROJECT_DIR$/www_ipad/modules/user/mycourse.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/user/myorder.html" afterPath="$PROJECT_DIR$/www_ipad/modules/user/myorder.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/user/myorder.js" afterPath="$PROJECT_DIR$/www_ipad/modules/user/myorder.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/user/register.html" afterPath="$PROJECT_DIR$/www_ipad/modules/user/register.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/user/register.js" afterPath="$PROJECT_DIR$/www_ipad/modules/user/register.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/user/set.html" afterPath="$PROJECT_DIR$/www_ipad/modules/user/set.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/user/set.js" afterPath="$PROJECT_DIR$/www_ipad/modules/user/set.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/services.js" afterPath="$PROJECT_DIR$/www_ipad/services.js" />
     </list>
     <ignored path="mobile_freexf.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,7 +159,6 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -61,105 +168,109 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/app.js">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/www_ipad/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2163">
-              <caret line="103" column="25" selection-start-line="103" selection-start-column="25" selection-end-line="103" selection-end-column="25" />
+            <state relative-caret-position="1273">
+              <caret line="311" column="58" selection-start-line="311" selection-start-column="58" selection-end-line="311" selection-end-column="58" />
               <folding>
-                <marker date="1467611284151" expanded="true" signature="4611:4636" placeholder="..." />
-                <marker date="1467611284151" expanded="true" signature="8173:8189" placeholder="..." />
+                <marker date="1470104591846" expanded="true" signature="10613:10629" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="coursedetail.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/modules/course/coursedetail.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="672">
-              <caret line="32" column="85" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="85" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="coursedetail.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/www/modules/course/coursedetail.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="44" column="31" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="abroad.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/activities/201606/abroad.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/modules/home/home.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="777">
-              <caret line="37" column="25" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="945">
-              <caret line="45" column="29" selection-start-line="0" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.aspx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/index.aspx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1365">
-              <caret line="65" column="33" selection-start-line="65" selection-start-column="33" selection-end-line="65" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/modules/user/login.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="693">
-              <caret line="33" column="44" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="freexf.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/css/freexf.css">
+        <entry file="file://$PROJECT_DIR$/www_ipad/css/freexf.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="18" column="54" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
+            <state relative-caret-position="445">
+              <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="course.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www_ipad/modules/course/course.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="11" column="51" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="course.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/css/course.css">
+        <entry file="file://$PROJECT_DIR$/www_ipad/css/course.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6594">
-              <caret line="314" column="15" selection-start-line="314" selection-start-column="15" selection-end-line="314" selection-end-column="15" />
+            <state relative-caret-position="643">
+              <caret line="1022" column="1" selection-start-line="1022" selection-start-column="1" selection-end-line="1022" selection-end-column="1" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www_ipad/modules/home/home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="6" column="18" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="coursesearch.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www_ipad/modules/course/coursesearch.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="462">
+              <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="coursesearch.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www_ipad/modules/course/coursesearch.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/modules/home/home.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="116">
+              <caret line="28" column="15" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www_ipad/modules/home/home.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="574">
+              <caret line="87" column="49" selection-start-line="87" selection-start-column="49" selection-end-line="87" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="directive.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www_ipad/directive.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="179" column="23" selection-start-line="179" selection-start-column="23" selection-end-line="179" selection-end-column="23" />
+              <folding>
+                <element signature="e#175#880#0" expanded="false" />
+                <element signature="e#928#1100#0" expanded="false" />
+                <element signature="e#1175#1557#0" expanded="false" />
+                <marker date="1470102567816" expanded="true" signature="9560:9585" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -179,64 +290,65 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/www/modules/pay/pay.html" />
-        <option value="$PROJECT_DIR$/www/modules/user/myaccount.html" />
-        <option value="$PROJECT_DIR$/www/css/dist/course-0804874f10.min.css" />
-        <option value="$PROJECT_DIR$/www/css/dist/freexf-concat.min.css" />
-        <option value="$PROJECT_DIR$/www/css/dist/freexf-ebd71f8ed4.min.css" />
-        <option value="$PROJECT_DIR$/www/css/dist/home-95d6c1d894.min.css" />
-        <option value="$PROJECT_DIR$/www/css/dist/member-6d504a4d8d.min.css" />
-        <option value="$PROJECT_DIR$/www/css/dist/pay-b69689a5b3.min.css" />
-        <option value="$PROJECT_DIR$/www/css/dist/user-d9dc82b83f.min.css" />
-        <option value="$PROJECT_DIR$/www/css/member.css" />
-        <option value="$PROJECT_DIR$/www/css/pay.css" />
-        <option value="$PROJECT_DIR$/www/modules/home/home.js" />
-        <option value="$PROJECT_DIR$/www/modules/user/commonfaq.html" />
-        <option value="$PROJECT_DIR$/www/modules/user/aboutus.js" />
-        <option value="$PROJECT_DIR$/www/modules/user/aboutus.html" />
-        <option value="$PROJECT_DIR$/www/modules/user/faq.js" />
-        <option value="$PROJECT_DIR$/www/services.js" />
-        <option value="$PROJECT_DIR$/www/modules/user/mycollection.html" />
-        <option value="$PROJECT_DIR$/www/css/set.css" />
-        <option value="$PROJECT_DIR$/www/modules/user/set.js" />
-        <option value="$PROJECT_DIR$/www/modules/user/set.html" />
-        <option value="$PROJECT_DIR$/www/config.js" />
-        <option value="$PROJECT_DIR$/www/modules/course/classmodule.html" />
-        <option value="$PROJECT_DIR$/www/css/home.css" />
-        <option value="$PROJECT_DIR$/gulpfile.js" />
-        <option value="$PROJECT_DIR$/www/modules/user/mycourse.html" />
-        <option value="$PROJECT_DIR$/www/modules/course/courseplate.js" />
-        <option value="$PROJECT_DIR$/www/modules/course/coursesearch.html" />
-        <option value="$PROJECT_DIR$/www/modules/course/coursesearch.js" />
-        <option value="$PROJECT_DIR$/www/css/video.css" />
-        <option value="$PROJECT_DIR$/www/css/student.css" />
-        <option value="$PROJECT_DIR$/www/modules/student/member.js" />
-        <option value="$PROJECT_DIR$/www/modules/student/member.html" />
-        <option value="$PROJECT_DIR$/www/modules/user/myorder.js" />
-        <option value="$PROJECT_DIR$/www/modules/user/login.html" />
-        <option value="$PROJECT_DIR$/www/modules/user/register.js" />
-        <option value="$PROJECT_DIR$/www/modules/user/register.html" />
-        <option value="$PROJECT_DIR$/www/css/user.css" />
-        <option value="$PROJECT_DIR$/www/modules/user/forgetpassword.js" />
-        <option value="$PROJECT_DIR$/www/modules/user/forgetpassword.html" />
-        <option value="$PROJECT_DIR$/www/modules/user/modifypassword.js" />
-        <option value="$PROJECT_DIR$/www/modules/user/modifypassword.html" />
+        <option value="$PROJECT_DIR$/www_ipad/lib/ionic/js/ionic.bundle.js" />
+        <option value="$PROJECT_DIR$/www_ipad/modules/pay/payaddress.js" />
+        <option value="$PROJECT_DIR$/www_ipad/modules/pay/payagreement.html" />
+        <option value="$PROJECT_DIR$/www_ipad/modules/user/faq.js" />
+        <option value="$PROJECT_DIR$/www_ipad/modules/course/courseplate.js" />
+        <option value="$PROJECT_DIR$/www_ipad/modules/user/mycourse.js" />
+        <option value="$PROJECT_DIR$/www_ipad/modules/course/searchresult.js" />
+        <option value="$PROJECT_DIR$/www_ipad/modules/course/classmodule.html" />
+        <option value="$PROJECT_DIR$/www_ipad/modules/user/mycourse.html" />
+        <option value="$PROJECT_DIR$/www_ipad/modules/user/mycollection.html" />
+        <option value="$PROJECT_DIR$/www_ipad/modules/user/myrecommend.html" />
+        <option value="$PROJECT_DIR$/www_ipad/modules/user/forgetpassword.js" />
+        <option value="$PROJECT_DIR$/www_ipad/modules/user/set.html" />
+        <option value="$PROJECT_DIR$/www_ipad/modules/user/myrecommend.js" />
+        <option value="$PROJECT_DIR$/www_ipad/modules/pay/pay.js" />
+        <option value="$PROJECT_DIR$/www_ipad/modules/user/forgetpassword.html" />
+        <option value="$PROJECT_DIR$/www_ipad/modules/pay/pay.html" />
+        <option value="$PROJECT_DIR$/www_ipad/modules/pay/payfail.html" />
+        <option value="$PROJECT_DIR$/www_ipad/modules/pay/paysuccess.html" />
+        <option value="$PROJECT_DIR$/www_ipad/modules/user/aboutus.html" />
+        <option value="$PROJECT_DIR$/www_ipad/modules/user/commonfaq.html" />
+        <option value="$PROJECT_DIR$/www_ipad/modules/user/ideafeedback.html" />
+        <option value="$PROJECT_DIR$/www_ipad/modules/user/modifypassword.html" />
+        <option value="$PROJECT_DIR$/www_ipad/modules/user/mycollection.js" />
+        <option value="$PROJECT_DIR$/www_ipad/modules/user/login.js" />
+        <option value="$PROJECT_DIR$/www_ipad/modules/user/set.js" />
+        <option value="$PROJECT_DIR$/www_ipad/css/pay.css" />
+        <option value="$PROJECT_DIR$/www_ipad/modules/user/login.html" />
+        <option value="$PROJECT_DIR$/www_ipad/css/home.css" />
+        <option value="$PROJECT_DIR$/www_ipad/modules/user/register.html" />
+        <option value="$PROJECT_DIR$/www_ipad/modules/user/myaccount.html" />
+        <option value="$PROJECT_DIR$/www_ipad/modules/user/myaccount.js" />
+        <option value="$PROJECT_DIR$/www_ipad/css/user.css" />
+        <option value="$PROJECT_DIR$/www_ipad/modules/user/myorder.js" />
+        <option value="$PROJECT_DIR$/www_ipad/modules/user/myorder.html" />
+        <option value="$PROJECT_DIR$/www_ipad/modules/pay/payagreement.js" />
+        <option value="$PROJECT_DIR$/www_ipad/modules/course/coursedetail.html" />
+        <option value="$PROJECT_DIR$/www_ipad/modules/course/coursedetail.js" />
         <option value="$PROJECT_DIR$/www/modules/user/login.js" />
-        <option value="$PROJECT_DIR$/www/css/freexf.css" />
-        <option value="$PROJECT_DIR$/www/css/course.css" />
-        <option value="$PROJECT_DIR$/www/modules/home/home.html" />
+        <option value="$PROJECT_DIR$/www/services.js" />
         <option value="$PROJECT_DIR$/www/app.js" />
-        <option value="$PROJECT_DIR$/www/modules/course/coursedetail.html" />
-        <option value="$PROJECT_DIR$/www/index.html" />
         <option value="$PROJECT_DIR$/www/index.aspx" />
-        <option value="$PROJECT_DIR$/www/modules/course/coursedetail.js" />
+        <option value="$PROJECT_DIR$/www_ipad/modules/home/home.html" />
+        <option value="$PROJECT_DIR$/www_ipad/modules/course/coursesearch.html" />
+        <option value="$PROJECT_DIR$/www_ipad/modules/course/coursesearch.js" />
+        <option value="$PROJECT_DIR$/www_ipad/modules/home/home.js" />
+        <option value="$PROJECT_DIR$/www_ipad/directive.js" />
+        <option value="$PROJECT_DIR$/www_ipad/app.js" />
+        <option value="$PROJECT_DIR$/www_ipad/css/freexf.css" />
+        <option value="$PROJECT_DIR$/www_ipad/modules/course/course.html" />
+        <option value="$PROJECT_DIR$/www_ipad/css/course.css" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" />
-  <component name="JsBuildToolPackageJson" detection-done="true" />
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
@@ -269,6 +381,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -297,7 +411,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
+              <option name="myItemId" value="www_ipad" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -311,7 +425,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
+              <option name="myItemId" value="www_ipad" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -329,7 +443,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
+              <option name="myItemId" value="www_ipad" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -351,7 +465,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
+              <option name="myItemId" value="www_ipad" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -363,14 +477,30 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www_ipad" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="F:/FreeXFDevelop_ipad/website/m/mobile" />
+    <property name="last_opened_file_path" value="F:/xiangmu/compass" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
@@ -392,14 +522,15 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1069" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\FreeXFDevelop\website\m\mobile\www\img\publicbg" />
-      <recent name="F:\FreeXFDevelop\website\m\mobile\www\img\home" />
-      <recent name="F:\FreeXFDevelop\website\m\mobile\www\modules\user\img" />
-      <recent name="F:\FreeXFDevelop\website\m\mobile\www\modules\user" />
-      <recent name="F:\FreeXFDevelop\website\m\mobile\www\img" />
+      <recent name="F:\FreeXFDevelop\website\m\mobile\www_ipad\img\publicbg" />
+      <recent name="F:\FreeXFDevelop\website\m\mobile\www_ipad\modules\user" />
+      <recent name="F:\FreeXFDevelop\website\m\mobile\www_ipad\modules\pay" />
+      <recent name="F:\FreeXFDevelop\website\m\mobile\www_ipad\modules\course" />
+      <recent name="F:\FreeXFDevelop\website\m\mobile\www_ipad" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\FreeXFDevelop\website\m\mobile\www" />
@@ -532,33 +663,64 @@
       <workItem from="1467248943130" duration="7130000" />
       <workItem from="1467595897678" duration="9488000" />
       <workItem from="1467681726624" duration="2006000" />
+      <workItem from="1468215128627" duration="10220000" />
+      <workItem from="1468286201042" duration="17000" />
+      <workItem from="1468287687184" duration="12923000" />
+      <workItem from="1468372814067" duration="20112000" />
+      <workItem from="1468458987222" duration="4468000" />
+      <workItem from="1468464246357" duration="12927000" />
+      <workItem from="1468480940196" duration="1090000" />
+      <workItem from="1468482385593" duration="7037000" />
+      <workItem from="1468545744554" duration="9781000" />
+      <workItem from="1468559632616" duration="7894000" />
+      <workItem from="1468804930300" duration="26413000" />
+      <workItem from="1468891192770" duration="20379000" />
+      <workItem from="1468978007457" duration="11754000" />
+      <workItem from="1468993852674" duration="13823000" />
+      <workItem from="1469063385711" duration="27167000" />
+      <workItem from="1469149865721" duration="10059000" />
+      <workItem from="1469409042655" duration="15438000" />
+      <workItem from="1469428434789" duration="10413000" />
+      <workItem from="1469495862937" duration="20996000" />
+      <workItem from="1469524939068" duration="214000" />
+      <workItem from="1469525191283" duration="30000" />
+      <workItem from="1469525283722" duration="112000" />
+      <workItem from="1469525430572" duration="12000" />
+      <workItem from="1469525461606" duration="1440000" />
+      <workItem from="1469582403971" duration="1801000" />
+      <workItem from="1469585625788" duration="7591000" />
+      <workItem from="1469601144438" duration="11473000" />
+      <workItem from="1469668622135" duration="18472000" />
+      <workItem from="1469757070653" duration="25526000" />
+      <workItem from="1470014576222" duration="13191000" />
+      <workItem from="1470100476912" duration="5957000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="879188000" />
+    <option name="totallyTimeSpent" value="1207918000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25208333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20677084" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946146" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284055" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40760297" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284055" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -574,379 +736,374 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/www/modules/course/classmodule.html">
+    <entry file="file://$PROJECT_DIR$/www_ipad/css/pay.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
+        <state relative-caret-position="235">
+          <caret line="54" column="1" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/lib/ionic-image-lazy-load/README.md">
+    <entry file="file://$PROJECT_DIR$/www_ipad/modules/user/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-944">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="588">
+          <caret line="43" column="14" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/lib/ionic-image-lazy-load/ionic-image-lazy-load.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
-        </state>
+    <entry file="file://$PROJECT_DIR$/www_ipad/img/publicbg/course.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/css/home.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="84" column="1" selection-start-line="84" selection-start-column="1" selection-end-line="84" selection-end-column="1" />
-        </state>
+    <entry file="file://$PROJECT_DIR$/www_ipad/img/publicbg/demo.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/pubilc/tabs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="45" />
-        </state>
+    <entry file="file://$PROJECT_DIR$/www_ipad/img/publicbg/home.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/user/myaccount.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
+    <entry file="file://$PROJECT_DIR$/www_ipad/img/publicbg/wxbox.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/user/mycollection.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="27" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="27" />
-        </state>
+    <entry file="file://$PROJECT_DIR$/www_ipad/img/publicbg/wxjt.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/user/myaccount.html">
+    <entry file="file://$PROJECT_DIR$/www_ipad/img/user/icon-tuijian@3x.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www_ipad/img/publicbg/account.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www_ipad/img/user/icon-in-kecheng@3x.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www_ipad/img/user/icon-account-sprite.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www_ipad/img/user/icon-kecheng@3x.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www_ipad/img/user/icon-in-dingdan@3x.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www_ipad/img/user/dest/sprite.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www_ipad/css/home.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="10" />
+        <state relative-caret-position="445">
+          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/user/ideafeedback.html">
+    <entry file="file://$PROJECT_DIR$/www_ipad/img/user/dest/sprite.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="38" column="27" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www_ipad/modules/user/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="53" column="62" selection-start-line="53" selection-start-column="62" selection-end-line="53" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www_ipad/css/user.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="58" column="30" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www_ipad/modules/course/searchresult.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/user/commonfaq.html">
+    <entry file="file://$PROJECT_DIR$/www_ipad/modules/user/myaccount.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="56" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="56" />
+        <state relative-caret-position="337">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/user/faq.js">
+    <entry file="file://$PROJECT_DIR$/www_ipad/modules/user/myaccount.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state relative-caret-position="254">
+          <caret line="15" column="58" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="58" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/user/aboutus.html">
+    <entry file="file://$PROJECT_DIR$/www_ipad/modules/user/myorder.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="2730">
+          <caret line="130" column="28" selection-start-line="130" selection-start-column="17" selection-end-line="130" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/course/courseplate.js">
+    <entry file="file://$PROJECT_DIR$/www_ipad/modules/user/myorder.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="154" column="22" selection-start-line="154" selection-start-column="22" selection-end-line="154" selection-end-column="22" />
+        <state relative-caret-position="546">
+          <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/course/coursesearch.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
-          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/course/coursesearch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="24" column="37" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/course/courseplate.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="29" column="12" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gulpfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1764">
-          <caret line="86" column="7" selection-start-line="86" selection-start-column="7" selection-end-line="86" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/user/mycourse.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="32" column="60" selection-start-line="32" selection-start-column="60" selection-end-line="32" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/css/member.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/css/freexf-concat-8c62337402.min.css">
+    <entry file="file://$PROJECT_DIR$/www_ipad/modules/pay/payagreement.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
-          <caret line="9" column="3821" selection-start-line="9" selection-start-column="3821" selection-end-line="9" selection-end-column="3821" />
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/css/video.css">
+    <entry file="file://$PROJECT_DIR$/www_ipad/modules/pay/payagreement.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www_ipad/modules/course/courseplate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3738">
+          <caret line="178" column="18" selection-start-line="178" selection-start-column="6" selection-end-line="178" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www_ipad/modules/course/coursedetail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="882">
+          <caret line="42" column="16" selection-start-line="37" selection-start-column="53" selection-end-line="37" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www_ipad/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www_ipad/modules/course/coursedetail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="62" column="28" selection-start-line="62" selection-start-column="28" selection-end-line="62" selection-end-column="28" />
+          <folding>
+            <marker date="1470103246679" expanded="true" signature="20483:20523" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www_ipad/modules/user/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="609">
+          <caret line="38" column="12" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www_ipad/modules/course/classmodule.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="29" selection-start-line="9" selection-start-column="103" selection-end-line="9" selection-end-column="112" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www_ipad/modules/course/courseplate.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www_ipad/services.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="61" column="38" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www_ipad/config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/css/student.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/student/studentindex.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/user/myorder.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="33" column="100" selection-start-line="33" selection-start-column="100" selection-end-line="33" selection-end-column="100" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/user/myorder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="587">
-          <caret line="126" column="0" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/html5/web-forms2.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="66" column="14" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/student/member.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="19" column="53" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/student/member.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1449">
-          <caret line="69" column="20" selection-start-line="69" selection-start-column="15" selection-end-line="69" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="777">
-          <caret line="38" column="14" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
+        <state relative-caret-position="1302">
+          <caret line="80" column="46" selection-start-line="80" selection-start-column="46" selection-end-line="80" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/user/login.html">
+    <entry file="file://$PROJECT_DIR$/www/services.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="25" column="112" selection-start-line="25" selection-start-column="112" selection-end-line="25" selection-end-column="112" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/css/user.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="451" column="10" selection-start-line="451" selection-start-column="10" selection-end-line="451" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/user/register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="68" column="6" selection-start-line="68" selection-start-column="6" selection-end-line="68" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/user/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="48" column="134" selection-start-line="48" selection-start-column="122" selection-end-line="48" selection-end-column="134" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/user/modifypassword.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="861">
-          <caret line="41" column="37" selection-start-line="41" selection-start-column="37" selection-end-line="41" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/user/forgetpassword.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1008">
-          <caret line="48" column="8" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/user/forgetpassword.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="45" column="116" selection-start-line="45" selection-start-column="116" selection-end-line="45" selection-end-column="137" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/user/modifypassword.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/activities/201606/textbook.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/activities/css/activities-public.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2349">
-          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/activities/201606/abroad.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/activities/201606/textbook.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2163">
-          <caret line="103" column="25" selection-start-line="103" selection-start-column="25" selection-end-line="103" selection-end-column="25" />
-          <folding>
-            <marker date="1467611284151" expanded="true" signature="4611:4636" placeholder="..." />
-            <marker date="1467611284151" expanded="true" signature="8173:8189" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/course/coursedetail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="32" column="85" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="85" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/course/coursedetail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="44" column="31" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/activities/201606/abroad.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/home/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="777">
-          <caret line="37" column="25" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="45" column="29" selection-start-line="0" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/index.aspx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1365">
-          <caret line="65" column="33" selection-start-line="65" selection-start-column="33" selection-end-line="65" selection-end-column="33" />
+        <state relative-caret-position="1323">
+          <caret line="63" column="17" selection-start-line="63" selection-start-column="17" selection-end-line="63" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/modules/user/login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="33" column="44" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
+        <state relative-caret-position="1050">
+          <caret line="50" column="6" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="59" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/css/freexf.css">
+    <entry file="file://$PROJECT_DIR$/www/index.aspx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="54" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
+        <state relative-caret-position="380">
+          <caret line="63" column="23" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/css/course.css">
+    <entry file="file://$PROJECT_DIR$/www/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6594">
-          <caret line="314" column="15" selection-start-line="314" selection-start-column="15" selection-end-line="314" selection-end-column="15" />
+        <state relative-caret-position="-420">
+          <caret line="189" column="82" selection-start-line="189" selection-start-column="82" selection-end-line="189" selection-end-column="82" />
+          <folding>
+            <marker date="1470036340615" expanded="true" signature="4296:4321" ph="..." />
+            <marker date="1470036340615" expanded="true" signature="8791:8807" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/modules/home/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="28" column="15" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www_ipad/modules/course/coursesearch.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www_ipad/modules/course/searchresult.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www_ipad/modules/course/coursesearch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www_ipad/modules/home/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="574">
+          <caret line="87" column="49" selection-start-line="87" selection-start-column="49" selection-end-line="87" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www_ipad/directive.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="179" column="23" selection-start-line="179" selection-start-column="23" selection-end-line="179" selection-end-column="23" />
+          <folding>
+            <element signature="e#175#880#0" expanded="false" />
+            <element signature="e#928#1100#0" expanded="false" />
+            <element signature="e#1175#1557#0" expanded="false" />
+            <marker date="1470102567816" expanded="true" signature="9560:9585" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www_ipad/lib/ionic/js/ionic.bundle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="52915" column="11" selection-start-line="52915" selection-start-column="11" selection-end-line="52915" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www_ipad/modules/home/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="18" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www_ipad/css/freexf.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www_ipad/modules/course/course.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="51" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www_ipad/css/course.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="643">
+          <caret line="1022" column="1" selection-start-line="1022" selection-start-column="1" selection-end-line="1022" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www_ipad/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1273">
+          <caret line="311" column="58" selection-start-line="311" selection-start-column="58" selection-end-line="311" selection-end-column="58" />
+          <folding>
+            <marker date="1470104591846" expanded="true" signature="10613:10629" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

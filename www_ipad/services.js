@@ -16,7 +16,7 @@
         __recommendcourse: 'recommendcourse',//推荐课程（暂无页面）
         __feedback: "feedback", //意见反馈
         __aboutus: 'aboutus', //关于我们
-        __faq:'MobileFaq',
+        __faq: 'MobileFaq',
         __myfavorite: 'myfavorite',  //我的收藏课程
         __addfavorite: 'addfavorite',    //收藏
         __delfavorite: 'delfavorite',    //取消收藏
@@ -32,11 +32,15 @@
         __removeflower: 'removeflower',
         __GetspecialAllList: 'GetspecialAllList',//暑期推广
         __GetCourseDetail: 'GetCourseDetail',    //课程简介
-        __GetCourseOutline: 'GetCourseOutline'
+        __GetCourseOutline: 'GetCourseOutline',  //课程大纲
+        __GetvideoUrl: 'GetvideoUrl',
+        __GetCategory_v01: 'GetCategory_v01',    //新一二级分类
+        __UpdateAPES: 'UpdateAPES',
+        __RealTimeUpdate: 'RealTimeUpdate'
       }
     })
     //修改RestAngular配置
-    .factory('freexfRestAngular', function ($rootScope, $timeout, $Loading, localStorageService, Restangular, ENV, AUTH) {
+    .factory('freexfRestAngular', function ($rootScope, $timeout, $Loading, localStorageService, Restangular, ENV, $freexfUser) {
       return Restangular.withConfig(function (RestangularConfigurer) {
         RestangularConfigurer.setBaseUrl(ENV._base);
         RestangularConfigurer.setDefaultHttpFields({timeout: ENV._timeout});
@@ -50,10 +54,13 @@
         RestangularConfigurer.addResponseInterceptor(function (elem, option, what, url, response, deferred) {
           //($rootScope.xhr--) - 1 || $Loading.hide();
           if (elem && angular.isObject(elem) && elem.SignStatus && elem.SignStatus === 'false') {
-            AUTH.FREEXFUSER.data.userLg = false;
-            AUTH.FREEXFUSER.data.Sign = null;
-            AUTH.FREEXFUSER.data.rowId = null;
-            localStorageService.set(AUTH.FREEXFUSER.name, AUTH.FREEXFUSER.data);
+            var auth = {
+              userLg: false,
+              Sign: null,
+              rowId: null
+            };
+            $freexfUser.setUser(auth);
+            localStorageService.set($freexfUser.name(), $freexfUser.auth());
           }
           return {'response': response};
         });
@@ -228,16 +235,16 @@
         return new feedBack(api);
       }
     })
-       .factory('MobileFaq', function (ENV, freexfRestAngular, baseRestAngular) {
-           function MobileFaq(api) {
-               baseRestAngular.call(this, freexfRestAngular, api ? api : ENV._api.__faq)
-           }
+    .factory('MobileFaq', function (ENV, freexfRestAngular, baseRestAngular) {
+      function MobileFaq(api) {
+        baseRestAngular.call(this, freexfRestAngular, api ? api : ENV._api.__faq)
+      }
 
-           baseRestAngular.extend(MobileFaq);
-           return function (api) {
-               return new MobileFaq(api);
-           }
-       })
+      baseRestAngular.extend(MobileFaq);
+      return function (api) {
+        return new MobileFaq(api);
+      }
+    })
     //关于我们
     .factory('aboutUs', function (ENV, freexfRestAngular, baseRestAngular) {
       function aboutUs(api) {
@@ -381,15 +388,16 @@
         return new AddFlower(api);
       }
     })
-      //暑期推广课程
+    //暑期推广课程
     .factory('GetspecialAllListRepository', function (ENV, freexfRestAngular, baseRestAngular) {
-        function GetspecialAllListRepository(api) {
-            baseRestAngular.call(this, freexfRestAngular, api ? api : ENV._api.__GetspecialAllList)
-        }
-        baseRestAngular.extend(GetspecialAllListRepository);
-        return function (api) {
-            return new GetspecialAllListRepository(api);
-        }
+      function GetspecialAllListRepository(api) {
+        baseRestAngular.call(this, freexfRestAngular, api ? api : ENV._api.__GetspecialAllList)
+      }
+
+      baseRestAngular.extend(GetspecialAllListRepository);
+      return function (api) {
+        return new GetspecialAllListRepository(api);
+      }
     })
     //取消献花
     .factory('RemoveFlower', function (ENV, freexfRestAngular, baseRestAngular) {
@@ -402,27 +410,71 @@
         return new RemoveFlower(api);
       }
     })
-     //课程简介
+    //课程简介
     .factory('GetCourseDetailRepository', function (ENV, freexfRestAngular, baseRestAngular) {
-        function GetCourseDetailRepository(api) {
-            baseRestAngular.call(this, freexfRestAngular, api ? api : ENV._api.__GetCourseDetail)
-        }
+      function GetCourseDetailRepository(api) {
+        baseRestAngular.call(this, freexfRestAngular, api ? api : ENV._api.__GetCourseDetail)
+      }
 
-        baseRestAngular.extend(GetCourseDetailRepository);
-        return function (api) {
-            return new GetCourseDetailRepository(api);
-        }
+      baseRestAngular.extend(GetCourseDetailRepository);
+      return function (api) {
+        return new GetCourseDetailRepository(api);
+      }
     })
     //课程大纲
     .factory('GetCourseOutlineRepository', function (ENV, freexfRestAngular, baseRestAngular) {
-        function GetCourseOutlineRepository(api) {
-            baseRestAngular.call(this, freexfRestAngular, api ? api : ENV._api.__GetCourseOutline)
-        }
+      function GetCourseOutlineRepository(api) {
+        baseRestAngular.call(this, freexfRestAngular, api ? api : ENV._api.__GetCourseOutline)
+      }
 
-        baseRestAngular.extend(GetCourseOutlineRepository);
-        return function (api) {
-            return new GetCourseOutlineRepository(api);
-        }
+      baseRestAngular.extend(GetCourseOutlineRepository);
+      return function (api) {
+        return new GetCourseOutlineRepository(api);
+      }
+    })
+    //获取视频路径
+    .factory('GetvideoUrlRepository', function (ENV, freexfRestAngular, baseRestAngular) {
+      function GetvideoUrlRepository(api) {
+        baseRestAngular.call(this, freexfRestAngular, api ? api : ENV._api.__GetvideoUrl)
+      }
+
+      baseRestAngular.extend(GetvideoUrlRepository);
+      return function (api) {
+        return new GetvideoUrlRepository(api);
+      }
+    })
+    //新一二级分类
+    .factory('NewGetCategoryRepository', function (ENV, freexfRestAngular, baseRestAngular) {
+      function NewGetCategoryRepository(api) {
+        baseRestAngular.call(this, freexfRestAngular, api ? api : ENV._api.__GetCategory_v01)
+      }
+
+      baseRestAngular.extend(NewGetCategoryRepository);
+      return function (api) {
+        return new NewGetCategoryRepository(api);
+      }
+    })
+    //APES
+    .factory('UpdateAPES', function (ENV, freexfRestAngular, baseRestAngular) {
+      function UpdateAPES(api) {
+        baseRestAngular.call(this, freexfRestAngular, api ? api : ENV._api.__UpdateAPES)
+      }
+
+      baseRestAngular.extend(UpdateAPES);
+      return function (api) {
+        return new UpdateAPES(api);
+      }
+    })
+    //支付验证
+    .factory('RealTimeUpdate', function (ENV, freexfRestAngular, baseRestAngular) {
+      function RealTimeUpdate(api) {
+        baseRestAngular.call(this, freexfRestAngular, api ? api : ENV._api.__RealTimeUpdate)
+      }
+
+      baseRestAngular.extend(RealTimeUpdate);
+      return function (api) {
+        return new RealTimeUpdate(api);
+      }
     });
 
 })();

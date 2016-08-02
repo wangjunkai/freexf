@@ -1,6 +1,7 @@
 html {
   font-size: 1px
 }
+
 .md-scroll-mask {
   position: initial;
 }
@@ -28,7 +29,7 @@ input, textarea {
   font-size: 12px;
 }
 
-.loading > div:nth-child(1){
+.loading > div:nth-child(1) {
   font-size: 15px;
 }
 
@@ -52,18 +53,40 @@ input, textarea {
   margin-bottom: 30px !important;
 }
 
-.content-loading {
+.freexf-pane-loading {
   position: absolute;
-  margin: 50%;
-  width: 60px;
-  left: -20px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: #fff;
+}
+
+.freexf-pane-loading:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.freexf-pane-loading .content-loading.font {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  margin: 0;
+  width: initial;
+  left: 0;
+}
+
+.modal ion-content:first-of-type {
+  opacity: 1;
+  transform: translate3d(0px, -1px, 0px) scale(1);
 }
 
 ion-content:first-of-type {
   opacity: 0;
-  margin-top: -10px;
-
-  transition: margin-top .3s ease-in-out,opacity .3s ease-in-out;
+  margin-top: -1px;
+  transition: transform .3s ease-in-out, opacity .3s ease-in-out;
+  transform: translate3d(0px, -10px, 0px);
 }
 
 /*top bar样式*/
@@ -105,8 +128,14 @@ ion-content:first-of-type {
   float: right;
 }
 
-.bar.freexf-bar .bar-center {
+.bar.freexf-bar .bar-right button,
+.bar.freexf-bar .bar-right a {
+  font-size: 15rem;
+}
 
+.bar.freexf-bar .bar-center {
+  font-size: 18rem;
+  color: #323232;
 }
 
 .bar .button-clear.freexf-consult,
@@ -127,53 +156,75 @@ ion-content:first-of-type {
 }
 
 /*左右间距*/
-.bar .bar-left > .button-clear {
-  padding: 0 12px !important;
-}
-
+.bar .bar-left > .button-clear,
 .bar .bar-right > .button-clear {
   padding: 0 12px !important;
 }
 
-/*咨询*/
+.bar .freexf-icon-search,
 .bar .freexf-consult {
-  line-height: 1;
-  background-color: inherit;
-  color: #37d1f5;
-  text-align: center;
-  font-size: 12px;
+  line-height: 34px;
 }
 
+.bar .freexf-icon-search:before,
 .bar .freexf-consult:before {
-  content: "";
-  height: 16px;
-  width: 17px;
-  background: url(../img/home/icon-zixun@3x.png) no-repeat;
-  background-size: contain;
-  display: block;
-
-  margin: 0 auto;
-}
-
-/*搜索按钮*/
-.bar .freexf-icon-search {
-  width: 20px;
-
-}
-
-.bar .freexf-icon-search:after {
   width: 20px;
   height: 20px;
   display: block;
   content: "";
-  background: url(../img/publicbg/course.png) no-repeat;
-
-  background-position: -5px -35px;
-  background-size: 300px auto;
+  float: left;
+  position: relative;
   top: 50%;
   margin-top: -10px;
-  position: absolute;
+  margin-right: 10px;
+}
 
+.bar .freexf-consult:before {
+  background: url(../img/home/icon-zixun@3x.png) no-repeat;
+  background-size: contain;
+  margin-top: -8px;
+}
+
+.bar .freexf-icon-search:before {
+  background: url(../img/publicbg/course.png) no-repeat;
+  background-position: -5px -35px;
+  background-size: 300px auto;
+}
+
+.bar .freexf-icon-search:after,
+.bar .freexf-consult:after {
+  color: #02c2f1;
+}
+
+.bar .freexf-icon-search:after {
+  content: "搜索";
+}
+
+.bar .freexf-consult:after {
+  content: '咨询';
+}
+
+/*搜索按钮*/
+.search-modal .freexf-search .freexf-icon-search {
+  position: absolute;
+  left: 25px;
+}
+
+.search-modal .freexf-search .freexf-search-cancel {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  font-size: 12px;
+  color: #1ab554;
+}
+
+.search-modal .freexf-search .freexf-icon-search:after {
+  right: 0;
+}
+
+.search-modal .freexf-search .freexf-icon-search:before,
+.search-modal .freexf-search .freexf-icon-search:after {
+  content: '';
 }
 
 .bar .freexf-icon-search .ion-ios-search:before {
@@ -182,20 +233,20 @@ ion-content:first-of-type {
   height: 25px;
 }
 
-
 /*搜索框*/
 .bar .freexf-search {
   box-sizing: border-box;
+  width: 100%;
 }
 
 .bar .freexf-search input {
   width: 100%;
-
-  padding: 0 30px 0 10px;
-  border-radius: 2px;
-  border: 1px #ddd solid;
+  border: 0;
+  background-color: transparent;
+  padding: 0 54px;
   -webkit-appearance: none;
   font-size: 12px;
+  color: #ccc;
 }
 
 .bar .freexf-search .freexf-close {
@@ -247,7 +298,6 @@ ion-content:first-of-type {
   width: 18px;
 }
 
-
 /*登录注册*/
 .bar .button-clear.register,
 .bar .button-clear.login {
@@ -265,11 +315,78 @@ ion-content:first-of-type {
 *::-webkit-scrollbar {
   width: 0
 }
-.already .scroll{
-    height:100%;
-}.freexf-nullmsg{
+
+.already .scroll {
+  height: 100%;
+}
+
+.freexf-nullmsg {
   text-align: center;
   font-size: 12rem;
   color: #969696;
-  padding: 10px;
+  margin-bottom: 40px;
+}
+
+ion-modal-view.modal {
+  border-radius: 5px;
+  width: 540px;
+  left: 50%;
+  margin-left: -270px;
+  height: 620px;
+  top: 50%;
+  margin-top: -310px;
+}
+
+ion-modal-view.modal.full-modal {
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 0;
+}
+
+ion-modal-view.modal.full-modal.search-modal {
+  height: 226px;
+  margin-top: 0;
+  margin-left: 0;
+}
+
+ion-modal-view.search-modal.slide-in-up {
+  -webkit-transform: translate3d(0, 300%, 0);
+  transform: translate3d(0, 300%, 0);
+}
+
+ion-modal-view.search-modal.slide-in-up.ng-enter-active,
+ion-modal-view.search-modal.slide-in-up > .ng-enter-active {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+ion-modal-view.slide-in-up {
+  -webkit-transform: translate3d(0, 200%, 0);
+  transform: translate3d(0, 200%, 0);
+}
+
+ion-modal-view.modal .item-floating-label {
+  padding: 13px 40px;
+}
+
+.freexf-footer {
+  border-top: 0;
+  background-image: none;
+  padding: 0;
+}
+
+.freexf-auth-button {
+  padding: 91px 20px 0;
+  font-size: 15rem;
+  color: #969696;
+}
+
+.freexf-auth-button a {
+  color: #969696;
+}
+
+.freexf-auth-button button.button {
+  margin: 0;
+  margin-bottom: 35px;
 }

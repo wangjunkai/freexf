@@ -1,247 +1,264 @@
 .already .MyAcc-top .MyAcc-icon {
-	margin-top: -10px;
-	background-position: -52px -104px;
+  margin-top: -10px;
+  background-position: -52px -104px;
 }
 
 .already .MyAcc-top p,
 .already .MyAcc-top .UpdateName {
-	overflow:hidden;
-    max-width: 200px;
-    margin: 0 auto;
+  overflow: hidden;
+  max-width: 200px;
+  margin: 0 auto;
 }
 
 .already .MyAcc-top {
-	background-size: 100% auto;
-	width: 100%;
-	background-image: url(../img/user/user-bg.png);
-	height: 200px;
-	background-size: cover;
-    overflow: hidden;
+  background-size: 100% auto;
+  width: 100%;
+  background-image: url(../img/user/user-bg.png);
+  height: 200px;
+  background-size: cover;
+  overflow: hidden;
 }
 
 .already .MyAcc-title {
-	position: absolute;
-	height: 32.5px;
-	bottom: 0px;
-	width: 100%;
-	background-color: rgba(0, 0, 0, 0.4);
-	box-shadow: none;
-	border-top: none;
-    top: 168px;
+  position: absolute;
+  height: 32.5px;
+  bottom: 0px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  box-shadow: none;
+  border-top: none;
+  top: 168px;
+  margin-top: 0;
 }
 
 .already .MyAcc-top .name {
-	font-size: 15rem;
-	background: inherit;
-	color: #fff;
-	text-align: center;
-    padding: 0 5px;
-    float: left;
-    box-sizing:border-box;
-    width:120px;
+  font-size: 15rem;
+  background: inherit;
+  color: #fff;
+  text-align: center;
+  padding: 0 5px;
+  float: left;
+  box-sizing: border-box;
+  width: 120px;
+   max-width: 185px;
 }
-.fluid-input{display:inline-block;width:100%;_overflow:hidden;}
-.fluid-input-inner{display:block;padding-right:10px;#zoom:1;}
+
+.fluid-input {
+  display: inline-block;
+  width: 100%;
+  _overflow: hidden;
+}
+
+.fluid-input-inner {
+  display: block;
+  padding-right: 10px;
+  #zoom: 1;
+}
 
 .already .MyAcc-top .number {
-	font-size: 9rem;
-	border: 1px solid #fff;
-	border-radius: 5px;
-	width: 80px;
-	margin: 0 auto;
+  font-size: 9rem;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  width: 80px;
+  margin: 0 auto;
 }
 
 .already .MyAcc-top .edit {
-	width: 15px;
-	height: 15.33px;
-	background-position: -26px -57px;
-	display: inline-block;
-	float: left;
-    margin-top:9px;
+  width: 15px;
+  height: 15.33px;
+  background-position: -26px -57px;
+  display: inline-block;
+  float: left;
+  margin-top: 9px;
 }
 
 .already .MyAcc-content {
-	background-color: #fff;
-	display: table;
-	width: 100%;
-	min-width: 320px;
+  background-color: #fff;
+  display: table;
+  width: 100%;
+  min-width: 320px;
 }
 
 .MyAcc-content .mynav-group {
-	padding: 0px 12px;
-	margin: 0 auto;
-	padding-top: 15px;
-	display: table-cell;
+  padding: 0px 12px;
+  margin: 0 auto;
+  padding-top: 15px;
+  display: table-cell;
 }
 
 .MyAcc-content .mynav-group .nav {
-	width: 33.33%;
-	float: left;
-	text-align: center;
+  width: 33.33%;
+  float: left;
+  text-align: center;
 }
 
 .mynav-group .nav-bar {
-	width: 45px;
-	height: 45px;
-	margin: 0 auto;
+  width: 45px;
+  height: 45px;
+  margin: 0 auto;
 }
 
 .mynav-group .nav-bar.myCourse {
-	background-position: -50.33px -56.67px;
+  background-position: -50.33px -56.67px;
 }
 
 .mynav-group .nav-bar.myOrder {
-	background-position: -180px -56.67px;
+  background-position: -180px -56.67px;
 }
 
 .mynav-group .nav-bar.myCollection {
-	background-position: -236px -56.67px;
+  background-position: -236px -56.67px;
 }
 
 .mynav-group .nav p {
-	margin-top: 10px;
-	margin-bottom: 12.5px;
-	font-size: 12rem;
-	color: #323232;
+  margin-top: 10px;
+  margin-bottom: 12.5px;
+  font-size: 12rem;
+  color: #323232;
 }
 
 .course-block {
-	clear: both;
-	background: #fff;
-	margin: 5px auto;
-	padding-left: 12px;
+  clear: both;
+  background: #fff;
+  margin: 5px auto;
+  padding-left: 12px;
 }
 
 .course-block h2 {
-	font-size: 14rem;
-	padding-top: 15px;
+  font-size: 14rem;
+  padding-top: 15px;
 }
 
 .course-block h2:before {
-	content: '';
-	height: 14px;
-	border: 1.5px solid #1AB554;
-	float: left;
-	border-radius: 2px;
-	margin-right: 7px;
+  content: '';
+  height: 14px;
+  border: 1.5px solid #1AB554;
+  float: left;
+  border-radius: 2px;
+  margin-right: 7px;
 }
 
 .course-block .progress .progress-bar {
-	width: 100%;
-	line-height: 10px;
+  width: 100%;
+  line-height: 10px;
 }
 
 .col-48 .content p {
-	font-size: 8rem;
-	color: #969696;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	margin: 0 0 5px;
+  font-size: 8rem;
+  color: #969696;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 0 0 5px;
 }
 
-.col-48 .content p>font,
+.col-48 .content p > font,
 .recommend .col-48 .content p {
-	font-size: 11rem;
-	color: #323232;
+  font-size: 11rem;
+  color: #323232;
 }
 
 .course-block .progress .progress-bar .full {
-	width: 58.25%;
-	margin: 2px auto auto 2.5px;
+  width: 58.25%;
+  margin: 2px auto auto 2.5px;
 }
 
 .course-block .progress {
-	border: none;
+  border: none;
 }
 
 .row.course,
 .row.course {
-	padding-left: 0px;
-	margin-left: -5px;
+  padding-left: 0px;
+  margin-left: -5px;
 }
 
 .col-48 {
-	-webkit-box-flex: 0;
-	-webkit-flex: 0 0 48%;
-	-moz-box-flex: 0;
-	-moz-flex: 0 0 48%;
-	-ms-flex: 0 0 48%;
-	flex: 0 0 48%;
-	max-width: 48%;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 48%;
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 48%;
+  -ms-flex: 0 0 48%;
+  flex: 0 0 48%;
+  max-width: 48%;
 }
 
 .course-block .progress .progress-bar span {
-	float: right;
-	font-size: 9rem;
-	color: #323232;
-	margin-right: 2.5px;
+  float: right;
+  font-size: 9rem;
+  color: #323232;
+  margin-right: 2.5px;
 }
 
 .course-block.study .col.col-48 {
-	margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 .course-block.study .col {
-	padding: 0px 5px;
+  padding: 0px 5px;
 }
+
 .recommend .col-48 .content p {
-	margin: 0;
+  margin: 0;
 }
- .already .share{
-    width: 42px;
-    height: 42px;
-    float: right;
-    position: relative;
-    right: -21px;
-	bottom: 30px;
+
+.already .share {
+  width: 42px;
+  height: 42px;
+  float: right;
+  position: relative;
+  right: -21px;
+  bottom: 30px;
 }
+
 .share .row1 {
-	position: absolute;
-	z-index: 11;
-	font-size: 10rem;
-	top:20px;
-	display: block;
-    left: 9px;
+  position: absolute;
+  z-index: 11;
+  font-size: 10rem;
+  top: 20px;
+  display: block;
+  left: 9px;
 }
-.share .row1.first{
-	top:5px;
+
+.share .row1.first {
+  top: 5px;
 }
+
 .share em {
-	position: absolute;
+  position: absolute;
 }
 
 .share em:before {
-	width: 42px;
-	height: 42px;
-	background-color: #1ab554;
-	writing-mode: tb-rl;
-	position: relative;
-	z-index: 10;
-	border-radius: 50%;
-	content: '';
-	display: block;
+  width: 42px;
+  height: 42px;
+  background-color: #1ab554;
+  writing-mode: tb-rl;
+  position: relative;
+  z-index: 10;
+  border-radius: 50%;
+  content: '';
+  display: block;
 }
 
 .share em:after {
-	content: '';
-	position: absolute;
-	width: 42px;
-	height: 42px;
-	border-radius: 50%;
-	/*box-shadow: 0 0 5px 10px rgba(255, 255, 255, 0.5);*/
-	top: 0;
-	left: 0;
-	z-index: 3;
+  content: '';
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  /*box-shadow: 0 0 5px 10px rgba(255, 255, 255, 0.5);*/
+  top: 0;
+  left: 0;
+  z-index: 3;
 
-	background-color: rgb(255,255,255);
-    opacity: 0.5;
-	-webkit-animation: halo 1.2s 0.2s infinite ease-out;
-	-moz-animation: halo 1.2s 0.2s infinite ease-out;
-    -ms-animation: halo 1.2s 0.2s infinite ease-out;
+  background-color: rgb(255, 255, 255);
+  opacity: 0.5;
+  -webkit-animation: halo 1.2s 0.2s infinite ease-out;
+  -moz-animation: halo 1.2s 0.2s infinite ease-out;
+  -ms-animation: halo 1.2s 0.2s infinite ease-out;
   -o-animation: halo 1.2s 0.2s infinite ease-out;
   animation: halo 1.2s 0.2s infinite ease-out;
-     box-shadow: inset 0 0 10px transparent;
+  box-shadow: inset 0 0 10px transparent;
 }
 
 @-webkit-keyframes halo {
@@ -293,169 +310,190 @@
 }
 
 @keyframes halo {
-	0% {
+  0% {
 
     opacity: 0.5;
-		transform: scale(0.9);
-	}
-	100% {
+    transform: scale(0.9);
+  }
+  100% {
 
     opacity: 0;
-		transform: scale(1.5);
-	}
+    transform: scale(1.5);
+  }
 }
 
-.ShareLink .popup,.userImgBox{
-	width:93.6%;
+.ShareLink .popup, .userImgBox {
+  width: 93.6%;
 }
-.ShareLink .popup-head,.ShareLink input{display: none;}
-.ShareLink .showBox{
-	border: 1px solid #333;
-	color:#333;
-	padding:13px 10px;
-    line-height: 16px;
-    font-size: 10rem;
+
+.ShareLink .popup-head, .ShareLink input {
+  display: none;
 }
-.popup-body .words{
-	text-align: center;
-	margin:15px auto 25px;
+
+.ShareLink .showBox {
+  border: 1px solid #333;
+  color: #333;
+  padding: 13px 10px;
+  line-height: 16px;
+  font-size: 10rem;
+}
+
+.popup-body .words {
+  text-align: center;
+  margin: 15px auto 25px;
 
 }
-.ShareLink .popup-container{
-	background:rgba(0,0,0,0.6);
+
+.ShareLink .popup-container {
+  background: rgba(0, 0, 0, 0.6);
 }
-.userImgBox{
-	/*display: none;*/
-	margin:0 auto;
-	background-color: #fff;
-	margin: auto 3.2%;
-	position: absolute;
-	top:120px;
-	z-index:12;
+
+.userImgBox {
+  /*display: none;*/
+  margin: 0 auto;
+  background-color: #fff;
+  margin: auto 3.2%;
+  position: absolute;
+  top: 120px;
+  z-index: 12;
 }
-.userImgBox:before{
-	content:'' ;
-	width: 0;
-	height: 0;
-	border-left: 15px solid transparent;
-	border-right: 15px solid transparent;
-	border-bottom: 25px solid #fff;
-	float: left;
-	margin-left: 46%;
-	margin-top:-15px;
+
+.userImgBox:before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 25px solid #fff;
+  float: left;
+  margin-left: 46%;
+  margin-top: -15px;
 }
-.row.userImg .col.col-33{
-	position: relative;
+
+.row.userImg .col.col-33 {
+  position: relative;
 }
 
 .userImgBox .radio {
-	float: left;
-	cursor: pointer;
-	position: absolute;
-    bottom: 45px;
-    right: 22px;
+  float: left;
+  cursor: pointer;
+  position: absolute;
+  bottom: 45px;
+  right: 22px;
 }
 
 .userImgBox .radio input {
-	position: absolute;
-	left: -9999px;
+  position: absolute;
+  left: -9999px;
 }
 
 .userImgBox .radio i {
-	position: absolute;
-	top: 10px;
-	left: -5px;
-	display: block;
-	width: 20px;
-	height: 20px;
-	outline: 0;
-	/*外圈大小控制*/
-	border: 3px solid #dcdcdc;
-	border-radius: 50%;
-	background: #fff;
+  position: absolute;
+  top: 10px;
+  left: -5px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  outline: 0;
+  /*外圈大小控制*/
+  border: 3px solid #dcdcdc;
+  border-radius: 50%;
+  background: #fff;
 }
 
 .userImgBox .radio input:checked + i::after {
-	content: '';
-	background: #1ab557;
-	/*改变内圈大小*/
-	width: 10px;
-	height: 10px;
-	position: absolute;
-	border-radius: 50%;
-	top: 2px;
-	left: 2px;
-	border: none;
-	opacity: 1;
+  content: '';
+  background: #1ab557;
+  /*改变内圈大小*/
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  border: none;
+  opacity: 1;
 }
-.nameText{
+
+.nameText {
 
 }
 
-@media (min-width: 320px){
+@media (min-width: 320px) {
 
 }
+
 .newModal {
-    top: 20%;
-    right: 2%;
-    bottom: 20%;
-    left: 2%;
-    min-height: 240px;
-    width: 96%;
+  top: 20%;
+  right: 2%;
+  bottom: 20%;
+  left: 2%;
+  min-height: 240px;
+  width: 96%;
 
 }
-.newModal{
-	min-height: 240px!important;
-    width: 96%!important;
-    left:2%;
-    right: 2%;
-    top: 30%;
-    height: 260px;
+
+.newModal {
+  min-height: 240px !important;
+  width: 96% !important;
+  left: 2%;
+  right: 2%;
+  top: 30%;
+  height: 260px;
 }
-.modal-backdrop-bg.new,.modal-backdrop-bg.sharebox {
-    opacity: 0.5;
-    transition: opacity 300ms ease-in-out;
-    background-color: #000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    width: 100%;
-    height: 100%;
-    pointer-events: auto;
+
+.modal-backdrop-bg.new, .modal-backdrop-bg.sharebox {
+  opacity: 0.5;
+  transition: opacity 300ms ease-in-out;
+  background-color: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  pointer-events: auto;
 }
+
 .modal-backdrop-bg.sharebox {
- pointer-events: none;
+  pointer-events: none;
 }
 
-.newModal ion-content{
-	margin:0 12px;
-	background: #fff;}
-.newModal .showBox{
-	width:100%;
-	border:1px solid #333;
-	margin:12px auto;
-	padding-left:5px;
+.newModal ion-content {
+  margin: 0 12px;
+  background: #fff;
 }
-.newModal p{
-	text-align: center;
+
+.newModal .showBox {
+  width: 100%;
+  border: 1px solid #333;
+  margin: 12px auto;
+  padding-left: 5px;
 }
-#showLink{
-    position:absolute;
-    z-index:100;
+
+.newModal p {
+  text-align: center;
 }
-.newModal .modalShow{
-    display:block!important;
-    padding:0px 12px;
+
+#showLink {
+  position: absolute;
+  z-index: 100;
 }
-#UpadateUserName{
-    max-width:150px;
-    min-width: 50px;
-    width:50px;
+
+.newModal .modalShow {
+  display: block !important;
+  padding: 0px 12px;
 }
-.UpdateName .Length{
-    width:auto;
-    max-width:100%;
-    margin:0 auto;
-    display: table;
+
+#UpadateUserName {
+  max-width: 150px;
+  min-width: 50px;
+  width: 50px;
+}
+
+.UpdateName .Length {
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto;
+  display: table;
 }

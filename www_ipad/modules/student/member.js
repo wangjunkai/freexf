@@ -74,13 +74,13 @@ angular.module('freexf', ['ionic'])
     }
 
       //修改名称
-    
+
     $("#updateUserName")[0].readOnly = false;
 
     $scope.changeName = function (b) {
       $("#updateUserName")[0].readOnly = b;
       $("#updateUserName").trigger('focusin');
-     
+
     };
     $scope.$watch('myuser.nickname', function (newname, old) {
       newname === old || UpdataValue.postModel({

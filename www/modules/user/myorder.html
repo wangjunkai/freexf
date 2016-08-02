@@ -3,7 +3,7 @@
 
   <ion-header-bar default-header-bar class="freexf-bar lightgray">
     <div class="bar-left">
-      <button class="button-clear freexf-back freexf-left" default-nav-back-button ng-click="goBack()">
+      <button class="button-clear freexf-back freexf-left" default-nav-back-button ng-click="goBack()" id="isGoBack">
         <i class="icon freexf-goback"></i>
       </button>
     </div>
@@ -15,15 +15,15 @@
             <div class="list">
                 <ul>
                     <li class="orderList" ng-repeat="item in orderlist" ng-show="item.IsCancel">
-                        <div class="OrderDetail">
+                        <div class="OrderDetail" >
                             <div class="OrderMessage">
                                 <div class="order number">订单号:<span>{{item.OrderId}}</span></div>
                                 <div class="order time">下单时间:<span>{{item.SetOrderTime}}</span></div>
                                 <input class="state" ng-value="item.myVar" readonly="readonly" />
                             </div>
-                            <div class="courseDetail-list">
-                                <div class="image">
-                                    <img src="{{item.image}}" width="100%" image-lazy-src="{{item.image}}" alt="{{item.ProductName}}">
+                            <div class="courseDetail-list"ng-init="isdue=(item.IsCanceled.toLowerCase()=='true')?true:false"  ng-click="goStudy(item.ProductId,1,item.ispay&&isdue&&item.Lstatus);" >
+                                <div class="image" ng-class="{floor:item.ispay&&isdue,soldout:item.ispay&&isdue&&item.Lstatus}">
+                                    <img ng-src="{{item.image}}" width="100%" image-lazy-src="{{item.image}}" alt="{{item.ProductName}}">
                                 </div>
                                 <div class="courseDetail-words">
                                 <h2>{{item.ProductName}}</h2>
@@ -36,17 +36,18 @@
                               </div>
                             </div>
                             <!--<div ng-click="goOrderDetail(item.orderRowid)" ng-show="">订单详情</div>-->
-                            <div class="btnGrounp" ng-show="item.payOrder">
-                                <button class="button button-stable"  ng-click="delOrderList(item.orderRowid)"> 取消订单</button>
-                                <button class="button button-assertive" ng-click="gopay(item.ProductId)">付款</button>
+                            <div class="btnGrounp" ng-show="item.payOrder" >
+                                <button class="button button-stable"  ng-click="delOrderList(item.orderRowid)" id="isCancelOrder"> 取消订单</button>
+                                <button class="button button-assertive" ng-click="gopay(item.ProductId,item.orderRowid)" id="isPayOrder">付款</button>
 
                             </div>
-                            <div class="btnGrounp" ng-show="item.study" >
-                                <button class="button button-stable"  ng-click="goOrderDetail(item.orderRowid)" ng-show="item.isDelivery"> 收货地址</button>
-                                <button class="button button-balanced" ng-click="goStudy(item.ProductId,'1')">立即学习</button>
+                            <div class="btnGrounp" ng-show="item.study" id="isCancelOrder">
+                                <button class="button button-stable" style="width:80px" ng-click="goOrderDetail(item.orderRowid)" ng-show="item.ispayAddress" id="isAddressOrder">填写收货地址</button>
+                                <button class="button button-balanced" ng-click="goStudy(item.ProductId,'1',item.ispay&&isdue&&item.Lstatus)" id="isStudyOrder">立即学习</button>
                             </div>
                             <div class="btnGrounp" ng-show="item.redetail">
-                                <button class="button button-balanced" ng-click="goredetail(item.ProductId)">订单详情</button>
+                                <button class="button button-balanced" ng-click="goredetail(item.ProductId)" ng-show="item.again" id="isDetailOrder">课程详情</button>
+                                <button class="button button-balanced istatus"  ng-show="item.istatus" id="isTatusOrder">课程已下架</button>
                             </div>
 
                         </div>

@@ -8,6 +8,7 @@ angular.module('freexf', ['ionic'])
     $scope.searchString = {
       value: ''
     };
+    $scope.hotList = ['雅思', '托福', '新SAT', 'GRE', '日语', '韩语', '俄语', '法语', '出国留学', '高考', '中考', '小升初', '知识点精讲', '奥数', '会计初级', '摄影'];
     $scope.isSearch = false;
     $scope.uppageshow = false;
     //清空input值

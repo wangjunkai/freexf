@@ -122,6 +122,24 @@
     opacity: 1;
     top: 0;
 }
-
-
-
+/*∂©µ•“Ï≥£*/
+.error{
+    width: 94%;
+    margin: 12px;
+    position: absolute;
+    top: 30%;
+    background-color: #fff;
+}
+.errorText{
+    font-size: 20rem;
+    line-height: 80px;
+    text-align: center;
+    color:#EA4E00;
+}
+.backBtn{
+    width: 100% !important;
+    text-align: right !important;
+    padding-right:30px !important;
+    height: 50px;
+    color:#1ab554;
+}

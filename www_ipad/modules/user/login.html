@@ -1,29 +1,35 @@
 <ion-modal-view ng-controller="login_ctrl">
-
   <ion-header-bar class="freexf-bar lightgray">
     <div class="bar-left">
-      <button class="button-clear freexf-back freexf-left" default-nav-back-button ng-click="goBack()">
+      <button class="button-clear freexf-back freexf-left" ng-click="$modal._back()">
         <i class="icon freexf-goback"></i>
       </button>
     </div>
     <div class="title bar-center">登录</div>
+    <div class="bar-right">
+      <button class="button-clear freexf-right c1ab" ng-click="openModal('register')">
+        注册
+      </button>
+    </div>
   </ion-header-bar>
 
   <ion-content>
     <form name="loginForm">
-      <div class="list">
+      <div class="list" style="margin-bottom: 0;">
         <label class="item item-input item-floating-label">
           <span class="input-label">输入账号</span>
-          <input type="text" placeholder="输入账号" ng-model="login.phone" fx-validate="require:phone;format:phone;">
-
+          <input type="text" placeholder="输入账号" ng-model="login.phone" fx-validate="require:phone;format:phone;"
+                 id="isLoginPhone">
         </label>
         <label class="item item-input item-floating-label">
           <span class="input-label">输入密码</span>
-          <input type="password" placeholder="输入密码" ng-model="login.password" fx-validate="require:password;">
+          <input type="password" placeholder="输入密码" ng-model="login.password" fx-validate="require:password;"
+                 id="isLoginPassword">
         </label>
       </div>
-      <div class="freexf-padding-24">
-        <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" fx-validate="submit()"
+      <div class="freexf-auth-button">
+        <button class="button button-block freexf-button-balanced" fx-validate="submit()"
+                id="isToLogin"
                 ng-click="toLogin($event,loginForm)">
           登录
         </button>
@@ -34,11 +40,10 @@
             </label>
             记住密码
           </div>
-          <!--<div class="bg-img " style="background-position: -10px -10px;width: 30px;height: 30px;float: right;"></div>-->
-          <a class="freexf-font-13 freexf-right" href="#/forgetpassword">忘记密码</a>
+          <a class="freexf-right" ng-click="openModal('forgetpassword')" id="isHrefForget">忘记密码</a>
         </div>
       </div>
-      <a href="#/register" class="freexf-bottom-register">
+      <a ng-click="openModal('register')" class="freexf-bottom-register">
         还没有账号?点击注册!
       </a>
     </form>

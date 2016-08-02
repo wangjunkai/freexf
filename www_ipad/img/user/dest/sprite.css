@@ -1,0 +1,78 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.icon-icon-dingdan@3x {
+  background-image: url(sprite.png);
+  background-position: 0px 0px;
+  width: 135px;
+  height: 135px;
+}
+.icon-icon-in-dingdan@3x {
+  background-image: url(sprite.png);
+  background-position: -158px 0px;
+  width: 135px;
+  height: 135px;
+}
+.icon-icon-in-kecheng@3x {
+  background-image: url(sprite.png);
+  background-position: -316px 0px;
+  width: 135px;
+  height: 135px;
+}
+.icon-icon-in-shezhi@3x {
+  background-image: url(sprite.png);
+  background-position: -474px 0px;
+  width: 63px;
+  height: 60px;
+}
+.icon-icon-in-shoucang@3x {
+  background-image: url(sprite.png);
+  background-position: -560px 0px;
+  width: 135px;
+  height: 135px;
+}
+.icon-icon-in-tuijian@3x {
+  background-image: url(sprite.png);
+  background-position: -718px 0px;
+  width: 135px;
+  height: 135px;
+}
+.icon-icon-kecheng@3x {
+  background-image: url(sprite.png);
+  background-position: -876px 0px;
+  width: 135px;
+  height: 135px;
+}
+.icon-icon-shezhi@3x {
+  background-image: url(sprite.png);
+  background-position: -1034px 0px;
+  width: 63px;
+  height: 60px;
+}
+.icon-icon-shoucang@3x {
+  background-image: url(sprite.png);
+  background-position: -1120px 0px;
+  width: 135px;
+  height: 135px;
+}
+.icon-icon-tuijian@3x {
+  background-image: url(sprite.png);
+  background-position: -1278px 0px;
+  width: 135px;
+  height: 135px;
+}

@@ -49,9 +49,11 @@
 
   })
 .filter('IsBought', function () {
-    return function (item) {
-        if (item == "False") {
+    return function (item, status) {
+        if (item == "False" && status == false) {
             return "立即购买";
+        } else if (item == "False" && status == true) {
+            return "尚未开课";
         } else if (item == "True") {
             return "立即学习";
         }

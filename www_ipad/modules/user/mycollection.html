@@ -1,23 +1,14 @@
-<ion-view view-title="我的收藏">
-  <ion-header-bar default-header-bar class="freexf-bar lightgray">
-    <div class="bar-left">
-      <button class="button-clear freexf-back freexf-left" default-nav-back-button ng-click="goBack()">
-        <i class="icon freexf-goback"></i>
-      </button>
-    </div>
-    <div class="title">我的收藏</div>
-  </ion-header-bar>
+<ion-view view-title="我的收藏" class="freexf-ef">
   <ion-content lazy-scroll class="myCollection">
-    <div class="content  ionic-pseudo">
-
+    <div class="content freexf-account-list">
       <div class="list">
         <ul>
           <li class="orderList" ng-repeat="f in myfavorite">
-            <div class="OrderDetail">
-              <div class="courseDetail-list" ng-click="goStudy(f.ClassID,'1')">
+            <div class="OrderDetail clearfix">
+              <div class="courseDetail-list" ng-click="openModal('coursedetail',{ProductId: f.ClassID,state:'1'})">
                 <!--此处添加floor，即添加过期浮层-->
                 <div class="image">
-                  <img src="{{f.cover}}" image-lazy-src="{{f.cover}}" width="100%">
+                  <img src="img/publicbg/null_bg320_180.png" image-lazy-src="{{f.cover}}" width="100%">
                 </div>
                 <div class="courseDetail-words">
                   <h2>{{f.ClassName}}</h2>
@@ -25,24 +16,24 @@
                     <p class="name" ng-show="f.teachername">●&nbsp;讲师<i>{{f.teachername}}</i></p>
                     <span class="time">●&nbsp;课程有效期<i>{{f.validity}}天</i></span>
                     <span class="count">●&nbsp;<i>{{f.classhours}}</i>课时</span>
-                    <p class="xf"><font>{{f.price|xufen}}</font><span ng-show="{{f.price| xufenshow}}">学分</span></p>
+                    <p class="xf"><font>{{f.price|xufen}}</font><span ng-show="f.price| xufenshow">学分</span></p>
                   </div>
                 </div>
               </div>
 
               <div class="btnGrounp">
-                <button class="button button-stable" ng-click="delfavorite(f.ClassID)"> 取消收藏</button>
-                <button class="button button-balanced" ng-click="goStudy(f.ClassID,'1')" ng-init="buy=f.IsBoughtCrouse=='False'?false:true" ng-class="{buy:!buy}">
-                  {{f.IsBoughtCrouse|IsBought}}
+                <button class="button button-stable" ng-click="delfavorite(f.ClassID)" id="isCanceFavorite"> 取消收藏
+                </button>
+                <button class="button button-balanced" ng-click="openModal('coursedetail',{ProductId: f.ClassID,state:'1'})" ng-init="buy=f.IsBoughtCrouse=='False'?false:true" ng-class="{buy:!buy}" id="isGoStudyFavorite">
+                  {{f.IsBoughtCrouse|IsBought:f.status}} 
                 </button>
               </div>
             </div>
           </li>
-
         </ul>
         <ion-infinite-scroll ng-if="uppageshow" on-infinite="doRefresh()" distance="1%"></ion-infinite-scroll>
         <div ng-hide="uppageshow" class="freexf-nullmsg">{{bottomtext}}</div>
       </div>
-
+    </div>
   </ion-content>
 </ion-view>

@@ -19,16 +19,16 @@
       <div class="changepassword" ng-class="{false:'logout-set'}[log]"><a href="#/modifypassword" id="changePassword">修改密码</a>
       </div>
       <div class="quit" ng-if="log">
-        <button ng-click="toQuit()" class="button quitbtn button-block">退出登录</button>
+        <button ng-click="toQuit()" class="button quitbtn button-block" id="isToQuitSet">退出登录</button>
       </div>
     </div>
     <div class="freexf-contact" ng-show="showcontactour">
       <div class="phonecontent">
         <div class="phone">400-803-6611</div>
-        <div class="btn">
-          <a class="cancel" href="" ng-click="hidecontact()">取消</a>
-          <a class="dial" ng-click="hidecontact()" href="tel:400-803-6611">拨打</a>
-        </div>
+          <div class="btn">
+              <a class="cancel" href="" ng-click="hidecontact()" id="isCancelSet">取消</a>
+              <a class="dial" ng-click="hidecontact()" href="tel:400-803-6611" id="isCallSet">拨打</a>
+          </div>
       </div>
     </div>
   </ion-content>

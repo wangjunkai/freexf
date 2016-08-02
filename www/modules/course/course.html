@@ -20,7 +20,10 @@
           <div class="zhongxiaoxue" ng-click="goCourseList(Category1[1])">{{Category1[1]}}</div>
         </li>
         <ul class="ccl-course-son-list">
-          <li ng-repeat="b in Category2[1]" ng-click="goCourseList(Category1[1],b)">{{b}}</li>
+          <li ng-repeat="b in Category2[1]" ng-click="goCourseList(Category1[1],b)">{{b|cutSummer}}</li>
+        </ul>
+        <ul class="ccl-course-son-list" style="border-top:1px #eeeeee solid;">
+          <li ng-repeat="f in Category2[6]" ng-click="goCourseList(Category1[1],f)">{{f}}</li>
         </ul>
         <li class="ccl-son">
           <div class="duoyuzhong" ng-click="goCourseList(Category1[2])">{{Category1[2]}}</div>
@@ -44,7 +47,7 @@
           <div class="xingqu" ng-click="goCourseList(Category1[6])">{{Category1[6]}}</div>
         </li>
         <ul class="ccl-course-son-list">
-            <li ng-repeat="f in Category2[6]" ng-click="goCourseList(Category1[6],f)">{{f}}</li>
+            <li ng-click="goCourseList(Category1[6])">全部</li>
         </ul>
       </ul>
       </ul>
