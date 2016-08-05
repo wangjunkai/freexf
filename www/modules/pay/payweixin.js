@@ -9,10 +9,13 @@ angular.module('freexf')
       if (ua.match(/MicroMessenger/i) == "micromessenger") {
           //Î¢ÐÅ
           $scope.ThisWX = true;
+          var element = document.getElementById('iframe');
+          element.setAttribute('src', payUrl)
       } else {
           //Ìø×ª
           window.location.href = payUrl
       }
+
       $scope.StudentId = window.location.href.split('stid')[1].split('sign')[0];
       $scope.Sign = window.location.href.split('sign')[1].split('way')[0];
       $scope.Way = window.location.href.split('way')[1].split('endpayid')[0];

@@ -12,6 +12,7 @@ define(function () {
       var addFlower = AddFlower(ENV._api.__addflower);
       var removeFlower = RemoveFlower(ENV._api.__removeflower);
       var parames = $scope.$parent.$data;
+      var isNewCourse = true;
       $scope.courseId = parames.ProductId;
       $scope.coursedetail = parames.state == '1' ? false : true;	//课程介绍
       $scope.courseoutline = parames.state == '1' ? true : false;	//大纲
@@ -86,6 +87,15 @@ define(function () {
             $scope.courseDate.CrouseBigList.length == 1 ? $scope.more = false : $scope.more = true;
             $scope.showGroupCourse = true;
           }
+          if ($scope.courseDate.isPermissionCrouse == true) {   //开发者用户
+              $scope.buy = true;
+              $scope.isbuy = true;
+              $scope.nobuy = false;
+          } else {
+              $scope.buy = false;
+              $scope.isbuy = false;
+              $scope.nobuy = true;
+          }
           //大纲
           GetCourseOutline.getModel(params).then(function (res) {
             $scope.courseList = res.response.data.CourseList;
@@ -96,29 +106,12 @@ define(function () {
             $scope.isnull = $scope.courseList[0].OutlineList.length > 0 ? true : false;    //是否有章节
             isGroupClass ? $scope.htmlId = "coursegroup.html" : $scope.htmlId = "courseoutline.html";
             //$scope.courseDate.isPermissionCrouse = true;    //已购买
-            if ($scope.courseDate.isPermissionCrouse == true) {   //开发者用户
-              $scope.buy = true;
-              $scope.isbuy = true;
-              $scope.nobuy = false;
-              if ($scope.isnull) {
-                $scope.lastCharptId = $scope.courseDate.lastCharptId == null ? $scope.courseList[0].OutlineList[0].CharpterList[0].uuRowId : $scope.courseDate.lastCharptId;
+            if ($scope.isnull) {
+                $scope.lastCharptId = $scope.courseDate.lastCharptId == null || $scope.courseDate.lastCharptId == "" ? $scope.courseList[0].OutlineList[0].CharpterList[0].uuRowId : $scope.courseDate.lastCharptId;
                 getUrl($scope.lastCharptId, 'init');
-              } else {
+            } else {
                 $scope.lastCharptId = "";
                 $scope.CharpterList = false;
-              }
-
-            } else {  //未购买
-              $scope.buy = false;
-              $scope.isbuy = false;
-              $scope.nobuy = true;
-              if ($scope.isnull) {
-                $scope.lastCharptId = $scope.courseDate.lastCharptId == null ? $scope.courseList[0].OutlineList[0].CharpterList[0].uuRowId : $scope.courseDate.lastCharptId;
-                getUrl($scope.lastCharptId, 'init');
-              } else {
-                $scope.lastCharptId = "";
-                $scope.CharpterList = false;
-              }
             }
           });
         });
@@ -141,7 +134,7 @@ define(function () {
           $scope.openModal('payagreement', {paycourseId: $scope.courseId}, true);
         }
         else {
-          $scope.openModal('login', {}, true);
+          $scope.openModal('login');
         }
       };
       $scope.collectState = function () {
@@ -354,6 +347,23 @@ define(function () {
               $scope.isbuy = false;
               $scope.nobuy = false;
               playTimeFun(id)
+              if ($scope.buy) {
+                  var studentId = 'as_studentId=' + params.studentId;
+                  var courseId = 'as_courseId=' + params.courseId;
+                  var chaptId = 'as_chapterId=' + id;
+                  var getUrlData = '/MFreeXFapi/student/UpdateLastCharptId';
+                  $.ajax({
+                      type: 'POST',
+                      cache: 'false',
+                      url: getUrlData,
+                      data: studentId + '&' + courseId + '&' + chaptId,
+                      success: function (data) {
+                          data ? isNewCourse = false : isNewCourse = true;
+                      },
+                      error: function (data) {
+                      }
+                  });
+              }
             } else {
             }
           }
@@ -385,13 +395,27 @@ define(function () {
             var studentId = 'as_studentId=' + params.studentId;
             var courseId = 'as_courseId=' + params.courseId;
             var chaptId = 'as_chapterId=' + zhangjieid;
-            var getUrlData = '/MFreeXFapi/student/UpdateCourseProgress?' + studentId + '&' + courseId + '&' + chaptId;
+            var getUrlData = '/MFreeXFapi/student/UpdateCourseProgress';
             $.ajax({
               type: 'POST',
               cache: 'false',
               url: getUrlData,
+              data: studentId + '&' + courseId + '&' + chaptId,
               success: function (data) {
-                $interval.cancel($rootScope.h5playtimeend);
+                  $interval.cancel($rootScope.h5playtimeend);
+                  if ($scope.buy && isNewCourse) {
+                      var Url = '/MFreeXFapi/student/UpdateLastCharptId';
+                      $.ajax({
+                          type: 'POST',
+                          cache: 'false',
+                          url: Url,
+                          data: studentId + '&' + courseId + '&' + chaptId,
+                          success: function (data) {
+                          },
+                          error: function (data) {
+                          }
+                      });
+                  }
               },
               error: function (data) {
                 $interval.cancel($rootScope.h5playtimeend);

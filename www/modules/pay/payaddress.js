@@ -20,14 +20,14 @@ angular.module('freexf')
       };
       $scope.payAddress = new addressModel();
       //获取对应订单的列表
-      payAddress.getModel({ "Sign": $scope.userData.Sign, "OrderId": $scope.OrderId, "studentId": $scope.userData.rowId }).then(function (res) {          
+      payAddress.getModel({ "Sign": $scope.userData.Sign, "OrderId": $scope.OrderId, "studentId": $scope.userData.rowId }).then(function (res) {
           $scope.payAddress = res.response.data[0] || new addressModel();
           if ($scope.payAddress.IsDelivery == false || $scope.payAddress.IsDelivery == 0) {
               //切换是否有教材地址的成功提示内容
               $scope.ispayAddress = false;
               $scope.payOn = true;
               $timeout(function () {
-                  location.href = "#/mycourse";
+                $state.go('mycourse');
               }, 3000)
           } else {
               $scope.ispayAddress = true;
@@ -44,19 +44,19 @@ angular.module('freexf')
       $scope.submit = function ($event, $form) {
           if ($form.$invalid) return false;
           var AddpayAddress = AddOrderAddress(ENV._api.__addorderaddress);
-          AddpayAddress.postModel({ "as_name": $scope.DeliveryUser, "as_mobile": $scope.DeliveryPhone, "as_address": $scope.DeliveryAddress }).then(function (res) {
+          AddpayAddress.postModel({ "as_name": $scope.DeliveryUser, "as_mobile": $scope.DeliveryPhone, "as_address": $scope.DeliveryAddress, "as_orderid": $scope.OrderId }).then(function (res) {
               //获取提交结果
               var ret = res.response.data;
               $Loading.show({ class: ret ? MSGICON.success : MSGICON.fail, text: ret ? '提交成功，3秒后跳转!' : '提交失败!' }, 2500);
               if (ret) {
                   $timeout(function () {
-                      location.href = "#/mycourse";
+                    $state.go('mycourse');
                   }, 3000)
               }
           });
       }
       $scope.goToMycourse = function () {
-          location.href = "#/mycourse";
+        $state.go('mycourse');
       }
   });
 

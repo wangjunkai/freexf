@@ -10,13 +10,11 @@
 
   <ion-content class="pay">
     <div class="paycontent">
-      <div class="OrderMessage on">
-        <div class="title" id="isPayName">{{payoname}}</div>
-        <div>你应付金额：<span class="money" id="isPayMoney">¥<i>{{payomoney}}</i></span></div>
-      </div>
       <div class="OrderMessage">
-        <div>订单编号：<span id="isOrderId">{{orderId}}</span></div>
-        <div>下单时间：<span id="isSetOrderTime">{{SetOrderTime}}</span></div>
+        <p class="title" id="isPayName">{{payoname}}</p>
+        <p class="price">你应付金额：<span class="money" id="isPayMoney">¥<i>{{payomoney}}</i></span></p>
+        <p class="number">订单编号：<span id="isOrderId">{{orderId}}</span></p>
+        <p class="time">下单时间：<span id="isSetOrderTime">{{SetOrderTime}}</span></p>
       </div>
       <div class="PayState" ng-hide="mianfeiShow">
         <div class="PayState-group" ng-hide="payhide">
@@ -24,28 +22,19 @@
           <span class="PaySuccess"></span>
         </div>
       </div>
+      <p class="jump" ng-show="mianfeiShow">免费课程,在3秒后自动跳转,或点击以下按钮</p>
     </div>
-    <div ng-hide="payhide">
-      <div ng-show="mianfeiShow">免费课程,在3秒后自动跳转,或点击以下按钮</div>
-      <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-click="goOrderDetail()"
+  </ion-content>
+  <ion-footer-bar class="freexf-footer" ng-hide="payhide">
+    <div class="freexf-agreement-buttons pay-buttons">
+      <button class="button button-balanced"
+              ng-click="openModal('payaddress',{OrderId:payood})"
               ng-show="mianfeiShow" id="isPayFinish">完成支付
       </button>
-
-      <!--正常手机支付-->
-      <a href="/pay/Alipay/default.aspx?OrderId={{payohref}}" class="zcpay" ng-hide="ThisWX"
-         ng-click="RealTimeUpdate('.zcpay')">
-        <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-hide="mianfeiShow"
-                id="IsPaySurePhone">确认支付
-        </button>
-      </a>
-      <!--微信支付-->
-      <a href="/mobile/www/modules/pay/payweixin.html?payid{{payohref}}endpayid" class="wxpay" ng-show="ThisWX"
-         ng-click="RealTimeUpdate('.wxpay')">
-        <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-hide="mianfeiShow"
-                id="IsPaySureWeixin">确认支付
-        </button>
-      </a>
+      <!--正常手机支付  微信支付-->
+      <button class="button button-balanced" ng-hide="mianfeiShow" ng-click="RealTimeUpdate(ThisWX?'wxpay':'zcpay')"
+              id="IsPaySurePhone">确认支付
+      </button>
     </div>
-
-  </ion-content>
+  </ion-footer-bar>
 </ion-modal-view>

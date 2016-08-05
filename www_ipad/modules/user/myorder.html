@@ -11,8 +11,9 @@
                 <div class="order time">下单时间:<span>{{item.SetOrderTime}}</span></div>
                 <input class="state" ng-value="item.myVar" readonly="readonly"/>
               </div>
-              <div class="courseDetail-list" ng-click="openModal('coursedetail',{ProductId:item.ProductId})">
-                <div class="image">
+              <div class="courseDetail-list" ng-init="isdue=(item.IsCanceled.toLowerCase()=='true')?true:false"
+                   ng-click="openModal('coursedetail',{ProductId:item.ProductId,ispayAddress:item.ispayAddress})">
+                <div class="image" ng-class="{floor:item.ispay&&isdue,soldout:item.ispay&&isdue&&item.Lstatus}">
                   <img src="img/publicbg/null_bg320_180.png" width="100%" image-lazy-src="{{item.image}}">
                 </div>
                 <div class="courseDetail-words">
@@ -27,26 +28,31 @@
                 </div>
               </div>
               <!--<div ng-click="goOrderDetail(item.orderRowid)" ng-show="">订单详情</div>-->
+
               <div class="btnGrounp" ng-show="item.payOrder">
                 <button class="button button-stable" ng-click="delOrderList(item.orderRowid)" id="isCancelOrder"> 取消订单
                 </button>
                 <button class="button button-assertive"
-                        ng-click="openModal('payagreement',{paycourseId: item.ProductId})" id="isPayOrder">付款
+                        ng-click="openModal('payagreement',{paycourseId: item.ProductId})"
+                        id="isPayOrder">付款
                 </button>
 
               </div>
-              <div class="btnGrounp" ng-show="item.study">
-                <button class="button button-stable" ng-click="goOrderDetail(item.orderRowid)"
-                        ng-show="item.isDelivery">收货地址
+              <div class="btnGrounp" ng-show="item.study" id="isCancelOrder">
+                <button class="button button-stable" style="width:80px"
+                        ng-click="openModal('payaddress',{OrderId:item.orderRowid,isFromOrder:true})"
+                        ng-show="item.ispayAddress" id="isAddressOrder">填写收货地址
                 </button>
                 <button class="button button-balanced"
-                        ng-click="openModal('coursedetail',{ProductId:item.ProductId,state:'1'})">立即学习
+                        ng-click="openModal('coursedetail',{ProductId:item.ProductId,state:'1',ispayAddress:item.ispayAddress})"
+                        id="isStudyOrder">立即学习
                 </button>
               </div>
               <div class="btnGrounp" ng-show="item.redetail">
-                <button class="button button-balanced" ng-click="openModal('coursedetail',{ProductId:item.ProductId})">
-                  订单详情
+                <button class="button button-balanced" ng-click="openModal('coursedetail',{ProductId:item.ProductId})"
+                        ng-show="item.again" id="isDetailOrder">课程详情
                 </button>
+                <button class="button button-balanced istatus" ng-show="item.istatus" id="isTatusOrder">课程已下架</button>
               </div>
 
             </div>

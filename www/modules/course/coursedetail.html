@@ -188,7 +188,7 @@
 </ion-view>
 
 <script type="text/ng-template" id="coursegroup.html">   
-    <li class="item freexf-test testClass" style="border-bottom:10px #fff solid;" ng-hide="{{isPayed}}" ng-if="outlineFreeList[0].PartNameList.length>0">   <!----class="freexf-test"未购买课程-->
+    <li class="item freexf-test testClass" style="border-bottom:10px #fff solid;" ng-hide="isPayed||courseDate.IsOpenGroup" ng-if="outlineFreeList[0].PartNameList.length>0">   <!----class="freexf-test"未购买课程-->
         <div class="freexf-course-title course-group-title">
             <p>试听课程</p>
         </div>
@@ -233,7 +233,7 @@
   </li>
 </script>
 <script type="text/ng-template" id="courseoutline.html">
-    <li class="item freexf-test testClass" style="border-bottom:10px #fff solid;" ng-hide="{{isPayed}}" ng-if="outlineFreeList[0].PartNameList.length>0">
+    <li class="item freexf-test testClass" style="border-bottom:10px #fff solid;" ng-hide="isPayed||courseDate.IsOpenGroup" ng-if="outlineFreeList[0].PartNameList.length>0">
         <div class="freexf-course-title course-group-title">
             <p>试听课程</p>
         </div>

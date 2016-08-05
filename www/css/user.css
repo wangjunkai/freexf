@@ -361,6 +361,7 @@
   border-color: none;
   color: #fff;
   background-color: #1ab554;
+  cursor: not-allowed;
 }
 
 .btnGrounp .button.button-balanced.buy {

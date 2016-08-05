@@ -312,6 +312,41 @@ and (orientation: landscape) {
   height: 17px;
   background-position: -26px -39px;
 }
+.orderList .image.floor:after {
+  content: '课程已失效';
+  background-color: rgba(0, 0, 0, 0.6);
+  clear: both;
+  position: absolute;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  color: #fff;
+  text-align: center;
+  padding-top: 20%;
+  font-size: 17rem;
+}
+.orderList .image.soldout {
+  position: relative;
+}
+.orderList .image.floor.soldout:after{
+  content: '课程已下架'!important;
+}
+.orderList .image.soldout:after {
+  content: '课程已下架'!important;
+  background-color: rgba(0, 0, 0, 0.6);
+  clear: both;
+  position: absolute;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  color: #fff;
+  text-align: center;
+  padding-top: 20%;
+  font-size: 17rem;
+}
+
 
 .mycourse .btnGrounp .button-assertive:before {
   content: '';
@@ -566,6 +601,11 @@ input.hasPlace:-ms-input-placeholder, textarea.hasPlace:-ms-input-placeholder {
   font-size: 9rem;
   float: left;
 }
+.button.button-balanced.istatus{
+  background:none;
+  color:#969696;
+  border:1px solid #969696
+}
 
 .freexf-buttons {
   position: relative;
@@ -629,7 +669,7 @@ input.hasPlace:-ms-input-placeholder, textarea.hasPlace:-ms-input-placeholder {
   position: relative;
 }
 .orderList .image.floor.soldout:after{
-  content: '课程已下架'!important;  
+  content: '课程已下架'!important;
 }
 .orderList .image.soldout:after {
   content: '课程已下架'!important;

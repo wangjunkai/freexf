@@ -144,7 +144,9 @@ ion-content:first-of-type {
 .bar .button-clear.freexf-search,
 .bar .freexf-search,
 .bar .button-clear.freexf-search-span,
-.bar .button-clear.freexf-close {
+.bar .button-clear.freexf-close,
+.bar .button-clear.freexf-info-consult,
+.bar .button-clear.freexf-collect{
   padding: 0;
   border: 0;
   margin: 0;
@@ -158,12 +160,16 @@ ion-content:first-of-type {
 /*左右间距*/
 .bar .bar-left > .button-clear,
 .bar .bar-right > .button-clear {
-  padding: 0 12px !important;
+  padding: 0 12px;
 }
 
 .bar .freexf-icon-search,
 .bar .freexf-consult {
   line-height: 34px;
+}
+
+.home-view .bar .hearder-button-right {
+  padding-right: 20px;
 }
 
 .bar .freexf-icon-search:before,
@@ -272,6 +278,10 @@ ion-content:first-of-type {
 }
 
 /*返回*/
+.bar .bar-left .freexf-back {
+  padding: 0 20px;
+}
+
 .bar .freexf-back .freexf-goback,
 .bar .freexf-back .freexf-gohomeback {
   background-image: url('../img/publicbg/home.png');

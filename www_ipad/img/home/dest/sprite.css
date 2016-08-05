@@ -16,93 +16,39 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 // HTML
 <i class="icon icon-home"></i>
 */
-.icon-icon-back {
+.icon-icon-duoyuzhong@3x {
   background-image: url(sprite.png);
   background-position: 0px 0px;
-  width: 17px;
-  height: 32px;
+  width: 201px;
+  height: 201px;
 }
-.icon-icon-duoyuzhong {
+.icon-icon-kaoyan@3x {
   background-image: url(sprite.png);
-  background-position: -40px 0px;
-  width: 90px;
-  height: 90px;
+  background-position: -224px 0px;
+  width: 201px;
+  height: 201px;
 }
-.icon-icon-home-outline {
+.icon-icon-kuaiji@3x {
   background-image: url(sprite.png);
-  background-position: -153px 0px;
-  width: 60px;
-  height: 60px;
+  background-position: -448px 0px;
+  width: 201px;
+  height: 201px;
 }
-.icon-icon-home {
+.icon-icon-xinqu@3x {
   background-image: url(sprite.png);
-  background-position: -236px 0px;
-  width: 60px;
-  height: 60px;
+  background-position: -672px 0px;
+  width: 201px;
+  height: 201px;
 }
-.icon-icon-kaoyan {
+.icon-icon-yingyu@3x {
   background-image: url(sprite.png);
-  background-position: -319px 0px;
-  width: 90px;
-  height: 90px;
+  background-position: -896px 0px;
+  width: 201px;
+  height: 201px;
 }
-.icon-icon-kuaiji {
+.icon-icon-zhongxiaoxue@3x {
   background-image: url(sprite.png);
-  background-position: -432px 0px;
-  width: 90px;
-  height: 90px;
-}
-.icon-icon-logo {
-  background-image: url(sprite.png);
-  background-position: -545px 0px;
-  width: 220px;
-  height: 48px;
-}
-.icon-icon-more {
-  background-image: url(sprite.png);
-  background-position: -788px 0px;
-  width: 20px;
-  height: 35px;
-}
-.icon-icon-user-outline {
-  background-image: url(sprite.png);
-  background-position: -831px 0px;
-  width: 60px;
-  height: 60px;
-}
-.icon-icon-user {
-  background-image: url(sprite.png);
-  background-position: -914px 0px;
-  width: 60px;
-  height: 60px;
-}
-.icon-icon-xinqu {
-  background-image: url(sprite.png);
-  background-position: -997px 0px;
-  width: 90px;
-  height: 90px;
-}
-.icon-icon-xuanke-outline {
-  background-image: url(sprite.png);
-  background-position: -1110px 0px;
-  width: 60px;
-  height: 60px;
-}
-.icon-icon-xuanke {
-  background-image: url(sprite.png);
-  background-position: -1193px 0px;
-  width: 60px;
-  height: 60px;
-}
-.icon-icon-yinyu {
-  background-image: url(sprite.png);
-  background-position: -1276px 0px;
-  width: 90px;
-  height: 90px;
-}
-.icon-icon-zhongxiaocue {
-  background-image: url(sprite.png);
-  background-position: -1389px 0px;
-  width: 90px;
-  height: 90px;
+  background-position: -1120px 0px;
+  width: 201px;
+  height: 201px;
 }

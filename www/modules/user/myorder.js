@@ -150,32 +150,32 @@ angular.module('freexf')
       };
       //去支付
       $scope.gopay = function (ProductId, orderRowid) {
-          GetRealTimeUpdate.postModel({ "ProductId": ProductId, "studentid": $scope.userData.rowId, "orderid": orderRowid }).then(function (res) {
-              var data = res.response.data;
-              if (data) {
+          //GetRealTimeUpdate.postModel({ "ProductId": ProductId, "studentid": $scope.userData.rowId, "orderid": orderRowid }).then(function (res) {
+          //    var data = res.response.data;
+          //    if (data) {
                   $rootScope.paycourseId = ProductId;
                   location.href = "#/pay";
-              } else {
-                  count = 0;
-                  orderlistitem.getModel({ "studentId": $scope.userData.rowId, "Sign": $scope.userData.Sign, "pageIndex": count, "pageMax": pageMax }).then(function (res) {
-                      var data = res.response.data;
-                      //是否有订单
-                      if (res == null || res.response == null || res.response.data == null || res.response.data.length < 1) {
-                          //没有订单，提示一句话
-                          $scope.haveNull = true;
+              //} else {
+              //    count = 0;
+              //    orderlistitem.getModel({ "studentId": $scope.userData.rowId, "Sign": $scope.userData.Sign, "pageIndex": count, "pageMax": pageMax }).then(function (res) {
+              //        var data = res.response.data;
+              //        //是否有订单
+              //        if (res == null || res.response == null || res.response.data == null || res.response.data.length < 1) {
+              //            //没有订单，提示一句话
+              //            $scope.haveNull = true;
 
-                      } else {
-                          $ionicScrollDelegate.scrollTop();
-                          //分页初始化
+              //        } else {
+              //            $ionicScrollDelegate.scrollTop();
+              //            //分页初始化
 
-                          count = 0;
-                          $scope.haveNull = false;
-                          $scope.orderlist = orderlistInfo(data);
-                          $scope.uppageshow = true;
-                      };
-                  });
-              }
-          })
+              //            count = 0;
+              //            $scope.haveNull = false;
+              //            $scope.orderlist = orderlistInfo(data);
+              //            $scope.uppageshow = true;
+              //        };
+              //    });
+              //}
+          //})
           
       };
 

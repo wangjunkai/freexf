@@ -1076,22 +1076,23 @@ img.freexf-blur {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    display: inline-block;
+    display: block;
     float: left;
 }
 .new .course-count{
-    /*width: 63%;*/
+    width: 63%;
     color: #969696 !important;
     font-size: 12rem !important;
     margin-right: 0px !important;
-    display: inline-block;
+    display: block;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    float: right;
+    float: left;
     
 }
 .course-count.countNew{
     width:100%;
    
 }
+.popup-title.ng-binding a{color: #333;font-size: 12rem;}

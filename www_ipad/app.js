@@ -75,8 +75,9 @@
       })
       .filter('cutCharptName', function () {
         return function (item) {
-          var pattern = /(.*).mp4$/g;
-          return pattern.test(item) ? "上次学到：" + RegExp.$1 : "您还没有学习该课程";
+          //var pattern = /(.*).mp4$/g;
+            //return pattern.test(item) ? "上次学到：" + RegExp.$1 : "您还没有学习该课程";
+            return item?"上次学到：" + item: "您还没有学习该课程";
         }
       })
       .filter('cutSummer', function () {
@@ -242,6 +243,9 @@
                   //绑定controller
                   //$compile($(modal.modalEl).attr("ng-controller", ctrlObj.ctrl))(modal.scope);
                   modal.scope['$modal'] = modal;
+                  modal.scope['$modal']['_backModal'] = function(){
+                    return _frModals.backModal;
+                  };
                   modal['_show'] = modalShow.bind(modal);
                   modal['_hide'] = modalHide.bind(modal);
                   modal['_back'] = modalGoBack.bind(modal);

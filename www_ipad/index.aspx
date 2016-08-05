@@ -75,8 +75,10 @@
 </head>
 <body>
 
-<ion-nav-view>
+<ion-nav-view class="freexf-content-table">
+  <div ng-include="'modules/pubilc/lefttabs.html'" include-replace></div>
 </ion-nav-view>
+
 <!--require按需加载js控件-->
 <script data-main="config.js" src="lib/requirejs/require.js"></script>
 

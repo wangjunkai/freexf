@@ -2,7 +2,7 @@
 
 
 angular.module('freexf')
-  .controller('myorder_ctrl', function ($scope, $rootScope, $http, $injector, $state, $ionicLoading, $timeout, $frModal, $freexfUser, ENV, OrderList, DelOrder, $ionicScrollDelegate, DelMyFavoriteRepository) {
+  .controller('myorder_ctrl', function ($scope, $rootScope, $http, $injector, $state, $ionicLoading, $timeout, $Loading, $frModal, $freexfUser, ENV, OrderList, DelOrder, MSGICON, $ionicScrollDelegate, DelMyFavoriteRepository) {
     var count = 0;
     var pageMax = 6;
     $scope.haveNull = false;
@@ -42,8 +42,12 @@ angular.module('freexf')
           "goredetail": true
 
         };
-
-
+//判断是否有收货地址
+        if (data[i].isDelivery == 1) {
+          item.ispayAddress = true;
+        } else {
+          item.ispayAddress = false;
+        }
         //判断是否支付
         if (data[i].ispay == 0) {
           //等待付款 逻辑
@@ -53,9 +57,16 @@ angular.module('freexf')
         }
         else if (data[i].ispay == 1) {
           if (data[i].IsCanceled.toLowerCase() == "true") {
-
             //过期 逻辑
             item.myVar = "交易过期";
+
+            if (data[i].Lstatus == true) {
+              item.istatus = true;
+              item.again = false;
+            } else {
+              item.istatus = false;
+              item.again = true;
+            }
             item.redetail = true;
             item.study = false;
             item.payOrder = false;
@@ -65,11 +76,15 @@ angular.module('freexf')
             item.myVar = "交易成功";
             item.study = true;
             item.payOrder = false;
+
+
           }
         }
         list.push(item);
       }
+
       return list;
+
     };
     var orderlistitem = OrderList(ENV._api.__orderList);
     orderlistitem.getModel({
@@ -127,9 +142,44 @@ angular.module('freexf')
       $state.go('payaddress', {OrderId: OrderId});
     };
     //去支付
-    $scope.gopay = function (ProductId) {
-      $rootScope.paycourseId = ProductId;
-      location.href = "#/pay";
+    $scope.gopay = function (ProductId, orderRowid) {
+      GetRealTimeUpdate.postModel({
+        "ProductId": ProductId,
+        "studentid": $scope.userData.rowId,
+        "orderid": orderRowid
+      }).then(function (res) {
+        var data = res.response.data;
+        if (data) {
+          $rootScope.paycourseId = ProductId;
+          location.href = "#/pay";
+        } else {
+          count = 0;
+          orderlistitem.getModel({
+            "studentId": $scope.userData.rowId,
+            "Sign": $scope.userData.Sign,
+            "pageIndex": count,
+            "pageMax": pageMax
+          }).then(function (res) {
+            var data = res.response.data;
+            //是否有订单
+            if (res == null || res.response == null || res.response.data == null || res.response.data.length < 1) {
+              //没有订单，提示一句话
+              $scope.haveNull = true;
+
+            } else {
+              $ionicScrollDelegate.scrollTop();
+              //分页初始化
+
+              count = 0;
+              $scope.haveNull = false;
+              $scope.orderlist = orderlistInfo(data);
+              $scope.uppageshow = true;
+            }
+            ;
+          });
+        }
+      })
+
     };
 
     //删除订单
@@ -188,6 +238,9 @@ angular.module('freexf')
     };
 
     $scope.openModal = function (name, data, back) {
+      if (data['ispayAddress'] && data['ispayAddress'] === false) {
+        $Loading.show({class: MSGICON.fail, text: '该课程已下架!'}, false);
+      }
       $frModal.openModal($scope, name, modal_ary, data, back);
     };
 

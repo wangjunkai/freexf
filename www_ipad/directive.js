@@ -241,6 +241,8 @@
             null: [reg.null, '不能为空'],
             phone: [reg.null, '请填写手机号'],
             password: [reg.null, '请填写密码'],
+            name: [reg.null, '请填写姓名'],
+            address: [reg.null, '请填写收货地址'],
             confirmPassword: [reg.null, '请填写确认密码'],
             imgCode: [reg.null, '请填写图片验证码'],
             phoneCode: [reg.null, '请填写手机验证码']

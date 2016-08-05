@@ -142,7 +142,7 @@ gulp.task('prefixer', function () {
     .pipe(gulp.dest('www/img/home/dest'))
 });*/
 gulp.task('sprite', function () {
-  return gulp.src('www_ipad/img/user/icon-*.png')
+  return gulp.src('www_ipad/img/home/tubiao/icon-*.png')
     .pipe(sprite({
       imgName: 'sprite.png',
       cssName: 'sprite.css',
@@ -151,7 +151,7 @@ gulp.task('sprite', function () {
       algorithm: 'left-right',
       algorithmOpts: {sort: false}
     }))
-    .pipe(gulp.dest('www_ipad/img/user/dest'))
+    .pipe(gulp.dest('www_ipad/img/home/dest'))
 });
 // 监听任务
 gulp.task('watch', function () {

@@ -13,6 +13,7 @@ angular.module('freexf', ['ionic'])
       var addFlower = AddFlower(ENV._api.__addflower);
       var removeFlower = RemoveFlower(ENV._api.__removeflower);
       var playset = document.getElementById('videoplay');
+      var isNewCourse = true;
       $scope.courseId = $stateParams.courseId;
       $scope.userData = AUTH.FREEXFUSER.data;
       $scope.isLogin = $scope.userData.userLg ? true : false;
@@ -75,7 +76,18 @@ angular.module('freexf', ['ionic'])
               $scope.courseDate.CrouseBigList.length==1? $scope.more = false:$scope.more = true;              
               $scope.showGroupCourse = true;
           }
-          
+          if ($scope.courseDate.isPermissionCrouse == true) {   //开发者用户
+              $scope.buy = true;
+              $scope.isbuy = true;
+              $scope.nobuy = false;
+          } else {
+              $scope.buy = false;
+              $scope.isbuy = false;
+              $scope.nobuy = true;
+          }
+          if ($scope.courseDate.IsOpenGroup) {
+              $scope.nobuy = false;             
+          }          
           //大纲
           GetCourseOutline.getModel(params).then(function (res) {
               $scope.courseList = res.response.data.CourseList;
@@ -85,33 +97,15 @@ angular.module('freexf', ['ionic'])
               $scope.courseList.length == 1 ? isGroupClass = false : isGroupClass = true;
               $scope.isnull = $scope.courseList[0].OutlineList.length > 0 ? true : false;    //是否有章节             
               isGroupClass ? $scope.htmlId = "coursegroup.html" : $scope.htmlId = "courseoutline.html";
-              //$scope.courseDate.isPermissionCrouse = true;    //已购买
-              if ($scope.courseDate.isPermissionCrouse == true) {   //开发者用户
-                  $scope.buy = true;
-                  if ($scope.isnull) {
-                      $scope.lastCharptId = $scope.courseDate.lastCharptId == null ? $scope.courseList[0].OutlineList[0].CharpterList[0].uuRowId : $scope.courseDate.lastCharptId;
-                      $scope.isbuy = true;
-                      getUrl($scope.lastCharptId,'init');
-                  } else {
-                      $scope.isbuy = false;
-                      $scope.nobuy = false;
-                      $scope.lastCharptId = "";
-                      $scope.CharpterList = false;                     
-                  }
-                  
-              } else {  //未购买
-                  $scope.buy = false;
-                  if ($scope.isnull) {
-                      $scope.lastCharptId = $scope.courseDate.lastCharptId == null ? $scope.courseList[0].OutlineList[0].CharpterList[0].uuRowId : $scope.courseDate.lastCharptId;                      
-                      $scope.nobuy = true;
-                      getUrl($scope.lastCharptId, 'init');
-                  } else {
-                      $scope.isbuy = false;
-                      $scope.nobuy = false;
-                      $scope.lastCharptId = "";
-                      $scope.CharpterList = false;
-                  }                  
-              };              
+              //$scope.courseDate.isPermissionCrouse = true;    //已购买   
+                if ($scope.isnull) {
+                    $scope.lastCharptId = $scope.courseDate.lastCharptId == null || $scope.courseDate.lastCharptId == "" ? $scope.courseList[0].OutlineList[0].CharpterList[0].uuRowId : $scope.courseDate.lastCharptId;
+                    getUrl($scope.lastCharptId,'init');
+                } else {
+                    $scope.lastCharptId = "";
+                    $scope.CharpterList = false;                    
+                }                  
+                       
           });
       });
       $scope.moreGroupCourse = function () {
@@ -122,6 +116,9 @@ angular.module('freexf', ['ionic'])
       $scope.showAgreement = function () {
           if ($scope.userData.userLg) {
               PurchaseAgreement();
+              setTimeout(function () {
+                  $('.goumaitit').attr('download', '购买协议')
+              }, 100);
           }
           else {
               location.href = "#/login";
@@ -216,7 +213,7 @@ angular.module('freexf', ['ionic'])
       //购买协议
       function PurchaseAgreement() {
           var confirmPopup = $ionicPopup.confirm({
-              title: '购买协议',
+              title: '购买协议' + '<a href="http://www.freexf.com/help/%E5%AD%A6%E8%B4%B9%E5%85%A8%E5%85%8D%E7%BD%91%E7%BD%91%E7%BB%9C%E8%8A%82%E7%9B%AE%E8%B4%AD%E4%B9%B0%E5%90%88%E5%90%8C.pdf" target="view_window" class="goumaitit" >(点击下载PDF)</a>',
               cssClass: 'freexf-agreement',
               template: '<div class="freexf-agreement">'
                        + '<h5>学费全免网网络节目购买合同</h5>'
@@ -289,8 +286,7 @@ angular.module('freexf', ['ionic'])
       function getUrl(id, init) {
           if (id != "") {
               GetvideoUrl.getModel({ 'PartId': id }).then(function (res) {
-                  var videourl = res.response.data;
-                  
+                  var videourl = res.response.data;                  
                   var playsetbox = document.getElementById('videobox');
                   var playsetmp4 = document.getElementById('vpmp4');
                   window.h5playtimeendOn = false;
@@ -298,17 +294,32 @@ angular.module('freexf', ['ionic'])
                       if (typeof (document.getElementById('videoplay')) != undefined) {
                           playsetbox.innerHTML = ''
                       } 
-                      var htmlboxa = '<video id="videoplay" style="width:100%;position:relative;z-index:10;" controls="controls" ><source id="vpmp4" src="' + videourl + '" type="video/mp4"></video>'
-                  
+                      var htmlboxa = '<video id="videoplay" style="width:100%;position:relative;z-index:10;" controls="controls" ><source id="vpmp4" src="' + videourl + '" type="video/mp4"></video>'                  
                       playsetbox.innerHTML=htmlboxa
                       //playsetmp4.src = videourl;
-                      if (typeof (init) == 'undefined') {
-                          
+                      if (typeof (init) == 'undefined') {                          
                           document.getElementById('videoplay').play();
                           $scope.videShow = true;
                           $scope.isbuy = false;
                           $scope.nobuy = false;
                           playTimeFun(id)
+                          if ($scope.buy) {
+                              var studentId = 'as_studentId=' + params.studentId;
+                              var courseId = 'as_courseId=' + params.courseId;
+                              var chaptId = 'as_chapterId=' + id;
+                              var getUrlData = '/MFreeXFapi/student/UpdateLastCharptId';
+                              $.ajax({
+                                  type: 'POST',
+                                  cache: 'false',
+                                  url: getUrlData,
+                                  data: studentId + '&' + courseId + '&' + chaptId,
+                                  success: function (data) {
+                                      data? isNewCourse = false: isNewCourse = true;
+                                  },
+                                  error: function (data) {
+                                  }
+                              });
+                          }
                       } else {
                           
                       }
@@ -346,6 +357,19 @@ angular.module('freexf', ['ionic'])
                       data: studentId + '&' + courseId + '&' + chaptId,
                       success: function (data) {
                           $interval.cancel($rootScope.h5playtimeend);
+                          if ($scope.buy && isNewCourse) {
+                              var getUrlData = '/MFreeXFapi/student/UpdateLastCharptId';
+                              $.ajax({
+                                  type: 'POST',
+                                  cache: 'false',
+                                  url: getUrlData,
+                                  data: studentId + '&' + courseId + '&' + chaptId,
+                                  success: function (data) {
+                                  },
+                                  error: function (data) {
+                                  }
+                              });
+                          }
                       },
                       error: function (data) {
                           $interval.cancel($rootScope.h5playtimeend);
@@ -414,7 +438,7 @@ angular.module('freexf', ['ionic'])
 })
 .filter('cutCharptName', function () {
     return function (item) {
-        var pattern=/(.*).mp4$/g
-        return pattern.test(item) ? "上次学到："+RegExp.$1 : "您还没有学习该课程";
+        //var pattern=/(.*).mp4$/g
+        return item ? "上次学到："+item : "您还没有学习该课程";
     }
 })

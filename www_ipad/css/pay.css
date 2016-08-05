@@ -3,19 +3,39 @@ a {
 }
 
 .pay .OrderMessage {
-  border-bottom: 5px solid #eee;
-  padding: 10px;
   color: #323232;
-  font-size: 10rem;
+  font-size:15rem;
+  padding: 46px 0 56px 0;
 }
-
+.pay .OrderMessage p{
+  margin: 0;
+}
 .pay .OrderMessage .money, .pay .OrderMessage .money i {
   color: #ea4c00;
-  font-size: 17rem;
+  font-size: 18rem;
 }
-
-.pay .OrderMessage.on {
-  font-size: 12rem !important;
+.pay .OrderMessage .title,
+.pay .OrderMessage .price,
+.pay .OrderMessage .number,
+.pay .OrderMessage .time{
+  padding-left:40px;
+}
+.pay .OrderMessage .title{
+  padding-bottom:20px;
+  border-bottom:1px solid #eee;
+}
+.pay .OrderMessage .price{
+  height: 56px;
+  line-height: 56px;
+  border-bottom: 1px solid #eee;
+}
+.pay .OrderMessage .number{
+  padding-top:28px;
+  font-size:12rem;
+}
+.pay .OrderMessage .time{
+  padding-top: 22px;
+  font-size:12rem;
 }
 
 .pay .PaySuccess, .pay .PayIcon, .payOn:before, .paycontent .TipLogo, .MyAcc-content .TipLogo {
@@ -40,11 +60,11 @@ a {
 }
 
 .pay .PayState {
-  width: 93.6%;
+  width: 449px;
   display: table;
-  margin: 32.5px 12px 25px 12px;
-  padding: 10px;
+  margin: 0 auto;
   border: 1px solid #eee;
+  padding: 20px 0 20px 0;
 }
 
 .PayState-group {
@@ -55,7 +75,6 @@ a {
 }
 
 .payOn.success, .payOn.fail {
-  width: 110px;
   height: 40px;
   font-size: 18rem;
   color: #1ab554;
@@ -99,19 +118,19 @@ a {
 }
 
 .BookAddress {
-  margin-top: 5px;
-  border-top: 5px solid #eee;
-  padding-top: 18px;
+  padding-top: 45px;
+  border-top: 1px solid #eee;
 }
 
-.BookAddress p {
-  padding: 6px 0 5px 16px;
+.BookAddress p.address {
+  padding: 0 40px;
 }
 
 .paycontent .TipLogo, .MyAcc-content .TipLogo {
   width: 87px;
   height: 133px;
   background-position: -1px -1px;
+  float: none;
 }
 
 .paycontent {
@@ -121,7 +140,11 @@ a {
   width: 100%;
   background-color: #fff;
 }
-
+.paycontent .jump{
+  text-align: center;
+  font-size: 12rem;
+  color: #969696;
+}
 .pay .ContactUs {
   text-align: center;
   margin-top: 47.5px;
@@ -133,7 +156,10 @@ a {
 .pay .ContactUs i {
   color: #ff5f5f;
 }
-
+.pay-buttons button,.pay-buttons a{
+  width:100%;
+  height:100%;
+}
 .TipLogo.fail {
   background-position: -89px -1px;
 }

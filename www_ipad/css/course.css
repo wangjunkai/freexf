@@ -235,7 +235,7 @@ img.freexf-blur {
 
 .freexf-Backdrop p {
   color: #fff;
-  font-size: 17.6rem;
+  font-size: 14rem;
   margin-top: 13%;
 }
 
@@ -482,30 +482,25 @@ img.freexf-blur {
   height: 23px;
 }
 
-.freexf-collect:before {
+.freexf-collect:before,.freexf-info-consult:before{
   width: 30px;
   height: 25px;
-  display: inline-block;
+  display: block;
   content: "";
-  background: url(../img/publicbg/course.png) no-repeat;
-  background-position: 0px -64px;
-  background-size: 300px auto;
-  top: 5px;
-  margin-top: -10px;
+  float: left;
+  top: 50%;
   position: relative;
+}
+.freexf-collect:before {
+  background: url(../img/publicbg/course.png) no-repeat;
+  background-position: 0 -64px;
+  background-size: 300px auto;
 }
 
 .freexf-info-consult:before {
-  width: 30px;
-  height: 25px;
-  display: inline-block;
-  content: "";
   background: url(../img/publicbg/course.png) no-repeat;
-  background-position: 0px -2px;
+  background-position: 0 -2px;
   background-size: 300px auto;
-  top: 5px;
-  margin-top: -10px;
-  position: relative;
 }
 
 .button-clear.active {
@@ -990,10 +985,12 @@ img.freexf-blur {
 .coursegroup > div:after {
   content: '+';
   position: absolute;
-  right: -1.2rem;
-  top: 2.3rem;
+  display: block;
+  right: -15px;
   font-size: 45rem;
   font-weight: 100;
+  top: 50%;
+  margin-top: -15px;
 }
 
 .coursegroup > div:first-of-type:after {

@@ -6,7 +6,7 @@
 var paths = {
   //配置js路径
   paths: {
-    ionic: 'lib/ionic/js/ionic.bundle',//webapp前端框架
+    ionic: 'lib/ionic/js/ionic.bundle.min',//webapp前端框架
     oclazyload: 'lib/oclazyload/dist/ocLazyLoad.min',//按需加载
     imglazyload: 'lib/ionic-image-lazy-load/ionic-image-lazy-load',//图片懒加载
     restAngular: 'lib/restangular/dist/restangular.min',//ajax
@@ -52,7 +52,7 @@ require([
   }
 );
 function doyoofun() {
-  $('body').on('click', '.button-clear.freexf-consult', function () {
+    $('body').on('click', '.button-clear.freexf-consult,.onlineConsultJs', function () {
     doyoo.util.openChat('g=10058658');
     return false;
   })

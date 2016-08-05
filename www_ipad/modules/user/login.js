@@ -45,7 +45,11 @@ define(function () {
             localStorageService.set($freexfUser.name(), $freexfUser.auth());
 
             $timeout(function () {
-              $scope.$modal._remove();
+              if ($scope.$modal._backModal()) {
+                $scope.$modal._back();
+              } else {
+                $scope.$modal._remove();
+              }
             }, 10)
           }
         })

@@ -21,7 +21,8 @@
                                 <div class="order time">下单时间:<span>{{item.SetOrderTime}}</span></div>
                                 <input class="state" ng-value="item.myVar" readonly="readonly" />
                             </div>
-                            <div class="courseDetail-list"ng-init="isdue=(item.IsCanceled.toLowerCase()=='true')?true:false"  ng-click="goStudy(item.ProductId,1,item.ispay&&isdue&&item.Lstatus);" >
+                            <div class="courseDetail-list"ng-init="isdue=(item.IsCanceled.toLowerCase()=='true')?true:false"
+                                 ng-click="goStudy(item.ProductId,1,item.ispay&&isdue&&item.Lstatus);" >
                                 <div class="image" ng-class="{floor:item.ispay&&isdue,soldout:item.ispay&&isdue&&item.Lstatus}">
                                     <img ng-src="{{item.image}}" width="100%" image-lazy-src="{{item.image}}" alt="{{item.ProductName}}">
                                 </div>
