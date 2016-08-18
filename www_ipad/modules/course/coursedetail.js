@@ -12,7 +12,6 @@ define(function () {
       var addFlower = AddFlower(ENV._api.__addflower);
       var removeFlower = RemoveFlower(ENV._api.__removeflower);
       var parames = $scope.$parent.$data;
-      var isNewCourse = true;
       $scope.courseId = parames.ProductId;
       $scope.coursedetail = parames.state == '1' ? false : true;	//课程介绍
       $scope.courseoutline = parames.state == '1' ? true : false;	//大纲
@@ -49,6 +48,11 @@ define(function () {
         params = {
           courseId: $scope.courseId,
           studentId: auth.userLg ? auth.rowId : '',
+          Sign: auth.userLg ? auth.Sign : ''
+        };
+        paramsflower = {
+          ProductId: $scope.courseId,
+          studentid: auth.userLg ? auth.rowId : '',
           Sign: auth.userLg ? auth.Sign : ''
         };
       });
@@ -347,7 +351,6 @@ define(function () {
               $scope.isbuy = false;
               $scope.nobuy = false;
               playTimeFun(id)
-              if ($scope.buy) {
                   var studentId = 'as_studentId=' + params.studentId;
                   var courseId = 'as_courseId=' + params.courseId;
                   var chaptId = 'as_chapterId=' + id;
@@ -358,12 +361,10 @@ define(function () {
                       url: getUrlData,
                       data: studentId + '&' + courseId + '&' + chaptId,
                       success: function (data) {
-                          data ? isNewCourse = false : isNewCourse = true;
                       },
                       error: function (data) {
                       }
                   });
-              }
             } else {
             }
           }
@@ -402,20 +403,7 @@ define(function () {
               url: getUrlData,
               data: studentId + '&' + courseId + '&' + chaptId,
               success: function (data) {
-                  $interval.cancel($rootScope.h5playtimeend);
-                  if ($scope.buy && isNewCourse) {
-                      var Url = '/MFreeXFapi/student/UpdateLastCharptId';
-                      $.ajax({
-                          type: 'POST',
-                          cache: 'false',
-                          url: Url,
-                          data: studentId + '&' + courseId + '&' + chaptId,
-                          success: function (data) {
-                          },
-                          error: function (data) {
-                          }
-                      });
-                  }
+                  $interval.cancel($rootScope.h5playtimeend);                  
               },
               error: function (data) {
                 $interval.cancel($rootScope.h5playtimeend);

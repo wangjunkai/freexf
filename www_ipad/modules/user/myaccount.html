@@ -21,47 +21,43 @@
 
         </ion-nav-view>
         <script type="text/ng-template" id="loginTitle.html">
-
-          <div class="MyAcc-icon" ng-model="ImgBoxShow" ng-click="ChangeUserImg()" ng-style="userImage"></div>
+          <div class="MyAcc-icon" ng-model="ImgBoxShow" ng-click="ChangeUserImg()" style="{{userImage}}" id="isUserImage"></div>
           <div class="UpdateName">
             <div class="Length">
               <input class="name" type="text" placeholder="您还没有昵称哟!" ng-model="myuser.nickname" id="updateUserName"
                      ng-blur="changeName(true)" autocomplete="off"/>
               <span class="edit" ng-click="changeName(false)"></span>
-
             </div>
-
           </div>
           <!--更换图片框-->
           <div class="changeImg" ng-show="ImgBoxShow">
             <div class="modal-backdrop-bg new" ng-click="cancelPopup()" ng-show="canPopup"></div>
             <div class="userImgBox">
               <div class="row userImg">
-                <div class="col col-33 on" ng-click="women()">
+                <div class="col col-33 on" ng-click="updateImg('女')">
                   <img src="img/user/women.png" width="100%">
                   <label class="radio">
                     <!--onkeydown="if(event.keyCode==13) return false;"-->
-                    <input value="女" name="sex" id="sex2" checked="checked" type="radio" ng-checked="checkWomen"/>
+                    <input value="女" name="sex" id="sex2" ng-model="myuser.sex" checked="checked" type="radio" ng-checked="setactive('女')"/>
                     <i></i>
                   </label>
                 </div>
-                <div class="col col-33" ng-click="man()">
+                <div class="col col-33" ng-click="updateImg('男')">
                   <img src="img/user/man.png" width="100%">
                   <label class="radio">
-                    <input value="男" name="sex" id="sex1" type="radio" ng-checked="checkMan"/>
+                    <input value="男" name="sex" id="sex1" ng-model="myuser.sex" type="radio" ng-checked="setactive('男')"/>
                     <i></i>
                   </label>
                 </div>
-                <div class="col col-33" ng-click="nobody()">
+                <div class="col col-33" ng-click="updateImg('')">
                   <img src="img/user/null.png" width="100%">
                   <label class="radio">
-                    <input value="保密" name="sex" id="sex0" type="radio" ng-checked="checkNobody"/>
+                    <input value="" name="sex" id="sex0" ng-model="myuser.sex" type="radio" ng-checked="setactive('')"/>
                     <i></i>
                   </label>
                 </div>
               </div>
             </div>
-
           </div>
           <div class="MyAcc-title">
             <span>已获得<font>{{myuser.money}}</font></span>

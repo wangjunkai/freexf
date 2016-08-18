@@ -5,7 +5,6 @@ define(function () {
     .controller('forgetpassword_ctrl', function ($scope, $rootScope, $injector, $ionicLoading, $interval, $state, $timeout, $Loading, MSGICON, AuthRepository) {
       var FORGET = AuthRepository('AjaxForgetPassword.aspx', '/ajax');
       var PHONE_CODE = AuthRepository('sendphonecode.aspx', '/ajax');
-
       function forgetpasswordModel() {
         this.forget = {
           phone: '',
@@ -41,11 +40,10 @@ define(function () {
           var data = req.response.data;
           $Loading.show({class: data.success ? MSGICON.success : MSGICON.fail, text: data.message}, 1500);
           $event.target.disabled = false;
-          if (data.success) {
-            $timeout(function () {
-              $state.go('login');
-            }, 1000)
-          }
+            data.success && $timeout(function () {
+              $scope.$modal && $scope.$modal._back();
+            }, 10);
+
         })
       };
 
@@ -64,8 +62,8 @@ define(function () {
       }();
 
       //手机验证码
-      $scope.PhoneCode = function ($event, $form) {
-        if ($form.phone.$invalid || $form.code.$invalid)return false;
+      $scope.PhoneCode = function ($event,$form) {
+        if ($form.phone.$invalid||$form.code.$invalid)return false;
         $scope.PhoneCodeLoad = true;
         $event.target.disabled = true;
         var msg = {
@@ -73,12 +71,12 @@ define(function () {
           yzmfalse: {text: '验证码错误!', class: MSGICON.fail},
           fail: {text: '该手机号已存在!', class: MSGICON.success}
         };
-        var parameter = {type: 'sms', mobile: $scope.forget.phone, codeyz: $scope.forget.code};
+        var parameter = {type: 'forgetpwdsms', mobile: $scope.forget.phone, codeyz: $scope.forget.code};
         PHONE_CODE.getModel(parameter).then(function (req) {
           var data = req.response.data;
           $Loading.show(msg[data], 2000);
           console.log(data);
-          var time = 5;
+          var time = 30;
           var stoptime = $interval(function () {
             if (time == 0) {
               $interval.cancel(stoptime), $event.target.disabled = false, $event.target.innerText = '获取验证码'

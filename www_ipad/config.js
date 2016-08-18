@@ -6,7 +6,7 @@
 var paths = {
   //配置js路径
   paths: {
-    ionic: 'lib/ionic/js/ionic.bundle.min',//webapp前端框架
+    ionic: 'lib/ionic/js/ionic.bundle',//webapp前端框架
     oclazyload: 'lib/oclazyload/dist/ocLazyLoad.min',//按需加载
     imglazyload: 'lib/ionic-image-lazy-load/ionic-image-lazy-load',//图片懒加载
     restAngular: 'lib/restangular/dist/restangular.min',//ajax
@@ -16,7 +16,6 @@ var paths = {
     lodash: 'lib/lodash/dist/lodash.min',//
     qrcode: 'lib/qrcode/jquery.qrcode.min',
     base64: 'js/base64'
-
   },
   shim: {
     //注入服务至ionic

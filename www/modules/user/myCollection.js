@@ -19,7 +19,8 @@
           //取消收藏          
           DelFavorite.postModel({ "studentId": $scope.userData.rowId, "Sign": $scope.userData.Sign, "ProductId": courseId }).then(function (res) {
               if (res.response.data.struts == true) {
-                  getMyfavorite();
+                  count = 0;
+                  getMyfavorite();                  
               }
           })
       };

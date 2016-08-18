@@ -614,7 +614,7 @@
             }
           })
           .state('myorder', {
-            url: '/myorder',
+            url: '/myorder?pay&OrderId',
             parent: 'myaccount',
             views: {
               'account': {

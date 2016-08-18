@@ -31,6 +31,7 @@ angular.module('freexf')
     $scope.checkNobody = false;
     $scope.canPopup = false;
     $scope.shareUrl = myUrl;
+    $scope.userImage = "";
     //tabs
 
     //侧边栏
@@ -48,22 +49,17 @@ angular.module('freexf')
       //获取用户信息列表
       $scope.myuser = res.response.data[0] || new myuserModel();
       $scope.userImformation = res.response.data[1] || new myuserModel();
-
+      $scope.updateImg($scope.myuser.sex, true);
+      autoInput();
       if (!$scope.myuser.nickname == '') {
         $scope.iscode = true;
       }
-      if ($scope.myuser.sex == '男') {
-        $scope.man();
-      } else if ($scope.myuser.sex == '女') {
-        $scope.women();
-      } else {
-        $scope.nobody();
-      }
-
       getMyAccount.getModel({'Sign': $scope.auth.Sign, 'studentId': $scope.auth.rowId}).then(function (res) {
-        $scope.recommendlist = res.response.data.ls_recommendlist;
+        var recommend = res.response.data.ls_recommendlist,
+          elite = res.response.data.ls_Elitelist;
+        elite.shift();
+        $scope.recommendlist = recommend.length>0?recommend:recommend.concat(elite);
         $scope.MyCourse = res.response.data.ls_MyCourses;
-        autoInput();
       });
     }
 
@@ -81,59 +77,33 @@ angular.module('freexf')
       $scope.ImgBoxShow = false;
       $scope.canPopup = false;
     };
-    //女生头像
-    $scope.women = function () {
-      $scope.checkWomen = true;
-      $scope.checkMan = false;
-      $scope.checkNobody = false;
-      $scope.userImage = {
-        "background-position": "-52px -190px"
-      };
-      //修改用户name信息
-      UpdataValue.postModel({'freexfPara': $scope.userImformation.sex, 'NewValue': "女"}).then(function (res) {
+    var man = {
+      '': "background-position:-52px -104px;",
+      '男': "background-position:-217px -102px",
+      '女': "background-position:-52px -190px"
+    };
+    $scope.updateImg = function (a, New) {
+      $scope.myuser.sex = a;
+      $scope.userImage = man[a];
+      New || UpdataValue.postModel({
+        'freexfPara': $scope.userImformation.sex,
+        'NewValue': $scope.myuser.sex
+      }).then(function (res) {
         //隐藏图片框
-        /*          if (ls_return = "success") {
-         $scope.ImgBoxShow = false;
-         $scope.canPopup = false;
-         }*/
+        if (res.response.data == "success") {
+          $scope.ImgBoxShow = false;
+          $scope.canPopup = false;
+        }
       });
     };
-    //男生头像
-    $scope.man = function () {
-      $scope.checkWomen = false;
-      $scope.checkMan = true;
-      $scope.checkNobody = false;
-      $scope.userImage = {
-        "background-position": "-217px -102px"
-      };
-      //修改用户name信息
-      UpdataValue.postModel({'freexfPara': $scope.userImformation.sex, 'NewValue': "男"}).then(function (res) {
-        //隐藏图片框
-        /*          if (ls_return = "success") {
-         $scope.ImgBoxShow = false;
-         $scope.canPopup = false;
-         }*/
-      });
+    $scope.manactive = '';
+    $scope.setactive = function (a) {
+      return a == $scope.manactive;
     };
     $scope.goStudy = function (courseId, state) {
       $state.go('coursedetail', {courseId: courseId, state: state});
     };
-    //小鹿头像
-    $scope.nobody = function () {
-      $scope.checkWomen = false;
-      $scope.checkMan = false;
-      $scope.checkNobody = true;
-      $scope.userImage = {
-        "background-position": "-52px -104px;"
-      };
-      UpdataValue.postModel({'freexfPara': $scope.userImformation.sex, 'NewValue': ""}).then(function (res) {
-        //隐藏图片框
-        //if (ls_return = "success") {
-        $scope.ImgBoxShow = false;
-        $scope.canPopup = false;
-        //}
-      });
-    };
+
     var modal_ary = {
       login: {
         scope: $scope,
@@ -186,8 +156,17 @@ angular.module('freexf')
         });
         name.val() ? name.width(l) : name.removeAttr('style');
       };
-      name.on('input', function () {
+      var updateName = function () {
+        UpdataValue.postModel({
+          'freexfPara': $scope.userImformation.nickname,
+          'NewValue': $scope.myuser.nickname
+        }).then(function (res) {
+
+        });
+      };
+      name.on('keyup', function () {
         loginInput();
+        updateName();
       });
       name.val() && loginInput();
     }

@@ -44,7 +44,7 @@ define(function () {
             $Loading.show({class: data.success ? MSGICON.success : MSGICON.fail, text: data.message}, 1500);
             $event.target.disabled = false;
             data.success && $timeout(function () {
-              $rootScope.$currentModal && $rootScope.$currentModal._hide();
+              $scope.$modal && $scope.$modal._hide();
               $ionicSideMenuDelegate.toggleLeft(false);
             }, 10);
           })

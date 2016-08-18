@@ -13,7 +13,6 @@ angular.module('freexf', ['ionic'])
       var addFlower = AddFlower(ENV._api.__addflower);
       var removeFlower = RemoveFlower(ENV._api.__removeflower);
       var playset = document.getElementById('videoplay');
-      var isNewCourse = true;
       $scope.courseId = $stateParams.courseId;
       $scope.userData = AUTH.FREEXFUSER.data;
       $scope.isLogin = $scope.userData.userLg ? true : false;
@@ -302,8 +301,7 @@ angular.module('freexf', ['ionic'])
                           $scope.videShow = true;
                           $scope.isbuy = false;
                           $scope.nobuy = false;
-                          playTimeFun(id)
-                          if ($scope.buy) {
+                          playTimeFun(id)                          
                               var studentId = 'as_studentId=' + params.studentId;
                               var courseId = 'as_courseId=' + params.courseId;
                               var chaptId = 'as_chapterId=' + id;
@@ -314,12 +312,11 @@ angular.module('freexf', ['ionic'])
                                   url: getUrlData,
                                   data: studentId + '&' + courseId + '&' + chaptId,
                                   success: function (data) {
-                                      data? isNewCourse = false: isNewCourse = true;
                                   },
                                   error: function (data) {
                                   }
                               });
-                          }
+
                       } else {
                           
                       }
@@ -356,20 +353,7 @@ angular.module('freexf', ['ionic'])
                       url: getUrlData,
                       data: studentId + '&' + courseId + '&' + chaptId,
                       success: function (data) {
-                          $interval.cancel($rootScope.h5playtimeend);
-                          if ($scope.buy && isNewCourse) {
-                              var getUrlData = '/MFreeXFapi/student/UpdateLastCharptId';
-                              $.ajax({
-                                  type: 'POST',
-                                  cache: 'false',
-                                  url: getUrlData,
-                                  data: studentId + '&' + courseId + '&' + chaptId,
-                                  success: function (data) {
-                                  },
-                                  error: function (data) {
-                                  }
-                              });
-                          }
+                          $interval.cancel($rootScope.h5playtimeend);                          
                       },
                       error: function (data) {
                           $interval.cancel($rootScope.h5playtimeend);

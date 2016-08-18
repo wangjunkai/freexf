@@ -131,6 +131,7 @@ ion-content:first-of-type {
 .bar.freexf-bar .bar-right button,
 .bar.freexf-bar .bar-right a {
   font-size: 15rem;
+  width: 61px;
 }
 
 .bar.freexf-bar .bar-center {

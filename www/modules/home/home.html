@@ -29,17 +29,22 @@
   <ion-content lazy-scroll class="has-header has-footer freexf-bg-gray freexf-content" delegate-handle="myDelegate">
 
     <ion-slide-box on-slide-changed="slideHasChanged($index)" class="freexf-slide">
-      <ion-slide>
+        <ion-slide>
+            <a href="#/olympic">
+                <img image-lazy-src="img/home/banner-0.jpg">
+            </a>
+        </ion-slide>
+      <!--<ion-slide>
         <a href="">
           <img image-lazy-src="img/home/banner-1.jpg">
         </a>
-      </ion-slide>
+      </ion-slide>-->
       <ion-slide>
         <a href="#/summer">
           <img image-lazy-src="img/home/banner-3.jpg">
         </a>
       </ion-slide>
-      <ion-slide>
+      <!--<ion-slide>
         <a href="#/abroad">
           <img image-lazy-src="img/home/banner-2.jpg">
         </a>
@@ -48,7 +53,7 @@
         <a href="#/textbook">
           <img image-lazy-src="img/home/banner-4.jpg">
         </a>
-      </ion-slide>
+      </ion-slide>-->
     </ion-slide-box>
     <section class="freexf-hometype">
       <div class="row row-center">
@@ -91,12 +96,12 @@
         </div>
 
         <div class="freexf-col">
-          <a ng-repeat="(key,value) in home.l_EliteCrouseList" ng-if="key!=0" href="#/coursedetail/{{value.productID}}&" class="rcol">
+          <a ng-repeat="(key,value) in home.l_EliteCrouseList" ng-if="key!=0&&key<3" href="#/coursedetail/{{value.productID}}&" class="rcol">
             <img image-lazy-src="{{value.coverurl}}" alt="">
           </a>
         </div>
       </div>
-      <a href="#coupon" class="jinpin-bottom">     
+      <a href="#coupon" class="jinpin-bottom">
         <img image-lazy-src="img/home/big-huodong-b.jpg">
       </a>
     </section>

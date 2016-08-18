@@ -7,18 +7,19 @@ angular.module('freexf', ['ionic'])
     };
 
     function myuserModel() {
-        this.my = {
-            nickname: '',
-            sex: '',
-            name: '',
-            mobile: ''
-        };
-        return this.my;
+      this.my = {
+        nickname: '',
+        sex: '',
+        name: '',
+        mobile: ''
+      };
+      return this.my;
     }
+
     $scope.myuser = new myuserModel();
     $scope.userImformation = new myuserModel();
 
-     //初始化信息
+    //初始化信息
     var GetUserinf = getuserinf(ENV._api.__getuserinformation);
     var UpdataValue = UpdateUserValue(ENV._api.__UpdateNewValue);
     var getMyAccount = MyAccountCrouseRepository(ENV._api.__myAccountCrouse);
@@ -37,19 +38,19 @@ angular.module('freexf', ['ionic'])
     GetUserinf.getModel(user).then(function (res) {
       $scope.myuser = res.response.data[0] || new myuserModel();
       $scope.userImformation = res.response.data[1] || new myuserModel();
-      $scope.updateImg($scope.myuser.sex,true);
+      $scope.updateImg($scope.myuser.sex, true);
       autoInput();
       if (!$scope.myuser.nickname == '') {
         $scope.iscode = true;
       }
-      
+
     });
     $scope.isloading = true;
 
-    getMyAccount.getModel({ 'Sign': user.sign, 'studentId': user.rowid }).then(function (res) {
+    getMyAccount.getModel({'Sign': user.sign, 'studentId': user.rowid}).then(function (res) {
       $scope.isloading = false;
       $scope.recommendlist = res.response.data.ls_recommendlist;
-      $scope.MyCourse = res.response.data.ls_MyCourses.splice(0,4);
+      $scope.MyCourse = res.response.data.ls_MyCourses.splice(0, 4);
     });
     //修改名称input自适应宽度
     function autoInput() {
@@ -63,7 +64,7 @@ angular.module('freexf', ['ionic'])
         });
         name.val() ? name.width(l) : name.removeAttr('style');
       };
-      var updateName = function(){
+      var updateName = function () {
         UpdataValue.postModel({
           'freexfPara': $scope.userImformation.nickname,
           'NewValue': $scope.myuser.nickname
@@ -71,20 +72,20 @@ angular.module('freexf', ['ionic'])
 
         });
       };
-      name.on('keyup', function () {
+      $('body').on('keyup','#updateUserName', function () {
         loginInput();
-
         updateName();
       });
       name.val() && loginInput();
     }
-   //修改名称
+
+    //修改名称
     $("#updateUserName")[0].readOnly = false;
     $scope.changeName = function (b) {
       $("#updateUserName")[0].readOnly = b;
       $("#updateUserName").trigger('focusin');
-        //return false;
-        //改变值
+      //return false;
+      //改变值
     };
 
     //修改头像,点击显示/隐藏 修改图像的区域
@@ -98,33 +99,36 @@ angular.module('freexf', ['ionic'])
       $scope.canPopup = false;
     };
     var man = {
-      '':{
+      '': {
         "background-position": "-52px -104px;"
       },
-      '男':{
+      '男': {
         "background-position": "-217px -102px"
       },
-      '女':{
+      '女': {
         "background-position": "-52px -190px"
       }
     };
-    $scope.updateImg = function(a,New){
+    $scope.updateImg = function (a, New) {
       $scope.myuser.sex = a;
       $scope.userImage = man[a];
-      New||UpdataValue.postModel({ 'freexfPara': $scope.userImformation.sex, 'NewValue': $scope.myuser.sex }).then(function (res) {
+      New || UpdataValue.postModel({
+        'freexfPara': $scope.userImformation.sex,
+        'NewValue': $scope.myuser.sex
+      }).then(function (res) {
         //隐藏图片框
-        if (ls_return = "success") {
+        if (res.response.data == "success") {
           $scope.ImgBoxShow = false;
           $scope.canPopup = false;
         }
       });
     };
     $scope.manactive = '';
-    $scope.setactive = function(a){
-      return a==$scope.manactive;
+    $scope.setactive = function (a) {
+      return a == $scope.manactive;
     };
 
-      //去学习
+    //去学习
     $scope.goStudy = function (courseId, state) {
       $state.go('coursedetail', {courseId: courseId, state: state});
     };

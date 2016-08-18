@@ -35,11 +35,12 @@
                 <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-hide="mianfeiShow" id="IsPaySurePhone">确认支付</button>
             </a>
             <!--微信支付-->
-            <a rthref="#/paywx/payid{{payohref}}stid{{userData.rowId}}sign{{userData.Sign}}way'wxpay'endpayid" class="wxpay" ng-show="ThisWX" ng-click="RealTimeUpdate('.wxpay')">
-                <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-hide="mianfeiShow" id="IsPaySureWeixin">确认支付</button>
-            </a>
-            <!--<button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-click="toPay()">确认支付 </button>-->
-        </div>
+            
+                <a rthref="/mobile/www/modules/pay/payweixin.html?payid{{payohref}}orderid{{payood}}stid{{userData.rowId}}sign{{userData.Sign}}wjumptrueendpayid" class="wxpay" ng-show="ThisWX" ng-click="RealTimeUpdate('.wxpay')">
+                    <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-hide="mianfeiShow" id="IsPaySureWeixin">确认支付</button>
+                </a>
+                <!--<button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-click="toPay()">确认支付 </button>-->
+</div>
     </ion-content>
       <div class="freexf-contact" ng-show="orderError">
           <div class="error">

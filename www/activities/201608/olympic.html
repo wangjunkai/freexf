@@ -1,0 +1,279 @@
+﻿<ion-view coures-scroll view-title="助威奥运">
+    <ion-header-bar class="freexf-bar">
+        <div class="bar-left">
+            <a href="#home" class="button-clear freexf-back freexf-left">
+                <i class="icon freexf-gohomeback"></i>
+            </a>
+        </div>
+        <div class="title">助威奥运</div>
+        <div class="bar-right">
+            <button class="button-clear freexf-consult"><span>咨询</span></button>
+        </div>
+    </ion-header-bar>
+
+    <ion-footer-bar class="footer-bar-contact">
+        <div class="title">
+            <img class="footer-bar-contact-content-phone" image-lazy-src="activities/img/abroad/contact@3x.png" />
+            <span class="footer-bar-contact-content-phonenumber">400-803-6611</span>
+        </div>
+    </ion-footer-bar>
+
+    <ion-content lazy-scroll class="has-header has-footer">
+       <div class="olympic-banner">
+           <img image-lazy-src="activities/img/olympic/olympic-banner.png"/>
+       </div>
+        <div class="olympic-slogan">
+            <img image-lazy-src="activities/img/olympic/slogan.png" />
+        </div>
+        <!--学费全免网为你推荐-->
+        <section class="freexf-olympic-recommend">
+            <div class="freexf-olympic-recommend-title">
+                <div class="title"><i>热门课程</i><span>畅快交流 出国无忧</span></div>
+                <span><img image-lazy-src="activities/img/olympic/square.png" /></span>
+            </div>
+            <div class="freexf-olympic">
+                <div class="freexf-olympic-course hanyu {{$index |olympicCoursehide}}" ng-repeat="item in DisPatchList[1]">
+                    <div class="olympic-course-list">
+                        <a href="#/coursedetail/{{item.ProductId}}&" class="course-pic">
+                            <!--<img image-lazy-src="activities/img/olympic/course-olympic-square.png" alt="">-->
+                            <div class="course-box">
+                                <img ng-src="{{item.Image}}" image-lazy-src="{{item.Image}}" alt="">
+                            </div>
+                            <div class="course-information">
+                                <div class="course-tit">
+                                    <span class="title">{{item.ProductName}}</span>
+                                    <span class="teacher"><i>课程讲师：</i><span>{{item.Teachername}}</span></span>
+                                </div>
+                                <div class="course-time">
+                                    <span class="courseNum"><i>课时数：</i>{{item.Hour}}</span>
+                                    <div class="course-star">
+                                        <span class="star {{$index |xingxinghide}}"></span>
+                                        <span class="star"></span>
+                                        <span class="star"></span>
+                                        <span class="star"></span>
+                                        <span class="star {{$index |xingxingban}}"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="course-price"><span>{{item.Price}}</span><i>学分</i></div>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#/coursedetail/{{item.ProductId}}&" class="course-buy-button">
+                            <div class="course-buy-button-text">立即注册 免费试听</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="linelist open" style="display: block;" ng-click="olyCList('.hanyu.hide','.hanyu')">
+                    <div class="underline">
+                        <span class="line"></span>
+                        <span class="font">查看韩语更多</span>
+                        <span class="line"></span>
+                    </div>
+                </div>
+
+
+                <div class="freexf-olympic-course deyu {{$index |olympicCoursehide}}" ng-repeat="item in DisPatchList[3]">
+                    <div class="olympic-course-list">
+                        <a href="#/coursedetail/{{item.ProductId}}&" class="course-pic">
+                            <!--<img image-lazy-src="activities/img/olympic/course-olympic-square.png" alt="">-->
+                            <div class="course-box">
+                                <img ng-src="{{item.Image}}" image-lazy-src="{{item.Image}}" alt="">
+                            </div>
+                            <div class="course-information">
+                                <div class="course-tit">
+                                    <span class="title">{{item.ProductName}}</span>
+                                    <span class="teacher"><i>课程讲师：</i><span>{{item.Teachername}}</span></span>
+                                </div>
+                                <div class="course-time">
+                                    <span class="courseNum"><i>课时数：</i>{{item.Hour}}</span>
+                                    <div class="course-star">
+                                        <span class="star {{$index |xingxinghide}}"></span>
+                                        <span class="star"></span>
+                                        <span class="star"></span>
+                                        <span class="star"></span>
+                                        <span class="star {{$index |xingxingban}}"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="course-price"><span>{{item.Price}}</span><i>学分</i></div>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#/coursedetail/{{item.ProductId}}&" class="course-buy-button">
+                            <div class="course-buy-button-text">立即注册 免费试听</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="linelist open" style="display: block;" ng-click="olyCList('.deyu.hide','.deyu')">
+                    <div class="underline">
+                        <span class="line"></span>
+                        <span class="font">查看德语更多</span>
+                        <span class="line"></span>
+                    </div>
+                </div>
+
+                <div class="freexf-olympic-course eyu {{$index |olympicCoursehide}}" ng-repeat="item in DisPatchList[2]">
+                    <div class="olympic-course-list">
+                        <a href="#/coursedetail/{{item.ProductId}}&" class="course-pic">
+                            <!--<img image-lazy-src="activities/img/olympic/course-olympic-square.png" alt="">-->
+                            <div class="course-box">
+                                <img ng-src="{{item.Image}}" image-lazy-src="{{item.Image}}" alt="">
+                            </div>
+                            <div class="course-information">
+                                <div class="course-tit">
+                                    <span class="title">{{item.ProductName}}</span>
+                                    <span class="teacher"><i>课程讲师：</i><span>{{item.Teachername}}</span></span>
+                                </div>
+                                <div class="course-time">
+                                    <span class="courseNum"><i>课时数：</i>{{item.Hour}}</span>
+                                    <div class="course-star">
+                                        <span class="star {{$index |xingxinghide}}"></span>
+                                        <span class="star"></span>
+                                        <span class="star"></span>
+                                        <span class="star"></span>
+                                        <span class="star {{$index |xingxingban}}"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="course-price"><span>{{item.Price}}</span><i>学分</i></div>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#/coursedetail/{{item.ProductId}}&" class="course-buy-button">
+                            <div class="course-buy-button-text">立即注册 免费试听</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="linelist open" style="display: block;" ng-click="olyCList('.eyu.hide','.eyu')">
+                    <div class="underline">
+                        <span class="line"></span>
+                        <span class="font">查看俄语更多</span>
+                        <span class="line"></span>
+                    </div>
+                </div>
+
+                <div class="freexf-olympic-course fayu {{$index |olympicCoursehide}}" ng-repeat="item in DisPatchList[5]">
+                    <div class="olympic-course-list">
+                        <a href="#/coursedetail/{{item.ProductId}}&" class="course-pic">
+                            <!--<img image-lazy-src="activities/img/olympic/course-olympic-square.png" alt="">-->
+                            <div class="course-box">
+                                <img ng-src="{{item.Image}}" image-lazy-src="{{item.Image}}" alt="">
+                            </div>
+                            <div class="course-information">
+                                <div class="course-tit">
+                                    <span class="title">{{item.ProductName}}</span>
+                                    <span class="teacher"><i>课程讲师：</i><span>{{item.Teachername}}</span></span>
+                                </div>
+                                <div class="course-time">
+                                    <span class="courseNum"><i>课时数：</i>{{item.Hour}}</span>
+                                    <div class="course-star">
+                                        <span class="star {{$index |xingxinghide}}"></span>
+                                        <span class="star"></span>
+                                        <span class="star"></span>
+                                        <span class="star"></span>
+                                        <span class="star {{$index |xingxingban}}"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="course-price"><span>{{item.Price}}</span><i>学分</i></div>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#/{{item.ProductId}}&" class="course-buy-button">
+                            <div class="course-buy-button-text">立即注册 免费试听</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="linelist open" style="display: block;" ng-click="olyCList('.fayu.hide','.fayu')">
+                    <div class="underline">
+                        <span class="line"></span>
+                        <span class="font">查看法语更多</span>
+                        <span class="line"></span>
+                    </div>
+                </div>
+
+                <div class="freexf-olympic-course riyu {{$index |olympicCoursehide}}" ng-repeat="item in DisPatchList[0]">
+                    <div class="olympic-course-list">
+                        <a href="#/coursedetail/{{item.ProductId}}&" class="course-pic">
+                            <!--<img image-lazy-src="activities/img/olympic/course-olympic-square.png" alt="">-->
+                            <div class="course-box">
+                                <img ng-src="{{item.Image}}" image-lazy-src="{{item.Image}}" alt="">
+                            </div>
+                            <div class="course-information">
+                                <div class="course-tit">
+                                    <span class="title">{{item.ProductName}}</span>
+                                    <span class="teacher"><i>课程讲师：</i><span>{{item.Teachername}}</span></span>
+                                </div>
+                                <div class="course-time">
+                                    <span class="courseNum"><i>课时数：</i>{{item.Hour}}</span>
+                                    <div class="course-star">
+                                        <span class="star {{$index |xingxinghide}}"></span>
+                                        <span class="star"></span>
+                                        <span class="star"></span>
+                                        <span class="star"></span>
+                                        <span class="star {{$index |xingxingban}}"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="course-price"><span>{{item.Price}}</span><i>学分</i></div>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#/coursedetail/{{item.ProductId}}&" class="course-buy-button">
+                            <div class="course-buy-button-text">立即注册 免费试听</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="linelist open" style="display: block;" ng-click="olyCList('.riyu.hide','.riyu')">
+                    <div class="underline">
+                        <span class="line"></span>
+                        <span class="font">查看日语更多</span>
+                        <span class="line"></span>
+                    </div>
+                </div>
+
+                <div class="freexf-olympic-course xiyu {{$index |olympicCoursehide}}" ng-repeat="item in DisPatchList[4]">
+                    <div class="olympic-course-list">
+                        <a href="#/coursedetail/{{item.ProductId}}&" class="course-pic">
+                            <!--<img image-lazy-src="activities/img/olympic/course-olympic-square.png" alt="">-->
+                            <div class="course-box">
+                                <img ng-src="{{item.Image}}" image-lazy-src="{{item.Image}}" alt="">
+                            </div>
+                            <div class="course-information">
+                                <div class="course-tit">
+                                    <span class="title">{{item.ProductName}}</span>
+                                    <span class="teacher"><i>课程讲师：</i><span>{{item.Teachername}}</span></span>
+                                </div>
+                                <div class="course-time">
+                                    <span class="courseNum"><i>课时数：</i>{{item.Hour}}</span>
+                                    <div class="course-star">
+                                        <span class="star {{$index |xingxinghide}}"></span>
+                                        <span class="star"></span>
+                                        <span class="star"></span>
+                                        <span class="star"></span>
+                                        <span class="star {{$index |xingxingban}}"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="course-price"><span>{{item.Price}}</span><i>学分</i></div>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#/coursedetail/{{item.ProductId}}&" class="course-buy-button">
+                            <div class="course-buy-button-text">立即注册 免费试听</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="linelist open" style="display: block;" ng-click="olyCList('.xiyu.hide','.xiyu')">
+                    <div class="underline">
+                        <span class="line"></span>
+                        <span class="font">查看西语更多</span>
+                        <span class="line"></span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </ion-content>
+</ion-view>

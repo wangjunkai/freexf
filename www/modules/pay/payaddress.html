@@ -1,60 +1,74 @@
-<ion-view view-title="支付地址">
+
+<ion-view view-title="支付中心">
     <ion-header-bar class="freexf-bar lightgray">
         <div class="bar-left">
             <button class="button-clear freexf-back freexf-left" default-nav-back-button ng-click="goBack()">
                 <i class="icon freexf-goback"></i>
             </button>
         </div>
-    </ion-header-bar>
+    </ion-header-bar>    
+    <ion-content class="pay address ">
+        <!--支付失败-->
+        <div class="paycontent" ng-show="payfail">
+            <div class="PayState-group">
+                <div class="payOn fail">支付失败</div>
+                <p>交易失败</p>
+                <div class="TipLogo fail"></div>               
+            </div>
+            <div class="ContactUs">请联系客服：<a href=”#”><i>400-803-6611</i></a></div>
+        </div>
+        <!--支付成功（无地址）-->
+        <div class="paycontent" ng-show="payOn">
+            <div class="PayState-group">
+                <div class="payOn success">支付成功</div>
+                <p>完成交易,3秒后跳转至"我的课程"</p>
+                <div class="TipLogo"></div>
+                <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" type="submit" id="isGoToMycourse"
+                        ng-click="goToMycourse()">
+                    点击跳转
+                </button>
+            </div>
+        </div>
+        <!--支付成功（有地址）-->
+        <div class="paycontent" ng-show="ispayAddress">
+            <div class="PayState-group">
+                <div class="payOn success">支付成功</div>
+                <p class="tip">本课程有教材可领，</p>
+                <p class="tip">请填写下面资料免费领取哟！</p>
+            </div>
+            <div class="BookAddress">
+                <p>教材地址：</p>
+                <form name="address">
+                    <div class="list">
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label hasInput">姓名</span>
+                            <input type="text" class="hasPlace" ng-model="payAddress.DeliveryUser" fx-validate="require:name" id="isPayName" />
+                        </label>
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label hasInput">手机号</span>
+                            <input type="tel" class="hasPlace" ng-model="payAddress.DeliveryPhone" fx-validate="require:phone;format:phone;" id="isPayNumeber" />
+                        </label>
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label hasInput">详细地址:</span>
+                            <textarea class="hasPlace" ng-model="payAddress.DeliveryAddress" rows="3" fx-validate="require:address" id="isPayAddress"></textarea>
+                        </label>
+                    </div>
+                    <div class="freexf-padding-24">
+                        <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" type="submit" fx-validate="submit()" id="isSubmit"
+                                ng-click="submit($event,address)">
+                            提交
+                        </button>
+                    </div>
+                </form>
 
-  <ion-content class="pay address " >
-      <div class="paycontent" ng-show="payOn">
-          <div class="PayState-group">
-              <div class="payOn success">支付成功</div>
-              <p>完成交易,3秒后跳转至"我的课程"</p>
-              <div class="TipLogo"></div>
-              <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" type="submit" id="isGoToMycourse"
-                      ng-click="goToMycourse()">
-                  点击跳转
-              </button>
-          </div>
-      </div>
-    
-    <div class="paycontent" ng-show="ispayAddress" >
-      <div class="PayState-group">
-        <div class="payOn success">支付成功</div>
-        <p class="tip">本课程有教材可领，</p>
-        <p class="tip">请填写下面资料免费领取哟！</p>
-      </div>
-      <div class="BookAddress" >
-        <p>教材地址：</p>
-          <form name="address">
-              <div class="list">
-                  <label class="item item-input item-floating-label">
-                      <span class="input-label hasInput">姓名</span>
-                      <input type="text" class="hasPlace" ng-model="payAddress.DeliveryUser" fx-validate="require:name"  id="isPayName"/>
-                  </label>
-                  <label class="item item-input item-floating-label">
-                      <span class="input-label hasInput">手机号</span>
-                      <input type="tel" class="hasPlace" ng-model="payAddress.DeliveryPhone" fx-validate="require:phone;format:phone;" id="isPayNumeber"
-                              />
-                  </label>
-                  <label class="item item-input item-floating-label">
-                      <span class="input-label hasInput">详细地址:</span>
-                      <textarea class="hasPlace" ng-model="payAddress.DeliveryAddress" rows="3" fx-validate="require:address" id="isPayAddress" ></textarea>
-                  </label>
-              </div>
-              <div class="freexf-padding-24">
-                  <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" type="submit" fx-validate="submit()" id="isSubmit"
-                          ng-click="submit($event,address)">
-                      提交
-                  </button>
-              </div>
-          </form>
-        
-      </div>
+            </div>
+        </div>
 
-    </div>
-
-  </ion-content>
+        <!--<div class="freexf-contact" ng-show="weixin">
+            <div class="error">
+                <div class="errorText">请返回微信！</div>
+            </div>
+        </div>-->
+    </ion-content>
 </ion-view>
+

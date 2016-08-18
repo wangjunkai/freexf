@@ -73,26 +73,26 @@ function getCookieValue(name) {
     } else return ""; //搜索失败，返回空字符串  
 }
 function testViewport() {
-  var mvp = $('meta[name="viewport"]').get(0);
+  //var mvp = $('meta[name="viewport"]').get(0);
   var docW = document.documentElement.clientWidth;
-  var devicewidth = 'device-width';
-  var docWhtml = docW * 1 / 375;
+  //var devicewidth = 'device-width';
+  var docWhtml = docW  / 375;
   if (docWhtml <= 1 && docWhtml >= 0.85) {
     $('html').css('font-size', docWhtml + 'px')
   } else if (docWhtml <= 0.85) {
-    $('html').css('font-size', '0.9px')
+    $('html').css('font-size', '0.85px')
   }
   var docWviewport, tvp;
-  if (docW <= 320) {
-    docWviewport = (docW / 320);
-    tvp = 'width=' + devicewidth + ',initial-scale=' + docWviewport;
-    mvp.setAttribute('content', tvp);
-  } else if (docW > 414) {
-    docWviewport = (docW / 414);
-    devicewidth = '414';
-    tvp = 'width=' + devicewidth;
-    mvp.setAttribute('content', tvp);
-  }
+  //if (docW <= 320) {
+  //  docWviewport = (docW / 320);
+  //  tvp = 'width=' + devicewidth + ',initial-scale=' + docWviewport;
+  //  mvp.setAttribute('content', tvp);
+  //} else if (docW > 414) {
+  //  docWviewport = (docW / 414);
+  //  devicewidth = '414';
+  //  tvp = 'width=' + devicewidth;
+  //  mvp.setAttribute('content', tvp);
+  //}
   //
 }
 function hideTop(win) {

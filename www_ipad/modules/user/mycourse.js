@@ -18,7 +18,7 @@ angular.module('freexf')
   })
   .controller('mycourse_ctrl', function ($scope, $rootScope, $injector, $ionicLoading, $state, $stateParams, $timeout, $http, $ionicScrollDelegate,$frModal, $freexfUser, ENV, MyCourseRepository) {
     var count = 0;
-    var pageMax = 5;
+    var pageMax = 6;
     $scope.uppageshow = false;
     $scope.userData = $freexfUser.auth();
     $scope.mycourselist = [];
@@ -31,7 +31,8 @@ angular.module('freexf')
     };
     myCourse.getModel(params).then(function (res) {
       $scope.mycourselist = res.response.data;
-      if ($scope.mycourselist.length = 0) {
+
+      if ($scope.mycourselist.length == 0) {
         $scope.uppageshow = false;
         $scope.bottomtext = '你还没有购买课程!';
         $scope.$broadcast('scroll.infiniteScrollComplete');
@@ -53,7 +54,6 @@ angular.module('freexf')
         'pageIndex': count,
         'pageMax': params.pageMax
       }).then(function (res) {
-        $scope.mycourselist = $scope.mycourselist?$scope.mycourselist:[];
         $scope.mycourselist = $scope.mycourselist.concat(res.response.data);
         if ($scope.mycourselist.length < count * pageMax && count > 0) {
           $scope.uppageshow = false;
@@ -77,6 +77,6 @@ angular.module('freexf')
         if (!issoldout) {
             $frModal.openModal($scope, name, modal_ary, data, back);
         }
-      
+
     };
   });

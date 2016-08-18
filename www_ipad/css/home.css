@@ -291,6 +291,7 @@
 
 .freexf-home-table.freexf-jinpin .freexf-col {
   padding-right: 0;
+  min-width:33.3333%;
 }
 
 .freexf-home-table.freexf-jinpin .freexf-col:not(:nth-child(2)) a:nth-child(1) {

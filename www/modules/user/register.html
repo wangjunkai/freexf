@@ -17,7 +17,7 @@
         <div class="item item-input item-floating-label">
           <span class="input-label">{{user.labelcode}}</span>
           <div class="input-left-box">
-            <input type="text" placeholder="{{user.labelcode}}" class="inputCode" name="code" ng-model="user.code" fx-validate="require:imgCode">
+            <input type="text" placeholder="{{user.labelcode}}" class="inputCode" name="code" ng-model="user.code" autocomplete="off" fx-validate="require:imgCode">
           </div>
           <div class="codeBox">
             <div class="CodeImg">
@@ -32,7 +32,7 @@
         <div class="item item-input item-floating-label">
           <span class="input-label">{{user.labelphonecode}}</span>
           <div class="input-left-box">
-            <input type="text" placeholder="{{user.labelphonecode}}" id="isPhoneCode" class="inputCode" name="phonecode"
+            <input type="text" placeholder="{{user.labelphonecode}}" id="isPhoneCode" class="inputCode" name="phonecode" autocomplete="off"
                    ng-model="user.phonecode" fx-validate="require:phoneCode">
           </div>
           <button class="small-idcode-button" ng-click="PhoneCode($event,registerForm)" id="isPhoneCodeReply"  fx-validate="submit('phone','code')">获取验证码
@@ -40,12 +40,12 @@
         </div>
         <div class="item item-input item-floating-label">
           <span class="input-label">{{user.labelpassword}}</span>
-          <input type="password" placeholder="{{user.labelpassword}}" name="password" ng-model="user.password"id="isPasswordInput"
+          <input type="password" placeholder="{{user.labelpassword}}" name="password" ng-model="user.password"id="isPasswordInput" autocomplete="off"
                  fx-validate="require:password;format:password8_30">
         </div>
         <div class="item item-input item-floating-label">
           <span class="input-label {{registerForm.confirmPassword.$invalid || user.password!=user.confirmPassword}}">{{user.labelconfirmPassword}}</span>
-          <input type="password" placeholder="{{user.labelconfirmPassword}}" name="confirmPassword" id="isPasswordSure"
+          <input type="password" placeholder="{{user.labelconfirmPassword}}" name="confirmPassword" id="isPasswordSure" autocomplete="off"
                  ng-model="user.confirmPassword" ng-change="passwordAccord()" fx-validate="require:confirmPassword;format:password8_30">
         </div>
       </div>

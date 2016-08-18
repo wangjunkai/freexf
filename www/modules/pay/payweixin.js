@@ -1,35 +1,56 @@
 'use strict';
 
 angular.module('freexf')
-  .controller('payweixin_ctrl', function ($scope, $stateParams, localStorageService) {
-      $scope.PayId = window.location.href.split('/payid')[1].split('stid')[0];
-      var payUrl = '/pay/Alipay/default.aspx?OrderId=' + $scope.PayId;
-      $scope.ThisWX = false;
-      var ua = navigator.userAgent.toLowerCase();//获取判断用的对象
-      if (ua.match(/MicroMessenger/i) == "micromessenger") {
-          //微信
-          $scope.ThisWX = true;
-          var element = document.getElementById('iframe');
-          element.setAttribute('src', payUrl)
-      } else {
-          //跳转
-          window.location.href = payUrl
-      }
+  .controller('payweixin_ctrl', function ($scope, $stateParams, $state, localStorageService) {
+      //var $element = $('#iframe');
+      ////var ele = $element[0];
 
-      $scope.StudentId = window.location.href.split('stid')[1].split('sign')[0];
-      $scope.Sign = window.location.href.split('sign')[1].split('way')[0];
-      $scope.Way = window.location.href.split('way')[1].split('endpayid')[0];
+      //var $element = $('#iframe');
+      ////var iframeWidth = document.documentElement.clientWidth;
+      ////var iframeHeight = document.documentElement.clientHeight;
+      ////$element.attr('width', iframeWidth);
+      ////$element.attr('height', iframeHeight);
 
-      if (localStorageService.get('StudentId') == null) {
-          localStorageService.set('StudentId', $scope.StudentId);
-      }
-      if (localStorageService.get('Sign') == null) {
-          localStorageService.set('Sign', $scope.Sign);
-      }
-      if (localStorageService.get('Way') == null) {
-          localStorageService.set('Way', $scope.Way);
-      }
-      if (localStorageService.get('PayId') == null) {
-          localStorageService.set('PayId', $scope.PayId);
-      }
-});
+
+
+      //$scope.PayId = window.location.href.split('/payid')[1].split('stid')[0];
+      //var payUrl = '/pay/Alipay/default.aspx?OrderId=' + $scope.PayId;
+      //$scope.ThisWX = false;
+
+      //$scope.StudentId = window.location.href.split('stid')[1].split('sign')[0];
+      //$scope.Sign = window.location.href.split('sign')[1].split('way')[0];
+      //$scope.Way = window.location.href.split('way')[1].split('endpayid')[0];
+
+      //var storage = window.localStorage;
+
+      //if (!storage.getItem('StudentId')) {
+      //    storage.setItem('StudentId', $scope.StudentId);
+      //}
+      //if (!storage.getItem('Sign')) {
+      //    storage.setItem('Sign', $scope.Sign);
+      //}
+      //if (!storage.getItem('Way')) {
+      //    storage.setItem('Way', $scope.Way);
+      //}
+      //if (!storage.getItem('PayId')) {
+      //    storage.setItem('PayId', $scope.PayId);
+      //}
+
+      //$state.go('payaddress');
+
+      //var ua = navigator.userAgent.toLowerCase();//获取判断用的对象
+      //if (ua.match(/MicroMessenger/i) != "micromessenger") {
+      //    //微信
+      //    $scope.ThisWX = true;
+      //    //$element.attr('src', payUrl);
+      //} else {
+      //    //跳转
+      //    //window.location.href = payUrl
+      //}
+
+      //console.log('test');
+      //console.log(storage.getItem('StudentId'));
+      //console.log(storage.getItem('Sign'));
+      //console.log(storage.getItem('Way'));
+      //console.log(storage.getItem('PayId'));
+  });

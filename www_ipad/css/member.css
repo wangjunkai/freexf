@@ -66,6 +66,7 @@
   float: left;
   box-sizing: border-box;
   width: 120px;
+  max-width: 200px;
 }
 
 .fluid-input {
@@ -411,11 +412,11 @@
 
 .userImgBox .radio i {
   position: absolute;
-  top: 10px;
+  top: 0px;
   left: -5px;
   display: block;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   outline: 0;
   /*外圈大小控制*/
   border: 3px solid #dcdcdc;
@@ -427,8 +428,8 @@
   content: '';
   background: #1ab557;
   /*改变内圈大小*/
-  width: 10px;
-  height: 10px;
+  width: 20px;
+  height: 20px;
   position: absolute;
   border-radius: 50%;
   top: 2px;

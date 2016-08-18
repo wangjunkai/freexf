@@ -78,8 +78,8 @@ gulp.task('uglify', function () {
 });
 //css压缩
 gulp.task('minify', function () {
-  return gulp.src(paths.css)
-    .pipe(changed('www/css/dist'))
+  return gulp.src('www_ipad/css/freexf-concat-*.min.css')
+    .pipe(changed('www_ipad/css/freexf-concat-*.min.css'))
     .pipe(sourcemaps.init())
     .pipe(autoprefixer({
       browsers: ['> 1%'],
@@ -89,7 +89,7 @@ gulp.task('minify', function () {
     .pipe(rev())
     .pipe(minify())
     .pipe(sourcemaps.write(paths.dist_maps))
-    .pipe(gulp.dest('www/css/dist'))
+    .pipe(gulp.dest('www_ipad/css/'))
 });
 //图片压缩
 gulp.task('imagemin', function () {
@@ -109,11 +109,11 @@ gulp.task('livereload', function () {
 });
 //合并文件
 gulp.task('concat', function () {
-  return gulp.src(paths.dist_css)
+  return gulp.src('www_ipad/css/*.css')
     .pipe(concat('freexf-concat.css'))
     .pipe(rename({suffix: '.min'}))
     .pipe(rev())
-    .pipe(gulp.dest('www/css'))
+    .pipe(gulp.dest('www_ipad/css'))
 });
 //清理文件
 gulp.task('clean', function () {

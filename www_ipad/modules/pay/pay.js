@@ -39,7 +39,24 @@ define(function () {
           'zcpay': '/pay/Alipay/default.aspx?OrderId=' + $scope.payohref,
           'wxpay': '/mobile/www/modules/pay/payweixin.html?payid' + $scope.payohref + 'endpayid'
         };
-        location.href = payary[type] ? payary[type] : payary['zcpay'];
+        var thisRurl = '/MFreeXFapi/student/RealTimeUpdate';
+        $.ajax({
+          type: 'post',
+          cache: 'false',
+          url: thisRurl,
+          data: 'ProductId=' + $rootScope.paycourseId + '&studentid=' + $scope.userData.rowId + '&orderid=' + $scope.payood,
+          success: function (data) {
+            if (data != true) {
+              $scope.$apply(function () {
+                $scope.orderError = true;
+              });
+            } else {
+              window.location.href =  payary[type] ? payary[type] : payary['zcpay'];
+            }
+          },
+          error: function (data) {
+          }
+        });
       };
       var modal_ary = {
         payaddress: {

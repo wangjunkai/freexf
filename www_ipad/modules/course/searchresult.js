@@ -1,13 +1,18 @@
 'use strict';
 
 angular.module('freexf')
-  .controller('searchresult_ctrl', function ($scope, $rootScope, $http, $location, $injector, $ionicLoading,$frModal, $state, $timeout, ENV, SearchCourse, $ionicScrollDelegate) {
+  .controller('searchresult_ctrl', function ($scope, $rootScope, $http, $location, $injector, $ionicLoading, $frModal, $state, $timeout, ENV, SearchCourse, $ionicScrollDelegate) {
     var searchCourse = SearchCourse(ENV._api.__searchcourse);
     var count = 0;
     var pageMax = 6;
     $scope.courseList = null;
     $scope.searchString = {
-      value: $state.params.q || ''
+      value: $state.params.q || '',
+      valueformat: function () {
+        if ($state.params.q) {
+          return '"' + $state.params.q + '"';
+        }
+      }()
     };
     $scope.uppageshow = false;
 

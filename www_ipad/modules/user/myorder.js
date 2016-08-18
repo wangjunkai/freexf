@@ -243,5 +243,8 @@ angular.module('freexf')
       }
       $frModal.openModal($scope, name, modal_ary, data, back);
     };
-
+    //支付付款成功
+    if($state.params['OrderId']&&$state.params['pay']==='istrue'){
+      $scope.openModal('payaddress',{OrderId:$state.params['OrderId'],isFromOrder:true})
+    }
   });

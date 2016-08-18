@@ -784,6 +784,9 @@ img.freexf-blur {
 .freexf-classmodule .item {
   border-color: #eee;
 }
+.freexf-classmodule .item:first-of-type{
+    border-top:none;
+}
 
 .freexf-classmodule .item h2 {
   font-size: 14rem;
@@ -870,6 +873,10 @@ img.freexf-blur {
 }
 .freexf-classmodule-header-nav {
   background: #fff;
+  position: relative;
+  top: 44px;
+  z-index: 100;  
+  border-bottom:1px #eee solid;
 }
 
 .freexf-classmodule-header-nav h2 {

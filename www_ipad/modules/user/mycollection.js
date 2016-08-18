@@ -34,7 +34,8 @@
         "Sign": $scope.userData.Sign,
         "ProductId": courseId
       }).then(function (res) {
-        if (res.response.data.struts == true) {
+          if (res.response.data.struts == true) {
+          count = 0;
           getMyfavorite();
         }
       })

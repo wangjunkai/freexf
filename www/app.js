@@ -50,6 +50,7 @@
           }
         }
       })
+       
       //初始化计算bar center 宽度
       .directive('defaultHeaderBar', ['$rootScope', '$ionicHistory', '$ionicConfig', '$state', '$injector',
         function ($rootScope, $ionicHistory, $ionicConfig, $state, $injector) {
@@ -185,6 +186,7 @@
       })
       //loading服务
       .factory('$Loading', function ($injector) {
+        
         var $ionicLoading = $injector.get('$ionicLoading');
         var $timeout = $injector.get('$timeout');
         var tpl = '<div class="{{class}}"></div><div class="font">{{text}}</div>';
@@ -336,20 +338,24 @@
             //判断有无iframe id控制 有：干掉它
             //添加iframe，url:?html=window.location.href.split('#')[1]
 
+              setTimeout(function () {
+                  if ($('iframe').length) {
+                      $('#childFrame').remove();
+                  }
 
-            setTimeout(function () {
-              if ($('iframe').length) {
-                console.log('dalete');
-                $('#childFrame').remove();
-              }
+                  var url = window.location.href.split('#')[1];
+                  var childFrame = "<div id='childFrame'><iframe src='./seohtml.html?html=" + url + "'></iframe></div>"
+                  var template = angular.element(childFrame);
+                  iframeElement = $compile(template)($rootScope);
+                  angular.element(document.body).append(iframeElement);
+              }, 100)
 
-              var url = window.location.href.split('#')[1];
-              var childFrame = "<div id='childFrame'><iframe src='./seohtml.html?html=" + url + "'></iframe></div>"
-              console.log('iframe');
-              var template = angular.element(childFrame);
-              iframeElement = $compile(template)($rootScope);
-              angular.element(document.body).append(iframeElement);
-            }, 100)
+            //  var url = window.location.href.split('#')[1];
+            //  var childFrame = "<div id='childFrame'><iframe src='./seohtml.html?html=" + url + "'></iframe></div>"
+            //  var template = angular.element(childFrame);
+            //  iframeElement = $compile(template)($rootScope);
+            //  angular.element(document.body).append(iframeElement);
+            //}, 100)
 
             //$rootScope.baidutj = function () {
             //    $rootScope.nowurl = window.location.href.split('#')[1];
@@ -676,6 +682,17 @@
                 return $ocLazyLoad.load(['activities/201606/summer.js']);
               }]
             }
+          })
+
+          .state('olympic', {
+              url: '/olympic',
+              templateUrl: 'activities/201608/olympic.html',
+              controller: 'olympic_ctrl',
+              resolve: {
+                  loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                      return $ocLazyLoad.load(['activities/201608/olympic.js']);
+                  }]
+              }
           })
 
           .state('coursedetail', {

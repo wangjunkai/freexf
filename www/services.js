@@ -7,7 +7,7 @@
       '_timeout': 15000,
       '_base': '/MFreeXFapi/student',
       '_api': {
-        __GetIndexGather: 'GetIndexGather',
+        __GetIndexGather:'GetIndexGather',
         __courselistpage: 'courselistpage',   //课程列表
         __mycourse: 'GetMyCourses',
         __coursedate: 'courseData',    //课程详情
@@ -37,7 +37,8 @@
         __GetCategory_v01: 'GetCategory_v01',    //新一二级分类
         __UpdateAPES: 'UpdateAPES',
         __RealTimeUpdate: 'RealTimeUpdate',
-        __MobileFaq: 'MobileFaq'
+        __MobileFaq: 'MobileFaq',
+        __Dispatch: 'Dispatch'
       }
     })
     //修改RestAngular配置
@@ -53,7 +54,7 @@
         });
         //响应拦截器
         RestangularConfigurer.addResponseInterceptor(function (elem, option, what, url, response, deferred) {
-          //($rootScope.xhr--) - 1 || $Loading.hide();d
+          //($rootScope.xhr--) - 1 || $Loading.hide();
           if (elem && angular.isObject(elem) && elem.SignStatus && elem.SignStatus !== 'True') {
             if (AUTH.FREEXFUSER.data.userLg && AUTH.FREEXFUSER.data.rememberPw) {
               AUTH.toLogin().then(function (req) {
@@ -405,6 +406,17 @@
       return function (api) {
         return new GetspecialAllListRepository(api);
       }
+    })
+      //奥运会
+    .factory('DispatchRepository', function (ENV, freexfRestAngular, baseRestAngular) {
+        function DispatchRepository(api, base) {
+            baseRestAngular.call(this, freexfRestAngular, api ? api : ENV._api.__Dispatch, base)
+        }
+
+        baseRestAngular.extend(DispatchRepository);
+        return function (api, base) {
+            return new DispatchRepository(api, base);
+        }
     })
     //取消献花
     .factory('RemoveFlower', function (ENV, freexfRestAngular, baseRestAngular) {

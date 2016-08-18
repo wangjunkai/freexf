@@ -25,7 +25,7 @@ define(function () {
             $Loading.show({class: data ? MSGICON.success : MSGICON.fail, text: data ? '提交成功!' : '提交失败!'}, 1500);
             if (res.response.data) {
               $timeout(function () {
-                $state.go('set');
+                $scope.$modal._remove();
                 $scope.idea.as_content = '';
                 $scope.idea.as_mobile = '';
               }, 1000)

@@ -111,6 +111,9 @@
 	font-size: 15rem;
 	color:#969696;
 	font-weight:600;
+    width: 100%;
+    float: left;
+    margin:0 auto;
 }
 .pay .ContactUs i{
 	color:#ff5f5f;
@@ -121,6 +124,7 @@
 .input-label.hasInput{
     opacity: 1;
     top: 0;
+    color: #969696;
 }
 /*∂©µ•“Ï≥£*/
 .error{

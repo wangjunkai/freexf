@@ -656,22 +656,24 @@ img.freexf-blur {
 }
 
 .freexf-classmodule-header-nav {
-
   font-size: 14rem;
   color: #969696;
   position: relative;
+  top: 44px;
+  z-index: 100;
+  left: 0;
+
 }
 
 .freexf-classmodule-header-nav .freexf-courseNav {
   float: left;
   text-align: center;
   position: relative;
-  width: 120px;
+  min-width: 60px;
   text-align: left;
 }
 
 .freexf-classmodule-header-nav .freexf-coursesort {
-
   float: right;
   text-align: center;
 }
@@ -727,23 +729,20 @@ img.freexf-blur {
   background-position: -65px -60px;
 }
 
-.freexf-courseNav:after {
+.freexf-courseNav span {
   width: 6px;
   height: 6px;
   border: 1px solid #969696;
-  content: '';
-  display: block;
-  position: absolute;
-
-  top: 50%;
-  margin-top: -3px;
-  right: 76px;
+  display: inline-block;
+  position:relative;
+  top:-3px;
+  margin-left:12px;
   border-width: 0 0 1.5px 1.5px;
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
 }
 
-.freexf-courseNav.active:after {
+.freexf-courseNav.active span {
   transform: rotate(135deg);
   -webkit-transform: rotate(135deg);
   margin-top: 0;
@@ -1087,10 +1086,9 @@ img.freexf-blur {
 .item-thumbnail-left > img:first-child {
   position: inherit;
 }
-
 .courseListNew .list.freexf-classmodule {
   margin-bottom: 0;
-  padding: 31px 47px;
+  padding: 51px 47px;
 }
 
 .courseListNew .list.freexf-classmodule .courseItem {
@@ -1098,6 +1096,7 @@ img.freexf-blur {
   margin: 0;
   padding: 0 0 46px 0;
   display: inline-block;
+  min-width: 33.3333%;
 }
 
 .courseListNew .list.freexf-classmodule .courseItem:nth-child(3n-2) {
