@@ -62,7 +62,7 @@
       }
     }])
 
-    .controller('home_ctrl', function ($scope, $timeout, $ionicLoading, $exceptionHandler, $state, $ionicSlideBoxDelegate, AUTH, ENV, HomeRepository) {
+    .controller('home_ctrl', function ($scope, $timeout, $ionicLoading, $exceptionHandler, $ionicPopup, $state, $ionicSlideBoxDelegate, AUTH, ENV, HomeRepository) {
       var Home = HomeRepository(ENV._api.__GetIndexGather);
       $scope.$on('$ionicView.loaded', function () {
       });
@@ -79,6 +79,22 @@
 
       $scope.goCourseList = function (category1) {
         $state.go('courseplate', {Category1: category1});
+      }
+        
+      $scope.aboutUs = function () {
+          var aboutPopup = $ionicPopup.confirm({
+              title: '',
+              cssClass: 'videoBox',
+              template: '<video id="aboutVideo" style="width:100%;position:relative;z-index:10;" controls="controls" autoplay="autoplay" ><source id="vpmp4" src="http://css.freexf.com/banner%2F%E5%AD%A6%E8%B4%B9%E5%85%A8%E5%85%8D%E7%BD%91%E7%9F%AD%E4%BB%8B%E7%BB%8D.mp4" type="video/mp4"></video>',
+              scope: $scope,
+              buttons: [
+               {
+                   text: "",
+                   onTap: function (e) {
+                       
+                   }
+               }]
+          });          
       }
 
     })

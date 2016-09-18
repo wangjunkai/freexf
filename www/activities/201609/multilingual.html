@@ -1,0 +1,137 @@
+﻿<ion-view coures-scroll view-title="多一个语言，多一个世界">
+    <ion-header-bar class="freexf-bar">
+        <div class="bar-left">
+            <a href="#home" class="button-clear freexf-back freexf-left">
+                <i class="icon freexf-gohomeback"></i>
+            </a>
+        </div>
+        <div class="title">多一个语言，多一个世界</div>
+    </ion-header-bar>
+    <ion-content lazy-scroll class="has-header multilingual">
+        <div class="olympic-banner">
+           <img image-lazy-src="activities/img/multilingual/head-banner@3x.png"/>
+        </div>
+        <div class="multilingual-headimg">
+            <img src="activities/img/multilingual/head1@3x.png"/>
+            <img src="activities/img/multilingual/head2@3x.png" />
+            <img src="activities/img/multilingual/head3@3x.png" />
+        </div>
+        <div class="multilingual-introduce">
+            学费全免网多语种课程帮你搞定！主流小语种课程应有尽有，考证、商务、兴趣，满足你对小语种学习的一切需求。学期结束，学费全返，经济0压力，比别人多一项与世界沟通的技能！
+        </div>
+        <div class="multilingual-active">
+            <a href="#/invitefriends"><img src="activities/img/multilingual/01@3x.png" /></a><a href="http://mp.weixin.qq.com/s?__biz=MzIxNjMyNzM1Nw==&mid=2247488528&idx=1&sn=f5b433d1a36d2b2531ca6478aafeaac4#rd"><img src="activities/img/multilingual/02@3x.png" /></a><a href="#/classlearning"><img src="activities/img/multilingual/03@3x.png" /></a>
+        </div>
+        <div class="multilingual-nav">
+            <ul>
+                <li ng-click="category($event,'全部')">
+                    <div class="all">全部</div>
+                </li>
+                <li ng-click="category($event,'日语')">
+                    <div class="pic1">日语</div>
+                    <div class="pic2"><img src="activities/img/multilingual/Japan@3x.png"/></div>   
+                </li>
+                <li ng-click="category($event,'韩语')">
+                    <div class="pic1">韩语</div>
+                    <div class="pic2"><img src="activities/img/multilingual/Korean@3x.png" /></div>   
+                </li>
+                <li ng-click="category($event,'俄语')">
+                    <div class="pic1">俄语</div>
+                    <div class="pic2"><img src="activities/img/multilingual/Russia@3x.png" /></div>   
+                </li>
+                <li ng-click="category($event,'德语')">
+                    <div class="pic1">德语</div>
+                    <div class="pic2"><img src="activities/img/multilingual/germany@3x.png" /></div>   
+                </li>
+                <li ng-click="category($event,'西班牙语')">
+                    <div class="pic1">西班牙</div>
+                    <div class="pic2 spain"><img src="activities/img/multilingual/Spain@3x.png" /></div>
+                </li>
+                <li ng-click="category($event,'法语')">
+                    <div class="pic1">法语</div>
+                    <div class="pic2"><img src="activities/img/multilingual/France@3x.png" /></div>
+                </li>
+            </ul>
+        </div>
+        <div class="multilingual-box" ng-show="multilingualList.CourseList1.length>0">
+            <img src="activities/img/multilingual/1@3x.png"/>
+                <div class="col col-50" ng-repeat="(index,l) in multilingualList.CourseList1" ng-if="index<num1" ng-include="'course.html'" ng-click="toCourseDate(l.ProductId)">
+                    
+                </div>                          
+            <div class="multilingual-btn-more" ng-show="multilingualList.CourseList1.length>2">
+                <button ng-click="setData(multilingualList.CourseList1.length,$event,'num1')">点击查看更多相关课程</button>
+            </div>
+        </div>
+        <div class="multilingual-box" ng-show="multilingualList.CourseList2.length>0">
+            <img src="activities/img/multilingual/2@3x.png" />
+            <div class="col col-50" ng-repeat="(index,l) in multilingualList.CourseList2" ng-if="index<num2" ng-include="'course.html'" ng-click="toCourseDate(l.ProductId)">
+               
+            </div>         
+            <div class="multilingual-btn-more" ng-show="multilingualList.CourseList2.length>2">
+                <button ng-click="setData(multilingualList.CourseList2.length,$event,'num2')">点击查看更多相关课程</button>
+            </div>
+        </div>
+        <div class="multilingual-box" ng-show="multilingualList.CourseList3.length>0">
+            <img src="activities/img/multilingual/3@3x.png" />
+            <div class="col col-50" ng-repeat="(index,l) in multilingualList.CourseList3" ng-if="index<num3" ng-include="'course.html'" ng-click="toCourseDate(l.ProductId)">
+                
+            </div>         
+            <div class="multilingual-btn-more" ng-show="multilingualList.CourseList3.length>2">
+                <button ng-click="setData(multilingualList.CourseList3.length,$event,'num3')">点击查看更多相关课程</button>
+            </div>
+        </div>
+        <div class="multilingual-box" ng-show="multilingualList.CourseList4.length>0">
+            <img src="activities/img/multilingual/4@3x.png" />
+            <div class="col col-50" ng-repeat="(index,l) in multilingualList.CourseList4" ng-if="index<num4" ng-include="'course.html'" ng-click="toCourseDate(l.ProductId)">
+                
+            </div>         
+            <div class="multilingual-btn-more" ng-show="multilingualList.CourseList4.length>2">
+                <button ng-click="setData(multilingualList.CourseList4.length,$event,'num4')">点击查看更多相关课程</button>
+            </div>
+        </div>
+        <div class="multilingual-box" ng-show="multilingualList.CourseList5.length>0">
+            <img src="activities/img/multilingual/5@3x.png" />
+            <div class="col col-50" ng-repeat="(index,l) in multilingualList.CourseList5" ng-if="index<num5" ng-include="'course.html'" ng-click="toCourseDate(l.ProductId)">
+                
+            </div>         
+            <div class="multilingual-btn-more" ng-show="multilingualList.CourseList5.length>2">
+                <button ng-click="setData(multilingualList.CourseList5.length,$event,'num5')">点击查看更多相关课程</button>
+            </div>
+        </div>
+        <div class="multilingual-box multilingual-teacher">
+            <img src="activities/img/multilingual/teacher.png"/>
+            <ion-scroll direction='x' scrollbar-x='false'>
+                <div class="row">
+                    <div class="col col-25" ng-repeat="t in teacherList">
+                        <img ng-src="{{t.Image}}" />
+                        <p>{{t.Name}}</p>
+                    </div>                   
+                </div>
+            </ion-scroll>
+        </div>
+        <a href="tel:400-803-6611" class="title time-footer multilingual-footer">
+            <img class="footer-bar-contact-content-phone" image-lazy-src="activities/img/multilingual/phone_icon@3x.png" />
+            <span class="footer-bar-contact-content-phonenumber">400-803-6611</span>
+        </a>       
+    </ion-content>
+</ion-view>
+<script type="text/ng-template" id="course.html">
+    <p class="multilingual-xuefen">{{l.Price}}<span>学分</span></p>
+    <div>
+        <img ng-src="{{l.Image}}" />
+        <div class="multilingual-courseinfo">
+            <p>{{l.ProductName}}</p>
+            <p>课程讲师：{{l.TeacherName}}</p>
+        </div>
+        <div class="multilingual-class">
+            课时数:{{l.Hour}}
+            <p ng-hide="all">
+                <span class="star" ng-class="{ban:index>=15}" ng-hide="index>=18"></span>
+                <span class="star" ng-class="{ban:index>=12}" ng-hide="index>=15"></span>
+                <span class="star" ng-class="{ban:index>=9}" ng-hide="index>=12"></span>
+                <span class="star" ng-class="{ban:index>=6}" ng-hide="index>=9"></span>
+                <span class="star" ng-class="{ban:index>=3}" ng-hide="index>=6"></span>
+            </p>
+        </div>
+    </div>
+</script>

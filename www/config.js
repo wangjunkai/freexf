@@ -2,111 +2,239 @@
 //定义主要js路径
 
 'use strict';
+autoChange();
 
-var paths = {
+//CND路径
+var pathsFreexf = {
   //配置js路径
   paths: {
-    ionic: 'lib/ionic/js/ionic.bundle',//webapp前端框架
-    oclazyload: 'lib/oclazyload/dist/ocLazyLoad',//按需加载
-    imglazyload: 'lib/ionic-image-lazy-load/ionic-image-lazy-load',//图片懒加载
-    restAngular: 'lib/restangular/dist/restangular.min',//ajax
-    angularSanitize: 'lib/ionic/js/angular/angular-sanitize.min',
-    localStorage: 'lib/angular-local-storage/dist/angular-local-storage.min',//
-    jq: 'lib/jquery/dist/jquery.min',
-    lodash: 'lib/lodash/dist/lodash.min',//
-    qrcode: 'lib/qrcode/jquery.qrcode.min',
-    base64: 'js/base64'
+    ionic: 'http://css.freexf.com/h5/bundle/freexf-b4a1e2feed.bundle'//webapp前端框架
+/*    oclazyload: 'http://css.freexf.com/h5/oclazyload/dist/ocLazyLoad',//按需加载
+    imglazyload: 'http://css.freexf.com/h5/ionic-image-lazy-load/ionic-image-lazy-load',//图片懒加载
+    restAngular: 'http://css.freexf.com/h5/restangular/dist/restangular.min',//ajax
+    angularSanitize: 'http://css.freexf.com/h5/ionic/js/angular/angular-sanitize.min',
+    localStorage: 'http://css.freexf.com/h5/angular-local-storage/dist/angular-local-storage.min',//
+    jq: 'http://css.freexf.com/h5/jquery/dist/jquery.min',
+    lodash: 'http://css.freexf.com/h5/lodash/dist/lodash.min',//
+    qrcode: 'http://css.freexf.com/h5/qrcode/jquery.qrcode.min',
+    base64: 'http://css.freexf.com/h5/base64/base64'*/
 
   },
   shim: {
     //注入服务至ionic
-    'oclazyload': ['ionic'],
+/*    'oclazyload': ['ionic'],
     'imglazyload': ['ionic'],
     'restAngular': ['ionic'],
     'angularSanitize': ['ionic'],
-    'localStorage': ['ionic'],
-    'services': ['ionic', 'app'],
-    'qrcode': ['ionic'],
-    'base64':['ionic']
+    'localStorage': ['ionic'],*/
+    'services': ['ionic', 'app']
+/*    'qrcode': ['ionic'],
+    'base64': ['ionic']*/
   }
 };
-require.config(paths);
+
+//本地路径
+var paths = {
+  //配置js路径
+  paths: {
+    ionic: 'dist/js/lib/concat/freexf-b4a1e2feed.bundle'//webapp前端框架
+    /*   oclazyload: 'lib/oclazyload/dist/ocLazyLoad',//按需加载
+     imglazyload: 'lib/ionic-image-lazy-load/ionic-image-lazy-load',//图片懒加载
+     restAngular: 'lib/restangular/dist/restangular.min',//ajax
+     angularSanitize: 'lib/ionic/js/angular/angular-sanitize.min',
+     localStorage: 'lib/angular-local-storage/dist/angular-local-storage.min',//
+     jq: 'lib/jquery/dist/jquery.min',
+     lodash: 'lib/lodash/dist/lodash.min',//
+     qrcode: 'lib/qrcode/jquery.qrcode.min',
+     base64: 'lib/base64/base64'*/
+
+  },
+  shim: {
+    'services': ['ionic', 'app']
+  }
+};
+
+require.config(pathsFreexf);
 
 require([
     'ionic',
-    'jq',
-    'lodash',
-    'qrcode',
     'app',
-    'services',
-    'base64'
+    'services'
   ], function () {
+    Udesk();
+    tuiGuang();
     testViewport();
-    doyoofun();
-    //totop(window);
+    totop(window);
     ionic.Platform.ready(function () {
       //启动angular模块
       angular.bootstrap(document, ['freexf']);
     });
+    $(function () {
+      $('body').on('click', '.button-clear.freexf-consult', function () {
+        $('.udeskfun').eq(0).trigger("click");
+      })
+    })
   }
 );
-function doyoofun() {
-    $('body').on('click', '.button-clear.freexf-consult,.onlineConsultJs', function () {
-    doyoo.util.openChat('g=10058658');
-    return false;
+function Udesk() {
+  (function (a, h, c, b, f, g) {
+    a["UdeskApiObject"] = f;
+    a[f] = a[f] || function () {
+        (a[f].d = a[f].d || []).push(arguments)
+      };
+    g = h.createElement(c);
+    g.async = 1;
+    g.src = b;
+    c = h.getElementsByTagName(c)[0];
+    c.parentNode.insertBefore(g, c)
+  })(window, document, "script", "//freexf.udesk.cn/im_client/js/udeskApi.js?_t=1471597478714", "ud");
+
+  ud({
+    "code": "13chha6e",
+    "link": "//freexf.udesk.cn/im_client",
+    "mobile": {
+      "mode": "blank",
+      "color": "#307AE8",
+      "pos_flag": "crb",
+      "onlineText": "联系客服，在线咨询",
+      "offlineText": "客服下班，请留言",
+      "targetSelector": ".udeskfun",
+      "pop": {
+        "direction": "top",
+        "arrow": {
+          "top": 0,
+          "left": "70%"
+        }
+      }
+    },
+    "mode": "blank",
+    "color": "#000000",
+    "pos_flag": "srb",
+    "onlineText": "联系客服，在线咨询",
+    "offlineText": "客服下班，请留言",
+    "targetSelector": ".udeskfun",
+    "pop": {
+      "direction": "top",
+      "arrow": {
+        "top": 0,
+        "left": "80%"
+      }
+    }
+  });
+  $('body').on('click', '.button-clear.freexf-consult', function () {
+    $('.udeskfun').eq(0).trigger("click");
+  })
+  $('body').on('click', '.udesk', function () {
+    $('.udeskfun').eq(0).trigger("click");
   })
 }
+function tuiGuang() {
+  if (typeof (window.location.href.split('?s=')[1]) != 'undefined') {
+    var tuiGuangId = window.location.href.split('?s=')[1];
+    var tuiGuangId = tuiGuangId.split('ends')[0];
+    setCookie("tuiGuangId", tuiGuangId, 1, "/")
+  }
+  ;
+};
 function getCookieValue(name) {
-    var name = escape(name);
-    //读cookie属性，这将返回文档的所有cookie  
-    var allcookies = document.cookie;
-    //查找名为name的cookie的开始位置  
-    name += "=";
-    var pos = allcookies.indexOf(name);
-    //如果找到了具有该名字的cookie，那么提取并使用它的值  
-    if (pos != -1) { //如果pos值为-1则说明搜索"version="失败  
-        var start = pos + name.length; //cookie值开始的位置  
-        var end = allcookies.indexOf(";", start); //从cookie值开始的位置起搜索第一个";"的位置,即cookie值结尾的位置  
-        if (end == -1) end = allcookies.length; //如果end值为-1说明cookie列表里只有一个cookie  
-        var value = allcookies.substring(start, end); //提取cookie的值  
-        return unescape(value); //对它解码        
-    } else return ""; //搜索失败，返回空字符串  
+  var name = escape(name);
+  var allcookies = document.cookie;
+  name += "=";
+  var pos = allcookies.indexOf(name);
+  if (pos != -1) {
+    var start = pos + name.length;
+    var end = allcookies.indexOf(";", start);
+    if (end == -1) end = allcookies.length;
+    var value = allcookies.substring(start, end);
+    return unescape(value);
+  } else return "";
 }
+function setCookie(name, value, hours, path) {
+  var name = escape(name);
+  var value = escape(value);
+  var expires = new Date();
+  expires.setTime(expires.getTime() + hours * 3600000 * 24);
+  path = path == "" ? "" : ";path=" + path;
+  expires = (typeof hours) == "string" ? "" : ";expires=" + expires.toUTCString();
+  document.cookie = name + "=" + value + expires + path;
+};
+function deleteCookie(name, path) {
+  var name = escape(name);
+  var expires = new Date(0);
+  path = path == "" ? "" : ";path=" + path;
+  document.cookie = name + "=" + ";expires=" + expires.toUTCString() + path;
+};
+function autoChange() {
+  //手机端自动跳转
+  var phoneVideo = function () {
+    if (navigator.userAgent.match(/(iPhone|iPod|webOS|Android)/i)) {
+      return 'mb';
+    } else if (navigator.userAgent.match(/(iPad)/i)) {
+      return 'ipad';
+    } else {
+      return 'pc';
+    }
+  }
+  //url对应    =
+  var mobileurlIDarr = ['/home', '/courseplate/%E8%8B%B1%E8%AF%AD&',
+    '/courseplate/%E4%B8%AD%E5%B0%8F%E5%AD%A6&', '/courseplate/%E5%A4%9A%E8%AF%AD%E7%A7%8D&', '/courseplate/%E4%BC%9A%E8%AE%A1%E8%81%8C%E4%B8%9A&', '/courseplate/%E8%80%83%E7%A0%94&', '/courseplate/%E5%85%B4%E8%B6%A3&', '/member',
+    '/mycourse', '/course', '/myorder', '/mycollection', '/modifypassword']
+
+  var ipadUrlArr = ['/home', '/courseplate/%E8%8B%B1%E8%AF%AD&',
+    '/courseplate/%E4%B8%AD%E5%B0%8F%E5%AD%A6&', '/courseplate/%E5%A4%9A%E8%AF%AD%E7%A7%8D&', '/courseplate/%E4%BC%9A%E8%AE%A1%E8%81%8C%E4%B8%9A&', '/courseplate/%E8%80%83%E7%A0%94&', '/courseplate/%E5%85%B4%E8%B6%A3&', '/myaccount',
+    '/myaccount/mycourse', '/course', '/myaccount/myorder', '/myaccount/mycollection', '']
+
+  var ipadchangeurl = function (ipadurl) {
+    if (phoneVideo() == 'ipad') {
+      if (domainname != 'm.freexf.com') {
+        window.location.href = "http://" + domainname + "/mobile/www_ipad/index.aspx#" + ipadurl
+      } else {
+        window.location.href = "http://" + "m.freexf.com" + "/mobile/www_ipad/index.aspx#" + ipadurl
+      }
+
+    }
+  }
+  //初始化url变量
+  var nowurl = window.location.href;
+  var mobileurlID = nowurl.split('#')[1];
+  var goalsplit = nowurl.replace("http://", "");
+  var goalurl = goalsplit.substr(goalsplit.indexOf("/"), goalsplit.length);
+  var domainname = goalsplit.substr(0, goalsplit.indexOf("/"));
+  if (mobileurlID == undefined) {
+    mobileurlID = '/home';
+  }
+  if (nowurl.indexOf('/coursedetail/') > -1) {
+    var courseurlID = nowurl.slice(nowurl.lastIndexOf('/') + 1, nowurl.lastIndexOf('&'));
+    var courseurl = "/courses/detail/index-" + courseurlID
+  } else {
+    var isGoHome = true;
+    for (var i = 0; i < mobileurlIDarr.length; i++) {
+      if (mobileurlID == mobileurlIDarr[i]) {
+        ipadchangeurl(ipadUrlArr[i]);
+        var isGoHome = false;
+      }
+      if (i == mobileurlIDarr.length - 1 || isGoHome == true) {
+        ipadchangeurl(ipadUrlArr[0]);
+      }
+
+    }
+  }
+
+}
+
 function testViewport() {
   //var mvp = $('meta[name="viewport"]').get(0);
   var docW = document.documentElement.clientWidth;
   //var devicewidth = 'device-width';
-  var docWhtml = docW  / 375;
+  var docWhtml = docW / 375;
   if (docWhtml <= 1 && docWhtml >= 0.85) {
     $('html').css('font-size', docWhtml + 'px')
   } else if (docWhtml <= 0.85) {
     $('html').css('font-size', '0.85px')
   }
   var docWviewport, tvp;
-  //if (docW <= 320) {
-  //  docWviewport = (docW / 320);
-  //  tvp = 'width=' + devicewidth + ',initial-scale=' + docWviewport;
-  //  mvp.setAttribute('content', tvp);
-  //} else if (docW > 414) {
-  //  docWviewport = (docW / 414);
-  //  devicewidth = '414';
-  //  tvp = 'width=' + devicewidth;
-  //  mvp.setAttribute('content', tvp);
-  //}
-  //
 }
-function hideTop(win) {
-  var scrollTop = 70;
-  var bodycheck = setInterval(function () {
-    var content = $('ion-content div.scroll');
-    if (content.length > 0) {
-      var newtop = content.position().top;
-      var y = newtop >= scrollTop ? 0 : 70;
-      scrollTop = newtop;
-      win.scrollTo(0, y);
-    }
-  }, 500);
-}
+
 function totop(win) {
   var doc = win.document;
 
@@ -118,7 +246,7 @@ function totop(win) {
       getScrollTop = function () {
         return win.pageYOffset || doc.compatMode === "CSS1Compat" && doc.documentElement.scrollTop || doc.body.scrollTop || 0;
       },
-    //reset to 0 on bodyready, if needed
+      //reset to 0 on bodyready, if needed
       bodycheck = setInterval(function () {
         if (doc.body) {
           clearInterval(bodycheck);

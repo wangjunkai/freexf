@@ -6,6 +6,10 @@
       </button>
     </div>
     <div class="title">支付中心</div>
+    <div class="bar-right">
+      <button class="button-clear freexf-consult"><span>咨询</span></button>
+
+    </div>
   </ion-header-bar>
 
     <ion-content class="pay">
@@ -35,7 +39,7 @@
                 <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-hide="mianfeiShow" id="IsPaySurePhone">确认支付</button>
             </a>
             <!--微信支付-->
-            
+
                 <a rthref="/mobile/www/modules/pay/payweixin.html?payid{{payohref}}orderid{{payood}}stid{{userData.rowId}}sign{{userData.Sign}}wjumptrueendpayid" class="wxpay" ng-show="ThisWX" ng-click="RealTimeUpdate('.wxpay')">
                     <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-hide="mianfeiShow" id="IsPaySureWeixin">确认支付</button>
                 </a>

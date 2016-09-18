@@ -36,8 +36,18 @@
       var headEl = document.getElementsByTagName('head')[0], sync = true;
       var css = {
         0: ['css/freexf.css', 'css/course.css', 'css/home.css', 'css/pay.css',
-          'css/student.css', 'css/user.css', 'css/video.css', 'css/set.css', 'css/member.css', 'activities/css/activities-public.css'],
-        1: ['css/freexf-concat-8c62337402.min.css']
+          'css/student.css', 'css/user.css', 'css/video.css', 'css/set.css',
+          'css/member.css', 'activities/css/activities-public.css',
+          'activities/css/classlearing.css',
+          'activities/css/invitefriends.css',
+          'activities/css/multilingual.css',
+          'activities/css/invitefriends.css',
+          'activities/css/microClass.css',
+          'activities/css/activities-examinationTime.css',
+          'activities/css/lottery.css'
+      ],
+
+        1: ['css/freexf-concat-c522fa9e89-650fadcbfe.min.css','activities/css/activities-public.css']
       };
       var js = {
         0: ['http://lead.soperson.com/20001079/10055583.js'],
@@ -81,6 +91,7 @@
 
 <!--require按需加载js控件-->
 <script data-main="config.js" src="lib/requirejs/require.js"></script>
+<div class="udeskfun" style="position:absolute;top:-1px;left:-1px;width:0px;height:0px;"></div>
 
 </body>
 

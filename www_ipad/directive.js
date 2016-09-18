@@ -3,7 +3,7 @@
 
   angular.module('freexf')
     .directive('scrollCourseTab', ['$location', '$ionicScrollDelegate', function ($location, $ionicScrollDelegate) {
-        return function ($scope, $element, $attrs) {
+      return function ($scope, $element, $attrs) {
         var content = $($element).find('ion-content')[0];
         var coursecontent = $($element).find('#coursedetail');
         var tabs = $($element).find('#tabs')[0];
@@ -21,6 +21,7 @@
         })
       }
     }])
+
     .directive('includeReplace', function () {
       return {
         require: 'ngInclude',
@@ -83,7 +84,7 @@
         },
         controller: function ($scope, $element, $attrs) {
           var $element = $($element[0]), $li = $($element.find('li'));
-          var autoload = function(){
+          var autoload = function () {
             for (var i in mtemp) {
               (function (i) {
                 $frModal.modal(mtemp[i]).then(function (modal) {
@@ -93,7 +94,7 @@
             }
           };
           $li.on('click', function (e) {
-            $frModal.openModal($scope,e.target.className,mtemp);
+            $frModal.openModal($scope, e.target.className, mtemp);
           });
         }
       };
@@ -228,6 +229,31 @@
           });
         }
       }])
+    .directive('activeTop', ['$rootScope', '$freexfUser','$frModal', function ($rootScope, $freexfUser,$frModal) {
+      var modal_ary = {
+        register: {
+          ctrlUrl: 'modules/user/register',
+          tempUrl: 'modules/user/register.html'
+        },
+        login: {
+          ctrlUrl: 'modules/user/login',
+          tempUrl: 'modules/user/login.html'
+        }
+      };
+      function link(scope, element, attrs) {
+        scope.userLg = $freexfUser.auth() && $freexfUser.auth().userLg;
+        $rootScope.$on('auth:update', function (event, auth) {
+          scope.userLg = auth && auth.userLg;
+        });
+        scope.openModal = function (name, data, back) {
+          $frModal.openModal(scope, name, modal_ary, data, back);
+        };
+      }
+      return {
+        templateUrl: 'modules/pubilc/activetop.html',
+        link: link
+      }
+    }])
     //form 表单验证指令
     .directive('fxValidate', ['$rootScope',
       function ($rootScope) {

@@ -25,7 +25,7 @@ angular.module('freexf')
       var loginSign = '{"phone":"' + $scope.login.phone + '","password":"' + $scope.login.password + '"}';
       loginSign = Base64.encode(loginSign);
       $Loading.show({class: MSGICON.load, text: '登录中...'}, false);
-      AUTH.toLogin(loginSign).then(function(req){
+      AUTH.toLogin(loginSign).then(function (req) {
         var data = req.response.data;
         $Loading.show({
           class: data.success ? MSGICON.success : MSGICON.fail,
@@ -40,8 +40,14 @@ angular.module('freexf')
             phone: $scope.login.phone,
             userLg: true
           };
+
           $timeout(function () {
-            $ionicHistory.backView() ? $ionicHistory.goBack() : $state.go('tab.home');
+            var _backView = ['register'];
+            if ($ionicHistory.backView() && $.inArray($ionicHistory.backView().stateName, _backView) < 0) {
+              $ionicHistory.goBack();
+            } else {
+              $state.go('tab.home');
+            }
           }, 10)
         }
       })

@@ -22,7 +22,11 @@
                     <p class="name" ng-show="item.teachername">●&nbsp;讲师<i>{{item.teachername}}</i></p>
                     <span class="time">●&nbsp;课程有效期<i>{{item.deadline}}天</i></span>
                     <span class="count">●&nbsp;<i>{{item.hour}}</i>课时</span>
-                    <p class="xf"><font>{{item.price|xufen}}</font><span ng-show="item.price| xufenshow">学分</span>
+                    <p class="xf">
+                      <font>{{item.price|xufen}}</font><span ng-show="item.price| xufenshow">学分</span>
+                      <span style="margin-left: 20px;" ng-show="item.Discount&&(item.Discount==='0')&&item.payOrder">
+                        抽奖优惠，实际支付<font style="color:#ea4c00;font-size:15rem;">{{item.NeedPayFee}}</font>学分
+                      </span>
                     </p>
                   </div>
                 </div>

@@ -2,12 +2,12 @@
   'use strict';
 
   angular.module('freexf')
-    //配置api路径
+  //配置api路径
     .constant('ENV', {
       '_timeout': 15000,
       '_base': '/MFreeXFapi/student',
       '_api': {
-        __GetIndexGather: 'GetIndexGather',
+        __GetIndexGather:'GetIndexGather',
         __courselistpage: 'courselistpage',   //课程列表
         __mycourse: 'GetMyCourses',
         __coursedate: 'courseData',    //课程详情
@@ -36,9 +36,12 @@
         __GetvideoUrl: 'GetvideoUrl',
         __GetCategory_v01: 'GetCategory_v01',    //新一二级分类
         __UpdateAPES: 'UpdateAPES',
-        __RealTimeUpdate: 'RealTimeUpdate'
+        __RealTimeUpdate: 'RealTimeUpdate',
+        __MobileFaq: 'MobileFaq',
+        __Dispatch: 'Dispatch'
       }
     })
+
     //修改RestAngular配置
     .factory('freexfRestAngular', function ($rootScope, $timeout, $Loading, localStorageService, Restangular, ENV, $freexfUser) {
       return Restangular.withConfig(function (RestangularConfigurer) {
@@ -53,7 +56,7 @@
         //响应拦截器
         RestangularConfigurer.addResponseInterceptor(function (elem, option, what, url, response, deferred) {
           //($rootScope.xhr--) - 1 || $Loading.hide();
-          if (elem && angular.isObject(elem) && elem.SignStatus && elem.SignStatus === 'false') {
+          if (elem && angular.isObject(elem) && elem.SignStatus && elem.SignStatus.toLowerCase() === 'false') {
             var auth = {
               userLg: false,
               Sign: null,
@@ -397,6 +400,17 @@
       baseRestAngular.extend(GetspecialAllListRepository);
       return function (api) {
         return new GetspecialAllListRepository(api);
+      }
+    })
+    //奥运会
+    .factory('DispatchRepository', function (ENV, freexfRestAngular, baseRestAngular) {
+      function DispatchRepository(api, base) {
+        baseRestAngular.call(this, freexfRestAngular, api ? api : ENV._api.__Dispatch, base)
+      }
+
+      baseRestAngular.extend(DispatchRepository);
+      return function (api, base) {
+        return new DispatchRepository(api, base);
       }
     })
     //取消献花

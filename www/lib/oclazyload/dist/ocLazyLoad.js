@@ -1084,7 +1084,12 @@
 
                 // clean copy
                 //window.versionsNum
-                var module = angular.copy(originalModule)+ window.versionsNum;;
+                if(typeof(window.versionsNum)!="undefined"){
+		        	var module = angular.copy(originalModule)+ window.versionsNum;
+		        }else{
+		        	var module = angular.copy(originalModule);
+		        }
+                
                 var params = angular.copy(originalParams);
 
                 // If module is an array, break it down

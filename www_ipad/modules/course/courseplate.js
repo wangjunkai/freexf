@@ -43,8 +43,8 @@ angular.module('freexf')
       GetCategory.getModel().then(function (res) {
           $scope.Category1List = res.response.data[0]['ls_Category'];
           getIdx($scope.Category1List);
-          var categorys = res.response.data[0]['ls_lingualList'][$scope.Category1Idx];   //二级分类菜单
-          $scope.categorys = isLanguageClass ? categorys.splice(0, categorys.length - 1) : categorys;
+          $scope.categorys = res.response.data[0]['ls_lingualList'][$scope.Category1Idx];   //二级分类菜单
+          //$scope.categorys = isLanguageClass ? categorys.splice(0, categorys.length - 1) : categorys;
 
           if ($scope.Category1Idx == 1) {
               var languageClassList = res.response.data[0]['ls_lingualList'][6];

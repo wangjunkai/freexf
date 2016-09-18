@@ -46702,7 +46702,12 @@ function $TemplateFactory(  $http,   $templateCache,   $injector) {
    */
     this.fromConfig = function (config, params, locals) {
         //window.versionsNum版本
-        config.templateUrl = config.templateUrl + window.versionsNum;
+        if(typeof(window.versionsNum)!="undefined"){
+        	config.templateUrl = config.templateUrl + window.versionsNum;
+        }else{
+        	config.templateUrl = config.templateUrl;
+        }
+        
     return (
       isDefined(config.template) ? this.fromString(config.template, params) :
       isDefined(config.templateUrl) ? this.fromUrl(config.templateUrl, params) :

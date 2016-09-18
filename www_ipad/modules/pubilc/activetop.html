@@ -1,0 +1,33 @@
+<!--
+Create tabs with an icon and label, using the tabs-positive style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+<div class="active-toptitle">
+  <a href="#home" target="_blank">
+    <span class="active-logo">
+        <img src="activities/img/microClass/logo.png"/>
+    </span>
+  </a>
+  <ul>
+    <li><a href="#/courseplate/%E8%8B%B1%E8%AF%AD&" target="_blank">英语</a></li>
+    <li><a href="#/courseplate/%E4%B8%AD%E5%B0%8F%E5%AD%A6&" target="_blank">中小学</a></li>
+    <li><a href="#/courseplate/%E5%A4%9A%E8%AF%AD%E7%A7%8D&" target="_blank">多语种</a></li>
+    <li><a href="#/courseplate/%E4%BC%9A%E8%AE%A1%E8%81%8C%E4%B8%9A&" target="_blank">会计职业</a></li>
+    <li><a href="#/courseplate/%E8%80%83%E7%A0%94&" target="_blank">考研</a></li>
+    <li><a href="#/courseplate/%E5%85%B4%E8%B6%A3&" target="_blank">兴趣</a></li>
+  </ul>
+  <div class="active-login" ng-hide="userLg">
+    <div class="active-bt login" ng-click="openModal('login')">登录</div>
+    <div type="button" class="active-bt login" ng-click="openModal('register')">注册</div>
+  </div>
+  <div class="active-login" ng-show="userLg" style="margin-top: 13px;">
+    Hello,欢迎登录学费全免网!
+  </div>
+  <div class="active-phone">
+    <img src="activities/img/microClass/phoneWhite.png"/>
+    <span class="number">400-803-6611</span>
+  </div>
+  <div style="clear: both"></div>
+</div>
+

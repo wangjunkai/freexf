@@ -7,19 +7,38 @@ define(function () {
       var PHONE_CODE = AuthRepository('sendphonecode.aspx', '/ajax');
 
       function registerModel() {
-        this.user = {
-          phone: '',
-          code: '',
-          phonecode: '',
-          password: '',
-          confirmPassword: '',
-          labelphone: '输入手机号',
-          labelcode: '输入验证码',
-          labelphonecode: '输入短信验证码',
-          labelpassword: '输入密码(8-30位)',
-          labelconfirmPassword: '确认密码'
-        };
-        return this.user;
+          if (typeof (getCookieValue('tuiGuangId')) == 'undefined') {
+              this.user = {
+                  phone: '',
+                  code: '',
+                  phonecode: '',
+                  password: '',
+                  confirmPassword: '',
+                  labelphone: '输入手机号',
+                  labelcode: '输入验证码',
+                  labelphonecode: '输入短信验证码',
+                  labelpassword: '输入密码(8-30位)',
+                  labelconfirmPassword: '确认密码',
+                  SourceType: 'H5'
+              };
+          } else {
+              this.user = {
+                  phone: '',
+                  code: '',
+                  phonecode: '',
+                  password: '',
+                  confirmPassword: '',
+                  labelphone: '输入手机号',
+                  labelcode: '输入验证码',
+                  labelphonecode: '输入短信验证码',
+                  labelpassword: '输入密码(8-30位)',
+                  labelconfirmPassword: '确认密码',
+                  SourceType: 'H5',
+                  s: getCookieValue('tuiGuangId'),
+              };
+          }
+
+          return this.user;
       }
 
       $scope.user = new registerModel();

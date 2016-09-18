@@ -51,6 +51,21 @@ var paths = {
   dist_img: 'dist/img',
   dist_maps: ''
 };
+var js_path = {
+  js_lib: 'www/lib/',
+  js_map: 'map/',
+  js_lib_dist: 'www/dist/js/lib/',
+  js_lib_dist_concat: 'www/dist/js/lib/concat/'
+};
+var css_path = {
+  css_map: 'map/',
+  css_modules: 'www/css/',
+  css_modules_dist: 'www/dist/css/modules/',
+  css_modules_dist_concat: 'www/dist/css/modules/concat/',
+  css_activities: 'www/activities/css/',
+  css_activities_dist: 'www/dist/css/activities/',
+  css_activities_dist_concat: 'www/dist/css/activities/concat/'
+};
 /*注册任务*/
 
 //移动文件
@@ -60,47 +75,103 @@ gulp.task('move', function () {
 });
 //js检查
 gulp.task('jshint', function () {
-  return gulp.src(paths.js)
+  return gulp.src('www/lib/ionic/ionic.bundle.js')
     .pipe(jshint())
     .pipe(jshint.reporter('jshint-stylish'))
     .pipe(jshint.reporter('fail'));
 });
 //脚本压缩
+function each_ary(rootPath, pathAry) {
+  var a = [];
+  if (rootPath) {
+    for (var i = 0; i < pathAry.length; i++) {
+      var str = rootPath + pathAry[i];
+      if (pathAry[i].substring(0, 1) === '!') {
+        str = '!' + rootPath + pathAry[i].substring(1);
+      }
+      a.push(str);
+    }
+  } else {
+    a = pathAry;
+  }
+  return a;
+}
+var requirejs = [
+  'requirejs/require.js'
+];
+var js_lib_ary = [
+  'ionic/js/ionic.bundle.js',
+  'jquery/dist/jquery.js',
+  'lodash/lodash.js',
+  'angular-local-storage/dist/angular-local-storage.js',
+  'ionic/js/angular/angular-sanitize.js',
+  'restangular/dist/restangular.js',
+  'oclazyload/dist/ocLazyLoad.js',
+  'ionic-image-lazy-load/ionic-image-lazy-load.js',
+  'qrcode/jquery.qrcode.min.js',
+  'base64/base64.js'
+];
+var css_modules_ary = [
+  'freexf.css', 'home.css', 'user.css', 'course.css', 'member.css', 'set.css', 'pay.css'
+];
+var css_activities_ary = [
+  'activities-examinationTime.css',
+  'activities-public.css',
+  'classlearing.css',
+  'invitefriends.css',
+  'microClass.css',
+  'multilingual.css'
+];
 gulp.task('uglify', function () {
-  return gulp.src(paths.js)
-    .pipe(changed(paths.dist_js))
+  return gulp.src(each_ary(js_path.js_lib, requirejs))
+    .pipe(changed(js_path.js_lib_dist))
     .pipe(sourcemaps.init())//来源地图
-    .pipe(rename({suffix: '.min'}))//重命名
+    //.pipe(rename({suffix: '.min'}))//重命名
     .pipe(rev())
     .pipe(uglify())
-    .pipe(sourcemaps.write(paths.dist_maps))
-    .pipe(gulp.dest(paths.dist_js));
+    .pipe(sourcemaps.write(js_path.js_map))
+    .pipe(gulp.dest(js_path.js_lib_dist));
 });
 //css压缩
-gulp.task('minify', function () {
-  return gulp.src('www_ipad/css/freexf-concat-*.min.css')
-    .pipe(changed('www_ipad/css/freexf-concat-*.min.css'))
+gulp.task('minify-activities', function () {
+  return gulp.src(each_ary(css_path.css_activities, css_activities_ary))
+    .pipe(changed(css_path.css_activities_dist))
     .pipe(sourcemaps.init())
     .pipe(autoprefixer({
       browsers: ['> 1%'],
       cascade: true
     }))
-    .pipe(rename({suffix: '.min'}))
+    //.pipe(rename({suffix: '.min'}))
     .pipe(rev())
     .pipe(minify())
-    .pipe(sourcemaps.write(paths.dist_maps))
-    .pipe(gulp.dest('www_ipad/css/'))
+    .pipe(sourcemaps.write(css_path.css_map))
+    .pipe(gulp.dest(css_path.css_activities_dist))
+});
+//css压缩
+gulp.task('minify-modules', function () {
+  return gulp.src(each_ary(css_path.css_modules, css_modules_ary))
+    .pipe(changed(css_path.css_modules_dist))
+    .pipe(sourcemaps.init())
+    .pipe(autoprefixer({
+      browsers: ['> 1%'],
+      cascade: true
+    }))
+    //.pipe(rename({suffix: '.min'}))
+    .pipe(rev())
+    .pipe(minify())
+    .pipe(sourcemaps.write(css_path.css_map))
+    .pipe(gulp.dest(css_path.css_modules_dist))
 });
 //图片压缩
 gulp.task('imagemin', function () {
-  return gulp.src('www/img/home/*.png')
-    //.pipe(changed(paths.dist_img))
+  return gulp.src('www_ipad/activities/img/invitefriends/*.png')
+  //.pipe(changed(paths.dist_img))
     .pipe(imagemin({
       progressive: true,
       svgoPlugins: [{removeViewBox: false}],
       use: [pngquant()]
     }))
-    .pipe(gulp.dest('www/img/home'));
+    .pipe(gulp.dest('www_ipad/activities/img/invitefriends/dist'));
 });
 //网页自动刷新
 gulp.task('livereload', function () {
@@ -108,18 +179,46 @@ gulp.task('livereload', function () {
     .pipe(livereload());
 });
 //合并文件
-gulp.task('concat', function () {
-  return gulp.src('www_ipad/css/*.css')
-    .pipe(concat('freexf-concat.css'))
-    .pipe(rename({suffix: '.min'}))
+var js_lib_ary_dist = [
+  'ionic-*.bundle.js',
+  'jquery-aacc43d6f3.js',
+  'lodash-*.js',
+  'angular-local-storage-*.js',
+  'angular-sanitize-*.js',
+  'restangular-*.js',
+  'ocLazyLoad-*.js',
+  'ionic-image-lazy-load-*.js',
+  'jquery-3ddbe55bb7.qrcode.min.js',
+  'base64-*.js'
+];
+var css_activities_ary_dist = ['*.css'];
+var css_modules_ary_dist = ['*.css'];
+gulp.task('concat-activities', function () {
+  return gulp.src(each_ary(css_path.css_activities_dist, css_activities_ary_dist))
+    .pipe(concat('activities.bundle.css'))
+    //.pipe(rename({suffix: '.min'}))
     .pipe(rev())
-    .pipe(gulp.dest('www_ipad/css'))
+    .pipe(gulp.dest(css_path.css_activities_dist_concat))
+});
+gulp.task('concat-modules', function () {
+  return gulp.src(each_ary(css_path.css_modules_dist, css_modules_ary_dist))
+    .pipe(concat('freexf.bundle.css'))
+    //.pipe(rename({suffix: '.min'}))
+    .pipe(rev())
+    .pipe(gulp.dest(css_path.css_modules_dist_concat))
+});
+gulp.task('concat', function () {
+  return gulp.src(each_ary(js_path.js_lib_dist, js_lib_ary_dist))
+    .pipe(concat('freexf.bundle.js'))
+    //.pipe(rename({suffix: '.min'}))
+    .pipe(rev())
+    .pipe(gulp.dest(js_path.js_lib_dist_concat))
 });
 //清理文件
 gulp.task('clean', function () {
   return gulp.src([paths.dist_css], {
-      read: false
-    })
+    read: false
+  })
     .pipe(clean())
 });
 
@@ -134,13 +233,13 @@ gulp.task('prefixer', function () {
 });
 //css雪碧图
 /*gulp.task('sprite-resize', function () {
-  return gulp.src('www/img/home/icon-yinyu.png')
-    .pipe(parallel(
-      imageResize({width: '50%', height: '50%'}),
-      os.cpus().length
-    ))
-    .pipe(gulp.dest('www/img/home/dest'))
-});*/
+ return gulp.src('www/img/home/icon-yinyu.png')
+ .pipe(parallel(
+ imageResize({width: '50%', height: '50%'}),
+ os.cpus().length
+ ))
+ .pipe(gulp.dest('www/img/home/dest'))
+ });*/
 gulp.task('sprite', function () {
   return gulp.src('www_ipad/img/home/tubiao/icon-*.png')
     .pipe(sprite({

@@ -24,6 +24,8 @@ angular.module('freexf')
         }
         //定义默认值
         var item = {
+          "Discount": data[i].Discount,
+          "NeedPayFee": data[i].NeedPayFee,
           "OrderId": data[i].OrderId,
           "SetOrderTime": data[i].SetOrderTime,
           "image": data[i].Image,

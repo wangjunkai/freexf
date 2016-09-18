@@ -1,0 +1,60 @@
+﻿<ion-view coures-scroll view-title="考试时间表">
+    <ion-header-bar class="freexf-bar">
+        <div class="bar-left">
+            <a href="#home" class="button-clear freexf-back freexf-left">
+                <i class="icon freexf-gohomeback"></i>
+            </a>
+        </div>
+        <div class="title">考试时间表</div>
+    </ion-header-bar>
+    <ion-content lazy-scroll class="has-header">
+        <div class="olympic-banner">
+           <img image-lazy-src="activities/img/examinationTime/examinationTime@3x.png"/>
+        </div>
+        <div class="calendar-slogan">
+            <p>考试时间表<span>全国各类考试</span></p>
+        </div>
+        <div class="calendar-box">
+            <p>
+                <em>8月26日</em>
+                <i>2016</i>
+            </p>
+            <div class="btn-groups">
+                <button ng-click="onSwipeRight()" ng-disabled="prev" ng-class="{active:prev}">上一月</button>
+                <button ng-click="onSwipeLeft()" ng-disabled="next" ng-class="{active:next}">下一月</button>
+            </div>
+            <div id="calendar">
+                <table cellspacing="10">
+                    <thead>
+                        <tr>
+                            <th>周一</th>
+                            <th>周二</th>
+                            <th>周三</th>
+                            <th>周四</th>
+                            <th>周五</th>
+                            <th>周六</th>
+                            <th>周日</th>
+                        </tr>
+                    </thead>
+                    <tbody id="CalendarLists" firstday="1" on-swipe-right="onSwipeRight()" on-swipe-left="onSwipeLeft()">
+                    </tbody>
+                </table>
+            </div>
+            <p class="calendar-tip">注：会计从业资格证时间各地不同</p>
+        </div>
+        <div class="time-information">
+            <p>考试资讯：</p>
+            <ul>
+                <li><em></em><p></p></li>
+                <li><p></p></li>
+                <li><p></p></li>
+                <li><p></p></li>
+                <li><p></p></li>
+            </ul>
+        </div>
+        <a href="tel:400-803-6611" class="title time-footer">
+            <img class="footer-bar-contact-content-phone" image-lazy-src="activities/img/coupon/phone-b@3x.png" />
+            <span class="footer-bar-contact-content-phonenumber">400-803-6611</span>
+        </a>
+    </ion-content>
+</ion-view>

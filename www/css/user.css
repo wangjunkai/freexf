@@ -136,17 +136,14 @@
 }
 
 .courseDetail-list .image {
-  width: 40%;
+  width: 44%;
   float: left;
 }
 
 .courseDetail-words {
-
   width: 54%;
   font-size: 10rem;
-  margin-left: 2%;
-  position: absolute;
-  left: 42%;
+  float: right;
 }
 
 .myorder .btnGrounp .button, .myCollection .btnGrounp .button {
@@ -265,7 +262,7 @@
   background-color: #1ab554;
   position: absolute;
   z-index: 2;
-  width: 50%;
+  width: 0%;
   height: 100%;
 }
 
@@ -327,7 +324,7 @@
   position: relative;
 }
 .orderList .image.floor.soldout:after{
-  content: '课程已下架'!important;  
+  content: '课程已下架'!important;
 }
 .orderList .image.soldout:after {
   content: '课程已下架'!important;

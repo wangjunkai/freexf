@@ -11,24 +11,29 @@
   <ion-content lazy-scroll class="has-header freexf-bg-gray freexf-content" delegate-handle="myDelegate">
     <ion-slide-box on-slide-changed="slideHasChanged($index)" class="freexf-slide">
       <ion-slide>
-        <a href="">
-          <img image-lazy-src="img/home/banner-1.jpg" >
+        <a href="javascript:void(0);">
+          <img src="img/home/banner-ipad-video.jpg" ng-click="aboutUs()">
         </a>
       </ion-slide>
       <ion-slide>
-        <a href="#/summer">
-          <img image-lazy-src="img/home/banner-3.jpg">
+        <a href="#/classlearning">
+          <img src="img/home/banner-classlearning.png">
         </a>
       </ion-slide>
       <ion-slide>
-        <a href="#/abroad">
-          <img image-lazy-src="img/home/banner-2.jpg" >
+        <a href="#/invitefriends">
+          <img src="img/home/banner-invitefriends.jpg">
         </a>
       </ion-slide>
       <ion-slide>
-        <a href="#/textbook">
-          <img image-lazy-src="img/home/banner-4.jpg" >
+        <a href="#/microClass">
+          <img src="img/home/banner-weiketang.jpg">
         </a>
+      </ion-slide>
+      <ion-slide>
+          <a href="#/examinationTime">
+              <img src="img/home/banner-calendar2.jpg">
+          </a>
       </ion-slide>
     </ion-slide-box>
     <section class="freexf-hometype">
@@ -66,20 +71,23 @@
       <div class="clearfix">
         <div class="col-33 freexf-col" style="padding-right: 7px;">
           <!--href="#/coursedetail/{{value.productID}}&"-->
-          <a ng-repeat="(key,value) in home.l_EliteCrouseList" ng-if="key!=0&&key>0&&key<=2"
+            <a href="#/multilingual" class="rcol">
+                <img src="img/publicbg/null_bg320_180.png" image-lazy-src="img/home/multilingual-banner.jpg">
+            </a>
+          <a ng-repeat="(key,value) in home.l_EliteCrouseList" ng-if="key!=0&&key>0&&key<=1"
              ng-click="openModal('coursedetail',{ProductId: value.productID})"
              class="rcol">
             <img src="img/publicbg/null_bg320_180.png" image-lazy-src="{{value.coverurl}}">
           </a>
         </div>
         <div class="col-33 freexf-col" style="padding-right: 3px;padding-left: 3px;">
-          <a ng-click="openModal('coursedetail',{ProductId: home.l_EliteCrouseList[0].productID})" class="lcol">
-            <img src="img/publicbg/null_bg346_398.png" image-lazy-src="{{home.l_EliteCrouseList[0].coverurl}}" alt="">
+          <a href="#/microClass" class="lcol">
+            <img image-lazy-src="img/home/jinpin-weiketang.jpg" alt="">
           </a>
         </div>
         <div class="col-33 freexf-col" style="padding-left: 7px;">
           <!--href="#/coursedetail/{{value.productID}}&"-->
-          <a ng-repeat="(key,value) in home.l_EliteCrouseList" ng-if="key!=0&&key>2&&key<=4"
+          <a ng-repeat="(key,value) in home.l_EliteCrouseList" ng-if="key!=0&&key>1&&key<=3"
              ng-click="openModal('coursedetail',{ProductId: value.productID})"
              class="rcol">
             <img src="img/publicbg/null_bg320_180.png" image-lazy-src="{{value.coverurl}}" alt="">

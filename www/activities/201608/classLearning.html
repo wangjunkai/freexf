@@ -1,0 +1,234 @@
+﻿<ion-view view-title="购课有礼" class="freexf-classlearing">
+  <ion-header-bar class="freexf-bar">
+    <div class="bar-left">
+      <a href="#home" class="button-clear freexf-back freexf-left">
+        <i class="icon freexf-gohomeback"></i>
+      </a>
+    </div>
+    <div class="title">购课有礼</div>
+    <div class="bar-right">
+      <button class="button-clear freexf-consult"><span>咨询</span></button>
+    </div>
+  </ion-header-bar>
+  <ion-footer-bar class="footer-bar-contact">
+    <a href="tel:400-803-6611" class="title">
+      <img class="footer-bar-contact-content-phone" image-lazy-src="activities/img/abroad/contact@3x.png"/>
+      <span class="footer-bar-contact-content-phonenumber">400-803-6611</span>
+    </a>
+  </ion-footer-bar>
+  <div class="draw-result">
+    <div class="result-title"><span>----- 抽奖结果 -----</span></div>
+    <div class="result-content"><span></span><b></b></div>
+  </div>
+  <div class="draw-num">
+    <div class="num-title"><span>----- 没有抽奖机会 -----</span></div>
+    <div class="num-content"><span>您的抽奖机会为0次</span></div>
+  </div>
+  <div class="mylist">
+    <div class="mylisttitle"><span>----- 我的中奖记录 -----</span></div>
+      <div class="mylistcontent">
+          <ion-scroll>
+              <div class="mylistcontent-lisibox"></div>
+          </ion-scroll>
+      </div>
+  </div>
+  <div class="cover"></div>
+  <ion-content lazy-scroll class="has-header classlearing">
+    <img src="activities/img/classlearning/banner-@2x.png" alt="">
+    <div class="title-h1">
+      <img src="activities/img/classlearning/title_1-@2x.png" alt="">
+    </div>
+    <div class="zhuanpan">
+      <!--转盘-->
+
+      <div class="turntable-bg" id="turntable-bg">
+        <div class="pointer" id="pointer">
+          <img src="activities/img/classlearning/zhuanpan_2-@2x.png" alt="pointer"/>
+          <b>点击抽奖</b>
+          <p>请先登录</p>
+        </div>
+        <div class="rotate">
+          <img id="rotate" src="activities/img/classlearning/zhuanpan_1-@2x.png" alt="turntable"/>
+        </div>
+      </div>
+
+      <!--活动规则-->
+      <div class="rule">
+        <div class="ruletitle"><b>“购课有礼”活动规则</b></div>
+        <div class="rulecontent">
+          <ion-scroll scrollbar-y="false">
+            <p>
+              1、活动时间：9月1日—9月16日；<br/>
+              2、学费全免网注册用户活动期间内购买课程（免费课程、微课除外）即可参与抽奖，并有机会获得丰厚的奖品；<br/>
+              3、官网活动抽奖次数以开课金额为准，每500元为一个档次；<br/>
+              4、购课用户关注“学费全免网”微信订阅号（ID：freexf-com），后台回复“报班有礼”即可额外参加微信抽奖活动；<br/>
+              5、官网活动奖品包括iPadmini2、Sony耳机、定制书包、定制T恤。<br/>
+              6、学费全免网将在活动结束后5个工作日内公布中奖用户，20个工作日内完成奖品寄送；<br/>
+              7、本活动不影响您所学课程结束后的学费返还；<br/>
+              8、本活动最终解释权归学费全免网所有。<br/>
+            </p>
+          </ion-scroll>
+        </div>
+      </div>
+      <!--中奖名单-->
+      <div class="awardlist">
+        <div class="listtitle"><b>中奖用户名单</b></div>
+        <div class="listcontent">
+          <div class="contentbox" id="contentbox">
+            <ul>
+            </ul>
+          </div>
+          <div class="listbutton" id="listbtn"><span>查看我的中奖记录</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="title-h1">
+      <img src="activities/img/classlearning/title_2-@2x.png" alt="">
+    </div>
+    <div class="text-center">
+      <div class="table">
+        <div class="title-h2">小学膳食套餐</div>
+        <div class="table-detail">
+          <div class="col-50"
+               ng-repeat="(index,n) in DisPatchList[0]"
+               ng-if="index<(xx&&xx.state?DisPatchList[0].length:2)"
+               ng-click="toCourseDate(n.ProductId)"
+               ng-include="'detail.html'">
+          </div>
+        </div>
+      </div>
+      <div class="table-button" ng-click="setData('xx',$event)">点击开通更多小学课程</div>
+    </div>
+    <div class="text-center">
+      <div class="table">
+        <div class="title-h2">初中营养套餐</div>
+        <div class="table-detail">
+          <div class="col-50"
+               ng-repeat="(index,n) in DisPatchList[1]"
+               ng-if="index<(cz&&cz.state?DisPatchList[1].length:2)"
+               ng-click="toCourseDate(n.ProductId)"
+               ng-include="'detail.html'">
+          </div>
+        </div>
+      </div>
+      <div class="table-button" ng-click="setData('cz',$event)">点击开通更多初中课程</div>
+    </div>
+    <div class="text-center">
+      <div class="table">
+        <div class="title-h2">高中脑补课程</div>
+        <div class="table-detail">
+          <div class="col-50"
+               ng-repeat="(index,n) in DisPatchList[2]"
+               ng-if="index<(gz&&gz.state?DisPatchList[2].length:2)"
+               ng-click="toCourseDate(n.ProductId)"
+               ng-include="'detail.html'">
+          </div>
+        </div>
+      </div>
+      <div class="table-button" ng-click="setData('gz',$event)">点击开通更多高中课程</div>
+    </div>
+    <div class="text-center">
+      <div class="title-h1">
+        <img src="activities/img/classlearning/title_3-@2x.png" alt="">
+      </div>
+      <div class="table table-yuzhong clearfix">
+        <div class="col-33" ng-click="goCourseList('多语种','韩语')">
+          <img src="activities/img/classlearning/hanyu-@2x.png">
+          <span>韩语</span>
+        </div>
+        <div class="col-33" ng-click="goCourseList('多语种','日语')">
+          <img src="activities/img/classlearning/riyu-@2x.png">
+          <span>日语</span>
+        </div>
+        <div class="col-33" ng-click="goCourseList('多语种','法语')">
+          <img src="activities/img/classlearning/fayu-@2x.png">
+          <span>法语</span>
+        </div>
+        <div class="col-33" ng-click="goCourseList('多语种','西班牙语')">
+          <img src="activities/img/classlearning/xiyu-@2x.png">
+          <span>西语</span>
+        </div>
+        <div class="col-33" ng-click="goCourseList('多语种','俄语')">
+          <img src="activities/img/classlearning/eyu-@2x.png">
+          <span>俄语</span>
+        </div>
+        <div class="col-33" ng-click="goCourseList('多语种','德语')">
+          <img src="activities/img/classlearning/deyu-@2x.png">
+          <span>德语</span>
+        </div>
+      </div>
+      <div class="table-jiangtang clearfix">
+        <div class="text-center">
+          <div class="table">
+            <div class="title-h2">金牌英语大讲堂</div>
+            <div class="table-detail">
+              <div class="detail"
+                   ng-repeat="(index,n) in DisPatchList[3]"
+                   ng-if="index<2"
+                   ng-click="toCourseDate(n.ProductId)"
+                   ng-include="'dajiangtang.html'">
+              </div>
+            </div>
+          </div>
+          <div class="table-button" ng-click="goCourseList('英语')">点击开通更多英语相关课程</div>
+        </div>
+        <div class="text-center">
+          <div class="table">
+            <div class="title-h2">金牌会计大讲堂</div>
+            <div class="table-detail">
+              <div class="detail"
+                   ng-repeat="(index,n) in DisPatchList[4]"
+                   ng-if="index<2"
+                   ng-click="toCourseDate(n.ProductId)"
+                   ng-include="'dajiangtang.html'">
+              </div>
+            </div>
+          </div>
+          <div class="table-button" ng-click="goCourseList('会计职业')">点击开通更多会计相关课程</div>
+        </div>
+      </div>
+      <div class="table-huodong clearfix">
+        <div class="left">
+          <a href="#/invitefriends">
+            <img src="activities/img/classlearning/liping-@2x.png" alt="">
+          </a>
+        </div>
+        <div class="right">
+          <a href="http://weibo.com/freexfcom">
+            <img src="activities/img/classlearning/weibo-@2x.png" alt="">
+          </a>
+        </div>
+        <div class="right">
+          <img src="activities/img/classlearning/weixin-@2x.png" alt="">
+        </div>
+      </div>
+    </div>
+  </ion-content>
+  <script type="text/ng-template" id="detail.html">
+    <div class="detail">
+      <img ng-src="{{n.Image}}" alt="">
+      <div class="text">
+        <span class="xuefen"><em><strong>{{n.Price}}</strong>学分</em></span>
+        <p class="name">{{n.ProductName}}</p>
+        <p class="jiangshi">课程讲师:{{n.TeacherName}}</p>
+      </div>
+      <div class="keshi">
+        <span>课时数:{{n.Hour}}</span>
+        <i></i>
+      </div>
+    </div>
+  </script>
+  <script type="text/ng-template" id="dajiangtang.html">
+    <img ng-src="{{n.Image}}" alt="">
+    <span class="xuefen"><em><strong>{{n.Price}}</strong>学分</em></span>
+    <div style="float: left;">
+      <div class="text">
+        <p class="name">{{n.ProductName}}</p>
+        <p class="jiangshi">课程讲师:{{n.TeacherName}}</p>
+      </div>
+      <div class="keshi">
+        <span>课时数:{{n.Hour}}<i></i></span>
+      </div>
+    </div>
+  </script>
+</ion-view>

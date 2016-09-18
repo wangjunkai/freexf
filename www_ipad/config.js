@@ -2,7 +2,7 @@
 //定义主要js路径
 
 'use strict';
-
+autoChange();
 var paths = {
   //配置js路径
   paths: {
@@ -41,8 +41,9 @@ require([
     'directive',
     'services',
     'base64'
-  ], function () {
-    doyoofun();
+], function () {
+    Udesk()
+    tuiGuang()
     //totop(window);
     ionic.Platform.ready(function () {
       //启动angular模块
@@ -50,12 +51,155 @@ require([
     });
   }
 );
-function doyoofun() {
-    $('body').on('click', '.button-clear.freexf-consult,.onlineConsultJs', function () {
-    doyoo.util.openChat('g=10058658');
-    return false;
-  })
+function Udesk() {
+    (function (a, h, c, b, f, g) {
+        a["UdeskApiObject"] = f;
+        a[f] = a[f] || function () {
+            (a[f].d = a[f].d || []).push(arguments)
+        };
+        g = h.createElement(c);
+        g.async = 1;
+        g.src = b;
+        c = h.getElementsByTagName(c)[0];
+        c.parentNode.insertBefore(g, c)
+    })(window, document, "script", "//freexf.udesk.cn/im_client/js/udeskApi.js?_t=1471597478714", "ud");
+
+    ud({
+        "code": "13chha6e",
+        "link": "//freexf.udesk.cn/im_client",
+        "mobile": {
+            "mode": "blank",
+            "color": "#307AE8",
+            "pos_flag": "crb",
+            "onlineText": "联系客服，在线咨询",
+            "offlineText": "客服下班，请留言",
+            "targetSelector": ".udeskfun",
+            "pop": {
+                "direction": "top",
+                "arrow": {
+                    "top": 0,
+                    "left": "70%"
+                }
+            }
+        },
+        "mode": "blank",
+        "color": "#000000",
+        "pos_flag": "srb",
+        "onlineText": "联系客服，在线咨询",
+        "offlineText": "客服下班，请留言",
+        "targetSelector": ".udeskfun",
+        "pop": {
+            "direction": "top",
+            "arrow": {
+                "top": 0,
+                "left": "80%"
+            }
+        }
+    });
+    $('body').on('click', '.button-clear.freexf-consult', function () {
+        $('.udeskfun').eq(0).trigger("click");
+    })
+    $('body').on('click', '.udesk', function () {
+        $('.udeskfun').eq(0).trigger("click");
+    })
 }
+function autoChange() {
+    //iPad端自动跳转
+    var phoneVideo = function () {
+        if (navigator.userAgent.match(/(iPhone|iPod|webOS|Android)/i)) {
+            return 'mb';
+        } else if (navigator.userAgent.match(/(iPad)/i)) {
+            return 'ipad';
+        } else {
+            return 'pc';
+        }
+    };
+    var ipadUrlArr = ['/home', '/courseplate/%E8%8B%B1%E8%AF%AD&',
+    '/courseplate/%E4%B8%AD%E5%B0%8F%E5%AD%A6&', '/courseplate/%E5%A4%9A%E8%AF%AD%E7%A7%8D&', '/courseplate/%E4%BC%9A%E8%AE%A1%E8%81%8C%E4%B8%9A&', '/courseplate/%E8%80%83%E7%A0%94&', '/courseplate/%E5%85%B4%E8%B6%A3&', '/myaccount',
+    '/myaccount/mycourse', '/course', '/myaccount/myorder', '/myaccount/mycollection']
+
+    var mobileurlIDarr = ['/home', '/courseplate/%E8%8B%B1%E8%AF%AD&',
+      '/courseplate/%E4%B8%AD%E5%B0%8F%E5%AD%A6&', '/courseplate/%E5%A4%9A%E8%AF%AD%E7%A7%8D&', '/courseplate/%E4%BC%9A%E8%AE%A1%E8%81%8C%E4%B8%9A&', '/courseplate/%E8%80%83%E7%A0%94&', '/courseplate/%E5%85%B4%E8%B6%A3&', '/member',
+      '/mycourse', '/course', '/myorder', '/mycollection']
+
+    var phoneCourseurlchange = function (mobileurl) {
+        if (phoneVideo() == 'mb') {
+            if (domainname == '192.168.40.237:8081') {
+                window.location.href = "http://" + "192.168.40.237:8081" + "/mobile/www/index.aspx#" + mobileurl + tuiGuangId
+            } else {
+                window.location.href = "http://" + "m.freexf.com" + "/mobile/www/index.aspx#" + mobileurl + tuiGuangId
+            }
+        }
+    };
+    //初始化url变量
+    var nowurl = window.location.href;
+    var ipadUrllID = nowurl.split('#')[1];
+    var goalsplit = nowurl.replace("http://", "");
+    var goalurl = goalsplit.substr(goalsplit.indexOf("/"), goalsplit.length);
+    var domainname = goalsplit.substr(0, goalsplit.indexOf("/"));
+
+    if (typeof (window.location.href.split('?s=')[1]) != 'undefined') {
+        window.tuiGuangId = window.location.href.split('?s=')[1];
+        window.tuiGuangId = '?s=' + tuiGuangId.split('ends')[0] + 'ends'
+    } else {
+        window.tuiGuangId = '';
+        
+    }
+    if (ipadUrllID == undefined) {
+        ipadUrllID = '/home';
+    }
+    if (nowurl.indexOf('/coursedetail/') > -1) {
+        var courseurlID = nowurl.slice(nowurl.lastIndexOf('/') + 1, nowurl.lastIndexOf('&'));
+        var courseurl = "/courses/detail/index-" + courseurlID
+    } else {
+        var isGoHome = true;
+        for (var i = 0; i < ipadUrlArr.length; i++) {
+            if (ipadUrllID == ipadUrlArr[i]) {
+                phoneCourseurlchange(mobileurlIDarr[i]);
+                isGoHome = false;
+            }
+            if (i == ipadUrlArr.length - 1 || isGoHome == true) {
+                phoneCourseurlchange(mobileurlIDarr[0]);
+            }
+
+        }
+    }
+}
+function tuiGuang() {
+    if (typeof (window.location.href.split('?s=')[1]) != 'undefined') {
+        var tuiGuangId = window.location.href.split('?s=')[1];
+        var tuiGuangId = tuiGuangId.split('ends')[0];
+        setCookie("tuiGuangId", tuiGuangId, 1, "/")
+    };
+};
+function getCookieValue(name) {
+    var name = escape(name);
+    var allcookies = document.cookie;
+    name += "=";
+    var pos = allcookies.indexOf(name);
+    if (pos != -1) {
+        var start = pos + name.length;
+        var end = allcookies.indexOf(";", start);
+        if (end == -1) end = allcookies.length;
+        var value = allcookies.substring(start, end);
+        return unescape(value);
+    } else return "";
+}
+function setCookie(name, value, hours, path) {
+    var name = escape(name);
+    var value = escape(value);
+    var expires = new Date();
+    expires.setTime(expires.getTime() + hours * 3600000 * 24);
+    path = path == "" ? "" : ";path=" + path;
+    expires = (typeof hours) == "string" ? "" : ";expires=" + expires.toUTCString();
+    document.cookie = name + "=" + value + expires + path;
+};
+function deleteCookie(name, path) {
+    var name = escape(name);
+    var expires = new Date(0);
+    path = path == "" ? "" : ";path=" + path;
+    document.cookie = name + "=" + ";expires=" + expires.toUTCString() + path;
+};
 function testViewport() {
   var mvp = $('meta[name="viewport"]').get(0);
   var docW = document.documentElement.clientWidth;

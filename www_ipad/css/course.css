@@ -601,30 +601,47 @@ img.freexf-blur {
   background-size: 300px 300px;
   float: left;
 }
-
+    .freexf-coursecenter .coursecenter-list .ipadCourseList:nth-child(1) .ccl-son> div:after {
+        background-position:  -10px -10px;
+    }
+    .freexf-coursecenter .coursecenter-list .ipadCourseList:nth-child(2) .ccl-son> div:after {
+        background-position: -52px -10px;
+    }
+    .freexf-coursecenter .coursecenter-list .ipadCourseList:nth-child(3) .ccl-son> div:after {
+        background-position: -95px -10px;
+    }
+    .freexf-coursecenter .coursecenter-list .ipadCourseList:nth-child(4) .ccl-son> div:after {
+        background-position: -150px -5px;
+    }
+    .freexf-coursecenter .coursecenter-list .ipadCourseList:nth-child(5) .ccl-son> div:after {
+        background-position: -200px -10px;
+    }
+    .freexf-coursecenter .coursecenter-list .ipadCourseList:nth-child(6) .ccl-son> div:after {
+        background-position: -248px -10px;
+    }
 .English:after {
-  background-position: 0px 0px;
+  background-position: -10px -10px;
 }
 
 .zhongxiaoxue:after {
-  background-position: -30px 0px;
+  background-position: -52px -10px;
 }
 
 .duoyuzhong:after {
-  background-position: -60px 0px;
+  background-position: -95px -10px;
 }
 
 .kuaijizhiye:after {
-  background-position: 0px -30px;
+  background-position: -150px -5px;
 }
 
 .kaoyan:after {
-  background-position: -30px -30px;
+  background-position: -200px -10px;
 }
 
-/*.xingqu:after {
-  background-position: -60px -30px;
-}*/
+.xingqu:after {
+  background-position: -248px -10px;
+}
 
 .freexf-coursecenter .ccl-course-son-list > li > a {
   line-height: 37px;
@@ -1176,3 +1193,13 @@ img.freexf-blur {
 .freexfcourseitem .item.activated {
   background-color: rgba(0, 0, 0, 0);
 }
+
+.popup-title.ng-binding a{color: #333;font-size: 12rem;}
+.videoBox{background:rgba(0,0,0,.5);}
+.videoBox .popup-head{padding:10px;background:#fff;position:relative;}
+.videoBox .popup-head:before{position:absolute;right:5px;bottom:12px;content:'+';font-size: 40rem;-webkit-transform:rotate(45deg);transform:rotate(45deg);-moz-transform:rotate(45deg)}
+.videoBox .popup-head h3{font-size:16rem;}
+.videoBox .popup{width:80%;background:#fff;}
+.videoBox .popup-body{padding:0;}
+.videoBox .popup-buttons{position: fixed;width: 1024px;height: 1024px;top: -350px;left:-100px;padding:0;background:rgba(0,0,0,0);}
+.videoBox .popup-buttons button{background:rgba(0,0,0,0);padding:0;}

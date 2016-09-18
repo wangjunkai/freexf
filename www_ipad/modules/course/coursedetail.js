@@ -2,7 +2,7 @@
 
 define(function () {
   angular.module('freexf')
-    .controller('coursedetail_ctrl', function ($scope, $injector, $sce, $rootScope, $ionicPopup, $interval, $state, $frModal, $stateParams, localStorageService, $freexfUser, ENV, CourseDateRepository, AddMyFavoriteRepository, DelMyFavoriteRepository, AddFlower, RemoveFlower, GetCourseDetailRepository, GetCourseOutlineRepository, GetvideoUrlRepository, UpdateAPES) {
+    .controller('coursedetail_ctrl', function ($scope, $injector, $sce, $rootScope,$timeout, $ionicPopup, $interval, $state, $frModal, $stateParams, localStorageService, $freexfUser, ENV, CourseDateRepository, AddMyFavoriteRepository, DelMyFavoriteRepository, AddFlower, RemoveFlower, GetCourseDetailRepository, GetCourseOutlineRepository, GetvideoUrlRepository, UpdateAPES) {
       var GetvideoUrl = GetvideoUrlRepository(ENV._api.__GetvideoUrl);
       var GetCourseDetail = GetCourseDetailRepository(ENV._api.__GetCourseDetail);
       var GetCourseOutline = GetCourseOutlineRepository(ENV._api.__GetCourseOutline);
@@ -120,12 +120,11 @@ define(function () {
           });
         });
       }
-
-      getDetail();
+      $timeout(getDetail,100);
 
       $scope.changeDetail = function (productId) {
         params.courseId = productId;
-        getDetail();
+        $timeout(getDetail,0);
       };
       $scope.moreGroupCourse = function () {
         $scope.groupCourse = !$scope.groupCourse;
@@ -290,6 +289,11 @@ define(function () {
           scope: $scope,
           ctrlUrl: 'modules/user/login',
           tempUrl: 'modules/user/login.html'
+        },
+        lottery:{
+          scope:$scope,
+          ctrlUrl:'activities/201609/lottery',
+          tempUrl:'activities/201609/lottery.html'
         }
       };
       $scope.openModal = function (name, data, back) {
@@ -403,7 +407,7 @@ define(function () {
               url: getUrlData,
               data: studentId + '&' + courseId + '&' + chaptId,
               success: function (data) {
-                  $interval.cancel($rootScope.h5playtimeend);                  
+                  $interval.cancel($rootScope.h5playtimeend);
               },
               error: function (data) {
                 $interval.cancel($rootScope.h5playtimeend);

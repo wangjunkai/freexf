@@ -156,15 +156,15 @@
 
 .freexf-checkbox {
   position: relative;
-  padding-left: 15px;
+  padding-left: 1.2em;
   font-size: 13rem;
+  width:6em;
 }
 
 .freexf-checkbox > .label-checkbox {
+  width:6em;
   position: absolute;
-  width: 100%;
   top: 50%;
-  right: 8px;
   left: 0;
   z-index: 3;
   margin-top: -9px;

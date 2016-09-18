@@ -1,11 +1,6 @@
 ;(function () {
   define([
-    'ionic',
-    'oclazyload',
-    'imglazyload',
-    'restAngular',
-    'angularSanitize',
-    'localStorage'
+    'ionic'
   ], function (ionic) {
     angular.module('freexf', [
       'ionic',
@@ -50,7 +45,7 @@
           }
         }
       })
-       
+
       //初始化计算bar center 宽度
       .directive('defaultHeaderBar', ['$rootScope', '$ionicHistory', '$ionicConfig', '$state', '$injector',
         function ($rootScope, $ionicHistory, $ionicConfig, $state, $injector) {
@@ -186,7 +181,7 @@
       })
       //loading服务
       .factory('$Loading', function ($injector) {
-        
+
         var $ionicLoading = $injector.get('$ionicLoading');
         var $timeout = $injector.get('$timeout');
         var tpl = '<div class="{{class}}"></div><div class="font">{{text}}</div>';
@@ -228,45 +223,6 @@
       //全局路由配置
       .run(['$rootScope', '$state', '$Loading', '$compile', '$timeout', '$interval', '$anchorScroll', 'localStorageService', 'AUTH', 'XHR', 'ENV', 'UpdateAPES',
         function ($rootScope, $state, $Loading, $compile, $timeout, $interval, $anchorScroll, localStorageService, AUTH, XHR, ENV, UpdateAPES) {
-          //PC端自动跳转
-          //var PCVideo = function () {
-          //    if (navigator.userAgent.match(/(iPhone|iPod|iPad|webOS|Android|ios)/i)) {
-          //        return 'mb';
-          //    } else {
-          //        return 'pc';
-          //    }
-          //}
-          ////url对应
-          //var PCurlarr = ['/home/index.aspx', '/courses/english/index',
-          //'/courses/k12/index', '/courses/multilingual/index', '/courses/accounting/index', '/courses/postgraduate/index', '/courses/interest/index', '/student/index',
-          //'/student/MyCourses?type=IsStudy', '/student/MyChoice-all-all-all-all-all-zonghe-desc', '/student/MyOrder', '/student/MyFavorite',
-          //'/student/SafeSetting.aspx']
-
-          //var mobileurlIDarr = ['/home', '/courseplate/%E8%8B%B1%E8%AF%AD&',
-          //    '/courseplate/%E4%B8%AD%E5%B0%8F%E5%AD%A6&', '/courseplate/%E5%A4%9A%E8%AF%AD%E7%A7%8D&', '/courseplate/%E4%BC%9A%E8%AE%A1%E8%81%8C%E4%B8%9A&', '/courseplate/%E8%80%83%E7%A0%94&', '/courseplate/%E5%85%B4%E8%B6%A3&', '/member',
-          //    '/mycourse', '/course', '/myorder', '/mycollection',
-          //    '/modifypassword']
-
-          //var PCchangeurl = function (PCurl) {
-          //    if (PCVideo() == 'pc') {
-          //        window.location.href = "http://" + "www.freexf.com" + PCurl;
-          //    }
-          //}
-          ////初始化url变量
-          //var nowurl = window.location.href;
-          //var mobileurlID = nowurl.split('#')[1];
-
-          //if (nowurl.indexOf('/coursedetail/') > -1) {
-          //    var courseurlID = nowurl.slice(nowurl.lastIndexOf('/') + 1, nowurl.lastIndexOf('&'));
-          //    var courseurl = "/courses/detail/index-" + courseurlID
-          //    PCchangeurl(courseurl);
-          //} else {
-          //    for (var i = 0; i < mobileurlIDarr.length; i++) {
-          //        if (mobileurlID == mobileurlIDarr[i]) {
-          //            PCchangeurl(PCurlarr[i]);
-          //        }
-          //    }
-          //}
 
           //APES配置
           if (localStorageService.get('APES0') == null) {
@@ -332,8 +288,7 @@
               }).then(function (res) {
               });
               localStorageService.set('APES0', '1');
-            }
-            ;
+            };
 
             //判断有无iframe id控制 有：干掉它
             //添加iframe，url:?html=window.location.href.split('#')[1]
@@ -618,6 +573,7 @@
                 templateUrl: 'modules/course/classmodule.html'
               }
             },
+            cache: false,
             resolve: {
               loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load(['modules/course/courseplate.js']);
@@ -683,7 +639,17 @@
               }]
             }
           })
-
+          .state('classlearning', {
+            url: '/classlearning',
+            templateUrl: 'activities/201608/classlearning.html',
+            controller: 'classlearning_ctrl',
+            cache: false,
+            resolve: {
+              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load(['activities/201608/classlearning.js']);
+              }]
+            }
+          })
           .state('olympic', {
               url: '/olympic',
               templateUrl: 'activities/201608/olympic.html',
@@ -694,7 +660,48 @@
                   }]
               }
           })
-
+          .state('korean', {
+              url: '/korean',
+              templateUrl: 'activities/201608/koreanlanguage.html',
+              controller: 'korean_ctrl',
+              resolve: {
+                  loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                      return $ocLazyLoad.load(['activities/201608/koreanlanguage.js']);
+                  }]
+              }
+          })
+            .state('examinationTime', {
+                url: '/examinationTime',
+                templateUrl: 'activities/201608/examinationTime.html',
+                controller: 'examinationTime_ctrl',
+                resolve: {
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load(['activities/201608/examinationTime.js']);
+                    }]
+                }
+            })
+          .state('invitefriends', {
+              url: '/invitefriends',
+              templateUrl: 'activities/201608/invitefriends.html',
+              controller: 'invitefriends_ctrl',
+              cache: false,
+              resolve: {
+                  loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                      return $ocLazyLoad.load(['activities/201608/invitefriends.js']);
+                  }]
+              }
+          })
+            .state('microClass', {
+                url: '/microClass',
+                templateUrl: 'activities/201609/microClass.html',
+                controller: 'microClass_ctrl',
+                cache: false,
+                resolve: {
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load(['activities/201609/microClass.js']);
+                    }]
+                }
+            })
           .state('coursedetail', {
             url: '/coursedetail/:courseId&:state',
             templateUrl: 'modules/course/coursedetail.html',
@@ -716,7 +723,29 @@
                 return $ocLazyLoad.load(['modules/course/coursegroup.js']);
               }]
             }
-          });
+          })
+           .state('multilingual', {
+               url: '/multilingual',
+               templateUrl: 'activities/201609/multilingual.html',
+               controller: 'multilingual_ctrl',
+               cache: false,
+               resolve: {
+                   loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                       return $ocLazyLoad.load(['activities/201609/multilingual.js']);
+                   }]
+               }
+           })
+            .state('lottery', {
+               url: '/lottery',
+               templateUrl: 'activities/201609/lottery.html',
+               controller: 'lottery_ctrl',
+               cache: false,
+               resolve: {
+                   loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                       return $ocLazyLoad.load(['activities/201609/lottery.js']);
+                   }]
+               }
+           });
 
         $stateProvider
           .state('tab', {

@@ -1,0 +1,76 @@
+﻿<ion-view coures-scroll view-title="邀请好友一起学">
+  <ion-header-bar class="freexf-bar">
+    <div class="bar-left">
+      <a href="#home" class="button-clear freexf-back freexf-left">
+        <i class="icon freexf-gohomeback"></i>
+      </a>
+    </div>
+    <div class="title">邀请好友一起学</div>
+  </ion-header-bar>
+  <ion-content lazy-scroll class="has-header invitefriends">
+    <div class="olympic-banner">
+      <img image-lazy-src="activities/img/invitefriends/invitefriends-header-@3x.png"/>
+    </div>
+    <div class="invitefriends-slogan">
+      <img src="activities/img/invitefriends/introductions-@3x.png"/>
+      <p>
+        分享您的“邀请好友链接/二维码”给小伙伴，邀请他们注册成为“学费
+        全免网”用户，活动结束后，以邀请好友注册人数最多的前10名用户可
+        获得丰厚奖品！
+      </p>
+    </div>
+    <div class="invitefriends-gifts">
+      <img src="activities/img/invitefriends/gifts.png"/>
+      <p>
+        <img src="activities/img/invitefriends/gifts.jpg"/>
+      </p>
+    </div>
+    <div class="introductions-btn" ng-click="showDialog()">
+      <img src="activities/img/invitefriends/introductions-btn@3x.png"/>
+    </div>
+    <div class="invitefriends-ranking">
+      <img src="activities/img/invitefriends/ranking-list.png"/>
+      <ul>
+        <li ng-repeat="(index,l) in kingList">
+          <img ng-src="activities/img/invitefriends/{{index}}.png"/>
+          <p>
+            <em>{{l.NickName| nameFilter}}</em>
+            <span>{{l.Mobile| phoneFilter}}</span>
+          </p>
+        </li>
+      </ul>
+    </div>
+    <div class="invitefriends-rules">
+      <img src="activities/img/invitefriends/rules-@3x.png"/>
+      <p>
+        1、活动时间：即日起至2016年9月16日24时止；
+        <br/>2、凡学费全免网注册用户，即可参加活动邀请好友，被邀请
+        人需在2016年9月16日24时前通过您分享的“链接/二维码”
+        注 册；
+        <br/> 3、活动结束，榜单前3名用户每人可获得新版kindle1个，第
+        4-10名用户每人可获得小米移动电源（10000毫安）1个。
+        <br/>4、活动结束后5个工作日内，活动页面上会公布获奖用户名
+        单，我们会通过手机短信/电话通知获奖用户，进行领奖信息
+        确认，活动结束后的20个工作日内邮寄奖品。
+        <span>注意事项:活动中如果发现通过作弊手段获得奖励的，将取消奖励！</span>
+      </p>
+    </div>
+    <div class="invitefriends-gifts">
+      <img src="activities/img/invitefriends/more-active.png"/>
+      <div>
+        <a href="#/classlearning">
+          <img src="activities/img/invitefriends/ipad.jpg"/>
+        </a>
+        <p>
+          <a href="http://weibo.com/u/5651305430"><img src="activities/img/invitefriends/mobilepower.jpg"/></a>
+          <img src="activities/img/invitefriends/wechat.jpg"/>
+        </p>
+      </div>
+    </div>
+    <div id="code"></div>
+    <a href="tel:400-803-6611" class="title time-footer invitefriends-footer">
+      <img class="footer-bar-contact-content-phone" image-lazy-src="activities/img/invitefriends/phone-icon@3x.png"/>
+      <span class="footer-bar-contact-content-phonenumber">400-803-6611</span>
+    </a>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,393 @@
+﻿.invitefriends {
+  background: #FEDCEA;
+}
+
+.invitefriends img {
+  width: 100%;
+}
+
+.invitefriends-slogan {
+  text-align: center;
+  color: #fff;
+  padding: 0 4%;
+  margin-top: 27px;
+}
+
+.invitefriends-slogan img,
+.invitefriends-rules img,
+.invitefriends-ranking img,
+.invitefriends-gifts img {
+  width: 100%;
+  display: block;
+}
+
+.invitefriends-slogan p,
+.invitefriends-rules p {
+  background: #fe7b9a;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 15px;
+  font-size: 12rem;
+  margin: 0;
+  display: block;
+}
+
+.introductions-btn {
+  width: 60%;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.introductions-btn img {
+  width: 50%;
+}
+
+.invitefriends-rules {
+  color: #fff;
+  padding: 0 4%;
+  width: 45%;
+  padding-right: 2%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.invitefriends-rules p {
+  font-size: 12rem;
+  color: #000;
+  text-align: left;
+  line-height: 2.2em;
+}
+
+.invitefriends-rules p span {
+  font-size: 9px;
+  text-align: center;
+  display: block;
+  margin-top: 5px;
+}
+
+.invitefriends-ranking {
+  padding: 0 4%;
+  float: right;
+  width: 55%;
+  padding-left: 2%;
+  min-height: 670px;
+}
+
+.invitefriends-ranking ul {
+  padding: 15px 10px 10px;
+  background: #fe7b9a;
+  font-size: 12rem;
+  color: #000;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.invitefriends-ranking ul li:first-child {
+  height: 75px;
+  line-height: 75px;
+  border-top: 0;
+}
+
+.invitefriends-ranking ul li {
+  padding-left: 15%;
+  position: relative;
+  height: 50px;
+  line-height: 50px;
+  margin-bottom: 10px;
+  border-top: 1px solid #e6738f;
+  font-size: 14rem;
+}
+
+.invitefriends-ranking ul li > img.invitefriends-ranking ul li:first-child {
+  border-top: 0;
+}
+
+.invitefriends-ranking ul li > img {
+  display: inline-block;
+  height: 38px;
+  width: auto;
+  float: left;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+.invitefriends-ranking ul li:nth-child(1) > img {
+  height: 75px;
+  margin-top: 0;
+  margin-left: 0;
+}
+
+.invitefriends-ranking ul li > p {
+  display: inline-block;
+  float: left;
+  position: absolute;
+  width: 66%;
+  right: 0;
+}
+
+.invitefriends-ranking ul li > p span {
+  position: absolute;
+  right: 30px;
+}
+
+.invitefriends-ranking ul li:before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  bottom: 0;
+  width: 35px;
+  height: 45px;
+}
+
+.invitefriends-ranking ul li:nth-child(1):before {
+  background: url(../img/invitefriends/king-@2x.png) no-repeat;
+  background-size: contain;
+  left: 0;
+  background-position: 0 bottom;
+  width: 49px;
+  height: 65px;
+}
+
+.invitefriends-ranking ul li:nth-child(2):before {
+  content: '2';
+}
+
+.invitefriends-ranking ul li:nth-child(3):before {
+  content: '3';
+}
+
+.invitefriends-ranking ul li:nth-child(4):before {
+  content: '4';
+}
+
+.invitefriends-ranking ul li:nth-child(5):before {
+  content: '5';
+}
+
+.invitefriends-ranking ul li:nth-child(6):before {
+  content: '6';
+}
+
+.invitefriends-ranking ul li:nth-child(7):before {
+  content: '7';
+}
+
+.invitefriends-ranking ul li:nth-child(8):before {
+  content: '8';
+}
+
+.invitefriends-ranking ul li:nth-child(9):before {
+  content: '9';
+}
+
+.invitefriends-ranking ul li:nth-child(10):before {
+  content: '10';
+  left: 8px;
+}
+
+.invitefriends-gifts.more {
+  width: 100%;
+  margin: 30px 0;
+  padding: 0 4%;
+}
+
+.invitefriends-gifts {
+  padding: 0 4%;
+  width: 45%;
+  display: inline-block;
+  float: left;
+  padding-right: 2%;
+}
+
+.invitefriends-gifts p {
+  background: #fe7b9a;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding-bottom: 10px;
+}
+
+.invitefriends-gifts div {
+  padding: 10px 10px 5px;
+  background: #fe7b9a;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.invitefriends-gifts div p {
+  position: relative;
+  margin-top: 5px;
+  padding-bottom: 0;
+}
+
+.invitefriends-gifts div p a {
+  display: block;
+  width: 49%;
+}
+
+.invitefriends-gifts div p > img {
+  width: 49%;
+  height: auto;
+}
+
+.invitefriends-gifts div p > img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 10;
+}
+
+/*.invitefriends-dialogbg{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.4);z-index:10;}*/
+.invitefriends-dialog {
+  background: rgba(0, 0, 0, .4);
+}
+
+.invitefriends-dialog .popup {
+  border-radius: 10px;
+  width: 80%;
+  background: rgba(0, 0, 0, 0);
+  border-radius: 10px;
+  position: relative;
+}
+
+.invitefriends-dialog .popup-body {
+  position: relative;
+  text-align: center;
+}
+
+.invitefriends-dialog .popup-body .box {
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: -65px;
+}
+
+.invitefriends-dialog .popup-body > img {
+  width: 50%;
+  left: 0;
+  top: 0;
+}
+
+.invitefriends-dialog .popup-buttons {
+  position: absolute;
+  right: 0;
+  opacity: 0;
+  width: 50%;
+  top: 0;
+}
+
+.invitefriends-dialog .popup-head {
+  display: none;
+}
+
+.invitefriends-dialog .popup-body > div h2 {
+  font-size: 16rem;
+  margin-top: 14%;
+  color: #000;
+  font-weight: bold;
+}
+
+.invitefriends-dialog .popup-body #shareLinkInput {
+  position: relative;
+  color: #fff;
+  width: 100%;
+  background: #f4446e;
+  line-height: 14px;
+  border-radius: 7px;
+  padding: 5px 10px 15px;
+  height: 65px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  white-space: normal;
+  word-break: break-all;
+}
+
+.invitefriends-dialog .popup-body #shareLinkInput:before {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: url(../img/invitefriends/icon-14@3x.png) no-repeat;
+  background-size: auto 90%;
+  right: -5px;
+  top: -20px;
+}
+
+.invitefriends-dialog .popup-body .qcode p {
+  color: #f54870;
+  font-size: 8rem;
+  text-align: center;
+}
+
+.code {
+  text-align: center;
+}
+
+.code img {
+  width: 126px;
+  margin: 10px auto;
+}
+
+#code {
+  position: absolute;
+  top: -700px;
+  left: 0;
+  z-index: -10;
+}
+
+@media screen and (max-width: 321px) {
+  .invitefriends-dialog .popup-body img {
+  }
+
+  .invitefriends-dialog .popup-buttons {
+  }
+}
+
+.invitefriends-ranking ul li > p em {
+  width: 40%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  text-align: center;
+}
+
+.time-footer {
+  width: 100%;
+  display: block;
+  height: 44px;
+  text-align: center;
+  line-height: 44px;
+  margin-top: 30px;
+}
+
+.time-footer.invitefriends-footer span {
+  color: #ef7b9a !important;
+}
+
+.invitefriends-footer {
+  border-top: 1px #ffb1be solid;
+}
+
+.invitefriends-gifts.more .introductions-baoban {
+  background-color: #43c6b8;
+  border-radius: 0;
+  margin: 30px;
+  padding: 10px 70px;
+}
+
+.invitefriends-gifts .introductions-weibo {
+  float: left;
+  width: 49%;
+  background: #fdb803;
+  padding: 10px 10px 10px 20px;
+}
+
+.invitefriends-gifts .introductions-weixin {
+  width: 49%;
+  float: right;
+  background: #a05ef3;
+  border-radius: 0;
+  height: 100%;
+  padding: 10px 10px 10px 20px
+}

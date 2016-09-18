@@ -38,7 +38,7 @@
         __UpdateAPES: 'UpdateAPES',
         __RealTimeUpdate: 'RealTimeUpdate',
         __MobileFaq: 'MobileFaq',
-        __Dispatch: 'Dispatch'
+        __Dispatch: 'Dispatch.aspx'
       }
     })
     //修改RestAngular配置

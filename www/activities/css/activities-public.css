@@ -474,3 +474,40 @@
 .linelist{position:relative;margin-bottom:10px}
 .freexf-olympic .underline .line{width:30%;height:1px;margin-top:9px;  background: #dbdbdb;position:absolute;left:0px;top:0rem;}
 .freexf-olympic .underline .font+.line{right:0px;left:auto;}
+/*花样韩语*/
+.korean img{width:100%;height:auto;}
+.korean-banner{}
+.korean-slogan{height:36px;background:#ffb1be;text-align:center;line-height:36px;}
+.korean-slogan img{width:72%;vertical-align:middle;}
+.korean-box{width:94%;margin:25px auto 40px;background:#ffb1be;border-radius:5px;height:auto;padding:10px 8px 10px;text-align:center;-webkit-margin-collapse:separate;position:relative;}
+.korean .section{width:100%;height:auto;margin:0;padding:0;}
+.korean .section .korean-box:nth-child(1)>img{width:64%;position:relative;top:-19px;}
+.korean .section .korean-box:nth-child(2)>img{width:92%;position:relative;top:-19px;}
+.korean .section .korean-box:nth-child(3)>img{width:91%;position:relative;top:-18px;}
+.korean .section .korean-box:nth-child(4)>img{width:86%;position:relative;top:-26px;}
+.korean-box p{color:#fff;text-align:left;font-size:11rem;text-align: justify;line-height:23px;}
+.korean-box dl{position:relative;-webkit-margin-collapse:separate;}
+.korean-box dl button{position:absolute;width:41%;right:5%;bottom:0;height:35px;background:rgba(0,0,0,0);border:none;}
+.korean-box dl dt{width:40%;}
+.korean-box dl dd{width:58%;position:absolute;right:0;top:0;}
+.korean-box dl dd h5{color:#fff;text-align:left;margin-top:0;margin-bottom:5px;font-size:16px;font-weight:bold;position:relative;padding-left:35px;}
+.korean-box dl dd h5:before{content:'';position:absolute;left:0;top:5px;width:30px;height:15px;background:url(../img/korean/hot.png) no-repeat;z-index:5;background-size:80% auto;}
+.korean-box dl dd button{background:#90d86b;border:1px #fff solid;border-radius:7px;color:#fff;font-size:11rem;font-weight:bold;}
+.korean-box div{position:relative;text-align:left;margin:10px 0 10px;-webkit-margin-collapse:separate;}
+.korean-box div img{width:48%;}
+.korean-box div img:last-of-type{position:absolute;right:0;top:0;}
+.korean .section .korean-box:before{content:'';position:absolute;right:-25px;bottom:0;width:50px;height:50px;background:url(../img/korean/balloon-right@3x.png) no-repeat;z-index:5;background-size:auto  100%;}
+.korean .section .korean-box:nth-child(2n):before{background:url(../img/korean/balloon-left2@3x.png) no-repeat;left:-13px;bottom:0;z-index:5;width:50px;height:50px;background-size:auto  100%;}
+.korean-hr{height:30px;border-top:1px #dcdcdc solid;text-align:center;}
+.korean-hr p{color:#898989;width:45%;background:#fff;text-align:center;margin:0 auto;position:relative;top:-10px;}
+@media screen and (max-width: 321px) {
+    .korean-box{width:90%;margin:15px auto 30px;}
+    .korean-box p{font-size:12.5rem;line-height:20px;}
+    .korean-box dl dd h5{font-size:14rem;font-weight:bold;padding-left:25px;}
+    .korean-box dl dd h5:before{top:3px;width:25px;height:15px;}
+    .korean .section .korean-box:nth-child(1)>img{top:-17px;}
+    .korean .section .korean-box:nth-child(2)>img{top:-17px;}
+    .korean .section .korean-box:nth-child(3)>img{top:-16px;}
+    .korean .section .korean-box:nth-child(4)>img{top:-22.5px;}
+    /*.korean .section .korean-box:nth-child(3) div{margin:20px 0 10px;}*/
+}

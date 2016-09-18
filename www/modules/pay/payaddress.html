@@ -6,14 +6,18 @@
                 <i class="icon freexf-goback"></i>
             </button>
         </div>
-    </ion-header-bar>    
+      <div class="bar-right">
+        <button class="button-clear freexf-consult"><span>咨询</span></button>
+
+      </div>
+    </ion-header-bar>
     <ion-content class="pay address ">
         <!--支付失败-->
         <div class="paycontent" ng-show="payfail">
             <div class="PayState-group">
                 <div class="payOn fail">支付失败</div>
                 <p>交易失败</p>
-                <div class="TipLogo fail"></div>               
+                <div class="TipLogo fail"></div>
             </div>
             <div class="ContactUs">请联系客服：<a href=”#”><i>400-803-6611</i></a></div>
         </div>

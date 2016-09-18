@@ -1,0 +1,452 @@
+/*报课有礼*/
+.freexf-classlearing {
+  background: linear-gradient(to right, #ff706e, #ffc890);
+  font-family: '微软雅黑';
+}
+
+.freexf-classlearing img {
+  width: 100%;
+  vertical-align: bottom;
+}
+
+.classlearing {
+}
+
+.classlearing .title-h1 {
+  text-align: center;
+  margin: 20px 40px;
+}
+
+.classlearing .title-h1 img {
+
+}
+
+.classlearing .zhuanpan {
+  margin: 0 20px;
+  background: linear-gradient(to right, #ff6f6e, #ffb971);
+  border-radius: 10px;
+}
+
+.turntable-bg {
+    position: relative;
+}
+.turntable-bg .pointer {
+    width: 28%;
+    position: absolute;
+    z-index: 8;
+    text-align: center;
+}
+.pointer b {
+    display: block;
+    color: #fff;
+    font-size: 16rem;
+    margin-top: -80px;
+}
+.pointer p {
+    color: #fff;
+    font-size: 9rem;
+    margin-top: 15px;
+}
+.turntable-bg .rotate {
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+}
+.draw-result,.draw-num,.mylist {
+    display: none;
+    width: 80%;
+    height: 110px;
+    background: -webkit-linear-gradient(top, #ffb071 , #ff706e); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(bottom, #ffb071, #ff706e); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(bottom, #ffb071, #ff706e); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to bottom, #ffb071 , #ff706e); /* 标准的语法 */
+    border-radius: 5px;
+    position: fixed;
+    z-index: 9;
+}
+.result-title,.num-title,.mylisttitle {
+    height: 50px;
+    background: -webkit-linear-gradient(left, #ffb971 , #ff6f6e); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, #ffb971, #ff6f6e); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, #ffb971, #ff6f6e); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #ffb971 , #ff6f6e); /* 标准的语法 */
+    border-radius: 5px 5px 0 0;
+    text-align: center;
+}
+.result-title span,.num-title span,.mylisttitle span {
+    font-size: 20rem;
+    color: #fff;
+    line-height: 56px;
+}
+.result-content,.num-content,.mylistcontent {
+    width: 97%;
+    background: #fff;
+    margin: 0 auto auto auto;
+    text-align: center;
+}
+.result-content span,.result-content b,.num-content span {
+    color: #535353;
+    font-size: 12rem;
+    line-height: 56px;
+}
+.result-content span {
+    float: left;
+    margin-left: 50px;
+}
+.result-content b {
+    float: right;
+    margin-right: 50px;
+}
+.rule ,.awardlist{
+    position: relative;
+    margin: 0 12px;
+}
+.awardlist {
+    padding: 20px 0;
+}
+.ruletitle ,.listtitle {
+    background: -webkit-linear-gradient(left, #ff956f , #ff766e); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, #ff956f, #ff766e); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, #ff956f, #ff766e); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #ff956f , #ff766e); /* 标准的语法 */
+    border-radius: 20px 20px 0 0;
+    height: 60px;
+    text-align: center;
+}
+.ruletitle b ,.listtitle b{
+    color:#fff;
+    font-size: 18rem;
+    font-family: "Microsoft YaHei";
+    line-height: 60px;
+}
+.rulecontent ,.listcontent {
+    background: #fff;
+    border-radius: 0 0 20px 20px;
+}
+.rulecontent ion-scroll{
+    height: 200px;
+}
+    
+.rulecontent p {
+    color: #707070;
+    font-size: 13rem;
+    line-height: 25px;
+    -webkit-overflow-scrolling: touch;
+    padding-left: 35px;
+    padding-right: 25px;
+}
+.listcontent {
+    top: 390px;
+    height: 270px;
+}
+.contentbox {
+    overflow: hidden;
+    padding-left: 35px;
+    padding-right: 25px;
+    height: 174px;
+}
+.contentbox  li,.contentbox  p {
+    line-height: 24px;
+    color: #7d7d7d;
+    font-size: 14rem;
+    overflow: hidden;   
+}
+.contentbox.none {
+    text-align: center;
+}
+.contentbox  li.none {
+    line-height: 34px;
+    font-size: 20rem;
+}
+.listcontent .listbutton {
+    background: #fff35c;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    margin: 24px auto 24px auto;
+}
+.listbutton span {
+    font-size: 18rem;
+    color: #ff7d6e;
+    line-height: 50px;
+}
+.mylist {
+    height: 170px;
+}
+.mylistcontent ion-scroll{
+    height: 114px;
+}
+.mylistcontent li {
+    font-size: 14rem;
+    padding-top: 10px;
+    color: #535353;
+    list-style: none;
+}
+.mylistcontent .prize {
+    margin: 0;
+    font-size: 14rem;
+}
+.mylistcontent .time {
+    margin: 0;
+    font-size: 12rem;
+}
+.cover {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.7;
+    display: none;
+    z-index: 8;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.classlearing .table {
+  margin: 0 12px;
+  border-radius: 10px;
+  text-align: center;
+  background: linear-gradient(to right, #ff6f6e, #ffb971);
+}
+
+.classlearing .title-h2 {
+  background: linear-gradient(to right, #ff5554, #ffa557);
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+  font-size: 18rem;
+  font-weight: 600;
+  color: white;
+  text-shadow: 1px 1px 2px #c53f00;
+  border-radius: 10px;
+}
+
+.classlearing .table-button {
+  margin: 15px auto;
+  display: inline-block;
+  font-size: 15rem;
+  color: #f95855;
+  padding: 7px 25px;
+  position: relative;
+  background: #f9ed5f;
+  border-radius: 10px;
+  font-weight: bold;
+  box-shadow: -1px -1px 2px #fff, inset -1px -1px 4px #f89c53, 2px 2px 4px #fa5a40;
+  line-height: 16px;
+}
+
+.classlearing .table-button:after {
+  content: '';
+  display: table;
+  background: url("../img/classlearning/xinzhuang_2-@2x.png") no-repeat;
+  width: 15px;
+  height: 15px;
+  background-size: contain;
+  float: right;
+  margin-left: 3px;
+}
+
+.classlearing .table-yuzhong {
+  font-size: 0;
+}
+
+.classlearing .table-yuzhong > div {
+  display: inline-block;
+  min-width: 33.3333%;
+  padding: 5px;
+  position: relative;
+}
+
+.classlearing .table-yuzhong > div > span {
+  position: absolute;
+  width: 100%;
+  font-size: 14rem;
+  left: 0;
+  top: 50%;
+  margin-top: -10px;
+  font-weight: bold;
+  color: white;
+}
+
+.classlearing .table-jiangtang {
+  margin: 30px 12px 0 12px;
+  background-color: transparent;
+}
+
+.classlearing .table-jiangtang .table {
+  margin: 0;
+}
+
+.classlearing .table-jiangtang .table:not(:first-child) {
+  margin-top: 15px;
+}
+
+.classlearing .table-jiangtang .left {
+  float: left;
+  width: 50%;
+  padding-right: 5px;
+  text-align: center;
+}
+
+.classlearing .table-jiangtang .right {
+  float: right;
+  width: 50%;
+  padding-left: 5px;
+  text-align: center;
+}
+
+.classlearing .table-jiangtang .right .table-button,
+.classlearing .table-jiangtang .left .table-button {
+  padding: 13px 20px;
+}
+
+.classlearing .table-huodong {
+  margin: 20px 0 40px 0;
+  position: relative;
+}
+
+.classlearing .table-huodong .left {
+  float: left;
+  width: 50%;
+  padding: 0 6px 0 12px;
+}
+
+.classlearing .table-huodong .right {
+  width: 50%;
+  float: right;
+  padding: 0 12px 0 6px;
+}
+
+.classlearing .table-huodong .right:last-child {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.classlearing .table-detail {
+  padding: 15px 0;
+  font-size: 12rem;
+}
+
+.classlearing .table-detail > div {
+  display: inline-block;
+  position: relative;
+  padding: 0 1.5%;
+  min-width: 50%;
+}
+
+.classlearing .table-detail > div:nth-child(n+2) {
+  padding-top: 10px;
+}
+
+.classlearing .table-detail .detail {
+  background-color: white;
+  text-align: left;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.classlearing .table-detail .detail .text {
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+  line-height: 2em;
+}
+
+.classlearing .table-detail .detail .xuefen {
+  position: absolute;
+  top: 5px;
+  left: -8px;
+  background: url("../img/classlearning/xinzhuang_1-@2x.png") no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  width: 78px;
+  height: 37px;
+  display: inline-block;
+}
+
+.classlearing .table-detail .detail .xuefen em {
+  line-height: 30px;
+  margin-left: 3px;
+  color: white;
+  font-size: 12rem;
+}
+
+.classlearing .table-detail .detail .xuefen strong {
+  font-size: 16rem;
+}
+
+.classlearing .table-detail .detail p {
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.classlearing .table-detail .detail .keshi {
+  padding: 20px 0 20px 1.5em;
+  border-top: 1px solid #d8d8d8;
+}
+
+.classlearing .table-jiangtang .table-detail {
+  padding: 15px 10px;
+}
+
+.classlearing .table-jiangtang .table-detail .detail {
+  padding: 0;
+  vertical-align: bottom;
+  width: 100%;
+}
+
+.classlearing .table-jiangtang .table-detail .detail:not(:first-child) {
+  margin-top: 15px;
+}
+
+.classlearing .table-jiangtang .table-detail img {
+  width: 48%;
+  float: left;
+}
+
+.classlearing .table-jiangtang .table-detail .text {
+  position: absolute;
+  height: 60%;
+  width: 52%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.classlearing .table-jiangtang .table-detail .text p {
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: absolute;
+  padding: 0 1em;
+}
+
+.classlearing .table-jiangtang .table-detail .text p.name {
+  bottom: 50%;
+}
+
+.classlearing .table-jiangtang .table-detail .text p.jiangshi {
+  top: 50%;
+}
+
+.classlearing .table-jiangtang .table-detail .keshi {
+  padding: 0;
+  position: absolute;
+  bottom: 0;
+  height: 40%;
+  width: 52%;
+}
+
+.classlearing .table-jiangtang .table-detail .keshi span {
+  position: absolute;
+  top: 50%;
+  line-height: 1;
+  margin-top: -6px;
+  padding: 0 1em;
+}

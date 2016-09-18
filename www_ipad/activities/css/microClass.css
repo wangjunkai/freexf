@@ -1,0 +1,347 @@
+﻿.freexf-microClass {
+  background: #fff;
+  font-family: '微软雅黑';
+}
+.freexf-microClass .micCls-title {
+    background: #df6c55;
+}
+.freexf-microClass .active-toptitle {
+    width: 80%;
+    margin: 0 auto;
+}
+.freexf-microClass .active-logo {
+    padding: 12px 20px 0 20px;
+    float: left;
+}
+.freexf-microClass .active-logo img {
+    width:86px;
+    height:16px;
+}
+.freexf-microClass .active-toptitle li {
+    padding:13px;
+    font-size:12rem;
+    cursor:pointer;
+    float:left;
+}
+.freexf-microClass .active-toptitle li a {
+    color: #fff;
+}
+.freexf-microClass .active-toptitle .active-login{
+    color: #fff;
+    margin: 9px 0 auto 25px;
+    float:left;
+}
+.freexf-microClass .active-login .active-bt{
+    cursor:pointer;
+    border: 1px solid #fff;
+    text-align: center;
+    margin:3px 7px;
+    width: 60px;
+    font-size:12rem;
+    float: left;
+}
+.freexf-microClass .active-phone {
+    float: right;
+    color: #fff;
+}
+.freexf-microClass .active-phone img {
+    margin-top: 13px;
+    width: 20px;
+    height: 18px;
+}
+.freexf-microClass .active-phone span {
+    font-size: 18rem;
+    padding: 0;
+    vertical-align: bottom;
+}
+.freexf-microClass img {
+  width: 100%;
+  vertical-align: bottom;
+}
+.freexf-microClass .text {
+    width: 95%;
+    margin: 50px auto;
+}
+.freexf-microClass .text-title {
+    text-align: center;
+}
+.freexf-microClass .text-title b {
+    color: #df6c55;
+    font-size: 25rem;
+}
+.freexf-microClass .text-content {
+    width: 70%;
+    margin: 0 auto;
+    border: 3px dashed #df6c55;
+    border-radius: 30px;
+    text-align: center;
+    margin-top: 20px;
+}
+.freexf-microClass .text-content p {
+    color: #7d7d7d;
+    font-size: 18rem;
+    line-height: 1.5em;
+    margin: 15px 20px;
+}
+.freexf-microClass .text-content em {
+    color: #df6c55;
+    font-size: 20rem;
+    font-style: oblique;
+}
+.freexf-microClass .single-class,.freexf-microClass .group-class {
+    background: #fdc8be;
+    width: 85%;
+    margin: 0 auto 60px auto;
+}
+.freexf-microClass .grade {
+    overflow: hidden;
+}
+.freexf-microClass .grade .sig-grade {
+    float: left;
+    text-align: center;
+    background: #df6c55;
+    margin-left: 4px;
+    border-top: 1px solid #fdc8be;
+    position: relative;
+    overflow: hidden;
+}
+.freexf-microClass .grade .first {
+    margin: 0;
+    border-left: 1px solid #fdc8be;
+}
+.freexf-microClass .grade .last {
+    border-right: 1px solid #fdc8be;
+}
+.freexf-microClass .grade span {
+    color: #fff;
+    font-size: 20rem;
+}
+.freexf-microClass .grade .sig-grade.cur {
+    background: #fff;
+}
+.freexf-microClass .grade .sig-grade.cur span {
+    color: #df6c55;
+}
+.freexf-microClass .hot:after{
+    content:"";
+    width:29px;
+    height:24px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-image: url('../img/microClass/hot.png');
+    background-size:29px 24px;
+
+}
+.freexf-microClass .class {
+    overflow: hidden;
+    width: 95%;
+    margin: 0 auto;
+}
+.group-class .grade .sig-grade {
+    margin-left: 3px;
+}
+.group-class .grade .sig-grade.first {
+    margin-left: 0;
+}
+.freexf-microClass .class-detail {
+    width: 47%;
+    background: #fff;
+    float: left;
+    margin: 1.5%;
+}
+.freexf-microClass .class-box {
+  width: 90%;
+  margin: 10px auto;
+  position: relative;
+  min-height: 132px;
+}
+.freexf-microClass .class-detail .left {
+  border: 1px solid #d4d4d4;
+  position: absolute;
+  width: 50%;
+  min-height: 100%;
+}
+.freexf-microClass .left .msg {
+    font-size: 12rem;
+    color: #7d7d7d;
+    margin: 5px;
+}
+.freexf-microClass .left .msg b {
+    font-size: 20rem;
+    color: #cb182b;
+}
+.freexf-microClass .left .msg .span {
+    font-size: 12rem;
+    color: #cb182b;
+}
+.freexf-microClass .left .msg .hour {
+    margin-right: 10%;
+}
+.freexf-microClass .course-price {
+    background: url('../img/microClass/flag.png') no-repeat;
+    background-size: 50%;
+    background-position: 50% 10%;
+    z-index: 3;
+    width: 96px;
+    height: 38px;
+    position: absolute;
+    top: 1px;
+    left: -27px;
+    text-align: center;
+}
+.freexf-microClass .course-price b {
+    color: #fff;
+    font-size: 12rem;
+}
+.freexf-microClass .course-price span {
+    color: #fff;
+    font-size: 6rem;
+}
+.freexf-microClass .class-detail .right {
+  float: right;
+  width: 49%;
+  padding-left: 10px;
+}
+.freexf-microClass .group-class .class-detail .right {
+    border: 0;
+}
+.freexf-microClass .right .title {
+    font-size: 12rem;
+    margin: 0;
+}
+.freexf-microClass .right .teach {
+    font-size: 10rem;
+    color: #7d7d7d;
+    margin: 0;
+}
+.freexf-microClass .right .chap {
+    font-size: 10rem;
+    color: #7d7d7d;
+    margin: 0;
+}
+.freexf-microClass .right ul {
+    color: #df6c55;
+}
+.freexf-microClass .right li {
+    line-height: 1.4em;
+    width: 95%;
+    margin: 0 auto;
+    padding-left: 5px;
+    list-style: none;
+    color: #7d7d7d;
+    font-size: 10rem;
+    background: #f2f0ea;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.freexf-microClass .single-class .btn {
+  background: #df6c55;
+  width: 70%;
+  text-align: center;
+  bottom: 0;
+  right: 0;
+  float: right;
+  margin: 5px;
+  line-height: 1.6em;
+}
+.freexf-microClass .btn span {
+    font-size: 10rem;
+    color: #fff;
+    line-height: 100%;
+}
+.freexf-microClass .group-class .course-detail {
+    position: relative;
+    float: left;
+    margin: 20px 5px;
+}
+.freexf-microClass .group-class .course-detail .box {
+    background: #fff;
+}
+.freexf-microClass .group-class .course-detail .btn {
+    background: #df6c55;
+    width: 80%;
+    height: 10%;
+    text-align: center;
+    margin: 10px auto;
+}
+.freexf-microClass .course-text .title {
+    font-size: 14rem;
+    margin: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.freexf-microClass .course-text .teach {
+    font-size: 12rem;
+    margin: 0 5px 5px 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.freexf-microClass .course-text .hour {
+    font-size: 12rem;
+    margin: 5px;
+    padding-bottom: 10px;
+}
+.freexf-microClass .star {
+    width: 12px;
+    height: 11px;
+    margin-right: 2px;
+    background: url('../img/microClass/star.png');
+    display: inline-block;
+}
+.freexf-microClass .star.first {
+    margin-left: 20%;
+}
+.freexf-microClass .star.half {
+    width: 6px;
+}
+.freexf-microClass .img {
+    width: 85%;
+    margin: 50px auto 60px auto;
+}
+.freexf-microClass .img .invite,.freexf-microClass .img .draw {
+    float: left;
+    margin-top: 10px;
+}
+.freexf-microClass .img .weibo,.freexf-microClass .img .wechat {
+    float: right;
+    margin-top: 10px;
+}
+.freexf-microClass .teacher {
+    width: 85%;
+    margin: 50px auto;
+    height: 300px;
+}
+.freexf-microClass hr {
+    color: #eee;
+}
+.freexf-microClass .teacher img.title {
+    width: 30%;
+    margin-bottom: 40px;
+}
+.freexf-microClass .teacher-box {
+    width: 100%;
+    margin: 40px 10px;
+}
+.freexf-microClass .teacher-content {
+    white-space: nowrap
+}
+.freexf-microClass .sigbox {
+    display:inline-block;
+    margin: 0 5px 0 5px;
+    text-align: center;
+}
+.freexf-microClass .sigbox .pic {
+    margin: 0 auto;
+    border: 2px solid #fb7d3d;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.freexf-microClass .sigbox span {
+    margin: 5px auto;
+    color: #fb7d3d;
+    font-size: 12rem;
+}
