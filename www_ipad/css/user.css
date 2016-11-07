@@ -307,7 +307,6 @@ and (orientation: landscape) {
 }
 
 .mycourse .btnGrounp .button-stable:before {
-  margin-top: 10px;
   width: 16px;
   height: 17px;
   background-position: -26px -39px;

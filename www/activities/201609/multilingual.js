@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 angular.module('freexf')
-  .controller('multilingual_ctrl', function ($scope, $rootScope, $injector, $location, $state, $ionicPopup, $ionicLoading, $ionicScrollDelegate, AUTH, ENV) {
+  .controller('multilingual_ctrl', function ($scope, $rootScope, $injector, $location, $state, $ionicPopup, $ionicLoading, $ionicScrollDelegate,$ToDetailState) {
       $scope.multilingualList = {};
       $scope.num1 = 2;
       $scope.num2 = 2;
@@ -34,7 +34,7 @@ angular.module('freexf')
               $scope.all = true;
               getTeacher("多语种");
           }
-          
+
       }
       $scope.setData = function (len, e, idx) {
           if (e.target.innerHTML == "点击收起") {
@@ -44,12 +44,15 @@ angular.module('freexf')
           } else {
               $scope[idx] = $scope[idx] + 4;
               e.target.innerHTML = ($scope[idx] >= len) ? "点击收起" : "点击查看更多相关课程";
-          }    
+          }
       };
       //传递：courseId 课程ID
       $scope.toCourseDate = function (courseId) {
-          $state.go('coursedetail', { courseId: courseId });
+        $ToDetailState.go('coursedetail', { courseId: courseId });
       };
+    $scope.tele = function () {
+      $ToDetailState.go('telephone', {telephone: '400-803-6611'})
+    };
       function getMultilingualList(str) {
           var multilingualList = '/Entrace/Dispatch.aspx?FunctionName=Activity.GetMultilingualList&Version=1&EndClientType=H5&Key=""&JsonPara={"Type":"' + str + '"}';
 
@@ -64,7 +67,7 @@ angular.module('freexf')
                       })
                   }
               });
-         
+
       }
       function getTeacher(str) {
           var teacherList = '/Entrace/Dispatch.aspx?FunctionName=Student.%E6%95%99%E5%B8%88%E5%88%97%E8%A1%A8&Version=1&EndClientType=H5&Key=""&JsonPara={"Second":"' + str + '"}';

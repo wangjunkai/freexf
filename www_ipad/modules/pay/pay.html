@@ -12,7 +12,11 @@
     <div class="paycontent">
       <div class="OrderMessage">
         <p class="title" id="isPayName">{{payoname}}</p>
-        <p class="price">你应付金额：<span class="money" id="isPayMoney">¥<i>{{payomoney}}</i></span></p>
+        <p class="price">
+          你应付金额：<span class="money" id="isPayMoney"><i style="color:green;">¥{{payomoney}}</i></span>&nbsp;
+          优惠：<span class="money"><i style="color:green;">¥{{payomoney-NeedPayFee}}</i></span>
+        </p>
+        <p class="price">实际支付：<span class="money"><i>¥{{NeedPayFee}}</i></span></p>
         <p class="number">订单编号：<span id="isOrderId">{{orderId}}</span></p>
         <p class="time">下单时间：<span id="isSetOrderTime">{{SetOrderTime}}</span></p>
       </div>

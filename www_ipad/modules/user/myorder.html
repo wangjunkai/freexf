@@ -24,7 +24,7 @@
                     <span class="count">●&nbsp;<i>{{item.hour}}</i>课时</span>
                     <p class="xf">
                       <font>{{item.price|xufen}}</font><span ng-show="item.price| xufenshow">学分</span>
-                      <span style="margin-left: 20px;" ng-show="item.Discount&&(item.Discount==='0')&&item.payOrder">
+                      <span style="margin-left: 20px;" ng-hide="item.DiscountFee=='0'">
                         抽奖优惠，实际支付<font style="color:#ea4c00;font-size:15rem;">{{item.NeedPayFee}}</font>学分
                       </span>
                     </p>

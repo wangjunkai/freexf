@@ -16,7 +16,7 @@ angular.module('freexf')
       }
     }
   })
-  .controller('mycourse_ctrl', function ($scope, $rootScope, $injector, $ionicLoading, $state, $stateParams, $timeout, $http, $ionicScrollDelegate,$frModal, $freexfUser, ENV, MyCourseRepository) {
+  .controller('mycourse_ctrl', function ($scope, $rootScope, $injector, $ionicLoading, $state, $stateParams, $timeout, $http, $ionicScrollDelegate, $frModal, $freexfUser, ENV, MyCourseRepository) {
     var count = 0;
     var pageMax = 6;
     $scope.uppageshow = false;
@@ -71,12 +71,21 @@ angular.module('freexf')
         scope: $scope,
         ctrlUrl: 'modules/course/coursedetail',
         tempUrl: 'modules/course/coursedetail.html'
+      },
+      mycoursementoring: {
+        scope: $scope,
+        ctrlUrl: 'modules/user/mycoursementoring',
+        tempUrl: 'modules/user/mycoursementoring.html'
+      },
+      mycoursenote: {
+        scope: $scope,
+        ctrlUrl: 'modules/user/mycoursenote',
+        tempUrl: 'modules/user/mycoursenote.html'
       }
     };
     $scope.openModal = function (name, data, issoldout, back) {
-        if (!issoldout) {
-            $frModal.openModal($scope, name, modal_ary, data, back);
-        }
-
+      if (!issoldout) {
+        $frModal.openModal($scope, name, modal_ary, data, back);
+      }
     };
   });

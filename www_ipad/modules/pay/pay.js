@@ -6,16 +6,18 @@ define(function () {
       var AddOrder = AddOrderFun(ENV._api.__AddOrder);
       $scope.userData = $freexfUser.auth();
       $scope.OrderId = $scope.$parent.$data.paycourseId;
-
+      $scope.DiscountCode = $scope.$parent.$data.DiscountCode;
       AddOrder.create({
         "studentId": $scope.userData.rowId,
         "Sign": $scope.userData.Sign,
-        "ProductId": $scope.OrderId
+        "ProductId": $scope.OrderId,
+        "DiscountCode":$scope.DiscountCode
       }).then(function (res) {
         $scope.AddOrder = res.response.data;
         $scope.payohref = res.response.data.AliPayId;
         $scope.payoname = res.response.data.ProductName;
         $scope.payomoney = res.response.data.price;
+        $scope.NeedPayFee = res.response.data.NeedPayFee;
         $scope.payood = res.response.data.orderFormatId;
         $scope.orderId = res.response.data.OrderId;
         $scope.SetOrderTime = res.response.data.SetOrderTime;

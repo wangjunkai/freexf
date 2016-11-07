@@ -9,17 +9,24 @@
 
 <div class="col-33 courseItem item" ng-repeat="item in courseList" ng-click="openModal('coursedetail',{ProductId: item.ProductId})">
   <div class="courseItemImg">
-    <img src="img/publicbg/null_bg320_180.png" image-lazy-src="{{item.image}}"/>
+    <img src="img/publicbg/null_bg320_180.png" image-lazy-src="{{item.Image}}"/>
   </div>
   <div class="courseItem-tit">
     <h2>{{item.ProductName}}</h2>
     <p>
-      <i ng-show="item.teachername">讲师：{{item.teachername}}&nbsp;&nbsp;</i>
-      <span class="course-count">课时数：{{item.hour}}&nbsp;&nbsp; 有效期：{{item.validity}}</span>
+      <i ng-show="item.TeacherName">讲师：{{item.TeacherName}}&nbsp;&nbsp;</i>
+      <span class="course-count">课时数：{{item.Hour}}&nbsp;&nbsp; 有效期：{{item.Validity}}</span>
     </p>
     <p>
-      <span>{{item.price|xufen}}</span>
-      <em ng-show="item.price| xufenshow">学分</em>
+      <span>{{item.Price|xufen}}</span>
+      <em ng-show="item.Price| xufenshow">学分</em>
+        <!--<i ng-if="item.ProductId=='cae7059b2a634e6a9c356a65be508737'" class="assertive freexf-credit"
+           style="color:#878787;width:30%; font-weight:100;font-size:12rem;text-decoration:line-through; float:none; vertical-align: bottom; margin-left:5px;">
+                <span style="font-size: 12rem;width:auto; margin-right:5px;text-decoration:line-through; color:#878787;">
+                <em ng-show="item.Price | xufenshow">学分</em>
+            </span>
+        </i>
+        <i ng-if="item.ProductId=='cae7059b2a634e6a9c356a65be508737'" style="font-size: 12rem;color:#EA4E00;width:auto; float:none; vertical-align: bottom;">5折</i>-->
       <!--<span class="course-cf course-flower" ng-class="{active:flowerstate}" ng-click="flowerStateClick()"><i class="icon"></i>{{item.flower}}</span>-->
     </p>
   </div>

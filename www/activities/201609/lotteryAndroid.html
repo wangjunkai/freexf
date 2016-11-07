@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="{CHARSET}">
+		<title></title>
+	</head>
+
+	<body>
+
+		<ion-view coures-scroll view-title="幸运大抽奖">
+			<ion-header-bar class="freexf-bar">
+				<div class="bar-left">
+					<a default-nav-back-button ng-click="goBack()" class="button-clear freexf-back freexf-left">
+						<i class="icon freexf-gohomeback"></i>
+					</a>
+				</div>
+				<div class="title">幸运大抽奖</div>
+			</ion-header-bar>
+			<ion-content lazy-scroll class="has-header">
+				<div class="lottery">
+					<img src="activities/img/lottery/bg@3x.png" />
+					<div class="olympic-banner">
+						<img image-lazy-src="activities/img/lottery/tophead@3x.png" />
+					</div>
+					<div class="lottery-box">
+						<img src="activities/img/lottery/bg-gif.gif" />
+						<div id="lottery">
+							<table>
+								<tbody>
+									<tr>
+										<td class="lottery-unit lottery-unit-0 DiscountCode{{DiscountList[3].DiscountCode}}" dnum="0">
+											<img src="activities/img/lottery/01@3x.png" />
+											<p><i>{{DiscountList[3].DiscountFee}}</i><br/> 课程优惠
+											</p>
+										</td>
+										<td class="lottery-unit lottery-unit-1 DiscountCode{{DiscountList[4].DiscountCode}}" dnum="1">
+											<img src="activities/img/lottery/03@3x.png" />
+											<p>
+												<i>{{DiscountList[4].DiscountFee}}</i><br /> 课程优惠
+											</p>
+										</td>
+										<td class="lottery-unit lottery-unit-2 DiscountCode{{DiscountList[0].DiscountCode}}" dnum="2">
+											<img src="activities/img/lottery/03@3x.png" />
+											<p>
+												<i>{{DiscountList[0].DiscountFee}}</i><br /> 课程优惠
+											</p>
+										</td>
+									</tr>
+									<tr>
+										<td class="lottery-unit lottery-unit-7">
+											<img src="activities/img/lottery/04@3x.png" />
+										</td>
+										<td class="begin-btn"><button href="#" ng-click="beginGo()"></button></td>
+										<td class="lottery-unit lottery-unit-3">
+											<img src="activities/img/lottery/06@3x.png" />
+										</td>
+									</tr>
+									<tr>
+										<td class="lottery-unit lottery-unit-6 DiscountCode{{DiscountList[2].DiscountCode}}" dnum="6">
+											<img src="activities/img/lottery/03@3x.png" />
+											<p>
+												<i>{{DiscountList[2].DiscountFee}}</i><br /> 课程优惠
+											</p>
+										</td>
+										<td class="lottery-unit lottery-unit-5">
+											<img src="activities/img/lottery/1@3x.png" />
+										</td>
+										<td class="lottery-unit lottery-unit-4 DiscountCode{{DiscountList[1].DiscountCode}}" dnum="4">
+											<img src="activities/img/lottery/01@3x.png" />
+											<p>
+												<i>{{DiscountList[1].DiscountFee}}</i><br /> 课程优惠
+											</p>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="lottery-rule">
+						<h3>活动规则:</h3>
+						<p>用户抽中优惠，该单立即折扣优惠，需在15分钟内付款，否则抽奖优惠失效。</p>
+					</div>
+				</div>
+				<div class="lottery-dialog" ng-show="resultShow">
+					<div>
+						<img src="activities/img/lottery/01@3x.png" ng-show="result" />
+						<img src="activities/img/lottery/03@3x.png" ng-hide="result" />
+						<p ng-class="{red:result}">
+							<i>{{resultData.DiscountFee}}</i><br /> 课程优惠
+						</p>
+						<button ng-click="goPay()">继续购买</button>
+					</div>
+				</div>
+
+			</ion-content>
+		</ion-view>
+	</body>
+
+</html>

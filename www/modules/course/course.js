@@ -21,13 +21,14 @@ angular.module('freexf')
       //    $scope.Category1 = res.response.data[0]['ls_Category'];   
       //    $scope.Category2 = res.response.data[0]['ls_lingualList'];  
       //});
-      $scope.goCourseList = function (category1, category2) {
+      $scope.goCourseList = function (category1, category2,category3) {
           if (category2 && category2.indexOf("freexfpree=") > -1) {
               $state.go(category2.split(" freexfpree=")[1]);
           } else {
-              $state.go('courseplate', { Category1: category1, Category2: category2 });
+              $state.go('courseplate', { Category1: category1, Category2: category2, Category3: category3 });
           }          
       };
+     
   })
 .filter('cutSummer', function () {
     return function (item) {

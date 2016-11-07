@@ -1,4 +1,5 @@
-﻿﻿<ion-modal-view ng-controller="lottery_ctrl" view-title="支付中心">
+﻿﻿
+<ion-modal-view ng-controller="lottery_ctrl" view-title="支付中心">
   <ion-header-bar default-header-bar class="freexf-bar lightgray">
     <div class="bar-left">
       <button class="button-clear freexf-back freexf-left" ng-click="$modal._back()">
@@ -18,13 +19,14 @@
         <div id="lottery">
           <div class="lottery-content">
             <ul class="lottery-col-1">
-              <li class="lottery-unit lottery-unit-0">
-                <p><i>9</i><em>折</em><br/>优惠35学分</p>
+              <li class="lottery-unit lottery-unit-0 DiscountCode{{Discounts[3].DiscountCode}}" dnum="0">
+                <p><em>{{Discounts[3].DiscountFee}}</em><br/>课程优惠</p>
               </li>
-              <li class="lottery-unit lottery-unit-1">
+              <li class="lottery-unit lottery-unit-1 DiscountCode{{Discounts[4].DiscountCode}}" dnum="1">
+                <p><em>{{Discounts[4].DiscountFee}}</em><br/>课程优惠</p>
               </li>
-              <li class="lottery-unit lottery-unit-2">
-                  <p><i>1</i><em>折</em><br/>优惠35学分</p>
+              <li class="lottery-unit lottery-unit-2 DiscountCode{{Discounts[0].DiscountCode}}" dnum="2">
+                <p><em>{{Discounts[0].DiscountFee}}</em><br/>课程优惠</p>
               </li>
             </ul>
             <ul class="lottery-col-2">
@@ -35,12 +37,12 @@
               <li class="lottery-unit lottery-unit-3"></li>
             </ul>
             <ul class="lottery-col-3">
-              <li class="lottery-unit lottery-unit-6">
-                  <p><i>3</i><em>折</em><br/>优惠35学分</p>
+              <li class="lottery-unit lottery-unit-6 DiscountCode{{Discounts[2].DiscountCode}}" dnum="6">
+                <p><em>{{Discounts[2].DiscountFee}}</em><br/>课程优惠</p>
               </li>
               <li class="lottery-unit lottery-unit-5"></li>
-              <li class="lottery-unit lottery-unit-4">
-                  <p><i>3</i><em>折</em><br/>优惠35学分</p>
+              <li class="lottery-unit lottery-unit-4 DiscountCode{{Discounts[1].DiscountCode}}" dnum="4">
+                <p><em>{{Discounts[1].DiscountFee}}</em><br/>课程优惠</p>
               </li>
             </ul>
           </div>
@@ -49,17 +51,17 @@
       </div>
       <div class="lottery-rule">
         <h3>活动规则:</h3>
-        <p>用户抽奖中优惠，该单立即折扣优惠，需在15分钟内付款，否则抽奖优惠失效。</p>
+        <p>用户抽奖优惠，该单立即折扣优惠，需在15分钟内付款，否则抽奖优惠失效。</p>
       </div>
     </div>
-    <div class="lottery-dialog" ng-show="false">
+    <div class="lottery-dialog" ng-show="result">
       <div>
         <img src="activities/img/lottery/01@2x.png"/>
         <p>
-          <i>3</i><em>折</em><br/>
-          优惠35学分
+          <em>{{resultData.DiscountFee}}</em><br/>
+          课程优惠
         </p>
-        <button>继续购买</button>
+        <button ng-click="argument(true)">继续购买</button>
       </div>
     </div>
   </ion-content>

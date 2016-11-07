@@ -3,7 +3,7 @@
 
 angular.module('freexf', ['ionic'])
 
-  .controller('coursedetail_ctrl', function ($scope, $sce, $rootScope, $filter, $injector, $ionicLoading, $ionicScrollDelegate, $ionicPopup, $interval, $timeout, $state, $stateParams, localStorageService, AUTH, ENV, CourseDateRepository, AddMyFavoriteRepository, DelMyFavoriteRepository, AddFlower, RemoveFlower, GetCourseDetailRepository, GetCourseOutlineRepository, GetvideoUrlRepository, UpdateAPES) {
+  .controller('coursedetail_ctrl', function ($scope, $sce, $rootScope, $filter, $injector, $ionicLoading, $ionicScrollDelegate, $ionicPopup, $interval, $timeout, $state, $stateParams, localStorageService, AUTH, ENV, CourseDateRepository, AddMyFavoriteRepository, DelMyFavoriteRepository, AddFlower, RemoveFlower, GetCourseDetailRepository, GetCourseOutlineRepository, GetvideoUrlRepository, UpdateAPES, apes) {
     var GetvideoUrl = GetvideoUrlRepository(ENV._api.__GetvideoUrl)
     var GetCourseDetail = GetCourseDetailRepository(ENV._api.__GetCourseDetail);
     var GetCourseOutline = GetCourseOutlineRepository(ENV._api.__GetCourseOutline);
@@ -45,15 +45,7 @@ angular.module('freexf', ['ionic'])
     };
     $scope.$on('$ionicView.loaded', function () {
     });
-    if (typeof (localStorageService.get('URLshortID')) != 'undefined' && localStorageService.get('APES1') != '1') {
-      var GetUpdateAPES = UpdateAPES(ENV._api.__UpdateAPES);
-      GetUpdateAPES.getModel({
-        'apesType': '1',
-        'URLTrafficID': localStorageService.get('URLshortID')
-      }).then(function (res) {
-      });
-      localStorageService.set('APES1', '1');
-    }
+    apes.apesFun('APES1');
     ;
     GetCourseDetail.getModel(params).then(function (res) {
       $scope.courseDate = res.response.data;
@@ -245,12 +237,74 @@ angular.module('freexf', ['ionic'])
             type: 'button-balanced',
             onTap: function (e) {
               $rootScope.paycourseId = $scope.courseId;
-              location.href = "#/pay";
+              getDiscounts({StudentId: params.studentId, CourseId: params.courseId});
             }
           }
         ]
       });
     };
+    $scope.zhekouId = [
+      //中小学
+      '7a0ce779f4194cc2ae136d26ad7af9b5',
+      '084284722c9649e99467376746016d89',
+      '536e5e67b81442879a448ec6c9dd4658',
+      '50fd0fe57c5841de8158a349fd6e6e63',
+      '77485d75eae846b682705897af56ed9b',
+      '5583846da22c497dba607254c38746e7',
+      //多语种
+      '9b80691974e544abaffcdc77b75a7f4b',
+      '72b04609c88e474a8d20a6ccf9e78341',
+      'e7144e6af52a41e4af6ff52a2c421073',
+      '7957f8e089e94d1281db0980b89fcffb',
+      'dc11d8c0b80c48bba1b9382801ede9ea',
+      '4b45418d06fa4a57bd1888935483071a',
+      //英语
+      '9802a643f232442dace7d97d2deb6a97',
+      'c8acfeddf5534881a8e23ca29cd06d32',
+      '9d5a5bfea1ad44a1844c1f288915e0b3',
+      '4b7d85bf7d29486a92b6b808ac6979a7',
+      //会计
+      'efbae01348724a539b876080826416ac',
+      '0ec52858dcc242f491594d6cf72ad061',
+      '7d49475ba62e402cbdae3386b5450050',
+      '378322b500964be0b1828f2d407e8ea3'
+    ];
+    function getRandomDiscount(obj) {
+      var teacherList = '/Entrace/Dispatch.aspx?FunctionName=Student.GetRandomDiscount&Version=1&EndClientType=H5&Key=""&JsonPara={"StudentId":"' + obj.StudentId + '","CourseId":"' + obj.CourseId + '"}';
+      $.ajax({
+        type: 'GET',
+        cache: 'false',
+        url: teacherList,
+        dataType: "json",
+        success: function (data) {
+          if (data) {
+            $state.go('pay', {DiscountCode: data.DiscountCode});
+          }
+        }
+      });
+    }
+
+    function getDiscounts(obj) {
+      var teacherList = '/Entrace/Dispatch.aspx?FunctionName=Student.GetStudentDiscounts&Version=1&EndClientType=H5&Key=""&JsonPara={"StudentId":"' + obj.StudentId + '","CourseId":"' + obj.CourseId + '"}';
+      $.ajax({
+        type: 'GET',
+        cache: 'false',
+        url: teacherList,
+        dataType: "json",
+        success: function (data) {
+          if (data.length > 0) {
+/*            if ($.inArray(params.courseId, $scope.zhekouId) < 0) {
+              $state.go('lottery', {courseId: $scope.courseId});
+            } else {*/
+              getRandomDiscount({StudentId: params.studentId, CourseId: params.courseId});
+            /*}*/
+          } else {
+            $state.go('pay', {DiscountCode: ''});
+          }
+        }
+      });
+    }
+
     $scope.showPopup = function () {
       // 自定义弹窗
       var myPopup = $ionicPopup.show({
@@ -336,15 +390,7 @@ angular.module('freexf', ['ionic'])
             }
           }
           ;
-          if (typeof (localStorageService.get('URLshortID')) != 'undefined' && localStorageService.get('APES5') != '1') {
-            var GetUpdateAPES = UpdateAPES(ENV._api.__UpdateAPES);
-            GetUpdateAPES.getModel({
-              'apesType': '5',
-              'URLTrafficID': localStorageService.get('URLshortID')
-            }).then(function (res) {
-            });
-            localStorageService.set('APES5', '1');
-          }
+          apes.apesFun('APES5');
           ;
 
         });
@@ -396,6 +442,7 @@ angular.module('freexf', ['ionic'])
     $scope.goStudy = function (courseId, state) {
       $state.go('coursedetail', {courseId: courseId, state: state});
     }
+
   })
   .directive('scrollCourseTab', ['$location', '$ionicScrollDelegate', function ($location, $ionicScrollDelegate) {
     return function ($scope, $element, $attrs) {

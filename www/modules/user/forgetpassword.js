@@ -77,8 +77,14 @@ angular.module('freexf')
       PHONE_CODE.getModel(parameter).then(function (req) {
         var data = req.response.data;
         $Loading.show(msg[data], 2000);
+        $scope.CodeImg.getNew();
         console.log(data);
-        var time = 30;
+        if (data == 'success') {
+            var time = 30;
+        } else {
+            var time = 3;
+        }
+        
         var stoptime = $interval(function () {
           if (time == 0) {
             $interval.cancel(stoptime), $event.target.disabled = false, $event.target.innerText = '获取验证码'

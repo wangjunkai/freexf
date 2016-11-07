@@ -37,17 +37,20 @@
       var css = {
         0: ['css/freexf.css', 'css/course.css', 'css/home.css', 'css/pay.css',
           'css/student.css', 'css/user.css', 'css/video.css', 'css/set.css',
-          'css/member.css', 'activities/css/activities-public.css',
+          'css/member.css', 'activities/css/public.css',
+
           'activities/css/classlearing.css',
           'activities/css/invitefriends.css',
           'activities/css/multilingual.css',
           'activities/css/invitefriends.css',
           'activities/css/microClass.css',
-          'activities/css/activities-examinationTime.css',
-          'activities/css/lottery.css'
+          'activities/css/examinationTime.css',
+          'activities/css/lottery.css',
+          'activities/css/courseDiscount.css',
+          'activities/css/fourFoldCarnival.css'
       ],
 
-        1: ['css/freexf-concat-c522fa9e89-650fadcbfe.min.css','activities/css/activities-public.css']
+        1: ['css/freexf-concat-c522fa9e89-650fadcbfe.min.css','activities/css/public.css']
       };
       var js = {
         0: ['http://lead.soperson.com/20001079/10055583.js'],
@@ -90,8 +93,37 @@
 </ion-nav-view>
 
 <!--require按需加载js控件-->
-<script data-main="config.js" src="lib/requirejs/require.js"></script>
 <div class="udeskfun" style="position:absolute;top:-1px;left:-1px;width:0px;height:0px;"></div>
+<script data-main="config.js" src="lib/requirejs/require.js"></script>
+
+<%
+    If Component.WebContextBase.ConextItem(LsFreeXFDataAccess.DataAccess.ObjApes_Traffic.Apes_URLShort) = "" Then
+
+        Dim lb_Flag As Boolean
+
+        lb_Flag = tf_URLShort("bdkeyword")
+        If lb_Flag = False Then
+            lb_Flag = tf_URLShort("mbdkeyword")
+        End If
+        If lb_Flag = False Then
+            lb_Flag = tf_URLShort("360keyword")
+        End If
+        If lb_Flag = False Then
+            lb_Flag = tf_URLShort("m360keyword")
+        End If
+        If lb_Flag = False Then
+            lb_Flag = tf_URLShort("keyword")
+        End If
+        If lb_Flag = False Then
+            lb_Flag = tf_URLShort("sogoukeyword")
+        End If
+        If lb_Flag = False Then
+            lb_Flag = tf_URLShort("msogoukeyword")
+        End If
+    End If
+
+    Call LsFreeXFDataAccess.DataAccess.ObjApes_Traffic.Log访问()
+%>
 
 </body>
 

@@ -1,0 +1,266 @@
+﻿
+*, :after, :before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul, li, ul li {
+  list-style: none;
+}
+
+em, strong {
+  vertical-align: baseline;
+  font: inherit;
+  font-size: 100%;
+}
+
+.studyRussian img {
+  width: 100%;
+  height: auto;
+}
+
+.studyRussian {
+  box-sizing: border-box;
+  font-size: 12px;
+}
+
+.studyRussian .head {
+  height: 24px;
+  background: #CB2726;
+}
+
+.studyRussian .head .logo {
+  float: left;
+  width: 76px;
+  height: 14px;
+  margin: 5px 10px;
+}
+
+.studyRussian .head .phone {
+  float: right;
+  margin-right: 5px;
+}
+
+.studyRussian .head .phone-icon {
+  width: 12px;
+  height: 11px;
+  vertical-align: middle;
+}
+
+.studyRussian .head .phone-num {
+  font-size: 12px;
+  color: #fff;
+  line-height: 24px;
+  margin: 0 5px;
+  vertical-align: middle;
+}
+
+.studyRussian .banner img:last-of-type {
+  width: 40%;
+  margin: 10px 0;
+}
+
+.studyRussian p.slogan {
+  width: 80%;
+  margin: 15px auto;
+  text-align: center;
+}
+
+.studyRussian div.slogan {
+  width: 80%;
+  margin: 15px auto;
+  padding: 5%;
+  text-align: center;
+  border: 1px #F97E80 dotted;
+  border-radius: 7px;
+}
+
+.studyRussian .list {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.studyRussian .list .top {
+  /*border:1px #ccc solid;*/
+  border-bottom: 2px #E6E7E9 solid
+}
+
+.studyRussian .list .top p {
+  font-size: 14px;
+  line-height: 27px;
+  padding: 0 0.3em;
+  color: #333333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.studyRussian .list .top p i,
+.studyRussian .list .bottom li p i {
+  color: #FB4E4E;
+  font-style: normal
+}
+
+.studyRussian .list .top p del {
+  margin-left: 10%;
+}
+
+.studyRussian .list .bottom li p del {
+  margin-left: 3px;
+}
+
+.studyRussian .list .top p i.right {
+  margin-left: 17%;
+}
+
+.studyRussian .list .bottom li p i.right {
+  margin-left: 3px;
+}
+
+.studyRussian .list .bottom {
+  position: relative;
+}
+
+.studyRussian .list .bottom li {
+  width: 49%;
+  display: inline-block;
+  /*border:1px #ccc solid;*/
+  border-bottom: 2px #E6E7E9 solid
+}
+
+.studyRussian .list .bottom li:nth-child(2n) {
+  margin-left: 1.5%;
+}
+
+.studyRussian .list .bottom li p {
+  font-size: 11px;
+  line-height: 25px;
+  padding: 0 0.3em;
+  color: #333333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.studyRussian .list .btn-group {
+  margin: 8% 0 12%;
+  position: relative;
+  height: 27px;
+}
+
+.studyRussian .list .btn-group a {
+  display: block;
+  width: 40%;
+  background: #FF4D4D;
+  color: #fff;
+  height: 27px;
+  border: none;
+  border-radius: 3px;
+  text-align: center;
+  line-height: 27px;
+}
+
+.studyRussian .list .btn-group > a:last-of-type {
+  width: 40%;
+  background: #FF4D4D;
+  color: #fff;
+  height: 27px;
+  border: none;
+  border-radius: 3px;
+  text-align: center;
+  line-height: 27px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.studyRussian .list > div {
+  margin: 15px 0;
+  position: relative;
+  z-index: 10;
+}
+
+.studyRussian .list > div a:last-of-type {
+  position: absolute;
+  bottom: 5%;
+  background: rgba(0, 0, 0, 0);
+  width: 50%;
+  height: 50px;
+}
+
+.studyRussian .list > div.p-right a:last-of-type {
+  position: absolute;
+  bottom: 5%;
+  right: 0;
+}
+
+.studyRussian .list > h2 {
+  text-align: center;
+  font-size: 20px;
+  color: #FE0000;
+  padding: 10px 0;
+}
+
+.studyRussian .teacher-list {
+  width: 100%;
+  border: 1px #F97E80 solid;
+  border-left: none;
+  border-right: none;
+  margin: 20px 0 10px;
+  padding: 5% 5% 1%;
+
+  white-space: nowrap;
+  overflow: auto;
+}
+
+.studyRussian .teacher-list ul {
+
+}
+
+.studyRussian .teacher-list li {
+  width: 24%;
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.studyRussian .teacher-list li img {
+  border-radius: 50%;
+  border: 1px #F97E80 solid;
+}
+
+.studyRussian .teacher-list li p {
+  text-align: center;
+  font-size: 14px;
+  padding: 5px 0;
+}
+
+.studyRussian .foot {
+  text-align: center;
+  margin: 10px auto;
+}
+
+.studyRussian a {
+  text-decoration: none;
+  display: block;
+}
+
+.studyRussian .foot img {
+  width: 33px;
+  height: 30px;
+  padding: 5px;
+  vertical-align: middle;
+}
+
+.studyRussian .foot span {
+  color: #F97E80;
+  font-size: 12px;
+  padding: 5px;
+  vertical-align: middle;
+}
+
+*::-webkit-scrollbar {
+  width: 0;
+}

@@ -85,11 +85,11 @@
           return item.indexOf(" freexfpree=") > -1 ? item.split(" freexfpree=")[0] : item;
         }
       })
-    .filter('formatname', function () {
+      .filter('formatname', function () {
         return function (item) {
-            return item.length > 0 ? item : ["全部"];
+          return item.length > 0 ? item : ["全部"];
         }
-    })
+      })
       .filter('phoneFilter', function () {
         return function (item) {
           if (item) {
@@ -195,6 +195,7 @@
             var self = this;
             self.hide();
             _frModals.backModal.modal ? _frModals.backModal.modal._show(false, 'back') : root_frModals = new frModals();
+            modalRemove.call(self);
           };
           //显示modal,记录每个modal和当前modal的历史modal  //hideback参数表示是否隐藏上一个modal
           var modalShow = function (hideback, e) {
@@ -226,8 +227,17 @@
           };
           var modalRemove = function () {
             var self = this;
-            _frModals = new frModals();
-            root_frModals = new frModals();
+            //递归取有back modal 的modal
+            var _dis = function _dis(_self_) {
+              if (_self_ && ('modal' in _self_._backModal()) && !_self_._backModal().modal.scope.$$destroyed) {
+                root_frModals['currentModal'] = $.extend({}, _self_._backModal())
+              } else if (_self_ && ('modal' in _self_._backModal()) && _self_._backModal().modal.scope.$$destroyed) {
+                _dis(_self_._backModal().modal);
+              } else {
+                _frModals = new frModals();
+                root_frModals = new frModals();
+              }
+            }(self);
             $rootScope['h5playtimeend'] && ($interval.cancel($rootScope['h5playtimeend']));
             self.remove();
           };
@@ -501,7 +511,7 @@
             }
           })
           .state('courseplate', {
-            url: '/courseplate/:Category1&:Category2',
+              url: '/courseplate/:Category1&:Category2&:Category3',
             views: {
               '': {
                 controller: 'courseplate_ctrl',
@@ -641,8 +651,30 @@
                 return $ocLazyLoad.load(['activities/201609/multilingual.js']);
               }]
             }
-          });
-
+          })
+          .state('courseDiscount', {
+              url: '/courseDiscount',
+              templateUrl: 'activities/201609/courseDiscount.html',
+              controller: 'courseDiscount_ctrl',
+              cache: false,
+              resolve: {
+                  loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                      return $ocLazyLoad.load(['activities/201609/courseDiscount.js']);
+                  }]
+              }
+          })
+          //201611 4折狂欢
+          .state('fourFoldCarnival', {
+            url: '/fourFoldCarnival',
+            templateUrl: 'activities/201611/fourFoldCarnival.html',
+            controller: 'fourFoldCarnival_ctrl',
+            cache: false,
+            resolve: {
+              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load(['activities/201611/fourFoldCarnival.js']);
+              }]
+            }
+          })
         $stateProvider
           .state('tab', {
             abstract: true,

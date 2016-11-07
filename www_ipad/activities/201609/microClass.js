@@ -86,7 +86,7 @@ angular.module('freexf')
               var rightdiv = $('<div class="right"></div>').appendTo(box);
               $('<div style="clear: both"></div>').appendTo(box);
               var imgEle = $('<img />').attr('src', this.Image).appendTo(leftdiv);
-              var msg = $('<p class="msg">急速返还学费，只需<b>5</b><span>天</span></p>').appendTo(leftdiv);
+              var msg = $('<p class="msg">急速返还学费，只需<b>7</b><span>天</span></p>').appendTo(leftdiv);
               var pricediv = $('<div class="course-price"></div>').html('<b>' + this.Price + '</b><span>   学分</span>').appendTo(leftdiv);
               $('<p class="title"></p>').text(this.ProductName).appendTo(rightdiv);
               $('<P class="teach">课程讲师：<span>' + this.TeacherName + '</span></p>').appendTo(rightdiv);

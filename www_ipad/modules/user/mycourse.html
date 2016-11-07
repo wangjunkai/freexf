@@ -32,10 +32,10 @@
                   <span id="isFinishDay">剩余天数<i>{{m.DaysRemaining}}天</i></span>
                 </div>
               </div>
-              <!--<div class="btnGrounp">
-                <button class="button button-stable"> 笔记</button>
-                <button class="button button-assertive">答疑</button>
-              </div>-->
+              <div class="btnGrounp">
+                <button class="button button-stable" ng-click="openModal('mycoursenote',{ProductId:m.ProductId})"> 笔记</button>
+                <button class="button button-assertive" ng-click="openModal('mycoursementoring',{ProductId:m.ProductId})">答疑</button>
+              </div>
             </div>
           </li>
         </ul>

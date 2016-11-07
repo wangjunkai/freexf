@@ -1,0 +1,134 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+@media screen and (max-width:424px){
+  .accountant{font-size:12px;}
+}
+@media screen and (max-width:385px){
+  .accountant{font-size:10px;}
+}
+@media screen and (max-width:330px){
+  .accountant{font-size:8px;}
+}
+body {
+    font-family: '微软雅黑';
+}
+.accountant .head {
+    height: 24px;
+    background: #ff7f7f;
+}
+.accountant .head .logo {
+    float: left;
+    width: 76px;
+    height: 14px;
+    margin: 5px 10px;
+}
+.accountant .head .phone {
+    float: right;
+    margin-right: 5px;
+}
+.accountant .head .phone-icon {
+    width: 12px;
+    height: 11px;
+    vertical-align: middle;
+}
+.accountant .head .phone-num {
+    font-size: 1rem;
+    color: #fff;
+    line-height: 24px;
+    margin: 0 5px;
+    vertical-align: middle;
+}
+.accountant .course {
+    width: 95%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.accountant .course .title {
+    display: block;
+    width: 40%;
+    margin: 20px auto;
+}
+.accountant .course .img-link {
+    position: relative;
+}
+.accountant .course .img {
+    width: 100%;
+}
+.accountant .course .img-msg {
+    display: block;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    background: rgba(0,0,0,0.3);
+    position: absolute;
+    left: 0;
+    bottom: 2%;
+}
+.accountant .course .high {
+    font-size: 2rem;line-height:2rem;
+}
+.accountant .course .price {
+    float: left;
+    font-size: 1.2rem;line-height:4rem;height:3rem;overflow:hidden
+}
+.accountant .course .time {
+    float: right;
+    font-size: 1.2rem;line-height:4rem;height:3rem;overflow:hidden
+}
+.accountant .course i {
+    color: #ff7f7f;
+    font-style: normal;
+}
+.accountant .course .pre-price {
+    margin-left: 20px;
+}
+.accountant .course .price.discont {
+    margin-left: 20px;
+    color: #ff7f7f;
+}
+.accountant .text {
+    width: 95%;
+    margin: 20px auto;
+}
+.accountant .text .title {
+    color: #ff7f7f;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0;
+}
+.accountant .text .content {
+    background-image: url('../img/accountant/arrow.png');
+    background-repeat: no-repeat;
+    background-position: left 15%;
+    background-size: 3%;
+    padding-left: 3%;
+    font-size: 1.2rem;
+    color: #434343;
+    line-height: 2em;
+    margin-bottom: 10px;
+}
+.accountant .foot {
+    text-align: center;
+    margin: 10px auto;
+}
+.accountant a {
+    text-decoration: none;
+    display: block;
+}
+.accountant .foot img {
+    width: 22px;
+    height: 20px;
+    padding: 5px;
+    vertical-align: middle;
+}
+.accountant .foot span {
+    color: #ff7f7f;
+    font-size: 2rem;
+    padding: 5px;
+    vertical-align: middle;   
+}
+

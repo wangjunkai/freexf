@@ -1,0 +1,110 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+
+@media only screen and (max-width: 320px){.Germany{font-size: 9px;} }
+@media only screen and (min-width: 320px) and (max-width: 352px){.Germany{font-size: 10px;} }
+@media only screen and (min-width: 352px) and (max-width: 384px){.Germany{font-size: 11px;} }
+@media only screen and (min-width: 384px) and (max-width: 416px){.Germany{font-size: 12px;} }
+@media only screen and (min-width: 416px) and (max-width: 448px){.Germany{font-size: 13px;} }
+@media only screen and (min-width: 448px) and (max-width: 480px){.Germany{font-size: 14px;} }
+@media only screen and (min-width: 480px) and (max-width: 512px){.Germany{font-size: 15px;} }
+@media only screen and (min-width: 512px) and (max-width: 544px){.Germany{font-size: 16px;} }
+@media only screen and (min-width: 544px) and (max-width: 576px){.Germany{font-size: 17px;} }
+@media only screen and (min-width: 576px) and (max-width: 608px){.Germany{font-size: 18px;} }
+@media only screen and (min-width: 608px) and (max-width: 640px){.Germany{font-size: 19px;} }
+@media only screen and (min-width: 640px){.Germany{font-size: 20px;} }
+
+
+a:link{text-decoration:none;}
+a:visited{text-decoration:none;}
+a:active{text-decoration:none;}
+
+/*德语*/
+.Germany{width:100%; overflow:scroll;}
+.Germany-header{width:100%; background:#128fcf; float:left;}
+.Germany-header .logo{float:left; padding:10px 20px;}
+.Germany-header .phone{float:right; padding:10px 20px;}
+.Germany-header .logo img{width:76px; height:15px; line-height:20px; vertical-align:middle;}
+.Germany-header .phone img{width:13px; vertical-align:middle;}
+.Germany-header .phone span{color:#ffffff; font-size:1rem; vertical-align:middle;}
+.Germany-banner img{width:100%;}
+.Germany-introduce img{width:84%; margin:40px 8%;}
+.Germany .split-line{width:100%; height:2px; background:#dcdcdc;}
+
+/*流程*/
+.Germany .process{width:92%; margin:30px 4% 25px 4%;}
+.Germany .process .process-tips{width:22.6%; display:inline-block; margin-right:1.5%; vertical-align:top;}
+.Germany .process .refund{margin-right:0;}
+.Germany .process .buy-course{margin-right:0.5%;}
+.Germany .process .study{margin-top:3px;}
+.Germany .process .process-tips>img{width:100%;}
+
+/*课程体系，推荐课程*/
+.Germany .course-system,.Germany .course-recommend{width:95%; margin:20px 2.5%;}
+.Germany .course-system .course-system-title, .Germany .course-recommend .course-recommend-title{margin-bottom:20px;}
+.Germany .course-system .course-system-title>i,.Germany .course-recommend .course-recommend-title>i{width:3px; height:15px; line-height:20px; border-radius:1px; background:#128fcf; display:inline-block; vertical-align:middle;}
+.Germany .course-system .course-system-title>span, .Germany .course-recommend .course-recommend-title>span{display:inline-block; font-size:1.5rem; line-height:20px; margin-left:5px; font-weight:600;vertical-align:middle;}
+.Germany .course-system .course-system-level{width:98%; margin-left:2%;}
+.Germany .course-system .course-system-level .txt-one{border-top:1px solid #d0d0d0}
+.Germany .course-system .course-system-level .level>img{width:10.5%; margin:20px 2% 20px 0; display:inline-block; vertical-align:middle}
+.Germany .course-system .course-system-level .level>div{width:85.5%; display:inline-block; font-size:1rem; vertical-align:middle; color:#535353; border-bottom:1px solid #d0d0d0}
+.Germany .course-system .course-system-level .level>div p{margin:10px 0;}
+
+.Germany .course-recommend .proficiency-test,.Germany .course-recommend .abroad-test,
+.Germany .course-recommend .Interest_business{width:100%; }
+.Germany .course-recommend .title{font-size:1.5rem; font-weight:800; text-align:center; color:#128fcf; margin:25px auto;}
+.Germany .course-recommend .course-description{width:52%; display:inline-block; vertical-align:top;}
+.Germany .course-recommend .course-pic{width:46%; display:inline-block; vertical-align:top;}
+.Germany .course-recommend .course-description{margin-top:8px;}
+.Germany .course-recommend .course-description>img,.Germany .course-recommend .course-pic>img{width:100%}
+.Germany .course-recommend .course-button>img{width:96%; margin:10px 2% 0 2%;}
+
+.Germany .course-recommend .test-course{margin-top:20px; border-bottom:1px solid #d0d0d0; padding-bottom:20px;}
+.Germany .course-recommend .Interest_business .test-course{border-bottom:none;}
+.Germany .course-recommend .more{margin:20px auto; text-align:center; font-size:1rem;line-height: 2;background-image: url('../img/Germany/class_more.png');background-size: 80%;background-repeat: no-repeat;background-position: center;}
+.Germany .course-recommend .more a{color:#fff;padding-left: 5%}
+
+.Germany .teacher {
+    width: 96%;
+    margin: 20px 0 20px 4%;
+}
+.Germany .teacher img.title {
+    width: 50%;
+}
+.Germany .teacher-box {
+    width: 100%;
+    margin: 20px auto 40px auto;
+}
+.Germany .teacher-content {
+    white-space: nowrap;
+}
+.Germany .sigbox {
+    display:inline-block;
+    margin: 0 5px 0 5px;
+    text-align: center;
+}
+.Germany .sigbox .pic {
+    margin:10px auto;
+    border: 2px solid #128fcf;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.Germany .sigbox .pic img{
+    width:100%;
+}
+
+.Germany .sigbox span {
+    color: #393636;
+    font-size: 1.2rem;
+}
+
+.Germany .weibo{width:44%; margin:0 3% 0 4%; display:inline-block; padding-bottom:20px;}
+.Germany .wechat{width:44%; display:inline-block; padding-bottom:20px;}
+.Germany .weibo img, .Germany .wechat img{width:100%;}
+
+.Germany .phone-num{width:100%; text-align:center; padding-top:10px; padding-bottom:10px; border-top:1px solid #128fcf;}
+.Germany .phone-num a>span{vertical-align:middle; color:#128fcf; font-size:1.8rem; font-weight:400;}
+.Germany .phone-num a>img{width:20px; vertical-align:middle; margin-right:10px;}

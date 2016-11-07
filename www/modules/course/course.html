@@ -13,8 +13,8 @@
         <li class="ccl-son" ng-repeat="(cindex,c) in ls_Category">
           <div ng-click="goCourseList(c)">{{c}}</div>
             <ul class="ccl-course-son-list">
-                <li ng-repeat="(sindex,s) in ls_Second['ls_Second'+cindex] | formatname " ng-click="goCourseList(c,s=='全部'?'':s)">{{s}}</li>
-            </ul>
+                <li ng-repeat="(sindex,s) in ls_Second['ls_Second'+cindex] | formatname " ng-click="goCourseList(c,s=='全部'?'':s,'')">{{s}}</li>                
+            </ul>           
         </li>
       </ul>
     </div>

@@ -1,0 +1,32 @@
+<ion-modal-view ng-controller="mycoursenote_ctrl" view-title="课程笔记" class="freexf-ef pane">
+  <ion-header-bar default-header-bar class="freexf-bar lightgray">
+    <div class="bar-left">
+      <button class="button-clear freexf-back freexf-left" ng-click="$modal._back()" id="IsGoBack">
+        <i class="icon freexf-goback"></i>
+      </button>
+    </div>
+    <div class="title">笔记</div>
+    <!--    <div class="bar-right">
+          <button class="button-clear freexf-consult"><span>咨询</span></button>
+        </div>-->
+  </ion-header-bar>
+  <ion-content>
+    <div class="freexf-course-note">
+      <ul>
+        <li class="notelist" ng-repeat="(index,n) in notes">
+          <div class="notetitle clearfix">
+            <span class="left">{{n.PartName}}</span>
+            <span class="right">{{n.CreatedTime}}</span>
+          </div>
+          <div class="notecontent" get-more="{{n.Content}}">
+            {{n.Content}}
+            <span class="more" ng-hide="ishide" ng-click="unfold()"
+                  ng-class="{ismore:ismore}">{{ismore?'更多':'收起'}}</span>
+          </div>
+          <div class="notefoot"><span class="right" ng-click="remove(index,n.uuRowID)"></span></div>
+        </li>
+      </ul>
+      <div ng-hide="notes&&notes.length>0" class="freexf-nullmsg">没有更多!</div>
+    </div>
+  </ion-content>
+</ion-modal-view>

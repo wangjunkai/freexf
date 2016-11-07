@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 angular.module('freexf')
-  .controller('examinationTime_ctrl', function ($scope, $rootScope, $injector, $state, $ionicLoading, AUTH, ENV, DispatchRepository) {
+  .controller('examinationTime_ctrl', function ($scope,$ToDetailState) {
       $('head').append('<script src="activities/js/Calendarfun.js" async=""></script>');
 
       var calendarurl = '/Entrace/Dispatch.aspx?FunctionName=Student.%E8%80%83%E8%AF%95%E6%97%A5%E5%8E%86&Version=1&EndClientType=H5&JsonPara={}';
@@ -13,7 +13,7 @@ angular.module('freexf')
               ajaxSuccess(eval(data));
           }
       });
-       
+
       $scope.prev = true;
       $scope.next = false;
 
@@ -22,15 +22,15 @@ angular.module('freexf')
           window.curTime = window.data[0].CurrentTime;
 
           var curYear = window.curTime.split('-')[0];
-          var curMonth = window.curTime.split('-')[1].split('0')[1];
+          var curMonth = window.curTime.split('-')[1]//.split('0')[1];
           var curDay = window.curTime.split('-')[2];
+          curMonth = parseInt(curMonth);
           if (typeof (showMonth) == "undefined") {
               showMonth = curMonth;
           }
           if (typeof (showDay) == "undefined") {
               showDay = curDay;
           }
-
           if (curMonth == showMonth && curDay == showDay) {
               showCalendar(curYear, showMonth, showDay, 1);
           } else {
@@ -59,18 +59,22 @@ angular.module('freexf')
           })
       }
 
+      $scope.gotele = function(){
+        $ToDetailState.go('telephone',{telephone:'400-803-6611'})
+      };
       //向右拖拽 上月
       $scope.onSwipeRight = function () {
           $scope.next = false;
           var showDate = $('.calendar-box').find('em').text()
           var showMonth = showDate.split('月')[0];
           showMonth--;
-          if (showMonth < 8) {
-              showMonth = 8;              
-          };
           if (showMonth == 8) {
               $scope.prev = true;
-          }
+          } else if (showMonth == 0) {
+              showMonth = 11;
+          } else if (showMonth < 8) {
+              showMonth = 8;
+          };
           changeMonth(showMonth);
       }
       //向左拖拽 下月
@@ -80,7 +84,7 @@ angular.module('freexf')
           var showMonth = showDate.split('月')[0];
           showMonth++;
           if (showMonth > 12) {
-              showMonth = 12;              
+              showMonth = 12;
           }
           if (showMonth == 12) {
               $scope.next = true;
@@ -90,12 +94,13 @@ angular.module('freexf')
 
       function changeMonth(showMonth) {
           var curYear = window.curTime.split('-')[0];
-          var curMonth = window.curTime.split('-')[1].split('0')[1];
+          var curMonth = window.curTime.split('-')[1]//.split('0')[1];
           var curDay = window.curTime.split('-')[2];
+          curMonth = parseInt(curMonth);
           var showDay = 1;
           $('.time-information').find('em').empty();
           $('.time-information').find('ul p').empty();
-          if (showMonth == 8) {
+          if (showMonth == curMonth) {
               showDay = curDay;
           }
           if (curMonth == showMonth && curDay == showDay) {
@@ -111,24 +116,26 @@ angular.module('freexf')
           var calendarDate = $this.attr('ymdday');
           var month = calendarDate.substring(4, 6);
           var day = calendarDate.substring(6, 8);
-          if (month < 10) {
-              month = month.split('0')[1]
-          }
-          if (day < 10) {
-              day = day.split('0')[1]
-          };
+          month = parseInt(month);
+          day = parseInt(day)
+
           $('.date-item').removeClass('active');
           $('.time-information').find('em').empty();
           $('.time-information').find('ul p').empty();
           $this.addClass('active');
           $('.calendar-box').find('em').text(month + '月' + day + '日');
+          if (month == 1 && day == 1) {
+              $('.calendar-box').find('i').text('2017');
+          } else {
+              $('.calendar-box').find('i').text('2016');
+          }
           if ($this.hasClass('mark')) {
               $('.time-information').find('em').text(month + '月' + day + '日：');
               for (var i = 0; i < $this.attr('exam-num') * 1; i++) {
                   $('.time-information').find('ul p').eq(i).text($this.attr('msg'+(i+1)))
               }
           } else {
-              
+
           }
       })
 
@@ -139,6 +146,11 @@ angular.module('freexf')
           var tdW = (trWidth.substring(0, trWidth.length - 2)) - 15;
           CalendarFun(year, month, day, '#CalendarLists', today);
           $('.calendar-box').find('em').text(month + '月' + day + '日');
+          if (month == 1 && day == 1) {
+              $('.calendar-box').find('i').text('2017');
+          } else {
+              $('.calendar-box').find('i').text('2016');
+          }
           if ($('#SD35').html() * 1 < 10) {
               $('#SD35').parents('.calendar-date').hide();
           }

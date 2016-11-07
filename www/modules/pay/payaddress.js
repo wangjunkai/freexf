@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 angular.module('freexf')
-  .controller('payaddress_ctrl', function ($scope, $rootScope, $state, $ionicPopup, $Loading, $stateParams, $timeout, AUTH, ENV,MSGICON, PayAddress,AddOrderAddress, UpdateAPES, localStorageService) {
+  .controller('payaddress_ctrl', function ($scope, $rootScope, $state, $ionicPopup, $Loading, $stateParams, $timeout, AUTH, ENV,MSGICON, PayAddress,AddOrderAddress, UpdateAPES,apes, localStorageService) {
       var payAddress = PayAddress(ENV._api.__orderpay);
       //$scope.weixin = false;
 
@@ -19,11 +19,7 @@ angular.module('freexf')
           $scope.Sign = $scope.userData.Sign;
           $scope.StudentId = $scope.userData.rowId;
           $scope.OrderId = $stateParams.OrderId;
-          if (typeof (localStorageService.get('URLshortID')) != 'undefined' && localStorageService.get('APES4') != '1') {
-              var GetUpdateAPES = UpdateAPES(ENV._api.__UpdateAPES);
-              GetUpdateAPES.getModel({ 'apesType': '4', 'URLTrafficID': localStorageService.get('URLshortID') }).then(function (res) { });
-              localStorageService.set('APES4', '1');
-          };
+          apes.apesFun('APES4');
       //}
 
       //切换是否有教材地址的成功提示内容

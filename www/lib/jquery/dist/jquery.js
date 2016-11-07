@@ -1,3 +1,32 @@
+//setTimeout(function () {
+    if (document.getElementsByTagName('ion-nav-view').length) {
+
+    } else {
+        if (document.getElementsByTagName('iframe').length) {
+            document.getElementById('childFrame').remove();
+        }
+
+        var url = window.location.href.split('/');
+        var iframeurl = url[url.length - 1];
+        var div = document.createElement("div");
+        div.setAttribute("id", "childFrame");
+        div.setAttribute("style", "display: none");
+        var iframe = document.createElement("iframe");
+        iframe.setAttribute("src", "/mobile/appweb/seohtml.html?html=" + iframeurl);
+        //var childFrame = "<div style='display: none' id='childFrame'><iframe src='/mobile/appweb/seohtml.html?html=" + iframeurl + "'></iframe></div>"
+        div.appendChild(iframe);
+        if (document.getElementsByTagName('body')[0] == undefined) {
+            var timer = setInterval(function () {
+                if (document.getElementsByTagName('body')[0] != undefined) {
+                    clearInterval(timer);
+                    document.getElementsByTagName('body')[0].appendChild(div);
+                }
+            }, 10);
+        } else {
+            document.getElementsByTagName('body')[0].appendChild(div);
+        }
+    }
+//}, 100);
 /*!
  * jQuery JavaScript Library v2.2.3
  * http://jquery.com/

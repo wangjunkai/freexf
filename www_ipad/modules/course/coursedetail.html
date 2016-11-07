@@ -57,9 +57,15 @@
               </p>
               <div class="freexf-creditbox">
                   <p>
-                      <i class="assertive freexf-credit">{{courseDate.price|xufen}}</i><span>
+                      <i class="assertive freexf-credit">{{courseDate.price|xufen}}</i><span style="width:auto;margin-right:7px;">
                           <em ng-show="courseDate.price | xufenshow">学分</em>
                       </span>
+                      <!--<i ng-if="courseId=='cae7059b2a634e6a9c356a65be508737'" class="assertive freexf-credit" style="color:#878787;font-weight:100;font-size:12rem;text-decoration:line-through;">
+                              <span style="width:auto;margin-right:5px;text-decoration:line-through;">
+                              <em ng-show="courseDate.price | xufenshow">学分</em>
+                          </span>
+                      </i>
+                      <i ng-if="courseId=='cae7059b2a634e6a9c356a65be508737'" style="color:#EA4E00;width:auto;">5折</i>-->
                   </p>
                   <p ng-class="{active:flowerstate}" ng-click="flowerStateClick()">
                       <i class="icon"></i>{{courseDate.flowers}}

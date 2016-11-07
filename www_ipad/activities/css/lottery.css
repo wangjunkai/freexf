@@ -187,6 +187,7 @@
 }
 .lottery-content ul li{
   float: left;
+  display: table;
   position: relative;
   min-width: 33.333%;
   height: 100%;
@@ -197,22 +198,31 @@
   background-size: 80%, contain;
   background-origin: content-box;
 }
+.lottery-content ul li > p{
+  display: table-cell;
+  vertical-align: middle;
+  position: relative;
+  top: -5px;
+  font-size: 14rem;
+}
+.lottery-content ul li > p > em{
+  font-size: 18rem;
+}
 .lottery-content ul li.active{
   z-index:2;
 }
 .lottery-content .lottery-col-1 li:first-child,
 .lottery-content .lottery-col-3 li:last-child{
   background-image: url("../img/lottery/01@2x.png"),url("../img/lottery/bg-box@2x.png");
+  color: #FB6356;
 }
 .lottery-content .lottery-col-1 li:last-child,
+.lottery-content .lottery-col-1 li:nth-child(2),
 .lottery-content .lottery-col-3 li:first-child{
   background-image: url("../img/lottery/03@2x.png"),url("../img/lottery/bg-box@2x.png");
+  color: #FFA64C;
 }
 
-.lottery-content .lottery-col-1 li:nth-child(2){
-  background-image: url("../img/lottery/02@2x.png"),url("../img/lottery/bg-box@2x.png");
-  background-size: 60%, contain;
-}
 .lottery-content .lottery-col-2 li:first-child{
   background-image: url("../img/lottery/04@2x.png"),url("../img/lottery/bg-box@2x.png");
   background-size: 60%, contain;
@@ -294,12 +304,14 @@
 .lottery-dialog > div p {
   width: 30%;
   position: absolute;
-  top: 13%;
+  top: 16%;
   left: 35%;
-  font-size: 12rem;
+  font-size: 16rem;
   color: #FFA64C;
 }
-
+.lottery-dialog > div p > em{
+  font-size: 24rem;
+}
 .lottery-dialog > div p i {
   font-size: 30rem;
   padding: 0 0.2em;

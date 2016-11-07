@@ -1,0 +1,245 @@
+﻿<ion-view view-title="购课立减-你的努力，我们来买单" class="freexf-courseDiscount">
+    <ion-header-bar class="freexf-bar">
+        <div class="bar-left">
+            <a href="#home" class="button-clear freexf-back freexf-left">
+                <i class="icon freexf-gohomeback"></i>
+            </a>
+        </div>
+        <div class="title">购课立减-你的努力，我们来买单</div>
+    </ion-header-bar>
+    <ion-footer-bar class="footer-bar-contact">
+        <a onclick="gotele()" class="title">
+            <img class="footer-bar-contact-content-phone" src="activities/img/abroad/contact@3x.png" />
+            <span class="footer-bar-contact-content-phonenumber">400-803-6611</span>
+        </a>
+    </ion-footer-bar>
+    <ion-content lazy-scroll class="has-header courseDiscount">
+        <img src="activities/img/courseDiscount/banner@3x.png"/>
+        <div class="active-rules"><img src="activities/img/courseDiscount/rules@3x.png" /></div>
+
+        <!--多语种、中小学模块-->
+        <div id="squareHotCourse" style="display: none">
+            <div class="hotCourse">
+                <a href="" target="_self">
+                    <div class="course-pic">
+                        <img src="" alt="a"/>
+                        <div class="course-credit"><span>1200</span><i>学分</i></div>
+                    </div>
+                    <div class="course-txt">
+                        <span class="title">【旅游俄语】实用俄语课程</span>
+                        <span class="teacher"><i>课程讲师：</i><span>Tania</span></span>
+                    </div>
+
+                    <div class="course-star">
+                        <div class="courseNum"><i>课时数:</i><span>12</span></div>
+                        <div class="starNum">
+                            <span class="star"></span>
+                            <span class="star"></span>
+                            <span class="star"></span>
+                            <span class="star"></span>
+                            <span class="star"></span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!--多语种-->
+        <div class="active-tab multilingual">
+            <img src="activities/img/courseDiscount/multilingual-banner@3x.png" />
+            <div class="active_tab_menu">
+                <ul>
+                    <li class="on">日语</li>
+                    <li>韩语</li>
+                    <li>俄语</li>
+                    <li>德语</li>
+                    <li>西班牙语</li>
+                    <li>法语</li>
+                </ul>
+            </div>
+
+            <div class="active_tab_box">
+                <!--日语-->
+                <div class="active_course_list" id="japanese">
+                    <ul class="zh_course_box">
+                        <li class="hotCourse" ng-repeat="s in courseList1" ng-click="toCourseDate(s.ProductId)">
+                            <div class="course-pic">
+                                <img ng-src="{{s.Image}}" alt="a">
+                                <div class="course-credit"><span>{{s.Price}}</span><i>学分</i></div>
+                            </div>
+                            <div class="course-txt">
+                                <span class="title">{{s.ProductName}}</span>
+                                <span class="teacher"><i>课程讲师：</i><span>{{s.TeacherName}}</span></span>
+                            </div>
+
+                            <div class="course-star">
+                                <div class="courseNum"><i>课时数:</i><span>{{s.Hour}}</span></div>
+                                <div class="starNum">
+                                    <span class="star"></span>
+                                    <span class="star"></span>
+                                    <span class="star"></span>
+                                    <span class="star"></span>
+                                    <span class="star"></span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <!--中小学-->
+        <div class="active-tab k12">
+            <img src="activities/img/courseDiscount/k12-banner@3x.png" />
+            <div class="active_tab_menu">
+                <ul>
+                    <li class="rowOne on">四年级</li>
+                    <li class="rowOne">五年级</li>
+                    <li class="rowOne">六年级</li>
+                    <li class="rowOne">七年级</li>
+                    <li class="rowOne">八年级</li>
+                    <li>中考</li>
+                    <li>高一</li>
+                    <li>高二</li>
+                    <li>高考</li>
+                    <li>奥数</li>
+                    <li>微课堂</li>
+                </ul>
+            </div>
+
+            <div class="active_tab_box">
+                <!--四年级-->
+                <div class="active_course_list" id="zh_Grade_four">
+                    <ul class="zh_course_box">
+                        <li class="hotCourse" ng-repeat="s in courseList2" ng-click="toCourseDate(s.ProductId)">
+                            <div class="course-pic">
+                                <img ng-src="{{s.Image}}" alt="a">
+                                <div class="course-credit"><span>{{s.Price}}</span><i>学分</i></div>
+                            </div>
+                            <div class="course-txt">
+                                <span class="title">{{s.ProductName}}</span>
+                                <span class="teacher"><i>课程讲师：</i><span>{{s.TeacherName}}</span></span>
+                            </div>
+
+                            <div class="course-star">
+                                <div class="courseNum"><i>课时数:</i><span>{{s.Hour}}</span></div>
+                                <div class="starNum">
+                                    <span class="star"></span>
+                                    <span class="star"></span>
+                                    <span class="star"></span>
+                                    <span class="star"></span>
+                                    <span class="star"></span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!--会计-->
+        <div class="active-tab accounting">
+            <img src="activities/img/courseDiscount/accounting-banner@3x.png" />
+            <div class="active_tab_menu">
+                <ul>
+                    <li class="on">会计从业资格</li>
+                    <li>初级会计职称</li>
+                </ul>
+            </div>
+
+            <div class="active_tab_box">
+                <!--会计从业资格-->
+                <div class="active_course_list" id="qualification">
+                    <div class="course-ul-box">
+                        <div class="hotCourse" ng-repeat="(index,s) in courseList3" ng-if="index<4" ng-click="toCourseDate(s.ProductId)">
+                                <div class="course-img">
+                                    <img ng-src="{{s.Image}}" alt="">
+                                    <div class="course-price"><span>{{s.Price}}</span><i>学分</i></div>
+                                </div>
+                                <div class="course-tit">
+                                    <div class="courseTit">
+                                        <span class="title">{{s.ProductName}}</span>
+                                        <span class="teacher"><i>课程讲师：</i><span>{{s.TeacherName}}</span></span>
+                                    </div>
+                                    <div class="course-time">
+                                        <div class="courseTime"><i>课时数:</i><span>{{s.Hour}}</span></div>
+                                        <div class="starNum">
+                                            <span class="star"></span>
+                                            <span class="star"></span>
+                                            <span class="star"></span>
+                                            <span class="star"></span>
+                                            <span class="star"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <!--初级会计职称-->
+                <div class="active_course_list" id="juniorLeve" style="display: none">
+                    <div class="course-ul-box"></div>
+
+                </div>
+            </div>
+        </div>
+
+        <!--英语-->
+        <div class="active-tab english">
+            <img src="activities/img/courseDiscount/english-banner@3x.png" />
+            <div class="active_tab_menu">
+                <ul>
+                    <li class="on">托福</li>
+                    <li>雅思</li>
+                    <li>GRE</li>
+                    <li>SAT</li>
+                    <li>四六级</li>
+                </ul>
+            </div>
+
+            <div class="active_tab_box">
+                <!--托福-->
+                <div class="active_course_list" id="TOEFL">
+                    <div class="course-ul-box">
+                        <div class="hotCourse" ng-repeat="(index,s) in courseList4" ng-if="index<4" ng-click="toCourseDate(s.ProductId)">
+
+                                <div class="course-img">
+                                    <img ng-src="{{s.Image}}" alt="">
+                                    <div class="course-price"><span>{{s.Price}}</span><i>学分</i></div>
+                                </div>
+                                <div class="course-tit">
+                                    <div class="courseTit">
+                                        <span class="title">{{s.ProductName}}</span>
+                                        <span class="teacher"><i>课程讲师：</i><span>{{s.TeacherName}}</span></span>
+                                    </div>
+                                    <div class="course-time">
+                                        <div class="courseTime"><i>课时数:</i><span>{{s.Hour}}</span></div>
+                                        <div class="starNum" style="margin-left:-3px">
+                                            <span class="star"></span>
+                                            <span class="star"></span>
+                                            <span class="star"></span>
+                                            <span class="star"></span>
+                                            <span class="star"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="spitLine"></div>
+
+        <div class="guanzhu">
+            <div class="weibo">
+                <a href="http://weibo.com/freexfcom">
+                    <img src="activities/img/courseDiscount/weibo@3x.png" />
+                </a>
+            </div>
+            <div class="wechat">
+                <img src="activities/img/courseDiscount/weixin@3x.png" />
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

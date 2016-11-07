@@ -15,17 +15,28 @@
     <ion-content class="pay">
         <div class="paycontent">
             <div class="OrderMessage on">
-                <div class="title" id="isPayName">{{payoname}}</div>
-                <div>你应付金额：<span class="money" id="isPayMoney">¥<i>{{payomoney}}</i></span></div>
+                <div class="title" id="isPayName" style="line-height: 35px;">{{payoname}}</div>
+                <div ng-if="payomoney-needpayfee!=0">你应付金额：<span class="money youhui"
+				id="isPayMoney">¥<i>{{payomoney}}</i></span>&nbsp;&nbsp;&nbsp;&nbsp;优惠：<span
+				class="money youhui" id="isPayMoney">¥<i>{{payomoney-needpayfee}}</i></span></div>
+                <div>实际支付：<span class="money" id="isPayMoney">¥<i>{{needpayfee}}</i></span></div>
             </div>
             <div class="OrderMessage">
                 <div>订单编号：<span id="isOrderId">{{orderId}}</span></div>
                 <div>下单时间：<span id="isSetOrderTime">{{SetOrderTime}}</span></div>
             </div>
-            <div class="PayState" ng-hide="mianfeiShow">
-                <div class="PayState-group" ng-hide="payhide">
-                    <span class="PayIcon"></span>
-                    <span class="PaySuccess"></span>
+            <div ng-hide="mianfeiShow">
+                <div class="PayState" ng-hide="ThisWX">
+                    <div class="PayState-group" ng-hide="payhide">
+                        <span class="PayIcon"></span>
+                        <span class="PaySuccess"></span>
+                    </div>
+                </div>
+                <div class="PayState weixin" ng-show="ThisWX">
+                    <div class="PayState-group" ng-hide="payhide">
+                        <span class="PayIcon" style="    background-position: -471px -452px;"></span>
+                        <span class="PaySuccess"></span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -35,14 +46,14 @@
                 完成支付
             </button>
             <!--正常手机支付-->
-            <a rthref="/pay/Alipay/default.aspx?OrderId={{payohref}}" class="zcpay" ng-hide="ThisWX" ng-click="RealTimeUpdate('.zcpay')">
+            <a rthref="/pay/Alipay/Default.aspx?OrderId={{payohref}}" class="zcpay" ng-hide="ThisWX" ng-click="RealTimeUpdate('.zcpay')">
                 <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-hide="mianfeiShow" id="IsPaySurePhone">确认支付</button>
             </a>
             <!--微信支付-->
 
-                <a rthref="/mobile/www/modules/pay/payweixin.html?payid{{payohref}}orderid{{payood}}stid{{userData.rowId}}sign{{userData.Sign}}wjumptrueendpayid" class="wxpay" ng-show="ThisWX" ng-click="RealTimeUpdate('.wxpay')">
-                    <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-hide="mianfeiShow" id="IsPaySureWeixin">确认支付</button>
-                </a>
+            <a rthref="/pay/weixin/Default.aspx?OrderId={{payohref}}" class="wxpay" ng-show="ThisWX" ng-click="RealTimeUpdate('.wxpay')">
+                <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-hide="mianfeiShow" id="IsPaySureWeixin">确认支付</button>
+            </a>
                 <!--<button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-click="toPay()">确认支付 </button>-->
 </div>
     </ion-content>

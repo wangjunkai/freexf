@@ -9,31 +9,27 @@
     </div>
   </ion-header-bar>
   <ion-content lazy-scroll class="has-header freexf-bg-gray freexf-content" delegate-handle="myDelegate">
+
     <ion-slide-box on-slide-changed="slideHasChanged($index)" class="freexf-slide">
+      <ion-slide>
+        <a href="#/fourFoldCarnival">
+          <img src="img/home/banner_NovDiscount_ipad.jpg">
+        </a>
+      </ion-slide>
+      <ion-slide>
+        <a href="#/examinationTime">
+          <img src="img/home/banner-calendar2.jpg">
+        </a>
+      </ion-slide>
       <ion-slide>
         <a href="javascript:void(0);">
           <img src="img/home/banner-ipad-video.jpg" ng-click="aboutUs()">
         </a>
       </ion-slide>
       <ion-slide>
-        <a href="#/classlearning">
-          <img src="img/home/banner-classlearning.png">
-        </a>
-      </ion-slide>
-      <ion-slide>
-        <a href="#/invitefriends">
-          <img src="img/home/banner-invitefriends.jpg">
-        </a>
-      </ion-slide>
-      <ion-slide>
         <a href="#/microClass">
           <img src="img/home/banner-weiketang.jpg">
         </a>
-      </ion-slide>
-      <ion-slide>
-          <a href="#/examinationTime">
-              <img src="img/home/banner-calendar2.jpg">
-          </a>
       </ion-slide>
     </ion-slide-box>
     <section class="freexf-hometype">
@@ -71,9 +67,9 @@
       <div class="clearfix">
         <div class="col-33 freexf-col" style="padding-right: 7px;">
           <!--href="#/coursedetail/{{value.productID}}&"-->
-            <a href="#/multilingual" class="rcol">
-                <img src="img/publicbg/null_bg320_180.png" image-lazy-src="img/home/multilingual-banner.jpg">
-            </a>
+          <a href="#/multilingual" class="rcol">
+            <img src="img/publicbg/null_bg320_180.png" image-lazy-src="img/home/multilingual-banner.jpg">
+          </a>
           <a ng-repeat="(key,value) in home.l_EliteCrouseList" ng-if="key!=0&&key>0&&key<=1"
              ng-click="openModal('coursedetail',{ProductId: value.productID})"
              class="rcol">
@@ -102,7 +98,7 @@
     <section id="anchor-section-yingyu" class="freexf-home-table list">
       <h2 class="freexf-title">
         <i class="title"></i><span>英语</span>
-        <a href="#/courseplate/英语&" class="icon has-more"></a>
+        <a href="javascript:void(0);" ng-click="goCourseList('英语')" class="icon has-more"></a>
       </h2>
       <div class="clearfix">
         <div class="col-25 freexf-col" ng-include="'homeTable.html'" ng-repeat="l in home.l_englishList"></div>
@@ -113,7 +109,7 @@
       <h2 class="freexf-title">
         <i class="title"></i>
         <span>中小学</span>
-        <a href="#/courseplate/中小学&" class="icon has-more"></a>
+        <a href="javascript:void(0);" ng-click="goCourseList('中小学')" class="icon has-more"></a>
       </h2>
       <div class="clearfix">
         <div class="col-25 freexf-col" ng-include="'homeTable.html'" ng-repeat="l in home.l_k12List"></div>
@@ -121,7 +117,8 @@
     </section>
     <!--多语种-->
     <section id="anchor-section-duoyuzhong" class="freexf-home-table list">
-      <h2 class="freexf-title"><i class="title"></i><span>多语种</span><a href="#/courseplate/多语种&"
+      <h2 class="freexf-title"><i class="title"></i><span>多语种</span><a href="javascript:void(0);"
+                                                                       ng-click="goCourseList('多语种')"
                                                                        class="icon has-more"></a></h2>
       <div class="clearfix">
         <div class="col-25 freexf-col" ng-include="'homeTable.html'" ng-repeat="l in home.l_multilingualList"></div>
@@ -129,7 +126,8 @@
     </section>
     <!--会计职业-->
     <section id="anchor-section-kuaiji" class="freexf-home-table list">
-      <h2 class="freexf-title"><i class="title"></i><span>会计职业</span><a href="#/courseplate/会计职业&"
+      <h2 class="freexf-title"><i class="title"></i><span>会计职业</span><a href="javascript:void(0);"
+                                                                        ng-click="goCourseList('会计职业')"
                                                                         class="icon has-more"></a></h2>
       <div class="clearfix">
         <div class="col-25 freexf-col" ng-include="'homeTable.html'" ng-repeat="l in home.l_accountingList"></div>
@@ -137,7 +135,8 @@
     </section>
     <!--考研-->
     <section id="anchor-section-kaoyan" class="freexf-home-table list" ng-if="false">
-      <h2 class="freexf-title"><i class="title"></i><span>考研</span><a href="#/courseplate/考研&"
+      <h2 class="freexf-title"><i class="title"></i><span>考研</span><a href="javascript:void(0);"
+                                                                      ng-click="goCourseList('考研')"
                                                                       class="icon has-more"></a></h2>
       <div class="clearfix">
         <div class="col-25 freexf-col" ng-include="'homeTable.html'" ng-repeat="l in home.l_postgraduateList"></div>
@@ -145,7 +144,8 @@
     </section>
     <!--兴趣-->
     <section id="anchor-section-xingqu" class="freexf-home-table list" ng-if="false">
-      <h2 class="freexf-title"><i class="title"></i><span>兴趣</span><a href="#/courseplate/兴趣&"
+      <h2 class="freexf-title"><i class="title"></i><span>兴趣</span><a href="javascript:void(0);"
+                                                                      ng-click="goCourseList('兴趣')"
                                                                       class="icon has-more"></a></h2>
       <div class="clearfix">
         <div class="col-25 freexf-col" ng-include="'homeTable.html'" ng-repeat="l in home.l_interestList"></div>

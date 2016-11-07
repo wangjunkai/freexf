@@ -143,7 +143,7 @@ function autoChange() {
         window.tuiGuangId = '?s=' + tuiGuangId.split('ends')[0] + 'ends'
     } else {
         window.tuiGuangId = '';
-        
+
     }
     if (ipadUrllID == undefined) {
         ipadUrllID = '/home';

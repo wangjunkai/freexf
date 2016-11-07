@@ -1,0 +1,241 @@
+﻿
+*, :after, :before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+em, strong {
+  vertical-align: baseline;
+  font: inherit;
+  font-size: 100%;
+}
+
+html {
+  font-size: 1px;
+}
+
+body {
+  font-family: '微软雅黑';
+}
+
+.universalClass {
+  box-sizing: border-box;
+}
+
+.universalClass .head {
+  height: 24px;
+  background: #fd81ad;
+}
+
+.universalClass .head .logo {
+  float: left;
+  width: 76px;
+  height: 14px;
+  margin: 5px 10px;
+}
+
+.universalClass .head .phone {
+  float: right;
+  margin-right: 5px;
+}
+
+.universalClass .head .phone-icon {
+  width: 12px;
+  height: 11px;
+  vertical-align: middle;
+}
+
+.universalClass .head .phone-num {
+  font-size: 12rem;
+  color: #fff;
+  line-height: 24px;
+  margin: 0 5px;
+  vertical-align: middle;
+}
+
+.universalClass .template {
+  display: none;
+}
+
+.universalClass .foot {
+  text-align: center;
+  margin: 10px auto;
+}
+
+.universalClass a {
+  text-decoration: none;
+  display: block;
+}
+
+.universalClass .foot img {
+  width: 33px;
+  height: 30px;
+  padding: 5px;
+  vertical-align: middle;
+}
+
+.universalClass .foot span {
+  color: #fd81ad;
+  font-size: 12rem;
+  padding: 5px;
+  vertical-align: middle;
+}
+
+.universalClass .list {
+  background-color: #fff;
+  padding:15px 12px;
+  text-align: center;
+}
+
+.universalClass .list .list-head {
+  text-align: center;
+  font-size: 12rem;
+}
+
+.universalClass .list .caption {
+  font-size: 16rem;
+  background: url(../img/primarySchool/titile-1.png) no-repeat;
+  background-size: contain;
+  background-position: center;
+  padding: 20px 45px;
+  display: inline-block;
+  color: #ff6f6f;
+  font-weight: bold;
+}
+
+.universalClass .list .table-h1 {
+  font-size: 14rem;
+  margin-bottom: 15px;
+}
+
+.universalClass .list .table-h2 {
+  color: #ea4e00;
+  font-size: 12rem;
+}
+.universalClass .list .dot{
+  background-color: #000;
+  border-radius: 50%;
+  width: 6px;
+  height: 6px;
+  display: inline-block;
+  vertical-align: 0.2em;
+  margin-right: 5px;
+}
+.universalClass .list .list-button{
+  font-size: 12rem;
+  background: url(../img/primarySchool/button-1.png) no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  display: inline-block;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 5px 25px 5px 15px;
+  margin-left: 3px;
+}
+.universalClass .freexf-home-table {
+  position: relative;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.universalClass .freexf-home-table:after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+.universalClass .freexf-home-table img {
+  width: 100%;
+  vertical-align: bottom;
+}
+
+.universalClass .freexf-home-table .freexf-col {
+  float: left;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.universalClass .freexf-home-table .freexf-col:nth-child(n+3) {
+  margin-top: 15px;
+}
+
+.universalClass .freexf-home-table .freexf-col:nth-child(odd) {
+  padding-right: 5px;
+}
+
+.universalClass .freexf-home-table .freexf-col:nth-child(even) {
+  padding-left: 5px;
+}
+.universalClass .freexf-home-table .freexf-col:nth-child(even):not(:last-child):after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+  height: 2px;
+  background: #f1f1f1;
+  position: absolute;
+  left: 0;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+
+.universalClass .freexf-home-table .freexf-col > div:first-child {
+  overflow: hidden;
+  position: relative;
+}
+
+.universalClass .freexf-home-table .discount {
+  padding: 7px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.universalClass .freexf-home-table .freexf-col .ti {
+  font-size: 12rem;
+  word-wrap: normal;
+  word-break: keep-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  overflow-wrap: normal;
+  white-space: nowrap;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  color: #e0e0e0;
+  padding: 3px;
+}
+
+.universalClass .freexf-home-table .freexf-col .r10 {
+  margin-right: 10px;
+}
+
+.universalClass .freexf-home-table .freexf-col .xufen {
+  font-size: 15rem;
+  color: #ea4e00;
+  margin-right: 5px;
+  font-weight: inherit;
+
+}
+
+.universalClass .freexf-home-table .freexf-col .zhekou {
+  font-size: 10rem;
+  font-weight: inherit;
+  text-decoration: line-through;
+}
+
+.universalClass .freexf-home-table .freexf-col .keshi {
+  color: #ea4e00;
+  font-size: 10rem;
+  font-weight: inherit;
+}
+
+.universalClass .freexf-home-table .freexf-col em {
+  color: #969696;
+  font-size: 10rem;
+}

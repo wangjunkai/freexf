@@ -1,0 +1,129 @@
+﻿<ion-view coures-scroll view-title="名师团队">
+    <ion-header-bar class="freexf-bar">
+        <div class="bar-left">
+            <a href="#home" class="button-clear freexf-back freexf-left">
+                <i class="icon freexf-gohomeback"></i>
+            </a>
+        </div>
+        <div class="title">名师团队</div>
+    </ion-header-bar>
+    <ion-content lazy-scroll class="has-header teacherteam">
+        <div class="team-banner">
+           <img image-lazy-src="activities/img/teacherteam/head-banner@3x.png"/>
+            <p>选择你喜欢的老师</p>
+        </div>
+        <ul class="teacherteam-nav tabs">
+            <li class="tab-item active" ng-click="tabs('0',$event)">
+                <span>语文</span>
+            </li>
+            <li class="tab-item" ng-click="tabs('1',$event)">
+                <span>数学</span>
+            </li>
+            <li class="tab-item" ng-click="tabs('2',$event)">
+                <span>英语</span>
+            </li>
+            <li class="tab-item" ng-click="tabs('3',$event)">
+                <span>物理</span>
+            </li>
+            <li class="tab-item" ng-click="tabs('4',$event)">
+                <span>地史化</span>
+            </li>
+        </ul>
+        <div class="teacherteam-box">
+            <div class="row">
+                <div class="col col-50 team-teacherInfo">
+                    <img src="{{teacher[0].teacherImg}}"/>
+                    <p>{{teacher[0].teacherName}}</p>
+                    <p>{{teacher[0].teacherInfo}}</p>
+                    <p>{{teacher[0].teacherTrait}}</p>
+                </div>
+                <div class="col col-50 teacherteam-course">
+                    <div class="row" ng-repeat="item in course1" ng-click="toCourseDate(item.ProductId)">
+                        <p class="teacherteam-xuefen">{{item.Price}}<span>学分</span></p>
+                        <div>
+                            <img ng-src="{{item.Image}}" />
+                            <div class="teacherteam-courseinfo">
+                                <p>{{item.ProductName}}</p>
+                                <p>课程讲师：{{item.TeacherName}}</p>
+                            </div>
+                            <div class="teacherteam-class">
+                                课时数:{{item.Hour}}
+                                <p ng-hide="all">
+                                    <span class="star"></span>
+                                    <span class="star"></span>
+                                    <span class="star"></span>
+                                    <span class="star"></span>
+                                    <span class="star"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-50 teacherteam-course">
+                    <div class="row" ng-repeat="item in course2" ng-click="toCourseDate(item.ProductId)">
+                        <p class="teacherteam-xuefen">{{item.Price}}<span>学分</span></p>
+                        <div>
+                            <img ng-src="{{item.Image}}" />
+                            <div class="teacherteam-courseinfo">
+                                <p>{{item.ProductName}}</p>
+                                <p>课程讲师：{{item.TeacherName}}</p>
+                            </div>
+                            <div class="teacherteam-class">
+                                课时数:{{item.Hour}}
+                                <p ng-hide="all">
+                                    <span class="star"></span>
+                                    <span class="star"></span>
+                                    <span class="star"></span>
+                                    <span class="star"></span>
+                                    <span class="star"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-50 team-teacherInfo">
+                    <img ng-src="{{teacher[1].teacherImg}}" />
+                    <p>{{teacher[1].teacherName}}</p>
+                    <p>{{teacher[1].teacherInfo}}</p>
+                    <p>{{teacher[1].teacherTrait}}</p>
+                </div>
+            </div>
+            <div class="row" ng-if="teacher.length>2">
+                <div class="col col-50 team-teacherInfo">
+                    <img ng-src="{{teacher[2].teacherImg}}" />
+                    <p>{{teacher[2].teacherName}}</p>
+                    <p>{{teacher[2].teacherInfo}}</p>
+                    <p>{{teacher[2].teacherTrait}}</p>
+                </div>
+                <div class="col col-50 teacherteam-course">
+                    <div class="row" ng-repeat="item in course3" ng-click="toCourseDate(item.ProductId)">
+                        <p class="teacherteam-xuefen">{{item.Price}}<span>学分</span></p>
+                        <div>
+                            <img ng-src="{{item.Image}}" />
+                            <div class="teacherteam-courseinfo">
+                                <p>{{item.ProductName}}</p>
+                                <p>课程讲师：{{item.TeacherName}}</p>
+                            </div>
+                            <div class="teacherteam-class">
+                                课时数:{{item.Hour}}
+                                <p ng-hide="all">
+                                    <span class="star"></span>
+                                    <span class="star"></span>
+                                    <span class="star"></span>
+                                    <span class="star"></span>
+                                    <span class="star"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a ng-click="tele()" class="title time-footer teacherteam-footer">
+            <img class="footer-bar-contact-content-phone" image-lazy-src="activities/img/teacherteam/phone_icon@3x.png" />
+            <span class="footer-bar-contact-content-phonenumber">400-803-6611</span>
+        </a>
+    </ion-content>
+</ion-view>

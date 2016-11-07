@@ -16,7 +16,25 @@
     </div>
     <!--课程列表-->
     <section ng-show="courseList&&courseList.length>0">
-      <div class="list freexf-classmodule" ui-view="classmodule"></div>
+      <div class="list freexf-classmodule">
+        <div class="col-33 courseItem item" ng-repeat="item in courseList" ng-click="openModal('coursedetail',{ProductId: item.ProductId})">
+          <div class="courseItemImg">
+            <img src="img/publicbg/null_bg320_180.png" image-lazy-src="{{item.image}}"/>
+          </div>
+          <div class="courseItem-tit">
+            <h2>{{item.ProductName}}</h2>
+            <p>
+              <i ng-show="item.teachername">讲师：{{item.teachername}}&nbsp;&nbsp;</i>
+              <span class="course-count">课时数：{{item.hour}}&nbsp;&nbsp; 有效期：{{item.validity}}</span>
+            </p>
+            <p>
+              <span>{{item.price|xufen}}</span>
+              <em ng-show="item.price| xufenshow">学分</em>
+              <!--<span class="course-cf course-flower" ng-class="{active:flowerstate}" ng-click="flowerStateClick()"><i class="icon"></i>{{item.flower}}</span>-->
+            </p>
+          </div>
+        </div>
+      </div>
       <div class="freexf-nullmsg" ng-show="!uppageshow">没有更多!</div>
     </section>
     <ion-infinite-scroll ng-if="uppageshow" on-infinite="doRefresh()" immediate-check="false" distance="1%"></ion-infinite-scroll>

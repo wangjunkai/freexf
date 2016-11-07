@@ -1,6 +1,7 @@
 html {
   font-size: 1px
 }
+
 .md-scroll-mask {
   position: initial;
 }
@@ -13,6 +14,10 @@ input, textarea {
   -webkit-animation: slideInUp 0.3s;
   -moz-animation: slideInUp 0.3s;
   animation: slideInUp 0.3s;
+}
+
+.no-header {
+  top: 0 !important;
 }
 
 .backdrop {
@@ -28,7 +33,7 @@ input, textarea {
   font-size: 12px;
 }
 
-.loading > div:nth-child(1){
+.loading > div:nth-child(1) {
   font-size: 15px;
 }
 
@@ -58,12 +63,15 @@ input, textarea {
   width: 60px;
   left: -20px;
 }
-
+.content-modal.modal ion-content:first-of-type{
+  opacity: 1;
+  margin-top: -1px;
+}
 ion-content:first-of-type {
   opacity: 0;
   margin-top: -10px;
 
-  transition: margin-top .3s ease-in-out,opacity .3s ease-in-out;
+  transition: margin-top .3s ease-in-out, opacity .3s ease-in-out;
 }
 
 /*top bar样式*/
@@ -182,7 +190,6 @@ ion-content:first-of-type {
   height: 25px;
 }
 
-
 /*搜索框*/
 .bar .freexf-search {
   box-sizing: border-box;
@@ -247,7 +254,6 @@ ion-content:first-of-type {
   width: 18px;
 }
 
-
 /*登录注册*/
 .bar .button-clear.register,
 .bar .button-clear.login {
@@ -265,11 +271,44 @@ ion-content:first-of-type {
 *::-webkit-scrollbar {
   width: 0
 }
-.already .scroll{
-    height:100%;
-}.freexf-nullmsg{
+
+.already .scroll {
+  height: 100%;
+}
+
+.freexf-nullmsg {
   text-align: center;
   font-size: 12rem;
   color: #969696;
   padding: 10px;
+}
+
+.freexf-ef, .freexf-ef .pane, .freexf-ef .view {
+  background: #EFEFEF;
+}
+
+@media (min-width: 320px) {
+  .content-modal.modal {
+    top: 10%;
+    right: 10%;
+    bottom: 10%;
+    left: 10%;
+    width: 80%;
+    min-height: 240px;
+  }
+}
+
+@media (min-width: 320px) {
+  .active .modal-backdrop-bg {
+    opacity: .5;
+  }
+}
+
+@media (min-width: 320px) {
+  .modal-backdrop-bg {
+    -webkit-transition: opacity 300ms ease-in-out;
+    transition: opacity 300ms ease-in-out;
+    background-color: #000;
+    opacity: 0;
+  }
 }

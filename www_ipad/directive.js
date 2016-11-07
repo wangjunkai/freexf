@@ -38,7 +38,7 @@
         var $element = $(element[0]);
         scope.$on('$ionicView.loaded', function () {
           var a = $element.find('.bar-left'), b = $element.find('.bar-center'), c = $element.find('.bar-right');
-          b.css('width', $element.width() - a.width() - c.width() - 2);
+          b.css('width', $element.width() - a.width() - c.width() - 5);
         });
       }
     }])
@@ -229,7 +229,7 @@
           });
         }
       }])
-    .directive('activeTop', ['$rootScope', '$freexfUser','$frModal', function ($rootScope, $freexfUser,$frModal) {
+    .directive('activeTop', ['$rootScope', '$freexfUser', '$frModal', function ($rootScope, $freexfUser, $frModal) {
       var modal_ary = {
         register: {
           ctrlUrl: 'modules/user/register',
@@ -240,6 +240,7 @@
           tempUrl: 'modules/user/login.html'
         }
       };
+
       function link(scope, element, attrs) {
         scope.userLg = $freexfUser.auth() && $freexfUser.auth().userLg;
         $rootScope.$on('auth:update', function (event, auth) {
@@ -249,6 +250,7 @@
           $frModal.openModal(scope, name, modal_ary, data, back);
         };
       }
+
       return {
         templateUrl: 'modules/pubilc/activetop.html',
         link: link
@@ -328,4 +330,28 @@
           }
         }
       }])
+    .directive('getMore', function () {
+      return {
+        link: function (scope, ele, attrs) {
+          var $ele = $(ele[0]),
+            eheight = $ele.height(),
+            vcontent = $('<div style="height: initial;display: none" class="notecontent">' + attrs.getMore + '</div>');
+          $ele.append(vcontent);
+          var vheight = $(vcontent).height();
+          if (vheight > eheight) {
+            scope.ismore = true;
+          } else {
+            scope.ishide = true;
+          }
+          scope.unfold = function () {
+            if (scope.ismore) {
+              $ele.attr('style', 'height: initial');
+            } else {
+              $ele.removeAttr('style');
+            }
+            scope.ismore = !scope.ismore;
+          };
+        }
+      }
+    })
 })();

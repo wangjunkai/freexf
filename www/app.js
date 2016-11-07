@@ -54,7 +54,7 @@
             var $element = $(element[0]);
             scope.$on('$ionicView.loaded', function () {
               var a = $element.find('.bar-left'), b = $element.find('.bar-center'), c = $element.find('.bar-right');
-              b.css('width', $element.width() - a.width() - c.width() - 2);
+              b.css('width', $element.width() - a.width() - c.width() - 4);
             });
           }
         }])
@@ -65,7 +65,7 @@
             var $element = $(element[0]);
             var back = function () {
               //符合条件，返回home
-              var _backView = ['payaddress', 'payfail'];//后退页面
+              var _backView = ['payaddress', 'payfail', 'lottery'];//后退页面
               var _currentView = ['textbook', 'summer', 'coupon', 'abroad'];//当前页面
               return !!($ionicHistory.backView() && $.inArray($ionicHistory.backView().stateName, _backView) < 0 && $.inArray($ionicHistory.currentView().stateName, _currentView) < 0);
             };
@@ -153,7 +153,7 @@
             }
           }
         }])
-      .service('AUTH', function ($injector,$q) {
+      .service('AUTH', function ($injector, $q) {
         var self = this;
         this.FREEXFUSER = {
           name: 'freexfUser',
@@ -178,6 +178,162 @@
           });
           return defer.promise;
         }
+      })
+      .factory('$ToDetailState', function ($document, $location, $state) {
+        function toState() {
+          this.app = this.getParam.call(this);
+          this.map = {
+            coursedetail: this.app ? 'course' : 'coursedetail',
+            courseplate: this.app ? 'course_list' : 'courseplate',
+            telephone: this.app ? 'tele' : 'telephone',
+            Category1: 'Category1',
+            Category2: 'Category2',
+            Category3: 'Category3',
+            Category4: 'Category4'
+          };
+          this.go = this.connect.call(this);
+        }
+
+        toState.prototype = {
+          getParam: function () {
+            return 'app' in $location.$$search ? $location.$$search['app'] : null
+          },
+          initWebView: function () {
+            function connectWebViewJavascriptBridge(callback) {
+              var self = this;
+              if (window.WebViewJavascriptBridge) {
+                callback(WebViewJavascriptBridge)
+              } else {
+                document.addEventListener('WebViewJavascriptBridgeReady', function () {
+                  callback(WebViewJavascriptBridge)
+                }, false);
+              }
+            }
+
+            connectWebViewJavascriptBridge.call(this, function (bridge) {
+              try {
+                bridge.init(function (message, responseCallback) {
+                });
+              } catch (e) {
+              }
+            });
+          },
+          _GON: Object.getOwnPropertyNames,
+          initParam: function (state, data) {
+            if (!data) {
+              data = state;
+              state = null;
+            }
+            var newdata = {};
+            if (this.app && state) {
+              var obj = {
+                coursedetail: function (data) {
+                  return data[this._GON(data)[0]]
+                },
+                telephone: function (data) {
+                  return data[this._GON(data)[0]]
+                },
+                //app搜索列表参数处理
+                courseplate: function () {
+                  var type = [], param = [], Category = 'Category', QuanBu = '全部';
+                  for (var i = 1; i <= 4; i++) {
+                    if (Category + i in data) {
+                      param.push(data[Category + i])
+                    } else {
+                      param.push(QuanBu);
+                    }
+                  }
+                  return param.join('-')
+                }
+              };
+              newdata = {type: this.map[state], param: obj[state].call(this, data)};
+            } else {
+              newdata = data;
+            }
+            return newdata;
+          },
+          goState: function (state, data) {
+            if (!data) {
+              data = state;
+              state = null;
+            }
+            if (!state)return;
+            if (state && state == 'telephone') {
+              location.href = "tel:400-803-6611";
+              return;
+            }
+            try {
+              $state.go(state, this.initParam(data));
+            } catch (e) {
+            }
+
+          },
+          goApp: function (state, data) {
+            var newdata = this.initParam(state, data);
+            try {
+              window.WebViewJavascriptBridge.callHandler('HtmlToAndroid', newdata, function (responseData) {
+              });
+            } catch (e) {
+            }
+          },
+          removeTitle: function () {
+            var headerbar = $($document[0]).find('ion-header-bar'),
+              content = $($document[0]).find('ion-content.has-header');
+            $(headerbar).css('display', 'none');
+            $(content).addClass('no-header');
+          },
+          connect: function () {
+            if (!this.app) {
+              return this.goState.bind(this);
+            } else {
+              this.initWebView();
+              this.removeTitle();
+              return this.goApp.bind(this);
+            }
+          }
+        };
+        var a = new toState();
+        return {
+          go: a.go
+        }
+      })
+      .factory('$fxModal', function ($ionicModal, $q) {
+        var TemplateUrl = {
+          login: 'modules/user/loginmodal.html',
+          register: 'modules/user/registermodal.html'
+        }, names = Object.getOwnPropertyNames(TemplateUrl);
+
+        function init(scope) {
+          var defer = $q.defer();
+          if (!scope.modal) {
+            scope.modal = {};
+          }
+          for (var i in TemplateUrl) {
+            (function (j) {
+              $ionicModal.fromTemplateUrl(TemplateUrl[j], {
+                scope: scope,
+                animation: 'slide-in-up'
+              }).then(function (modal) {
+                scope.modal[j] = modal;
+                if (names.indexOf(j) + 1 == names.length) {
+                  defer.resolve(scope.modal);
+                }
+              });
+            })(i)
+          }
+          scope.modal['openModal'] = function (a) {
+            scope.modal[a].show();
+          };
+          scope.modal['closeModal'] = function (a) {
+            scope.modal[a].hide();
+          };
+          return defer.promise;
+        }
+
+        return {
+          init: init
+        }
+
       })
       //loading服务
       .factory('$Loading', function ($injector) {
@@ -220,9 +376,26 @@
           throw exception;
         }
       })
+      //apes
+      .service('apes', function (localStorageService, ENV, UpdateAPES) {
+        this.apesFun = function (apesNum) {
+          if (typeof (localStorageService.get('URLshortID')) != 'undefined' && localStorageService.get('URLshortID') != '' && localStorageService.get(apesNum) != '1') {
+            var GetUpdateAPES = UpdateAPES(ENV._api.__UpdateAPES);
+            GetUpdateAPES.getModel({
+              'apesType': apesNum.split('APES')[1],
+              'URLTrafficID': localStorageService.get('URLshortID')
+            }).then(function (res) {
+            });
+            localStorageService.set(apesNum, '1');
+          }
+          ;
+        };
+        //return apesFun;
+
+      })
       //全局路由配置
-      .run(['$rootScope', '$state', '$Loading', '$compile', '$timeout', '$interval', '$anchorScroll', 'localStorageService', 'AUTH', 'XHR', 'ENV', 'UpdateAPES',
-        function ($rootScope, $state, $Loading, $compile, $timeout, $interval, $anchorScroll, localStorageService, AUTH, XHR, ENV, UpdateAPES) {
+      .run(['$rootScope', '$state', '$Loading', '$compile', '$timeout', '$interval', '$anchorScroll', 'localStorageService', 'AUTH', 'XHR', 'ENV', 'UpdateAPES', 'apes',
+        function ($rootScope, $state, $Loading, $compile, $timeout, $interval, $anchorScroll, localStorageService, AUTH, XHR, ENV, UpdateAPES, apes) {
 
           //APES配置
           if (localStorageService.get('APES0') == null) {
@@ -268,7 +441,7 @@
           $rootScope.$on('$stateChangeSuccess', function (ev, to, toParams, from, fromParams, rootScope) {
             $interval.cancel($rootScope.h5playtimeend);
             !!$rootScope.xhr || $Loading.hide();
-            if (typeof (getCookieValue('Apes_Traffic_ID')) != 'undefined') {
+            if (typeof (getCookieValue('Apes_Traffic_ID')) != 'undefined' || getCookieValue('Apes_Traffic_ID') != '') {
               var URLshortID = getCookieValue('Apes_Traffic_ID');
               if (URLshortID != localStorageService.get('URLshortID')) {
                 localStorageService.set('URLshortID', URLshortID);
@@ -280,30 +453,22 @@
                 localStorageService.set('APES5', '0');
               }
             }
-            if (typeof (localStorageService.get('URLshortID')) != 'undefined' && localStorageService.get('APES0') != '1') {
-              var GetUpdateAPES = UpdateAPES(ENV._api.__UpdateAPES);
-              GetUpdateAPES.getModel({
-                'apesType': '0',
-                'URLTrafficID': localStorageService.get('URLshortID')
-              }).then(function (res) {
-              });
-              localStorageService.set('APES0', '1');
-            };
+            apes.apesFun('APES0');
 
             //判断有无iframe id控制 有：干掉它
             //添加iframe，url:?html=window.location.href.split('#')[1]
 
-              setTimeout(function () {
-                  if ($('iframe').length) {
-                      $('#childFrame').remove();
-                  }
+            setTimeout(function () {
+              if ($('iframe').length) {
+                $('#childFrame').remove();
+              }
 
-                  var url = window.location.href.split('#')[1];
-                  var childFrame = "<div id='childFrame'><iframe src='./seohtml.html?html=" + url + "'></iframe></div>"
-                  var template = angular.element(childFrame);
-                  iframeElement = $compile(template)($rootScope);
-                  angular.element(document.body).append(iframeElement);
-              }, 100)
+              var url = window.location.href.split('#')[1];
+              var childFrame = "<div id='childFrame'><iframe src='./seohtml.html?html=" + url + "'></iframe></div>"
+              var template = angular.element(childFrame);
+              iframeElement = $compile(template)($rootScope);
+              angular.element(document.body).append(iframeElement);
+            }, 100)
 
             //  var url = window.location.href.split('#')[1];
             //  var childFrame = "<div id='childFrame'><iframe src='./seohtml.html?html=" + url + "'></iframe></div>"
@@ -400,6 +565,17 @@
               }]
             }
           })
+          .state('loginsregister', {
+            url: '/loginsregister',
+            templateUrl: 'modules/user/login.html',
+            controller: 'login_ctrl',
+            cache: false,
+            resolve: {
+              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load(['modules/user/login.js']);
+              }]
+            }
+          })
           .state('register', {
             url: '/register',
             templateUrl: 'modules/user/register.html',
@@ -477,7 +653,7 @@
           })
 
           .state('pay', {
-            url: '/pay',
+            url: '/pay/:DiscountCode',
             templateUrl: 'modules/pay/pay.html',
             controller: 'pay_ctrl',
             cache: false,
@@ -550,6 +726,28 @@
               }]
             }
           })
+          .state('mycoursenote', {
+            url: '/mycoursenote/:courseId',
+            templateUrl: 'modules/user/mycoursenote.html',
+            controller: 'mycoursenote_ctrl',
+            cache: false,
+            resolve: {
+              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load(['modules/user/mycoursenote.js']);
+              }]
+            }
+          })
+          .state('mycoursementoring', {
+            url: '/mycoursementoring/:courseId',
+            templateUrl: 'modules/user/mycoursementoring.html',
+            controller: 'mycoursementoring_ctrl',
+            cache: false,
+            resolve: {
+              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load(['modules/user/mycoursementoring.js']);
+              }]
+            }
+          })
           .state('mycollection', {
             url: '/mycollection',
             templateUrl: 'modules/user/mycollection.html',
@@ -562,7 +760,7 @@
             }
           })
           .state('courseplate', {
-            url: '/courseplate/:Category1&:Category2',
+            url: '/courseplate/:Category1&:Category2&:Category3&:Category4',
             views: {
               '': {
                 controller: 'courseplate_ctrl',
@@ -651,57 +849,85 @@
             }
           })
           .state('olympic', {
-              url: '/olympic',
-              templateUrl: 'activities/201608/olympic.html',
-              controller: 'olympic_ctrl',
-              resolve: {
-                  loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
-                      return $ocLazyLoad.load(['activities/201608/olympic.js']);
-                  }]
-              }
+            url: '/olympic',
+            templateUrl: 'activities/201608/olympic.html',
+            controller: 'olympic_ctrl',
+            resolve: {
+              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load(['activities/201608/olympic.js']);
+              }]
+            }
           })
           .state('korean', {
-              url: '/korean',
-              templateUrl: 'activities/201608/koreanlanguage.html',
-              controller: 'korean_ctrl',
-              resolve: {
-                  loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
-                      return $ocLazyLoad.load(['activities/201608/koreanlanguage.js']);
-                  }]
-              }
+            url: '/korean',
+            templateUrl: 'activities/201608/koreanlanguage.html',
+            controller: 'korean_ctrl',
+            resolve: {
+              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load(['activities/201608/koreanlanguage.js']);
+              }]
+            }
           })
-            .state('examinationTime', {
-                url: '/examinationTime',
-                templateUrl: 'activities/201608/examinationTime.html',
-                controller: 'examinationTime_ctrl',
-                resolve: {
-                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
-                        return $ocLazyLoad.load(['activities/201608/examinationTime.js']);
-                    }]
-                }
-            })
+          .state('examinationTime', {
+            url: '/examinationTime',
+            templateUrl: 'activities/201608/examinationTime.html',
+            controller: 'examinationTime_ctrl',
+            resolve: {
+              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load(['activities/201608/examinationTime.js']);
+              }]
+            }
+          })
           .state('invitefriends', {
-              url: '/invitefriends',
-              templateUrl: 'activities/201608/invitefriends.html',
-              controller: 'invitefriends_ctrl',
-              cache: false,
-              resolve: {
-                  loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
-                      return $ocLazyLoad.load(['activities/201608/invitefriends.js']);
-                  }]
-              }
+            url: '/invitefriends',
+            templateUrl: 'activities/201608/invitefriends.html',
+            controller: 'invitefriends_ctrl',
+            cache: false,
+            resolve: {
+              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load(['activities/201608/invitefriends.js']);
+              }]
+            }
           })
-            .state('microClass', {
-                url: '/microClass',
-                templateUrl: 'activities/201609/microClass.html',
-                controller: 'microClass_ctrl',
-                cache: false,
-                resolve: {
-                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
-                        return $ocLazyLoad.load(['activities/201609/microClass.js']);
-                    }]
-                }
-            })
+          .state('microClass', {
+            url: '/microClass',
+            templateUrl: 'activities/201609/microClass.html',
+            controller: 'microClass_ctrl',
+            cache: false,
+            resolve: {
+              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load(['activities/201609/microClass.js']);
+              }]/*,
+              loadMyCtrl2: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load(['modules/user/login.js']);
+              }],
+              loadMyCtrl3: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load(['modules/user/register.js']);
+              }]*/
+            }
+          })
+          .state('oneBuy', {
+            url: '/oneBuy',
+            templateUrl: 'activities/201610/oneBuy.html',
+            controller: 'oneBuy_ctrl',
+            cache: false,
+            resolve: {
+              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load(['activities/201610/oneBuy.js']);
+              }]
+            }
+          })
+          .state('courseDiscount', {
+            url: '/courseDiscount',
+            templateUrl: 'activities/201609/courseDiscount.html',
+            controller: 'courseDiscount_ctrl',
+            cache: false,
+            resolve: {
+              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load(['activities/201609/courseDiscount.js']);
+              }]
+            }
+          })
           .state('coursedetail', {
             url: '/coursedetail/:courseId&:state',
             templateUrl: 'modules/course/coursedetail.html',
@@ -724,28 +950,72 @@
               }]
             }
           })
-           .state('multilingual', {
-               url: '/multilingual',
-               templateUrl: 'activities/201609/multilingual.html',
-               controller: 'multilingual_ctrl',
-               cache: false,
-               resolve: {
-                   loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
-                       return $ocLazyLoad.load(['activities/201609/multilingual.js']);
-                   }]
-               }
-           })
-            .state('lottery', {
-               url: '/lottery',
-               templateUrl: 'activities/201609/lottery.html',
-               controller: 'lottery_ctrl',
-               cache: false,
-               resolve: {
-                   loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
-                       return $ocLazyLoad.load(['activities/201609/lottery.js']);
-                   }]
-               }
-           });
+          .state('multilingual', {
+            url: '/multilingual',
+            templateUrl: 'activities/201609/multilingual.html',
+            controller: 'multilingual_ctrl',
+            cache: false,
+            resolve: {
+              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load(['activities/201609/multilingual.js']);
+              }]
+            }
+          })
+          .state('lottery', {
+            url: '/lottery/:courseId',
+            templateUrl: 'activities/201609/lottery.html',
+            controller: 'lottery_ctrl',
+            cache: false,
+            resolve: {
+              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load(['activities/201609/lottery.js']);
+              }]
+            }
+          })
+          .state('teacherteam', {
+            url: '/teacherteam',
+            templateUrl: 'activities/201609/teacherteam.html',
+            controller: 'teacherteam_ctrl',
+            resolve: {
+              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load(['activities/201609/teacherteam.js']);
+              }]
+            }
+          })
+          .state('ExaminationPaper', {
+            url: '/ExaminationPaper',
+            templateUrl: 'modules/PracticeExam/ExaminationPaper.html',
+            controller: 'ExaminationPaper_ctrl',
+            cache: false,
+            resolve: {
+              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load(['modules/PracticeExam/ExaminationPaper.js']);
+              }]
+            }
+          })
+          .state('cetMultilingual', {
+            url: '/cetMultilingual',
+            templateUrl: 'activities/201610/cetMultilingual.html',
+            controller: 'cetMultilingual_ctrl',
+            cache: true,
+            resolve: {
+              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load(['activities/201610/cetMultilingual.js']);
+              }]
+            }
+          })
+          //201611 4折狂欢
+          .state('fourFoldCarnival', {
+            url: '/fourFoldCarnival',
+            templateUrl: 'activities/201611/fourFoldCarnival.html',
+            controller: 'fourFoldCarnival_ctrl',
+            cache: false,
+            resolve: {
+              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load(['activities/201611/fourFoldCarnival.js']);
+              }]
+            }
+          });
 
         $stateProvider
           .state('tab', {

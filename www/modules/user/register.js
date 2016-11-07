@@ -2,7 +2,7 @@
 
 
 angular.module('freexf')
-  .controller('register_ctrl', function ($scope, $rootScope, $state, $injector, $interval, $timeout, $Loading, MSGICON, AuthRepository, ENV, UpdateAPES, localStorageService, $ionicPopup) {
+  .controller('register_ctrl', function ($scope, $rootScope, $state, $injector, $interval, $timeout, $Loading, MSGICON, AuthRepository, ENV, UpdateAPES, localStorageService, $ionicPopup, apes) {
     var REGISTER = AuthRepository('AjaxRegister.aspx', '/ajax');
     var PHONE_CODE = AuthRepository('sendphonecode.aspx', '/ajax');
 
@@ -65,17 +65,12 @@ angular.module('freexf')
         var data = req.response.data;
         $Loading.show({class: data.success ? MSGICON.success : MSGICON.fail, text: data.message}, 1500);
         if (data.success) {
-          if (typeof (localStorageService.get('URLshortID')) != 'undefined' && localStorageService.get('APES2') != '1') {
-            var GetUpdateAPES = UpdateAPES(ENV._api.__UpdateAPES);
-            GetUpdateAPES.getModel({
-              'apesType': '2',
-              'URLTrafficID': localStorageService.get('URLshortID')
-            }).then(function (res) {
-            });
-            localStorageService.set('APES2', '1');
+          apes.apesFun('APES2');
+          if ($scope.modal && $scope.modal['register']) {
+            $scope.modal['register'].remove() && $scope.modal['login'].show();
+          } else {
+            $state.go('loginsregister');
           }
-          ;
-          $state.go('login');
         }
       });
       /*}*/
@@ -148,6 +143,8 @@ angular.module('freexf')
       $(".popup-body").css("height", allowheight);
     }
 
-    $rootScope.showloginclues();
+    if (!$scope.modal) {
+      $rootScope.showloginclues();
+    }
 
   });

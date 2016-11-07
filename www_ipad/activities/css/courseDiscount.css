@@ -1,0 +1,412 @@
+﻿.freexf-courseDiscount {
+  background: #fff;
+  font-family: '微软雅黑';
+}
+.freexf-courseDiscount .courseDiscount-title {
+    background: #5ad2dd;
+}
+.freexf-courseDiscount .active-toptitle {
+    width: 80%;
+    margin: 0 auto;
+}
+.freexf-courseDiscount .active-logo {
+    padding: 12px 20px 0 20px;
+    float: left;
+}
+.freexf-courseDiscount .active-logo img {
+    width:86px;
+    height:16px;
+}
+.freexf-courseDiscount .active-toptitle li {
+    padding:13px;
+    font-size:12rem;
+    cursor:pointer;
+    float:left;
+}
+.freexf-courseDiscount .active-toptitle li a {
+    color: #fff;
+}
+.freexf-courseDiscount .active-toptitle .active-login{
+    color: #fff;
+    margin: 9px 0 auto 25px;
+    float:left;
+}
+.freexf-courseDiscount .active-login .active-bt{
+    cursor:pointer;
+    border: 1px solid #fff;
+    text-align: center;
+    margin:3px 7px;
+    width: 60px;
+    font-size:12rem;
+    float: left;
+}
+.freexf-courseDiscount .active-phone {
+    float: right;
+    color: #fff;
+}
+.freexf-courseDiscount .active-phone img {
+    margin-top: 13px;
+    width: 20px;
+    height: 18px;
+}
+.freexf-courseDiscount .active-phone span {
+    font-size: 18rem;
+    padding: 0;
+    vertical-align: bottom;
+}
+.freexf-courseDiscount img {
+  width: 100%;
+  vertical-align: bottom;
+}
+.freexf-courseDiscount .active-rules {
+    width:75%;
+    margin:20px auto;
+}
+.freexf-courseDiscount .rulesContent {
+    width:60%;
+    display:inline-block;
+    margin-right:100px;
+}
+.freexf-courseDiscount .discountPic {
+    width:20%;
+    display:inline-block;
+}
+
+.freexf-courseDiscount .active-tab {
+    width:100%;
+    margin:40px auto;
+    background-color:#ffffff;
+}
+
+.freexf-courseDiscount .active-tab>img{
+    width:100%;
+}
+
+.freexf-courseDiscount .active-tab .active_tab_menu{
+    width:100%;
+    height:46px;
+    position:relative;
+}
+
+.freexf-courseDiscount .active-tab .active_tab_menu:before{
+    content:"";
+    width:14px;
+    height:9px;
+    position:absolute;
+    top:44px;
+    left:0px;
+    z-index:0;
+}
+.freexf-courseDiscount .active-tab .active_tab_menu:after{
+    content:"";
+    width:14px;
+    height:9px;
+    position:absolute;
+    top:44px;
+    right:0px;    
+    z-index:0;
+}
+
+.freexf-courseDiscount .multilingual .active_tab_menu:before{
+    background:url(../img/courseDiscount/2@2x.png) no-repeat;
+    background-size:14px 9px;    
+}
+
+.freexf-courseDiscount .multilingual .active_tab_menu:after{
+    background:url(../img/courseDiscount/1@2x.png) no-repeat;
+    background-size:14px 9px;
+}
+
+.freexf-courseDiscount .k12 .active_tab_menu:before{
+    background:url(../img/courseDiscount/4@2x.png) no-repeat;
+    background-size:14px 9px;
+}
+
+.freexf-courseDiscount .k12 .active_tab_menu:after{
+    background:url(../img/courseDiscount/3@2x.png) no-repeat;
+    background-size:14px 9px;
+}
+
+.freexf-courseDiscount .accounting .active_tab_menu:before{
+    background:url(../img/courseDiscount/6@2x.png) no-repeat;
+    background-size:14px 9px;
+}
+
+.freexf-courseDiscount .accounting .active_tab_menu:after{
+    background:url(../img/courseDiscount/5@2x.png) no-repeat;
+    background-size:14px 9px;
+}
+
+.freexf-courseDiscount .english .active_tab_menu:before{
+    background:url(../img/courseDiscount/8@2x.png) no-repeat;
+    background-size:14px 9px;
+}
+
+.freexf-courseDiscount .english .active_tab_menu:after{
+    background:url(../img/courseDiscount/7@2x.png) no-repeat;
+    background-size:14px 9px;
+}
+
+
+.freexf-courseDiscount .multilingual .active_tab_menu{background-color:#4b7cde;}
+.freexf-courseDiscount .k12 .active_tab_menu{background-color:#57cb88;}
+.freexf-courseDiscount .accounting .active_tab_menu{background-color:#f0b969;}
+.freexf-courseDiscount .english .active_tab_menu{background-color:#f58c68;}
+
+.freexf-courseDiscount .multilingual .active_tab_menu ul{width:83%; margin:auto;}
+.freexf-courseDiscount .k12 .active_tab_menu ul{width:96%; margin:auto;}
+.freexf-courseDiscount .accounting .active_tab_menu ul{width:56%; margin:auto;}
+.freexf-courseDiscount .english .active_tab_menu ul{width:83%; margin:auto;}
+
+.freexf-courseDiscount .active-tab .active_tab_menu ul li{
+    height:47px;
+    font-size:20rem;
+    line-height:46px;
+    color:#ffffff;
+    vertical-align:middle;
+    display:inline-block;
+    text-align:center;
+    cursor:pointer;
+}
+
+.freexf-courseDiscount .multilingual .active_tab_menu ul li.on{color:#4b7cde;background-color:#ffffff;}
+.freexf-courseDiscount .k12 .active_tab_menu ul li.on{color:#57cb88;background-color:#ffffff;}
+.freexf-courseDiscount .accounting .active_tab_menu ul li.on{color:#f0b969;background-color:#ffffff;}
+.freexf-courseDiscount .english .active_tab_menu ul li.on{color:#f58c68;background-color:#ffffff;}
+
+.freexf-courseDiscount .multilingual .active_tab_menu ul li{width:16%;}
+.freexf-courseDiscount .k12 .active_tab_menu ul li{width:8.55%;}
+.freexf-courseDiscount .accounting .active_tab_menu ul li{width:49%;}
+.freexf-courseDiscount .english .active_tab_menu ul li{width:19%;}
+
+.freexf-courseDiscount .multilingual .active_tab_box, .freexf-courseDiscount .k12 .active_tab_box{
+    width:90%;
+    margin:15px auto 30px auto;
+    background-color:#ffffff;
+}
+
+.freexf-courseDiscount .zh_course_box>li{
+    width:29%;
+    display:inline-block;
+    margin-left:13px;
+    margin-right:13px;
+    margin-bottom:20px;    
+    border:1px solid #dcdcdc;
+}
+
+.freexf-courseDiscount .zh_course_box .course-pic{
+    position:relative;
+}
+
+.freexf-courseDiscount .zh_course_box .course-credit{
+    width:68px;
+    height:30px;
+    background:url(../img//courseDiscount/flag@2x.png) no-repeat;
+    background-size:68px 30px;
+    color:#ffffff;
+    position:absolute;
+    top:2px;
+    left:-6px;     
+    line-height:22px;    
+}
+
+.freexf-courseDiscount .zh_course_box .course-credit span{    
+    font-size:14rem;
+    margin-left:2px;
+    font-weight:400;   
+}
+.freexf-courseDiscount .zh_course_box .course-credit i{
+    font-size:10rem;
+    margin-left:2px;
+    font-weight:200;
+}
+
+.freexf-courseDiscount .zh_course_box .course-txt{
+    font-size:12rem;
+    color:#1b1b1b;
+    padding:5px 12px;
+    border-bottom:1px solid #dcdcdc;
+    line-height:20px;
+}
+
+.freexf-courseDiscount .zh_course_box .course-txt .title, .freexf-courseDiscount .zh_course_box .course-txt .teacher{
+    display:block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.freexf-courseDiscount .zh_course_box .course-star{
+    width:100%;
+    font-size:12rem;
+    color:#1b1b1b;
+    padding:15px 12px;
+    float:left;
+}
+
+.freexf-courseDiscount .zh_course_box .course-star .courseNum{
+    float:left;
+}
+.freexf-courseDiscount .zh_course_box .course-star .starNum{
+    float:right;
+}
+
+.freexf-courseDiscount .zh_course_box .course-star .star{
+    width:10px;
+    height:10px;
+    background:url(../img/courseDiscount/star.png) no-repeat;
+    background-size:10px 10px;
+    display: inline-block;
+    margin-left:0;
+    margin-top:5px;
+}
+
+.freexf-courseDiscount .zh_course_box .course-star .star.ban{
+    width:6px;
+}
+
+
+.freexf-courseDiscount .accounting .active_tab_box, .freexf-courseDiscount .english .active_tab_box{
+    width:100%;
+    margin:15px auto 30px auto;
+    background-color:#ffffff;
+}
+
+.freexf-courseDiscount .course-ul-box>li{
+    width:46.5%;
+    display:inline-block;
+    margin-right:5px;
+    margin-left:15px;
+    margin-bottom:20px;    
+    border:1px solid #dcdcdc;
+}
+
+.freexf-courseDiscount .course-ul-box .course-img{
+    width:55.5%;    
+    display:inline-block;
+    position:relative;
+}
+
+.courseDiscount .active_tab_box .active_course_list.off{
+    display:none!important;
+}
+
+.freexf-courseDiscount .active_tab_box .course-tit{
+    width:43%;
+    display:inline-block;
+    vertical-align:top;
+}
+
+.freexf-courseDiscount .active_tab_box .courseTit{
+    padding:10px 5px;
+}
+
+.freexf-courseDiscount .active_tab_box .course-img .course-price{
+    width:68px;
+    height:30px;
+    background:url(../img//courseDiscount/flag@2x.png) no-repeat;
+    background-size:68px 30px;
+    color:#ffffff;
+    position:absolute;
+    top:2px;
+    left:-6px;     
+    line-height:22px;
+}
+
+.freexf-courseDiscount .active_tab_box .course-img .course-price span{
+    font-size:14rem;
+    margin-left:2px;
+    margin-right:2px;
+}
+
+.freexf-courseDiscount .active_tab_box .course-img .course-price i{
+    font-size:10rem;
+}
+
+.freexf-courseDiscount .active_tab_box .course-tit>span{
+    display:inline-block;
+}
+
+.freexf-courseDiscount .active_tab_box .course-tit .title{
+    width:100%;
+    font-size:12rem;
+    color:#262626;
+    white-space:nowrap;
+    overflow:hidden;
+    display:block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.freexf-courseDiscount .active_tab_box .course-tit .teacher{
+    font-size:12rem;
+    color:#474646;
+    display:block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.freexf-courseDiscount .active_tab_box .course-tit .teacher i{
+    display:inline-block;
+}
+
+.freexf-courseDiscount .active_tab_box .course-tit .teacher span{
+    display:inline-block;
+}
+
+.freexf-courseDiscount .active_tab_box .course-time {
+    width:100%;
+    border-top:1px solid #e0e0e0;
+    display:inline-block;
+    font-size:12rem;
+    color: #474646;
+    padding:12px 5px;    
+}
+
+.freexf-courseDiscount .active_tab_box .courseTime{float:left;}
+.freexf-courseDiscount .active_tab_box .courseTime i{display:inline-block}
+.freexf-courseDiscount .active_tab_box .courseTime span{display:inline-block}
+
+.freexf-courseDiscount .active_tab_box .course-time .starNum{float:right;}
+.freexf-courseDiscount .active_tab_box .course-time .star{
+    width:10px;
+    height:10px;
+    background:url(../img/courseDiscount/star.png) no-repeat;
+    background-size:10px 10px;
+    display: inline-block;
+    margin-left:0;
+    margin-top:5px;
+}
+.freexf-courseDiscount .active_tab_box .course-time .star.ban{
+    width:6px;
+}
+
+
+.freexf-courseDiscount .guanzhu{
+    width:95%;
+    margin:40px auto;
+}
+
+.freexf-courseDiscount .guanzhu .weibo, .freexf-courseDiscount .guanzhu .wechat{
+    width:49%;
+    display:inline-block;
+}
+
+.freexf-courseDiscount .guanzhu .weibo{   
+    margin-right:10px;
+}
+
+.freexf-courseDiscount .more-course-button {
+    width:236px;
+    height:32px;
+    background:url(../img/courseDiscount/circle-button@3x.png) no-repeat;
+    background-size:100%;
+    color:#f76d6f;
+    font-size:15rem;
+    text-align:center;
+    line-height:32px;
+    margin:auto;
+    cursor:pointer;
+}

@@ -24,7 +24,7 @@
 .multilingual-box{width:94%;margin:10px auto 10px;font-size:0;-webkit-margin-collapse:separate;}
 .multilingual-box div.col{display:inline-block;vertical-align:top;position:relative;}
 .multilingual-box div.col-50{min-width: 50%;}
-.multilingual-box div.col-25{width:28%;min-width:28%;max-width:28%;padding: 10px;}
+.multilingual-teacher-box div.col-25{width:28%;min-width:28%;max-width:28%;padding: 10px;}
 .multilingual-box div.col>div{box-shadow:1px 1px 5px rgba(0,0,0,0.35);}
 .multilingual-box .multilingual-courseinfo{font-size:12rem;padding:0 5px;}
 .multilingual-box .multilingual-courseinfo p{margin:0;line-height:25px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
@@ -36,9 +36,10 @@
 .multilingual-xuefen span{font-size:8rem;}
 .multilingual-btn-more button{width:76%;margin:20px 12%;background:#5b7caf;color:#fff;font-size:14rem;border-radius:7px;border:none;height:35px;position:relative;}
 .multilingual-btn-more button:after{width:20px;height:12px;display:inline-block;background:url(../img/multilingual/go_icon@3x.png) no-repeat;background-size: auto 100%;position: relative;top: 2px;margin-left:7px;content:''}
-.multilingual-teacher>img{width:40%;}
-.multilingual-teacher .col p{font-size:14rem;text-align:center;}
-.multilingual-teacher .col img{border-radius:50%;border:2px #5b7caf solid;}
+.multilingual-teacher-box{padding:0 3%;}
+.multilingual-teacher-box>img{width:40%;}
+.multilingual-teacher-box .col p{font-size:14rem;text-align:center;}
+.multilingual-teacher-box .col img{border-radius:50%;border:2px #5b7caf solid;}
 
 .multilingual-footer.time-footer span{color:#5B7CAF!important;}
 .multilingual-footer.time-footer{border-top: 1px #5B7CAF solid;margin-top: 0px;display: block;height:44px;line-height:44px;text-align: center;}

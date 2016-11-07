@@ -25,6 +25,7 @@ angular.module('freexf')
         //定义默认值
         var item = {
           "Discount": data[i].Discount,
+          "DiscountFee":data[i].DiscountFee,
           "NeedPayFee": data[i].NeedPayFee,
           "OrderId": data[i].OrderId,
           "SetOrderTime": data[i].SetOrderTime,
@@ -236,6 +237,11 @@ angular.module('freexf')
       coursedetail: {
         ctrlUrl: 'modules/course/coursedetail',
         tempUrl: 'modules/course/coursedetail.html'
+      },
+      lottery:{
+        scope:$scope,
+        ctrlUrl:'activities/201609/lottery',
+        tempUrl:'activities/201609/lottery.html'
       }
     };
 

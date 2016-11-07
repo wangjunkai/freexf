@@ -1,0 +1,63 @@
+<ion-view view-title="{{GroupName}}">
+  <ion-header-bar default-header-bar class="freexf-bar lightgray">
+    <div class="bar-left">
+      <button class="button-clear freexf-back freexf-left" default-nav-back-button ng-click="goBack()">
+        <i class="icon freexf-goback"></i>
+      </button>
+    </div>
+    <div class="title">{{GroupName}}</div>    
+    <div class="bar-right">
+        <button class="button-clear freexf-consult"><span>咨询</span></button>
+    </div>
+  </ion-header-bar>
+  <ion-content lazy-scroll class="freexf-bg-gray">
+      <div class="practiceExam-test">
+          <h4>一、单选题</h4>
+          <div ng-repeat="(index,q) in QuestionList" ng-if="index>=currentQuestionNum-1&&index<currentQuestionNum">
+              <div><i>{{index+1}}.</i><span ng-bind-html="q.Question"></span></div>
+              <ul class="practiceExam-question">
+                  <li ng-repeat="(x,o) in q.OptionStringList">{{x|optionsFilter}}.{{o}}</li>
+              </ul>
+              <ul class="practiceExam-options" ng-if="q.Type==1">
+                  <li ng-repeat="(index,o) in q.OptionStringList" ng-class="{active:index==idx}" ng-click="selectIt($event,q.GroupId,q.QuestionId,q.Type)">{{index|optionsFilter}}</li>
+              </ul>
+              <ul class="practiceExam-options" ng-if="q.Type==2">
+                  <li ng-class="" >type=2</li>
+              </ul>
+          </div>
+          <div class="practiceExam-textBtnGroup">
+              <button ng-click="lastQuestion()" ng-hide="first">上一题</button>
+              <button ng-click="nextQuestion()" ng-hide="last">下一题</button>
+              <button ng-click="submitPaper()" ng-hide="submit">提交</button>
+          </div>
+          
+      </div>
+      <div class="practiceExam-testNumber">
+          <div class="practiceExam-testNumber-title"><p>选题<span>总共{{listNum}}题</span></p></div>
+          <ion-scroll direction='x' scrollbar-x='false'>
+              <ul class="row paper-Number">                  
+              </ul>
+          </ion-scroll>
+      </div>
+  </ion-content>
+    <!-- 提交成功完成度答对率提示 -->
+        <div class="popup-container practiceExam submit-success popup-showing active" ng-class="cssClass" ng-show="successTip">
+            <div class="popup">
+                <div class="popup-head">
+                    <h3 class="popup-title">提交成功</h3> 
+                </div>
+                <div class="popup-body" style="padding-bottom:10%;">
+                    <div>
+                        <span>{{GroupName}}      共{{listNum}}题</span>
+                        <div id="round-chart" style="width:150px;height:80px;margin: 10px auto 0;"></div>
+                    </div>
+                </div>
+                <div class="popup-buttons"><!-- ngRepeat: button in buttons -->
+                    <button ng-click="$buttonTapped(button, $event)" class="button button-default" ng-class="button.type || 'button-default'"><img src="img/practiceExam/icon-backlist.png">返回列表</button><!-- end ngRepeat: button in buttons -->
+                    <button ng-click="$buttonTapped(button, $event)" class="button button-default" ng-class="button.type || 'button-default'"><img src="img/practiceExam/icon- analysis.png">解析</button><!-- end ngRepeat: button in buttons -->
+                    <button ng-click="$buttonTapped(button, $event)" class="button go-answer" ng-class="button.type || 'button-default'"><img src="img/practiceExam/icon-reset.png">重做</button><!-- end ngRepeat: button in buttons -->
+                </div>
+            </div>
+        </div>
+</ion-view>
+

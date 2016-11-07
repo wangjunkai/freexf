@@ -57,14 +57,21 @@ var js_path = {
   js_lib_dist: 'www/dist/js/lib/',
   js_lib_dist_concat: 'www/dist/js/lib/concat/'
 };
+function getDate() {
+  var a = new Date();
+  var m = a.getMonth() + 1;
+  var month = (m < 10 ? '0' + m : m),
+    date = a.getDate()  < 10 ? '0' + a.getDate() : a.getDate();
+  return a.getFullYear() + month.toString() + date.toString();
+}
 var css_path = {
   css_map: 'map/',
   css_modules: 'www/css/',
-  css_modules_dist: 'www/dist/css/modules/',
-  css_modules_dist_concat: 'www/dist/css/modules/concat/',
+  css_modules_dist: 'www/dist/css/modules/' + getDate() + '/',
+  css_modules_dist_concat: 'www/dist/css/modules/' + getDate() + '/concat/',
   css_activities: 'www/activities/css/',
-  css_activities_dist: 'www/dist/css/activities/',
-  css_activities_dist_concat: 'www/dist/css/activities/concat/'
+  css_activities_dist: 'www/dist/css/activities/' + getDate() + '/',
+  css_activities_dist_concat: 'www/dist/css/activities/' + getDate() + '/concat/'
 };
 /*注册任务*/
 
@@ -115,12 +122,14 @@ var css_modules_ary = [
   'freexf.css', 'home.css', 'user.css', 'course.css', 'member.css', 'set.css', 'pay.css'
 ];
 var css_activities_ary = [
-  'activities-examinationTime.css',
-  'activities-public.css',
-  'classlearing.css',
-  'invitefriends.css',
-  'microClass.css',
-  'multilingual.css'
+  '!*.bundle.css',
+  '!french.css',
+  '!Germany.css',
+  '!japanese.css',
+  '!korean.css',
+  '!russian.css',
+  '!spanish.css',
+  '*.css'
 ];
 gulp.task('uglify', function () {
   return gulp.src(each_ary(js_path.js_lib, requirejs))
@@ -134,6 +143,8 @@ gulp.task('uglify', function () {
 });
 //css压缩
 gulp.task('minify-activities', function () {
+  //each_ary(css_path.css_activities, css_activities_ary)
+  //[css_path.css_activities + '*.css', '!' + css_path.css_activities + '*.bundle.css']
   return gulp.src(each_ary(css_path.css_activities, css_activities_ary))
     .pipe(changed(css_path.css_activities_dist))
     .pipe(sourcemaps.init())
@@ -149,7 +160,8 @@ gulp.task('minify-activities', function () {
 });
 //css压缩
 gulp.task('minify-modules', function () {
-  return gulp.src(each_ary(css_path.css_modules, css_modules_ary))
+  //each_ary(css_path.css_modules, css_modules_ary)
+  return gulp.src([css_path.css_modules + '*.css', '!' + css_path.css_modules + '*.bundle.css'])
     .pipe(changed(css_path.css_modules_dist))
     .pipe(sourcemaps.init())
     .pipe(autoprefixer({

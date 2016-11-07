@@ -21,8 +21,7 @@ angular.module('freexf')
       });
 
 
-      $scope.goCourseList = function (category1, category2) {
-          console.log(category2);
-          $state.go('courseplate', { Category1: category1, Category2: category2 });
+      $scope.goCourseList = function (category1, category2, category3) {
+          $state.go('courseplate', { Category1: category1, Category2: category2, Category3: category3 });
       };
   });

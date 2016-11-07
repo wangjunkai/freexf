@@ -1,0 +1,167 @@
+﻿<ion-view view-title="好课4折狂欢">
+  <ion-header-bar class="freexf-bar">
+    <div class="bar-left">
+      <a default-nav-back-button ng-click="goBack()" class="button-clear freexf-back freexf-left">
+        <i class="icon freexf-gohomeback"></i>
+      </a>
+    </div>
+    <div class="title">好课4折狂欢</div>
+  </ion-header-bar>
+  <ion-content lazy-scroll class="has-header fourFoldCarnival">
+    <img class="banner" src="activities/img/fourFoldCarnival/banner.png" alt="">
+    <div class="banner-2">
+      <img src="activities/img/fourFoldCarnival/haoke.png" alt="">
+    </div>
+    <div class="content">
+      <div class="list">
+        <div class="title">世界的骄傲,由我们打造</div>
+        <div class="table-1 clearfix">
+          <div class="freexf-col" ng-repeat="n in zhongxiaoxue">
+            <div class="freexf-col-detail" ng-click="goDetail(n.value)">
+              <img ng-src="activities/img/fourFoldCarnival/{{n.key}}@3x.png" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="bottom clearfix">
+          <a ng-click="goregister()" class="list-button">立即注册免费试听</a>
+          <a ng-click="goPlate({ Category1: '中小学' })" class="list-button right">点击获取更多课程</a>
+        </div>
+      </div>
+      <div class="list">
+        <div class="title">多一种语言 多一个世界</div>
+        <div class="table-1 clearfix">
+          <div class="freexf-col" ng-repeat="n in duoyuzhong">
+            <div class="freexf-col-detail" ng-click="goDetail(n.value)">
+              <img ng-style="{'width':n.key==9?'98.9%':'100%'}" ng-src="activities/img/fourFoldCarnival/{{n.key}}@3x.png" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="bottom clearfix">
+          <a ng-click="goregister()" class="list-button">立即注册免费试听</a>
+          <a ng-click="goPlate({ Category1: '多语种' })" class="list-button right">点击获取更多课程</a>
+        </div>
+      </div>
+      <div class="list">
+        <div class="title">科学备考 CET轻松提分</div>
+        <div class="table-1 table-2 clearfix">
+          <div class="freexf-col" ng-repeat="n in yingyu">
+            <div class="freexf-col-detail clearfix" ng-click="goDetail(n.value)">
+              <img ng-src="activities/img/fourFoldCarnival/{{n.key}}@3x.png" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="bottom clearfix">
+          <a ng-click="goregister()" class="list-button">立即注册免费试听</a>
+          <a ng-click="goPlate({ Category1: '英语' })" class="list-button right">点击获取更多课程</a>
+        </div>
+      </div>
+      <div class="list">
+        <div class="title">学好会计 投资未来</div>
+        <div class="table-1 table-2 clearfix">
+          <div class="freexf-col" ng-repeat="n in kuaiji">
+            <div class="freexf-col-detail clearfix" ng-click="goDetail(n.value)">
+              <img ng-src="activities/img/fourFoldCarnival/{{n.key}}@3x.png" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="bottom clearfix">
+          <a ng-click="goregister()" class="list-button">立即注册免费试听</a>
+          <a ng-click="goPlate({ Category1: '会计职业' })" class="list-button right">点击获取更多课程</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-prize">
+      <div class="title">
+        爱学习 赢iPhone7奖品设置
+      </div>
+      <div class="row">
+        <div class="col-33">
+          <img src="activities/img/fourFoldCarnival/first.png" alt="">
+          <span>一等奖</span>
+          <p class="ft8">32GiPhone7一台(颜色自选)</p>
+        </div>
+        <div class="col-33">
+          <img src="activities/img/fourFoldCarnival/second.png" alt="">
+          <span>二等奖</span>
+          <p class="ft8">华为手环 B3 商务版(摩卡棕)</p>
+        </div>
+        <div class="col-33">
+          <img src="activities/img/fourFoldCarnival/three.png" alt="">
+          <span>三等奖</span>
+          <p class="ft8">时尚抱枕一个</p>
+        </div>
+      </div>
+    </div>
+    <div class="foot-content">
+      <div class="rules">
+        <div class="title">
+          活动规则
+        </div>
+        <p class="detail">
+          一.好课4折狂欢活动规则
+          <br>
+          1.活动时间：<span style="color: #ff8372;">即日起--11月11号24:00</span>(11号当天可额外抽奖);
+          <br>
+          2.微课、语音课除外,其他课程全场4折;
+          <br>
+          3.课程有效期结束后,返还金额以实付金额为准。
+          <br>
+          二.爱学习 赢iPhone7活动规则
+          <br>
+          1.活动时间：<span style="color: #ff8372;">即日起--11月11号24:00</span>;
+          <br>
+          2.活动期间内累计购满两门及以上课程的用户获抽奖机会,更有机会获得大奖!;
+          <br>
+          3.课程有效期结束后,返还金额以实付金额为准。
+        </p>
+      </div>
+      <div class="list">
+        <div class="title">更多活动</div>
+        <div class="table-1">
+          <a href="http://weibo.com/freexfcom">
+            <img src="activities/img/fourFoldCarnival/weibo.png" alt="">
+          </a>
+          <img style="margin-top: 5px;" src="activities/img/fourFoldCarnival/weixin.png" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="phone" ng-click="tele()">
+      <img class="phone-icon" src="activities/img/fourFoldCarnival/phone.png">
+      <span class="phone-num">400-803-6611</span>
+    </div>
+  </ion-content>
+  <script type="text/ng-template" id="table-1.html">
+    <div class="freexf-col-detail">
+      <a href="/mobile/www/index.aspx#/coursedetail/">
+        <img src="activities/img/fourFoldCarnival/1.jpg">
+      </a>
+      <div style="padding: 0 5px;">
+        <p>数量的空间里水电费水电费水电费隧道</p>
+        <div class="clearfix discount">
+          <span><strong style="color: #ea4e00">{{1212}}</strong><em>学分</em></span>
+          <span style="margin: 0 5px;"><strong class="zhekou">{{12312}}学分</strong><em
+            style="color: #ea4e00;font-size: 10rem;">4折</em></span>
+          <span><strong style="color: #ea4e00">{{1231}}</strong><em>课时</em></span>
+        </div>
+      </div>
+    </div>
+  </script>
+  <script type="text/ng-template" id="table-2.html">
+    <div class="freexf-col-detail clearfix">
+      <a class="img clearfix" href="/mobile/www/index.aspx#/coursedetail/">
+        <img src="activities/img/fourFoldCarnival/1.jpg">
+      </a>
+      <div style="float: left;">
+        <div class="text">
+          <p class="name">隧道发生的发生的</p>
+          <p class="jiangshi" style="margin-top: 5px;">课时数:12313</p>
+        </div>
+        <div class="keshi discount">
+          <span><strong style="color: #ea4e00">{{1212}}</strong><em>学分</em></span>
+          <span style="margin: 0 5px;"><strong class="zhekou">{{1312}}学分</strong><em
+            style="color: #ea4e00;font-size: 10rem;">4折</em></span>
+        </div>
+      </div>
+    </div>
+  </script>
+</ion-view>

@@ -25,23 +25,29 @@
   </style>
   <link href="lib/ionic/css/ionic.min.css" rel="stylesheet">
   <script type="text/javascript">
-      window.hostType = 0;
+      window.hostType = 1;
       window.versionsNum = '?v=<%=tf_GetStyleTimeStamp()%>';
     (function () {
       var headEl = document.getElementsByTagName('head')[0], sync = true;
       var css = {
         0: ['css/freexf.css', 'css/course.css', 'css/home.css', 'css/pay.css',
-          'css/student.css', 'css/user.css', 'css/video.css', 'css/set.css', 'css/member.css',
-          'activities/css/activities-public.css', 'activities/css/activities-examinationTime.css',
+          'css/user.css', 'css/set.css', 'css/member.css', 'css/ExaminationPaper.css',
+          'activities/css/public.css',
+          'activities/css/examinationTime.css',
           'activities/css/invitefriends.css',
           'activities/css/classlearing.css',
           'activities/css/multilingual.css',
           'activities/css/microClass.css',
-          'activities/css/lottery.css'
+          'activities/css/oneBuy.css',
+          'activities/css/lottery.css',
+          'activities/css/teacherteam.css',
+          'activities/css/courseDiscount.css',
+          'activities/css/cetMultilingual.css',
+          'activities/css/fourFoldCarnival.css'
           ],
         1: [
-          'activities/css/activities-aac1d0005b.bundle.css',
-          'css/freexf-dbeb50277f.bundle.css'
+          'activities/css/activities-b4fa021210.bundle.css',
+          'css/freexf-0d12eba003.bundle.css'
           ]
       };
       var js = {
@@ -85,6 +91,35 @@
 <!--require按需加载js控件-->
 <script data-main="config.js?v=<%=tf_GetStyleTimeStamp()%>" src="dist/js/lib/require-01ccd14836.js?v=<%=tf_GetStyleTimeStamp()%>"></script>
 <div class="udeskfun" style="position:absolute;top:-1px;left:-1px;width:0px;height:0px;"></div>
+    <%
+        If Component.WebContextBase.ConextItem(LsFreeXFDataAccess.DataAccess.ObjApes_Traffic.Apes_URLShort) = "" Then
+
+            Dim lb_Flag As Boolean
+
+            lb_Flag = tf_URLShort("bdkeyword")
+            If lb_Flag = False Then
+                lb_Flag = tf_URLShort("mbdkeyword")
+            End If
+            If lb_Flag = False Then
+                lb_Flag = tf_URLShort("360keyword")
+            End If
+            If lb_Flag = False Then
+                lb_Flag = tf_URLShort("m360keyword")
+            End If
+            If lb_Flag = False Then
+                lb_Flag = tf_URLShort("keyword")
+            End If
+            If lb_Flag = False Then
+                lb_Flag = tf_URLShort("sogoukeyword")
+            End If
+            If lb_Flag = False Then
+                lb_Flag = tf_URLShort("msogoukeyword")
+            End If
+        End If
+
+        Call LsFreeXFDataAccess.DataAccess.ObjApes_Traffic.Log访问()
+     %>
+
 </body>
 
 </html>

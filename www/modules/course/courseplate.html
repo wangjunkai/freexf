@@ -1,48 +1,47 @@
-<ion-view view-title="{{Category1}}">
+<ion-view view-title="{{Category.Category1}}">
   <ion-header-bar default-header-bar class="freexf-bar lightgray">
     <div class="bar-left">
       <button class="button-clear freexf-back freexf-left" default-nav-back-button ng-click="goBack()">
         <i class="icon freexf-goback"></i>
       </button>
     </div>
-    <div class="title">{{Category1}}</div>
+    <div class="title">{{Category.Category1}}</div>
     <div class="bar-right">
       <a href="#/coursesearch" class="button-clear freexf-icon-search"></a>
     </div>
   </ion-header-bar>
-    <div class="freexf-classmodule-header-nav">
-        <div class="freexf-courseNav" ng-class="{active:gradeclass}" ng-click="gradeClassShow()">{{lingual}}</div>
-        <div class="freexf-coursesort">
-            <div>
-                <div class="active" ng-click="courseSort($event)">综合</div>
-                <div ng-click="courseSort($event)">最近</div>
-                <div ng-click="courseSort($event)">学分</div>
-            </div>
-        </div>
-        <div class="freexf-languageclass" ng-show="gradeclass">
-            <ul>
-                <li class="active" ng-click="category($event)" date-category="全部">全部</li>
-                <li ng-repeat="c in categorys" ng-click="category($event)">{{c|cutSummer}}</li>
-            </ul>
-        </div>
-        <div class="freexf-languageclass" ng-show="languageClass">
-            <ul>
-                <li class="active" ng-click="category($event)" date-category="全部">全部</li>
-                <li ng-repeat="c in languageClassList" ng-click="category($event)">{{c|cutSummer}}</li>
-            </ul>
-        </div>
+  <div class="freexf-classmodule-header-nav" ng-init="categoryActive=false">
+    <div class="freexf-courseNav" nowrap ng-class="{active:categoryActive}" ng-click="categoryActive=!categoryActive">
+        <nobr>{{CategoryTitle}}</nobr>
     </div>
+    <div class="freexf-coursesort">
+      <div>
+        <div class="active" ng-click="courseSort($event)">综合</div>
+        <div ng-click="courseSort($event)">最近</div>
+        <div ng-click="courseSort($event)">学分</div>
+      </div>
+    </div>
+
+    <div class="freexf-languageclass" ng-show="categoryActive" ng-repeat="(index,list) in CategoryList">
+      <ul class="clearfix">
+        <li ng-click="Typer.setTyper(index,'全部')" ng-class="{active:Typer.setActive(index,'全部')}">全部</li>
+        <li ng-repeat="l in list" ng-click="Typer.setTyper(index,l)" ng-class="{active:Typer.setActive(index,l)}">
+          {{l|cutSummer}}
+        </li>
+      </ul>
+    </div>
+  </div>
   <ion-content lazy-scroll>
-      <p style="height:30px;margin:0"></p>
-  		<!--课程列表-->
-        <section>
-          <!--<ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>-->
-          <div class="list freexf-classmodule" ui-view="classmodule">
-          </div>
-        </section>
-        <ion-infinite-scroll ng-if="uppageshow" on-infinite="doRefresh()" distance="1%"> </ion-infinite-scroll>
-        <div ng-hide="uppageshow" class="freexf-nullmsg">{{bottomtext}}</div>
-</ion-content>
+    <p style="height:30px;margin:0"></p>
+    <!--课程列表-->
+    <section>
+      <!--<ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>-->
+      <div class="list freexf-classmodule" ui-view="classmodule">
+      </div>
+    </section>
+    <ion-infinite-scroll ng-if="uppageshow" on-infinite="doRefresh()" distance="30%"></ion-infinite-scroll>
+    <div ng-hide="uppageshow" class="freexf-nullmsg">{{bottomtext}}</div>
+  </ion-content>
 
 </ion-view>
 

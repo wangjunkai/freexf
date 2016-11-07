@@ -16,7 +16,6 @@ angular.module('freexf')
 
     $scope.login = AUTH.FREEXFUSER.data ? AUTH.FREEXFUSER.data : (new loginModel());
 
-
     //登录
     $scope.toLogin = function ($event, $form) {
       if ($form.$invalid) return false;
@@ -41,14 +40,18 @@ angular.module('freexf')
             userLg: true
           };
 
-          $timeout(function () {
-            var _backView = ['register'];
-            if ($ionicHistory.backView() && $.inArray($ionicHistory.backView().stateName, _backView) < 0) {
-              $ionicHistory.goBack();
-            } else {
-              $state.go('tab.home');
-            }
-          }, 10)
+          if ($scope.modal && $scope.modal['login']) {
+            $scope.modal['login'].remove();
+          } else {
+            $timeout(function () {
+              var _backView = ['register'];
+              if ($ionicHistory.backView() && $.inArray($ionicHistory.backView().stateName, _backView) < 0) {
+                $ionicHistory.goBack();
+              } else {
+                $state.go('tab.home');
+              }
+            }, 10)
+          }
         }
       })
     };

@@ -2,27 +2,25 @@
 
 
 angular.module('freexf')
-  .controller('pay_ctrl', function ($scope, $rootScope, $state, $ionicPopup, $injector, $stateParams, $ionicLoading, $timeout, AUTH, ENV, AddOrderFun, UpdateAPES, localStorageService) {
+  .controller('pay_ctrl', function ($scope, $rootScope, $state, $ionicPopup, $injector, $stateParams, $ionicLoading, $timeout, AUTH, ENV, AddOrderFun, UpdateAPES, localStorageService,apes) {
       var AddOrder = AddOrderFun(ENV._api.__AddOrder);
       $scope.userData = AUTH.FREEXFUSER.data;
       $scope.OrderId = $stateParams.OrderId;
-      
-      AddOrder.create({ "studentId": $scope.userData.rowId, "Sign": $scope.userData.Sign, "ProductId": $rootScope.paycourseId}).then(function (res) {
-          
+      $scope.DiscountCode = $stateParams.DiscountCode;
+
+      AddOrder.create({ "studentId": $scope.userData.rowId, "Sign": $scope.userData.Sign, "ProductId": $rootScope.paycourseId, "DiscountCode": $scope.DiscountCode }).then(function (res) {
+
           $scope.AddOrder = res.response.data;
           $scope.payohref = res.response.data.AliPayId;
           $scope.payoname = res.response.data.ProductName;
+          $scope.needpayfee = res.response.data.NeedPayFee;
           $scope.payomoney = res.response.data.price;
           $scope.payood = res.response.data.orderFormatId;
           $scope.orderId = res.response.data.OrderId;
           $scope.SetOrderTime = res.response.data.SetOrderTime;
           $scope.orderError = false;
 
-          if (typeof (localStorageService.get('URLshortID')) != 'undefined' && localStorageService.get('APES3') != '1') {
-              var GetUpdateAPES = UpdateAPES(ENV._api.__UpdateAPES);
-              GetUpdateAPES.getModel({ 'apesType': '3', 'URLTrafficID': localStorageService.get('URLshortID') }).then(function (res) { });
-              localStorageService.set('APES3', '1');
-          };
+          apes.apesFun('APES3');
           if ($scope.payomoney == null || $scope.payoname == null || $scope.orderId == null || $scope.SetOrderTime == null) {
               $scope.orderError = true;
               $scope.payhide=true
@@ -32,7 +30,7 @@ angular.module('freexf')
           $scope.goOrderDetail = function () {
               $state.go('payaddress', { OrderId: $scope.payood });
           };
-          
+
           if ($scope.payomoney == 0) {
               $scope.mianfeiShow = true;
               setTimeout(function () {

@@ -1203,3 +1203,151 @@ img.freexf-blur {
 .videoBox .popup-body{padding:0;}
 .videoBox .popup-buttons{position: fixed;width: 1024px;height: 1024px;top: -350px;left:-100px;padding:0;background:rgba(0,0,0,0);}
 .videoBox .popup-buttons button{background:rgba(0,0,0,0);padding:0;}
+
+/*答疑笔记*/
+.freexf-course-note .notelist {
+  margin-bottom: 15px;
+  background-color: #fff;
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  padding: 0 15px;
+}
+
+.freexf-course-note .notetitle {
+  border-bottom: 1px solid #eee;
+}
+
+.freexf-course-note .notetitle .left,
+.freexf-course-note .notetitle .right {
+  width: 50%;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 2.5em;
+  color: #888;
+}
+
+.freexf-course-note .notetitle .left {
+  float: left;
+}
+
+.freexf-course-note .notetitle .right {
+  float: right;
+  text-align: right;
+}
+
+.freexf-course-note .notecontent {
+  height: 4.5em;
+  overflow: hidden;
+  line-height: 1.5em;
+  margin: 10px;
+  position: relative;
+}
+
+.freexf-course-note .notecontent .more {
+  color: #0188af;
+}
+
+.freexf-course-note .notecontent .ismore {
+  position: absolute;
+  display: inline-block;
+  bottom: 0;
+  right: 0;
+  width: 3em;
+  text-align: right;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) -40%, #fff, #fff);
+}
+
+.freexf-course-note .notefoot {
+  border-top: 1px solid #eee;
+  line-height: 2.5em;
+  height: 2.5em;
+  position: relative;
+}
+
+.freexf-course-note .notefoot .right {
+  background: url(../img/course/delete.png) no-repeat;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -10px;
+}
+
+.freexf-course-note .questioncontent {
+  margin: 10px;
+}
+
+.freexf-course-note .questioncontent .questionlist.right {
+  text-align: right;
+}
+
+.freexf-course-note .questioncontent .questionlist.left .questionbubbles:after,
+.freexf-course-note .questioncontent .questionlist.right .questionbubbles:after {
+  content: '';
+  display: inline-block;
+  background: url("../img/course/bubbles.png") no-repeat;
+  -webkit-background-size: contain;
+  background-size: contain;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 0;
+}
+
+.freexf-course-note .questioncontent .questionlist.right .questionbubbles:after {
+  right: -15px;
+}
+
+.freexf-course-note .questioncontent .questionlist.left .questionbubbles:after {
+  left: -15px;
+  -webkit-transform: rotatey(180deg);
+  -moz-transform: rotatey(180deg);
+  -ms-transform: rotatey(180deg);
+  -o-transform: rotatey(180deg);
+  transform: rotatey(180deg);
+}
+
+.freexf-course-note .questioncontent .questionlist.left .questionbubbles,
+.freexf-course-note .questioncontent .questionlist.right .questionbubbles {
+  padding: 3px 15px;
+  margin-top: 5px;
+  display: inline-block;
+  color: #888;
+  position: relative;
+  background: #EEEEEE;
+  max-width: 100%;
+  text-align: left;
+}
+
+.freexf-course-note .questioncontent .questionlist.left .questionbubbles {
+  -webkit-border-radius: 0 7px 7px 7px;
+  -moz-border-radius: 0 7px 7px 7px;
+  border-radius: 0 7px 7px 7px;
+  left: 15px;
+}
+
+.freexf-course-note .questioncontent .questionlist.right .questionbubbles {
+  -webkit-border-radius: 7px 0 7px 7px;
+  -moz-border-radius: 7px 0 7px 7px;
+  border-radius: 7px 0 7px 7px;
+  right: 15px;
+}
+
+.freexf-course-note .questioncontent .questiondate {
+  display: block;
+  font-size: 12rem;
+  color: #949494;
+}
+
+.freexf-course-note .questioncontent .questionlist.right .questiondate {
+  padding-right: 15px;
+}
+
+.freexf-course-note .questioncontent .questionlist.left .questiondate {
+  padding-left: 15px;
+}
