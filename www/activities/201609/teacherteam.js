@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 angular.module('freexf')
-  .controller('teacherteam_ctrl', function ($scope, $rootScope, $injector, $location, $state, $ToDetailState) {
+  .controller('teacherteam_ctrl', function ($scope, $rootScope, $injector, $location, $state) {
     $scope.teacherTeam = [[{
       "teacherName": "郝佳老师",    //语文
       "teacherImg": "http://bucketcourse.oss-cn-shanghai.aliyuncs.com/teacher/郝佳/郝佳.png",
@@ -98,10 +98,7 @@ angular.module('freexf')
     }
     //传递：courseId 课程ID
     $scope.toCourseDate = function (courseId) {
-      $ToDetailState.go('coursedetail', {courseId: courseId});
-    };
-    $scope.tele = function () {
-      $ToDetailState.go('telephone', {telephone: '400-803-6611'})
+      $state.go('coursedetail', {courseId: courseId});
     };
     function getCourseList() {
       var courseListUrl = '/Entrace/Dispatch.aspx?FunctionName=Activity.GetTeacherCourse&Version=1&EndClientType=H5&Key=""&JsonPara={}';

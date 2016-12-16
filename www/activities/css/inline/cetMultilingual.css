@@ -1,0 +1,74 @@
+﻿.campusPromotionCET img{width:100%;}
+.campusPromotionCET .cet-block{display:block;}
+.campusPromotionCET-teacher-box{padding:20px 3% 0;border-top:1px #F8807F solid;position:relative;margin-top:50px;}
+.campusPromotionCET-teacher-box>p{position:absolute;width:34%;height:26px;left:33%;top:-13px;line-height:26px;background:#fff;color:#F8807F;text-align:center;font-size:12rem;}
+.campusPromotionCET-teacher-box>img{width:40%;}
+.campusPromotionCET-teacher-box .col p{font-size:14rem;text-align:center;}
+.campusPromotionCET-teacher-box .col img{border-radius:50%;border:2px #F8807F solid;}
+.campusPromotionCET-teacher-box div.col-25{width:28%;min-width:28%;max-width:28%;padding: 10px;}
+
+.campusPromotionCET .campusPromotionCET-top {
+  height: 24px;
+  background: #FC7C7B;
+  position:relative;
+}
+
+.campusPromotionCET .campusPromotionCET-top .logo {
+  position:absolute;
+  left:0;
+  top:0;
+  width: 76px;
+  height: 14px;
+  margin: 5px 10px;
+}
+
+.campusPromotionCET .campusPromotionCET-top .phone {
+  position:absolute;
+  right:5px;
+  top:0;
+}
+
+.campusPromotionCET .campusPromotionCET-top .phone-icon {
+  width: 12px;
+  height: 11px;
+  vertical-align: middle;
+}
+
+.campusPromotionCET .campusPromotionCET-top .phone-num {
+  font-size: 12px;
+  color: #fff;
+  line-height: 24px;
+  margin: 0 5px;
+  vertical-align: middle;
+}
+.campusPromotionCET .campusPromotionCET-head a,
+.campusPromotionCET .campusPromotionCET-head p{
+    display:block;
+    width:70%;
+    margin:10px auto;
+}
+.campusPromotionCET .campusPromotionCET-head p{
+    margin-bottom:20px;
+}
+.campusPromotionCET .cet-course-list{
+    width:95%;
+    margin:10px auto;
+}
+.campusPromotionCET .cet-course-list>div{position:relative;margin:20px 0;}
+.campusPromotionCET .cet-course-list>div a{width:49%;display:block;}
+.campusPromotionCET .cet-course-list>div a:last-of-type{position:absolute;right:0;top:0;}
+.campusPromotionCET .cet-btngroup{width:80%;position:relative;margin:20px auto 0;}
+.campusPromotionCET .cet-btngroup a{width:40%;height:30px;border-radius:5px;background:#FF5959;color:#fff;display:block;text-align:center;line-height:30px;font-size:12rem;}
+.campusPromotionCET .cet-btngroup a:last-of-type{position:absolute;right:0;top:0;}
+.campusPromotionCET .cet-course-list.cet-course-list2{width:100%;padding:0 2.5%;background:url(../../img/cetMultilingual/bg-hr.png) repeat-y;background-size:100% auto;margin:0;}
+.campusPromotionCET .cet-course-list.cet-course-list2>div{margin:0; padding:10px 0 10px;}
+.campusPromotionCET .cet-course-list.cet-course-list2>div a:last-of-type{position:absolute;right:0;top:10px;}
+.campusPromotionCET img.cet-title3{width:75%;margin:10px auto 20px;display:block;}
+.campusPromotionCET img.cet-title2{width:100%;padding:15px 12.5% 20px;display:block;}
+.campusPromotionCET .cet-btngroup.cet-btngroup2{width:100%;padding:20px 10% 15%;position:relative;background:url(../../img/cetMultilingual/bg-bhr.png) no-repeat;background-size:100% auto;margin-top:0;}
+.campusPromotionCET .cet-btngroup.cet-btngroup2 a:first-of-type{display:inline-block;}
+.campusPromotionCET .cet-btngroup.cet-btngroup2 a:last-of-type{float:right;position:relative;}
+
+
+.cetMultilingual-footer.time-footer span{color:#F8807F!important;}
+.cetMultilingual-footer.time-footer{border-top: 1px #F8807F solid;margin-top: 0px;display: block;height:44px;line-height:44px;text-align: center;}

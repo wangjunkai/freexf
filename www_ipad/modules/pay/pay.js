@@ -11,7 +11,7 @@ define(function () {
         "studentId": $scope.userData.rowId,
         "Sign": $scope.userData.Sign,
         "ProductId": $scope.OrderId,
-        "DiscountCode":$scope.DiscountCode
+        "DiscountCode": $scope.DiscountCode
       }).then(function (res) {
         $scope.AddOrder = res.response.data;
         $scope.payohref = res.response.data.AliPayId;
@@ -28,7 +28,7 @@ define(function () {
         }
         if ($scope.payomoney == 0) {
           $scope.mianfeiShow = true;
-          $timeout(function () {
+          $scope.timeout = $timeout(function () {
             $scope.openModal('payaddress', {OrderId: $scope.payood})
           }, 3000)
         } else {
@@ -53,7 +53,7 @@ define(function () {
                 $scope.orderError = true;
               });
             } else {
-              window.location.href =  payary[type] ? payary[type] : payary['zcpay'];
+              window.location.href = payary[type] ? payary[type] : payary['zcpay'];
             }
           },
           error: function (data) {
@@ -65,9 +65,15 @@ define(function () {
           scope: $scope,
           ctrlUrl: 'modules/pay/payaddress',
           tempUrl: 'modules/pay/payaddress.html'
+        },
+        lotteryDouble11: {
+          scope: $scope,
+          ctrlUrl: 'activities/201611/lotteryDouble11',
+          tempUrl: 'activities/201611/lotteryDouble11.html'
         }
       };
       $scope.openModal = function (name, data, back) {
+        $scope.timeout && $timeout.cancel($scope.timeout);
         $frModal.openModal($scope, name, modal_ary, data, back);
       };
       $scope.ThisWX = false;

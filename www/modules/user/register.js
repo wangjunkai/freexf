@@ -3,10 +3,8 @@
 
 angular.module('freexf')
   .controller('register_ctrl', function ($scope, $rootScope, $state, $injector, $interval, $timeout, $Loading, MSGICON, AuthRepository, ENV, UpdateAPES, localStorageService, $ionicPopup, apes) {
-    var REGISTER = AuthRepository('AjaxRegister.aspx', '/ajax');
+      var REGISTER = AuthRepository(ENV._api.__Dispatch, '/Entrace');
     var PHONE_CODE = AuthRepository('sendphonecode.aspx', '/ajax');
-
-
     function registerModel() {
       if (typeof (getCookieValue('tuiGuangId')) == 'undefined') {
         this.user = {
@@ -50,6 +48,14 @@ angular.module('freexf')
         $scope.user.labelconfirmPassword = '密码一致'
       }
     };
+    $scope.login = function () {
+        if ($scope.modal && $scope.modal['login']) {
+            $scope.modal['register'].hide();
+            $scope.modal.openModal('login');
+        } else {
+            $state.go('login');
+        }
+    }
 
     //注册
     $scope.register = function ($event, $form) {
@@ -60,8 +66,25 @@ angular.module('freexf')
        $Loading.show({text: '请阅读用户协议!', class: MSGICON.fail});
        }
        else{*/
-      $Loading.show({text: '注册中...', class: MSGICON.load}, false);
-      REGISTER.getModel(user).then(function (req) {
+      $Loading.show({ text: '注册中...', class: MSGICON.load }, false);
+      var param = {
+          "FunctionName": 'Student.Register',
+          "Version": 1,
+          "EndClientType": 'H5',
+          "JsonPara": {
+              sign:'',
+          }
+      };
+      var registeruser = {
+          mobile:$scope.user.phone,
+          password:$scope.user.password,
+          confirmPassword:$scope.user.confirmPassword,
+          phonecode: $scope.user.phonecode,
+          SourceType: user.SourceType
+      }
+      param['JsonPara']['sign'] = Base64.encode(JSON.stringify(registeruser))
+      console.log(param)
+      REGISTER.getModel(param).then(function (req) {
         var data = req.response.data;
         $Loading.show({class: data.success ? MSGICON.success : MSGICON.fail, text: data.message}, 1500);
         if (data.success) {

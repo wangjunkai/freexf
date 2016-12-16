@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 angular.module('freexf')
-  .controller('multilingual_ctrl', function ($scope, $rootScope, $injector, $location, $state, $ionicPopup, $ionicLoading, $ionicScrollDelegate,$ToDetailState) {
+  .controller('multilingual_ctrl', function ($scope, $rootScope, $injector, $location, $state, $ionicPopup, $ionicLoading, $ionicScrollDelegate) {
       $scope.multilingualList = {};
       $scope.num1 = 2;
       $scope.num2 = 2;
@@ -48,10 +48,10 @@ angular.module('freexf')
       };
       //传递：courseId 课程ID
       $scope.toCourseDate = function (courseId) {
-        $ToDetailState.go('coursedetail', { courseId: courseId });
+        $state.go('coursedetail', { courseId: courseId });
       };
     $scope.tele = function () {
-      $ToDetailState.go('telephone', {telephone: '400-803-6611'})
+      $state.go('telephone', {telephone: '400-803-6611'})
     };
       function getMultilingualList(str) {
           var multilingualList = '/Entrace/Dispatch.aspx?FunctionName=Activity.GetMultilingualList&Version=1&EndClientType=H5&Key=""&JsonPara={"Type":"' + str + '"}';

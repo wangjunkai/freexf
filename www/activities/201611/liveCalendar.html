@@ -1,0 +1,87 @@
+﻿<style>
+  .liveCalendar .course-category{width: 95%;margin:2% auto;position:relative;color: #fff;overflow: hidden}
+  .liveCalendar .course-category span {text-align: center;display:block;font-size: 18rem;line-height: 1.5em;background-color: #333;float: left}
+  .liveCalendar .course-category span.active {background-color: #fe9635;}
+  .liveCalendar .calendar-head {margin-top: 17px;}
+  .liveCalendar .calendar-head p{color:#fe9635;margin-bottom:20px;float: left;margin-left: 2.5%;}
+  .liveCalendar .calendar-head p em{display:inline-block;font-size:15rem;float: left;}
+  .liveCalendar .calendar-head i{font-size:7rem;line-height:8px;margin-top:8px;width: 3em;display: block;float: left;}
+  .liveCalendar .calendar-head .btn-groups{float: right;margin-right: 3%;}
+  .liveCalendar .calendar-head .btn-groups button{color:#fe9635;background:#fff;border:1px #fe9635 solid;}
+  .liveCalendar .calendar-head .btn-groups button.activated,
+  .liveCalendar .calendar-head .btn-groups button.active{background:#fe9635;color:#fff;}
+  .liveCalendar .calendar{width: 95%;margin: 2% auto;}
+  .liveCalendar .calendar table{width: 100%;text-align:center;border-bottom: 1px #CCCCCC solid;}
+  .liveCalendar .calendar table thead{border:1px #CCCCCC solid;margin-bottom: 10px;}
+  .liveCalendar .calendar table th{line-height:22px;font-size:16rem;color: #666;}
+  .liveCalendar .calendar table th.black{background: #333;color: #fff;}
+  .liveCalendar .calendar table .date{border-left:1px #CCCCCC solid;border-right:1px #CCCCCC solid;color: #333;background:#fe9635;}
+  .liveCalendar .calendar table .date.not-cur{background-color: #999; color: #fff}
+  .liveCalendar .calendar table .msg{border-left:1px #CCCCCC solid;border-right:1px #CCCCCC solid;}
+  .liveCalendar .calendar table .msg.today{background: #c7c7c7;color: #fff!important;}
+  .liveCalendar .calendar table .msg.mark{color: #666;}
+  .liveCalendar .calendar table .msg.active{background: #333;color: #fff;}
+  .liveCalendar .calendar table .msg p{margin: 0;font-size: 14rem;vertical-align: top;display: inline-block}
+  .liveCalendar .calendar table .date font + font {display:none;}
+  .liveCalendar .information{clear:both;margin-top:20px;}
+  .liveCalendar .information>p{width:100%;border-top:1px #dcdcdc solid;border-bottom:1px #dcdcdc solid;line-height:35px;padding:0 7%;position:relative;font-size:18rem;}
+  .liveCalendar .information>p:before{position:absolute;content:'';width:6px;height:24px;top:6px;left:4%;background:#fe9635;}
+  .liveCalendar .information ul{padding:0 5%;}
+  .liveCalendar .information ul li{position:relative;padding-left:65px;font-size:14rem;color:#666;}
+  .liveCalendar .information ul .live-msg{margin-bottom: 15px}
+  .liveCalendar .information ul .live-name{margin:0 5% 5px;}
+  .liveCalendar .information ul li p,.liveCalendar .information ul li .teacher{margin:0 6% 5px;}
+  .liveCalendar .information ul li em{position:absolute;left:0;color:#fe9635;}
+  .liveCalendar .information ul li span{color: #999; margin-bottom: 10px;display: inline-block}
+  .liveCalendar .information ul li .description {font-size: 12rem;}
+  .liveCalendar .information ul .btn{margin:10px 22% 20px;background: #666;color: #fff;padding: 1% 10%;font-size: 9rem;display: inline-block;}
+  .liveCalendar .calendar-tip{text-align:right;font-size:10rem;color:#9D9D9D!important;margin-top:15px!important;padding: 0 5px;}
+</style>
+<ion-view coures-scroll view-title="课程表" class="liveCalendar">
+    <ion-header-bar class="freexf-bar">
+        <div class="bar-left">
+            <a href="#home" class="button-clear freexf-back freexf-left">
+                <i class="icon freexf-gohomeback"></i>
+            </a>
+        </div>
+        <div class="title">课程表</div>
+    </ion-header-bar>
+    <ion-content lazy-scroll class="has-header">
+        <div class="course-category">
+            <span class="multilanguage active">多语种</span>
+            <span class="pri-mid">中小学</span>
+            <span class="eng">大英语</span>
+            <span class="accountant">会 计</span>
+        </div>
+        <div class="calendar-head" id="calendar-head">
+            <p>
+                <em></em>
+                <i></i>
+            </p>
+            <span class="btn-groups">
+                <button ng-click="onSwipeRight()" ng-disabled="prev" ng-class="{active:prev}">上一月</button>
+                <button ng-click="onSwipeLeft()" ng-disabled="next" ng-class="{active:next}">下一月</button>
+            </span>
+        </div>
+        <div class="calendar">
+            <table cellspacing="10">
+                <thead>
+                    <tr>
+                        <th class="black">日</th>
+                        <th>一</th>
+                        <th>二</th>
+                        <th>三</th>
+                        <th>四</th>
+                        <th>五</th>
+                        <th>六</th>
+                    </tr>
+                </thead>
+                <tbody class="CalendarLists" ></tbody>
+            </table>
+        </div>
+        <div class="information">
+            <p>课程简介：</p>
+            <ul id="inf-ul"></ul>
+        </div>
+    </ion-content>
+</ion-view>

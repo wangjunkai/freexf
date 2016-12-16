@@ -13,6 +13,7 @@ angular.module('freexf', ['ionic'])
     var addFlower = AddFlower(ENV._api.__addflower);
     var removeFlower = RemoveFlower(ENV._api.__removeflower);
     var playset = document.getElementById('videoplay');
+    $scope.oneBuy = $stateParams.oneBuy == 'oneBuy' ? true : false;//一元购
     $scope.courseId = $stateParams.courseId;
     $scope.userData = AUTH.FREEXFUSER.data;
     $scope.isLogin = $scope.userData.userLg ? true : false;
@@ -33,6 +34,7 @@ angular.module('freexf', ['ionic'])
     $scope.groupCourse = false;
     $scope.more = false;
     $scope.moreTxt = "展开更多";
+    $scope.myPopup = {};
     var params = {
       courseId: $scope.courseId,
       studentId: $scope.userData.userLg ? $scope.userData.rowId : '',
@@ -45,10 +47,20 @@ angular.module('freexf', ['ionic'])
     };
     $scope.$on('$ionicView.loaded', function () {
     });
+    $scope.$on('$ionicView.beforeLeave', function () {
+      $rootScope.bodyImg = 'img/400logo.jpg';
+      for (var i in $scope.myPopup) {
+        $scope.myPopup[i] && $scope.myPopup[i].close();
+      }
+    });
     apes.apesFun('APES1');
-    ;
+
     GetCourseDetail.getModel(params).then(function (res) {
       $scope.courseDate = res.response.data;
+      $timeout(function () {
+        $rootScope.rootTitle = res.response.data.courseName;
+        $rootScope.bodyImg = res.response.data.cover
+      });
       $scope.coursecollect = $scope.courseDate.favorite;    //收藏
       $scope.flowerstate = $scope.courseDate.isCourseFlowers;   //鲜花
       $scope.teacher = $scope.courseDate.teacher.length == 0 ? false : true     //判断是否有讲师
@@ -101,8 +113,11 @@ angular.module('freexf', ['ionic'])
           $scope.lastCharptId = "";
           $scope.CharpterList = false;
         }
-
       });
+      //一元购学分
+      if ($scope.oneBuy) {
+        $('.freexf-credit').text('1');
+      }
     });
     $scope.moreGroupCourse = function () {
       $scope.groupCourse = !$scope.groupCourse;
@@ -111,7 +126,7 @@ angular.module('freexf', ['ionic'])
 
     $scope.showAgreement = function () {
       if ($scope.userData.userLg) {
-        PurchaseAgreement();
+        $scope.PurchaseAgreement();
         setTimeout(function () {
           $('.goumaitit').attr('download', '购买协议')
         }, 100);
@@ -216,14 +231,11 @@ angular.module('freexf', ['ionic'])
       ;
     };
     //购买协议
-    function PurchaseAgreement() {
-      var confirmPopup = $ionicPopup.confirm({
+    $scope.PurchaseAgreement = function () {
+      $scope.myPopup['agreement'] = $ionicPopup.confirm({
         title: '购买协议' + '<a href="http://www.freexf.com/help/%E5%AD%A6%E8%B4%B9%E5%85%A8%E5%85%8D%E7%BD%91%E7%BD%91%E7%BB%9C%E8%8A%82%E7%9B%AE%E8%B4%AD%E4%B9%B0%E5%90%88%E5%90%8C.pdf" target="view_window" class="goumaitit" >(点击下载PDF)</a>',
         cssClass: 'freexf-agreement',
-        template: '<div class="freexf-agreement">'
-        + '<h5>学费全免网网络节目购买合同</h5>'
-        + '<p class="MsoNormal" align="center" style="text-align:center;line-height:15.0pt;mso-pagination:widow-orphan;vertical-align:middle"><span lang="EN-US" style="font-size: 10pt; font-family: 微软雅黑, sans-serif;"><o:p></o:p></span></p><p class="MsoNormal" align="left" style="line-height: 15pt; vertical-align: middle;"><span style="font-family: 微软雅黑, sans-serif;">甲方：学费全免网注册学员</span><span lang="EN-US" style="font-size: 10pt; font-family: 微软雅黑, sans-serif;"><o:p></o:p></span></p><p class="MsoNormal" align="left" style="line-height: 15pt; vertical-align: middle;"><span style="font-family: 微软雅黑, sans-serif;">乙方：上海琦珺互联网信息科技有限公司（学费全免网）<span lang="EN-US">&nbsp; <o:p></o:p></span></span></p><p class="MsoNormal" align="left" style="line-height: 15pt; vertical-align: middle;"><span style="font-family: 微软雅黑, sans-serif;">客服热线：<span lang="EN-US">400-803-6611 </span>服务时间：<span lang="EN-US">9:00-21:00</span>（全年无休）。</span><span lang="EN-US" style="font-size: 10pt; font-family: 微软雅黑, sans-serif;"><o:p></o:p></span></p><p class="MsoNormal" align="left" style="line-height: 15pt; vertical-align: middle;"><span lang="EN-US" style="font-size: 10pt; font-family: 微软雅黑, sans-serif;">&nbsp;</span></p><p class="MsoNormal" align="left" style="line-height: 15pt; vertical-align: middle;"><span style="font-family: 微软雅黑, sans-serif;">鉴于</span><span lang="EN-US" style="font-size: 10pt; font-family: 微软雅黑, sans-serif;"><o:p></o:p></span></p><p class="MsoNormal" align="left" style="line-height: 15pt; vertical-align: middle;"><span style="font-family: 微软雅黑, sans-serif;">甲方签约成为乙方在线培训平台的学员用户，乙方将在本合同中告知甲方在学费全免网<span lang="EN-US">(www.freexf.com)</span>进行学习时需要注意的事项。甲方确认在仔细阅读本合同并完全了解本合同内容后，按本合同所列内容进行在线学习，具体条款如下：<span lang="EN-US"><o:p></o:p></span></span></p><p class="MsoNormal" align="left" style="line-height: 15pt; vertical-align: middle;"><span lang="EN-US" style="font-family: 微软雅黑, sans-serif;">&nbsp;</span></p><p class="MsoNormal" align="left" style="margin-left: 18pt; text-indent: -18pt; line-height: 15pt; vertical-align: middle;"><b><span lang="EN-US" style="font-family: 微软雅黑, sans-serif;">1.<span style="font-weight: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">&nbsp;&nbsp;&nbsp;</span></span></b><b><span style="font-family: 微软雅黑, sans-serif;">课程学习<span lang="EN-US"><o:p></o:p></span></span></b></p><p class="MsoNormal" align="left" style="margin-left: 19.5pt; text-indent: -19.5pt; line-height: 15pt; vertical-align: middle;"><span lang="EN-US" style="font-family: 微软雅黑, sans-serif;">1.1<span style="font-stretch: normal; font-size: 7pt; line-height: normal;">&nbsp; </span></span><span style="font-family: 微软雅黑, sans-serif;">甲方</span><span style="font-family: 微软雅黑, sans-serif;">可以通过先购买课程再进行学习，学习乙方所发布的相应课程。甲方在乙方网站上从订购、学习到学习完成以及最终返还的整个过程都将以<span lang="EN-US">“</span>学分<span lang="EN-US">”</span>的形式进行记录。<span lang="EN-US"><o:p></o:p></span></span></p><p class="MsoNormal" align="left" style="margin-left: 19.5pt; text-indent: -19.5pt; line-height: 15pt; vertical-align: middle;"><span lang="EN-US" style="font-size: 10pt; font-family: 微软雅黑, sans-serif;">1.2<span style="font-stretch: normal; font-size: 7pt; line-height: normal;">&nbsp;&nbsp;</span></span><span style="font-family: 微软雅黑, sans-serif;">每门课程都有相应的有效期，有效期内甲方可以根据教学内容进行视频学习，也可根据自行水平选择性式或者反复性学习。</span><span lang="EN-US" style="font-size: 10pt; font-family: 微软雅黑, sans-serif;"><o:p></o:p></span></p><p class="MsoNormal" align="left" style="line-height: 15pt; vertical-align: middle;"><span lang="EN-US" style="font-size: 10pt; font-family: 微软雅黑, sans-serif;">&nbsp;</span></p><p class="MsoNormal" align="left" style="margin-left: 18pt; text-indent: -18pt; line-height: 15pt; vertical-align: middle;"><b><span lang="EN-US" style="font-family: 微软雅黑, sans-serif;">2.<span style="font-weight: normal; font-stretch: normal; font-size: 7pt; line-height: normal; ">&nbsp;&nbsp;&nbsp;</span></span></b><b><span style="font-family: 微软雅黑, sans-serif;">学费返还方式<span lang="EN-US"><o:p></o:p></span></span></b></p><p class="MsoNormal" align="left" style="margin-left: 19.5pt; text-indent: -19.5pt; line-height: 15pt; vertical-align: middle;"><span lang="EN-US" style="font-family: 微软雅黑, sans-serif;">2.1<span style="font-stretch: normal; font-size: 7pt; line-height: normal;">&nbsp; </span></span><span style="font-family: 微软雅黑, sans-serif;">每门课程对应的有效期结束后的<span lang="EN-US">3-5</span>个工作日内，乙方将向甲方返还所购课程相对应的学费至最初甲方订购所使用的支付渠道账号。<span lang="EN-US"><o:p></o:p></span></span></p><p class="MsoNormal" align="left" style="margin-left: 19.5pt; text-indent: -19.5pt; line-height: 15pt; vertical-align: middle;"><span lang="EN-US" style="font-family: 微软雅黑, sans-serif;">2.2<span style="font-stretch: normal; font-size: 7pt; line-height: normal;">&nbsp; </span></span><span style="font-family: 微软雅黑, sans-serif;">课程有效期到期后，甲方观看该课程视频学习的权限终止，但做练习题的次数、时间无限制。<b><span lang="EN-US"><o:p></o:p></span></b></span></p><p class="MsoNormal" align="left" style="margin-left: 19.5pt; text-indent: -19.5pt; line-height: 15pt; vertical-align: middle;"><span lang="EN-US" style="font-family: 微软雅黑, sans-serif;">2.3<span style="font-stretch: normal; font-size: 7pt; line-height: normal;">&nbsp; </span></span><span style="font-family: 微软雅黑, sans-serif;">甲方应仔细阅读本合同后购买课程，所购课程付款成功即视为知晓并同意所有合同条款。所购课程视频一经开始，甲方不得申请退订。</span><span lang="EN-US" style="font-family: 微软雅黑, sans-serif;"><o:p></o:p></span></p><p class="MsoNormal" align="left" style="line-height: 15pt; vertical-align: middle;"><span lang="EN-US" style="font-family: 微软雅黑, sans-serif;">&nbsp;</span></p><p class="MsoNormal" align="left" style="line-height: 15pt; vertical-align: middle;"><span lang="EN-US" style="font-family: 微软雅黑, sans-serif;">3. </span><span style="font-family: 微软雅黑, sans-serif;">免责条款</span><span lang="EN-US" style="font-size: 10pt; font-family: 微软雅黑, sans-serif;"><o:p></o:p></span></p><p class="MsoNormal" align="left" style="line-height: 15pt; vertical-align: middle;"><b><span style="font-family: 微软雅黑, sans-serif;">甲方在“学费全免网”进行操作时，应审慎操作。如因甲方错误操作造成甲方利益受损的，“学费全免网”不承担任何责任。甲方的所有操作记录将被忠实地保存在乙方设备中，如有争议，以该记录为准。</span></b><span lang="EN-US" style="font-size: 10pt; font-family: 微软雅黑, sans-serif;"><o:p></o:p></span></p><p class="MsoNormal" align="left" style="line-height: 15pt; vertical-align: middle;"><span lang="EN-US" style="font-family: 微软雅黑, sans-serif;">&nbsp;</span><span lang="EN-US" style="font-size: 10pt; font-family: 微软雅黑, sans-serif;"><o:p></o:p></span></p><p class="MsoNormal" align="left" style="line-height: 15pt; vertical-align: middle;"><span lang="EN-US" style="font-family: 微软雅黑, sans-serif;">4. </span><span style="font-family: 微软雅黑, sans-serif;">声明</span><span lang="EN-US" style="font-size: 10pt; font-family: 微软雅黑, sans-serif;"><o:p></o:p></span></p><p align="center" style="text-align: center; margin: 0cm 0cm 0.0001pt;"></p><p class="MsoNormal" align="left" style="line-height: 15pt; vertical-align: middle;"><span style="font-family: 微软雅黑, sans-serif;">甲方承诺已了解合同内容，对粗体字提示内容的含义已经乙方释义或甲方已完全了解并无异<span lang="EN-US">.</span>。</span><span lang="EN-US" style="font-size: 10pt; font-family: 微软雅黑, sans-serif;"><o:p></o:p></span></p>'
-        + '</div>',
+        templateUrl: 'agreement.html',
         buttons: [
           {
             text: "拒绝",
@@ -237,7 +249,11 @@ angular.module('freexf', ['ionic'])
             type: 'button-balanced',
             onTap: function (e) {
               $rootScope.paycourseId = $scope.courseId;
-              getDiscounts({StudentId: params.studentId, CourseId: params.courseId});
+              if ($scope.oneBuy) {
+                getOneDiscounts({StudentId: params.studentId, CourseId: params.courseId});
+              } else {
+                getDiscounts({StudentId: params.studentId, CourseId: params.courseId});
+              }
             }
           }
         ]
@@ -269,7 +285,7 @@ angular.module('freexf', ['ionic'])
       '7d49475ba62e402cbdae3386b5450050',
       '378322b500964be0b1828f2d407e8ea3'
     ];
-    function getRandomDiscount(obj) {
+    function getRandomDiscount(obj, oneBuy) {
       var teacherList = '/Entrace/Dispatch.aspx?FunctionName=Student.GetRandomDiscount&Version=1&EndClientType=H5&Key=""&JsonPara={"StudentId":"' + obj.StudentId + '","CourseId":"' + obj.CourseId + '"}';
       $.ajax({
         type: 'GET',
@@ -278,13 +294,14 @@ angular.module('freexf', ['ionic'])
         dataType: "json",
         success: function (data) {
           if (data) {
-            $state.go('pay', {DiscountCode: data.DiscountCode});
+            $state.go('pay', {Discount: data,DiscountCode: data.DiscountCode, oneBuy: oneBuy});
           }
         }
       });
     }
 
-    function getDiscounts(obj) {
+    //学员抽奖资格
+    function getDiscounts(obj, oneBuy) {
       var teacherList = '/Entrace/Dispatch.aspx?FunctionName=Student.GetStudentDiscounts&Version=1&EndClientType=H5&Key=""&JsonPara={"StudentId":"' + obj.StudentId + '","CourseId":"' + obj.CourseId + '"}';
       $.ajax({
         type: 'GET',
@@ -292,14 +309,39 @@ angular.module('freexf', ['ionic'])
         url: teacherList,
         dataType: "json",
         success: function (data) {
+          //data为0，没有下过单也没有抽奖机会
           if (data.length > 0) {
-/*            if ($.inArray(params.courseId, $scope.zhekouId) < 0) {
+            //data为1，已经抽过奖,如果orderid为空，则表示抽完奖还没有下单
+            if (data.length == 1) {
+              /*
+               getRandomDiscount({StudentId: params.studentId, CourseId: params.courseId}, oneBuy);
+               */
+              $state.go('pay', {Discount:data[0],DiscountCode: data[0].DiscountCode, oneBuy: oneBuy})
+            } else {
               $state.go('lottery', {courseId: $scope.courseId});
-            } else {*/
-              getRandomDiscount({StudentId: params.studentId, CourseId: params.courseId});
-            /*}*/
+            }
           } else {
-            $state.go('pay', {DiscountCode: ''});
+            $state.go('pay', {Discount:null,DiscountCode: '', oneBuy: oneBuy});
+          }
+        }
+      });
+    }
+
+    //一元购支付
+    function getOneDiscounts(obj) {
+      var oneBuyList = '/Entrace/Dispatch.aspx?FunctionName=Student.GetARMBDiscounts&Version=1&EndClientType=H5&Key=""&JsonPara={"StudentId":"' + obj.StudentId + '","CourseId":"' + obj.CourseId + '"}';
+      $.ajax({
+        type: 'GET',
+        cache: 'false',
+        url: oneBuyList,
+        dataType: "json",
+        success: function (data) {
+          if (data.length) {
+            $state.go('pay', {Discount:data[0],DiscountCode: data[0].DiscountCode, oneBuy: 'hasChance'})
+          }
+          else {
+            getDiscounts({StudentId: params.studentId, CourseId: params.courseId}, 'noChance');
+            //$state.go('pay', { DiscountCode: '', oneBuy: 'noChance' });
           }
         }
       });
@@ -307,8 +349,8 @@ angular.module('freexf', ['ionic'])
 
     $scope.showPopup = function () {
       // 自定义弹窗
-      var myPopup = $ionicPopup.show({
-        title: '400-803-6611',
+      $scope.myPopup = $ionicPopup.show({
+        title: $rootScope.tel400,
         cssClass: 'freexf-contact',
         scope: $scope,
         buttons: [
@@ -317,12 +359,12 @@ angular.module('freexf', ['ionic'])
             text: '拨打',
             type: 'button-positive',
             onTap: function (e) {
-              location.href = "tel:400-803-6611";
+              location.href = "tel:" + $rootScope.tel400;
             }
           },
         ]
       });
-      myPopup.then(function (res) {
+      $scope.myPopup.then(function (res) {
       });
     };
     //播放
@@ -442,7 +484,13 @@ angular.module('freexf', ['ionic'])
     $scope.goStudy = function (courseId, state) {
       $state.go('coursedetail', {courseId: courseId, state: state});
     }
-
+    $scope.studyEndFn = function (item, endClassList, buy) {
+      if (buy) {
+        return endClassList.indexOf(item) > -1;
+      } else {
+        return false;
+      }
+    }
   })
   .directive('scrollCourseTab', ['$location', '$ionicScrollDelegate', function ($location, $ionicScrollDelegate) {
     return function ($scope, $element, $attrs) {

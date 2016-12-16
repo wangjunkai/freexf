@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 angular.module('freexf')
-  .controller('microClass_ctrl', function ($scope, $rootScope, $ionicModal, $injector, $location, $state, $ToDetailState, $fxModal, $ionicPopup, $ionicLoading, AUTH, ENV, DispatchRepository) {
+  .controller('microClass_ctrl', function ($scope, $timeout, $window, $rootScope, $ionicModal, $injector, $location, $state, $fxModal, $ionicPopup, $ionicLoading, AUTH, ENV, DispatchRepository) {
     var sigCourseData = [];
     var grpCourseData = [];
     //单课年级块大小
@@ -11,9 +11,6 @@ angular.module('freexf')
     sigGrade.find('.sig-grade').css({'width': spanWidht + 'px', 'height': spanWidht / 2.55});
     sigGrade.find('span').css('line-height', spanWidht / 2.55 + 'px');
 
-    $scope.gotele = function () {
-      $ToDetailState.go('telephone',{telephone: '400-803-6611'})
-    };
     //登陆注册modal
     /*    $fxModal.init($scope).then(function (modal) {
      $scope.modal = modal;
@@ -84,7 +81,7 @@ angular.module('freexf')
         rightdiv.css({'height': rightHeight + 'px'});
         var courseId = this.ProductId;
         box.click(function () {
-          $ToDetailState.go('coursedetail',{courseId: courseId});
+          $state.go('coursedetail', {courseId: courseId});
         })
       })
     }
@@ -175,10 +172,10 @@ angular.module('freexf')
         //$('.star').css('line-height', msg.css('height').split('px')[0] *1+10 + 'px');
         var courseId = this.ProductId;
         btndiv.click(function () {
-          $ToDetailState.go('coursedetail',{courseId: courseId});
+          $state.go('coursedetail', {courseId: courseId});
         })
         box.click(function () {
-          $ToDetailState.go('coursedetail',{courseId: courseId});
+          $state.go('coursedetail', {courseId: courseId});
         })
       })
     }

@@ -55,10 +55,22 @@ angular.module('freexf')
         }
       })
     };
+    $scope.register = function () {
+      if ($scope.modal && $scope.modal['register']) {
+        $scope.modal['login'].hide();
+        $scope.modal.openModal('register');
+      } else {
+        $state.go('register');
+      }
+    }
 
-    $scope.$watch('freexfUser', function (value) {
-      localStorageService.set(AUTH.FREEXFUSER.name, value);
-      AUTH.FREEXFUSER.data = value ? value : AUTH.FREEXFUSER.data;
+    $scope.$watch('freexfUser', function (newval, oval) {
+      if (newval == oval && newval == undefined) {
+        return;
+      }
+      localStorageService.set(AUTH.FREEXFUSER.name, newval);
+      AUTH.FREEXFUSER.data = newval ? newval : AUTH.FREEXFUSER.data;
+      $rootScope.$broadcast('auth:update', AUTH.FREEXFUSER.data);
     });
   });
 

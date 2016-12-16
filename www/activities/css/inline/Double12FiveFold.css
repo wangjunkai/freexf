@@ -1,0 +1,81 @@
+﻿.Double12 img{width:100%;}
+  .Double12 .Double12-top {
+    height: 24px;
+    background: #fff;
+    position:relative;
+  }
+
+  .Double12 .Double12-top .logo {
+    position:absolute;
+    left:0;
+    top:0;
+    width: 76px;
+    height: 14px;
+    margin: 5px 10px;
+  }
+
+  .Double12 .Double12-top .phone {
+    position:absolute;
+    right:5px;
+    top:0;
+  }
+
+  .Double12 .Double12-top .phone-icon {
+    width: 12px;
+    height: 11px;
+    vertical-align: middle;
+  }
+
+  .Double12 .Double12-top .phone-num {
+    font-size: 12px;
+    color: #f87f7f;
+    line-height: 24px;
+    margin: 0 5px;
+    vertical-align: middle;
+  }
+
+  .Double12-footer.time-footer span{color:#f87f7f!important;}
+  .Double12-footer.time-footer{border-top: 1px #f87f7f solid;margin-top: 0px;display: block;height:70px;line-height:70px;text-align: center;}
+
+  .Double12-rule{background:url(../../img/Double12FiveFold/cloud1@3x.png) no-repeat;background-size:100% auto;background-position:bottom;padding-bottom:50px;position:relative;}
+  .Double12-box h2{width:100%;height:65px;text-align:center;background:url(../../img/Double12FiveFold/title-bar@3x.png) no-repeat;background-size:auto 100%;background-position:center;font-size:17rem;color:#ac0c0c;padding-top:40px;font-weight:bold;margin-bottom: 15px;}
+  .Double12-rule p{font-size:12rem;color:#ac0c0c;margin-left:15%;}
+  .Double12-rule:after{content:"";width:100px;height:45px;background:url(../../img/Double12FiveFold/tree1@3x.png) no-repeat;display:block;background-size:auto 100%;position:absolute;bottom:40px;left:8%;}
+  .Double12-zhongxiaoxue{background:#FF5742 url(../../img/Double12FiveFold/cloud2@3x.png) no-repeat;background-size:100% auto;background-position:bottom;padding-bottom:60px;}
+  .Double12-main{width:95%;margin:0 auto;background:#fff;border-bottom-left-radius:20px;border-bottom-right-radius:20px;}
+  .Double12-zhongxiaoxue p{width:95%;height:20px;margin:15px auto 0;border-top-left-radius:20px;border-top-right-radius:20px;background:#F5CA47;}
+  .Double12-zhongxiaoxue .col,
+  .Double12-duoyuzhong .col,
+  .Double12-yingyu .col{padding: 3px;}
+  .Double12-btngroup{padding-bottom:15px;}
+  .Double12-btngroup div{text-align:center;}
+  .Double12-btngroup div a{display:block;width:90%;margin:0 auto;background:#FF5742;color:#fff;border-radius:5px;padding:3px;}
+  .Double12-duoyuzhong{background:#E7C434 url(../../img/Double12FiveFold/cloud3@3x.png) no-repeat;background-size:100% auto;background-position:bottom;padding-bottom:60px;}
+  .Double12-duoyuzhong{position:relative;}
+  .Double12-duoyuzhong:before{content:"";display:block;position:absolute;bottom:35px;left:3px;width:50px;height:50px;background:url(../../img/Double12FiveFold/tree1@3x.png) no-repeat;background-size:auto 100%;}
+  .Double12-duoyuzhong p:before{content:"";display:block;position:absolute;top:-60px;right:0;width:50px;height:40px;background:url(../../img/Double12FiveFold/tree2@3x.png) no-repeat;background-size:auto 100%;}
+  .Double12-duoyuzhong p,
+  .Double12-yingyu p,
+  .Double12-kuaiji p{width:95%;height:20px;margin:15px auto 0;border-top-left-radius:20px;border-top-right-radius:20px;background:#FF5742;position:relative;}
+  .Double12-yingyu{padding-bottom:30px;background:#79B74A;}
+  .Double12-yingyu p{background:#F9CC19;}
+  .Double12-yingyu p:after{content:"";display:block;position:absolute;top:-40px;right:0;width:70px;height:40px;background:url(../../img/Double12FiveFold/ice2@3x.png) no-repeat;background-size:auto 100%;}
+.Double12-kuaiji{background:#79B74A url(../../img/Double12FiveFold/cloud4@3x.png) no-repeat;background-size:100% auto;background-position:bottom;padding-bottom:60px;}
+.Double12-kuaiji p{background:#FF5742;}
+.Double12-kuaiji p:after{content:"";display:block;position:absolute;top:-40px;left:22px;width:70px;height:40px;background:url(../../img/Double12FiveFold/ice2@3x.png) no-repeat;background-size:auto 100%;}
+.Double12-more{padding-bottom:30px;}
+.Double12-more p{width:95%;height:25px;margin:15px auto 0;border-top-left-radius:15px;border-top-right-radius:15px;background:#FBD439;text-align:center;color:#AC0D0A;font-weight:bold;line-height:25px;font-size:14rem;margin-bottom:8px;}
+.Double12-more .Double12-main>div{position:relative;}
+.Double12-more .Double12-main>div>img{width:49.5%;}
+.Double12-more .Double12-main>div a{width:49.5%;display:block;}
+.Double12-more .Double12-main>div a:last-of-type{position:absolute;top:0;right:0;}
+@media screen and (max-width:424px){
+  .Double12-rule p{margin-left:18%;}
+}
+@media screen and (max-width:385px){
+  .Double12-rule p{margin-left:15%;}
+}
+@media screen and (max-width:330px){
+  .Double12-rule p{margin-left:10%;}
+  .Double12-rule:after{content:"";width:100px;height:45px;background:url(../../img/Double12FiveFold/tree1@3x.png) no-repeat;display:block;background-size:auto 100%;position:absolute;bottom:40px;left:3%;}
+}

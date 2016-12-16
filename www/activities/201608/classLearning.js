@@ -6,7 +6,6 @@ angular.module('freexf')
       var DisPatchList = DispatchRepository(ENV._api.__Dispatch, '/Entrace');
       var winWidth = document.documentElement.clientWidth;
       var winHeight = document.documentElement.clientHeight;
-
       //计算转盘指针位置
       var pointer = $('#pointer').find('img');
       var b = $('#pointer').find('b');
@@ -82,7 +81,7 @@ angular.module('freexf')
           }
       }
 
-      //获取中奖信息        
+      //获取中奖信息
       var winnerurl = '/Entrace/Dispatch.aspx?FunctionName=LuckyDraw.GetWinningStudent&Key=""&Version=1&EndClientType=PC&JsonPara={}';
       $.ajax({
           type: 'POST',

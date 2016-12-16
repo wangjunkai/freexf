@@ -1,4 +1,4 @@
-.already .MyAcc-top .MyAcc-icon { 
+.already .MyAcc-top .MyAcc-icon {
   margin-top: -10px;
   background-position: -52px -104px;
 }
@@ -11,24 +11,23 @@
 }
 
 .already .MyAcc-top {
-  background-size: 100% auto;
+  background-size: cover;
   width: 100%;
   background-image: url(../img/user/user-bg.png);
   height: 200px;
-  background-size: cover;
   overflow: hidden;
+  position: relative;
 }
 
 .already .MyAcc-title {
   position: absolute;
-  height: 32.5px;
-  bottom: 0px;
+  bottom: 0;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.4);
   box-shadow: none;
   border-top: none;
-  top: 168px;
-  margin-top: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .already .MyAcc-top .name {
@@ -108,6 +107,11 @@
 
 .mynav-group .nav-bar.myCollection {
   background-position: -236px -56.67px;
+}
+.mynav-group .nav-bar.myVolume{
+  background:url("../img/user/volume.png") no-repeat;
+  -webkit-background-size:cover;
+  background-size:cover;
 }
 
 .mynav-group .nav p {

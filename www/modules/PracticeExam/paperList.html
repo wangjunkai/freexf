@@ -1,0 +1,92 @@
+<ion-view view-title="{{courseName}}">
+  <ion-header-bar default-header-bar class="freexf-bar lightgray">
+    <div class="bar-left">
+      <button class="button-clear freexf-back freexf-left" default-nav-back-button ng-click="goBack()">
+        <i class="icon freexf-goback"></i>
+      </button>
+    </div>
+    <div class="title">{{courseName}}</div>    
+    <!--<div class="bar-right">
+        <button class="button-clear freexf-consult"><span>咨询</span></button>
+    </div>-->
+  </ion-header-bar>
+  <ion-content lazy-scroll class="freexf-bg-gray mycourse">
+      <!-- 测试 -->
+      <div class="paper-list" ng-if="paperState=='IsPaper'">
+          <div class="paper" ng-repeat="(index,p) in PaperList">
+              <div class="progress paper-title">
+                  <div class="progress-bar">
+                      {{index+1}}&nbsp;&nbsp;{{p.PaperName}}
+                  </div>
+                  <div class="progress-bar">
+                      共{{p.QuestionCount}}题
+                  </div>
+              </div>
+              <div class="progress">
+                  <div class="progress-bar">
+                      <div class="full">
+                          <span style="width:{{p.Progress}}%;" class="finish done"></span>
+                      </div>
+                      <span id="isFinish">完成度<i>{{p.Progress}}%</i></span>
+                  </div>
+                  <div class="progress-bar">
+                      <div class="full">
+                          <span style="width:{{p.Score}}%;" class="finish days"></span>
+                      </div>
+                      <span id="isFinishDay">答对率<i>{{p.Score}}%</i></span>
+                  </div>
+              </div>
+              <div class="btnGrounp">
+                  <button style="float: left;padding: 0 5px;" class="button" ng-if="p.PaperCode|filterparPerCode" ng-click="goPaper(p.PaperCode,p.ProductId,'')">继续做题</button>
+                  <i ng-hide="p.PaperCode|filterparPerCode">
+                      <button style="float: left;" class="button button-stable button-gopaper" ng-hide="p.PaperStatus" ng-click="goPaper(p.PaperCode,p.ProductId,'')">马上做题</button>
+                      <button style="float: left;" class="button button-stable button-analy" ng-show="p.PaperStatus" ng-click="goPaper(p.PaperCode,p.ProductId,'',true)">解析</button>
+                      <button class="button button-assertive button-redo" ng-show="p.PaperStatus" ng-click="goPaper(p.PaperCode,p.ProductId,'redo')">重做</button>
+                  </i>
+              </div>
+          </div>
+      </div>
+      <!-- 一课一练 -->
+      <div class="paper-list" ng-repeat="(x,c) in PartPaperList" ng-if="paperState=='IsPartPaper'">
+          <div class="paper" ng-repeat="(y,p) in c">
+              <div class="progress paper-chapter">
+                  <div class="progress-bar">
+                      {{p.PaperName}}
+                  </div>                  
+              </div>
+              <div class="progress paper-title">
+                  <div class="progress-bar">
+                      {{x+1}}.{{y+1}}&nbsp;&nbsp;{{p.PaperName}}
+                  </div>
+                  <div class="progress-bar">
+                      共{{p.QuestionCount}}题
+                  </div>
+              </div>
+              <div class="progress">
+                  <div class="progress-bar">
+                      <div class="full">
+                          <span style="width:{{p.Progress}}%;" class="finish done"></span>
+                      </div>
+                      <span id="isFinish">完成度<i>{{p.Progress}}%</i></span>
+                  </div>
+                  <div class="progress-bar">
+                      <div class="full">
+                          <span style="width:{{p.Score}}%;" class="finish days"></span>
+                      </div>
+                      <span id="isFinishDay">答对率<i>{{p.Score}}%</i></span>
+                  </div>
+              </div>
+              <div class="btnGrounp">
+                  <button style="float: left;padding: 0 5px;" class="button" ng-if="p.PaperCode|filterparPerCode" ng-click="goPaper(p.PaperCode,p.ProductId,'')">继续做题</button>
+                  <i ng-hide="p.PaperCode|filterparPerCode">
+                      <button style="float: left;" class="button button-stable button-gopaper" ng-hide="p.PaperStatus" ng-click="goPaper(p.PaperCode,courseId,'')">马上做题</button>
+                      <button style="float: left;" class="button button-stable button-analy" ng-show="p.PaperStatus" ng-click="goPaper(p.PaperCode,courseId,'',true)">解析</button>
+                      <button class="button button-assertive button-redo" ng-show="p.PaperStatus" ng-click="goPaper(p.PaperCode,p.ProductId,'redo')">重做</button>
+                  </i>
+              </div>
+          </div>
+      </div>
+  </ion-content>
+    
+</ion-view>
+

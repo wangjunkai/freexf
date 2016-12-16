@@ -525,9 +525,7 @@ img.freexf-blur {
 /*购买协议*/
 
 .freexf-agreement.active {
-  position: fixed !important;
   background: rgba(0, 0, 0, .25);
-  z-index: 9999999;
 }
 
 .freexf-agreement.active .popup {
@@ -666,12 +664,13 @@ img.freexf-blur {
 
 .freexf-coursecenter .ccl-course-son-list > li {
   float: left;
-  width: 25%;
+  min-width: 25%;
   line-height: 37px;
   color: #666666;
   font-size: 12rem;
   margin-top: 7px;
   text-decoration: none;
+  padding-right: 3%;
 }
 
 .freexf-coursecenter .ccl-course-son-list {
@@ -691,6 +690,14 @@ img.freexf-blur {
   background: #fff;
   color: #969696;
   position: relative;
+  top: 44px;
+  z-index: 100;
+  border-bottom: 1px #eee solid;
+}
+
+.freexf-classmodule-header-nav ul {
+  background: #fff;
+  padding: 0 10px;
 }
 
 .freexf-classmodule-header-nav > div {
@@ -732,21 +739,6 @@ img.freexf-blur {
   position: relative;
   left: 10px;
 }
-
-/*.freexf-classmodule-header-nav div:nth-child(2) {
-  position: absolute;
-  right: 145px;
-}*/
-
-/*.freexf-classmodule-header-nav div:nth-child(3) {
-  position: absolute;
-  right: 75px;
-}
-
-.freexf-classmodule-header-nav div:nth-child(4) {
-  position: absolute;
-  right: 5px;
-}*/
 
 .freexf-coursesort > div div:nth-child(1).active:after,
 .freexf-coursesort > div div:nth-child(2).active:after,
@@ -909,15 +901,13 @@ img.freexf-blur {
   font-size: 13rem;
 }
 
-.freexf-classmodule-header-nav {
+.freexf-search-header-nav {
   background: #fff;
-  position: relative;
-  top: 44px;
-  z-index: 100;
+  margin-top: 44px;
   border-bottom: 1px #eee solid;
 }
 
-.freexf-classmodule-header-nav h2 {
+.freexf-search-header-nav h2 {
   background: #fff;
   height: 30px;
   line-height: 30px;
@@ -927,19 +917,19 @@ img.freexf-blur {
   margin: 0;
 }
 
-.freexf-classmodule-header-nav ul {
+.freexf-search-header-nav ul {
   background: #fff;
   padding: 0 10px;
 }
 
-.freexf-classmodule-header-nav ul li {
+.freexf-search-header-nav ul li {
   display: inline-block;
   text-align: center;
   height: 30px;
   line-height: 30px;
 }
 
-.freexf-classmodule-header-nav ul li a {
+.freexf-search-header-nav ul li a {
   padding: 0 15px;
   color: #878787;
 }

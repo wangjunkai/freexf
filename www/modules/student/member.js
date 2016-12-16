@@ -1,5 +1,5 @@
 angular.module('freexf', ['ionic'])
-  .controller('member_ctrl', function ($scope, $rootScope, $injector, $location, $ionicPopup, $ionicLoading, $ionicModal, $timeout, $state, AUTH, ENV, getuserinf, UpdateUserValue, MyAccountCrouseRepository) {
+  .controller('member_ctrl', function ($scope, $rootScope, $injector, $q,$location, $ionicPopup, $ionicLoading, $ionicModal, $timeout, $state, AUTH, ENV, getuserinf, UpdateUserValue, MyAccountCrouseRepository) {
 
     var user = {
       sign: AUTH.FREEXFUSER.data.Sign,
@@ -23,6 +23,7 @@ angular.module('freexf', ['ionic'])
     var GetUserinf = getuserinf(ENV._api.__getuserinformation);
     var UpdataValue = UpdateUserValue(ENV._api.__UpdateNewValue);
     var getMyAccount = MyAccountCrouseRepository(ENV._api.__myAccountCrouse);
+    var studentCouponList = 'Coupon.GetStudentCouponList';
     //初始化
     var myUrl = $location.absUrl();
     $scope.readonly = true;
@@ -43,7 +44,6 @@ angular.module('freexf', ['ionic'])
       if (!$scope.myuser.nickname == '') {
         $scope.iscode = true;
       }
-
     });
     $scope.isloading = true;
 
@@ -52,6 +52,23 @@ angular.module('freexf', ['ionic'])
       $scope.recommendlist = res.response.data.ls_recommendlist;
       $scope.MyCourse = res.response.data.ls_MyCourses.splice(0, 4);
     });
+    getdata(studentCouponList, {StudentId: user.rowid, Status: 0}).then(function (data) {
+      $scope.myuser.volume = data?data.length:0;
+    });
+    function getdata(funname, data) {
+      var defer = $q.defer();
+      var url = '/Entrace/Dispatch.aspx?FunctionName=' + funname + '&Version=1&EndClientType=H5&Key=""&JsonPara=' + JSON.stringify(data);
+      $.ajax({
+        type: 'GET',
+        cache: 'false',
+        url: url,
+        dataType: "json",
+        success: function (data) {
+          defer.resolve(data);
+        }
+      });
+      return defer.promise;
+    }
     //修改名称input自适应宽度
     function autoInput() {
       var name = $('#updateUserName');

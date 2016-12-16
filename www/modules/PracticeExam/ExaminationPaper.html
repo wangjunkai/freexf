@@ -11,27 +11,74 @@
     </div>
   </ion-header-bar>
   <ion-content lazy-scroll class="freexf-bg-gray">
-      <div class="practiceExam-test">
-          <h4>一、单选题</h4>
-          <div ng-repeat="(index,q) in QuestionList" ng-if="index>=currentQuestionNum-1&&index<currentQuestionNum">
-              <div><i>{{index+1}}.</i><span ng-bind-html="q.Question"></span></div>
+      <div class="practiceExam-test">      
+          <!-- 单选题 -->
+          <div ng-repeat="(index,q) in QuestionList" ng-if="index>=currentQuestionNum-1&&index<currentQuestionNum" ng-hide="isGroupPaper">
+              <h4>{{q.Type|filterTitle}}</h4>
+             <div><i>{{currentQuestionNum}}.</i>
+                <p ng-bind-html="q.Question|filterQuestion"></p>
+              </div>
               <ul class="practiceExam-question">
                   <li ng-repeat="(x,o) in q.OptionStringList">{{x|optionsFilter}}.{{o}}</li>
               </ul>
-              <ul class="practiceExam-options" ng-if="q.Type==1">
-                  <li ng-repeat="(index,o) in q.OptionStringList" ng-class="{active:index==idx}" ng-click="selectIt($event,q.GroupId,q.QuestionId,q.Type)">{{index|optionsFilter}}</li>
+              <ul class="practiceExam-options" ng-if="q.Type==1">  
+                  <li ng-repeat="(y,o) in q.OptionStringList" ng-class="{active:y==idx[0]}" ng-click="selectIt($event,currentQuestionNum)">{{y|optionsFilter}}</li>
               </ul>
               <ul class="practiceExam-options" ng-if="q.Type==2">
-                  <li ng-class="" >type=2</li>
+                  <li ng-repeat="(y,o) in q.OptionStringList" ng-class="{active:y==idx[y]}" ng-click="selectIts($event,currentQuestionNum)">{{y|optionsFilter}}</li>
+              </ul>
+              <ul class="practiceExam-options" ng-if="q.Type==3">
+                  <li ng-class="{active:0==idx[0]}" ng-click="selectIt($event,currentQuestionNum)">是</li>
+                  <li ng-class="{active:1==idx[0]}" ng-click="selectIt($event,currentQuestionNum)">否</li>
               </ul>
           </div>
-          <div class="practiceExam-textBtnGroup">
-              <button ng-click="lastQuestion()" ng-hide="first">上一题</button>
-              <button ng-click="nextQuestion()" ng-hide="last">下一题</button>
-              <button ng-click="submitPaper()" ng-hide="submit">提交</button>
-          </div>
-          
+          <!-- 组合题 -->
+          <div ng-show="isGroupPaper">
+              <h4>组合题</h4>
+              <p ng-bind-html="GroupQuestion|filterQuestion"></p>
+              <div ng-repeat="(index,q) in QuestionList">
+                  <div><i>{{currentQuestionNum+index}}.</i><span ng-bind-html="q.Question|filterQuestion"></span></div>
+                  <ul class="practiceExam-question">
+                      <li ng-repeat="(x,o) in q.OptionStringList">{{x|optionsFilter}}.{{o}}</li>
+                  </ul>
+                  <ul class="practiceExam-options" ng-if="q.Type==1">
+                      <li ng-repeat="(y,o) in q.OptionStringList" ng-class="{active:y==idx[index][0]}" ng-click="selectIt($event,currentQuestionNum+index)">{{y|optionsFilter}}</li>
+                  </ul>
+                  <ul class="practiceExam-options" ng-if="q.Type==2">
+                      <li ng-repeat="(y,o) in q.OptionStringList" ng-class="{active:y==idx[index][y]}" ng-click="selectIts($event,currentQuestionNum+index)">{{y|optionsFilter}}</li>
+                  </ul>
+                  <ul class="practiceExam-options" ng-if="q.Type==3">
+                      <li ng-class="{active:0==idx[index][0]}" ng-click="selectIt($event,currentQuestionNum+index)">是</li>
+                      <li ng-class="{active:1==idx[index][0]}" ng-click="selectIt($event,currentQuestionNum+index)">否</li>
+                  </ul>
+                  <div class="practiceExam-analysis" ng-if="analysis">
+                      <!-- 组合题解析 -->
+                      <div class="practiceExam-testNumber" ng-show="isGroupPaper">
+                          <div class="practiceExam-testNumber-title"><p>解析</p></div>
+                          <div>
+                              <h4>正确答案：{{q.Answer|fillterAnswer}}</h4>
+                              <p ng-bind-html="q.Explaination|filterQuestion"></p>
+                          </div>
+                      </div>    
+                  </div>
+              </div>
+          </div>                 
       </div>
+      <div class="practiceExam-analysis" ng-if="analysis">
+          <!-- 单题解析 -->
+          <div class="practiceExam-testNumber"ng-repeat="(index,a) in analysisiList" ng-if="index>=currentQuestionNum-1&&index<currentQuestionNum" ng-hide="isGroupPaper">
+              <div class="practiceExam-testNumber-title"><p>解析</p></div>
+              <div>
+                  <h4>正确答案：{{a.Answer|fillterAnswer}}</h4>
+                  <p ng-bind-html="a.Explaination|filterQuestion"></p>
+              </div>
+          </div>                
+      </div>   
+      <div class="practiceExam-textBtnGroup">
+          <button ng-click="lastQuestion()" ng-hide="first">上一题</button>
+          <button ng-click="nextQuestion()" ng-hide="last">下一题</button>
+          <button ng-click="submitPaper()" ng-if="!analysis" ng-hide="submit">提交</button>
+      </div>   
       <div class="practiceExam-testNumber">
           <div class="practiceExam-testNumber-title"><p>选题<span>总共{{listNum}}题</span></p></div>
           <ion-scroll direction='x' scrollbar-x='false'>
@@ -53,9 +100,9 @@
                     </div>
                 </div>
                 <div class="popup-buttons"><!-- ngRepeat: button in buttons -->
-                    <button ng-click="$buttonTapped(button, $event)" class="button button-default" ng-class="button.type || 'button-default'"><img src="img/practiceExam/icon-backlist.png">返回列表</button><!-- end ngRepeat: button in buttons -->
-                    <button ng-click="$buttonTapped(button, $event)" class="button button-default" ng-class="button.type || 'button-default'"><img src="img/practiceExam/icon- analysis.png">解析</button><!-- end ngRepeat: button in buttons -->
-                    <button ng-click="$buttonTapped(button, $event)" class="button go-answer" ng-class="button.type || 'button-default'"><img src="img/practiceExam/icon-reset.png">重做</button><!-- end ngRepeat: button in buttons -->
+                    <button ng-click="goBack()" class="button button-default" ng-class="button.type || 'button-default'"><img src="img/practiceExam/icon-backlist.png">返回列表</button>
+                    <button ng-click="goPaper()" class="button button-default" ng-class="button.type || 'button-default'"><img src="img/practiceExam/icon- analysis.png">解析</button>
+                    <button ng-click="reset()" class="button go-answer" ng-class="button.type || 'button-default'"><img src="img/practiceExam/icon-reset.png">重做</button>
                 </div>
             </div>
         </div>

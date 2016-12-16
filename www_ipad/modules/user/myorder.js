@@ -231,6 +231,7 @@ angular.module('freexf')
         tempUrl: 'modules/pay/pay.html'
       },
       payaddress: {
+        scope: $scope,
         ctrlUrl: 'modules/pay/payaddress',
         tempUrl: 'modules/pay/payaddress.html'
       },
@@ -242,6 +243,11 @@ angular.module('freexf')
         scope:$scope,
         ctrlUrl:'activities/201609/lottery',
         tempUrl:'activities/201609/lottery.html'
+      },
+      lotteryDouble11:{
+        scope:$scope,
+        ctrlUrl:'activities/201611/lotteryDouble11',
+        tempUrl:'activities/201611/lotteryDouble11.html'
       }
     };
 
@@ -253,6 +259,7 @@ angular.module('freexf')
     };
     //支付付款成功
     if($state.params['OrderId']&&$state.params['pay']==='istrue'){
-      $scope.openModal('payaddress',{OrderId:$state.params['OrderId'],isFromOrder:true})
+      $scope.openModal('payaddress',{OrderId:$state.params['OrderId']});
     }
+
   });

@@ -62,7 +62,20 @@
       }
     }])
 
-    .controller('home_ctrl', function ($scope, $timeout, $ionicLoading, $exceptionHandler, $ionicPopup, $state, $ionicSlideBoxDelegate, AUTH, ENV, HomeRepository) {
+    .controller('home_ctrl', function ($scope, $rootScope, $timeout, $ionicLoading, $exceptionHandler, $ionicPopup, $state, $ionicSlideBoxDelegate, AUTH, ENV, HomeRepository) {
+        $scope.close = function () {
+            $rootScope.isShow = false;
+        }
+        //下载学费全免网app
+        $scope.downFun=function() { 
+            $('#iosss').html('a');
+            //navigator.userAgent.match(/ (iPhone|iPod|webOS|Android)/i)
+            if (/(Android)/i.test(navigator.userAgent)) {
+                location.href = "http://www.freexf.com/toapp";
+            } else{
+                location.href = "https://itunes.apple.com/cn/app/xue-fei-quan-mian-wang/id1159197730?l=zh&ls=1&mt=8";
+            }
+        }
       var Home = HomeRepository(ENV._api.__GetIndexGather);
       $scope.$on('$ionicView.loaded', function () {
       });
@@ -80,7 +93,9 @@
       $scope.goCourseList = function (category1) {
         $state.go('courseplate', {Category1: category1});
       }
-        
+      $scope.goDetail = function (id) {
+        $state.go('coursedetail', {courseId: id});
+      }
       $scope.aboutUs = function () {
           var aboutPopup = $ionicPopup.confirm({
               title: '',
@@ -91,10 +106,10 @@
                {
                    text: "",
                    onTap: function (e) {
-                       
+
                    }
                }]
-          });          
+          });
       }
 
     })

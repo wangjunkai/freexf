@@ -45,7 +45,4 @@ angular.module('freexf')
     $scope.goPlate = function(obj){
       $state.go('courseplate',obj);
     };
-    $scope.goregister = function(){
-      $state.go('register');
-    }
   });

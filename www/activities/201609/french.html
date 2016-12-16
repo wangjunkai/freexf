@@ -11,7 +11,7 @@
   <meta name="screen-orientation" content="portrait">
   <meta name="x5-orientation" content="portrait">
   <meta content="telephone=no" name="format-detection">
-  <link rel="stylesheet" href="../css/french.css"/>
+  <link rel="stylesheet" href="../css/outFramework/french.css"/>
   <script src="../../lib/jquery/dist/jquery.js"></script>
   <script src="setAppParam.js"></script>
   <script src="french.js"></script>
@@ -20,7 +20,7 @@
 <div>
   <div class="french-header">
     <a href="/mobile/www/index.aspx#/home" class="logo"><img src="../img/Germany/logo@3x.png"/></a>
-    <a onclick="gotele()" class="phone"><img src="../img/Germany/phone@3x.png"/><span> 400-803-6611</span></a>
+    <a onclick="gotele()" class="phone"><img src="../img/Germany/phone@3x.png"/><span> 400-686-5511</span></a>
   </div>
   <div class="french-banner"><img src="../img/french/banner-@3x.png"/></div>
   <div class="french-introduce"><img src="../img/french/triangle@3x.png"/></div>
@@ -107,10 +107,10 @@
     <div class="proficiency-test">
       <p class="title">法语能力考试</p>
       <div class="test-course one">
-        <a onclick="goDetail('d8557b96258a446aadaffeef355b76dc')" class="course-pic">
-          <img src="../img/french/proficiency-01@3x.png"/>
-          <div class="course-button"><img src="../img/french/course-button@2x.png"/></div>
-        </a>
+        <div class="course-pic">
+          <div onclick="goDetail('d8557b96258a446aadaffeef355b76dc')" class="pic"><img src="../img/french/proficiency-01@3x.png" /></div>
+          <a class="course-button" onclick="goregister()"><img src="../img/french/course-button@2x.png" /></a>
+        </div>
         <div class="course-description">
           <img src="../img/french/proficiency-txt01.png"/>
         </div>
@@ -119,10 +119,10 @@
         <div class="course-description">
           <img src="../img/french/proficiency-txt02.png"/>
         </div>
-        <a onclick="goDetail('28d94ac3ab854061a66f5cac72a29eeb')" class="course-pic">
-          <img src="../img/french/proficiency-02@3x.png"/>
-          <div class="course-button"><img src="../img/french/course-button@2x.png"/></div>
-        </a>
+        <div class="course-pic">
+          <div onclick="goDetail('28d94ac3ab854061a66f5cac72a29eeb')" class="pic"><img src="../img/french/proficiency-02@3x.png" /></div>
+          <a class="course-button" onclick="goregister()"><img src="../img/french/course-button@2x.png" /></a>
+        </div>
       </div>
     </div>
 
@@ -130,10 +130,10 @@
     <div class="abroad-test">
       <p class="title">出国留学考试</p>
       <div class="test-course">
-        <a onclick="goDetail('221cb5b49300408bacd58ee5c0b2d6fc')"class="course-pic">
-          <img src="../img/french/abroad-01@3x.png"/>
-          <div class="course-button"><img src="../img/french/course-button@2x.png"/></div>
-        </a>
+          <div class="course-pic">
+              <div onclick="goDetail('221cb5b49300408bacd58ee5c0b2d6fc')" class="pic"><img src="../img/french/abroad-01@3x.png" /></div>
+              <a class="course-button" onclick="goregister()"><img src="../img/french/course-button@2x.png" /></a>
+          </div>
         <div class="course-description">
           <img src="../img/french/abroad-txt01.png"/>
         </div>
@@ -142,10 +142,10 @@
         <div class="course-description">
           <img src="../img/french/abroad-txt02.png"/>
         </div>
-        <a onclick="goDetail('225ad93e82734610890efb89244ed6ea')" class="course-pic">
-          <img src="../img/french/abroad-02@3x.png"/>
-          <div class="course-button"><img src="../img/french/course-button@2x.png"/></div>
-        </a>
+          <div class="course-pic">
+              <div onclick="goDetail('225ad93e82734610890efb89244ed6ea')" class="pic"><img src="../img/french/abroad-02@3x.png" /></div>
+              <a class="course-button" onclick="goregister()"><img src="../img/french/course-button@2x.png" /></a>
+          </div>
       </div>
     </div>
 
@@ -153,10 +153,10 @@
     <div class="Interest_business">
       <p class="title">兴趣/商务类课程</p>
       <div class="test-course">
-        <a onclick="goDetail('4ddf6136e53c4da08fd2cc3a3544ef00')"class="course-pic">
-          <img src="../img/french/Interest_business@3x.png"/>
-          <div class="course-button"><img src="../img/french/course-button@2x.png"/></div>
-        </a>
+          <div class="course-pic">
+              <div onclick="goDetail('4ddf6136e53c4da08fd2cc3a3544ef00')" class="pic"><img src="../img/french/Interest_business@3x.png" /></div>
+              <a class="course-button" onclick="goregister()"><img src="../img/french/course-button@2x.png" /></a>
+          </div>
         <div class="course-description">
           <img src="../img/french/Interest_business_txt.png"/>
         </div>
@@ -199,9 +199,10 @@
   <!--电话-->
   <div class="phone-num">
     <a onclick="gotele()">
-      <img src="../img/french/tel@3x.png"/><span>400-803-6611</span>
+      <img src="../img/french/tel@3x.png"/><span>400-686-5511</span>
     </a>
   </div>
+    <p id="publicCompanyName" style="text-align: center;font-size: 12px;color: #969696;padding: 10px;margin: 0;">上海琦珺互联网信息科技有限公司</p>
 </div>
 </body>
 </html>

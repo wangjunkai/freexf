@@ -12,55 +12,111 @@
     </div>
   </ion-header-bar>
 
-    <ion-content class="pay">
-        <div class="paycontent">
-            <div class="OrderMessage on">
-                <div class="title" id="isPayName" style="line-height: 35px;">{{payoname}}</div>
-                <div ng-if="payomoney-needpayfee!=0">你应付金额：<span class="money youhui"
-				id="isPayMoney">¥<i>{{payomoney}}</i></span>&nbsp;&nbsp;&nbsp;&nbsp;优惠：<span
-				class="money youhui" id="isPayMoney">¥<i>{{payomoney-needpayfee}}</i></span></div>
-                <div>实际支付：<span class="money" id="isPayMoney">¥<i>{{needpayfee}}</i></span></div>
-            </div>
-            <div class="OrderMessage">
-                <div>订单编号：<span id="isOrderId">{{orderId}}</span></div>
-                <div>下单时间：<span id="isSetOrderTime">{{SetOrderTime}}</span></div>
-            </div>
-            <div ng-hide="mianfeiShow">
-                <div class="PayState" ng-hide="ThisWX">
-                    <div class="PayState-group" ng-hide="payhide">
-                        <span class="PayIcon"></span>
-                        <span class="PaySuccess"></span>
-                    </div>
-                </div>
-                <div class="PayState weixin" ng-show="ThisWX">
-                    <div class="PayState-group" ng-hide="payhide">
-                        <span class="PayIcon" style="    background-position: -471px -452px;"></span>
-                        <span class="PaySuccess"></span>
-                    </div>
-                </div>
-            </div>
+  <ion-content class="pay">
+    <div class="paycontent">
+      <div class="OrderMessage on">
+        <div class="title" id="isPayName" style="line-height: 35px;">{{payoname}}</div>
+        <div ng-if="payomoney-needpayfee!=0">
+          你应付金额：<span class="money youhui" id="isPayMoney">¥<i>{{payomoney}}</i></span>&nbsp;&nbsp;&nbsp;&nbsp;
+          优惠：<span class="money youhui">¥<i>{{payomoney-needpayfee}}</i></span>
         </div>
-        <div ng-hide="payhide">
-            <div ng-show="mianfeiShow">免费课程,在3秒后自动跳转,或点击以下按钮</div>
-            <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-click="goOrderDetail(orderFormatId)" ng-show="mianfeiShow" id="isPayFinish">
-                完成支付
-            </button>
-            <!--正常手机支付-->
-            <a rthref="/pay/Alipay/Default.aspx?OrderId={{payohref}}" class="zcpay" ng-hide="ThisWX" ng-click="RealTimeUpdate('.zcpay')">
-                <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-hide="mianfeiShow" id="IsPaySurePhone">确认支付</button>
-            </a>
-            <!--微信支付-->
-
-            <a rthref="/pay/weixin/Default.aspx?OrderId={{payohref}}" class="wxpay" ng-show="ThisWX" ng-click="RealTimeUpdate('.wxpay')">
-                <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-hide="mianfeiShow" id="IsPaySureWeixin">确认支付</button>
-            </a>
-                <!--<button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-click="toPay()">确认支付 </button>-->
-</div>
-    </ion-content>
-      <div class="freexf-contact" ng-show="orderError">
-          <div class="error">
-              <div class="errorText">订单异常！</div>
-              <a class="backBtn" href="" ng-click="goback()">返回上一页</a>
-          </div>
+        <div>
+          实际支付：<span class="money">¥<i>{{needpayfee}}</i></span>
+          <span class="one-buy-hint" style="color: red; margin-left: 10px" ng-show="onebuyhint">一元购机会已被使用</span>
+        </div>
       </div>
+      <div class="OrderMessage">
+        <div>订单编号：<span id="isOrderId">{{orderId}}</span></div>
+        <div>下单时间：<span id="isSetOrderTime">{{SetOrderTime}}</span></div>
+      </div>
+      <div ng-hide="mianfeiShow">
+        <div class="PayState" ng-hide="ThisWX">
+          <div class="PayState-group" ng-hide="payhide">
+            <span class="PayIcon"></span>
+            <span class="PaySuccess"></span>
+          </div>
+        </div>
+        <div class="PayState weixin" ng-show="ThisWX">
+          <div class="PayState-group" ng-hide="payhide">
+            <span class="PayIcon" style="    background-position: -471px -452px;"></span>
+            <span class="PaySuccess"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div ng-hide="payhide">
+      <div ng-show="mianfeiShow">免费课程,在3秒后自动跳转,或点击以下按钮</div>
+      <button class="button button-block freexf-button-balanced freexf-margin-bottom-30"
+              ng-click="goOrderDetail(orderFormatId)" ng-show="mianfeiShow" id="isPayFinish">
+        完成支付
+      </button>
+      <!--正常手机支付-->
+      <a rthref="/pay/Alipay/Default.aspx?OrderId={{payohref}}" class="zcpay" ng-hide="ThisWX"
+         ng-click="RealTimeUpdate('.zcpay')">
+        <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-hide="mianfeiShow"
+                id="IsPaySurePhone">确认支付
+        </button>
+      </a>
+      <!--微信支付-->
+
+      <a rthref="/pay/weixin/Default.aspx?OrderId={{payohref}}" class="wxpay" ng-show="ThisWX"
+         ng-click="RealTimeUpdate('.wxpay')">
+        <button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-hide="mianfeiShow"
+                id="IsPaySureWeixin">确认支付
+        </button>
+      </a>
+      <!--<button class="button button-block freexf-button-balanced freexf-margin-bottom-30" ng-click="toPay()">确认支付 </button>-->
+    </div>
+  </ion-content>
+  <div class="freexf-contact" ng-show="orderError">
+    <div class="error">
+      <div class="errorText">订单异常！</div>
+      <a class="backBtn" href="" ng-click="goback()">返回上一页</a>
+    </div>
+  </div>
+
+  <script type="text/ng-template" id="volume_share.html">
+    <p>请选择需要使用的优惠劵,只能选择一种优惠</p>
+    <div class="volume">
+      <p class="e12">您的优惠劵</p>
+      <div class="volume-options" ng-show="volumes[0]">
+        <div
+          ng-style="{visibility:(!volumes[0]?'hidden':'initial')}"
+          ng-class="{'active':volume.CouponId==volumes[0].CouponId}"
+          ng-click="setVolume(0)"
+          class="volume-option active">
+          {{volumes[0].DiscountFee}}<span>学分</span>
+        </div>
+        <div
+          ng-style="{visibility:(!volumes[1]?'hidden':'initial')}"
+          ng-class="{'active':volume.CouponId==volumes[1].CouponId}"
+          ng-click="setVolume(1)"
+          class="volume-option">
+          {{volumes[1].DiscountFee}}<span>学分</span>
+        </div>
+        <div
+          ng-style="{visibility:(!volumes[2]?'hidden':'initial')}"
+          ng-class="{'active':volume.CouponId==volumes[2].CouponId}"
+          ng-click="setVolume(2)"
+          class="volume-option">
+          {{volumes['volume'][2].DiscountFee}}<span>学分</span>
+        </div>
+      </div>
+      <div class="volume-options pay-no-volume" ng-hide="volumes[0]">没有可用分享卷</div>
+      <p class="e12">活动优惠劵</p>
+      <div class="volume-options" ng-show="volumes[3]">
+        <div
+          ng-class="{'active':volume.DiscountId==volumes[3].DiscountId}"
+          ng-click="setVolume(3)"
+          class="volume-option active">
+          {{volumes[3].DiscountFee}}<span>学分</span>
+        </div>
+        <div class="volume-option" style="visibility: hidden;"></div>
+        <div class="volume-option" style="visibility: hidden;"></div>
+      </div>
+      <div class="volume-options pay-no-volume" ng-hide="volumes[3]">没有可用优惠劵</div>
+    </div>
+<!--    <p style="margin-top: 40px;">{{courseDate.courseName}}，优惠后金额：<span
+      style="font-size: 16rem;color: #ff7644;font-weight: 600">{{courseDate.price}}</span></p>-->
+  </script>
 </ion-view>

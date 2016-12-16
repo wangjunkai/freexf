@@ -1,0 +1,149 @@
+﻿<style>
+    .invitefriends{background:#f9f1cd;}
+.invitefriends img{width:100%;}
+.invitefriends-slogan{text-align:center;color:#fff;padding:0 4%;position:relative;top:-55px;margin-bottom:10px;}
+.invitefriends-slogan>img,
+.invitefriends-rules img,
+.invitefriends-ranking img{width:77%;display:block;margin:0 auto;position: relative;top: 16px;}
+.invitefriends-gifts img{width:100%;display:block;}
+.invitefriends-slogan p{background:#FC5A45;border-radius:5px;padding:25px 15px 15px;font-size:12rem;margin:0;display: block;text-align:left;text-indent:2em;}
+.invitefriends-rules p{border-top:1px #FC5D47 dashed;width:90%;margin:0 auto;padding:15px 0;display: block;font-size:12rem;text-align:left;color:#333!important;}
+.invitefriends-rules p em{color:#FC5D47;}
+.invitefriends-rules p span{border-top:1px #FC5D47 dashed;text-align:left;font-size:11rem;padding-top:10px;color:#FC5D47;}
+.invitefriends-slogan p span{color:#fcde00;}
+.invitefriends-slogan>div{background:#FC5A45;border-radius:5px;padding:25px 15px 15px;}
+.introductions-btn{width:60%;margin:0 auto;text-align:center;color:#C51420;background:#FCDE00;box-shadow:2px 2px 4px #D9AF98;height:30px;line-height:30px;border-radius:10px;font-size:14rem;font-weight:bold;position:relative;top:-35px;}
+.invitefriends-rules{color:#fff;width:92%;margin:0 auto;position: relative;top: -45px;background:#FFE694;border-radius:5px;}
+.invitefriends-rules h3{width:91%;margin:0 auto;color:#FC5D47;font-size:20rem;line-height: 45px;}
+.invitefriends-rules p{font-size:12rem;color:#fefdfd;text-align:left;}
+.invitefriends-rules p span{display:block;margin-top:10px;}
+.invitefriends-ranking{padding:0 4% 85px;margin-top:0;position:relative;top:-25px;background:url(./activities/img/invitation/cloud.png) no-repeat;background-size:110% auto;background-position:bottom;}
+.invitefriends-ranking div{padding:35px 20px 20px;background:#FC5A45;border-radius:5px;}
+.invitefriends-ranking div>p{text-align:right;font-size:12rem;color:#fff;margin:10px 0 0;}
+.invitefriends-ranking ul{padding:15px 0;background:#fff;border-radius:10px;}
+.invitefriends-ranking ul li{position:relative;height:35px;line-height:35px;border-top:1px #911724 solid;}
+.invitefriends-ranking ul li:last-of-type{border-bottom:1px #911724 solid;}
+.invitefriends-ranking ul li>p{font-size:12rem;color:#333;margin:0;}
+.invitefriends-ranking ul li>p span{line-height:35px;text-align:center;width:50%;display:block;float:left;}
+.invitefriends-ranking ul li>p span:last-of-type{border-left:1px #911724 solid;}
+.invitefriends-gifts{width:92%;margin:0 auto;background:#fff;border-radius:5px;position:relative;}
+.invitefriends-gifts>p{width:91%;margin:0 auto;color:#FC5D47;font-size:20rem;line-height: 45px;border-bottom:1px #FC5D47 dashed;}
+.invitefriends-gifts div{padding:15px 15px 20px;}
+.invitefriends-gifts div p{position:relative;margin-top:5px;padding-bottom:0;}
+.invitefriends-gifts div p a{display:block;width:49%;position:absolute;right:0;top:0;z-index:10;}
+.invitefriends-gifts div p>img{width:49%;height:auto;}
+.invitefriends-gifts div p>img{}
+.invitefriends-dialog{background:rgba(0,0,0,.4);}
+.invitefriends-dialog .popup{border-radius:10px;width: 80%;background:rgba(0,0,0,0);border-radius:10px;position:relative;}
+.invitefriends-dialog .popup-body{padding-top:30%;    position: relative;}
+.invitefriends-dialog .popup-body .box{background:#fff;border-radius:10px;padding:15px;}
+.invitefriends-dialog .popup-body>img{position:absolute;width:100%;left:0;top:0;}
+.invitefriends-dialog .popup-buttons{position:absolute;top:-3%;right:0;opacity:0;width: 50%;}
+.invitefriends-dialog .popup-head{display:none;}
+.invitefriends-dialog .popup-body>div h2{font-size:11rem;margin-top:14%;color:#000;font-weight:bold;}
+
+.invitefriends-dialog .popup-body #shareLinkInput{position:relative;color:#fff;width:100%;background:#FC5A45;line-height:14px;border-radius:7px;padding:5px 10px 15px;height: 65px;-moz-border-radius:5px; -webkit-border-radius:5px;white-space:normal;word-break:break-all;}
+.invitefriends-dialog .popup-body #shareLinkInput:before{content:'';position:absolute;width:30px;height:30px;background:url(./activities/img/invitefriends/icon-14@3x.png) no-repeat;background-size: auto 90%;right: -5px;top: -20px;}
+.invitefriends-dialog .popup-body .qcode p{color:#FC5A45;font-size:8rem;text-align:center;}
+.code{text-align: center;}
+.code img{width:126px;margin:10px auto;}
+#code{position:absolute;top:-700px;left:0;z-index:-10;}
+@media screen and (max-width: 321px) {
+    .invitefriends-dialog .popup-body img{}
+.invitefriends-dialog .popup-buttons{}
+}
+
+.invitefriends-balloon:before{content:"";position:absolute;left:5px;top:5px;width:40px;height:70px;background:url(./activities/img/invitation/hot-air-balloon2@3x.png) no-repeat;background-size:100% auto;}
+.invitefriends-rules.invitefriends-balloon:before{top:-27px;left:0;}
+.balloon-r:before{content:"";position:absolute;right:13px;top:0px;width:40px;height:70px;background:url(./activities/img/invitation/hot-air-balloon2.png) no-repeat;background-size:100% auto;}
+.invitefriends-gifts.balloon-r:before{top:-40px;}
+
+.invitefriends-ranking ul li>p em{width:40%;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;display:inline-block;}
+
+.time-footer{width:100%;display:block;height:44px;text-align:center;line-height:44px;margin-top:30px;}
+.time-footer.invitefriends-footer span{color:#fc5a45!important;}
+.invitefriends-footer{border-top:1px #fc5a45 solid;}
+
+</style>
+<ion-view coures-scroll view-title="呼朋唤友做学霸">
+  <ion-header-bar class="freexf-bar">
+    <div class="bar-left">
+      <a href="#home" class="button-clear freexf-back freexf-left">
+        <i class="icon freexf-gohomeback"></i>
+      </a>
+    </div>
+    <div class="title">呼朋唤友做学霸</div>
+  </ion-header-bar>
+  <ion-content lazy-scroll class="has-header invitefriends">
+    <div class="olympic-banner">
+      <img image-lazy-src="activities/img/invitation/banner@3x.png"/>
+    </div>
+    <div class="invitefriends-slogan">
+      <img src="activities/img/invitation/title1.png"/>
+      <p>
+          知识狂欢节，爱学习不剁手！分享您的“<span>邀请好友链接/二维码</span>”给小伙伴，活动结束邀请好友注册人数最多的<span>前10名</span>用户还可以获得丰厚奖品！
+      </p>
+    </div>
+      <div class="invitefriends-slogan invitefriends-balloon">
+          <img src="activities/img/invitation/title2.png" />
+          <div class="row">
+              <div class="col col-33"><img src="activities/img/invitation/Tmallbox.png" /></div>
+              <div class="col col-33"><img src="activities/img/invitation/Vacuumcup.png" /></div>
+              <div class="col col-33"><img src="activities/img/invitation/Pillow.png" /></div>
+          </div>
+      </div>
+    <div class="introductions-btn" ng-click="showDialog()">
+      {{text}}
+    </div>
+    <div class="invitefriends-ranking balloon-r">
+        <img src="activities/img/invitation/title3.png" />
+        <div>
+            <ul>
+                <li>
+                    <p style="font-size:14rem;color:#FC5A45;">
+                        <span>排行榜</span><span>ID</span>
+                    </p>
+                </li>
+                <li ng-repeat="(index,l) in kingList">
+                    <p>
+                        <span>{{index| nameFilter}}</span><span>{{l| phoneFilter}}</span>
+                    </p>
+                </li>
+            </ul>
+            <p>2016年12月1日00:00—2016年12月20日24:00</p>
+        </div>
+    </div>
+    <div class="invitefriends-rules invitefriends-balloon">
+      <h3>活动细则</h3>
+      <p>
+          1、活动时间：<em>12月1日00:00—12月20日24:00</em>；<br/>
+          2、凡学费全免网注册用户，即可参加邀请好友活动，被邀
+          请人需在2016年12月20日前通过您分享的“<em>链接/二维码</em>”
+          注册，记得提醒小伙伴及时注册哦；<br />
+          3、活动结束，榜单前2名用户每人可获得华为<em>天猫魔盒（红色）1个</em>，第3-7名用户每人可获得<em>乐扣乐扣保温杯1个</em>，第8-
+          10名用户每人可获得<em>周边抱枕1个</em>。<br />
+          4、活动结束后5个工作日内，我们会通过手机短信/电话通知
+          获奖用户，进行领奖信息确认，活动结束后的20个工作日内
+          邮寄奖品。<br />
+        <span>注意事项：<br/>活动中如果发现通过作弊手段获得奖励的，将取消奖励！</span>
+      </p>
+    </div>
+    <div class="invitefriends-gifts balloon-r">
+      <p>更多活动</p>
+      <div>
+        <a href="#/Double12FiveFold">
+          <img src="activities/img/invitation/double12.png"/>
+        </a>
+        <p>
+          <img src="activities/img/invitation/wechat.png"/>
+          <a href="http://weibo.com/freexfcom"><img src="activities/img/invitation/mobilepower.png" /></a>
+        </p>
+      </div>
+    </div>
+    <div id="code"></div>
+    <a href="tel:{{tel400}}" class="title time-footer invitefriends-footer">
+      <img class="footer-bar-contact-content-phone" image-lazy-src="activities/img/invitation/phone-icon@3x.png"/>
+      <span class="footer-bar-contact-content-phonenumber">{{tel400}}</span>
+    </a>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,130 @@
+/*幸运大抽奖*/
+#lottery{
+	width: 86%;
+    height:83%;
+    position:absolute;
+    top:7%;
+    left:7%;
+}
+#lottery table{
+    width:100%;
+}
+#lottery table tbody{position:relative;}
+#lottery table tbody.active:before{
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.3);
+    border-radius:10px;
+    position:absolute;
+    content:'';
+    top:0;
+    left:0;
+    z-index:4;
+}
+
+
+#lottery table td.active{
+    z-index:12;
+}
+#lottery table td{
+	width: 33%;
+    padding:0 3%;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 24px;
+	color: #666666;
+    background:url(./img/lotteryDouble11/bg_box@3x.png) no-repeat;
+    background-size:94% auto;
+    background-position:center;
+    position:relative;
+    z-index:2;
+}
+
+#lottery table td.begin-btn button{
+    position:relative;
+    z-index:10;
+}
+#lottery table td.begin-btn{
+    background-image:none;
+    z-index: 9;
+}
+#lottery table .lottery-unit-0 img,
+#lottery table .lottery-unit-1 img,
+#lottery table .lottery-unit-2 img,
+/*#lottery table .lottery-unit-6 img,*/
+#lottery table .lottery-unit-3 img,
+#lottery table .lottery-unit-5 img,
+#lottery table .lottery-unit-7 img{
+    position:relative;
+    top:-5%;
+    width:75%;
+}
+
+#lottery table td button{
+	width: 100%;
+	height: 100%;
+	display: block;
+    border:none;
+	text-decoration: none;
+    background:url(../../img/lotteryDouble11/beginbtn@3x.png) no-repeat;
+    background-size:100% auto;
+    background-position:center;
+}#lottery table td button.activated{
+     background:url(../../img/lotteryDouble11/activebtn@3x.png) no-repeat;
+    background-size:100% auto;
+    background-position:center;
+ }
+
+#lottery table td.active{
+	background:url(../../img/lotteryDouble11/bg_box_active@3x.png) no-repeat;
+    background-size:94% auto;
+    background-position:center;
+}
+#lottery table .lottery-unit-0 p,
+#lottery table .lottery-unit-4 p{
+    color:#FB6356;
+}
+#lottery table .lottery-unit-1 p,
+#lottery table .lottery-unit-2 p,
+#lottery table .lottery-unit-6 p{
+    color:#FFA64C;
+}
+#lottery table .lottery-unit-0 p,
+#lottery table .lottery-unit-1 p,
+#lottery table .lottery-unit-2 p,
+#lottery table .lottery-unit-4 p,
+#lottery table .lottery-unit-6 p{
+    position:absolute;
+    bottom:25%;
+    left:0;
+    font-size:14rem;
+    margin:0;
+    width:100%;
+    text-align:center;
+}
+#lottery table .lottery-unit-1 p i,
+#lottery table .lottery-unit-0 p i,
+#lottery table .lottery-unit-2 p i,
+#lottery table .lottery-unit-4 p i,
+#lottery table .lottery-unit-6 p i{
+    font-size:24rem;
+    padding:0 0.2em;
+}
+.lotteryNum{width:34%;margin:0 auto;text-align:center;bottom:13%;left:45%;z-index: 13;font-size:13rem;color:#ff4a4a;font-weight:bold;border-radius:15px;height:30px;background:#ffff5e;line-height: 30px;margin-bottom: 16px;}
+.lottery{width:100%;height:auto;position:relative;box-sizing:border-box;background-color:#FF7B89;background-image:url(../../img/lotteryDouble11/tophead@3x.png);background-repeat:no-repeat;background-size:100% auto;background-position:0px 28px;}
+.lottery>img{position:absolute;top:0;width:100%;height:100%;z-index:1;}
+.lottery .olympic-banner{padding:20px 0 10px;position:relative;z-index:2;height: 175px;}
+.lottery .lottery-box{width:90%;height:auto;position:relative;margin:0 auto;z-index:2;}
+.lottery .lottery-box img{width:100%;}
+.lottery .lottery-rule{width:85%;margin:0 auto;color:#000;position:relative;z-index:2;padding:15px 0;}
+.lottery .lottery-rule h3{font-size:16rem;margin-bottom:5px;}
+.lottery .lottery-rule p{font-size:12rem;}
+.lottery-dialog{position: fixed !important;top:0;left:0;width:100%;height: 736px;background:rgba(0,0,0,0.75);z-index:15;background-image:url(../../img/lotteryDouble11/result.png);background-repeat:no-repeat;background-size:80% auto;background-position:center 25%;}
+.lottery-dialog.lotterywinning{background-image:url(../../img/lotteryDouble11/failtext.png)!important;background-repeat:no-repeat;background-size:60% auto;background-position:center 25%;}
+.lottery-dialog>div{width:80%;margin:0 auto;position:relative;top:42%;text-align:center;}
+.lottery-dialog.lotterywinning>div{top:35%;}
+.lottery-dialog>div img{width:34%;}
+.lottery-dialog>div p{width:86%;position:absolute;top:-37%;left:7%;font-size:14rem;color:#fff;}
+.lottery-dialog>div p i{font-size:24rem;padding:0 0.2em;}
+.lottery-dialog>div p.red{color:#FB6356;}
+.lottery-dialog>div button{border:none;background:#FF494B;color:#fff;width:70%;height:40px;font-size:16rem;margin-top:7%;}

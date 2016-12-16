@@ -67,6 +67,7 @@
       $scope.$on('$ionicView.loaded', function () {
       });
 
+
       $scope.au = $freexfUser.auth();
       $scope.getTime = function () {
         return new Date().getTime();
@@ -87,25 +88,30 @@
           scope: $scope,
           ctrlUrl: 'modules/course/coursedetail',
           tempUrl: 'modules/course/coursedetail.html'
+        },
+        lottery: {
+          scope: $scope,
+          ctrlUrl: 'activities/201609/lottery',
+          tempUrl: 'activities/201609/lottery.html'
         }
       };
       $scope.openModal = function (name, data, back) {
         $frModal.openModal($scope, name, modal_ary, data, back);
       };
       $scope.aboutUs = function () {
-          var aboutPopup = $ionicPopup.confirm({
-              title: '了解我们',
-              cssClass: 'videoBox',
-              template: '<video id="aboutVideo" style="width:100%;position:relative;z-index:10;" controls="controls" autoplay="autoplay"><source id="vpmp4" src="http://css.freexf.com/banner%2F%E5%AD%A6%E8%B4%B9%E5%85%A8%E5%85%8D%E7%BD%91%E7%9F%AD%E4%BB%8B%E7%BB%8D.mp4" type="video/mp4"></video>',
-              scope: $scope,
-              buttons: [
-               {
-                   text: "",
-                   onTap: function (e) {
+        var aboutPopup = $ionicPopup.confirm({
+          title: '了解我们',
+          cssClass: 'videoBox',
+          template: '<video id="aboutVideo" style="width:100%;position:relative;z-index:10;" controls="controls" autoplay="autoplay"><source id="vpmp4" src="http://css.freexf.com/banner%2F%E5%AD%A6%E8%B4%B9%E5%85%A8%E5%85%8D%E7%BD%91%E7%9F%AD%E4%BB%8B%E7%BB%8D.mp4" type="video/mp4"></video>',
+          scope: $scope,
+          buttons: [
+            {
+              text: "",
+              onTap: function (e) {
 
-                   }
-               }]
-          });
+              }
+            }]
+        });
       }
     });
 })();

@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 angular.module('freexf')
-  .controller('examinationTime_ctrl', function ($scope,$ToDetailState) {
+  .controller('examinationTime_ctrl', function ($scope,$state) {
       $('head').append('<script src="activities/js/Calendarfun.js" async=""></script>');
 
       var calendarurl = '/Entrace/Dispatch.aspx?FunctionName=Student.%E8%80%83%E8%AF%95%E6%97%A5%E5%8E%86&Version=1&EndClientType=H5&JsonPara={}';
@@ -60,7 +60,7 @@ angular.module('freexf')
       }
 
       $scope.gotele = function(){
-        $ToDetailState.go('telephone',{telephone:'400-803-6611'})
+        $state.go('telephone',{telephone:'400-686-5511'})
       };
       //向右拖拽 上月
       $scope.onSwipeRight = function () {

@@ -2,7 +2,7 @@
 //定义主要js路径
 
 'use strict';
-autoChange();
+
 
 //CND路径
 var pathsFreexf = {
@@ -37,7 +37,7 @@ var pathsFreexf = {
 var paths = {
   //配置js路径
   paths: {
-    ionic: 'dist/js/lib/concat/freexf-b4a1e2feed.bundle'//webapp前端框架
+    ionic: 'dist/js/lib/concat/freexf-b7e5d9eef7.bundle'//webapp前端框架
     /*   oclazyload: 'lib/oclazyload/dist/ocLazyLoad',//按需加载
      imglazyload: 'lib/ionic-image-lazy-load/ionic-image-lazy-load',//图片懒加载
      restAngular: 'lib/restangular/dist/restangular.min',//ajax
@@ -54,7 +54,7 @@ var paths = {
   }
 };
 
-require.config(pathsFreexf);
+require.config(paths);
 
 require([
     'ionic',
@@ -164,6 +164,7 @@ function deleteCookie(name, path) {
   path = path == "" ? "" : ";path=" + path;
   document.cookie = name + "=" + ";expires=" + expires.toUTCString() + path;
 };
+//手机版跳转ipad
 function autoChange() {
   //手机端自动跳转
   var phoneVideo = function () {

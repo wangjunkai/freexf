@@ -1,4 +1,80 @@
-﻿<ion-view coures-scroll view-title="四六级考试不用愁，1元购课程任意挑">
+﻿<style>
+  .campusPromotionCET img{width:100%;}
+  .campusPromotionCET .cet-block{display:block;}
+  .campusPromotionCET-teacher-box{padding:20px 3% 0;border-top:1px #F8807F solid;position:relative;margin-top:50px;}
+  .campusPromotionCET-teacher-box>p{position:absolute;width:34%;height:26px;left:33%;top:-13px;line-height:26px;background:#fff;color:#F8807F;text-align:center;font-size:12rem;}
+  .campusPromotionCET-teacher-box>img{width:40%;}
+  .campusPromotionCET-teacher-box .col p{font-size:14rem;text-align:center;}
+  .campusPromotionCET-teacher-box .col img{border-radius:50%;border:2px #F8807F solid;}
+  .campusPromotionCET-teacher-box div.col-25{width:28%;min-width:28%;max-width:28%;padding: 10px;}
+
+  .campusPromotionCET .campusPromotionCET-top {
+    height: 24px;
+    background: #FC7C7B;
+    position:relative;
+  }
+
+  .campusPromotionCET .campusPromotionCET-top .logo {
+    position:absolute;
+    left:0;
+    top:0;
+    width: 76px;
+    height: 14px;
+    margin: 5px 10px;
+  }
+
+  .campusPromotionCET .campusPromotionCET-top .phone {
+    position:absolute;
+    right:5px;
+    top:0;
+  }
+
+  .campusPromotionCET .campusPromotionCET-top .phone-icon {
+    width: 12px;
+    height: 11px;
+    vertical-align: middle;
+  }
+
+  .campusPromotionCET .campusPromotionCET-top .phone-num {
+    font-size: 12px;
+    color: #fff;
+    line-height: 24px;
+    margin: 0 5px;
+    vertical-align: middle;
+  }
+  .campusPromotionCET .campusPromotionCET-head a,
+  .campusPromotionCET .campusPromotionCET-head p{
+    display:block;
+    width:70%;
+    margin:10px auto;
+  }
+  .campusPromotionCET .campusPromotionCET-head p{
+    margin-bottom:20px;
+  }
+  .campusPromotionCET .cet-course-list{
+    width:95%;
+    margin:10px auto;
+  }
+  .campusPromotionCET .cet-course-list>div{position:relative;margin:20px 0;}
+  .campusPromotionCET .cet-course-list>div a{width:49%;display:block;}
+  .campusPromotionCET .cet-course-list>div a:last-of-type{position:absolute;right:0;top:0;}
+  .campusPromotionCET .cet-btngroup{width:80%;position:relative;margin:20px auto 0;}
+  .campusPromotionCET .cet-btngroup a{width:40%;height:30px;border-radius:5px;background:#FF5959;color:#fff;display:block;text-align:center;line-height:30px;font-size:12rem;}
+  .campusPromotionCET .cet-btngroup a:last-of-type{position:absolute;right:0;top:0;}
+  .campusPromotionCET .cet-course-list.cet-course-list2{width:100%;padding:0 2.5%;background:url(../img/cetMultilingual/bg-hr.png) repeat-y;background-size:100% auto;margin:0;}
+  .campusPromotionCET .cet-course-list.cet-course-list2>div{margin:0; padding:10px 0 10px;}
+  .campusPromotionCET .cet-course-list.cet-course-list2>div a:last-of-type{position:absolute;right:0;top:10px;}
+  .campusPromotionCET img.cet-title3{width:75%;margin:10px auto 20px;display:block;}
+  .campusPromotionCET img.cet-title2{width:100%;padding:15px 12.5% 20px;display:block;}
+  .campusPromotionCET .cet-btngroup.cet-btngroup2{width:100%;padding:20px 10% 15%;position:relative;background:url(../img/cetMultilingual/bg-bhr.png) no-repeat;background-size:100% auto;margin-top:0;}
+  .campusPromotionCET .cet-btngroup.cet-btngroup2 a:first-of-type{display:inline-block;}
+  .campusPromotionCET .cet-btngroup.cet-btngroup2 a:last-of-type{float:right;position:relative;}
+
+
+  .cetMultilingual-footer.time-footer span{color:#F8807F!important;}
+  .cetMultilingual-footer.time-footer{border-top: 1px #F8807F solid;margin-top: 0px;display: block;height:44px;line-height:44px;text-align: center;}
+</style>
+<ion-view coures-scroll view-title="四六级考试不用愁，1元购课程任意挑">
     <ion-content lazy-scroll class="campusPromotionCET">
         <div class="campusPromotionCET-top">
             <a href="/mobile/www/index.aspx#/home" class="logo">
@@ -7,64 +83,64 @@
             <div class="phone">
                 <a href="tel:400-803-6611">
                     <img class="phone-icon" src="activities/img/cetMultilingual/phone-icon.png" />
-                    <span class="phone-num">400-803-6611</span>
+                    <span class="phone-num" style="white-space:nowrap; ">400-803-6611</span>
                 </a>
             </div>
         </div>
         <div class="campusPromotionCET-head">
             <img src="activities/img/cetMultilingual/top-header.png"/>
-            <a href="/mobile/www/index.aspx#/oneBuy"><img src="activities/img/cetMultilingual/top2.png" /></a>
+            <a href="" ng-click="goOneBuy()"><img src="activities/img/cetMultilingual/top2.png" /></a>
             <p><img src="activities/img/cetMultilingual/top3.png" /></p>
         </div>
         <div class="cet-course-list">
-            <a href="/mobile/www/index.aspx#/coursedetail/b369caf1653a492b9e90494900d4bacd&"><img src="activities/img/cetMultilingual/course1.png" /></a>
+            <a href="" ng-click="toCourseDate('b369caf1653a492b9e90494900d4bacd')"><img src="activities/img/cetMultilingual/course1.png" /></a>
             <div>
-                <a href="/mobile/www/index.aspx#/coursedetail/3cf9d285bad0484a95a674e46e0500d6&"><img src="activities/img/cetMultilingual/course2.png" /></a>
-                <a href="/mobile/www/index.aspx#/coursedetail/de2173fc2ab7473a837015ee585ad9d6&"><img src="activities/img/cetMultilingual/course3.png" /></a>
+                <a href="" ng-click="toCourseDate('3cf9d285bad0484a95a674e46e0500d6')"><img src="activities/img/cetMultilingual/course2.png" /></a>
+                <a href="" ng-click="toCourseDate('de2173fc2ab7473a837015ee585ad9d6')"><img src="activities/img/cetMultilingual/course3.png" /></a>
             </div>
-            <a href="/mobile/www/index.aspx#/coursedetail/3f9b0819eae74664a333f7e7b5a8b17f&"><img src="activities/img/cetMultilingual/course4.png" /></a>
+            <a href="" ng-click="toCourseDate('3f9b0819eae74664a333f7e7b5a8b17f')"><img src="activities/img/cetMultilingual/course4.png" /></a>
             <div>
-                <a href="/mobile/www/index.aspx#/coursedetail/a65966c2149f497ea7643621280b48a0&"><img src="activities/img/cetMultilingual/course5.png" /></a>
-                <a href="/mobile/www/index.aspx#/coursedetail/bb6f6a6e96b64de0b4fee24e341ceb39&"><img src="activities/img/cetMultilingual/course6.png" /></a>
+                <a href="" ng-click="toCourseDate('a65966c2149f497ea7643621280b48a0')"><img src="activities/img/cetMultilingual/course5.png" /></a>
+                <a href="" ng-click="toCourseDate('bb6f6a6e96b64de0b4fee24e341ceb39')"><img src="activities/img/cetMultilingual/course6.png" /></a>
             </div>
         </div>
-        <div class="cet-btngroup">
-            <a href="/mobile/www/index.aspx#/register">立即注册免费试听</a>
+        <div class="cet-btngroup" style="height:30px;">
+            <a href="" ng-click="modal.openModal('register')" ng-hide="islogin">立即注册免费试听</a>
             <a href="/mobile/www/index.aspx#/courseplate/%E8%8B%B1%E8%AF%AD&%E5%9B%9B%E5%85%AD%E7%BA%A7&&">点击查看更多课程</a>
         </div>
         <img class="cet-block" src="activities/img/cetMultilingual/bg-thr.png" />
         <div class="cet-course-list cet-course-list2">
             <img class="cet-title2" src="activities/img/cetMultilingual/title2.png" />
             <div>
-                <a href="/mobile/www/index.aspx#/coursedetail/9b398d462bc04231ba86fc48f0003c21&"><img src="activities/img/cetMultilingual/course7.png" /></a>
-                <a href="/mobile/www/index.aspx#/coursedetail/39377fcbc7634366aafa0d4b28de6994&"><img src="activities/img/cetMultilingual/course8.png" /></a>
+                <a href="" ng-click="toCourseDate('9b398d462bc04231ba86fc48f0003c21')"><img src="activities/img/cetMultilingual/course7.png" /></a>
+                <a href="" ng-click="toCourseDate('39377fcbc7634366aafa0d4b28de6994')"><img src="activities/img/cetMultilingual/course8.png" /></a>
             </div>
             <div>
-                <a href="/mobile/www/index.aspx#/coursedetail/fc70fc81364c4ee290b77ae976708a3f&"><img src="activities/img/cetMultilingual/course9.png" /></a>
-                <a href="/mobile/www/index.aspx#/coursedetail/fa0c3dce3e3b466b93b2364b6736c5dd&"><img src="activities/img/cetMultilingual/course10.png" /></a>
+                <a href="" ng-click="toCourseDate('fc70fc81364c4ee290b77ae976708a3f')"><img src="activities/img/cetMultilingual/course9.png" /></a>
+                <a href="" ng-click="toCourseDate('fa0c3dce3e3b466b93b2364b6736c5dd')"><img src="activities/img/cetMultilingual/course10.png" /></a>
             </div>
             <div>
-                <a href="/mobile/www/index.aspx#/coursedetail/17fdafb183fd47e1a483d06c86e7ea5f&"><img src="activities/img/cetMultilingual/course11.png" /></a>
-                <a href="/mobile/www/index.aspx#/coursedetail/3862c0cadf2941ef89c89170bb6889ea&"><img src="activities/img/cetMultilingual/course12.png" /></a>
+                <a href="" ng-click="toCourseDate('17fdafb183fd47e1a483d06c86e7ea5f')"><img src="activities/img/cetMultilingual/course11.png" /></a>
+                <a href="" ng-click="toCourseDate('3862c0cadf2941ef89c89170bb6889ea')"><img src="activities/img/cetMultilingual/course12.png" /></a>
             </div>
         </div>
-        <div class="cet-btngroup cet-btngroup2">
-            <a href="/mobile/www/index.aspx#/register">立即注册免费试听</a>
+        <div class="cet-btngroup cet-btngroup2" style="height:100px;">
+            <a href="" ng-click="modal.openModal('register')" ng-hide="islogin">立即注册免费试听</a>
             <a href="/mobile/www/index.aspx#/courseplate/%E5%A4%9A%E8%AF%AD%E7%A7%8D&&&">点击查看更多课程</a>
         </div>
         <img class="cet-title3" src="activities/img/cetMultilingual/title3.png" />
         <div class="cet-course-list">
             <div>
-                <a href="/mobile/www/index.aspx#/coursedetail/9d5a5bfea1ad44a1844c1f288915e0b3&"><img src="activities/img/cetMultilingual/course13.png" /></a>
-                <a href="/mobile/www/index.aspx#/coursedetail/c8acfeddf5534881a8e23ca29cd06d32&"><img src="activities/img/cetMultilingual/course14.png" /></a>
+                <a href="" ng-click="toCourseDate('9d5a5bfea1ad44a1844c1f288915e0b3')"><img src="activities/img/cetMultilingual/course13.png" /></a>
+                <a href="" ng-click="toCourseDate('c8acfeddf5534881a8e23ca29cd06d32')"><img src="activities/img/cetMultilingual/course14.png" /></a>
             </div>
             <div>
-                <a href="/mobile/www/index.aspx#/coursedetail/9dfe344451414a10b7a58d63a7fca8a7&"><img src="activities/img/cetMultilingual/course15.png" /></a>
-                <a href="/mobile/www/index.aspx#/coursedetail/b6bb7dc599cb44388eba2d7057f68961&"><img src="activities/img/cetMultilingual/course16.png" /></a>
+                <a href="" ng-click="toCourseDate('9dfe344451414a10b7a58d63a7fca8a7')"><img src="activities/img/cetMultilingual/course15.png" /></a>
+                <a href="" ng-click="toCourseDate('b6bb7dc599cb44388eba2d7057f68961')"><img src="activities/img/cetMultilingual/course16.png" /></a>
             </div>
         </div>
-        <div class="cet-btngroup">
-            <a href="/mobile/www/index.aspx#/register">立即注册免费试听</a>
+        <div class="cet-btngroup" style="height:30px;">
+            <a href="" ng-click="modal.openModal('register')" ng-hide="islogin">立即注册免费试听</a>
             <a href="/mobile/www/index.aspx#/courseplate/%E8%8B%B1%E8%AF%AD&&&">点击查看更多课程</a>
         </div>
         <div class="campusPromotionCET-teacher-box">

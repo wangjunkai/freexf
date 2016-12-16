@@ -193,8 +193,8 @@ gulp.task('livereload', function () {
 //合并文件
 var js_lib_ary_dist = [
   'ionic-*.bundle.js',
-  'jquery-aacc43d6f3.js',
-  'lodash-*.js',
+  'jquery-b19a18fce8.js',
+  'lodash-53a7121b59.js',
   'angular-local-storage-*.js',
   'angular-sanitize-*.js',
   'restangular-*.js',

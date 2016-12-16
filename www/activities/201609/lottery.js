@@ -58,9 +58,9 @@ angular.module('freexf')
               lottery.prize = -1;
               lottery.times = 0;
               $scope.$apply(function () {
-                  $scope.resultShow = true;                  
+                  $scope.resultShow = true;
               });
-              click = false;              
+              click = false;
           } else {
               if (lottery.times < lottery.cycle) {
                   lottery.speed -= 10;
@@ -75,16 +75,16 @@ angular.module('freexf')
                       success: function (data) {
                           if (data) {
                               //获取中奖位置
-                              if (typeof ($('.DiscountCode' + data.DiscountCode).attr('dnum')) != 'undefined') {                                  
+                              if (typeof ($('.DiscountCode' + data.DiscountCode).attr('dnum')) != 'undefined') {
                                   lottery.prize = $('.DiscountCode' + data.DiscountCode).attr('dnum')
                               } else {
                                   lottery.prize = -1;
-                              }                         
+                              }
                               $scope.$apply(function () {
                                     $scope.resultData = data;
                                     $scope.result = result;
-                              })                              
-                          }                      
+                              })
+                          }
                       }
                   });
               } else {
@@ -124,23 +124,23 @@ angular.module('freexf')
                           return false;
                       } else {
                           $Loading.show({ class: MSGICON.fail, text: '您已抽过奖，请到我的订单支付~' });
-                          $timeout(function () {$state.go('myorder');}, 2000);                          
+                          $timeout(function () {$state.go('myorder');}, 2000);
                       }
                   }
-              });              
+              });
           }
       }
       $scope.goPay = function () {
           $rootScope.paycourseId = $scope.courseId;
-          $state.go('pay', { DiscountCode: $scope.resultData.DiscountCode });
-      }
+          $state.go('pay', {Discount:$scope.resultData, DiscountCode: $scope.resultData.DiscountCode })
+      };
 
       function htmlInit() {
           var trWidth = $('#lottery').css('width');
           var tdW = $('#lottery td').css('width');
           $('#lottery td').css({'height': tdW});
       }
-      function getDiscounts(obj) {          
+      function getDiscounts(obj) {
           var teacherList = '/Entrace/Dispatch.aspx?FunctionName=Student.GetAllDiscount&Version=1&EndClientType=H5&Key=""&JsonPara={"CourseId":"' + obj.CourseId + '"}';
           $.ajax({
               type: 'POST',
@@ -149,10 +149,10 @@ angular.module('freexf')
               dataType: "json",
               success: function (data) {
                   $scope.$apply(function () {
-                      $scope.DiscountList = data;                         
-                  })                              
+                      $scope.DiscountList = data;
+                  })
               }
           });
       }
-      
+
   })

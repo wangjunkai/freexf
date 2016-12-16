@@ -3,6 +3,9 @@
     <div class="bar-left">
       <button class="button-clear" ng-click="modal.closeModal('register')"><span>关闭</span></button>
     </div>
+      <div class="bar-right">
+          <button class="button-clear" ng-click="login()"><span>登录</span></button>
+      </div>
     <div class="title">注册</div>
 
   </ion-header-bar>
@@ -15,10 +18,10 @@
         </div>
         <div class="item item-input item-floating-label">
           <span class="input-label">{{user.labelcode}}</span>
-          <div class="input-left-box">
+          <div class="input-left-box" style="width:67%;">
             <input type="text" placeholder="{{user.labelcode}}" class="inputCode" name="code" ng-model="user.code" autocomplete="off" fx-validate="require:imgCode">
           </div>
-          <div class="codeBox">
+          <div class="codeBox" style="width: 29%;">
             <div class="CodeImg">
               <img style="width: 100%;" src="{{CodeImg.img}}" alt="验证码图片"/>
             </div>
@@ -30,11 +33,11 @@
 
         <div class="item item-input item-floating-label">
           <span class="input-label">{{user.labelphonecode}}</span>
-          <div class="input-left-box">
+          <div class="input-left-box" style="width:67%;">
             <input type="text" placeholder="{{user.labelphonecode}}" id="isPhoneCode" class="inputCode" name="phonecode" autocomplete="off"
                    ng-model="user.phonecode" fx-validate="require:phoneCode">
           </div>
-          <button class="small-idcode-button" ng-click="PhoneCode($event,registerForm)" id="isPhoneCodeReply"  fx-validate="submit('phone','code')">获取验证码
+          <button class="small-idcode-button" style="width: 29%;" ng-click="PhoneCode($event,registerForm)" id="isPhoneCodeReply"  fx-validate="submit('phone','code')">获取验证码
           </button>
         </div>
         <div class="item item-input item-floating-label">

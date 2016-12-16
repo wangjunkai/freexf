@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 angular.module('freexf')
-  .controller('fourFoldCarnival_ctrl', function ($scope, $state,$ToDetailState) {
+  .controller('fourFoldCarnival_ctrl', function ($scope, $state) {
     $scope.zhongxiaoxue = [
       {key: '1', value: '7a0ce779f4194cc2ae136d26ad7af9b5'},
       {key: '2', value: '084284722c9649e99467376746016d89'},
@@ -32,13 +32,13 @@ angular.module('freexf')
     ];
     //传递：courseId 课程ID
     $scope.goDetail = function (courseId) {
-      $ToDetailState.go('coursedetail', { courseId: courseId });
+      $state.go('coursedetail', { courseId: courseId });
     };
     $scope.tele = function () {
-      $ToDetailState.go('telephone', {telephone: '400-803-6611'})
+      $state.go('telephone', {telephone: '400-803-6611'})
     };
     $scope.goPlate = function(obj){
-      $ToDetailState.go('courseplate',obj);
+      $state.go('courseplate',obj);
     };
     $scope.goregister = function(){
       $state.go('register');

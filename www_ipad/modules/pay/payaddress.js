@@ -3,7 +3,7 @@ define(function () {
   angular.module('freexf')
     .controller('payaddress_ctrl', function ($scope, $rootScope, $state, $Loading, $timeout, $freexfUser, $frModal, ENV, MSGICON, PayAddress, AddOrderAddress, UpdateAPES, localStorageService) {
       var payAddress = PayAddress(ENV._api.__orderpay);
-      $scope.OrderId = $scope.$parent.$data.OrderId;
+      $scope.OrderId = $scope.$parent.$data.OrderId/*'51e9f0d75ceb4281a2984d7b1e25b65f'*/;
       $scope.isFromOrder = $scope.$parent.$data.isFromOrder;
       $scope.userData = $freexfUser.auth();
       //切换是否有教材地址的成功提示内容
@@ -69,10 +69,32 @@ define(function () {
         });
       };
       $scope.goToMycourse = function () {
-        $scope.timeout && $timeout.cancel($scope.timeout);
-        $scope.$modal._remove();
-        $state.go('mycourse');
+        getLotteryResult($scope.userData.rowId, $scope.OrderId);
       }
+      //双11抽奖
+      function getLotteryResult(StudentId, OrderId) {
+        var lotteryDataUrl = '/Entrace/Dispatch.aspx?FunctionName=LuckyDraw.GetLuckyDrawDoubleEleven&Version=1&EndClientType=H5&Key=""&JsonPara={"StudentId":"' + StudentId + '","uuOrderId":"' + OrderId + '","flag":0}';
+        $.ajax({
+          type: 'GET',
+          cache: 'false',
+          url: lotteryDataUrl,
+          dataType: "json",
+          success: function (data) {
+            if (data) {
+              //返回抽奖信息
+              if (data.numCode2 == 0) {
+                $timeout(function () {
+                  $state.go('mycourse');
+                }, 1000);
+              } else {
+                $scope.openModal('lotteryDouble11', {lotteryNum: data.numCode2, OrderId: OrderId});
+              }
+            }
+            $scope.timeout && $timeout.cancel($scope.timeout);
+            $scope.$modal._remove();
+          }
+        });
+      };
     });
 
 });

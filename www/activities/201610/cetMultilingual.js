@@ -1,14 +1,35 @@
 ﻿'use strict';
 
 angular.module('freexf')
-  .controller('cetMultilingual_ctrl', function ($scope, $rootScope, $injector, $state, $ionicLoading, AUTH, ENV, DispatchRepository) {
+  .controller('cetMultilingual_ctrl', function ($scope, $rootScope, $injector, $state, $ionicLoading, $ionicModal, $fxModal, AUTH, ENV, DispatchRepository) {
+      $scope.islogin = false;
+      $scope.userData = AUTH.FREEXFUSER.data;
+      $rootScope.$on('auth:update', function (event,auth) {
+          $scope.userData = auth;
+          $scope.islogin = $scope.userData.userLg ? true : false;
+      })
 
-    //传递：courseId 课程ID
-    $scope.toCourseDate = function (courseId) {
-      $ToDetailState.go('coursedetail', {courseId: courseId});
-    };
+      //登陆注册modal
+      $fxModal.init($scope).then(function (modal) {
+          $scope.modal = modal;
+      });
+      //传递：courseId 课程ID
+      $scope.toCourseDate = function (courseId) {
+          if ($scope.userData.userLg) {
+              $state.go('coursedetail', { courseId: courseId });
+          } else {
+              $scope.modal.openModal('login');
+          }
+      };
+      $scope.goOneBuy = function () {
+          if ($scope.userData.userLg) {
+              $state.go('oneBuy');
+          } else {
+              $scope.modal.openModal('login');
+          }
+      }
     $scope.tele = function () {
-      $ToDetailState.go('telephone', {telephone: '400-803-6611'})
+      $state.go('telephone', {telephone: '400-803-6611'})
     };
     getTeacher("多语种");
     getTeacher("英语");

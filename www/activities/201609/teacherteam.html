@@ -1,4 +1,33 @@
-﻿<ion-view coures-scroll view-title="名师团队">
+﻿<style>
+  /*全民学外语*/
+  .teacherteam{background:#fafafa;}
+  .teacherteam img{width:100%;}
+  .teacherteam .team-banner img{margin:0;padding:0;display:block;}
+  .teacherteam .team-banner p{width: 100%;border-bottom: 5px #E5E5E5 solid;line-height: 40px;padding: 0 7%;position: relative;font-size: 14rem;margin:0;color:#616161;}
+  .teacherteam .team-banner p:before{position: absolute;content: '';width: 4px;height: 20px;top: 10px;left: 4%;background: #546FB4;border-top-left-radius: 3px;border-top-right-radius: 3px;border-bottom-left-radius: 3px;border-bottom-right-radius: 3px;}
+  .teacherteam-nav{position:relative;background-image:none!important;}
+  .teacherteam-nav li span{color:#616161;font-size:14rem;padding:7px;}
+  .teacherteam-nav .active span{border-bottom:2px #546FB4 solid;color:#5671B5;}
+  .teacherteam-box>.row{margin:10px 0;}
+  .teacherteam-box .team-teacherInfo{text-align:center;padding:5px 10px;}
+  .teacherteam-box .team-teacherInfo img{width:70%;margin:0 auto;border-radius:50%;border:2px #576FB5 solid;}
+  .teacherteam-box .team-teacherInfo p:nth-last-child(3){margin:5px 0;text-align:center;font-size:13rem;font-weight:bold;}
+  .teacherteam-box .team-teacherInfo p{text-align:left;margin:0;font-size:12rem;line-height:27px;}
+  .teacherteam-box .teacherteam-course{font-size:12rem;}
+  .teacherteam-box .teacherteam-course .row{position:relative;margin-bottom:5px;border:1px #DCDCDC solid;padding:0;}
+  .teacherteam-box .teacherteam-course .row+.row{margin-top:0;}
+  .teacherteam-box .teacherteam-course .row p{margin:0;padding:0 5px;line-height: 22px;}
+  .teacherteam-xuefen{position:absolute;left:-6px;top:1px;background:url(./activities/img/teacherteam/course-price-bg.png) no-repeat;width:100%;height:15%;background-size:auto 100%;font-size:12rem;color:#fff;padding-left:2px;padding-top:2px;}
+  .teacherteam-xuefen span{font-size:8rem;}
+  .teacherteam-box .teacherteam-course .teacherteam-class{line-height:30px;padding:0 5px;border-top:1px #DCDCDC solid;position:relative;}
+  .teacherteam-box .teacherteam-class p{position:absolute;right:5px;top:14px;line-height: 20px;margin:0;}
+  .teacherteam-box .teacherteam-class p .star{background:url(./activities/img/olympic/little-star.png) no-repeat;width:8px;height:10px;background-size:100% auto;display: inline-block;float:left;margin-left:4px;}
+  .teacherteam-box .teacherteam-class p .star.ban{background:url(./activities/img/olympic/little-star-ban.png) no-repeat;background-size:100% auto;}
+
+  .teacherteam-footer.time-footer span{color:#576FB5!important;}
+  .teacherteam-footer.time-footer{border-top: 1px #BFBFBF solid;margin-top: 20px;display: block;height:44px;line-height:44px;text-align: center;}
+</style>
+<ion-view coures-scroll view-title="名师团队">
     <ion-header-bar class="freexf-bar">
         <div class="bar-left">
             <a href="#home" class="button-clear freexf-back freexf-left">
@@ -121,9 +150,9 @@
                 </div>
             </div>
         </div>
-        <a ng-click="tele()" class="title time-footer teacherteam-footer">
+        <a href="tel:{{tel400}}" class="title time-footer teacherteam-footer">
             <img class="footer-bar-contact-content-phone" image-lazy-src="activities/img/teacherteam/phone_icon@3x.png" />
-            <span class="footer-bar-contact-content-phonenumber">400-803-6611</span>
+            <span class="footer-bar-contact-content-phonenumber">{{tel400}}</span>
         </a>
     </ion-content>
 </ion-view>

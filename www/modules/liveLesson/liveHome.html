@@ -1,0 +1,119 @@
+<ion-view view-title="首页" scroll-watch-tab class="home-view">
+  <ion-header-bar class="freexf-bar">
+    <div class="bar-left">
+      <button class="button-clear freexf-back freexf-left" default-nav-back-button ng-click="goBack()">
+        <i class="icon freexf-goback"></i>
+      </button>
+    </div>
+    <div class="title bar-center">
+      <div class="title">直播课</div>
+    </div>
+    <div class="bar-right">
+      <button class="button-clear freexf-consult"><span>咨询</span></button>
+    </div>
+  </ion-header-bar>
+
+  <ion-content lazy-scroll class="has-header freexf-bg-gray freexf-content" delegate-handle="myDelegate">
+
+    <ion-slide-box does-continue="true" on-slide-changed="slideHasChanged($index)" class="freexf-slide">
+      <ion-slide>
+          <img src="img/home/zhibo.jpg">
+      </ion-slide>
+    </ion-slide-box>
+    <section class="freexf-hometype freexf-home-table" style="margin-top: 0;">
+      <div ng-repeat="(index,n) in courseList">
+        <div class="live-signup clearfix">
+          <a ng-click="livePlay(n)" class="img">
+            <img ng-src="{{n.ProductImage}}" alt="">
+            <p>{{n.LiveRadioDate+' '+n.LiveRadioTime}}</p>
+          </a>
+          <div class="content">
+            <p style="font-size: 14rem;">{{n.ProductName}}</p>
+            <p>主讲老师：{{n.TeacherName | join}}</p>
+            <p>已报人数：<span style="color: #000;">{{n.ApplyCount}}</span>人</p>
+            <div class="live-signup-button clearfix">
+              <div class="signup" ng-hide="n.LiveRadioBackURL" ng-class="{active:!n.StudentIsApply}"
+                   ng-click="updateApply(n.LiveRadioId,n.StudentIsApply)">{{n.StudentIsApply?'取消报名':'立即报名'}}
+              </div>
+              <a ng-click="livePlay(n)" class="watch">{{n.LiveRadioBackURL?'立即回顾':'直播观看'}}</a>
+            </div>
+          </div>
+        </div>
+        <div ng-if="index!=5" class="live-signup-br"></div>
+      </div>
+      <div ng-show="courseList.length<=0" class="no-live">暂无直播课...</div>
+    </section>
+    <!--中小学-->
+    <section id="anchor-section-zhongxiaoxue" style="text-align: center" class="freexf-home-table">
+      <div class="live-review-h1">往期回顾</div>
+      <h2 class="freexf-title live-review-title">
+        <i class="title"></i><span>中小学</span>
+      </h2>
+      <div class="clearfix">
+        <div class="row live-review-subjects-list" ng-init="getBackCourseList('中小学','全部')">
+          <div class="col" ng-repeat="n in ['全部','语文','数学','英语','物理','化学','政地历']" ng-click="getBackCourseList('中小学',n)"
+               ng-class="{'active':(n==active['中小学-active'])}">{{n}}
+          </div>
+        </div>
+        <ion-scroll direction='x' scrollbar-x='false'>
+          <div class="row live-review-content">
+            <div class="col col-45 live-review-content-list" ng-click="goDetail(n.LiveRadioId)"
+                 ng-repeat="n in active['中小学']"
+                 ng-include="'homeTable.html'"></div>
+            <div ng-show="active['中小学'].length<=0" class="no-live">暂无直播课...</div>
+          </div>
+        </ion-scroll>
+      </div>
+    </section>
+    <!--多语种-->
+    <section id="anchor-section-duoyuzhong" style="text-align: center" class="freexf-home-table">
+      <h2 class="freexf-title live-review-title">
+        <i class="title"></i><span>多语种</span>
+      </h2>
+      <div class="clearfix">
+        <div class="row live-review-subjects-list" ng-init="getBackCourseList('多语种','全部')">
+          <div class="col" ng-repeat="n in ['全部','日语','韩语','俄语','德语','西班牙语','法语']" ng-click="getBackCourseList('多语种',n)"
+               ng-class="{'active':(active['多语种-active']==n)}">{{n}}
+          </div>
+        </div>
+        <ion-scroll direction='x' scrollbar-x='false'>
+          <div class="row live-review-content">
+            <div class="col col-45 live-review-content-list" ng-click="goDetail(n.LiveRadioId)"
+                 ng-repeat="n in active['多语种']"
+                 ng-include="'homeTable.html'"></div>
+            <div ng-show="active['多语种'].length<=0" class="no-live">暂无直播课...</div>
+          </div>
+        </ion-scroll>
+      </div>
+    </section>
+    <!--英语-->
+    <section id="anchor-section-yingyu" style="text-align: center" class="freexf-home-table">
+      <h2 class="freexf-title live-review-title">
+        <i class="title"></i><span>英语</span>
+      </h2>
+      <div class="clearfix">
+        <div class="row live-review-subjects-list" ng-init="getBackCourseList('英语','全部')">
+          <div class="col" ng-repeat="n in ['全部','托福','雅思','GRE','SAT','四六级']" ng-click="getBackCourseList('英语',n)"
+               ng-class="{'active':(active['英语-active']==n)}">{{n}}
+          </div>
+        </div>
+        <ion-scroll direction='x' scrollbar-x='false'>
+          <div class="row live-review-content">
+            <div class="col col-45 live-review-content-list" ng-click="goDetail(n.LiveRadioId)"
+                 ng-repeat="n in active['英语']"
+                 ng-include="'homeTable.html'"></div>
+            <div ng-show="active['英语'].length<=0" class="no-live">暂无直播课...</div>
+          </div>
+        </ion-scroll>
+      </div>
+    </section>
+  </ion-content>
+  <script type="text/ng-template" id="homeTable.html">
+    <img ng-src="{{n.ProductImage}}" alt="">
+    <p>{{n.ProductName}}</p>
+    <p>主讲老师：{{n.TeacherName | join}}</p>
+    <p class="man"><i></i>{{n.ApplyCount}}人</p>
+  </script>
+</ion-view>
+
+

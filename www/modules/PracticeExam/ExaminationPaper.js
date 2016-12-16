@@ -2,65 +2,162 @@
 
 
 angular.module('freexf', ['ionic'])
-  .controller('ExaminationPaper_ctrl', function ($scope, $rootScope, $injector,$sce, $ionicLoading,$ionicPopup, $timeout, $state, $stateParams, $http, ENV,  DispatchRepository) {
+  .controller('ExaminationPaper_ctrl', function ($scope, $rootScope, $injector,$sce, $ionicLoading,$ionicPopup, $timeout, $state, $stateParams, $http, ENV,AUTH,  DispatchRepository) {
       $('head').append('<script src="./lib/echarts/echarts-all.js" async=""></script>');
-
       $scope.successTip = false;    //提交成功弹框
+      $scope.isGroupPaper = false;  //是否是组合题
+      $scope.GroupQuestion = "";
       $scope.currentQuestionNum = 1;    //当前题号
       $scope.listNum = 0;   //总题数
-      $scope.finishNum = 0; //完成题目数量
-      var finishSubject = [];
+      $scope.groupNum = 0; //组合题下标      
       $scope.first = true;
       $scope.last = false;
       $scope.submit = true;
-
-      var getUrlData = '/Entrace/Dispatch.aspx?FunctionName=Paper&Version=1&EndClientType=H5&Key=""&JsonPara={"PaperCode":"20160907947"}';
-      $.ajax({
-          url: getUrlData,
-          data: {},
-          type: "GET",
-          dataType: "json",
-          success: function (data) {
-              $scope.$apply(function () {
-                  $scope.GroupName = data.PaperName;
-                  $scope.GroupList = data.GroupList;
-                  $scope.QuestionList = data.GroupList[0].QuestionList;                  
-                  if (finishSubject.length==0){
-                      for (var i = 0; i < $scope.GroupList.length; i++) {                      
-                          for (var j = 0; j < $scope.GroupList[i].QuestionList.length; j++) {                          
-                              var Answer = {
-                                  "GroupId": $scope.GroupList[i].QuestionList[j].GroupId,
-                                  "QuestionId": $scope.GroupList[i].QuestionList[j].QuestionId,
-                                  "Type": $scope.GroupList[i].QuestionList[j].Type,
-                                  "Answer": ""
-                              };
-                              finishSubject.push(Answer);                          
-                          }
-                      }
-                  }
-                  $scope.listNum = finishSubject.length;
-                  for (var i = 0; i < $scope.listNum; i++) {
-                      $('.paper-Number').append('<li class="col col-25">' + (i + 1) + '</li>');
-                  };
-                  console.log(finishSubject);
-              });
-          }
-      });
-      //选项
-      $scope.selectIt = function ($event, groupId, questionId, type) {
-          $($event.target).addClass('active').siblings().removeClass('active');
-          var num = $scope.currentQuestionNum
-          $('.paper-Number li').eq(num - 1).addClass('active');
-          var text = $($event.target).html();                
-          finishSubject[$scope.currentQuestionNum - 1].Answer = text;
-          console.log(finishSubject);
+      $scope.userData = AUTH.FREEXFUSER.data;
+      $scope.studentId = $scope.userData.userLg ? $scope.userData.rowId : '';
+      $scope.PaperCode = $stateParams.paperCode;
+      $scope.courseId = $stateParams.courseId;
+      $scope.redo = $stateParams.redo == "redo" ? true : false; //是否重做
+      $scope.analysis = $stateParams.analysis; //解析
+      var answerList = getCookieValue($scope.PaperCode) ? JSON.parse(getCookieValue($scope.PaperCode)) : [];//存放结果选项 
+      if ($scope.redo) {
+          deleteCookie($scope.PaperCode, "/");
+          answerList = [];
       }
+      var finishSubject = [];
+      var groupListNum = [];
+      if ($scope.analysis) {
+          parperAnalysis();
+      } else {
+          getPaper();
+      }
+      function getPaper(){
+          var getUrlData = '/Entrace/Dispatch.aspx?FunctionName=Exam.Paper&Version=1&EndClientType=H5&Key=""&JsonPara={"PaperCode":"' + $scope.PaperCode + '"}';//20160907993/20160907947
+          $.ajax({
+              url: getUrlData,
+              data: {},
+              type: "GET",
+              dataType: "json",
+              success: function (data) {
+                  $scope.$apply(function () {
+                      $scope.Data = data;
+                      $scope.GroupName = $scope.Data.PaperName;
+                      $scope.GroupList = $scope.Data.GroupList;
+                      $scope.QuestionList = $scope.Data.GroupList[$scope.groupNum].QuestionList;
+                      if (answerList.length == 0) {
+                          for (var i = 0; i < $scope.GroupList.length; i++) {
+                              for (var j = 0; j < $scope.GroupList[i].QuestionList.length; j++) {
+                                  var Answer = {
+                                      "GroupId": $scope.GroupList[i].QuestionList[j].GroupId,
+                                      "QuestionId": $scope.GroupList[i].QuestionList[j].QuestionId,
+                                      "Type": $scope.GroupList[i].QuestionList[j].Type + "",
+                                      "Answer": ""
+                                  };
+                                  finishSubject.push(Answer);
+                                  answerList.push("");
+                              }
+                              groupListNum.push($scope.GroupList[i].QuestionList.length);
+                          }
+                      } else {
+                          for (var i = 0; i < $scope.GroupList.length; i++) {
+                              for (var j = 0; j < $scope.GroupList[i].QuestionList.length; j++) {
+                                  var Answer = {
+                                      "GroupId": $scope.GroupList[i].QuestionList[j].GroupId,
+                                      "QuestionId": $scope.GroupList[i].QuestionList[j].QuestionId,
+                                      "Type": $scope.GroupList[i].QuestionList[j].Type + "",
+                                      "Answer": ""
+                                  };
+                                  finishSubject.push(Answer);
+                              }
+                              groupListNum.push($scope.GroupList[i].QuestionList.length);
+                          }
+                          for (var i = 0; i < finishSubject.length; i++) {
+                              finishSubject[i].Answer = answerList[i];
+                          }
+                          getIdx();
+                      }
+                      $scope.listNum = finishSubject.length;
+                      for (var i = 0; i < $scope.listNum; i++) {
+                          if (finishSubject[i].Answer == "") {
+                              $('.paper-Number').append('<li class="col col-25">' + (i + 1) + '</li>');
+                          } else {
+                              $('.paper-Number').append('<li class="col col-25 active">' + (i + 1) + '</li>');
+                          }
+                      };
+                      $scope.answerList = {
+                          "PaperId": $scope.Data.PaperId,
+                          "PaperName": $scope.Data.PaperName,
+                          "uuPaperId": $scope.Data.uuPaperId,
+                          "StudentId": $scope.studentId,
+                          "CourseId": $scope.courseId,
+                          "QuestionAnswerList": finishSubject
+                      }                  
+                      //setCookie($scope.PaperCode, JSON.stringify($scope.answerList), 7, "/");   //写入cookie
+                      //getCookieValue($scope.PaperCode);
+                      //deleteCookie("answerList", "/")
+                  });
+              }
+          });
+      }      
+      //单选
+      $scope.selectIt = function ($event, idx) {
+          if (!$scope.analysis) {
+              $($event.target).addClass('active').siblings().removeClass('active');
+              var num = idx
+              $('.paper-Number li').eq(num - 1).addClass('active');
+              var text = $($event.target).html();
+              if (text == "是") {
+                  text = "on";
+              } else if (text == "否") {
+                  text = "off";
+              }     
+              finishSubject[idx - 1].Answer = text;
+              answerList[idx - 1] = text;
+              setCookie($scope.PaperCode, JSON.stringify(answerList), 7, "/");//写入cookie}
+          }
+      }
+      //多选
+      $scope.selectIts = function ($event, idx) {
+          if (!$scope.analysis) {
+              var text = $($event.target).html();
+              var answeArr = finishSubject[idx - 1].Answer.split('');
+              if ($($event.target).hasClass('active')) {
+                  $($event.target).removeClass('active');
+                  answeArr.remove(text);
+              } else {
+                  $($event.target).addClass('active');
+                  answeArr.push(text)
+              }
+              var num = idx
+              $('.paper-Number li').eq(num - 1).addClass('active');
+              var temp = answeArr.sort();
+              for (var i = 0; i < temp.length; i++) {
+                  if (temp[i] == temp[i + 1]) {
+                      temp.splice(i, 1);
+                  }
+              }
+              finishSubject[idx - 1].Answer = temp.join('');
+              answerList[idx - 1] = temp.join('');
+              if (!$scope.analysis) setCookie($scope.PaperCode, JSON.stringify(answerList), 7, "/");//写入cookie
+          }
+      }
+      Array.prototype.indexOf = function (val) {
+          for (var i = 0; i < this.length; i++) {
+              if (this[i] == val) return i;
+          }
+          return -1;
+      };
+      Array.prototype.remove = function (val) {
+          var index = this.indexOf(val);
+          if (index > -1) {
+              this.splice(index, 1);
+          }
+      };
       //题目序号
       $('.paper-Number').on('click', 'li', function () {
           var text = parseInt($(this).text());
           $scope.$apply(function () {
               $scope.currentQuestionNum = text;
-              $scope.idx = getResult();
               if ($scope.currentQuestionNum == 1) {
                   $scope.first = true;
                   $scope.last = false;
@@ -74,35 +171,67 @@ angular.module('freexf', ['ionic'])
                   $scope.last = false;
                   $scope.submit = true;
               }
+              getIdx();
           })
       });      
       //上一题
       $scope.lastQuestion = function () {          
           $scope.last = false;
           $scope.submit = true;
-          if ($scope.currentQuestionNum == 1) {
-              
-          } else {
-              $scope.currentQuestionNum--;
+          if ($scope.currentQuestionNum != 1) {
+              if ($scope.groupNum > 1) {
+                  $scope.currentQuestionNum -= $scope.QuestionList.length;
+              } else {
+                  $scope.currentQuestionNum--;
+              }
               if ($scope.currentQuestionNum == 1) {
                   $scope.first = true;
               }
-              $scope.idx = getResult();
-          }         
-      }
+              getIdx();
+          }          
+      }      
       //下一题
       $scope.nextQuestion = function () {
           $scope.first = false;
-          if ($scope.currentQuestionNum == $scope.listNum) {
-
-          } else {
-              $scope.currentQuestionNum++;              
-              if ($scope.currentQuestionNum == $scope.listNum) {
-                  $scope.last = true;
-                  $scope.submit = false;
+          if ($scope.currentQuestionNum != $scope.listNum) {
+              if ($scope.groupNum != 0) {
+                  $scope.currentQuestionNum += $scope.QuestionList.length;
+              } else {
+                  $scope.currentQuestionNum++;
+                  if ($scope.currentQuestionNum == $scope.listNum) {
+                      $scope.last = true;
+                      $scope.submit = false;
+                  }
               }
-              $scope.idx = getResult();
-          }         
+              getIdx();
+          }
+      }
+      function getIdx() {
+          var result = groupListNum[0];
+          if ($scope.currentQuestionNum <= result) {
+              $scope.isGroupPaper = false;
+              $scope.groupNum = 0;
+              $scope.idx = getResult($scope.currentQuestionNum, "");
+          } else {
+              for (var i = 1; i < groupListNum.length; i++) {
+                  result += groupListNum[i];
+                  $scope.groupNum = i;
+                  if (i == groupListNum.length - 1) {
+                      $scope.first = false;
+                      $scope.last = true;
+                      $scope.submit = false;
+                  }
+                  if ($scope.currentQuestionNum <= result) {
+                      $scope.isGroupPaper = true;
+                      result -= groupListNum[i];
+                      $scope.currentQuestionNum = result + 1;
+                      $scope.idx = getResult($scope.currentQuestionNum, groupListNum[i]);
+                      break;
+                  }
+              }
+          }
+          $scope.GroupQuestion =$sce.trustAsHtml($scope.Data.GroupList[$scope.groupNum].GroupQuestion);
+          $scope.QuestionList = $scope.Data.GroupList[$scope.groupNum].QuestionList;
       }
       //交卷
       $scope.submitPaper = function () {
@@ -122,7 +251,17 @@ angular.module('freexf', ['ionic'])
       //提交成功提示完成度以及答对率
       function subSuccessTip(finish, correct) {
           initEcharts('round-chart', finish, correct);
-          $scope.successTip = true;         
+          $scope.successTip = true;
+          deleteCookie($scope.PaperCode, "/");
+      }
+      //重做
+      $scope.reset = function () {
+          $scope.successTip = false;
+          finishSubject = [];
+          deleteCookie($scope.PaperCode, "/");
+          answerList = [];
+          getPaper();
+          $('.paper-Number li').removeClass('active');
       }
       //交卷提示全部完成     
       function submitCompleteAllTip() {
@@ -134,9 +273,25 @@ angular.module('freexf', ['ionic'])
                 {
                     text: "确定交卷",
                     onTap: function (e) {
-                        //提交试卷
-                        subSuccessTip(100, 70)  //交卷成功
-                        //resubmitFailed();//交卷失败
+                        var answerJson = JSON.stringify($scope.answerList);
+                        var getdata='FunctionName=Exam.SaveStudentScore&Version=1&EndClientType=H5&Key=""&JsonPara=' + answerJson;
+                        var getUrlData = '/Entrace/Dispatch.aspx'
+                        $.ajax({
+                            url: getUrlData,
+                            data: getdata,
+                            type: "POST",
+                            dataType: "json",
+                            success: function (data) {
+                                $scope.$apply(function () {                                 
+                                    subSuccessTip(100, data)  //交卷成功
+                                });
+                            },
+                            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                                $scope.$apply(function () {
+                                    resubmitFailed(100);//交卷失败
+                                });
+                            }
+                        });
                     }
                 },{
                     text: "取消",
@@ -147,20 +302,35 @@ angular.module('freexf', ['ionic'])
           });
       };
       //未答题提示
-      function submitUnfinishedTip(arr,per) {
+      function submitUnfinishedTip(arr, per) {
+          var num = arr.length > 10 ? arr.splice(0, 5).join('、') + "......" : arr.join('、');
           var confirmPopup = $ionicPopup.confirm({
               title: '交卷提示',
               cssClass: 'practiceExam',
               template: '<div class="tip-warning">'
-                        + '<span>你还有第' + arr + '题没有做，确定交卷吗？</span>'
+                        + '<span>你还有第' + num + '题没有做，确定交卷吗？</span>'
                         + '</div>',
               buttons: [
                 {
                     text: "确定交卷",
                     onTap: function (e) {
-                        //提交试卷
-                        subSuccessTip(per, 70)  //交卷成功
-                        //resubmitFailed();//交卷失败
+                        var answerJson = JSON.stringify($scope.answerList);
+                        var getdata = 'FunctionName=Exam.SaveStudentScore&Version=1&EndClientType=H5&Key=""&JsonPara=' + answerJson;
+                        var getUrlData = '/Entrace/Dispatch.aspx'
+                        $.ajax({
+                            url: getUrlData,
+                            data: getdata,
+                            type: "POST",
+                            dataType: "json",
+                            success: function (data) {
+                                $scope.$apply(function () {
+                                    subSuccessTip(per, data)  //交卷成功                                    
+                                });
+                            },
+                            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                                resubmitFailed(per);//交卷失败
+                            }
+                        });
                     }
                 }, {
                     text: "继续做题",
@@ -172,7 +342,7 @@ angular.module('freexf', ['ionic'])
           });
       };
       //提交失败
-      function  resubmitFailed() {
+      function  resubmitFailed(per) {
           var confirmPopup = $ionicPopup.confirm({
               title: '提交失败',
               cssClass: 'practiceExam',
@@ -184,6 +354,25 @@ angular.module('freexf', ['ionic'])
                     text: "重新提交",
                     onTap: function (e) {
                         //提交试卷
+                        var answerJson = JSON.stringify($scope.answerList);
+                        var getdata = 'FunctionName=Exam.SaveStudentScore&Version=1&EndClientType=H5&Key=""&JsonPara=' + answerJson;
+                        var getUrlData = '/Entrace/Dispatch.aspx'
+                        $.ajax({
+                            url: getUrlData,
+                            data: getdata,
+                            type: "POST",
+                            dataType: "json",
+                            success: function (data) {
+                                $scope.$apply(function () {
+                                    subSuccessTip(per, data)  //交卷成功
+                                });
+                            },
+                            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                                $scope.$apply(function () {
+                                    resubmitFailed(per);//交卷失败
+                                });
+                            }
+                        });
                     }
                 }, {
                     text: "取消",
@@ -192,30 +381,168 @@ angular.module('freexf', ['ionic'])
                 }
               ]
           });
-      };      
-      function getResult() {
-          var idx;          
-          if (finishSubject[$scope.currentQuestionNum - 1] != undefined) {
-              var result = finishSubject[$scope.currentQuestionNum - 1].Answer;
-              switch (result) {
-                  case "A":
-                      idx = 0;
-                      break;
-                  case "B":
-                      idx = 1;
-                      break;
-                  case "C":
-                      idx = 2;
-                      break;
-                  case "D":
-                      idx = 3;
-                      break;
-                  case "E":
-                      idx = 4;
-                      break;
+      };
+      //返回试卷列表
+      $scope.goPaperList = function (state, courseId, paperState, ProductName) {
+          $state.go(state, { courseId: courseId, paperState: paperState });
+          $rootScope.courseName = ProductName;
+      }
+      //试卷解析
+      function parperAnalysis() {
+          $scope.analysisiList = [];
+          var getUrlData = '/Entrace/Dispatch.aspx?FunctionName=Exam.GetPaperExplaination&Version=1&EndClientType=H5&Key=""&JsonPara={"PaperCode":"' + $scope.PaperCode + '","CourseId":"' + $scope.courseId + '","StudentId":"' + $scope.studentId + '"}';//20160907993/20160907947
+          $.ajax({
+              url: getUrlData,
+              data: {},
+              type: "GET",
+              dataType: "json",
+              success: function (data) {
+                  $scope.$apply(function () {
+                      $scope.Data = data;
+                      $scope.GroupName = $scope.Data.PaperName;
+                      $scope.GroupList = $scope.Data.GroupList;
+                      $scope.QuestionList = $scope.Data.GroupList[$scope.groupNum].QuestionList;
+                      if (finishSubject.length == 0) {
+                          for (var i = 0; i < $scope.GroupList.length; i++) {
+                              for (var j = 0; j < $scope.GroupList[i].QuestionList.length; j++) {
+                                  var Answer = {
+                                      "GroupId": $scope.GroupList[i].QuestionList[j].GroupId,
+                                      "QuestionId": $scope.GroupList[i].QuestionList[j].QuestionId,
+                                      "Type": $scope.GroupList[i].QuestionList[j].Type + "",
+                                      "Answer": $scope.GroupList[i].QuestionList[j].StudentAnswer
+                                  };
+                                  var analysis = {
+                                      "Explaination": $scope.GroupList[i].QuestionList[j].Explaination,
+                                      "Answer": $scope.GroupList[i].QuestionList[j].Answer
+                                  }
+                                  finishSubject.push(Answer);
+                                  $scope.analysisiList.push(analysis);
+                              }
+                              groupListNum.push($scope.GroupList[i].QuestionList.length);
+                          }
+                      }
+                      $scope.listNum = finishSubject.length;
+                      $('.paper-Number').html("");
+                      for (var i = 0; i < $scope.listNum; i++) {
+                          if (finishSubject[i].Answer == "") {
+                              $('.paper-Number').append('<li class="col col-25">' + (i + 1) + '</li>');
+                          } else {
+                              $('.paper-Number').append('<li class="col col-25 active">' + (i + 1) + '</li>');
+                          }   
+                      };
+                      getIdx();//绑定用户选择结果
+                  });
               }
-              return idx;
+          });
+      }
+      //获取结果（单选题组合题单选题）
+      function getResult(num,listnum) {
+          var idx=[];
+          var b;          
+          if (listnum != "") {//组合题
+              for (var i = 0; i < listnum; i++) {
+                  if (finishSubject[num+i - 1] != undefined) {
+                      var result = finishSubject[num + i - 1].Answer;
+                      var a = result.split('');
+                      if (finishSubject[num + i - 1].Type == "2") {//多选题
+                          var arr = [];
+                          for (var j = 0; j < a.length; j++) {
+                              switch (a[j]) {
+                                  case "A":
+                                      b = 0;
+                                      break;
+                                  case "B":
+                                      b = 1;
+                                      break;
+                                  case "C":
+                                      b = 2;
+                                      break;
+                                  case "D":
+                                      b = 3;
+                                      break;
+                                  case "E":
+                                      b = 4;
+                                      break;
+                              }
+                              arr[b]=b;
+                          }
+                          idx[i] = arr;
+                      } else {
+                          switch (result) {
+                              case "A":
+                              case "on":
+                                  idx[i] = 0;
+                                  break;
+                              case "B":
+                              case "off":
+                                  idx[i] = 1;
+                                  break;
+                              case "C":
+                                  idx[i] = 2;
+                                  break;
+                              case "D":
+                                  idx[i] = 3;
+                                  break;
+                              case "E":
+                                  idx[i] = 4;
+                                  break;
+                          }
+                      }                           
+                  }
+              }             
+          } else {//非组合题
+              if (finishSubject[num - 1] != undefined) {
+                  var result = finishSubject[num - 1].Answer;
+                  var a = result.split('');
+                  if (finishSubject[num - 1].Type =="2") {//多选题
+                      for (var j = 0; j < a.length; j++) {
+                          switch (a[j]) {
+                              case "A":
+                                  b = 0;
+                                  break;
+                              case "B":
+                                  b = 1;
+                                  break;
+                              case "C":
+                                  b = 2;
+                                  break;
+                              case "D":
+                                  b = 3;
+                                  break;
+                              case "E":
+                                  b = 4;
+                                  break;
+                          }
+                          idx[b] = b;
+                      }
+                  } else {
+                      switch (result) {
+                          case "A":
+                          case "on":
+                              idx[0] = 0;
+                              break;
+                          case "B":
+                          case "off":
+                              idx[0] = 1;
+                              break;
+                          case "C":
+                              idx[0] = 2;
+                              break;
+                          case "D":
+                              idx[0] = 3;
+                              break;
+                          case "E":
+                              idx[0] = 4;
+                              break;
+                      }
+                  }
+              }
           }
+          return idx;
+      }
+      //解析跳转
+      $scope.goPaper = function () {
+          $state.go('ExaminationPaper', { paperCode: $scope.PaperCode, courseId: $scope.courseId, redo: "", analysis: true });
       }
       //绘制圆环（容器id，完成度%，答对率%）
       function initEcharts(id, finish, correct) {
@@ -313,44 +640,7 @@ angular.module('freexf', ['ionic'])
           var myChart = echarts.init(document.getElementById(id));
           myChart.setOption(option);
       }
-      function getCookie(objName) {//获取指定名称的cookie的值 
-          var arrStr = document.cookie.split("; ");
-          for (var i = 0; i < arrStr.length; i++) {
-              var temp = arrStr[i].split("=");
-              if (temp[0] == objName)
-                  return unescape(temp[1]);
-          }
-      }
-      function setCookie(objName, objValue) {
-          var str = objName + "=" + escape(objValue);
-          document.cookie = str;
-          document.cookie = {
-              "PaperId": "20160907993",
-              "PaperName": "一课一练 欧标A1",
-              "uuPaperId": "+V5\/,X?YXY2BE{.PIMVC#E",
-              "QuestionAnswerList": [
-                  {
-                      "GroupId": "",         
-                      "QuestionId": "4479",
-                      "Type": 1,
-                      "Answer": "A"
-                  },
-                  {
-                      "GroupId": "",         
-                      "QuestionId": "4480",
-                      "Type": 1,
-                      "Answer": "D"
-              },
-                {
-                    "GroupId": "",         
-                    "QuestionId": "4481",
-                    "Type": 1,
-                    "Answer": "D"
-                }
-              ]
-        }   
-
-      }
+      
   })
 .filter('optionsFilter', function () {
     return function (item) {
@@ -373,3 +663,38 @@ angular.module('freexf', ['ionic'])
         }
     }
 })
+.filter('filterTitle', function () {
+    return function (item) {
+        switch (item) {
+            case 1:
+                return "单选题";
+                break;
+            case 2:
+                return "多选题"
+                break;
+            case 3:
+                return "判断题"
+                break;
+        }
+    }
+})
+.filter('fillterAnswer', function () {
+    return function (item) {
+        switch (item) {
+            case "on":
+                return "是";
+                break;
+            case "off":
+                return "否";
+                break;
+            default:
+                return item;
+                break;
+        }
+    }
+})
+.filter('filterQuestion', ['$sce', function ($sce) {
+    return function (item) {
+        return $sce.trustAsHtml(item);
+    };
+}]);

@@ -313,6 +313,18 @@
   background-position: -498px 0;
 }
 
+.freexf-hometype .zhiboke{
+  background: url("../img/home/zhiboke.png") no-repeat;
+  background-size: 100% auto;
+  width: 45px;
+  height: 45px;
+}
+.freexf-hometype .weiketang{
+  background: url("../img/home/weiketang.png") no-repeat;
+  background-size: 100% auto;
+  width: 45px;
+  height: 45px;
+}
 .freexf-jinpin, .freexf-home-table {
   background-color: #fff;
   padding: 15px 12px;

@@ -11,7 +11,7 @@
   <meta name="screen-orientation" content="portrait">
   <meta name="x5-orientation" content="portrait">
   <meta content="telephone=no" name="format-detection">
-  <link rel="stylesheet" href="../css/russian.css"/>
+  <link rel="stylesheet" href="../css/outFramework/russian.css"/>
   <script src="../../lib/jquery/dist/jquery.js"></script>
   <script src="setAppParam.js"></script>
   <script src="russian.js"></script>
@@ -20,7 +20,7 @@
 <div class="freexf-Russian">
   <div class="Russian-header">
     <a href="/mobile/www/index.aspx#/home" class="logo"><img src="../img/Germany/logo@3x.png"/></a>
-    <a onclick="gotele()" class="phone"><img src="../img/Germany/phone@3x.png"/><span> 400-803-6611</span></a>
+    <a onclick="gotele()" class="phone"><img src="../img/Germany/phone@3x.png"/><span> 400-686-5511</span></a>
   </div>
   <div class="Russian-banner"><img src="../img/Russian/banner@3x.png"/></div>
   <div class="Russian-introduce">
@@ -106,11 +106,11 @@
       <div class="test-course one">
         <div class="course-description">
           <img src="../img/Russian/proficiency-txt.png"/>
-          <a onclick="goDetail('dc11d8c0b80c48bba1b9382801ede9ea')" class="course-button"><img
+          <a onclick="goregister()" class="course-button"><img
             src="../img/Russian/course-button@3x.png"/></a>
         </div>
-        <a onclick="goDetail('dc11d8c0b80c48bba1b9382801ede9ea')" class="course-pic"><img
-          src="../img/Russian/proficiency@3x.png"/></a>
+        <a onclick="goDetail('dc11d8c0b80c48bba1b9382801ede9ea')" class="course-pic">
+          <img src="../img/Russian/proficiency@3x.png"/></a>
       </div>
     </div>
 
@@ -123,9 +123,8 @@
           src="../img/Russian/abroad@3x.png"/></a>
         <div class="course-description">
           <img src="../img/Russian/abroad-txt.png"/>
-          <a onclick="goDetail('3248b6e339ce4a52aa877bee7f46af6d')"
-             class="course-button"><img
-            src="../img/Russian/course-button@3x.png"/></a>
+          <a onclick="goregister()" class="course-button">
+            <img src="../img/Russian/course-button@3x.png"/></a>
         </div>
       </div>
     </div>
@@ -136,7 +135,7 @@
       <div class="test-course">
         <div class="course-description">
           <img src="../img/Russian/Interest_business_txt01.png"/>
-          <a onclick="goDetail('7eab604a4ee241f1bfd7802ee71e4a33')" class="course-button"><img
+          <a onclick="goregister()" class="course-button"><img
             src="../img/Russian/course-button@3x.png"/></a>
         </div>
         <a onclick="goDetail('7eab604a4ee241f1bfd7802ee71e4a33')" class="course-pic"><img
@@ -147,7 +146,7 @@
           src="../img/Russian/Interest_business_02@3x.png"/></a>
         <div class="course-description">
           <img src="../img/Russian/Interest_business_txt02.png"/>
-          <a onclick="goDetail('fc70fc81364c4ee290b77ae976708a3f')" class="course-button"><img
+          <a onclick="goregister()" class="course-button"><img
             src="../img/Russian/course-button@3x.png"/></a>
         </div>
       </div>
@@ -191,8 +190,9 @@
 
   <!--电话-->
   <div class="phone-num">
-    <a onclick="gotele()"><img src="../img/Russian/tel@3x.png"/><span>400-803-6611</span></a>
+    <a onclick="gotele()"><img src="../img/Russian/tel@3x.png"/><span>400-686-5511</span></a>
   </div>
+    <p id="publicCompanyName" style="text-align: center;font-size: 12px;color: #969696;padding: 10px;margin: 0;">上海琦珺互联网信息科技有限公司</p>
 </div>
 </body>
 </html>

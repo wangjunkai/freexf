@@ -1,0 +1,265 @@
+﻿<style>
+ .pri-mid-thr img {width: 100%; }
+ .pri-mid-thr .pri-mid-thr-top {height: 24px;background: #f9543e;position: relative;}
+ .pri-mid-thr .pri-mid-thr-top .logo {position: absolute;left: 0;top: 0;width: 76px;height: 14px;margin: 5px 10px;}
+ .pri-mid-thr .pri-mid-thr-top .phone {position: absolute;right: 5px;top: 0;}
+ .pri-mid-thr .pri-mid-thr-top .phone-icon { width: 12px;height: 11px;vertical-align: middle;}
+ .pri-mid-thr .pri-mid-thr-top .phone-num {font-size: 12px;color: #fff;line-height: 24px;margin: 0 5px;vertical-align: middle;}
+ .pri-mid-thr .banner {margin-top: -6%;overflow: hidden;}
+ .pri-mid-thr .intro {width: 92%;margin: 20px auto;overflow: hidden}
+ .pri-mid-thr .intro span {float: left;width: 16%;margin: 0 2%;}
+ .pri-mid-thr .register {width: 80%;margin: 40px auto;}
+ .pri-mid-thr .register .register-tit {font-size: 18rem;color: #fb7b7a;font-weight: bold;}
+ .pri-mid-thr .register .item-input {border: none; border-bottom: 0.5px #999 solid;vertical-align: middle}
+ .pri-mid-thr .register .item-input:before{content:"";width:28px;height:28px;position:absolute;left:2%;top:24%}
+ .pri-mid-thr .register .item-input.phone:before{background:url(./activities/img/priMidThreeFold/phonenum.png) no-repeat;background-size:auto 100%;}
+ .pri-mid-thr .register .item-input.code:before,
+ .pri-mid-thr .register .item-input.phonecode:before{background:url(./activities/img/priMidThreeFold/captcha.png) no-repeat;background-size:auto 100%;}
+ .pri-mid-thr .register .item-input.password:before,
+ .pri-mid-thr .register .item-input.confirmPassword:before{background:url(./activities/img/priMidThreeFold/password.png) no-repeat;background-size:auto 100%;}
+ .pri-mid-thr .register input {margin-left: 10%;}
+ .pri-mid-thr .register input[name='code'],
+ .pri-mid-thr .register input[name='phonecode'] {margin-left: 14%}
+ .pri-mid-thr .register input::-webkit-input-placeholder {color:#999;}
+ .pri-mid-thr .register input:-moz-placeholder {color:#999;}
+ .pri-mid-thr .register input::-moz-placeholder {color:#999;}
+ .pri-mid-thr .register input:-ms-input-placeholder {color:#999;}
+ .pri-mid-thr .register .freexf-validate-msg {margin-left: 10%;}
+ .pri-mid-thr .register input[name='code']+.freexf-validate-msg,
+ .pri-mid-thr .register input[name='phonecode']+.freexf-validate-msg {margin-left: 14%}
+ .pri-mid-thr .register .codeBox,
+ .pri-mid-thr .register .small-idcode-button {margin-top: -30px;width: 30%;float: right;}
+ .pri-mid-thr .register button {background: #f9543e;border-radius: 0}
+ .pri-mid-thr .register .login-btn{border: 1px #f9543e solid;background:#fff;color: #f9543e;}
+ .pri-mid-thr .register .button {font-weight: bold;}
+ .pri-mid-thr .system {width: 92%;margin: 40px auto;}
+ .pri-mid-thr .system .system-title{height: 40px;line-height: 40px;margin-bottom: 40px;background: #fbd439;border-top-right-radius: 10px;border-top-left-radius: 10px;color: #ac0c0c;font-weight: bold;text-align: center;font-size: 16rem;}
+ .pri-mid-thr .system .system-content{position: relative;}
+ .pri-mid-thr .system .down{margin-top:0!important}
+ .pri-mid-thr .system .showup{z-index:2!important}
+ .pri-mid-thr .system .showdown{z-index:1!important}
+ .pri-mid-thr .system .left-box{position:absolute;top:0;left:0;width: 35%;z-index: 1;display: inline-block;perspective:150;-webkit-perspective:150;}
+ .pri-mid-thr .system .middle-box{position:absolute;top:0;left:30%;margin-top:-4%;width: 40%;z-index: 3;display: inline-block;}
+ .pri-mid-thr .system .right-box{position:absolute;top:0;right:0;width: 35%;z-index: 1;display: inline-block;perspective:150;-webkit-perspective:150;}
+ .pri-mid-thr .system .left {transform: rotateY(-4deg);-webkit-transform: rotateY(-4deg);}
+ .pri-mid-thr .system .middle {}
+ .pri-mid-thr .system .right {transform: rotateY(4deg);-webkit-transform: rotateY(4deg);}
+ .pri-mid-thr .system .sync{background: #7cbef6;}
+ .pri-mid-thr .system .knowledge{background: #78b749;}
+ .pri-mid-thr .system .expansion {background: #ff6f5c;}
+ .pri-mid-thr .system .title{color: #fff;font-size: 14rem;line-height: 50px;height: 50px;font-weight: bold;text-align: center;margin: 0 0 0 22%;letter-spacing: 1px;}
+ .pri-mid-thr .system .middle .title {font-size: 16rem;}
+ .pri-mid-thr .system .title:before{content:"";width:28px;height:28px;position:absolute;left:6%;top:5%;}
+ .pri-mid-thr .system .middle .title:before {left: 12%;}
+ .pri-mid-thr .system .middle .title{left:15%;}
+ .pri-mid-thr .system #sync-tit:before{background:url(./activities/img/priMidThreeFold/sync.png) no-repeat;background-size:auto 100%;}
+ .pri-mid-thr .system #knowledge-tit:before{background:url(./activities/img/priMidThreeFold/knowledge.png) no-repeat;background-size:auto 100%;}
+ .pri-mid-thr .system #expansion-tit:before{background:url(./activities/img/priMidThreeFold/expansion.png) no-repeat;background-size:auto 100%;}
+ .pri-mid-thr .system .content{color: #fff;font-size: 9rem;line-height: 1.5em;padding-left:10px;letter-spacing: 1px;}
+ .pri-mid-thr .system .middle-box .content{font-size: 12rem;}
+ .pri-mid-thr .course {width: 92%;margin:20px auto 50px auto;}
+ .pri-mid-thr .course .course-tit {height: 40px;line-height: 40px;margin-bottom: 13px;background: #ff7f5c;border-top-right-radius: 10px;border-top-left-radius: 10px;color: #fff;font-weight: bold;text-align: center;font-size: 16rem;}
+ .pri-mid-thr .course .large-course {margin-bottom: 10px}
+ .pri-mid-thr .course .small-course {overflow: hidden;}
+ .pri-mid-thr .course .small-course .left {float: left;width: 48%;margin-bottom: 10px;}
+ .pri-mid-thr .course .small-course .right {float: right;width: 48%;margin-bottom: 10px;}
+ .pri-mid-thr .course .btn-group {overflow: hidden;width: 94%;margin: 20px auto;}
+ .pri-mid-thr .course .btn-group .btn {width: 45%;height: 30px; background: #f9543e;text-align: center;border-radius: 5px;color: #fff; line-height: 30px;display: inline-block;}
+ .pri-mid-thr .course .btn-group .left-btn {float: left}
+ .pri-mid-thr .course .btn-group .right-btn {float: right}
+ .pri-mid-thr .course .btn-group .mid-btn {float: none;margin: 0 27%;}
+ .pri-mid-thr hr {border: none; border-top: 1px #f9543e solid}
+ .pri-mid-thr .teacher {width: 92%;margin: 0 auto;position: relative}
+ .pri-mid-thr .teacher .tea-text {position: absolute;width: 34%;height: 26px;left: 33%;top: -53px;line-height: 26px;background: #fff;color: #f9543e;text-align: center;font-size: 12rem;}
+ .pri-mid-thr .teacher-box {width: 100%;margin: 40px auto;}
+ .pri-mid-thr .teacher-content {white-space: nowrap;margin-left: 10px; margin-right: 10px;}
+ .pri-mid-thr .sigbox {display:inline-block;margin: 0 10px;text-align: center;}
+ .pri-mid-thr .sigbox .pic {margin: 0 auto;border: 2px solid #f9543e;border-radius: 50%;overflow: hidden;}
+ .pri-mid-thr .sigbox span {margin: 5px auto;color: #f9543e;font-size: 12rem;}
+</style>
+
+<ion-view coures-scroll view-title="年末超低价" class="pri-mid-thr">
+    <ion-content lazy-scroll>
+        <div class="pri-mid-thr-top">
+            <a href="/mobile/www/index.aspx#/home" class="logo">
+                <img src="activities/img/accountant/logo.png" />
+            </a>
+            <div class="phone">
+                <a href="tel:{{tel400}}">
+                    <img class="phone-icon" src="activities/img/accountant/phone.png" />
+                    <span class="phone-num" style="white-space:nowrap; ">{{tel400}}</span>
+                </a>
+            </div>
+        </div>
+        <div class="banner">
+            <img src="activities/img/priMidThreeFold/banner@3x.png" />
+        </div>
+        <div class="intro">
+            <span><img src="activities/img/priMidThreeFold/intro1.png" /></span>
+            <span><img src="activities/img/priMidThreeFold/intro2.png" /></span>
+            <span><img src="activities/img/priMidThreeFold/intro3.png" /></span>
+            <span><img src="activities/img/priMidThreeFold/intro4.png" /></span>
+            <span><img src="activities/img/priMidThreeFold/intro5.png" /></span>
+        </div>
+        <div ng-controller="register_ctrl" class="register" ng-hide="userData.userLg">
+            <form name="registerForm" novalidate="novalidate">
+                <p class="register-tit">立即注册</p>
+                <div class="list">
+                    <div class="item item-input item-floating-label phone">
+                        <input type="text" placeholder="请{{user.labelphone}}" name="phone" ng-model="user.phone" fx-validate="require:phone;format:phone;">
+                    </div>
+                    <div class="item item-input item-floating-label code">
+                        <div class="input-left-box">
+                            <input type="text" placeholder="请{{user.labelcode}}" class="inputCode" name="code" ng-model="user.code" autocomplete="off" fx-validate="require:imgCode">
+                        </div>
+                        <div class="codeBox">
+                            <div class="CodeImg">
+                                <img src="{{CodeImg.img}}" alt="验证码图片" ng-click="CodeImg.getNew()" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item item-input item-floating-label phonecode">
+                        <div class="input-left-box">
+                            <input type="text" placeholder="请{{user.labelphonecode}}" id="isPhoneCode" class="inputCode" name="phonecode" autocomplete="off"
+                                   ng-model="user.phonecode" fx-validate="require:phoneCode">
+                        </div>
+                        <button class="small-idcode-button" ng-click="PhoneCode($event,registerForm)" id="isPhoneCodeReply" fx-validate="submit('phone','code')">
+                            获取验证码
+                        </button>
+                    </div>
+                    <div class="item item-input item-floating-label password">
+                        <input type="password" placeholder="请{{user.labelpassword}}" name="password" ng-model="user.password" id="isPasswordInput" autocomplete="off"
+                               fx-validate="require:password;format:password8_30">
+                    </div>
+                    <div class="item item-input item-floating-label confirmPassword">
+                        <input type="password" placeholder="请{{user.labelconfirmPassword}}" name="confirmPassword" id="isPasswordSure" autocomplete="off"
+                               ng-model="user.confirmPassword" ng-change="passwordAccord()" fx-validate="require:confirmPassword;format:password8_30">
+                    </div>
+                </div>
+                <button type="button" class="button button-block freexf-button-balanced"
+                        fx-validate="submit()" ng-click="register($event,registerForm)">
+                    立即注册 低价抢购
+                </button>
+                <button type="button" class="button button-block freexf-button-balanced login-btn"
+                        ng-click="loginDialog()">
+                    已有账号 立即开抢
+                </button>
+            </form>
+        </div>
+        <div class="system" on-swipe-right="onSwipeRight()" on-swipe-left="onSwipeLeft()">
+            <div class="system-title">体系细分化   知识紧紧抓</div>
+            <div class="system-content">
+                <div class="left-box">
+                    <div class="sync left sysitem" index=-1>
+                        <p id="sync-tit" class="title">学期同步</p>
+                        <p class="content">知识点的讲授，既重视广度也重视深度，坚持横向和纵向的双向发展。知识点的巩固从学期到章节到每一堂课，全方位立体化，无一漏网。</p>
+                    </div>
+                </div>
+                <div class="middle-box">
+                    <div class="knowledge middle sysitem" index=0>
+                        <p id="knowledge-tit" class="title">知识精讲</p>
+                        <p class="content">帮助学生梳理知识点，起到提前预习和巩固复习的作用。课程生动有趣，使学习不再枯燥。</p>
+                    </div>
+                </div>
+                <div class="right-box">
+                    <div class="expansion right sysitem" index=1>
+                        <p id="expansion-tit" class="title">课外拓展</p>
+                        <p class="content">课程中安排的针对性拓展练习可提升孩子的思维能力。同时，适当加入了延展性的知识，可拓展学生知识面，为新学期学习做好铺垫。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="course">
+            <div class="course-tit">小学开心学</div>
+            <div class="large-course">
+                <a href="/mobile/www/index.aspx#/coursedetail/dbac870feced4027b6fbe147a7b09ff5&&">
+                    <img src="activities/img/priMidThreeFold/primary1.png" />
+                </a>
+            </div>
+            <div class="small-course">
+                <a href="/mobile/www/index.aspx#/coursedetail/5ff63e52b44746128d81f764ff094949&&">
+                    <img class="left" src="activities/img/priMidThreeFold/primary2.png" />
+                </a>
+                <a href="/mobile/www/index.aspx#/coursedetail/f8bd595c011d447e8e834b08d0d50f7e&&">
+                    <img class="right" src="activities/img/priMidThreeFold/primary3.png" />
+                </a>
+                <a href="/mobile/www/index.aspx#/coursedetail/0ed4375e38e64f3b863f1f45c164d6a3&&">
+                    <img class="left" src="activities/img/priMidThreeFold/primary4.png" />
+                </a>
+                <a href="/mobile/www/index.aspx#/coursedetail/ccd369398dd94bfba210e96e7084aa6e&&">
+                    <img class="right" src="activities/img/priMidThreeFold/primary5.png" />
+                </a>
+            </div>
+            <div class="btn-group">
+                <a class="left-btn btn" ng-click="registerDialog()" ng-hide="userData.userLg">立即注册免费试听</a>
+                <a class="btn" ng-class="{true :'mid-btn', false :'right-btn'}[userData.userLg]" href="/mobile/www/index.aspx#/courseplate/%E4%B8%AD%E5%B0%8F%E5%AD%A6&&&" >点击查看更多课程</a>
+            </div>
+        </div>
+        <div class="course">
+            <div class="course-tit">中考不再愁</div>
+            <div class="large-course">
+                <a href="/mobile/www/index.aspx#/coursedetail/fc85bfb599d449bcb11ee9490d526976&&">
+                    <img src="activities/img/priMidThreeFold/junior1.png" />
+                </a>
+            </div>
+            <div class="small-course">
+                <a href="/mobile/www/index.aspx#/coursedetail/c5fcedaa502341d78646fc8beff5cd0d&&">
+                    <img class="left" src="activities/img/priMidThreeFold/junior2.png" />
+                </a>
+                <a href="/mobile/www/index.aspx#/coursedetail/3236cd08150c43c895300d836b23afff&&">
+                    <img class="right" src="activities/img/priMidThreeFold/junior3.png" />
+                </a>
+                <a href="/mobile/www/index.aspx#/coursedetail/e0a33c10c2114caa9e3531eb51861b31&&">
+                    <img class="left" src="activities/img/priMidThreeFold/junior4.png" />
+                </a>
+                <a href="/mobile/www/index.aspx#/coursedetail/58dbc9ceb3184383a323af26dbfd7bd0&&">
+                    <img class="right" src="activities/img/priMidThreeFold/junior5.png" />
+                </a>
+            </div>
+            <div class="large-course">
+                <a href="/mobile/www/index.aspx#/coursedetail/e248f6ce89584c7f95b607046fd37f76&&">
+                    <img src="activities/img/priMidThreeFold/junior6.png" />
+                </a>
+            </div>
+            <div class="btn-group">
+                
+                <a class="left-btn btn" ng-click="registerDialog()" ng-hide="userData.userLg">立即注册免费试听</a>
+                <a class="btn" ng-class="{true :'mid-btn', false :'right-btn'}[userData.userLg]" href="/mobile/www/index.aspx#/courseplate/%E4%B8%AD%E5%B0%8F%E5%AD%A6&&&">点击查看更多课程</a>
+            </div>
+        </div>
+        <div class="course">
+            <div class="course-tit">高考解烦忧</div>
+            <div class="large-course">
+                <a href="/mobile/www/index.aspx#/coursedetail/5583846da22c497dba607254c38746e7&&">
+                    <img src="activities/img/priMidThreeFold/senior1.png" />
+                </a>
+            </div>
+            <div class="large-course">
+                <a href="/mobile/www/index.aspx#/coursedetail/50fd0fe57c5841de8158a349fd6e6e63&&">
+                    <img src="activities/img/priMidThreeFold/senior2.png" />
+                </a>
+            </div>
+            <div class="large-course">
+                <a href="/mobile/www/index.aspx#/coursedetail/91e4abf96fb9485abaa3c139ae1e444a&&">
+                    <img src="activities/img/priMidThreeFold/senior3.png" />
+                </a>
+            </div>
+            <div class="large-course">
+                <a href="/mobile/www/index.aspx#/coursedetail/b0b9d8ae01604caaa050834f23c6de85&&">
+                    <img src="activities/img/priMidThreeFold/senior4.png" />
+                </a>
+            </div>
+            <div class="btn-group">
+                <a class="left-btn btn" ng-click="registerDialog()" ng-hide="userData.userLg">立即注册免费试听</a>
+                <a class="btn" ng-class="{true :'mid-btn', false :'right-btn'}[userData.userLg]" href="/mobile/www/index.aspx#/courseplate/%E4%B8%AD%E5%B0%8F%E5%AD%A6&&&">点击查看更多课程</a>
+            </div>
+        </div>
+        <hr />
+        <div class="teacher">
+            <p class="tea-text">名师助力 学无止境</p>
+            <ion-scroll class="teacher-box" scrollbar-x="false" direction="x">
+                <div class="teacher-content"></div>
+            </ion-scroll>
+        </div>
+    </ion-content>
+</ion-view>

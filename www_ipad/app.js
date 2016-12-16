@@ -70,7 +70,6 @@
           } else {
             return false;
           }
-
         }
       })
       .filter('cutCharptName', function () {
@@ -358,7 +357,7 @@
 
       .run(['$rootScope', '$state', '$Loading', '$compile', '$timeout', '$anchorScroll', 'localStorageService', 'AUTH', '$freexfUser', 'UpdateAPES', 'ENV',
         function ($rootScope, $state, $Loading, $compile, $timeout, $anchorScroll, localStorageService, AUTH, $freexfUser, UpdateAPES, ENV) {
-
+            $rootScope.tel400 = window.tel400;
           //用户本地信息
           var local = localStorageService.get($freexfUser.name());
           $freexfUser.setUser(local ? local : $freexfUser.auth());
@@ -674,6 +673,30 @@
                 return $ocLazyLoad.load(['activities/201611/fourFoldCarnival.js']);
               }]
             }
+          })
+          //201611 6折狂欢
+          .state('sixFoldCarnival', {
+            url: '/sixFoldCarnival',
+            templateUrl: 'activities/201611/sixFoldCarnival.html',
+            controller: 'sixFoldCarnival_ctrl',
+            cache: false,
+            resolve: {
+              loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load(['activities/201611/sixFoldCarnival.js']);
+              }]
+            }
+          })
+          //201611 双十一抽奖
+          .state('lotteryDouble11', {
+              url: '/lotteryDouble11/:lotteryNum&:OrderId',
+              templateUrl: 'activities/201611/lotteryDouble11.html',
+              controller: 'lotteryDouble11_ctrl',
+              cache: false,
+              resolve: {
+                  loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                      return $ocLazyLoad.load(['activities/201611/lotteryDouble11.js']);
+                  }]
+              }
           })
         $stateProvider
           .state('tab', {

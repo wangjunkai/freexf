@@ -1,0 +1,258 @@
+﻿<style>
+  .Double12 img{width:100%;}
+  .Double12 .Double12-top {
+    height: 24px;
+    background: #fff;
+    position:relative;
+  }
+  .Double12-box{margin-top:-1px;}
+  .Double12 .Double12-top .logo {
+    position:absolute;
+    left:0;
+    top:0;
+    width: 76px;
+    height: 14px;
+    margin: 5px 10px;
+  }
+
+  .Double12 .Double12-top .phone {
+    position:absolute;
+    right:5px;
+    top:0;
+  }
+
+  .Double12 .Double12-top .phone-icon {
+    width: 12px;
+    height: 11px;
+    vertical-align: middle;
+  }
+
+  .Double12 .Double12-top .phone-num {
+    font-size: 12px;
+    color: #f87f7f;
+    line-height: 24px;
+    margin: 0 5px;
+    vertical-align: middle;
+  }
+
+  .Double12-footer.time-footer span{color:#f87f7f!important;}
+  .Double12-footer.time-footer{border-top: 1px #f87f7f solid;margin-top: 0px;display: block;height:70px;line-height:70px;text-align: center;}
+
+  .Double12-rule{background:url(./activities/img/Double12FiveFold/cloud1@3x.png) no-repeat;background-size:100% auto;background-position:0 101%;padding-bottom:50px;position:relative;}
+  .Double12-box h2{width:100%;height:65px;text-align:center;background:url(./activities/img/Double12FiveFold/title-bar@3x.png) no-repeat;background-size:auto 100%;background-position:center;font-size:17rem;color:#ac0c0c;padding-top:40px;font-weight:bold;margin-bottom: 15px;}
+  .Double12-rule p{font-size:12rem;color:#ac0c0c;margin-left:15%;}
+  .Double12-rule:after{content:"";width:100px;height:45px;background:url(./activities/img/Double12FiveFold/tree1@3x.png) no-repeat;display:block;background-size:auto 100%;position:absolute;bottom:40px;left:8%;}
+  .Double12-zhongxiaoxue{background:#FF5742 url(./activities/img/Double12FiveFold/cloud2@3x.png) no-repeat;background-size:100% auto;background-position:bottom;padding-bottom:60px;}
+  .Double12-main{width:95%;margin:0 auto;background:#fff;border-bottom-left-radius:20px;border-bottom-right-radius:20px;}
+  .Double12-zhongxiaoxue p{width:95%;height:20px;margin:15px auto 0;border-top-left-radius:20px;border-top-right-radius:20px;background:#F5CA47;}
+  .Double12-zhongxiaoxue .col,
+  .Double12-duoyuzhong .col,
+  .Double12-yingyu .col{padding: 3px;}
+  .Double12-btngroup{padding-bottom:15px;}
+  .Double12-btngroup div{text-align:center;}
+  .Double12-btngroup div a{display:block;width:90%;margin:0 auto;background:#FF5742;color:#fff;border-radius:5px;padding:3px;}
+  .Double12-duoyuzhong{background:#E7C434 url(./activities/img/Double12FiveFold/cloud3@3x.png) no-repeat;background-size:100% auto;background-position:bottom;padding-bottom:60px;}
+  .Double12-duoyuzhong{position:relative;}
+  .Double12-duoyuzhong:before{content:"";display:block;position:absolute;bottom:35px;left:3px;width:50px;height:50px;background:url(./activities/img/Double12FiveFold/tree1@3x.png) no-repeat;background-size:auto 100%;}
+  .Double12-duoyuzhong p:before{content:"";display:block;position:absolute;top:-60px;right:0;width:50px;height:40px;background:url(./activities/img/Double12FiveFold/tree2@3x.png) no-repeat;background-size:auto 100%;}
+  .Double12-duoyuzhong p,
+  .Double12-yingyu p,
+  .Double12-kuaiji p{width:95%;height:20px;margin:15px auto 0;border-top-left-radius:20px;border-top-right-radius:20px;background:#FF5742;position:relative;}
+  .Double12-yingyu{padding-bottom:30px;background:#79B74A;}
+  .Double12-yingyu p{background:#F9CC19;}
+  .Double12-yingyu p:after{content:"";display:block;position:absolute;top:-40px;right:0;width:70px;height:40px;background:url(./activities/img/Double12FiveFold/ice2@3x.png) no-repeat;background-size:auto 100%;}
+  .Double12-kuaiji{background:#79B74A url(./activities/img/Double12FiveFold/cloud4@3x.png) no-repeat;background-size:100% auto;background-position:bottom;padding-bottom:60px;}
+  .Double12-kuaiji p{background:#FF5742;}
+  .Double12-kuaiji p:after{content:"";display:block;position:absolute;top:-40px;left:22px;width:70px;height:40px;background:url(./activities/img/Double12FiveFold/ice2@3x.png) no-repeat;background-size:auto 100%;}
+  .Double12-more{padding-bottom:30px;}
+  .Double12-more p{width:95%;height:25px;margin:15px auto 0;border-top-left-radius:15px;border-top-right-radius:15px;background:#FBD439;text-align:center;color:#AC0D0A;font-weight:bold;line-height:25px;font-size:14rem;margin-bottom:8px;}
+  .Double12-more .Double12-main>div{position:relative;}
+  .Double12-more .Double12-main>div>img{width:49.5%;}
+  .Double12-more .Double12-main>div a{width:49.5%;display:block;}
+  .Double12-more .Double12-main>div a:last-of-type{position:absolute;top:0;right:0;}
+  @media screen and (max-width:424px){
+    .Double12-rule p{margin-left:18%;}
+  }
+  @media screen and (max-width:385px){
+    .Double12-rule p{margin-left:15%;}
+  }
+  @media screen and (max-width:330px){
+    .Double12-rule p{margin-left:10%;}
+    .Double12-rule:after{content:"";width:100px;height:45px;background:url(./activities/img/Double12FiveFold/tree1@3x.png) no-repeat;display:block;background-size:auto 100%;position:absolute;bottom:40px;left:3%;}
+  }
+</style>
+<ion-view coures-scroll view-title="年末狂欢">
+    <ion-content lazy-scroll class="Double12">
+        <div class="Double12-top">
+            <a href="/mobile/www/index.aspx#/home" class="logo">
+                <img src="activities/img/Double12FiveFold/logo.png" />
+            </a>
+            <div class="phone">
+                <a href="tel:{{tel400}}">
+                    <img class="phone-icon" src="activities/img/Double12FiveFold/phone-icon.png" />
+                    <span class="phone-num" style="white-space:nowrap; ">{{tel400}}</span>
+                </a>
+            </div>
+        </div>
+        <img style="display:block;" src="activities/img/Double12FiveFold/banner@3x.png" />
+        <div class="Double12-rule Double12-box">
+            <h2>活动规则</h2>
+            <p>1、活动时间：12月1日00:00—12月12日24:00；<br/>
+               2、微课、语音课除外，其他课程全场5折；<br />
+               3、课程有效期结束后，返还金额以实付金额为准。
+            </p>
+        </div>
+        <div class="Double12-zhongxiaoxue Double12-box">
+            <h2>世界的骄傲 由我们打造</h2>
+            <p></p>
+            <div class="Double12-main">
+                <div class="row">
+                    <div class="col col-50">
+                        <img ng-click="goPlate({ Category1: '中小学' })" src="activities/img/Double12FiveFold/zxx.png" />
+                    </div>
+                    <div class="col col-50">
+                        <img ng-click="goDetail('7a0ce779f4194cc2ae136d26ad7af9b5')" src="activities/img/Double12FiveFold/zxx-course1.png" />
+                        <img ng-click="goDetail('084284722c9649e99467376746016d89')" src="activities/img/Double12FiveFold/zxx-course2.png" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-50">
+                        <img ng-click="goDetail('536e5e67b81442879a448ec6c9dd4658')" src="activities/img/Double12FiveFold/zxx-course3.png" />
+                    </div>
+                    <div class="col col-50">
+                        <img ng-click="goDetail('50fd0fe57c5841de8158a349fd6e6e63')" src="activities/img/Double12FiveFold/zxx-course4.png" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-50">
+                        <img ng-click="goDetail('77485d75eae846b682705897af56ed9b')" src="activities/img/Double12FiveFold/zxx-course5.png" />
+                    </div>
+                    <div class="col col-50">
+                        <img ng-click="goDetail('5583846da22c497dba607254c38746e7')" src="activities/img/Double12FiveFold/zxx-course6.png" />
+                    </div>
+                </div>
+                <div class="row Double12-btngroup">
+                    <div class="col col-50">
+                        <a ng-click="goregister()">立即注册免费试听</a>
+                    </div>
+                    <div class="col col-50">
+                        <a ng-click="goPlate({ Category1: '中小学' })">点击查看更多视频</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Double12-duoyuzhong Double12-box">
+            <h2>多一个语言 多一个世界</h2>
+            <p></p>
+            <div class="Double12-main">
+                <div class="row" style="padding-bottom: 2px;">
+                    <div class="col" style="padding:0 3px;">
+                        <img ng-click="goPlate({ Category1: '多语种' })" src="activities/img/Double12FiveFold/dyz.png" />
+                    </div>
+                </div>
+                <div class="row" style="padding:0 5px;">
+                    <div class="col" style="padding:0 3px;">
+                        <img ng-click="goDetail('4b45418d06fa4a57bd1888935483071a')" src="activities/img/Double12FiveFold/dyz-course1.png" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-50">
+                        <img ng-click="goDetail('7957f8e089e94d1281db0980b89fcffb')" src="activities/img/Double12FiveFold/dyz-course2.png" />
+                    </div>
+                    <div class="col col-50">
+                        <img ng-click="goDetail('dc11d8c0b80c48bba1b9382801ede9ea')" src="activities/img/Double12FiveFold/dyz-course3.png" />
+                    </div>
+                </div>
+                <div class="row Double12-btngroup">
+                    <div class="col col-50">
+                        <a ng-click="goregister()">立即注册免费试听</a>
+                    </div>
+                    <div class="col col-50">
+                        <a ng-click="goPlate({ Category1: '多语种' })">点击查看更多视频</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Double12-yingyu Double12-box">
+            <h2>科学备考 CET轻松得分</h2>
+            <p></p>
+            <div class="Double12-main">
+                <div class="row">
+                    <div class="col">
+                        <img ng-click="goPlate({ Category1: '英语' })" src="activities/img/Double12FiveFold/yy.png" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <img ng-click="goDetail('3f9b0819eae74664a333f7e7b5a8b17f')" src="activities/img/Double12FiveFold/yy-course1.png" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <img ng-click="goDetail('b369caf1653a492b9e90494900d4bacd')" src="activities/img/Double12FiveFold/yy-course2.png" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <img ng-click="goDetail('3cf9d285bad0484a95a674e46e0500d6')" src="activities/img/Double12FiveFold/yy-course3.png" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <img ng-click="goDetail('c0bf3ed733f548b7a6e8a480ce325214')" src="activities/img/Double12FiveFold/yy-course4.png" />
+                    </div>
+                </div>
+                <div class="row Double12-btngroup">
+                    <div class="col col-50">
+                        <a ng-click="goregister()">立即注册免费试听</a>
+                    </div>
+                    <div class="col col-50">
+                        <a ng-click="goPlate({ Category1: '英语' })">点击查看更多视频</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Double12-kuaiji Double12-box">
+            <h2>学好会计 投资未来</h2>
+            <p></p>
+            <div class="Double12-main">
+                <div class="row">
+                    <div class="col" style="padding:0 3px;">
+                        <img ng-click="goDetail('efbae01348724a539b876080826416ac')" src="activities/img/Double12FiveFold/kj-course1.png" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-50">
+                        <img ng-click="goDetail('0ec52858dcc242f491594d6cf72ad061')" src="activities/img/Double12FiveFold/kj-course2.png" />
+                    </div>
+                    <div class="col col-50">
+                        <img ng-click="goDetail('378322b500964be0b1828f2d407e8ea3')" src="activities/img/Double12FiveFold/kj-course3.png" />
+                    </div>
+                </div>
+                <div class="row Double12-btngroup">
+                    <div class="col col-50">
+                        <a ng-click="goregister()">立即注册免费试听</a>
+                    </div>
+                    <div class="col col-50">
+                        <a ng-click="goPlate({ Category1: '会计职业' })">点击查看更多视频</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Double12-more Double12-box">
+            <p>更多活动</p>
+            <div class="Double12-main">
+                <a href="/mobile/www/index.aspx#/invitation"><img style="display:block;margin-bottom:3px;" src="activities/img/Double12FiveFold/active1.png" /></a>
+                <div>
+                    <img src="activities/img/Double12FiveFold/weixinlottery.png" />
+                    <a href="http://weibo.com/freexfcom"><img src="activities/img/Double12FiveFold/weibolottery.png" /></a>
+                </div>
+            </div>
+        </div>
+
+        <a href="tel:{{tel400}}" class="title time-footer Double12-footer">
+            <img class="footer-bar-contact-content-phone" image-lazy-src="activities/img/Double12FiveFold/footer-phone-icon.png" />
+            <span class="footer-bar-contact-content-phonenumber">{{tel400}}</span>
+        </a>
+</ion-content>
+</ion-view>

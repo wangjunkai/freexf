@@ -9,11 +9,10 @@
     </div>
   </ion-header-bar>
   <ion-content lazy-scroll class="has-header freexf-bg-gray freexf-content" delegate-handle="myDelegate">
-
     <ion-slide-box on-slide-changed="slideHasChanged($index)" class="freexf-slide">
       <ion-slide>
-        <a href="#/fourFoldCarnival">
-          <img src="img/home/banner_NovDiscount_ipad.jpg">
+        <a href="#/sixFoldCarnival">
+          <img src="img/home/banner_sixfold_ipad.jpg">
         </a>
       </ion-slide>
       <ion-slide>
@@ -24,11 +23,6 @@
       <ion-slide>
         <a href="javascript:void(0);">
           <img src="img/home/banner-ipad-video.jpg" ng-click="aboutUs()">
-        </a>
-      </ion-slide>
-      <ion-slide>
-        <a href="#/microClass">
-          <img src="img/home/banner-weiketang.jpg">
         </a>
       </ion-slide>
     </ion-slide-box>
@@ -67,23 +61,23 @@
       <div class="clearfix">
         <div class="col-33 freexf-col" style="padding-right: 7px;">
           <!--href="#/coursedetail/{{value.productID}}&"-->
-          <a href="#/multilingual" class="rcol">
+          <!--<a href="#/multilingual" class="rcol">
             <img src="img/publicbg/null_bg320_180.png" image-lazy-src="img/home/multilingual-banner.jpg">
-          </a>
-          <a ng-repeat="(key,value) in home.l_EliteCrouseList" ng-if="key!=0&&key>0&&key<=1"
+          </a>-->
+          <a ng-repeat="(key,value) in home.l_EliteCrouseList" ng-if="key!=0&&key>0&&key<=2"
              ng-click="openModal('coursedetail',{ProductId: value.productID})"
              class="rcol">
             <img src="img/publicbg/null_bg320_180.png" image-lazy-src="{{value.coverurl}}">
           </a>
         </div>
         <div class="col-33 freexf-col" style="padding-right: 3px;padding-left: 3px;">
-          <a href="#/microClass" class="lcol">
-            <img image-lazy-src="img/home/jinpin-weiketang.jpg" alt="">
-          </a>
+            <a href="#/microClass" class="lcol">
+                <img image-lazy-src="img/home/jinpin-weiketang.jpg" alt="">
+            </a>
         </div>
         <div class="col-33 freexf-col" style="padding-left: 7px;">
           <!--href="#/coursedetail/{{value.productID}}&"-->
-          <a ng-repeat="(key,value) in home.l_EliteCrouseList" ng-if="key!=0&&key>1&&key<=3"
+          <a ng-repeat="(key,value) in home.l_EliteCrouseList" ng-if="key!=0&&key>2&&key<=4"
              ng-click="openModal('coursedetail',{ProductId: value.productID})"
              class="rcol">
             <img src="img/publicbg/null_bg320_180.png" image-lazy-src="{{value.coverurl}}" alt="">

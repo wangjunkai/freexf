@@ -1,175 +1,306 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/www/modules/user/myaccount.html" line="36" />
-    <bookmark url="file://$PROJECT_DIR$/www_ipad/app.js" line="727" />
+    <bookmark url="file://$PROJECT_DIR$/www/modules/user/myaccount.html" line="37" />
+    <bookmark url="file://$PROJECT_DIR$/www_ipad/app.js" line="750" />
     <bookmark url="file://$PROJECT_DIR$/www_ipad/modules/user/myaccount.html" line="0" />
-    <bookmark url="file://$PROJECT_DIR$/www_ipad/app.js" line="737" />
+    <bookmark url="file://$PROJECT_DIR$/www_ipad/app.js" line="760" />
     <bookmark url="file://$PROJECT_DIR$/www_ipad/css/home.css" line="406" />
-    <bookmark url="file://$PROJECT_DIR$/www_ipad/modules/home/home.js" description="&#10;      //传递：courseId 课程ID&#10;      var modal_ary = {&#10;..." line="97" />
+    <bookmark url="file://$PROJECT_DIR$/www_ipad/modules/home/home.js" description="&#10;      //传递：courseId 课程ID&#10;      var modal_ary = {&#10;..." line="103" />
     <bookmark url="file://$PROJECT_DIR$/www_ipad/modules/user/login.js" description="        register: {&#10;          scope: $scope,&#10;     ..." line="58" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0fedb80-9d46-42ab-87d2-719866b04b28" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/img/fourFoldCarnival/1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/img/fourFoldCarnival/banner.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/img/fourFoldCarnival/first.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/img/fourFoldCarnival/haoke.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/img/fourFoldCarnival/second.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/img/fourFoldCarnival/three.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/img/fourFoldCarnival/yuanjiao.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/img/primarySchool/button-1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/img/primarySchool/ceshi.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/img/primarySchool/titile-1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/course/bubbles.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/course/delete.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/home/deyu.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/home/eyu.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/home/fayu.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/home/hanyu.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/home/riyu.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/home/xiyu.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/img/course/bubbles.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/img/course/delete.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/201609/setAppParam.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/201610/primarySchool.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/201610/primarySchool.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/201611/fourFoldCarnival.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/201611/fourFoldCarnival.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/css/activities-4dbf9a0e8c.bundle.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/css/fourFoldCarnival.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/css/primarySchool.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/modules/user/loginmodal.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/modules/user/mycoursementoring.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/modules/user/mycoursementoring.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/modules/user/mycoursenote.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/modules/user/mycoursenote.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/modules/user/registermodal.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/modules/user/mycoursementoring.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/modules/user/mycoursementoring.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/modules/user/mycoursenote.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/modules/user/mycoursenote.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/activities/css/activities-aac1d0005b.bundle.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/css/freexf-65c90ad0c5.bundle.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/css/freexf-dbeb50277f.bundle.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/css/activities/activities-examinationTime-c5dd92569c.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/css/activities/activities-public-395e61533b.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/css/activities/classlearing-5a011441b3.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/css/activities/concat/activities-aac1d0005b.bundle.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/css/activities/invitefriends-05da3a8880.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/css/activities/map/activities-examinationTime-c5dd92569c.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/css/activities/map/activities-public-395e61533b.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/css/activities/map/classlearing-5a011441b3.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/css/activities/map/invitefriends-05da3a8880.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/css/activities/map/microClass-459516bee2.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/css/activities/map/multilingual-6d9720b24b.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/css/activities/microClass-459516bee2.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/css/activities/multilingual-6d9720b24b.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/css/modules/course-b57bf5fe5e.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/css/modules/freexf-9540ce956c.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/css/modules/home-708093547b.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/css/modules/map/course-b57bf5fe5e.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/css/modules/map/freexf-9540ce956c.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/css/modules/map/home-708093547b.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/css/modules/map/member-dedb0a1100.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/css/modules/map/pay-c68bce8aa2.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/css/modules/map/set-e2ecdbe110.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/css/modules/map/user-e0b2c5ad52.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/css/modules/member-dedb0a1100.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/css/modules/pay-c68bce8aa2.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/css/modules/set-e2ecdbe110.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/css/modules/user-e0b2c5ad52.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www_ipad/css/freexf-concat-c522fa9e89-650fadcbfe.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www_ipad/css/freexf-concat-c522fa9e89-650fadcbfe.min.min.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www_ipad/css/freexf-concat-c522fa9e89.min.css" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/img/lottery/01@3x.png" afterPath="$PROJECT_DIR$/www/activities/img/lottery/01@3x.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/img/lottery/03@3x.png" afterPath="$PROJECT_DIR$/www/activities/img/lottery/03@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/img/Double12FiveFold/yy-course3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/img/Double12FiveFold/yy-course4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/img/sixFoldCarnival/10@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/img/sixFoldCarnival/11@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/img/sixFoldCarnival/12@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/img/sixFoldCarnival/13@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/img/sixFoldCarnival/14@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/img/sixFoldCarnival/1@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/img/sixFoldCarnival/2@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/img/sixFoldCarnival/3@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/img/sixFoldCarnival/4@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/img/sixFoldCarnival/5@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/img/sixFoldCarnival/6@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/img/sixFoldCarnival/7@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/img/sixFoldCarnival/8@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/img/sixFoldCarnival/9@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/img/sixFoldCarnival/banner@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/img/sixFoldCarnival/bodybg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/img/sixFoldCarnival/guize.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/img/sixFoldCarnival/haolaoshi.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/img/sixFoldCarnival/jiangpin.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/img/sixFoldCarnival/shezhi.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/img/sixFoldCarnival/sunlaoshi.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/img/sixFoldCarnival/title-0.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/img/sixFoldCarnival/title-1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/img/sixFoldCarnival/title-2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/img/sixFoldCarnival/title-3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/img/sixFoldCarnival/title-4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/img/sixFoldCarnival/weibo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/img/sixFoldCarnival/weixin.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/img/sixFoldCarnival/yuanjiao.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/home/weiketang.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/home/zhiboke.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/liveLesson/ceshi.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/liveLesson/ceshi2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/liveLesson/download.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/liveLesson/leftblock.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/liveLesson/man.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/liveLesson/time.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/shareVolume/guoqi.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/shareVolume/select.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/shareVolume/shiyong.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/shareVolume/volume_bg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/shareVolume/volume_no_bg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/shareVolume/zuofei.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/user/volume.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/activities/img/sixFoldCarnival/10@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/activities/img/sixFoldCarnival/11@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/activities/img/sixFoldCarnival/12@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/activities/img/sixFoldCarnival/13@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/activities/img/sixFoldCarnival/14@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/activities/img/sixFoldCarnival/15@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/activities/img/sixFoldCarnival/16@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/activities/img/sixFoldCarnival/17@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/activities/img/sixFoldCarnival/18@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/activities/img/sixFoldCarnival/19@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/activities/img/sixFoldCarnival/1@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/activities/img/sixFoldCarnival/20@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/activities/img/sixFoldCarnival/2@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/activities/img/sixFoldCarnival/3@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/activities/img/sixFoldCarnival/4@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/activities/img/sixFoldCarnival/5@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/activities/img/sixFoldCarnival/6@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/activities/img/sixFoldCarnival/7@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/activities/img/sixFoldCarnival/8@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/activities/img/sixFoldCarnival/9@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/activities/img/sixFoldCarnival/banner@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/activities/img/sixFoldCarnival/bodybg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/activities/img/sixFoldCarnival/duoyuzhong.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/activities/img/sixFoldCarnival/guize.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/activities/img/sixFoldCarnival/jialaoshi.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/activities/img/sixFoldCarnival/jiangpin.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/activities/img/sixFoldCarnival/kuaiji.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/activities/img/sixFoldCarnival/shezhi.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/activities/img/sixFoldCarnival/title.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/activities/img/sixFoldCarnival/wanlaoshi.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/activities/img/sixFoldCarnival/weibo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/activities/img/sixFoldCarnival/weixin.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/activities/img/sixFoldCarnival/yingyu.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/activities/img/sixFoldCarnival/yuanjiao.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/activities/img/sixFoldCarnival/zhongjiang.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/activities/img/sixFoldCarnival/zhongxiaoxue.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/201611/sixFoldCarnival.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/201611/sixFoldCarnival.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/css/activities-09bbba1733.bundle.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/css/inline/Double12FiveFold.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/css/inline/liveCalendar.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/activities/css/inline/lotteryDouble11.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/css/liveHome.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/css/sharevolume.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/modules/liveLesson/liveHome.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/modules/liveLesson/liveHome.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/modules/liveLesson/livecoursedetail.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/modules/liveLesson/livecoursedetail.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/modules/user/sharevolume.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/modules/user/sharevolume.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/activities/201611/sixFoldCarnival.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www_ipad/activities/201611/sixFoldCarnival.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/activities/css/activities-b4fa021210.bundle.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/js/lib/angular-local-storage-f9ed4aed54.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/js/lib/angular-sanitize-3327cce34c.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/js/lib/base64-0c282d9ab2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/js/lib/concat/freexf-b4a1e2feed.bundle.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/js/lib/ionic-ca983f64fc.bundle.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/js/lib/ionic-image-lazy-load-4c7b45338e.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/js/lib/jquery-3ddbe55bb7.qrcode.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/js/lib/jquery-aacc43d6f3.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/js/lib/lodash-53a7121b59.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/js/lib/map/angular-local-storage-f9ed4aed54.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/js/lib/map/angular-sanitize-3327cce34c.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/js/lib/map/base64-0c282d9ab2.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/js/lib/map/ionic-ca983f64fc.bundle.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/js/lib/map/ionic-image-lazy-load-4c7b45338e.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/js/lib/map/jquery-3ddbe55bb7.qrcode.min.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/js/lib/map/jquery-aacc43d6f3.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/js/lib/map/lodash-53a7121b59.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/js/lib/map/ocLazyLoad-dce854a948.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/js/lib/map/require-01ccd14836.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/js/lib/map/restangular-da4e58139e.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/js/lib/ocLazyLoad-dce854a948.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/js/lib/require-01ccd14836.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/dist/js/lib/restangular-da4e58139e.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_action-sheet.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_animations.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_backdrop.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_badge.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_bar.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_button-bar.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_button.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_checkbox.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_form.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_grid.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_items.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_list.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_loading.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_menu.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_mixins.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_modal.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_platform.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_popover.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_popup.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_progress.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_radio.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_range.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_refresher.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_reset.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_scaffolding.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_select.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_slide-box.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_slides.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_spinner.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_tabs.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_toggle.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_transitions.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_type.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_util.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/_variables.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/ionic.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/ionicons/_ionicons-font.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/ionicons/_ionicons-icons.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/ionicons/_ionicons-variables.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/lib/ionic/scss/ionicons/ionicons.scss" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/img/cetMultilingual/top-header.png" afterPath="$PROJECT_DIR$/www/activities/img/cetMultilingual/top-header.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/img/examinationTime/banner@3x.png" afterPath="$PROJECT_DIR$/www/activities/img/examinationTime/banner@3x.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/img/home/banner-calendar.jpg" afterPath="$PROJECT_DIR$/www/img/home/banner-calendar.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/img/home/banner-video.jpg" afterPath="$PROJECT_DIR$/www/img/home/banner-video.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/img/user/pay.png" afterPath="$PROJECT_DIR$/www/img/user/pay.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/img/home/jinpin-weiketang.jpg" afterPath="$PROJECT_DIR$/www/img/home/jinpin-weiketang.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/img/user/user-icon.png" afterPath="$PROJECT_DIR$/www/img/user/user-icon.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/activities/img/examinationTime/examinationTime@3x.png" afterPath="$PROJECT_DIR$/www_ipad/activities/img/examinationTime/examinationTime@3x.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/activities/img/lottery/01@2x.png" afterPath="$PROJECT_DIR$/www_ipad/activities/img/lottery/01@2x.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/activities/img/lottery/03@2x.png" afterPath="$PROJECT_DIR$/www_ipad/activities/img/lottery/03@2x.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/img/home/banner-calendar2.jpg" afterPath="$PROJECT_DIR$/www_ipad/img/home/banner-calendar2.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/img/home/banner-ipad-video.jpg" afterPath="$PROJECT_DIR$/www_ipad/img/home/banner-ipad-video.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/.idea/workspace.xml" afterPath="$PROJECT_DIR$/www/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/201606/summer.html" afterPath="$PROJECT_DIR$/www/activities/201606/summer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/201608/classLearning.html" afterPath="$PROJECT_DIR$/www/activities/201608/classLearning.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/201608/classLearning.js" afterPath="$PROJECT_DIR$/www/activities/201608/classLearning.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/201608/examinationTime.html" afterPath="$PROJECT_DIR$/www/activities/201608/examinationTime.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/201608/examinationTime.js" afterPath="$PROJECT_DIR$/www/activities/201608/examinationTime.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/201608/koreanlanguage.html" afterPath="$PROJECT_DIR$/www/activities/201608/koreanlanguage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/201608/invitefriends.html" afterPath="$PROJECT_DIR$/www/activities/201608/invitefriends.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/201608/koreanlanguage.js" afterPath="$PROJECT_DIR$/www/activities/201608/koreanlanguage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/201609/lottery.html" afterPath="$PROJECT_DIR$/www/activities/201609/lottery.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/201609/Germany.html" afterPath="$PROJECT_DIR$/www/activities/201609/Germany.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/201609/accountant.html" afterPath="$PROJECT_DIR$/www/activities/201609/accountant.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/201609/french.html" afterPath="$PROJECT_DIR$/www/activities/201609/french.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/201609/french.js" afterPath="$PROJECT_DIR$/www/activities/201609/french.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/201609/japanese.html" afterPath="$PROJECT_DIR$/www/activities/201609/japanese.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/201609/japanese.js" afterPath="$PROJECT_DIR$/www/activities/201609/japanese.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/201609/korean.html" afterPath="$PROJECT_DIR$/www/activities/201609/korean.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/201609/korean.js" afterPath="$PROJECT_DIR$/www/activities/201609/korean.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/201609/lottery.js" afterPath="$PROJECT_DIR$/www/activities/201609/lottery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/201609/lotteryAndroid.js" afterPath="$PROJECT_DIR$/www/activities/201609/lotteryAndroid.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/201609/microClass.html" afterPath="$PROJECT_DIR$/www/activities/201609/microClass.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/201609/microClass.js" afterPath="$PROJECT_DIR$/www/activities/201609/microClass.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/201609/multilingual.html" afterPath="$PROJECT_DIR$/www/activities/201609/multilingual.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/201609/multilingual.js" afterPath="$PROJECT_DIR$/www/activities/201609/multilingual.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/css/lottery.css" afterPath="$PROJECT_DIR$/www/activities/css/lottery.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/css/multilingual.css" afterPath="$PROJECT_DIR$/www/activities/css/multilingual.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/201609/russian.html" afterPath="$PROJECT_DIR$/www/activities/201609/russian.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/201609/setAppParam.js" afterPath="$PROJECT_DIR$/www/activities/201609/setAppParam.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/201609/spanish.html" afterPath="$PROJECT_DIR$/www/activities/201609/spanish.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/201609/spanish.js" afterPath="$PROJECT_DIR$/www/activities/201609/spanish.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/201609/teacherteam.html" afterPath="$PROJECT_DIR$/www/activities/201609/teacherteam.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/201609/teacherteam.js" afterPath="$PROJECT_DIR$/www/activities/201609/teacherteam.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/201610/HighSchools.html" afterPath="$PROJECT_DIR$/www/activities/201610/HighSchools.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/201610/cetMultilingual.html" afterPath="$PROJECT_DIR$/www/activities/201610/cetMultilingual.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/201610/cetMultilingual.js" afterPath="$PROJECT_DIR$/www/activities/201610/cetMultilingual.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/201610/oneBuy.html" afterPath="$PROJECT_DIR$/www/activities/201610/oneBuy.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/201610/oneBuy.js" afterPath="$PROJECT_DIR$/www/activities/201610/oneBuy.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/201610/primarySchool.html" afterPath="$PROJECT_DIR$/www/activities/201610/primarySchool.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/201610/studyRussian.html" afterPath="$PROJECT_DIR$/www/activities/201610/studyRussian.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/201611/fourFoldCarnival.html" afterPath="$PROJECT_DIR$/www/activities/201611/fourFoldCarnival.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/activities/201611/fourFoldCarnival.js" afterPath="$PROJECT_DIR$/www/activities/201611/fourFoldCarnival.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app.js" afterPath="$PROJECT_DIR$/www/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/config.js" afterPath="$PROJECT_DIR$/www/config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/ExaminationPaper.css" afterPath="$PROJECT_DIR$/www/css/ExaminationPaper.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/course.css" afterPath="$PROJECT_DIR$/www/css/course.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/freexf.css" afterPath="$PROJECT_DIR$/www/css/freexf.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/home.css" afterPath="$PROJECT_DIR$/www/css/home.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/member.css" afterPath="$PROJECT_DIR$/www/css/member.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/pay.css" afterPath="$PROJECT_DIR$/www/css/pay.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/user.css" afterPath="$PROJECT_DIR$/www/css/user.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/index.aspx" afterPath="$PROJECT_DIR$/www/index.aspx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/css/ionic.css" afterPath="$PROJECT_DIR$/www/lib/ionic/css/ionic.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/css/ionic.min.css" afterPath="$PROJECT_DIR$/www/lib/ionic/css/ionic.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/js/angular/angular-animate.js" afterPath="$PROJECT_DIR$/www/lib/ionic/js/angular/angular-animate.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/js/angular/angular-animate.min.js" afterPath="$PROJECT_DIR$/www/lib/ionic/js/angular/angular-animate.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/js/angular/angular-resource.js" afterPath="$PROJECT_DIR$/www/lib/ionic/js/angular/angular-resource.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/js/angular/angular-resource.min.js" afterPath="$PROJECT_DIR$/www/lib/ionic/js/angular/angular-resource.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/js/angular/angular-sanitize.js" afterPath="$PROJECT_DIR$/www/lib/ionic/js/angular/angular-sanitize.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/js/angular/angular-sanitize.min.js" afterPath="$PROJECT_DIR$/www/lib/ionic/js/angular/angular-sanitize.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/js/angular/angular.js" afterPath="$PROJECT_DIR$/www/lib/ionic/js/angular/angular.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/js/angular/angular.min.js" afterPath="$PROJECT_DIR$/www/lib/ionic/js/angular/angular.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/js/ionic-angular.js" afterPath="$PROJECT_DIR$/www/lib/ionic/js/ionic-angular.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/js/ionic-angular.min.js" afterPath="$PROJECT_DIR$/www/lib/ionic/js/ionic-angular.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/js/ionic.bundle.js" afterPath="$PROJECT_DIR$/www/lib/ionic/js/ionic.bundle.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/js/ionic.bundle.min.js" afterPath="$PROJECT_DIR$/www/lib/ionic/js/ionic.bundle.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/js/ionic.js" afterPath="$PROJECT_DIR$/www/lib/ionic/js/ionic.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/js/ionic.min.js" afterPath="$PROJECT_DIR$/www/lib/ionic/js/ionic.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/version.json" afterPath="$PROJECT_DIR$/www/lib/ionic/version.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/jquery/dist/jquery.js" afterPath="$PROJECT_DIR$/www/lib/jquery/dist/jquery.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/course/classModule.html" afterPath="$PROJECT_DIR$/www/modules/course/classModule.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/course/course.html" afterPath="$PROJECT_DIR$/www/modules/course/course.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/course/course.js" afterPath="$PROJECT_DIR$/www/modules/course/course.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/course/coursePlate.js" afterPath="$PROJECT_DIR$/www/modules/course/coursePlate.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/PracticeExam/ExaminationPaper.html" afterPath="$PROJECT_DIR$/www/modules/PracticeExam/ExaminationPaper.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/PracticeExam/ExaminationPaper.js" afterPath="$PROJECT_DIR$/www/modules/PracticeExam/ExaminationPaper.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/course/courseSearch.html" afterPath="$PROJECT_DIR$/www/modules/course/courseSearch.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/course/coursedetail.html" afterPath="$PROJECT_DIR$/www/modules/course/coursedetail.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/course/coursedetail.js" afterPath="$PROJECT_DIR$/www/modules/course/coursedetail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/course/courseplate.html" afterPath="$PROJECT_DIR$/www/modules/course/courseplate.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/course/coursegroup.html" afterPath="$PROJECT_DIR$/www/modules/course/coursegroup.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/home/home.html" afterPath="$PROJECT_DIR$/www/modules/home/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/home/home.js" afterPath="$PROJECT_DIR$/www/modules/home/home.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/pay/pay.html" afterPath="$PROJECT_DIR$/www/modules/pay/pay.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/pay/pay.js" afterPath="$PROJECT_DIR$/www/modules/pay/pay.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/pay/payaddress.js" afterPath="$PROJECT_DIR$/www/modules/pay/payaddress.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/pubilc/tabs.html" afterPath="$PROJECT_DIR$/www/modules/pubilc/tabs.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/student/member.html" afterPath="$PROJECT_DIR$/www/modules/student/member.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/forgetpassword.js" afterPath="$PROJECT_DIR$/www/modules/user/forgetpassword.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/student/member.js" afterPath="$PROJECT_DIR$/www/modules/student/member.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/login.js" afterPath="$PROJECT_DIR$/www/modules/user/login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/myCollection.html" afterPath="$PROJECT_DIR$/www/modules/user/myCollection.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/loginmodal.html" afterPath="$PROJECT_DIR$/www/modules/user/loginmodal.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/myaccount.html" afterPath="$PROJECT_DIR$/www/modules/user/myaccount.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/mycourse.html" afterPath="$PROJECT_DIR$/www/modules/user/mycourse.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/mycourse.js" afterPath="$PROJECT_DIR$/www/modules/user/mycourse.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/myorder.html" afterPath="$PROJECT_DIR$/www/modules/user/myorder.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/myorder.js" afterPath="$PROJECT_DIR$/www/modules/user/myorder.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/register.js" afterPath="$PROJECT_DIR$/www/modules/user/register.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/services.js" afterPath="$PROJECT_DIR$/www/services.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/activities/201608/examinationTime.js" afterPath="$PROJECT_DIR$/www_ipad/activities/201608/examinationTime.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/activities/201609/lottery.html" afterPath="$PROJECT_DIR$/www_ipad/activities/201609/lottery.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/activities/201609/lottery.js" afterPath="$PROJECT_DIR$/www_ipad/activities/201609/lottery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/registermodal.html" afterPath="$PROJECT_DIR$/www/modules/user/registermodal.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/modules/user/set.html" afterPath="$PROJECT_DIR$/www/modules/user/set.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/activities/201609/microClass.html" afterPath="$PROJECT_DIR$/www_ipad/activities/201609/microClass.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/activities/201609/microClass.js" afterPath="$PROJECT_DIR$/www_ipad/activities/201609/microClass.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/activities/css/lottery.css" afterPath="$PROJECT_DIR$/www_ipad/activities/css/lottery.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/activities/css/microClass.css" afterPath="$PROJECT_DIR$/www_ipad/activities/css/microClass.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/activities/201611/fourFoldCarnival.js" afterPath="$PROJECT_DIR$/www_ipad/activities/201611/fourFoldCarnival.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/app.js" afterPath="$PROJECT_DIR$/www_ipad/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/config.js" afterPath="$PROJECT_DIR$/www_ipad/config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/css/course.css" afterPath="$PROJECT_DIR$/www_ipad/css/course.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/css/user.css" afterPath="$PROJECT_DIR$/www_ipad/css/user.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/directive.js" afterPath="$PROJECT_DIR$/www_ipad/directive.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/index.aspx" afterPath="$PROJECT_DIR$/www_ipad/index.aspx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/index.html" afterPath="$PROJECT_DIR$/www_ipad/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/course/classmodule.html" afterPath="$PROJECT_DIR$/www_ipad/modules/course/classmodule.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/course/course.html" afterPath="$PROJECT_DIR$/www_ipad/modules/course/course.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/course/course.js" afterPath="$PROJECT_DIR$/www_ipad/modules/course/course.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/course/coursedetail.html" afterPath="$PROJECT_DIR$/www_ipad/modules/course/coursedetail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/course/courseplate.html" afterPath="$PROJECT_DIR$/www_ipad/modules/course/courseplate.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/course/courseplate.js" afterPath="$PROJECT_DIR$/www_ipad/modules/course/courseplate.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/course/searchresult.html" afterPath="$PROJECT_DIR$/www_ipad/modules/course/searchresult.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/course/coursedetail.js" afterPath="$PROJECT_DIR$/www_ipad/modules/course/coursedetail.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/home/home.html" afterPath="$PROJECT_DIR$/www_ipad/modules/home/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/pay/pay.html" afterPath="$PROJECT_DIR$/www_ipad/modules/pay/pay.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/home/home.js" afterPath="$PROJECT_DIR$/www_ipad/modules/home/home.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/pay/pay.js" afterPath="$PROJECT_DIR$/www_ipad/modules/pay/pay.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/pay/payagreement.js" afterPath="$PROJECT_DIR$/www_ipad/modules/pay/payagreement.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/user/mycourse.html" afterPath="$PROJECT_DIR$/www_ipad/modules/user/mycourse.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/user/mycourse.js" afterPath="$PROJECT_DIR$/www_ipad/modules/user/mycourse.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/user/myorder.html" afterPath="$PROJECT_DIR$/www_ipad/modules/user/myorder.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/pay/payaddress.js" afterPath="$PROJECT_DIR$/www_ipad/modules/pay/payaddress.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/pay/payagreement.html" afterPath="$PROJECT_DIR$/www_ipad/modules/pay/payagreement.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/pubilc/activetop.html" afterPath="$PROJECT_DIR$/www_ipad/modules/pubilc/activetop.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/user/contact.html" afterPath="$PROJECT_DIR$/www_ipad/modules/user/contact.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/user/myorder.js" afterPath="$PROJECT_DIR$/www_ipad/modules/user/myorder.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/www/activities/css/activities-examinationTime.css" afterPath="$PROJECT_DIR$/www/activities/css/examinationTime.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/www/activities/css/activities-public.css" afterPath="$PROJECT_DIR$/www/activities/css/public.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/www_ipad/activities/css/activities-examinationTime.css" afterPath="$PROJECT_DIR$/www_ipad/activities/css/examinationTime.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/www_ipad/activities/css/activities-public.css" afterPath="$PROJECT_DIR$/www_ipad/activities/css/public.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www_ipad/modules/user/set.html" afterPath="$PROJECT_DIR$/www_ipad/modules/user/set.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/www/activities/css/Germany.css" afterPath="$PROJECT_DIR$/www/activities/css/outFramework/Germany.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/www/activities/css/HighSchools.css" afterPath="$PROJECT_DIR$/www/activities/css/outFramework/HighSchools.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/www/activities/css/accountant.css" afterPath="$PROJECT_DIR$/www/activities/css/outFramework/accountant.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/www/activities/css/cetMultilingual.css" afterPath="$PROJECT_DIR$/www/activities/css/inline/cetMultilingual.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/www/activities/css/examinationTime.css" afterPath="$PROJECT_DIR$/www/activities/css/inline/examinationTime.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/www/activities/css/fourFoldCarnival.css" afterPath="$PROJECT_DIR$/www/activities/css/inline/fourFoldCarnival.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/www/activities/css/french.css" afterPath="$PROJECT_DIR$/www/activities/css/outFramework/french.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/www/activities/css/invitefriends.css" afterPath="$PROJECT_DIR$/www/activities/css/inline/invitefriends.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/www/activities/css/japanese.css" afterPath="$PROJECT_DIR$/www/activities/css/outFramework/japanese.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/www/activities/css/korean.css" afterPath="$PROJECT_DIR$/www/activities/css/outFramework/korean.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/www/activities/css/multilingual.css" afterPath="$PROJECT_DIR$/www/activities/css/inline/multilingual.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/www/activities/css/oneBuy.css" afterPath="$PROJECT_DIR$/www/activities/css/inline/oneBuy.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/www/activities/css/primarySchool.css" afterPath="$PROJECT_DIR$/www/activities/css/outFramework/primarySchool.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/www/activities/css/russian.css" afterPath="$PROJECT_DIR$/www/activities/css/outFramework/russian.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/www/activities/css/spanish.css" afterPath="$PROJECT_DIR$/www/activities/css/outFramework/spanish.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/www/activities/css/studyRussian.css" afterPath="$PROJECT_DIR$/www/activities/css/outFramework/studyRussian.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/www/activities/css/teacherteam.css" afterPath="$PROJECT_DIR$/www/activities/css/inline/teacherteam.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/www/css/freexf-0d12eba003.bundle.css" afterPath="$PROJECT_DIR$/www/css/freexf-0bfdb55625.bundle.css" />
     </list>
     <ignored path="mobile_freexf.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -189,102 +320,90 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="korean.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/activities/201609/korean.html">
+      <file leaf-file-name="sharevolume.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/modules/user/sharevolume.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5607">
-              <caret line="267" column="57" selection-start-line="267" selection-start-column="7" selection-end-line="267" selection-end-column="57" />
+            <state relative-caret-position="621">
+              <caret line="96" column="41" selection-start-line="96" selection-start-column="41" selection-end-line="96" selection-end-column="41" />
+              <folding>
+                <element signature="e#0#46#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sharevolume.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/modules/user/sharevolume.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="945">
+              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="setAppParam.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/activities/201609/setAppParam.js">
+      <file leaf-file-name="index.aspx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/index.aspx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1554">
-              <caret line="74" column="33" selection-start-line="74" selection-start-column="33" selection-end-line="74" selection-end-column="33" />
+            <state relative-caret-position="1722">
+              <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="french.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/activities/201609/french.html">
+      <file leaf-file-name="services.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/services.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="40" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="japanese.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/activities/201609/japanese.html">
+      <file leaf-file-name="home.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/modules/home/home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4494">
-              <caret line="214" column="63" selection-start-line="214" selection-start-column="8" selection-end-line="214" selection-end-column="63" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1479345967356" expanded="true" signature="4143:4183" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sharevolume.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/css/sharevolume.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1134">
+              <caret line="54" column="9" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spanish.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/activities/201609/spanish.html">
+      <file leaf-file-name="course.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/css/course.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="16" column="2" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="40" />
+            <state relative-caret-position="11130">
+              <caret line="530" column="33" selection-start-line="530" selection-start-column="33" selection-end-line="530" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="russian.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/activities/201609/russian.html">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/www/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2184">
-              <caret line="104" column="33" selection-start-line="104" selection-start-column="33" selection-end-line="104" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Germany.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/www/activities/201609/Germany.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="examinationTime.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/activities/201608/examinationTime.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1092">
-              <caret line="52" column="17" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="korean.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/activities/201609/korean.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="multilingual.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/activities/201609/multilingual.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1092">
-              <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="54" selection-end-column="6" />
-              <folding />
+            <state relative-caret-position="651">
+              <caret line="270" column="40" selection-start-line="270" selection-start-column="40" selection-end-line="270" selection-end-column="40" />
+              <folding>
+                <marker date="1481857717424" expanded="true" signature="4209:4234" ph="..." />
+                <marker date="1481857717424" expanded="true" signature="10027:10043" ph="..." />
+                <marker date="1481857717424" expanded="true" signature="17227:17302" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -294,9 +413,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="JavaScript File" />
         <option value="CSS File" />
-        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -306,57 +425,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/www_ipad/directive.js" />
-        <option value="$PROJECT_DIR$/www/modules/course/coursesearch.html" />
-        <option value="$PROJECT_DIR$/www/modules/home/home.html" />
-        <option value="$PROJECT_DIR$/www/activities/css/activities-3e1d92da0f.bundle.css" />
-        <option value="$PROJECT_DIR$/gulpfile.js" />
-        <option value="$PROJECT_DIR$/www_ipad/config.js" />
-        <option value="$PROJECT_DIR$/www/config.js" />
-        <option value="$PROJECT_DIR$/www/css/home.css" />
-        <option value="$PROJECT_DIR$/www/activities/201609/universalClass.html" />
-        <option value="$PROJECT_DIR$/www/activities/css/universalClass.css" />
-        <option value="$PROJECT_DIR$/www/activities/201609/universalClass.js" />
-        <option value="$PROJECT_DIR$/www/activities/201609/primarySchool.js" />
-        <option value="$PROJECT_DIR$/www/lib/jquery/dist/jquery.js" />
-        <option value="$PROJECT_DIR$/www/activities/201609/primarySchool.html" />
-        <option value="$PROJECT_DIR$/www/modules/course/coursedetail.html" />
-        <option value="$PROJECT_DIR$/www/activities/css/primarySchool.css" />
+        <option value="$PROJECT_DIR$/www/activities/201610/oneBuy.html" />
+        <option value="$PROJECT_DIR$/www/activities/css/inline/teacherteam.css" />
+        <option value="$PROJECT_DIR$/www/activities/201610/studyRussian.html" />
         <option value="$PROJECT_DIR$/www/activities/201610/primarySchool.html" />
-        <option value="$PROJECT_DIR$/www/modules/course/classmodule.html" />
-        <option value="$PROJECT_DIR$/www/modules/course/courseplate.js" />
-        <option value="$PROJECT_DIR$/www/modules/course/courseplate.html" />
-        <option value="$PROJECT_DIR$/www_ipad/app.js" />
-        <option value="$PROJECT_DIR$/www/css/freexf.css" />
-        <option value="$PROJECT_DIR$/www/modules/user/login.js" />
-        <option value="$PROJECT_DIR$/www/modules/user/register.js" />
-        <option value="$PROJECT_DIR$/www/modules/user/registermodal.html" />
-        <option value="$PROJECT_DIR$/www/modules/user/loginmodal.html" />
-        <option value="$PROJECT_DIR$/www/activities/201611/fourFoldCarnival.js" />
-        <option value="$PROJECT_DIR$/www_ipad/index.aspx" />
-        <option value="$PROJECT_DIR$/www/index.aspx" />
         <option value="$PROJECT_DIR$/www/activities/201611/fourFoldCarnival.html" />
-        <option value="$PROJECT_DIR$/www/activities/css/fourFoldCarnival.css" />
-        <option value="$PROJECT_DIR$/www/activities/201609/microClass.html" />
-        <option value="$PROJECT_DIR$/www/activities/201608/koreanlanguage.html" />
-        <option value="$PROJECT_DIR$/www/activities/201608/koreanlanguage.js" />
-        <option value="$PROJECT_DIR$/www/activities/201608/examinationTime.js" />
-        <option value="$PROJECT_DIR$/www/activities/201609/microClass.js" />
-        <option value="$PROJECT_DIR$/www/activities/201609/teacherteam.html" />
-        <option value="$PROJECT_DIR$/www/activities/201609/teacherteam.js" />
-        <option value="$PROJECT_DIR$/www/activities/201610/cetMultilingual.js" />
-        <option value="$PROJECT_DIR$/www/activities/201610/cetMultilingual.html" />
-        <option value="$PROJECT_DIR$/www/activities/201609/multilingual.js" />
-        <option value="$PROJECT_DIR$/www/activities/201609/multilingual.html" />
-        <option value="$PROJECT_DIR$/www/activities/201608/examinationTime.html" />
-        <option value="$PROJECT_DIR$/www/app.js" />
-        <option value="$PROJECT_DIR$/www/activities/201609/korean.html" />
-        <option value="$PROJECT_DIR$/www/activities/201609/setAppParam.js" />
-        <option value="$PROJECT_DIR$/www/activities/201609/french.html" />
-        <option value="$PROJECT_DIR$/www/activities/201609/japanese.html" />
-        <option value="$PROJECT_DIR$/www/activities/201609/spanish.html" />
-        <option value="$PROJECT_DIR$/www/activities/201609/russian.html" />
+        <option value="$PROJECT_DIR$/www/activities/201611/Double12FiveFold.html" />
+        <option value="$PROJECT_DIR$/www/activities/css/inline/Double12FiveFold.css" />
         <option value="$PROJECT_DIR$/www/activities/201609/Germany.html" />
+        <option value="$PROJECT_DIR$/www/activities/201609/accountant.html" />
+        <option value="$PROJECT_DIR$/www/activities/201608/invitefriends.html" />
+        <option value="$PROJECT_DIR$/www/activities/201611/lotteryDouble11.html" />
+        <option value="$PROJECT_DIR$/www/activities/201609/multilingual.html" />
+        <option value="$PROJECT_DIR$/www/activities/201609/teacherteam.html" />
+        <option value="$PROJECT_DIR$/www/activities/201611/liveCalendar.html" />
+        <option value="$PROJECT_DIR$/www/activities/201611/starStudent.html" />
+        <option value="$PROJECT_DIR$/www/activities/201609/microClass.html" />
+        <option value="$PROJECT_DIR$/www/activities/201608/classLearning.html" />
+        <option value="$PROJECT_DIR$/www/activities/201609/microClass.js" />
+        <option value="$PROJECT_DIR$/www/activities/201609/setAppParam.js" />
+        <option value="$PROJECT_DIR$/www/modules/pubilc/tabs.html" />
+        <option value="$PROJECT_DIR$/www/modules/course/coursesearch.html" />
+        <option value="$PROJECT_DIR$/www/modules/user/login.js" />
+        <option value="$PROJECT_DIR$/www/activities/201608/examinationTime.js" />
+        <option value="$PROJECT_DIR$/www/activities/201611/invitation.js" />
+        <option value="$PROJECT_DIR$/www/modules/user/coupon.js" />
+        <option value="$PROJECT_DIR$/www/modules/user/coupon.html" />
+        <option value="$PROJECT_DIR$/www/modules/liveLesson/liveHome.html" />
+        <option value="$PROJECT_DIR$/www/modules/liveLesson/liveHome.js" />
+        <option value="$PROJECT_DIR$/www/index.aspx" />
+        <option value="$PROJECT_DIR$/www/modules/liveLesson/livecoursedetail.html" />
+        <option value="$PROJECT_DIR$/www/modules/liveLesson/livecoursedetail.js" />
+        <option value="$PROJECT_DIR$/www/css/member.css" />
+        <option value="$PROJECT_DIR$/gulpfile.js" />
+        <option value="$PROJECT_DIR$/www/modules/home/home.html" />
+        <option value="$PROJECT_DIR$/www/modules/student/member.html" />
+        <option value="$PROJECT_DIR$/www/modules/student/member.js" />
+        <option value="$PROJECT_DIR$/www/css/user.css" />
+        <option value="$PROJECT_DIR$/www/modules/user/myaccount.html" />
+        <option value="$PROJECT_DIR$/www_ipad/app.js" />
+        <option value="$PROJECT_DIR$/www/modules/course/coursedetail.js" />
+        <option value="$PROJECT_DIR$/www/modules/course/coursedetail.html" />
+        <option value="$PROJECT_DIR$/www/activities/201609/lottery.js" />
+        <option value="$PROJECT_DIR$/www/modules/pay/pay.js" />
+        <option value="$PROJECT_DIR$/www/modules/pay/pay.html" />
+        <option value="$PROJECT_DIR$/www/css/sharevolume.css" />
+        <option value="$PROJECT_DIR$/www/config.js" />
+        <option value="$PROJECT_DIR$/www/dist/js/lib/concat/freexf-b7e5d9eef7.bundle.js" />
+        <option value="$PROJECT_DIR$/www/css/course.css" />
+        <option value="$PROJECT_DIR$/www/modules/user/sharevolume.html" />
+        <option value="$PROJECT_DIR$/www/modules/user/sharevolume.js" />
+        <option value="$PROJECT_DIR$/www/app.js" />
       </list>
     </option>
   </component>
@@ -397,7 +516,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -430,75 +549,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="activities" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="activities" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="201609" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="activities" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="201608" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="F:/xiangmu/website_www.yuyun.me" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
@@ -526,19 +583,19 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\FreeXFDevelop\website\m\mobile\www\activities\201609" />
-      <recent name="F:\FreeXFDevelop\website\m\mobile\www\activities\img\fourFoldCarnival" />
-      <recent name="F:\FreeXFDevelop\website\m\mobile\www\activities\css" />
-      <recent name="F:\FreeXFDevelop\website\m\mobile\www\activities\201611" />
-      <recent name="F:\FreeXFDevelop\website\m\mobile\www\modules\user" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\FreeXFDevelop\website\m\mobile\www\activities\201610" />
-      <recent name="F:\FreeXFDevelop\website\m\mobile\www_ipad\activities\201609" />
-      <recent name="F:\FreeXFDevelop\website\m\mobile\www\activities\img\classlearning" />
-      <recent name="F:\FreeXFDevelop\website\m\mobile\www_ipad\activities\img\classlearning" />
-      <recent name="F:\FreeXFDevelop\website\m\mobile\www" />
+      <recent name="F:\FreeXFDevelop\website\m\mobile\www\lib\ionic" />
+      <recent name="F:\FreeXFDevelop\website\m\mobile\www\activities\css\inline" />
+      <recent name="F:\FreeXFDevelop\website\m\mobile\www\activities\css\outFramework" />
+      <recent name="F:\FreeXFDevelop\website\m\mobile\www\activities\css" />
+      <recent name="F:\FreeXFDevelop\website\m\mobile\www\img\home" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\FreeXFDevelop\website\m\mobile\www\img\shareVolume" />
+      <recent name="F:\FreeXFDevelop\website\m\mobile\www\img\user" />
+      <recent name="F:\FreeXFDevelop\website\m\mobile\www\activities\img\Double12FiveFold" />
+      <recent name="F:\FreeXFDevelop\website\m\mobile\www\css" />
+      <recent name="F:\FreeXFDevelop\website\m\mobile\www\activities\css" />
     </key>
   </component>
   <component name="RunManager">
@@ -728,34 +785,78 @@
       <workItem from="1477893049327" duration="26906000" />
       <workItem from="1477989477944" duration="9030000" />
       <workItem from="1478053356577" duration="83000" />
+      <workItem from="1478501008486" duration="1575000" />
+      <workItem from="1478505658723" duration="13291000" />
+      <workItem from="1478589545075" duration="18017000" />
+      <workItem from="1478741520706" duration="11053000" />
+      <workItem from="1479086379037" duration="1206000" />
+      <workItem from="1479089049031" duration="29877000" />
+      <workItem from="1479266483680" duration="37171000" />
+      <workItem from="1479691837579" duration="11823000" />
+      <workItem from="1479782430705" duration="22050000" />
+      <workItem from="1480058418287" duration="7917000" />
+      <workItem from="1480296835699" duration="22483000" />
+      <workItem from="1480555150080" duration="7062000" />
+      <workItem from="1480660602945" duration="228000" />
+      <workItem from="1480660941478" duration="2043000" />
+      <workItem from="1480663038303" duration="7409000" />
+      <workItem from="1480902186636" duration="2003000" />
+      <workItem from="1480993725327" duration="9713000" />
+      <workItem from="1481073880497" duration="1605000" />
+      <workItem from="1481162541675" duration="17198000" />
+      <workItem from="1481247165325" duration="18028000" />
+      <workItem from="1481506104098" duration="11821000" />
+      <workItem from="1481592814819" duration="25693000" />
+      <workItem from="1481679528876" duration="25196000" />
+      <workItem from="1481765267023" duration="11222000" />
+      <workItem from="1481851253386" duration="3915000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1665123000" />
+    <option name="totallyTimeSpent" value="1984722000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20916754" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2065332" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40760297" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40760297" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2065332" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -775,368 +876,357 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/www/modules/course/coursedetail.html">
+    <entry file="file://$PROJECT_DIR$/www/modules/liveLesson/liveHome.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="190" column="57" selection-start-line="190" selection-start-column="57" selection-end-line="190" selection-end-column="57" />
+        <state relative-caret-position="504">
+          <caret line="86" column="12" selection-start-line="86" selection-start-column="12" selection-end-line="86" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/course/coursedetail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="94" column="73" selection-start-line="94" selection-start-column="67" selection-end-line="94" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/course/coursegroup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-63">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/user/login.html">
+    <entry file="file://$PROJECT_DIR$/www/modules/user/mycoursenote.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/course/coursegroup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/user/myorder.js">
+    <entry file="file://$PROJECT_DIR$/www/modules/user/mycoursementoring.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/user/myorder.html">
+    <entry file="file://$PROJECT_DIR$/www/modules/user/mycourse.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www_ipad/directive.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="172" column="64" selection-start-line="172" selection-start-column="56" selection-end-line="172" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www_ipad/services.js">
+    <entry file="file://$PROJECT_DIR$/www/modules/user/mycollection.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/css/freexf.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1449">
-          <caret line="69" column="27" selection-start-line="69" selection-start-column="27" selection-end-line="69" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/user/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/activities/201610/primarySchool.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="26" column="16" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/activities/201610/HighSchools.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="67" column="27" selection-start-line="67" selection-start-column="27" selection-end-line="67" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/user/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="50" column="38" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/user/register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="145" column="24" selection-start-line="145" selection-start-column="24" selection-end-line="145" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/user/registermodal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="50" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/modules/user/loginmodal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/activities/201609/accountant.html">
+    <entry file="file://$PROJECT_DIR$/www/modules/student/mycourses.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/activities/img/fourFoldCarnival/banner.png">
+    <entry file="file://$PROJECT_DIR$/www/modules/student/myorder.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/css/member.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2310">
+          <caret line="110" column="30" selection-start-line="110" selection-start-column="22" selection-end-line="110" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/img/user/pay.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/activities/img/fourFoldCarnival/yuanjiao.png">
+    <entry file="file://$PROJECT_DIR$/www/img/user/login-clues-3x.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/activities/img/fourFoldCarnival/haoke.png">
+    <entry file="file://$PROJECT_DIR$/www/img/shareVolume/icon3@3x.png" />
+    <entry file="file://$PROJECT_DIR$/www/img/shareVolume/select.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/activities/201609/lottery.html">
+    <entry file="file://$PROJECT_DIR$/www/img/practiceExam/icon-right.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/img/practiceExam/icon-reset.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/img/practiceExam/icon-backlist.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/img/practiceExam/icon- analysis.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/modules/liveLesson/livecoursedetail.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="54" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="54" />
+        <state relative-caret-position="525">
+          <caret line="25" column="58" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="58" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/activities/201609/lottery.js">
+    <entry file="file://$PROJECT_DIR$/www/dist/js/lib/ionic-ca983f64fc.bundle.js" />
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/activities/201611/fourFoldCarnival.js">
+    <entry file="file://$PROJECT_DIR$/www/lib/ionic/js/ionic.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/lib/ionic/version.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/www/dist/js/lib/restangular-da4e58139e.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1724">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/dist/js/lib/concat/freexf-2c16b3b374.bundle.js" />
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4095">
+          <caret line="197" column="31" selection-start-line="197" selection-start-column="31" selection-end-line="197" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/modules/user/register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1260">
+          <caret line="60" column="68" selection-start-line="60" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/modules/user/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="579">
+          <caret line="72" column="27" selection-start-line="72" selection-start-column="6" selection-end-line="72" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/modules/home/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="658">
+          <caret line="211" column="10" selection-start-line="211" selection-start-column="10" selection-end-line="211" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/modules/student/member.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1239">
+          <caret line="59" column="41" selection-start-line="59" selection-start-column="41" selection-end-line="59" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/css/user.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="32" column="32" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/modules/user/myaccount.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/modules/course/coursegroup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/modules/student/member.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1428">
+          <caret line="68" column="55" selection-start-line="68" selection-start-column="42" selection-end-line="68" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/www_ipad/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="722" column="70" selection-start-line="722" selection-start-column="70" selection-end-line="722" selection-end-column="91" />
+        <state relative-caret-position="424">
+          <caret line="71" column="11" selection-start-line="71" selection-start-column="11" selection-end-line="71" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/modules/course/coursedetail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9261">
+          <caret line="486" column="21" selection-start-line="486" selection-start-column="11" selection-end-line="486" selection-end-column="21" />
           <folding>
-            <element signature="e#5047#10606#0" expanded="false" />
-            <marker date="1477535752224" expanded="true" signature="11931:11947" ph="..." />
+            <element signature="e#15120#16814#0" expanded="false" />
+            <marker date="1481704934462" expanded="true" signature="15643:15683" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www_ipad/index.aspx">
+    <entry file="file://$PROJECT_DIR$/www/modules/course/coursedetail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="49" column="8" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
+        <state relative-caret-position="5796">
+          <caret line="276" column="77" selection-start-line="276" selection-start-column="77" selection-end-line="276" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/activities/201609/lottery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2583">
+          <caret line="123" column="39" selection-start-line="123" selection-start-column="39" selection-end-line="123" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/modules/pay/pay.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1071">
+          <caret line="110" column="26" selection-start-line="110" selection-start-column="26" selection-end-line="110" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/modules/pay/pay.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2436">
+          <caret line="116" column="46" selection-start-line="116" selection-start-column="46" selection-end-line="116" selection-end-column="46" />
+          <folding>
+            <element signature="n#style#0;n#span#1;n#div#2;n#div#0;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/services.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/dist/js/lib/concat/freexf-b7e5d9eef7.bundle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/lib/ionic/js/ionic.bundle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="53010" column="9" selection-start-line="0" selection-start-column="0" selection-end-line="67582" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/modules/home/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1479345967356" expanded="true" signature="4143:4183" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/index.aspx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="43" column="46" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
+        <state relative-caret-position="1722">
+          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/activities/201611/fourFoldCarnival.html">
+    <entry file="file://$PROJECT_DIR$/www/css/sharevolume.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+        <state relative-caret-position="1134">
+          <caret line="54" column="9" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/activities/css/fourFoldCarnival.css">
+    <entry file="file://$PROJECT_DIR$/www/css/course.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="691">
-          <caret line="58" column="19" selection-start-line="58" selection-start-column="19" selection-end-line="58" selection-end-column="19" />
+        <state relative-caret-position="11130">
+          <caret line="530" column="33" selection-start-line="530" selection-start-column="33" selection-end-line="530" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/activities/201610/primarySchool.html">
+    <entry file="file://$PROJECT_DIR$/appweb/lib/ionic/js/angular/angular.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="71" column="24" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="24" />
+        <state relative-caret-position="-1466">
+          <caret line="18719" column="0" selection-start-line="18719" selection-start-column="0" selection-end-line="18719" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/activities/201609/microClass.html">
+    <entry file="file://$PROJECT_DIR$/www/modules/user/sharevolume.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="81" selection-start-line="15" selection-start-column="75" selection-end-line="15" selection-end-column="81" />
+        <state relative-caret-position="945">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/activities/201608/examinationTime.js">
+    <entry file="file://$PROJECT_DIR$/www/modules/user/sharevolume.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="63" selection-end-column="8" />
+        <state relative-caret-position="621">
+          <caret line="96" column="41" selection-start-line="96" selection-start-column="41" selection-end-line="96" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#46#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/activities/201608/koreanlanguage.html">
+    <entry file="file://$PROJECT_DIR$/www/lib/ionic/js/ionic-angular.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="81" selection-start-line="16" selection-start-column="81" selection-end-line="16" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/activities/201609/microClass.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="34" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/activities/201608/koreanlanguage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="92" selection-start-line="3" selection-start-column="78" selection-end-line="3" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/activities/201610/cetMultilingual.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="23" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/activities/201610/cetMultilingual.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="70" selection-start-line="16" selection-start-column="70" selection-end-line="16" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/activities/201609/teacherteam.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2100">
-          <caret line="100" column="87" selection-start-line="100" selection-start-column="65" selection-end-line="100" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/activities/201609/multilingual.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2625">
-          <caret line="125" column="40" selection-start-line="125" selection-start-column="40" selection-end-line="125" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/activities/201609/teacherteam.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="100" column="49" selection-start-line="100" selection-start-column="41" selection-end-line="100" selection-end-column="49" />
+        <state relative-caret-position="168">
+          <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-615">
-          <caret line="221" column="33" selection-start-line="221" selection-start-column="33" selection-end-line="221" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/activities/201609/multilingual.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1092">
-          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="54" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/activities/201609/korean.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/activities/201608/examinationTime.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1092">
-          <caret line="52" column="17" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/activities/201609/korean.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5607">
-          <caret line="267" column="57" selection-start-line="267" selection-start-column="7" selection-end-line="267" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/activities/201609/setAppParam.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1554">
-          <caret line="74" column="33" selection-start-line="74" selection-start-column="33" selection-end-line="74" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/activities/201609/french.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/activities/201609/russian.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2184">
-          <caret line="104" column="33" selection-start-line="104" selection-start-column="33" selection-end-line="104" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/activities/201609/spanish.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="2" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/activities/201609/japanese.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4494">
-          <caret line="214" column="63" selection-start-line="214" selection-start-column="8" selection-end-line="214" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/activities/201609/Germany.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-          <folding />
+        <state relative-caret-position="651">
+          <caret line="270" column="40" selection-start-line="270" selection-start-column="40" selection-end-line="270" selection-end-column="40" />
+          <folding>
+            <marker date="1481857717424" expanded="true" signature="4209:4234" ph="..." />
+            <marker date="1481857717424" expanded="true" signature="10027:10043" ph="..." />
+            <marker date="1481857717424" expanded="true" signature="17227:17302" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

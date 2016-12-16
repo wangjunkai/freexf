@@ -36,6 +36,7 @@
   -moz-box-shadow: 0 0 1px #17a14b;
   box-shadow: 0 0 1px #17a14b;
   margin-top: 35px;
+  padding: 0;
 }
 
 .MyAcc-title span {
@@ -366,7 +367,7 @@
   background-color: #EA4C00 !important;
 }
 
-.MyAcc-title span:first-child:after {
+.MyAcc-title span:not(:last-child):after {
   content: '';
   height: 20px;
   border-right: 1px solid rgba(255, 255, 255, 0.4);

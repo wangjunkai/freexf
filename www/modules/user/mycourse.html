@@ -19,13 +19,13 @@
             <div class="OrderDetail" ng-init="isExpired=(m.DaysRemaining==0)?true:false">
               <div class="courseDetail-list" ng-click="goStudy(m.ProductId,1,m.Lstatus&&isExpired);">
                 <div class="image" ng-class="{floor:isExpired,soldout:m.Lstatus&&isExpired}">
-                  <img ng-src="{{m.cover}}" width="100%" alt="{{m.ClassName}}">
+                  <img ng-src="{{m.Image}}" width="100%" alt="{{m.ProductName}}">
                 </div>
                 <div class="courseDetail-words">
-                  <h2>{{m.ClassName}}</h2>
+                  <h2>{{m.ProductName}}</h2>
                   <div class="courseList">
-                    <p class="name" ng-show="m.teachername">•&nbsp;讲师<i>{{m.teachername}}</i></p>
-                    <span class="count">•&nbsp;<i>{{m.ClassHours}}</i>课时</span>
+                    <p class="name" ng-show="m.teachername">•&nbsp;讲师<i>{{m.TeacherName}}</i></p>
+                    <span class="count">•&nbsp;<i>{{m.Hour}}</i>课时</span>
                     <p class="xf">•<span>{{m.SetOrderTime|dateshow}}</span>-<span>&nbsp;{{m.Deadline|dateshow}}</span></p>
                   </div>
                 </div>
@@ -39,12 +39,14 @@
                 </div>
                 <div class="progress-bar">
                   <div class="full" ng-init="validity=m.validity=='0'?1:m.validity">
-                    <span style="width:{{(m.DaysRemaining/validity)*100}}%;" class="finish days"></span>
+                    <span style="width:{{(m.DaysRemaining/m.Validity)*100}}%;" class="finish days"></span>
                   </div>
                   <span id="isFinishDay">剩余天数<i>{{m.DaysRemaining}}天</i></span>
                 </div>
               </div>
               <div class="btnGrounp">
+                <!--<button style="float: left;" class="button button-stable button-PartPaper" ng-if="m.IsPartPaper" ng-click="goPaperList('paperList',m.ProductId,'IsPartPaper',m.ProductName)">练习</button>
+                <button style="float: left;" class="button button-stable button-Paper" ng-if="m.IsPaper" ng-click="goPaperList('paperList',m.ProductId,'IsPaper',m.ProductName)">测试</button>-->
                 <button style="float: left;" class="button button-stable" ng-click="go('mycoursenote',m.ProductId)">笔记</button>
                 <button class="button button-assertive" ng-click="go('mycoursementoring',m.ProductId)">答疑</button>
               </div>

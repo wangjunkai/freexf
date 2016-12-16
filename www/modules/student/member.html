@@ -63,30 +63,29 @@
       </script>
 
 
-      <div class="MyAcc-title">
-        <span>已获得<font id="isMoney">{{myuser.money}}</font></span>
-        <span>待获得<font id="isNomoney">{{myuser.nomoney}}</font></span>
+      <div class="MyAcc-title row">
+        <span class="col-33">已获得<font id="isMoney">{{myuser.money}}</font></span>
+        <span class="col-33">待获得<font id="isNomoney">{{myuser.nomoney}}</font></span>
+        <span class="col-33">我的分享卷<font>{{myuser.volume}}</font></span>
       </div>
     </div>
     <div class="MyAcc-content">
-      <div class="mynav-group">
-        <a href="#/mycourse">
-          <div class="nav">
+      <div class="mynav-group row">
+        <a href="#/mycourse" class="nav col-25">
             <div class="nav-bar myCourse"></div>
             <p>我的课程</p>
-          </div>
         </a>
-        <a href="#/myorder">
-          <div class="nav">
+        <a href="#/myorder" class="nav col-25">
             <div class="nav-bar myOrder"></div>
             <p>我的订单</p>
-          </div>
         </a>
-        <a href="#/mycollection">
-          <div class="nav">
+        <a href="#/mycollection" class="nav col-25">
             <div class="nav-bar myCollection"></div>
             <p>我的收藏</p>
-          </div>
+        </a>
+        <a href="#/sharevolume" class="nav col-25">
+            <div class="nav-bar myVolume"></div>
+            <p>分享卷</p>
         </a>
       </div>
     </div>

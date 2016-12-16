@@ -1,6 +1,5 @@
 .practiceExam-test,
 .practiceExam-testNumber{background:#fff;padding:5px 3%;}
-.practiceExam-test{margin-bottom:5px;}
 .practiceExam-test h4,
 .practiceExam-test>div>div{font-size:17rem;margin-bottom:1em;}
 .practiceExam-test>div>div{position:relative;padding-left:1.5em;}
@@ -13,11 +12,11 @@
 .practiceExam-question li{line-height:2.4em;}
 .practiceExam-options li{display:inline-block;width:3em;height:3em;line-height:3em;text-align:center;border:1px #cccccc solid;margin:2em 1.5em 2em 0;}
 .practiceExam-options li.active{background:#1ab554;;color:#fff;border:none;}
-.practiceExam-textBtnGroup{position:relative;padding:0 1em;margin-bottom:2em;height: 35px;margin-top: 1em;}
-.practiceExam-textBtnGroup button:nth-child(2){position:absolute;right:1em;bottom:0;}
-.practiceExam-textBtnGroup button:last-of-type{position:absolute;right:1em;bottom:0;}
+.practiceExam-textBtnGroup{position:relative;height:75px;margin-bottom:5px;background:#fff;padding: 1.5em 3%;}
+.practiceExam-textBtnGroup button:nth-child(2){position:absolute;right:1em;bottom:1.5em;}
+.practiceExam-textBtnGroup button:last-of-type{position:absolute;right:1em;bottom:1.5em;}
 .practiceExam-textBtnGroup button{width:7em;height:2.5em;line-height:2.5em;border:1px #1ab554 solid;background:#fff;}
-.practiceExam-testNumber-title{position:relative;margin:1em 0 2em;}
+.practiceExam-testNumber-title{position:relative;margin:1em 0 1em;}
 .practiceExam-testNumber-title:after{width:6px;height:15px;background:#1ab554;content:"";position:absolute;left:-15px;top: 15%;}
 .practiceExam-testNumber-title p{font-size:17rem;position:relative;padding-left:3px;}
 .practiceExam-testNumber-title p:before{width:11px;height:11px;content:"";background:#1ab554;position:absolute;left:-14px;-webkit-transform:rotate(45deg);transform:rotate(45deg);bottom: 4px;}
@@ -100,3 +99,26 @@
 .practiceExam.active .popup .popup-buttons button.go-answer{
     background:#ea4c00;
 }
+/*Ω‚Œˆ*/
+.practiceExam-analysis{background:#fff;padding-bottom:0;}
+.practiceExam-test .practiceExam-analysis{width: 113%;margin-left: -10%;}
+.practiceExam-analysis .practiceExam-testNumber-title p:after{width:0;height:0;}
+.practiceExam-analysis .practiceExam-textBtnGroup{margin-bottom:0;}
+.practiceExam-analysis .practiceExam-testNumber h4{color:#1ab554;font-size: 14rem;line-height: 2em;}
+/*≤‚ ‘¡∑œ∞Õº±Í*/
+.mycourse .btnGrounp .button-PartPaper:before{width: 21px;height: 17px;background-position: 3px -90px;}
+.mycourse .btnGrounp .button-Paper:before{width: 20px;height: 17px;background-position: 0px -72px;}
+.mycourse .btnGrounp .button-stable.button-gopaper:before{width: 20px;height: 19px;background-position:1px -109px;}
+.mycourse .btnGrounp .button-stable.button-analy:before{width: 20px;height: 18px;background-position: -22px -73px;}
+.mycourse .btnGrounp .button-assertive.button-redo:before{width: 20px;height: 20px;background-position: 0px -111px;}
+/* ‘æÌ¡–±Ì*/
+.paper-list{background:#fff;width: 100%;box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);-moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);margin-bottom:5px;}
+.paper-list .paper{display: table;width: 100%;border-bottom:1px #B3B3B3 dashed;}
+.paper-list .paper:last-of-type{border-bottom:none;}
+.paper-list .paper-title{border-bottom:none;border-top:none;}
+.paper-list .paper .progress{border-top:1px solid #eee;padding: 0 3%;}
+.paper-list .paper-title .progress-bar{color:#333;font-size:12rem;width:84%;}
+.paper-list .paper-title .progress-bar:last-of-type{width:16%;text-align:right;color:#969696;}
+.paper-list .paper .paper-chapter .progress-bar{color:#333;font-size:13rem;}
+.paper-list .paper .paper-chapter{border-bottom:1px #B3B3B3 dashed;}
+.paper-list .paper .btnGrounp{margin-right: 3%;}

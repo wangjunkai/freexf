@@ -1,0 +1,317 @@
+﻿<style type="text/css">
+  .sixFoldCarnival {
+    background-color: #ffa8a7;
+  }
+
+  .sixFoldCarnival img {
+    vertical-align: middle;
+    width: 100%;
+  }
+
+  .sixFoldCarnival .title {
+    text-align: center;
+  }
+
+  .sixFoldCarnival .title img {
+    padding: 0;
+  }
+
+  .sixFoldCarnival .banner {
+    width: 100%;
+    padding: 0;
+  }
+
+  .sixFoldCarnival .banner-2 {
+    text-align: center;
+    padding: 10px;
+  }
+
+  .sixFoldCarnival .content {
+    padding: 15px;
+  }
+
+  .sixFoldCarnival .table {
+    background-color: #fff;
+    padding: 5px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+
+  .sixFoldCarnival .table-yingyu .freexf-col-detail img,
+  .sixFoldCarnival .table-kuaiji .freexf-col-detail img {
+    width: 50%;
+    float: left;
+    padding: 10px;
+  }
+
+  .sixFoldCarnival .table-zhongxiao .freexf-col-detail > div,
+  .sixFoldCarnival .table-duoyuzhong .freexf-col-detail > div {
+    float: left;
+    display: inline-block;
+    width: 33.333%;
+    padding: 10px;
+  }
+
+  .sixFoldCarnival .bottom {
+    padding: 0 5px;
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  .sixFoldCarnival .list-button {
+    background: url('./activities/img/sixFoldCarnival/yuanjiao.png') no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    color: #ff7763;
+    font-weight: bold;
+    padding: 5px 15px;
+    text-align: center;
+    display: inline-block;
+    width: 35%;
+  }
+
+  .sixFoldCarnival .foot-prize {
+    background-color: #fff;
+    margin-top: 50px;
+  }
+  .sixFoldCarnival .foot-prize .title {
+    padding:30px 0;
+  }
+  .sixFoldCarnival .foot-prize .rules {
+    margin-top: -5px;
+    padding: 10px 40px;
+    background-color: #fff;
+  }
+  .sixFoldCarnival .foot-prize > .title {
+    background: url('./activities/img/sixFoldCarnival/bodybg.png') no-repeat;
+    background-color: #ffa8a7;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+    padding-top: 50px;
+  }
+
+  .sixFoldCarnival .foot-prize > .title .jiangpin {
+    padding: 15px 60px 0 60px;
+    font-size: 10px;
+    text-align: right;
+    color: #ad2308;
+  }
+
+  .sixFoldCarnival .foot-prize .rules .title {
+    z-index: 1;
+    position: relative;
+  }
+
+  .sixFoldCarnival .foot-prize .rules .detail {
+    font-size: 14rem;
+    padding: 50px 20px;
+    border: 1px #ed2e34;
+    border-style: dotted;
+    border-radius: 40px;
+    position: relative;
+    margin-top: -50px;
+    z-index: 0;
+    line-height: 2em;
+    letter-spacing: 0.15em;
+  }
+
+  .sixFoldCarnival .title-huodong {
+    margin-top: 10px;
+    border-bottom: 1px dotted #ff6b56;
+    color: #ff6b56;
+    text-align: center;
+    font-size: 26rem;
+    line-height: 50px;
+  }
+
+  .more-jinxi {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 17rem;
+    color: #fff;
+    line-height: 2.5em;
+    background: rgba(0, 0, 0, .5);
+  }
+
+  .more-jinxi .close {
+    background-color: #fff;
+    position: absolute;
+    display: inline-block;
+    top: 3px;
+    right: 3px;
+    color: #000;
+    font-size: 16rem;
+    height: 15px;
+    width: 15px;
+    line-height: 15px;
+  }
+</style>
+<ion-view view-title="好课6折狂欢">
+  <ion-header-bar class="freexf-bar">
+    <div class="bar-left">
+      <a default-nav-back-button ng-click="goBack()" class="button-clear freexf-back freexf-left">
+        <i class="icon freexf-gohomeback"></i>
+      </a>
+    </div>
+    <div class="title">好课6折狂欢</div>
+  </ion-header-bar>
+  <ion-content delegate-handle="mainScroll" lazy-scroll class="has-header">
+    <div class="sixFoldCarnival">
+      <img class="banner" src="activities/img/sixFoldCarnival/banner@2x.png" alt="">
+      <div class="banner-2">
+        <img src="activities/img/sixFoldCarnival/title.png" alt="">
+      </div>
+      <div class="content">
+        <div class="list">
+          <div class="title">
+            <img src="activities/img/sixFoldCarnival/zhongxiaoxue.png" alt="">
+          </div>
+          <div class="table table-zhongxiao">
+            <div class="freexf-col-detail clearfix">
+              <div>
+                <img class="" ng-src="activities/img/sixFoldCarnival/wanlaoshi.png" alt="">
+              </div>
+              <div><img ng-click="goDetail('coursedetail',{ProductId: '084284722c9649e99467376746016d89'})"
+                        ng-src="activities/img/sixFoldCarnival/1@2x.png" alt=""></div>
+              <div>
+                <img ng-click="goDetail('coursedetail',{ProductId: '536e5e67b81442879a448ec6c9dd4658'})"
+                     ng-src="activities/img/sixFoldCarnival/2@2x.png" alt="">
+              </div>
+              <div>
+                <img ng-click="goDetail('coursedetail',{ProductId: '50fd0fe57c5841de8158a349fd6e6e63'})"
+                     ng-src="activities/img/sixFoldCarnival/3@2x.png" alt="">
+              </div>
+              <div>
+                <img ng-click="goDetail('coursedetail',{ProductId: '5583846da22c497dba607254c38746e7'})"
+                     ng-src="activities/img/sixFoldCarnival/4@2x.png" alt="">
+              </div>
+            </div>
+            <div class="freexf-col-detail clearfix" style="margin-top: 10px;">
+              <div><img style="float: left;" ng-src="activities/img/sixFoldCarnival/jialaoshi.png" alt=""></div>
+              <div><img ng-click="goDetail('coursedetail',{ProductId: '7a0ce779f4194cc2ae136d26ad7af9b5'})"
+                        ng-src="activities/img/sixFoldCarnival/5@2x.png" alt=""></div>
+              <div><img ng-click="goDetail('coursedetail',{ProductId: '51bfa75c1fb445cc97f4695cfa293a23'})"
+                        ng-src="activities/img/sixFoldCarnival/6@2x.png" alt=""></div>
+              <div><img ng-click="goDetail('coursedetail',{ProductId: '77485d75eae846b682705897af56ed9b'})"
+                        ng-src="activities/img/sixFoldCarnival/7@2x.png" alt=""></div>
+              <div><img ng-click="goDetail('coursedetail',{ProductId: 'e248f6ce89584c7f95b607046fd37f76'})"
+                        ng-src="activities/img/sixFoldCarnival/8@2x.png" alt=""></div>
+            </div>
+            <div class="bottom">
+              <a ng-click="goPlate({ Category1: '中小学' })" class="list-button">点击获取更多课程</a>
+            </div>
+          </div>
+
+        </div>
+        <div class="list">
+          <div class="title">
+            <img src="activities/img/sixFoldCarnival/duoyuzhong.png" alt="">
+          </div>
+          <div class="table table-duoyuzhong">
+            <div class="freexf-col-detail clearfix">
+              <div><img ng-click="goDetail('coursedetail',{ProductId: '4b45418d06fa4a57bd1888935483071a'})"
+                        ng-src="activities/img/sixFoldCarnival/9@2x.png" alt="">
+              </div>
+              <div><img ng-click="goDetail('coursedetail',{ProductId: '72b04609c88e474a8d20a6ccf9e78341'})"
+                        ng-src="activities/img/sixFoldCarnival/10@2x.png" alt="">
+              </div>
+              <div><img ng-click="goDetail('coursedetail',{ProductId: '7957f8e089e94d1281db0980b89fcffb'})"
+                        ng-src="activities/img/sixFoldCarnival/11@2x.png" alt=""></div>
+              <div><img ng-click="goDetail('coursedetail',{ProductId: 'e7144e6af52a41e4af6ff52a2c421073'})"
+                        ng-src="activities/img/sixFoldCarnival/12@2x.png" alt=""></div>
+              <div><img ng-click="goDetail('coursedetail',{ProductId: 'dc11d8c0b80c48bba1b9382801ede9ea'})"
+                        ng-src="activities/img/sixFoldCarnival/13@2x.png" alt=""></div>
+
+            </div>
+            <div class="bottom">
+              <a ng-click="goPlate({ Category1: '多语种' })" class="list-button">点击获取更多课程</a>
+            </div>
+          </div>
+
+        </div>
+        <div class="list">
+          <div class="title">
+            <img src="activities/img/sixFoldCarnival/yingyu.png" alt="">
+          </div>
+          <div class="table table-yingyu">
+            <div class="freexf-col-detail clearfix">
+              <img ng-click="goDetail('coursedetail',{ProductId: '3f9b0819eae74664a333f7e7b5a8b17f'})"
+                   ng-src="activities/img/sixFoldCarnival/14@2x.png" alt="">
+              <img ng-click="goDetail('coursedetail',{ProductId: 'b369caf1653a492b9e90494900d4bacd'})"
+                   ng-src="activities/img/sixFoldCarnival/15@2x.png" alt="">
+              <img ng-click="goDetail('coursedetail',{ProductId: '3cf9d285bad0484a95a674e46e0500d6'})"
+                   ng-src="activities/img/sixFoldCarnival/16@2x.png" alt="">
+              <img ng-click="goDetail('coursedetail',{ProductId: 'c0bf3ed733f548b7a6e8a480ce325214'})"
+                   ng-src="activities/img/sixFoldCarnival/17@2x.png" alt="">
+            </div>
+            <div class="bottom">
+              <a ng-click="goPlate({ Category1: '英语' })" class="list-button">点击获取更多课程</a>
+            </div>
+          </div>
+        </div>
+        <div class="list">
+          <div class="title">
+            <img src="activities/img/sixFoldCarnival/kuaiji.png" alt="">
+          </div>
+          <div class="table table-kuaiji ">
+            <div class="freexf-col-detail clearfix">
+              <img ng-click="goDetail('coursedetail',{ProductId: 'efbae01348724a539b876080826416ac'})"
+                   ng-src="activities/img/sixFoldCarnival/18@2x.png" alt="">
+              <img ng-click="goDetail('coursedetail',{ProductId: '0ec52858dcc242f491594d6cf72ad061'})"
+                   ng-src="activities/img/sixFoldCarnival/19@2x.png" alt="">
+              <img ng-click="goDetail('coursedetail',{ProductId: '378322b500964be0b1828f2d407e8ea3'})"
+                   ng-src="activities/img/sixFoldCarnival/20@2x.png" alt="">
+            </div>
+            <div class="bottom">
+              <a ng-click="goPlate({ Category1: '会计' })" class="list-button">点击获取更多课程</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="foot-prize">
+        <div class="title">
+          <img style="margin-top: 30px;" src="activities/img/sixFoldCarnival/shezhi.png" alt="">
+          <div class="jiangpin">
+            <img src="activities/img/sixFoldCarnival/jiangpin.png" alt="">
+            <p><img style="width: 25%;margin: 20px;" src="activities/img/sixFoldCarnival/zhongjiang.png" alt=""></p>
+          </div>
+        </div>
+        <div class="rules">
+          <div class="title">
+            <img style="width: 35%;" src="activities/img/sixFoldCarnival/guize.png" alt="">
+          </div>
+          <p class="detail">
+            <strong>一.好课6折狂欢活动细则</strong>
+            <br>
+            1.活动时间：<span style="color: #f73319;">11月12号00:00--11月20号24:00</span>;
+            <br>
+            2.微课、语音课除外,其他课程全场<span style="color: #f73319;">6折</span>;
+            <br>
+            3.课程有效期结束后,返还金额以实付金额为准。
+            <br>
+            <strong>二.爱学习 赢iPhone7活动规则</strong>
+            <br>
+            1.活动时间：<span style="color: #f73319;">11月1号00:00--11月20号24:00</span>;
+              2.活动期间内累计购买两门课以上（含<span style="color: #ff8372;">两门</span>）的用户可获得一次抽奖机会，有机会获取<span style="color: #ff8372;">iphone7</span>，活动结束后学费全免网会于会于活动结束后（21日）于网站公布中奖名单用户。
+              <br />
+              3、课程有效期结束后，返还金额以实付金额为准。   
+              <br />
+
+              一切相关活动解释权归学费全免网所有
+          </p>
+        </div>
+        <div class="list">
+          <div class="title-huodong">更多活动</div>
+          <div style="margin: 0 20px;" class="table">
+            <a href="http://weibo.com/freexfcom">
+              <img style="width: 50%;float: left;" src="activities/img/sixFoldCarnival/weibo.png" alt="">
+            </a>
+            <img style="width: 50%;" src="activities/img/sixFoldCarnival/weixin.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

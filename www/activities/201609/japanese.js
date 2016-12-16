@@ -1,5 +1,5 @@
 ﻿$(function () {
-    //$('.japanese').css('font-size', $('body').width() / 35)
+    $('.japanese').css('font-size', $('body').width() / 35)
     var returnHeight = $('.return .text').height();
     $('.process-text .text').each(function () {
         $(this).height(returnHeight);

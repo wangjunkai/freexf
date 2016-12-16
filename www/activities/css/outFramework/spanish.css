@@ -1,0 +1,270 @@
+﻿*{
+    margin:0px;
+    padding:0px;
+}
+@media only screen and (max-width: 320px){.spanish{font-size: 9px;} }
+@media only screen and (min-width: 320px) and (max-width: 352px){.spanish{font-size: 10px;} }
+@media only screen and (min-width: 352px) and (max-width: 384px){.spanish{font-size: 11px;} }
+@media only screen and (min-width: 384px) and (max-width: 416px){.spanish{font-size: 12px;} }
+@media only screen and (min-width: 416px) and (max-width: 448px){.spanish{font-size: 13px;} }
+@media only screen and (min-width: 448px) and (max-width: 480px){.spanish{font-size: 14px;} }
+@media only screen and (min-width: 480px) and (max-width: 512px){.spanish{font-size: 15px;} }
+@media only screen and (min-width: 512px) and (max-width: 544px){.spanish{font-size: 16px;} }
+@media only screen and (min-width: 544px) and (max-width: 576px){.spanish{font-size: 17px;} }
+@media only screen and (min-width: 576px) and (max-width: 608px){.spanish{font-size: 18px;} }
+@media only screen and (min-width: 608px) and (max-width: 640px){.spanish{font-size: 19px;} }
+@media only screen and (min-width: 640px){.spanish{font-size: 20px;} }
+.spanish .head {
+    height: 24px;
+    background: #676ea2;
+}
+.spanish .head .logo {
+    float: left;
+    width: 76px;
+    height: 14px;
+    margin: 5px 10px;
+}
+.spanish .head .phone {
+    float: right;
+    margin-right: 5px;
+}
+.spanish .head .phone-icon {
+    width: 12px;
+    height: 11px;
+    vertical-align: middle;
+}
+.spanish .head .phone-num {
+    font-size: 1rem;
+    color: #fff;
+    line-height: 24px;
+    margin: 0 5px;
+    vertical-align: middle;
+}
+.spanish .banner img {
+    width: 100%;
+}
+.spanish .banner-text {
+    width: 95%;
+    color: #4c4c4c;
+    margin: 10px auto;
+    font-size: 1.1rem;
+    text-align: center;
+    line-height: 1.7em;
+}
+.spanish .process {
+    width: 95%;
+    margin: 20px auto;
+    overflow: auto;
+}
+.spanish .register,
+.spanish .buy,
+.spanish .study,
+.spanish .return {
+    width: 25%;
+    float: left;
+    margin: 0 auto;
+}
+.spanish .process-img {
+    text-align: center;
+    color: #676ea2;
+    margin: 10px 0;
+}
+.spanish .process img {
+    width: 45%;
+    display: block;
+    margin: 10px auto;
+}
+.spanish .register img {
+    width: 47%;
+}
+.spanish .buy img {
+    width: 43%;
+}
+.spanish .study img {
+    width: 39%;
+}
+.spanish .process-text {
+    width: 95%;
+    margin: 0 auto;
+    text-align: center;
+}
+.spanish .process-text .text {
+    color: #4c4c4c;
+    line-height: 1.7em;
+    padding: 5px 2px;
+    display: table-cell;
+    vertical-align: middle;
+}
+.spanish hr {
+    border: none;
+    border-bottom: 5px solid #dcdcdc;
+}
+.spanish .system {
+    width: 90%;
+    margin: 20px auto;
+}
+.spanish .system-content {
+    overflow: auto;
+}
+.spanish .system-content .img {
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+.spanish .system-content img {
+    width: 50%;
+    vertical-align: middle;
+}
+.spanish .system-content .system-text {
+    float: right;
+    color: #4c4c4c;
+    width: 70%;
+    border-bottom: 2px solid #d0d0d0;
+    padding: 5px;
+}
+.spanish .system-text.first {
+    border-top: 2px solid #d0d0d0;
+}
+.spanish .div-name {
+    color: #676ea2;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+}
+.spanish .ability {
+    width: 95%;
+    margin: 20px auto;
+}
+.spanish .div-title {
+    font-size: 1.5rem;
+    border-left: 2px solid #676ea2;
+    padding-left: 5px;
+    margin-bottom: 15px;
+}
+.spanish .course-img-left {
+    overflow: auto;
+    margin: 20px 0;
+}
+.spanish .course-img {
+    width: 47%;
+    float: left;
+}
+.spanish .course-img img {
+    width: 100%;
+    vertical-align: middle;
+}
+.spanish .course-msg {
+    width: 50%;
+    float: right;
+    position: relative;
+}
+.spanish .course-target {
+    color: #4c4c4c;
+    font-size: 1rem;
+    line-height: 1.5em;
+}
+.spanish .course-btn {
+    height: 30px;
+    width: 90%;
+    line-height: 30px;
+    font-size: 1.3rem;
+    background-image: url('../../img/spanish/button.png');
+    background-position: left;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    color: #fff;
+    text-align: center;
+    margin: 0 0 0 5px;
+    /*position: absolute;
+    bottom: 5px;*/
+    margin-top: 5%;
+}
+.spanish .course-btn a {
+    color: #fff;
+    text-decoration: none;
+}
+.spanish .course-more a {
+    color: #434343;
+    text-decoration: none;
+}
+.spanish .course-more {
+    margin: 50px 0 50px 0;
+    text-align: center;
+    background: url('../../img/spanish/class_more.png') center no-repeat;
+    background-size: 70%;
+    font-size: 1.3rem;
+    line-height: 2.5em;
+}
+.spanish .course-more a {
+    color: #fff;
+    text-decoration: none;
+    padding-left: 5%;
+}
+.spanish .teacher {
+    width: 90%;
+    margin: 20px auto;
+    overflow: hidden;
+}
+.spanish .teacher-title img {
+    width: 145px;
+    height: 14px;
+}
+.spanish .teacher .teacher-content {
+    margin-top: 10px;
+    white-space: nowrap;
+}
+.spanish .teacher .sigbox {
+    display:inline-block;
+    margin: 0 5px 0 5px;
+    text-align: center;
+}
+.spanish .teacher .sigbox .pic {
+    margin: 0 auto;
+    border: 2px solid #676ea2;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.spanish .teacher .sigbox span {
+    margin: 5px auto;
+    font-size: 1.2rem;
+}
+.spanish .activity {
+    margin: 0 auto;
+    padding: 20px 0;
+    overflow: auto;
+    border-bottom: 1px solid #676ea2;
+}
+.spanish .activity .img {
+    width: 92%;
+    margin: 0 auto;
+}
+.spanish .activity .weibo {
+    width: 49%;
+    float: left;
+    margin: 5% 0;
+}
+.spanish .activity .wechat {
+    width: 49%;
+    float: right;
+    margin: 5% 0;
+}
+.spanish .foot {
+    text-align: center;
+    margin: 10px auto;
+}
+.spanish a {
+    text-decoration: none;
+    display: block;
+}
+.spanish .foot img {
+    width: 33px;
+    height: 30px;
+    padding: 5px;
+    vertical-align: middle;
+}
+.spanish .foot span {
+    color: #676ea2;
+    font-size: 2rem;
+    padding: 5px;
+    vertical-align: middle;
+}

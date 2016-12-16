@@ -1,0 +1,69 @@
+﻿﻿
+<ion-modal-view ng-controller="lotteryDouble11_ctrl" view-title="双十一好礼来袭">
+    <ion-header-bar default-header-bar class="freexf-bar lightgray">
+        <div class="bar-left">
+            <button class="button-clear freexf-back freexf-left" ng-click="$modal._back()">
+                <i class="icon freexf-goback"></i>
+            </button>
+        </div>
+        <div class="title">双十一好礼来袭</div>
+    </ion-header-bar>
+    <ion-content class="has-header">
+        <div class="lottery">
+            <div class="olympic-banner" style="height:150px">
+            </div>
+            <p class="lotteryNum">你有{{loNum}}次机会</p>
+            <div class="lottery-box">
+                <img src="activities/img/lottery/bg-gif.gif" />
+                <div id="lottery">
+                    <div class="lottery-content">
+                        <ul class="lottery-col-1">
+                            <li class="lottery-unit lottery-unit-0">
+                            </li>
+                            <li class="lottery-unit lottery-unit-1">
+                                
+                            </li>
+                            <li class="lottery-unit lottery-unit-2">
+                                
+                            </li>
+                        </ul>
+                        <ul class="lottery-col-2">
+                            <li class="lottery-unit lottery-unit-7"></li>
+                            <li>
+                                <a ng-click="beginGo()"></a>
+                            </li>
+                            <li class="lottery-unit lottery-unit-3"></li>
+                        </ul>
+                        <ul class="lottery-col-3">
+                            <li class="lottery-unit lottery-unit-6">
+                               
+                            </li>
+                            <li class="lottery-unit lottery-unit-5"></li>
+                            <li class="lottery-unit lottery-unit-4">
+                               
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="lottery-bg"></div>
+                </div>
+            </div>
+            <div class="lottery-rule">
+                <h3>活动规则:</h3>
+                <p>1、仅限11.11当天购课用户；<br/>
+                    2、抽奖次数以实际购课金额为准，每200元一个档次，200元一次抽奖机会；<br />
+                    3、课程有效期结束后，返还金额以实付金额为准。</p>
+            </div>
+        </div>
+        <div class="lottery-dialog" ng-show="resultShow" ng-class="{lotterywinning:!Winning}">
+            <div ng-show="Winning">
+                <p>恭喜你，抽中了{{prize}},请联系在线客服确认相关信息，我们会于次日以短信/电话跟您确认中奖信息和邮寄地址。</p>
+                <img ng-src="{{resultImg}}" />
+                <button ng-click="Continue()">{{ContinueText}}</button>
+            </div>
+            <div ng-hide="Winning">
+                <img ng-src="{{resultImg}}" />
+                <button ng-click="Continue()">{{ContinueText}}</button>
+            </div>
+        </div>
+    </ion-content>
+</ion-modal-view>

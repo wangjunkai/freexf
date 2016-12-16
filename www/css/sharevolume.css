@@ -1,0 +1,234 @@
+.shareVolume-header-nav {
+  background: #fff;
+  color: #969696;
+  position: relative;
+  top: 44px;
+  z-index: 100;
+  line-height: 2em;
+  padding: 0;
+  text-align: center;
+}
+
+.shareVolume-header-nav .col.active {
+  color: #00a724;
+  border-bottom: 2px solid #00c32a;
+}
+
+.shareVolume-header-nav .col {
+
+}
+
+.shareVolume-share-button {
+  width: 50%;
+  margin: 30px auto;
+  text-align: center;
+  font-size: 16rem;
+  color: #fff;
+  background-color: #ff3300;
+  line-height: 3em;
+  border-radius: 3px;
+}
+
+.shareVolume-share-roll {
+  padding: 0 15px;
+}
+
+.shareVolume-share-roll img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+.shareVolume-share-roll .share-cell {
+  margin: 8px 0;
+  background-color: transparent;
+  position: relative;
+  color: #fff;
+  font-size: 12rem;
+}
+
+.shareVolume-share-roll .share-cell .mask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  z-index: 1;
+  top: 0;
+}
+
+.shareVolume-share-roll .share-cell .qita {
+  position: absolute;
+  height: 70%;
+  width: auto;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+}
+
+.shareVolume-share-roll .left {
+  width: 45%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  text-align: center;
+}
+
+.shareVolume-share-roll .left .xuefen {
+  width: 100%;
+  font-size: 14rem;
+}
+
+.shareVolume-share-roll .left .xuefen span {
+  font-size: 30rem;
+  margin-right: 5px;
+}
+
+.shareVolume-share-roll .left .riqi {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.shareVolume-share-roll .right {
+  position: absolute;
+  width: 55%;
+  min-width: 55%;
+  color: #9f9f9f;
+  top: 0;
+  bottom: 0;
+  margin: 5px 0 8px 45%;
+}
+
+.shareVolume-share-roll .right p {
+  margin: 2px 10px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.shareVolume-share-roll .shareVolume-use-button {
+  position: absolute;
+  bottom: 0;
+  width: 50%;
+  left: 50%;
+  margin-left: -25%;
+  text-align: center;
+  color: #72d397;
+  background-color: #fff;
+  border: 1px solid #72d397;
+  border-radius: 3px;
+  padding: 2px;
+}
+
+.shareVolume-share-roll .shareVolume-use-button.not-use {
+  background-color: #e6e6e6;
+  color: #9f9f9f;
+  border-color: #e6e6e6;
+  pointer-events: none;
+}
+
+.shareVolume-share-content p {
+  padding: 0;
+  margin: 5px 0;
+}
+
+.shareVolume-share-content .node {
+  text-align: left;
+  font-size: 10rem;
+  color: #ff7644;
+}
+
+.shareVolume-share-content .node.right {
+  text-align: right;
+}
+
+.shareVolume-share-content input[type=text],
+.shareVolume-share-content textarea {
+  font-size: 12rem;
+  border: 1px solid #cecece;
+  width: 100%;
+  text-indent: 0.5em;
+}
+
+.shareVolume-share-content textarea {
+  height: 5em;
+  color: #888888;
+  resize: none;
+  text-indent: 0;
+  padding: 5px 8px;
+}
+
+.shareVolume-share-content .popup-body {
+  padding: 15px 15px 0 15px;
+}
+
+.shareVolume-share-content .note,
+.shareVolume-share-content .volume {
+  font-size: 12rem;
+  color: #ababab;
+}
+
+.shareVolume-share-content .volume {
+  margin: 10px 0;
+}
+
+.shareVolume-share-content .volume-options {
+  text-align: justify;
+  font-size: 0;
+  line-height: 0;
+}
+.shareVolume-share-content .volume-options.pay-no-volume{
+  font-size: 12rem;
+  text-align: left;
+  height: 1.5em;
+  line-height: 1.5em;
+  color: #000;
+  margin-left: 5px;
+}
+.shareVolume-share-content .volume-option {
+  text-align: center;
+  padding: 7px;
+  border: 1px solid #cecece;
+  border-radius: 2px;
+  font-size: 16rem;
+  font-weight: 600;
+  width: 31%;
+  display: inline-block;
+  line-height: 1.5em;
+  color: #ff7644;
+}
+
+.shareVolume-share-content .volume-option span {
+  font-size: 10px;
+}
+
+.shareVolume-share-content .volume-option.active {
+  border-color: #1AB554;
+  background: url("../img/shareVolume/select.png") no-repeat;
+  -webkit-background-size: 35%;
+  background-size: 35%;
+  background-position: right bottom;
+}
+
+.shareVolume-share-content .volume-options:after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+}
+
+
+
+.shareVolume-share-content .e12 {
+  font-size: 12rem;
+  color: #ababab;
+}
+
+.shareVolume-share-content .b14 {
+  font-size: 14rem;
+  color: #000;
+}

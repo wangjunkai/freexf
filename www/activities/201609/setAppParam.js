@@ -19,6 +19,7 @@ function $ToDetailState() {
       coursedetail: this.app ? 'course' : 'coursedetail',
       courseplate: this.app ? 'course_list' : 'courseplate',
       telephone: this.app ? 'tele' : 'telephone',
+      register: this.app ? 'register' : 'register',
       Category1: 'Category1',
       Category2: 'Category2',
       Category3: 'Category3',
@@ -31,32 +32,8 @@ function $ToDetailState() {
     getParam: function () {
       return 'app' in getParam(location.search) ? getParam(location.search)['app'] : null
     },
-    initWebView: function () {
-      function connectWebViewJavascriptBridge(callback) {
-        var self = this;
-        if (window.WebViewJavascriptBridge) {
-          callback(WebViewJavascriptBridge)
-        } else {
-          document.addEventListener('WebViewJavascriptBridgeReady', function () {
-            callback(WebViewJavascriptBridge)
-          }, false);
-        }
-      }
-
-      connectWebViewJavascriptBridge.call(this, function (bridge) {
-        try {
-          bridge.init(function (message, responseCallback) {
-          });
-        } catch (e) {
-        }
-      });
-    },
     _GON: Object.getOwnPropertyNames,
     initParam: function (state, data) {
-      if (!data) {
-        data = state;
-        state = null;
-      }
       var newdata = {};
       var obj = {
         coursedetail: function (data) {
@@ -78,38 +55,42 @@ function $ToDetailState() {
           return this.app ? param.join('-') : encodeURIComponent(param.join('&'));
         }
       };
-      if (this.app && state) {
-        newdata = {type: this.map[state], param: obj[state].call(this, data)};
-      } else {
+      if(this.app){
+        if (state && data) {
+          newdata = {type: this.map[state], param: obj[state].call(this, data)};
+        } else {
+          newdata = {type: state, param: null};
+        }
+        newdata = JSON.stringify(newdata)
+      }else{
         newdata = obj[state].call(this, data);
       }
+
       return newdata;
     },
     goState: function (state, data) {
-      if (!data) {
-        data = state;
-        state = null;
-      }
-      if (!state)return;
       if (state && state == 'telephone') {
-        location.href = "tel:400-803-6611";
+          location.href = "tel:400-686-5511";
         return;
       }
-      location.href = '/mobile/www/index.aspx#/' + state + '/' + this.initParam(state, data);
+      location.href = '/mobile/www/index.aspx#/' + state + (data ? ('/' + this.initParam(state, data)) : '');
     },
     goApp: function (state, data) {
       var newdata = this.initParam(state, data);
       try {
-        window.WebViewJavascriptBridge.callHandler('HtmlToAndroid', newdata, function (responseData) {
-        });
+        if (this.app.toString() === '1') {
+          Android.onSubmit(newdata);
+        } else {
+          window.webkit.messageHandlers.onSubmit.postMessage(newdata);
+        }
       } catch (e) {
       }
+
     },
     connect: function () {
       if (!this.app) {
         return this.goState.bind(this);
       } else {
-        this.initWebView();
         return this.goApp.bind(this);
       }
     }
@@ -126,9 +107,11 @@ function goDetail(id) {
   appObj.go('coursedetail', {courseId: id});
 }
 function goList(param) {
-  appObj.go('courseplate', param)
+  appObj.go('courseplate', param);
 }
-
+function goregister() {
+  appObj.go('register');
+}
 function gotele() {
-  appObj.go('telephone', {telephone: '400-803-6611'})
+    appObj.go('telephone', { telephone: '400-686-5511' });
 }

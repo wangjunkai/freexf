@@ -34,10 +34,10 @@
             记住密码
           </div>
           <!--<div class="bg-img " style="background-position: -10px -10px;width: 30px;height: 30px;float: right;"></div>-->
-          <a class="freexf-font-13 freexf-right" href="#/forgetpassword" id="isHrefForget">忘记密码</a>
+          <a class="freexf-font-13 freexf-right" href="#/forgetpassword" ng-click="modal.closeModal('login')" id="isHrefForget">忘记密码</a>
         </div>
       </div>
-      <a href="#/register"  class="freexf-bottom-register">
+      <a ng-click="register()" class="freexf-bottom-register">
         还没有账号?点击注册!
       </a>
     </form>

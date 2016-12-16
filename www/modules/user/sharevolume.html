@@ -1,0 +1,101 @@
+<ion-view view-title="我的分享卷">
+  <ion-header-bar default-header-bar class="freexf-bar lightgray">
+    <div class="bar-left">
+      <button class="button-clear freexf-back freexf-left" default-nav-back-button ng-click="goBack()">
+        <i class="icon freexf-goback"></i>
+      </button>
+    </div>
+    <div class="title">我的分享卷</div>
+    <div class="bar-right">使用规则</div>
+  </ion-header-bar>
+  <div class="row shareVolume-header-nav">
+    <div class="col"
+         ng-repeat="(type,n) in templates"
+         ng-class="{'active':template.type==type}"
+         ng-click="setVolumeType(type)"
+    >{{n.name}}
+    </div>
+  </div>
+  <ion-content class="shareVolume freexf-bg-gray">
+    <p style="height:40px;margin:0"></p>
+    <div ng-include="template.url"></div>
+  </ion-content>
+  <script type="text/ng-template" id="volume.html">
+    <div class="left">
+      <p class="xuefen"><span>{{n.DiscountFee}}</span>学分</p>
+      <p class="riqi">{{n.GetDate | date:'yyyy.MM.dd'}}{{n.EndDate?'-'+(n.EndDate| date:'yyyy.MM.dd'):''}}</p>
+    </div>
+    <div class="right">
+      <p>使用限制:全场适用</p>
+      <p>卷编号:{{n.CouponId}}</p>
+      <p>推荐手机号:{{n.ShareMobile}}</p>
+      <div class="shareVolume-use-button" ng-class="n.btntype" ng-click="toUse()">{{n.Status=='未激活'?'尚未激活':'立即使用'}}
+      </div>
+    </div>
+  </script>
+  <script type="text/ng-template" id="volume_usable.html">
+    <div class="shareVolume-share-button" ng-click="shareVolume()">点击分享优惠劵</div>
+    <div class="shareVolume-share-roll">
+      <div ng-repeat="n in template.data" class="share-cell">
+        <img ng-src="img/shareVolume/volume_bg.png" alt="">
+        <ng-include src="'volume.html'"></ng-include>
+      </div>
+      <div ng-show="template.data.length<=0" class="freexf-nullmsg">没有可以使用的的优惠劵!</div>
+    </div>
+  </script>
+
+  <script type="text/ng-template" id="volume_inactive.html">
+    <div class="shareVolume-share-roll">
+      <div ng-repeat="n in template.data" class="share-cell">
+        <img ng-src="img/shareVolume/volume_bg.png" alt="">
+        <ng-include src="'volume.html'"></ng-include>
+      </div>
+      <div ng-show="template.data.length<=0" class="freexf-nullmsg">没有未激活的优惠劵!</div>
+    </div>
+  </script>
+
+  <script type="text/ng-template" id="volume_other.html">
+    <div class="shareVolume-share-roll">
+      <div ng-repeat="n in template.data" class="share-cell invalid">
+        <img ng-src="img/shareVolume/volume_no_bg.png" alt="">
+        <img class="qita" ng-src="{{n.imgbg}}" alt="">
+        <span class="mask"></span>
+        <ng-include src="'volume.html'"></ng-include>
+      </div>
+      <div ng-show="template.data.length<=0" class="freexf-nullmsg">没有其他优惠劵!</div>
+    </div>
+  </script>
+
+  <script type="text/ng-template" id="volume_share.html">
+    <div class="phone">
+      <p class="b14">请输入好友手机号</p>
+      <input type="text" ng-model="shareModal.Mobile">
+      <p class="node">该手机号需未注册过学费全免网,并且没有收到过注册邀请哦</p>
+    </div>
+    <div class="volume">
+      <p class="e12">请选择优惠劵</p>
+      <div class="volume-options">
+        <div ng-class="{'active':volume.DiscountId==volumes[0].DiscountId}" ng-click="setVolume(0)"
+             class="volume-option">
+          {{volumes[0].DiscountFee}}<span>学分</span></div>
+        <div ng-class="{'active':volume.DiscountId==volumes[1].DiscountId}" ng-click="setVolume(1)"
+             class="volume-option">
+          {{volumes[1].DiscountFee}}<span>学分</span></div>
+        <div ng-class="{'active':volume.DiscountId==volumes[2].DiscountId}" ng-click="setVolume(2)"
+             class="volume-option">
+          {{volumes[2].DiscountFee}}<span>学分</span></div>
+      </div>
+    </div>
+    <div class="note">
+      <p class="e12">短信内容</p>
+      <textarea>
+        您好,您的好友(昵称:{{shareModal.NickName}})手机尾号:"{{shareModal.tailMobile}}",邀请您注册学费全免网，七天内注册成功，你可以获得和你的小伙伴同样金额优惠劵哦!快去注册吧! 注册链接：http://www.freexf.com</textarea>
+    </div>
+    <div class="nickname">
+      <P class="b14">昵称</P>
+      <input type="text" ng-model="shareModal.NickName">
+      <p class="node right">请输入短信中的昵称</p>
+    </div>
+  </script>
+
+</ion-view>

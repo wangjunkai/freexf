@@ -11,6 +11,7 @@
   <meta name="x5-orientation" content="portrait">
   <meta content="telephone=no" name="format-detection">
   <script>
+     window.tel400="<%=tf_GetPhone400()%>"
     var _hmt = _hmt || [];
     (function () {
       var hm = document.createElement("script");
@@ -38,14 +39,14 @@
         0: ['css/freexf.css', 'css/course.css', 'css/home.css', 'css/pay.css',
           'css/student.css', 'css/user.css', 'css/video.css', 'css/set.css',
           'css/member.css', 'activities/css/public.css',
-
           'activities/css/classlearing.css',
           'activities/css/invitefriends.css',
           'activities/css/multilingual.css',
           'activities/css/invitefriends.css',
           'activities/css/microClass.css',
           'activities/css/examinationTime.css',
-          'activities/css/lottery.css',
+          //'activities/css/lottery.css',
+          'activities/css/lotteryDouble11.css',
           'activities/css/courseDiscount.css',
           'activities/css/fourFoldCarnival.css'
       ],

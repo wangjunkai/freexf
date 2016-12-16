@@ -1,5 +1,5 @@
 ﻿$(function () {
-    //$('.new_korean').css('font-size', $('body').width() / 38);
+    $('.new_korean').css('font-size', $('body').width() / 38);
     var returnHeight = $('.return .text').height();
     $('.process-text .text').each(function () {
         $(this).height(returnHeight);

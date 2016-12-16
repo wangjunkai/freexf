@@ -25,5 +25,10 @@
 
         })
     }
+
+    $(".course-button").each(onclick, function () {
+        window.open = "/mobile/www/index.aspx#/register"
+    })
+
 })
       

@@ -75,7 +75,7 @@ angular.module('freexf')
                   if (data[i].IsCanceled.toLowerCase() == "true") {
                       //过期 逻辑
                       item.myVar = "交易过期";
-                      
+
                       if (data[i].Lstatus == true) {
                           item.istatus = true;
                           item.again = false;
@@ -93,20 +93,20 @@ angular.module('freexf')
                       item.study = true;
                       item.payOrder = false;
 
-                      
+
 
                   }
-              }              
+              }
               list.push(item);
           }
-          
+
           return list;
-          
-      }      
+
+      }
       orderlistitem.getModel({ "studentId": $scope.userData.rowId, "Sign": $scope.userData.Sign, "pageIndex": count, "pageMax": pageMax }).then(function (res) {
           var data = res.response.data;
-          
-          
+
+
 
           //是否有订单
           if (res == null || res.response == null || res.response.data == null || res.response.data.length < 1) {
@@ -138,9 +138,9 @@ angular.module('freexf')
       };
       //去学习
       $scope.goStudy = function (ProductId, state, Lstatus) {
-          if (Lstatus == false) {              
+          if (Lstatus == false) {
               $state.go('coursedetail', { courseId: ProductId, state: state });
-          }         
+          }
       };
       //过期，去详情
       $scope.goredetail = function (ProductId) {
@@ -157,7 +157,7 @@ angular.module('freexf')
           //    if (data) {
                   $rootScope.paycourseId = ProductId;
                   //location.href = "#/pay";
-                  $state.go('pay', { DiscountCode: '' });
+                  $state.go('Discount', { DiscountCode: '' });
               //} else {
               //    count = 0;
               //    orderlistitem.getModel({ "studentId": $scope.userData.rowId, "Sign": $scope.userData.Sign, "pageIndex": count, "pageMax": pageMax }).then(function (res) {
@@ -179,7 +179,7 @@ angular.module('freexf')
               //    });
               //}
           //})
-          
+
       };
 
       //删除订单

@@ -2,28 +2,260 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="579c2214-30d9-4b22-8cc8-9c2cb3fa4f09" name="默认的" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/activities/201608/olympic.html" afterPath="$PROJECT_DIR$/activities/201608/olympic.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/course/course.html" afterPath="$PROJECT_DIR$/modules/course/course.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/course/courseplate.html" afterPath="$PROJECT_DIR$/modules/course/courseplate.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/pay/pay.html" afterPath="$PROJECT_DIR$/modules/pay/pay.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/pay/payaddress.html" afterPath="$PROJECT_DIR$/modules/pay/payaddress.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/pay/payfail.html" afterPath="$PROJECT_DIR$/modules/pay/payfail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/pay/paysuccess.html" afterPath="$PROJECT_DIR$/modules/pay/paysuccess.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/student/member.html" afterPath="$PROJECT_DIR$/modules/student/member.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/user/aboutus.html" afterPath="$PROJECT_DIR$/modules/user/aboutus.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/user/commonfaq.html" afterPath="$PROJECT_DIR$/modules/user/commonfaq.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/user/forgetpassword.html" afterPath="$PROJECT_DIR$/modules/user/forgetpassword.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/user/ideafeedback.html" afterPath="$PROJECT_DIR$/modules/user/ideafeedback.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/user/login.html" afterPath="$PROJECT_DIR$/modules/user/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/user/modifypassword.html" afterPath="$PROJECT_DIR$/modules/user/modifypassword.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/user/myaccount.html" afterPath="$PROJECT_DIR$/modules/user/myaccount.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/user/mycollection.html" afterPath="$PROJECT_DIR$/modules/user/mycollection.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/user/mycourse.html" afterPath="$PROJECT_DIR$/modules/user/mycourse.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/user/myorder.html" afterPath="$PROJECT_DIR$/modules/user/myorder.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/user/register.html" afterPath="$PROJECT_DIR$/modules/user/register.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/user/set.html" afterPath="$PROJECT_DIR$/modules/user/set.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160920/Germany-a127779e1c.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160920/classlearing-5a011441b3.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160920/concat/activities-09a027e1af.bundle.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160920/examinationTime-c5dd92569c.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160920/french-3b323fe6df.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160920/invitefriends-05da3a8880.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160920/japanese-f3e43b4ccd.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160920/korean-34d999ad8b.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160920/lottery-24b57daa39.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160920/map/Germany-a127779e1c.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160920/map/classlearing-5a011441b3.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160920/map/examinationTime-c5dd92569c.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160920/map/french-3b323fe6df.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160920/map/invitefriends-05da3a8880.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160920/map/japanese-f3e43b4ccd.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160920/map/korean-34d999ad8b.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160920/map/lottery-24b57daa39.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160920/map/microClass-459516bee2.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160920/map/multilingual-6d9720b24b.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160920/map/public-395e61533b.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160920/map/russian-438ae01d8b.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160920/map/spanish-fef2b77a19.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160920/microClass-459516bee2.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160920/multilingual-6d9720b24b.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160920/public-395e61533b.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160920/russian-438ae01d8b.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160920/spanish-fef2b77a19.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160922/Germany-a127779e1c.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160922/accountant-faa828f9b7.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160922/classlearing-5a011441b3.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160922/concat/activities-f5fb0a9c69.bundle.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160922/examinationTime-c5dd92569c.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160922/french-3b323fe6df.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160922/invitefriends-05da3a8880.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160922/japanese-f3e43b4ccd.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160922/korean-34d999ad8b.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160922/lottery-24b57daa39.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160922/map/Germany-a127779e1c.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160922/map/accountant-faa828f9b7.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160922/map/classlearing-5a011441b3.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160922/map/examinationTime-c5dd92569c.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160922/map/french-3b323fe6df.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160922/map/invitefriends-05da3a8880.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160922/map/japanese-f3e43b4ccd.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160922/map/korean-34d999ad8b.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160922/map/lottery-24b57daa39.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160922/map/microClass-459516bee2.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160922/map/multilingual-16ba597b24.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160922/map/public-395e61533b.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160922/map/russian-438ae01d8b.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160922/map/spanish-fef2b77a19.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160922/microClass-459516bee2.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160922/multilingual-16ba597b24.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160922/public-395e61533b.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160922/russian-438ae01d8b.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160922/spanish-fef2b77a19.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160927/Germany-97c1f2e9ce.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160927/accountant-fc859ed29b.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160927/classlearing-5a011441b3.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160927/concat/activities-b7f7d86e65.bundle.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160927/examinationTime-c5dd92569c.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160927/french-6351e7f76d.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160927/invitefriends-05da3a8880.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160927/japanese-10c6d5a691.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160927/korean-ac15ef95c2.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160927/lottery-24b57daa39.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160927/map/Germany-97c1f2e9ce.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160927/map/accountant-fc859ed29b.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160927/map/classlearing-5a011441b3.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160927/map/examinationTime-c5dd92569c.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160927/map/french-6351e7f76d.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160927/map/invitefriends-05da3a8880.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160927/map/japanese-10c6d5a691.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160927/map/korean-ac15ef95c2.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160927/map/lottery-24b57daa39.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160927/map/microClass-459516bee2.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160927/map/multilingual-16ba597b24.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160927/map/public-95f78f9856.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160927/map/russian-fa8e74effc.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160927/map/spanish-6a8a19ba91.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160927/map/teacherteam-5386ed089f.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160927/microClass-459516bee2.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160927/multilingual-16ba597b24.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160927/public-95f78f9856.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160927/russian-fa8e74effc.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160927/spanish-6a8a19ba91.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160927/teacherteam-5386ed089f.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160929/accountant-fc859ed29b.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160929/classlearing-5a011441b3.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160929/concat/activities-bf895f56b7.bundle.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160929/courseDiscount-d8b273bc90.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160929/examinationTime-c5dd92569c.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160929/invitefriends-05da3a8880.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160929/lottery-24b57daa39.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160929/map/accountant-fc859ed29b.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160929/map/classlearing-5a011441b3.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160929/map/courseDiscount-d8b273bc90.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160929/map/examinationTime-c5dd92569c.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160929/map/invitefriends-05da3a8880.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160929/map/lottery-24b57daa39.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160929/map/microClass-459516bee2.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160929/map/multilingual-16ba597b24.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160929/map/public-7b660ba8c7.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160929/map/teacherteam-5386ed089f.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160929/microClass-459516bee2.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160929/multilingual-16ba597b24.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160929/public-7b660ba8c7.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160929/teacherteam-5386ed089f.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160930/accountant-fc859ed29b.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160930/classlearing-5a011441b3.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160930/concat/activities-4dbf9a0e8c.bundle.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160930/courseDiscount-3ae58b82ad.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160930/examinationTime-c5dd92569c.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160930/invitefriends-05da3a8880.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160930/lottery-24b57daa39.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160930/map/accountant-fc859ed29b.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160930/map/classlearing-5a011441b3.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160930/map/courseDiscount-3ae58b82ad.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160930/map/examinationTime-c5dd92569c.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160930/map/invitefriends-05da3a8880.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160930/map/lottery-24b57daa39.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160930/map/microClass-459516bee2.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160930/map/multilingual-16ba597b24.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160930/map/public-7b660ba8c7.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160930/map/teacherteam-5386ed089f.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160930/microClass-459516bee2.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160930/multilingual-16ba597b24.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160930/public-7b660ba8c7.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160930/teacherteam-5386ed089f.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160920/concat/freexf-173b61273e.bundle.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160920/course-384e799cca.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160920/freexf-9540ce956c.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160920/home-708093547b.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160920/map/course-384e799cca.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160920/map/freexf-9540ce956c.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160920/map/home-708093547b.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160920/map/member-0e880f3826.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160920/map/pay-1a0cf43930.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160920/map/set-e2ecdbe110.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160920/map/user-363df267aa.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160920/member-0e880f3826.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160920/pay-1a0cf43930.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160920/set-e2ecdbe110.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160920/user-363df267aa.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160922/concat/freexf-173b61273e.bundle.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160922/course-384e799cca.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160922/freexf-9540ce956c.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160922/home-708093547b.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160922/map/course-384e799cca.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160922/map/freexf-9540ce956c.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160922/map/home-708093547b.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160922/map/member-0e880f3826.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160922/map/pay-1a0cf43930.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160922/map/set-e2ecdbe110.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160922/map/user-363df267aa.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160922/member-0e880f3826.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160922/pay-1a0cf43930.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160922/set-e2ecdbe110.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160922/user-363df267aa.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160927/concat/freexf-030b5e5a72.bundle.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160927/concat/freexf-ccd29bd7e7.bundle.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160927/course-d5234122e5.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160927/course-e2eaff5c54.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160927/freexf-7292c661ea.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160927/home-708093547b.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160927/map/course-d5234122e5.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160927/map/course-e2eaff5c54.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160927/map/freexf-7292c661ea.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160927/map/home-708093547b.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160927/map/member-0e880f3826.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160927/map/pay-1a0cf43930.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160927/map/set-e2ecdbe110.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160927/map/user-83be10e5ab.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160927/member-0e880f3826.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160927/pay-1a0cf43930.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160927/set-e2ecdbe110.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160927/user-83be10e5ab.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160929/concat/freexf-65c90ad0c5.bundle.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160929/course-e2eaff5c54.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160929/freexf-7292c661ea.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160929/home-0e276ccffd.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160929/map/course-e2eaff5c54.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160929/map/freexf-7292c661ea.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160929/map/home-0e276ccffd.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160929/map/member-0e880f3826.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160929/map/pay-1a0cf43930.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160929/map/set-e2ecdbe110.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160929/map/user-83be10e5ab.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160929/member-0e880f3826.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160929/pay-1a0cf43930.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160929/set-e2ecdbe110.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160929/user-83be10e5ab.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/js/lib/angular-local-storage-f9ed4aed54.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/js/lib/angular-sanitize-3327cce34c.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/js/lib/base64-0c282d9ab2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/js/lib/concat/freexf-b4a1e2feed.bundle.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/js/lib/ionic-ca983f64fc.bundle.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/js/lib/ionic-image-lazy-load-4c7b45338e.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/js/lib/jquery-3ddbe55bb7.qrcode.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/js/lib/jquery-aacc43d6f3.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/js/lib/lodash-53a7121b59.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/js/lib/map/angular-local-storage-f9ed4aed54.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/js/lib/map/angular-sanitize-3327cce34c.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/js/lib/map/base64-0c282d9ab2.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/js/lib/map/ionic-ca983f64fc.bundle.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/js/lib/map/ionic-image-lazy-load-4c7b45338e.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/js/lib/map/jquery-3ddbe55bb7.qrcode.min.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/js/lib/map/jquery-aacc43d6f3.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/js/lib/map/lodash-53a7121b59.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/js/lib/map/ocLazyLoad-dce854a948.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/js/lib/map/require-01ccd14836.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/js/lib/map/restangular-da4e58139e.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/js/lib/ocLazyLoad-dce854a948.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/js/lib/require-01ccd14836.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/js/lib/restangular-da4e58139e.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160920" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160920/concat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160920/map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160922" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160922/concat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160922/map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160927" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160927/concat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160927/map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160929" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160929/concat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160929/map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160930" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160930/concat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/activities/20160930/map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160920" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160920/concat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160920/map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160922" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160922/concat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160922/map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160927" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160927/concat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160927/map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160929" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160929/concat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/modules/20160929/map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/js/lib" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/js/lib/concat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/js/lib/map" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/activities/201609/setAppParam.js" afterPath="$PROJECT_DIR$/activities/201609/setAppParam.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/liveLesson/liveHome.html" afterPath="$PROJECT_DIR$/modules/liveLesson/liveHome.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/liveLesson/liveHome.js" afterPath="$PROJECT_DIR$/modules/liveLesson/liveHome.js" />
     </list>
     <ignored path="www.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -136,8 +368,8 @@
       <file leaf-file-name="textbook.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/activities/201606/textbook.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
+            <state relative-caret-position="588">
+              <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -233,8 +465,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -243,194 +475,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="student" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pubilc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pay" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="home" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="course" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="activities" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="activities" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="201608" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="activities" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="201606" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="F:/xiangmu/angular-1.5.8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
@@ -525,17 +575,18 @@
       <workItem from="1468201184259" duration="572000" />
       <workItem from="1468208009953" duration="3095000" />
       <workItem from="1471833786974" duration="3731000" />
+      <workItem from="1479782403352" duration="19000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7398000" />
+    <option name="totallyTimeSpent" value="7417000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24868283" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24868283" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -639,23 +690,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
           <caret line="1" column="42" selection-start-line="1" selection-start-column="42" selection-end-line="1" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="903">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html" />
     <entry file="file://$PROJECT_DIR$/modules/student/member.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
           <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -663,7 +705,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="756">
           <caret line="37" column="10" selection-start-line="37" selection-start-column="10" selection-end-line="37" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -679,7 +720,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -687,7 +727,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1701">
           <caret line="81" column="46" selection-start-line="81" selection-start-column="46" selection-end-line="81" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -695,7 +734,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -711,7 +749,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -719,7 +756,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
           <caret line="2" column="42" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -727,7 +763,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -735,7 +770,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -743,7 +777,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -751,7 +784,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -759,7 +791,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -767,7 +798,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -775,7 +805,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="9" column="52" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -783,7 +812,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -791,7 +819,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -799,7 +826,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -807,7 +833,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -815,7 +840,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -823,7 +847,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -831,7 +854,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -839,7 +861,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -847,7 +868,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="5" column="75" selection-start-line="5" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -855,7 +875,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -863,7 +882,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -871,7 +889,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -879,7 +896,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -887,7 +903,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -895,7 +910,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -903,7 +917,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -989,8 +1002,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/activities/201606/textbook.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
+        <state relative-caret-position="588">
+          <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
           <folding />
         </state>
       </provider>
